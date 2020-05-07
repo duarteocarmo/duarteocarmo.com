@@ -1,10 +1,13 @@
 # Personal Website
-## TODO
-* GH Pages or Netlify
-* Redirects...
-a
-## Once deployed
-* check sharing
-* check twitter
-* check lighthouse
-* Goatcounter events
+[![Netlify Status](https://api.netlify.com/api/v1/badges/990b321a-865e-4ad6-a3a7-800a705034dc/deploy-status)](https://app.netlify.com/sites/determined-feynman-73a754/deploys)
+
+The repo for my personal website. 
+
+Made with [Pelican](https://github.com/getpelican/pelican). Deployed with [Netlify](https://www.netlify.com/), and served with [Cloudflare](https://cloudflare.com). 
+
+Bare with me, I'm still working on it. 
+
+## TODOs
+- [ ] Confirm redirects from old blog, especially blog entries. 
+- [ ] Check sharing debuggers. 
+- [ ] Clean some of this python code. 
