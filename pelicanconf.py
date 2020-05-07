@@ -39,10 +39,17 @@ SOCIAL = (
 DEFAULT_PAGINATION = False
 
 # extra paths
-STATIC_PATHS = ["images", "pdfs", "extra/favicon.ico", "pdfs/cv.pdf"]
+STATIC_PATHS = [
+    "images",
+    "pdfs",
+    "extra/favicon.ico",
+    "pdfs/cv.pdf",
+    "extra/CNAME",
+]
 EXTRA_PATH_METADATA = {
     "extra/favicon.ico": {"path": "favicon.ico"},
     "pdfs/cv.pdf": {"path": "cv.pdf"},
+    "extra/CNAME": {"extra/CNAME": {"path": "CNAME"}},
 }
 
 # SOCIAL
