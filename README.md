@@ -9,5 +9,5 @@ Bare with me, I'm still working on it.
 
 ## TODOs
 - [ ] Confirm redirects from old blog, especially blog entries. 
-- [ ] Check sharing debuggers. 
+- [x] Check sharing debuggers. 
 - [ ] Clean some of this python code. 
