@@ -1,0 +1,107 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="Pelican v{{ PELICAN_VERSION }}" />
+<meta name="author" content="[Author name here]"> 
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="{{ TWITTER_HANDLE }}">
+<meta name="twitter:image" content="{{ SITEURL }}/{{ SITELOGO }}">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link type="application/atom+xml" rel="alternate" href="{{SITEURL}}/{{FEED_ALL_ATOM }}" title="{{ SITENAME }}" />
+
+<link rel="shortcut icon" href="{{SITEURL}}/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="{{ SITEURL  }}/theme/css/style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500&family=PT+Serif&display=swap" rel="stylesheet">
+
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="{{ SITENAME }}" />
+<meta property="og:image" content="{{ SITEURL }}/{{ SITELOGO }}" />
+<meta property="og:type" content="website" />
+
+{% if article %}
+    <link rel="canonical" href="{{ SITEURL }}/{{ article.url  }}" />
+    
+    <meta property="og:title" content="{{ article.title }}" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+    
+    <meta name="twitter:url" content="{{ SITEURL }}/{{article.url}}">
+    <meta name="twitter:title" content="{{ article.title }}">
+   
+    <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "BlogPosting",
+          "name": "{{ article.title }}",
+          "headline": "{{ article.title }}",
+          "datePublished": "{{ article.date }}",
+          "dateModified": "{{ article.modified }}",
+          "author": {
+            "@type": "Person",
+            "name": "{{ AUTHOR }}",
+            "url": "{{ SITEURL }}"
+          },
+          "image": "{{ SITEURL }}/{{ SITELOGO }}",
+          "url": "{{ SITEURL }}/{{ article.url }}",
+          "description": "{{ article.summary|striptags }}"
+        }
+    </script>
+
+
+{% if article.description %}
+    <meta name="description" content="{{ article.description }}" />
+    <meta name="twitter:description" content="{{ article.description[0:200] }}">
+    <meta property="og:description" content="{{ article.description }}" />
+{% else %}
+    <meta name="description" content="{{ article.summary|striptags }}" />
+    <meta name="twitter:description" content="{{ article.summary[0:200] | striptags }}">
+    <meta property="og:description" content="{{ article.summary|striptags }}" />
+{% endif %}
+{% elif  page %}
+    <meta name="description" content="{{ SITE_DESCRIPTION }}" />
+    <meta name="twitter:url" content="{{ SITEURL }}/{{ page.url }}">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.title }}">
+    
+    <link rel="canonical" href="{{ SITEURL }}/{{ page.url  }}" />
+    
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
+
+    <script type="application/ld+json">
+        {
+          "@context" : "http://schema.org",
+          "@type" : "Blog",
+          "name": "{{ SITENAME  }}",
+          "url" : "{{ SITEURL  }}/{{ page.url }}",
+          "image": "{{SITEURL}}/{{ SITELOGO  }}",
+          "description": "{{ SITE_DESCRIPTION  }}"
+
+        }
+    </script>
+{% else %}
+    <meta name="description" content="{{ SITE_DESCRIPTION }}" />
+    <link rel="canonical" href="{{ SITEURL }}" />
+
+    <meta property="og:title" content="{{ SITENAME }}" />
+    <meta property="og:url" content="{{ SITEURL }}" />
+    <meta property="og:description" content="{{ SITE_DESCRIPTION }}" />
+
+    <meta name="twitter:url" content="{{ SITEURL }}">
+    <meta name="twitter:title" content="{{ SITENAME }}">
+    <meta name="twitter:description" content="{{ SITE_DESCRIPTION }}">
+
+    <script type="application/ld+json">
+        {
+          "@context" : "http://schema.org",
+          "@type" : "Blog",
+          "name": "{{ SITENAME  }}",
+          "url" : "{{ SITEURL  }}",
+          "image": "{{SITEURL}}/{{ SITELOGO  }}",
+          "description": "{{ SITE_DESCRIPTION  }}"
+
+        }
+    </script>
+{% endif %}
+

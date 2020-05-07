@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ SITENAME }} {% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 content">
+        <h1>{{ page.title }}</h1>
+        {% if page.title == "About me"%}
+            <center>
+                <img class="logo" src="{{static}}/images/logo.svg" alt="logo.png">
+            </center>
+        {% endif %}
+        {{ page.content }}
+    </div>
+</div>
+{% endblock %}
