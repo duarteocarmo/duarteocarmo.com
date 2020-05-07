@@ -9,7 +9,7 @@ In the past, I've worked for the [WYGroup](https://www.wygroup.net/), [Bliss App
 
 In my free time you can probably find me learning about new gadgets, [programming in python](https://github.com/duarteocarmo), [reading](https://github.com/duarteocarmo/my-personal-zen), [taking photos](https://instagram.com/duarteoc), and running. 
 
-If you wish to know more about my career, or you are interested in hiring me please browse [my resume](/cv.pdf).
+If you want to know more about my career, or you are interested in hiring me please browse [my resume](/cv.pdf).
 
 To get in touch, just email me: me@duarteocarmo.com
 
