@@ -3,7 +3,7 @@ date: 25-03-2020
 
 *Currently, the world is going through an epidemic crisis. Coronavirus has made most of us have to work from home, well, at least the ones who can. Foreseeably, for the next month, this will be the state of things. I have some experience working from home, although not extensive, most of [my thesis](https://thesis.duarteocarmo.com/) and [student assistant work](https://duarteocarmo.com/assets/docs/cv.pdf) was done remotely from Portugal to Denmark for about a year. I actually believe I was more productive during that time, so here is my advice.*
 
-### 1.The upsides
+## The upsides
 
 Working from home has upsides, let's start by outlining some to get you motivated:
 
@@ -11,7 +11,7 @@ Working from home has upsides, let's start by outlining some to get you motivate
 - **You own your own time**: You can start working when you want, stop working when you want, and pause whenever you want.
 - **Interruptions are much less frequent** (unless you have a kid), you shut communication down when you want to. 
 
-### 2.Have a setup
+## Have a setup
 
 
 
@@ -37,7 +37,7 @@ I believe these are a very good bank for your buck. And can certainly vouch for 
 <br/>
 
 
-### 3.Start the day right
+## Start the day right
 
 One of the worst mistakes is to keep your pijamas on. **ALWAYS** shower and get dressed! Even if you're not going anywhere, getting ready puts you in the mindset of getting things done.  Usually, this is how my morning goes:
 
@@ -48,7 +48,7 @@ One of the worst mistakes is to keep your pijamas on. **ALWAYS** shower and get 
 5. Read the news?
 6. Sit down, and start getting stuff done!
 
-### 4.Plan out your day
+## Plan out your day
 
 Before starting to work, I usually ask myself: "What do I want to accomplish today?". At the end of the day, I ask myself: "What did I do today?". For everything in between, I use [TickTick](https://ticktick.com), my favorite TO-DO app.
 
@@ -69,7 +69,7 @@ At the end of the day, I like having all of my todos (Personal, Work, Side Proje
 </center>
 <br/>
 
-### 5.Talk when you have to
+## Talk when you have to
 
 *Email, Email, Email.* 
 
@@ -85,7 +85,7 @@ So close Slack, close Whatsapp, close Messenger, set your phone to Do not Distur
 *Reading recommendation on the topic: ["It Doesn't Have to Be Crazy at Work"](https://www.goodreads.com/book/show/38900866-it-doesn-t-have-to-be-crazy-at-work)* 
 
 
-### 5.Listen to something
+## Listen to something
 This depends on the type of work, but I have found that I personally really enjoy listening to something while I am working. Either its some slides, a data analysis, or some code, listening to something in the background really allows me to concentrate. 
 
 Here are some of my personal favorites:
