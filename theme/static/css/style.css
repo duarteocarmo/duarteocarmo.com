@@ -1,143 +1,135 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 :root {
-	--primary: #0069d6;
-	--secondary: rgba(0, 0, 0, 0.87);
-	--background: white;
-	--base-font: 'Merriweather', serif !important;
-	--code-font: 'Fira Mono', monospace;
+        --primary: #0069d6;
+        --secondary: rgba(0, 0, 0, 0.87);
+        --background: white;
+        --base-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        --code-font: "Monaco", "Consolas", monospace;
 }
 
 body {
-	margin: 2em auto;
-	padding: 0 1em;
-	max-width: 740px;
-	line-height: 1.5;
-	font-family: var(--base-font);
-	font-size: 16px;
-	color: var(--secondary);
-	background-color: var(--background);
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-weight: 300;
-	/*text-align: justify; */
+        color: var(--secondary);
+        background-color: var(--background);
+        font-family: var(--base-font);
+        margin: 2em auto;
+        padding: 0 1em;
+        font-size: 1em;
+        line-height: 1.4em;
+        max-width: 600px;
+        /*
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: justify; */
 }
 
 a {
-	color: var(--primary);
-	text-decoration: none;
+        color: var(--primary);
+        text-decoration: none;
 }
 a:hover {
-	text-decoration: underline;
+        text-decoration: underline;
 }
 
 h1,
 h2,
 h3 {
-	line-height: 1.2;
-	margin-top: 1em;
-	margin-bottom: 0.3em;
-	font-weight: 350;
+        line-height: 1.2;
+        margin-top: 1em;
+        margin-bottom: 0.3em;
+        font-weight: 600;
 }
 
 h1 a,
 h2 a,
 h3 a {
-	color: var(--secondary);
+        color: var(--secondary);
 }
-
 code {
-	font-family: var(--code-font);
-	font-size: 16px;
-	color: rgba(0, 0, 0, 0.6);
+        font-family: var(--code-font);
+        font-size: 1em;
+        color: rgba(0, 0, 0, 0.6);
 }
 pre {
-	overflow-y: auto;
-	line-height: 20px;
-	background: #eee;
-	border-radius: 2px;
-	padding: 1em;
+        overflow-y: auto;
+        line-height: 1.5em;
+        background: #eee;
+        border-radius: 0.2em;
+        padding: 1em;
 }
 pre code {
-	font-family: var(--code-font);
-	font-size: 12px;
-	color: var(--secondary);
+        font-family: var(--code-font);
+        font-size: 0.8em;
+        color: var(--secondary);
 }
 
 footer {
-	margin-top: 4em;
-	font-size: 14px;
+        margin-top: 4em;
+        font-size: 0.9em;
 }
 
 .copyright {
-	font-size: 12px;
+        font-size: 0.8em;
 }
 
 img {
-	max-width: 90%;
+        max-width: 100%;
 }
 
 .svg-icon {
-	width: 16px;
-	height: 16px;
-	display: inline-block;
-	fill: var(--secondary);
-	padding: 5px 3px 2px 5px;
-	vertical-align: text-bottom;
+        width: 1.1em;
+        height: 1.1em;
+        display: inline-block;
+        fill: var(--secondary);
+        padding: 0.2em;
+        vertical-align: text-bottom;
 }
 
 .minilogo {
-	max-width: 20%;
+        max-width: 20%;
 }
 
 .button {
-	padding: 8px 16px;
-	text-align: center;
-	text-decoration: none;
-	transition-duration: 0.4s;
-	cursor: pointer;
-	background-color: var(--background);
-	border: 1px solid var(--secondary);
-	font-family: inherit;
-	font-size: inherit;
-	margin: 1em;
+        padding: 0.5em 1em;
+        text-align: center;
+        text-decoration: none;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        background-color: var(--background);
+        border: 1px solid var(--secondary);
+        font-family: inherit;
+        font-size: inherit;
+        margin: 1em;
 }
 
 .button:hover {
-	background-color: var(--secondary);
-	margin: 1em;
+        background-color: var(--secondary);
+        margin: 1em;
 }
 
 .button:hover a {
-	color: var(--background);
-	text-decoration: none;
+        color: var(--background);
+        text-decoration: none;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
-	:root {
-		--base-font: 'Merriweather', serif !important;
-		--code-font: 'Fira Mono', monospace !important;
-	}
-}
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		--primary: #f1935c;
-		--secondary: #e4e4e4;
-		--background: #444;
-	}
-	.logo {
-		filter: invert(100%);
-	}
+        :root {
+                --primary: #f1935c;
+                --secondary: #e4e4e4;
+                --background: #444;
+        }
+        .logo {
+                filter: invert(100%);
+        }
 
-	pre,
-	pre code {
-		background: #333;
-		color: #e4e4e4;
-	}
+        pre,
+        pre code {
+                background: #333;
+                color: #e4e4e4;
+        }
 
-	code {
-		color: #aaa;
-	}
+        code {
+                color: #aaa;
+        }
 }
