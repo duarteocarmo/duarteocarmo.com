@@ -3,7 +3,7 @@ date: 25-02-2020
 
 **tl;dr:** *use [this script](#code) to build a [GitHub Repo like this one](https://github.com/duarteocarmo/my-personal-zen) where you store all the highlights from your kindle books in an organized way.*
 
-### Kindle sucks, kindle is great
+## Kindle sucks, kindle is great
 
 We all love reading in our Kindle. You can travel with more than one book at the time, you can search for words you don't understand, you have access to millions of books you can't find in your local library.. It's great!
 
@@ -13,15 +13,15 @@ One option is to bulk buy the physical copies in some years.
 
 While that doesn't happen, why not keep all the most important highlights in a nicely kept [GitHub Repo](https://github.com/duarteocarmo/my-personal-zen/tree/master/books)?
 
-### Highlights 
+## Highlights 
 
 When reading in my Kindle, I tend to highlight a lot of passages I find interesting. When you do so, the device locally stores a `My Clippings.txt` file that aggregates all of your highlights across different books. 
 
-### Using GitHub
+## Using GitHub
 
 In the [books](https://github.com/duarteocarmo/my-personal-zen/tree/master/books) folder of *"my-personal-zen"* repo you can notice that every book has its own markdown file where I keep all of the highlights related to it. For example, [here](https://github.com/duarteocarmo/my-personal-zen/blob/master/books/Mans%20Search%20for%20Meaning.md) are my favorite parts of Viktor Frankl's *Man's Search for Meaning*. 
 
-### Python for the (parsing) win
+## Python for the (parsing) win
 
 To make this happen, I created a small python [script](https://github.com/duarteocarmo/my-personal-zen/blob/master/highlight_parser.py) that parses a `My Clippings.txt` file every time I connect my Kindle to my computer. And then its just a matter of moving these files to a repo and pushing it to GitHub. 
 
