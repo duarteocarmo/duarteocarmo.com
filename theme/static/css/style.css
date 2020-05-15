@@ -23,6 +23,7 @@ body {
         text-align: justify; */
 }
 
+
 a {
         color: var(--primary);
         text-decoration: none;
@@ -115,7 +116,7 @@ img {
 
 @media (prefers-color-scheme: dark) {
         :root {
-                --primary: #f1935c;
+                --primary: #F5AB35;
                 --secondary: #e4e4e4;
                 --background: #444;
         }
