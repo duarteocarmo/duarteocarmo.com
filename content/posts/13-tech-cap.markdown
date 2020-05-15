@@ -40,6 +40,6 @@ You can find it on [Elsevier](https://www.sciencedirect.com/science/article/pii/
 
 Long story short, it was out of my control. I was only a collaborator in this research. I am a supporter of open source and open access and will to continue to support it to the best of my abilities. 
 
-[wink 😉](https://duarteocarmo.com/assets/docs/quantifying-tech-change.pdf)
+[wink 😉]({filename}/pdfs/quantifying-tech-change.pdf)
 
 You can find out more about this topic by diving deeper into [my thesis](https://thesis.duarteocarmo.com/).
