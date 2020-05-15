@@ -1,7 +1,7 @@
 title: How to work from home
 date: 25-03-2020
 
-*Currently, the world is going through an epidemic crisis. Coronavirus has made most of us have to work from home, well, at least the ones who can. Foreseeably, for the next month, this will be the state of things. I have some experience working from home, although not extensive, most of [my thesis](https://thesis.duarteocarmo.com/) and [student assistant work](https://duarteocarmo.com/assets/docs/cv.pdf) was done remotely from Portugal to Denmark for about a year. I actually believe I was more productive during that time, so here is my advice.*
+*Currently, the world is going through an epidemic crisis. Coronavirus has made most of us have to work from home, well, at least the ones who can. Foreseeably, for the next month, this will be the state of things. I have some experience working from home, although not extensive, most of [my thesis](https://thesis.duarteocarmo.com/) and [student assistant work]({filename}/pdfs/cv.pdf) was done remotely from Portugal to Denmark for about a year. I actually believe I was more productive during that time, so here is my advice.*
 
 ## The upsides
 
