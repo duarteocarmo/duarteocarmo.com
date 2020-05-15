@@ -47,7 +47,7 @@ h3 a {
 }
 code {
         font-family: var(--code-font);
-        font-size: 1em;
+        font-size: 0.9em;
         color: rgba(0, 0, 0, 0.6);
 }
 pre {
