@@ -41,7 +41,7 @@ Here's a graph of some sample collaborations (in black), and some predictions (i
 </center>
 
 Yeah, that doesn't look great. Notice how the red dots are often very far away from the black line (our truth). 
-## Neural Network Regression for the save
+## Using a Neural Network
 
 I ended up browsing scikit's documentation for some more time, looking for other viable options to this problem. The documentation is great, really, they even have [a page](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html) you can use to select an algorithm. 
 
