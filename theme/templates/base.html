@@ -6,13 +6,25 @@
     </head>
     <body>
         <header>
-            <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+            <div class="top">
+                <div class="sitename">
+                    <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+                </div>
+                <div class="dark-mode" class="user-toggle" style="float:right">
+                    <div role="status" class="[ visually-hidden ][ js-mode-status ]"></div>
+                    <button class="[ toggle-button ] [ js-mode-toggle ]">
+                        <span class="[ toggle-button__text ] [ js-mode-toggle-text ]">DARK</span>
+                        <span class="toggle-button__icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
             <a href="{{ SITEURL  }}/about">About</a> - <a href="{{ SITEURL  }}/consulting">Consulting</a> - <a href="{{ SITEURL }}/cv.pdf" data-goatcounter-click="resume-clicks" data-goatcounter-title="CV from Home">Resume</a> - <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">RSS</a>
         </header>
-            {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
         <footer>
             {% include "footer.html" %}
         </footer> 
         {% include "analytics.html" %}
     </body>
+    <script src="{{ SITEURL  }}/theme/js/dark_mode.js"></script>
 </html>
