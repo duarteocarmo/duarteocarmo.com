@@ -1,5 +1,5 @@
 title: Neural Networks for Linear Regressions using Python 
-date: 15-05-2020
+date: 22-05-2020
 description: An overview of linear regression techniques using python and scikit. 
 
 *Recently, I have been working on a project for [Dataverz](https://www.dataverz.net/), the company of my ex-thesis supervisor (and regular collaborator) [Pedro Parraguez](https://www.parraguezr.net/). I was looking at ways of predicting the number of collaborations between COVID-19 researchers. Here's a small technique I learned during that work.*
