@@ -78,7 +78,7 @@ Of course, all approaches should still be [validated](https://nbhub.duarteocarmo
 Here are some links if you want to digg deeper into this work:
 
 <div id="links"></div>
-* Full article: ["Matchmaking experiments using ML and Graph embeddings"](https://dataverz.gitbook.io/coronavirus-r-and-d/matchmaking-experiments-using-ml-and-graph-embeddings)
+* Full article: ["Matchmaking experiments using ML and Graph embeddings"](https://dataverz.gitbook.io/coronavirus-r-and-d/matchmaking-experiments)
 * Analysis and code: [Jupyter Notebook](https://nbhub.duarteocarmo.com/notebook/07f45cd3#9.Validation)
 * [Consulting services](https://duarteocarmo.com/consulting)
 
