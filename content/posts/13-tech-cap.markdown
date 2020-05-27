@@ -3,7 +3,7 @@ date:   2019-11-28 08:00:00 +0000
 
 After a lot of work, it finally got published!
 
-My first research paper **"Quantifying technological change as a combinatorial process"**, is now available in the november issue of [Technological Forecasting and Social Change](https://www.sciencedirect.com/journal/technological-forecasting-and-social-change/about/aims-and-scope). 
+My first research paper **'Quantifying technological change as a combinatorial process'**, is now available in the november issue of [Technological Forecasting and Social Change](https://www.sciencedirect.com/journal/technological-forecasting-and-social-change/about/aims-and-scope). 
 
 Why does that matter? Well, a couple of things first..
 
