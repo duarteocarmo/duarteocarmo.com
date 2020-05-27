@@ -20,15 +20,15 @@
 <meta property="og:type" content="website" />
 
 {% if article %}
-    <link rel="canonical" href="{{ SITEURL }}/{{ article.url  }}" />
-    
-    <meta property="og:title" content="{{ article.title }}" />
-    <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
-    
-    <meta name="twitter:url" content="{{ SITEURL }}/{{article.url}}">
-    <meta name="twitter:title" content="{{ article.title }}">
-   
-    <script type="application/ld+json">
+<link rel="canonical" href="{{ SITEURL }}/{{ article.url  }}" />
+
+<meta property="og:title" content="{{ article.title }}" />
+<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+
+<meta name="twitter:url" content="{{ SITEURL }}/{{article.url}}">
+<meta name="twitter:title" content="{{ article.title }}">
+
+<script type="application/ld+json">
         {
           "@context": "http://schema.org",
           "@type": "BlogPosting",
@@ -41,34 +41,39 @@
             "name": "{{ AUTHOR }}",
             "url": "{{ SITEURL }}"
           },
+           "publisher": {
+            "@type": "Person",
+            "name": "{{ AUTHOR }}",
+            "url": "{{ SITEURL }}"
+            }, 
           "image": "{{ SITEURL }}/{{ SITELOGO }}",
           "url": "{{ SITEURL }}/{{ article.url }}",
           "description": "{{ article.summary|striptags }}"
         }
-    </script>
+</script>
 
 
 {% if article.description %}
-    <meta name="description" content="{{ article.description }}" />
-    <meta name="twitter:description" content="{{ article.description[0:200] }}">
-    <meta property="og:description" content="{{ article.description }}" />
+<meta name="description" content="{{ article.description }}" />
+<meta name="twitter:description" content="{{ article.description[0:200] }}">
+<meta property="og:description" content="{{ article.description }}" />
 {% else %}
-    <meta name="description" content="{{ article.summary|striptags }}" />
-    <meta name="twitter:description" content="{{ article.summary[0:200] | striptags }}">
-    <meta property="og:description" content="{{ article.summary|striptags }}" />
+<meta name="description" content="{{ article.summary|striptags }}" />
+<meta name="twitter:description" content="{{ article.summary[0:200] | striptags }}">
+<meta property="og:description" content="{{ article.summary|striptags }}" />
 {% endif %}
 {% elif  page %}
-    <meta name="description" content="{{ SITE_DESCRIPTION }}" />
-    <meta name="twitter:url" content="{{ SITEURL }}/{{ page.url }}">
-    <meta name="twitter:title" content="{{ page.title }}">
-    <meta name="twitter:description" content="{{ page.title }}">
-    
-    <link rel="canonical" href="{{ SITEURL }}/{{ page.url  }}" />
-    
-    <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
+<meta name="description" content="{{ SITE_DESCRIPTION }}" />
+<meta name="twitter:url" content="{{ SITEURL }}/{{ page.url }}">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.title }}">
 
-    <script type="application/ld+json">
+<link rel="canonical" href="{{ SITEURL }}/{{ page.url  }}" />
+
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
+
+<script type="application/ld+json">
         {
           "@context" : "http://schema.org",
           "@type" : "Blog",
@@ -78,20 +83,20 @@
           "description": "{{ SITE_DESCRIPTION  }}"
 
         }
-    </script>
+</script>
 {% else %}
-    <meta name="description" content="{{ SITE_DESCRIPTION }}" />
-    <link rel="canonical" href="{{ SITEURL }}" />
+<meta name="description" content="{{ SITE_DESCRIPTION }}" />
+<link rel="canonical" href="{{ SITEURL }}" />
 
-    <meta property="og:title" content="{{ SITENAME }}" />
-    <meta property="og:url" content="{{ SITEURL }}" />
-    <meta property="og:description" content="{{ SITE_DESCRIPTION }}" />
+<meta property="og:title" content="{{ SITENAME }}" />
+<meta property="og:url" content="{{ SITEURL }}" />
+<meta property="og:description" content="{{ SITE_DESCRIPTION }}" />
 
-    <meta name="twitter:url" content="{{ SITEURL }}">
-    <meta name="twitter:title" content="{{ SITENAME }}">
-    <meta name="twitter:description" content="{{ SITE_DESCRIPTION }}">
+<meta name="twitter:url" content="{{ SITEURL }}">
+<meta name="twitter:title" content="{{ SITENAME }}">
+<meta name="twitter:description" content="{{ SITE_DESCRIPTION }}">
 
-    <script type="application/ld+json">
+<script type="application/ld+json">
         {
           "@context" : "http://schema.org",
           "@type" : "Blog",
@@ -101,6 +106,6 @@
           "description": "{{ SITE_DESCRIPTION  }}"
 
         }
-    </script>
+</script>
 {% endif %}
 
