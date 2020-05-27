@@ -43,8 +43,12 @@
           },
            "publisher": {
             "@type": "Organization",
-            "name": "{{ AUTHOR }}"
-            }, 
+            "name": "{{ AUTHOR }}", 
+"logo": {
+          "@type": "ImageObject",
+          "url": "{{ SITEURL }}/{{ SITELOGO }}"
+
+        }	}, 
           "image": "{{ SITEURL }}/{{ SITELOGO }}",
           "url": "{{ SITEURL }}/{{ article.url }}",
           "description": "{{ article.summary|striptags }}"
