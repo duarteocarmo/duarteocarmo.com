@@ -54,3 +54,6 @@ EXTRA_PATH_METADATA = {
 
 # SOCIAL
 TWITTER_HANDLE = "duarteocarmo"
+
+# MARKDOWN
+MARKDOWN = {"extensions": ["markdown.extensions.toc"]}
