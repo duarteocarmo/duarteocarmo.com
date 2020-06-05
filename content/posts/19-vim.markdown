@@ -1,50 +1,74 @@
 title: VIM for Python development (and not only)
-date: 06-05-2020 18:37
+date: 06-05-2020 12:59
 description: My VIM setup for writing Python and other things.
-status: draft
 
-tl;dr: This is a short write-up on my VIM config. If you are short on time you can:
+<center>
+<img src="{static}/images/vim_01.png" alt="Vim" style="">
+</center>
 
-- Skip to [here]() if you already know VIM. 
-- Jump to the [python specific section]().
-- See my [`.vimrc`]().
+*__tl;dr__: This is a write up on how and why I use the famously hard-to-use VIM text editor.*
 
-screenshot
+- *Skip to [here](#general-vim-setup) if you already know VIM.*
+- *Jump to the [python specific section](#vim-for-python-development).*
+- *See my [.vimrc](#my-vimrc).*
+- *Get my [dotfiles](https://github.com/duarteocarmo/dotfiles).*
 
-## Why VIM?
+
+## What the hell is VIM?
+
+
+We're all used to use our mouse to click around a document. You click on a character to go to it, you select text with your mouse, and then delete with you backspace key. What if there was a better way? Something that would require a bit less jumping around interfaces? What if there was a better and faster way?
+
+VIM is a text editor that completely discards the mouse, and allows you to double your productivity while editing code or text. 
+
+VIM is famously know to be very hard to learn, but insanely productive once you do. 
+
+<br>
+<center>
+<img src="{static}/images/vim_02.png" alt="VIM illustration" style="max-width:70%;">
+</center>
+
+So why the hell would you even use it?
+
+## Why would you use VIM?
+
 I was once the guy that had no clue how to quit VIM. "You need to do what to quit this?". I still remember going into my crontab and using `nano` to "edit" all my files. I had heard about these crazy people that use terminal based text editors like "vim" and "emacs". 
 
 Today I own a VIM sweater. 
+<br>
+<center>
+<img src="{static}/images/vim_03.png" alt="VIM Sweater" style="">
+</center>
 
-sweater photo. 
+I didn't start using VIM because there was X number of reasons to switch to it. I simply wanted to play around with something other people talked about online, and I fell in love. Now that I HAVE switched to it, I can defineltly recommend it for the following reasons:
 
-I didn't start using VIM because there was X number of reasons to switch to it. I simply wanted to play around with something other people online talked about, and you should too! Now that I HAVE switched to it, I can defineltly recommend it for the following reasons:
-
-- It works on all machines. Wether you are on Linux or MacOS, it comes with VIM straight out of the box. Simply go to your terminal and type `vi`. 
-- It's fast. VIM uses something called model editing, that makes editing and writting code (and text) much faster. You use commands such as hitting `CI"` keys, to change the inside of a quote! Its also moslty keyboard based, which ends up saving you a lot of time. 
-- You can make it your own. VIM allows you to completely customize how it behaves and how it looks. Don't like a key combo? Remap it! Don't like a certain behaviour? Turn it off!
+- __It works on all machines.__ Wether you are on Linux or MacOS, it comes with VIM straight out of the box. Simply go to your terminal and type `vi`. 
+- __It's fast.__ VIM uses something called modal editing, that makes editing and writting code (and text) much faster. You use commands such as hitting the `CI"` keys, to change the inside of a quote! Warning, VIM cheat sheets are [scary.](https://xianblog.wordpress.com/2015/03/18/the-vim-cheat-sheet/) 
+- __You can make it your own.__ VIM allows you to completely customize how it behaves and how it looks. Don't like a key combo? Remap it! Don't like a certain behaviour? Turn it off!
 
 ## General VIM Setup
 
-screenshot
+<center>
+<img src="{static}/images/vim_04.png" alt="VIM Screenshot 1" style="">
+</center>
 
-My favourite colorscheme is [badwolf](https://github.com/sjl/badwolf), mainly for its Python highlighting. The markdown also doesn't look bad. The html though, could definelty be better. 
+My favorite color scheme is [badwolf](https://github.com/sjl/badwolf), mainly for its Python highlighting. The markdown also doesn't look bad. The `html` though, could definitely be better. 
 
-In terms of fonts, I have been currently changing the font to [JetBrains Mono](https://www.jetbrains.com/lp/mono/) wherever I can.
+For fonts, I have been currently changing the font to [JetBrains Mono](https://www.jetbrains.com/lp/mono/) wherever I can.
 
-When I am on my personal MacBook, I use [iTerm2](https://www.iterm2.com/) and run VIM straight from it. On Linux, the same, no need to configure anything, I just fire [Kitty](https://sw.kovidgoyal.net/kitty/), and run VIM from there. 
+When I am on my MacBook, I use [iTerm2](https://www.iterm2.com/) and run VIM straight from it. On Linux, the same, no need to configure anything, I just fire [Kitty](https://sw.kovidgoyal.net/kitty/), and run VIM from there. 
 
-On Windows, I normally just run [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) with an Ubuntu VM. Which allows me to have a relatively fast linux machine inside windows. Note: If you go this route, definetly upgrade to [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/wsl2-index). 
+On Windows, I normally just run [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) with an Ubuntu Virtual Machine. Which allows me to have a relatively fast linux machine inside Windows. *Note: If you go this route, definetly upgrade to [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/wsl2-index).*
 
 
 ## VIM for Python development
 
-I use some specific plugins (with [vim-plug](https://github.com/junegunn/vim-plug)) for making pyton development easier. I know there are some even better ones, but I found that these strike a good balance: 
+I use some specific plugins (with [vim-plug](https://github.com/junegunn/vim-plug)) for making Python development easier. I know there are some even better ones, but I found that these strike a good balance: 
 
 - [vim-polyglot](https://github.com/sheerun/vim-polyglot): Offers better syntax highlighting than basic VIM. 
-- [black](https://github.com/psf/black/blob/master/plugin/black.vim): When writting code, I just `:Black` and it automatically makes my code pretty again. 
+- [black](https://github.com/psf/black/blob/master/plugin/black.vim): When writing code, I just `:Black` and it automatically makes my code pretty again. 
 - [auto-pairs](https://github.com/jiangmiao/auto-pairs): Helps me "auto-close" brackets and parenthesis. And saves me time. 
-- [supertab](https://github.com/ervandew/supertab): I know VIM includes some sort of tab completion. And I also know there are things like CoC and YCM out there. But hey, I just don't want to write that long variable's name. 
+- [supertab](https://github.com/ervandew/supertab): I know VIM includes some sort of tab completion. And I also know there are things like [CoC](https://github.com/neoclide/coc.nvim) and [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe) out there. But hey, I just don't want to write that long variable's name. 
 
 Great, let's see that `.vimrc`
 
@@ -54,8 +78,10 @@ I also like using VIM for most of my markdown editing. Either it's some document
 
 Great, let's see that `.vimrc`
 
-
 ## My `.vimrc`
+
+Almost every line here is commented. My advice: don't copy it. Built your own from scratch, and make sure you understand every line and what it does!
+
 
 ```vim
 filetype indent on                  " load filetype-specific indent files
