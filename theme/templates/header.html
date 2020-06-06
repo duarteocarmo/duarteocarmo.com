@@ -63,8 +63,8 @@
 <meta property="og:description" content="{{ article.summary|striptags }}" />
 {% endif %}
 {% if article.thumbnail %}
-<meta property="og:image" content="{{ article.thumbnail }}" />
-<meta name="twitter:image" content="{{ article.thumbnail }}">
+<meta property="og:image" content="{{ SITEURL }}/{{ article.thumbnail }}" />
+<meta name="twitter:image" content="{{ SITEURL }}/{{ article.thumbnail }}">
 {% else %}
 <meta property="og:image" content="{{ SITEURL }}/{{ SITELOGO }}" />
 <meta name="twitter:image" content="{{ SITEURL }}/{{ SITELOGO }}">
