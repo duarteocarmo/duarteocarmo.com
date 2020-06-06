@@ -1,6 +1,7 @@
 title: VIM for Python development (and not only)
 date: 06-05-2020 12:59
 description: My VIM setup for writing Python and other things.
+thumbnail: {static}/images/vim_01.png
 
 <center>
 <img src="{static}/images/vim_01.png" alt="Vim" style="">
