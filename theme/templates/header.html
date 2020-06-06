@@ -4,7 +4,6 @@
 <meta name="author" content="[Author name here]"> 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="{{ TWITTER_HANDLE }}">
-<meta name="twitter:image" content="{{ SITEURL }}/{{ SITELOGO }}">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -16,7 +15,6 @@
 
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="{{ SITENAME }}" />
-<meta property="og:image" content="{{ SITEURL }}/{{ SITELOGO }}" />
 <meta property="og:type" content="website" />
 
 {% if article %}
@@ -64,11 +62,20 @@
 <meta name="twitter:description" content="{{ article.summary[0:200] | striptags }}">
 <meta property="og:description" content="{{ article.summary|striptags }}" />
 {% endif %}
+{% if article.thumbnail %}
+<meta property="og:image" content="{{ article.thumbnail }}" />
+<meta name="twitter:image" content="{{ article.thumbnail }}">
+{% else %}
+<meta property="og:image" content="{{ SITEURL }}/{{ SITELOGO }}" />
+<meta name="twitter:image" content="{{ SITEURL }}/{{ SITELOGO }}">
+{% endif %}
 {% elif  page %}
 <meta name="description" content="{{ SITE_DESCRIPTION }}" />
 <meta name="twitter:url" content="{{ SITEURL }}/{{ page.url }}">
 <meta name="twitter:title" content="{{ page.title }}">
 <meta name="twitter:description" content="{{ page.title }}">
+<meta property="og:image" content="{{ SITEURL }}/{{ SITELOGO }}" />
+<meta name="twitter:image" content="{{ SITEURL }}/{{ SITELOGO }}">
 
 <link rel="canonical" href="{{ SITEURL }}/{{ page.url  }}" />
 
@@ -97,6 +104,8 @@
 <meta name="twitter:url" content="{{ SITEURL }}">
 <meta name="twitter:title" content="{{ SITENAME }}">
 <meta name="twitter:description" content="{{ SITE_DESCRIPTION }}">
+<meta property="og:image" content="{{ SITEURL }}/{{ SITELOGO }}" />
+<meta name="twitter:image" content="{{ SITEURL }}/{{ SITELOGO }}">
 
 <script type="application/ld+json">
         {
