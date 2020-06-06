@@ -9,15 +9,14 @@ I have contributed to popular open source projects such as [JupyterLab](https://
 
 <details markdown="1">
 <summary>Learn More</summary>
-Services:
-
-- Data mining and processing
-- Data analysis
-- Data visualization and dashboard building
-- Machine Learning (scikit and TF 2.0)
-- Big data mining
-- Web scrapping
-
+<ul>
+<li>Data mining and processing</li>
+<li>Data analysis</li>
+<li>Data visualization and dashboard building</li>
+<li>Machine Learning (scikit and TF 2.0)</li>
+<li>Big data mining</li>
+<li>Web scrapping</li>
+</ul>
 <button class="button"><a href="mailto:me@duarteocarmo.com?subject=Enquiry:%20Data%20and%20Software">I'm interested</a></button>
 </details>
 
@@ -28,14 +27,13 @@ I created a [crowdsourced deliveries startup](https://www.linkedin.com/company/e
 
 <details markdown="1">
 <summary>Learn More</summary>
-Services:
-
-- Business plan development
-- Minimum viable product definition
-- Strategic roadmap for the company and product
-- Pitch deck development
-- Market research and analysis
-
+<ul>
+<li>Business plan development</li>
+<li>Minimum viable product definition</li>
+<li>Strategic roadmap for the company and product</li>
+<li>Pitch deck development</li>
+<li>Market research and analysis</li>
+</ul>
 <button class="button"><a href="mailto:me@duarteocarmo.com?subject=Enquiry:%20Business%20and%20Strategy%20Consulting">I'm interested</a></button>
 </details>
 
@@ -47,13 +45,12 @@ I have developped a wide range of touchable prototypes for apps and web interfac
 
 <details markdown="1">
 <summary>Learn More</summary>
-Services:
-
-- Wireframming and prototyping of mobile and web interfaces
-- Technology stack consulting
-- Product development plan
-- Robotic automation
-
+<ul>
+<li>Wireframming and prototyping of mobile and web interfaces</li>
+<li>Technology stack consulting</li>
+<li>Product development plan</li>
+<li>Robotic automation</li>
+</ul>
 <button class="button"><a href="mailto:me@duarteocarmo.com?subject=Enquiry:%20Product%20Development">I'm interested</a></button>
 </details>
 
