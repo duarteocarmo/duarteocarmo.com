@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-        <head>
-                <title>{% block title %}{% endblock %}</title>
-                {% include "header.html" %}
-        </head>
-        <body>
-                <header>
-                        <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
-                        <a href="{{ SITEURL  }}/about">About</a> - <a href="{{ SITEURL  }}/consulting">Consulting</a> - <a href="{{ SITEURL }}/cv.pdf" data-goatcounter-click="resume-clicks" data-goatcounter-title="CV from Home">Resume</a> - <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">RSS</a>
-                </header>
-                {% block content %}{% endblock %}
-                <footer>
-                        {% include "footer.html" %}
-                </footer> 
-                {% include "analytics.html" %}
-        </body>
+
+<head>
+        <title>{% block title %}{% endblock %}</title>
+        {% include "header.html" %}
+</head>
+
+<body>
+        <header>
+                <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+                <a href="{{ SITEURL  }}/about">About</a> - <a href="{{ SITEURL  }}/consulting">Consulting</a> - <a
+                        href="{{ SITEURL }}/cv.pdf" data-goatcounter-click="resume-clicks"
+                        data-goatcounter-title="CV from Home" id="myElement">Resume</a> - <a
+                        href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">RSS</a>
+        </header>
+        {% block content %}{% endblock %}
+        <footer>
+                {% include "footer.html" %}
+        </footer>
+        {% include "analytics.html" %}
+        <script type="module" src="https://unpkg.com/rough-notation?module"></script>
+        <script type="module">
+                import { annotate } from 'https://unpkg.com/rough-notation?module';
+
+                const e = document.querySelector('#myElement');
+                const annotation = annotate(e, { type: 'underline' });
+                if (window.location.href == "https://duarteocarmo.com") {
+                        annotation.show();
+                }
+        </script>
+</body>
+
 </html>
