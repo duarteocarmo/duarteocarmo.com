@@ -24,9 +24,9 @@
                 import { annotate } from 'https://unpkg.com/rough-notation?module';
 
                 const e = document.querySelector('#myElement');
-                const annotation = annotate(e, { type: 'underline' });
+                const annotation = annotate(e, { type: 'box' });
                 if (window.location.href == "https://duarteocarmo.com/") {
-                        annotation.show();
+                        setTimeout(function () { annotation.show() }, 1500);
                 }
         </script>
 </body>
