@@ -21,6 +21,7 @@ One of the main reasons for choosing a Danish university over others is the teac
 Moreover, in most Master degrees, at least 1/4 of your program is completely up to you to define. This means you can choose absolutely ANY course you want to take. Still remember choosing my courses at DTU, I felt like [browsing Amazon for cool products to buy](https://kurser.dtu.dk/search), or even like a kid in a candy shop. Really! [Take a look at this study program](https://www.dtu.dk/english/education/msc/programmes/industrial_engineering_management#study-programme). 
 
 Here are some of my personal favorite courses in DTU (yes, these are often open access to everyone, enrolled or not):
+
 - [Intro to programming and data processing](http://courses.compute.dtu.dk/ipdp/)
 - [Social Data Analysis and Visualization](https://github.com/suneman/socialdataanalysis2020)
 - [Deep Learning](https://github.com/DeepLearningDTU/02456-deep-learning-with-PyTorch)
