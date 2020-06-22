@@ -45,7 +45,7 @@ Now, let’s say I want to share the “Analysis.ipynb” notebook with someone.
 $ nbhub Analysis.ipynb
 ```
 
-You’ll be walked through a simple command-line script that asks you a couple of questions. Once you are done, you’ll receive a link such as [https://nbhub.duarteocarmo.com/notebook/e6b917cb](https://nbhub.duarteocarmo.com/notebook/e6b917cb). By clicking it, you’ll see that your notebook is now on the web. You can just send that link to someone, and they’ll see your notebook. 
+You’ll be walked through a simple command-line script that asks you a couple of questions. Once you are done, you’ll receive a link such as [this one](https://nbhub.duarteocarmo.com/notebook/e6b917cb). By clicking it, you’ll see that your notebook is now on the web. You can just send that link to someone, and they’ll see your notebook. 
 
 Another thing that I love, is that if I’m sharing a very large notebook, I can even link to a specific section of it. For example, click [here](https://nbhub.duarteocarmo.com/notebook/e6b917cb#five) to jump to the “contextual relationships” section of the example notebook. 
 
