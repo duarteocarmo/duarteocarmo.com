@@ -1,5 +1,5 @@
 title: NbHub: Share your jupyter notebooks with the world 💫
-date: 22-06-2020 
+date: 22-06-2019 
 description: A hacked command line tool that allows you to share jupyter notebooks with the world. 
 
 *__TL;DR__: I created a small python package that allows you to share your jupyter notebooks right from the command line (like [this one](https://nbhub.duarteocarmo.com/notebook/e6b917cb) for example). To get started, visit [nbhub.duarteocarmo.com](https://nbhub.duarteocarmo.com). or `pip install nbhub`.*
