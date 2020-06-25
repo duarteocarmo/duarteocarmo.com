@@ -1,5 +1,5 @@
 title: Studying in Denmark as an international student
-date: 18-06-2020 14:45
+date: 18-06-2019 14:45
 description: How to study, work, and live in Denmark as an international student
 thumbnail: images/dtu_photo.jpg
 
