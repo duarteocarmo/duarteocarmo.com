@@ -144,3 +144,7 @@ img {
         }
 }
 
+
+div.content p {
+    line-height: 1.7em;
+}
