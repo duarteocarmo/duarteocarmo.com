@@ -3,7 +3,7 @@ slug: about
 
 I have studied in the [Superior Technical Institute of Lisbon](https://tecnico.ulisboa.pt/en/), in the [Beijing Institute of Technology](http://english.bit.edu.cn/), and in the [Technical University of Denmark](https://www.dtu.dk/english). 
 
-Currently, I'm a consultant/resident hacker at [Jabra](https://jabra.com), where I help build the best headphones in the world. Here, I'm involved with a lot of different areas: product management, strategy, data science, experimentation, and artificial intelligence.  
+Currently, I'm a consultant/resident hacker at [Jabra](https://jabra.com), where I help build the best headphones in the world. Here, I'm involved in a lot of different areas: product management, strategy, data science, experimentation, and artificial intelligence.  
 
 In the past, I've worked for the [WYGroup](https://www.wygroup.net/), [Bliss Applications](https://www.blissapplications.com/), and [OnLiquid](https://onliquid.com/). 
 
