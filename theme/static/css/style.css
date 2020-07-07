@@ -27,12 +27,16 @@ body {
     color: var(--secondary);
     background-color: var(--background);
     font-family: var(--base-font);
-    margin: 2em auto;
+    margin: 1em auto;
     padding: 0 1em;
     max-width: 55ch;
     --font-size: 1.25em;
     font-size: var(--font-size);
     line-height: calc(1.35 * var(--font-size));
+}
+
+#website-title {
+    margin-top: 0.5em !important;
 }
 
 .content > h2 {
