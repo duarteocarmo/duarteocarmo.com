@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="row">
-    <p>Hey there, I'm <a href="{{ SITEURL  }}/about">Duarte</a>, a consultant from Lisbon, living in Copenhagen.</p>
+    <p>Hey there, I'm <a href="{{ SITEURL  }}/about">Duarte</a> <i><code>/du-art/</code></i>, a consultant from Lisbon, living in Copenhagen.</p>
         {% for article in articles[0:5] %}
         <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
         <label>{{  article.date | strftime('%B %d, %Y') }}</label>
