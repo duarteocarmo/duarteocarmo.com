@@ -19,16 +19,6 @@
                 {% include "footer.html" %}
         </footer>
         {% include "analytics.html" %}
-        <script type="module" src="https://unpkg.com/rough-notation?module"></script>
-        <script type="module">
-                import { annotate } from 'https://unpkg.com/rough-notation?module';
-
-                const e = document.querySelector('#title-main');
-                const annotation = annotate(e, { type: 'box' });
-                if (window.location.href == "https://duarteocarmo.com/") {
-                        setTimeout(function () { annotation.show() }, 1500);
-                }
-        </script>
 </body>
 
 </html>
