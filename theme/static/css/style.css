@@ -167,7 +167,7 @@ img {
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
     body {
-        max-width: 35ch;
+        max-width: 40ch;
         margin: 0.5em auto;
         padding: 0 0.5em;
     }
