@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
 :root {
     --color-light-primary: hsl(338,79%,53%);
     --color-light-secondary: hsl(222,30%,16%);
@@ -20,7 +22,7 @@
     --code-color: var(--color-light-code);
     --code-background: var(--color-light-code-background);
 
-    --base-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --base-font:  'Merriweather', serif;
     --code-font: "Monaco", "Consolas", monospace;
 }
 body {
@@ -29,10 +31,11 @@ body {
     font-family: var(--base-font);
     margin: 1em auto;
     padding: 0 1em;
-    max-width: 55ch;
-    --font-size: 1.15em;
+    max-width: 70ch;
+    --font-size: 1.00em;
     font-size: var(--font-size);
-    line-height: calc(1.35 * var(--font-size));
+    /**line-height: calc(1.35 * var(--font-size));**/
+    line-height: 1.75;
 }
 
 #website-title {
