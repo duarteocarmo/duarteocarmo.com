@@ -9,10 +9,12 @@
 <body>
         <header>
                 <h1 id="website-title"><a id="title-main" href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
-                <a href="{{ SITEURL  }}/about">About</a> - <a href="{{ SITEURL  }}/consulting">Consulting</a> - <a
-                        href="{{ SITEURL }}/cv.pdf" data-goatcounter-click="resume-clicks"
-                        data-goatcounter-title="CV from Home" id="myElement">Resume</a> - <a
-                        href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">RSS</a>
+                <a href="{{ SITEURL  }}/about">About</a> - 
+                <a href="{{ SITEURL }}/blog">Blog</a> - 
+                <a href="{{ SITEURL  }}/consulting">Consulting</a> - 
+                <a href="{{ SITEURL }}/cv.pdf" data-goatcounter-click="resume-clicks" data-goatcounter-title="CV from Home" id="myElement">Resume</a> - 
+                <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">RSS</a>
+
         </header>
         {% block content %}{% endblock %}
         <footer>
