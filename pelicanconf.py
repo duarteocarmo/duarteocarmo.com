@@ -6,7 +6,11 @@ import pelican
 AUTHOR = "Duarte O.Carmo"
 SITENAME = "duarte o.carmo"
 SITEURL = ""
-SITE_DESCRIPTION = "My personal website"
+SITE_DESCRIPTION = (
+    "My personal website. Here, you can read my blog posts, and learn about my"
+    " projects. I write about data science, AI, programming, business, and"
+    " other topics. "
+)
 # TODO
 SITELOGO = "images/logo.png"
 PATH = "content"
