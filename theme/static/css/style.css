@@ -30,7 +30,7 @@ body {
     margin: 1em auto;
     padding: 0 1em;
     max-width: 55ch;
-    --font-size: 1.25em;
+    --font-size: 1.15em;
     font-size: var(--font-size);
     line-height: calc(1.35 * var(--font-size));
 }
