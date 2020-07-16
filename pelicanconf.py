@@ -21,6 +21,7 @@ PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}.html"
 ARTICLE_URL = "blog/{slug}.html"
 ARTICLE_SAVE_AS = "blog/{slug}.html"
+ARTICLE_EXCLUDES = ["html"]
 
 # SEO
 PELICAN_VERSION = pelican.__version__
@@ -49,12 +50,13 @@ STATIC_PATHS = [
     "extra/favicon.ico",
     "pdfs/cv.pdf",
     "extra/CNAME",
-    "html"
+    "html",
 ]
 EXTRA_PATH_METADATA = {
     "extra/favicon.ico": {"path": "favicon.ico"},
     "pdfs/cv.pdf": {"path": "cv.pdf"},
     "extra/CNAME": {"extra/CNAME": {"path": "CNAME"}},
+    "html/StateOfVim.html": {"path": "StateOfVim.html"},
 }
 
 # SOCIAL
