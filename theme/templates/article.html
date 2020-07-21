@@ -5,8 +5,11 @@
 {% block content %}
 <div class="row">
     <div class="col-md-8 content">
+        <center>
         <h1>{{ article.title }}</h1>
         <i><label>Posted on {{  article.date | strftime('%B %d, %Y') }}</label></i>
+        </center>
+        <br>
         {{ article.content }}
     </div>
 </div>
