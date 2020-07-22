@@ -1,6 +1,7 @@
 title: Can I go home yet? 
 date: 23-07-2020 
 description: An investigation on Denmark's travel ban and how its implementation criteria has evolved since.
+thumbnail: images/others.png
 
 On the 18th of June, Denmark [announced new travel policies after the Coronavirus outbreak](https://www.reuters.com/article/us-health-coronavirus-denmark-borders/denmark-will-reopen-to-most-european-nations-except-portugal-much-of-sweden-idUSKBN23P1OD). From that date on, it allowed travel to all European countries except for Portugal and Sweden. Of course, this caused several news outlets to write on the issue ([Local.dk](https://www.thelocal.dk/20200618/denmark-opens-to-tourists-from-every-eu-country-but-sweden), [Politiken.dk](https://politiken.dk/rejser/art7839386/Nu-kan-danskerne-tage-til-endnu-flere-steder-i-Sverige), [Reuters.com](https://www.reuters.com/article/us-health-coronavirus-denmark-borders/denmark-will-reopen-to-most-european-nations-except-portugal-much-of-sweden-idUSKBN23P1OD)). But now, one month later, let us try to investigate the issue, and whether these bans make sense.
 
