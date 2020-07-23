@@ -26,7 +26,6 @@ ARTICLE_EXCLUDES = ["html"]
 # SEO
 PELICAN_VERSION = pelican.__version__
 
-
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -35,11 +34,18 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 FEED_ALL_ATOM = "feed.xml"
 
+# NO EXTRAS
+TAGS_SAVE_AS = None
+ARCHIVES_SAVE_AS = None
+CATEGORIES_SAVE_AS = None
+AUTHORS_SAVE_AS = None
+
 # Social widget
 SOCIAL = (
     ("You can add links in your config file", "#"),
     ("Another social link", "#"),
 )
+
 # pagination
 DEFAULT_PAGINATION = False
 
@@ -64,8 +70,15 @@ TWITTER_HANDLE = "duarteocarmo"
 
 # MARKDOWN
 MARKDOWN = {
-    "extensions": [
-        "markdown.extensions.toc",
-        "markdown.extensions.fenced_code",
-    ]
+    "extensions": ["markdown.extensions.toc", "markdown.extensions.fenced_code",]
+}
+
+# PLUGINS
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["sitemap"]
+SITEMAP = {
+    "exclude": ["archives.html", "author/", "category/"],
+    "format": "xml",
+    "priorities": {"articles": 0.9, "indexes": 0.5, "pages": 0.9},
+    "changefreqs": {"articles": "hourly", "indexes": "hourly", "pages": "hourly",},
 }
