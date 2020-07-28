@@ -44,6 +44,4 @@ Let's take some real conclusions:
 
 Thanks for reading my rant about going home 😆
 
-
-
-
+**Update:** [Here's a link](https://mybinder.org/v2/gh/duarteocarmo/canigohome/master?urlpath=%2Fvoila%2Frender%2Fnotebooks%2FCanIgoHome.ipynb) for a live dashboard of the stats. 
