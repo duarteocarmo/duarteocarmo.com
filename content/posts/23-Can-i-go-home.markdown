@@ -45,3 +45,6 @@ Let's take some real conclusions:
 Thanks for reading my rant about going home 😆
 
 **Update:** [Here's a link](https://mybinder.org/v2/gh/duarteocarmo/canigohome/master?urlpath=%2Fvoila%2Frender%2Fnotebooks%2FCanIgoHome.ipynb) for a live dashboard of the stats. 
+
+
+**Update 2:** The list of banned countries [has been updated](https://www.ssi.dk/-/media/arkiv/dk/aktuelt/sygdomsudbrud/covid19/covid-19-rejsekriterier/30_07_2020_83ha/tabel_11_1_europa.pdf?la=da) and I will be able to return on Sunday (2/8/2020).
