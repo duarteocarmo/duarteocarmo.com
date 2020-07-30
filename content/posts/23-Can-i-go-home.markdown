@@ -42,7 +42,7 @@ Let's take some real conclusions:
 * **Metrics should be regularly updated:** Having chosen a specific metric to define travel restrictions, we should make sure to update it regularly. As far as I know, the [original list](https://www.ssi.dk/-/media/arkiv/dk/aktuelt/sygdomsudbrud/covid19/covid-19-rejsekriterier/16_07_2020_tors/tabel_11_1.pdf?la=da) only updates every 2 weeks. But as we have seen here, a lot of things can change in 2 weeks. 
 
 
-Thanks for reading my rant about going home 😆
+Thanks for reading my rant about going home 😆!
 
 **Update:** [Here's a link](https://mybinder.org/v2/gh/duarteocarmo/canigohome/master?urlpath=%2Fvoila%2Frender%2Fnotebooks%2FCanIgoHome.ipynb) for a live dashboard of the stats. 
 
