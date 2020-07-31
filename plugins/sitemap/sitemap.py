@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Sitemap
 -------
 
 The sitemap plugin generates plain-text or XML sitemaps.
-'''
+"""
 
 from __future__ import unicode_literals
 
@@ -43,6 +43,15 @@ XML_URL = """
 </url>
 """
 
+XML_URL_EXT = """
+<url>
+<loc>{0}</loc>
+<lastmod>{1}</lastmod>
+<changefreq>{2}</changefreq>
+<priority>{3}</priority>
+</url>
+"""
+
 XML_FOOTER = """
 </urlset>
 """
@@ -50,74 +59,87 @@ XML_FOOTER = """
 
 def format_date(date):
     if date.tzinfo:
-        tz = date.strftime('%z')
-        tz = tz[:-2] + ':' + tz[-2:]
+        tz = date.strftime("%z")
+        tz = tz[:-2] + ":" + tz[-2:]
     else:
         tz = "-00:00"
     return date.strftime("%Y-%m-%dT%H:%M:%S") + tz
 
-class SitemapGenerator(object):
 
+class SitemapGenerator(object):
     def __init__(self, context, settings, path, theme, output_path, *null):
 
         self.output_path = output_path
         self.context = context
         self.now = datetime.now()
-        self.siteurl = settings.get('SITEURL')
+        self.siteurl = settings.get("SITEURL")
 
-        self.default_timezone = settings.get('TIMEZONE', 'UTC')
-        self.timezone = getattr(self, 'timezone', self.default_timezone)
+        self.default_timezone = settings.get("TIMEZONE", "UTC")
+        self.timezone = getattr(self, "timezone", self.default_timezone)
         self.timezone = timezone(self.timezone)
 
-        self.format = 'xml'
+        self.format = "xml"
 
         self.changefreqs = {
-            'articles': 'monthly',
-            'indexes': 'daily',
-            'pages': 'monthly'
+            "articles": "monthly",
+            "indexes": "daily",
+            "pages": "monthly",
         }
 
-        self.priorities = {
-            'articles': 0.5,
-            'indexes': 0.5,
-            'pages': 0.5
-        }
+        self.priorities = {"articles": 0.5, "indexes": 0.5, "pages": 0.5}
 
         self.sitemapExclude = []
 
-        config = settings.get('SITEMAP', {})
+        config = settings.get("SITEMAP", {})
 
         if not isinstance(config, dict):
             log.warning("sitemap plugin: the SITEMAP setting must be a dict")
         else:
-            fmt = config.get('format')
-            pris = config.get('priorities')
-            chfreqs = config.get('changefreqs')
-            self.sitemapExclude = config.get('exclude', [])
+            fmt = config.get("format")
+            pris = config.get("priorities")
+            chfreqs = config.get("changefreqs")
+            self.sitemapExclude = config.get("exclude", [])
 
-            if fmt not in ('xml', 'txt'):
-                log.warning("sitemap plugin: SITEMAP['format'] must be `txt' or `xml'")
-                log.warning("sitemap plugin: Setting SITEMAP['format'] on `xml'")
-            elif fmt == 'txt':
+            if fmt not in ("xml", "txt"):
+                log.warning(
+                    "sitemap plugin: SITEMAP['format'] must be `txt' or `xml'"
+                )
+                log.warning(
+                    "sitemap plugin: Setting SITEMAP['format'] on `xml'"
+                )
+            elif fmt == "txt":
                 self.format = fmt
                 return
 
-            valid_keys = ('articles', 'indexes', 'pages')
-            valid_chfreqs = ('always', 'hourly', 'daily', 'weekly', 'monthly',
-                    'yearly', 'never')
+            valid_keys = ("articles", "indexes", "pages")
+            valid_chfreqs = (
+                "always",
+                "hourly",
+                "daily",
+                "weekly",
+                "monthly",
+                "yearly",
+                "never",
+            )
 
             if isinstance(pris, dict):
                 # We use items for Py3k compat. .iteritems() otherwise
                 for k, v in pris.items():
                     if k in valid_keys and not isinstance(v, (int, float)):
                         default = self.priorities[k]
-                        log.warning("sitemap plugin: priorities must be numbers")
-                        log.warning("sitemap plugin: setting SITEMAP['priorities']"
-                                    "['{0}'] on {1}".format(k, default))
+                        log.warning(
+                            "sitemap plugin: priorities must be numbers"
+                        )
+                        log.warning(
+                            "sitemap plugin: setting SITEMAP['priorities']"
+                            "['{0}'] on {1}".format(k, default)
+                        )
                         pris[k] = default
                 self.priorities.update(pris)
             elif pris is not None:
-                log.warning("sitemap plugin: SITEMAP['priorities'] must be a dict")
+                log.warning(
+                    "sitemap plugin: SITEMAP['priorities'] must be a dict"
+                )
                 log.warning("sitemap plugin: using the default values")
 
             if isinstance(chfreqs, dict):
@@ -125,21 +147,29 @@ class SitemapGenerator(object):
                 for k, v in chfreqs.items():
                     if k in valid_keys and v not in valid_chfreqs:
                         default = self.changefreqs[k]
-                        log.warning("sitemap plugin: invalid changefreq `{0}'".format(v))
-                        log.warning("sitemap plugin: setting SITEMAP['changefreqs']"
-                                    "['{0}'] on '{1}'".format(k, default))
+                        log.warning(
+                            "sitemap plugin: invalid changefreq `{0}'".format(
+                                v
+                            )
+                        )
+                        log.warning(
+                            "sitemap plugin: setting SITEMAP['changefreqs']"
+                            "['{0}'] on '{1}'".format(k, default)
+                        )
                         chfreqs[k] = default
                 self.changefreqs.update(chfreqs)
             elif chfreqs is not None:
-                log.warning("sitemap plugin: SITEMAP['changefreqs'] must be a dict")
+                log.warning(
+                    "sitemap plugin: SITEMAP['changefreqs'] must be a dict"
+                )
                 log.warning("sitemap plugin: using the default values")
 
     def write_url(self, page, fd):
 
-        if getattr(page, 'status', 'published') != 'published':
+        if getattr(page, "status", "published") != "published":
             return
-           
-        if getattr(page, 'private', 'False') == 'True':
+
+        if getattr(page, "private", "False") == "True":
             return
 
         # We can disable categories/authors/etc by using False instead of ''
@@ -150,40 +180,53 @@ class SitemapGenerator(object):
         if not os.path.exists(page_path):
             return
 
-        lastdate = getattr(page, 'date', self.now)
+        lastdate = getattr(page, "date", self.now)
         try:
             lastdate = self.get_date_modified(page, lastdate)
         except ValueError:
-            log.warning("sitemap plugin: " + page.save_as + " has invalid modification date,")
+            log.warning(
+                "sitemap plugin: "
+                + page.save_as
+                + " has invalid modification date,"
+            )
             log.warning("sitemap plugin: using date value as lastmod.")
         lastmod = format_date(lastdate)
 
         if isinstance(page, contents.Article):
-            pri = self.priorities['articles']
-            chfreq = self.changefreqs['articles']
+            pri = self.priorities["articles"]
+            chfreq = self.changefreqs["articles"]
         elif isinstance(page, contents.Page):
-            pri = self.priorities['pages']
-            chfreq = self.changefreqs['pages']
+            pri = self.priorities["pages"]
+            chfreq = self.changefreqs["pages"]
         else:
-            pri = self.priorities['indexes']
-            chfreq = self.changefreqs['indexes']
+            pri = self.priorities["indexes"]
+            chfreq = self.changefreqs["indexes"]
 
-        pageurl = '' if page.url == 'index.html' else page.url
+        pageurl = "" if page.url == "index.html" else page.url
 
-        #Exclude URLs from the sitemap:
-        if self.format == 'xml':
+        # Exclude URLs from the sitemap:
+        if self.format == "xml":
             flag = False
             for regstr in self.sitemapExclude:
                 if re.match(regstr, pageurl):
                     flag = True
                     break
             if not flag:
-                fd.write(XML_URL.format(self.siteurl, pageurl, lastmod, chfreq, pri))
+                # patch for external pages:
+                if pageurl.startswith("http"):
+                    fd.write(
+                        XML_URL_EXT.format(pageurl, lastmod, chfreq, pri)
+                    )
+
+                else:
+                    fd.write(
+                        XML_URL.format(self.siteurl, pageurl, lastmod, chfreq, pri)
+                    )
         else:
-            fd.write(self.siteurl + '/' + pageurl + '\n')
+            fd.write(self.siteurl + "/" + pageurl + "\n")
 
     def get_date_modified(self, page, default):
-        if hasattr(page, 'modified'):
+        if hasattr(page, "modified"):
             if isinstance(page.modified, datetime):
                 return page.modified
             return get_date(page.modified)
@@ -194,72 +237,90 @@ class SitemapGenerator(object):
         for (wrapper, articles) in wrappers:
             lastmod = datetime.min.replace(tzinfo=self.timezone)
             for article in articles:
-                lastmod = max(lastmod, article.date.replace(tzinfo=self.timezone))
+                lastmod = max(
+                    lastmod, article.date.replace(tzinfo=self.timezone)
+                )
                 try:
-                    modified = self.get_date_modified(article, datetime.min).replace(tzinfo=self.timezone)
+                    modified = self.get_date_modified(
+                        article, datetime.min
+                    ).replace(tzinfo=self.timezone)
                     lastmod = max(lastmod, modified)
                 except ValueError:
                     # Supressed: user will be notified.
                     pass
-            setattr(wrapper, 'modified', str(lastmod))
+            setattr(wrapper, "modified", str(lastmod))
 
     def generate_output(self, writer):
-        path = os.path.join(self.output_path, 'sitemap.{0}'.format(self.format))
+        path = os.path.join(
+            self.output_path, "sitemap.{0}".format(self.format)
+        )
 
-        pages = self.context['pages'] + self.context['articles'] \
-                + [ c for (c, a) in self.context['categories']] \
-                + [ t for (t, a) in self.context['tags']] \
-                + [ a for (a, b) in self.context['authors']]
+        pages = (
+            self.context["pages"]
+            + self.context["articles"]
+            + [c for (c, a) in self.context["categories"]]
+            + [t for (t, a) in self.context["tags"]]
+            + [a for (a, b) in self.context["authors"]]
+        )
 
-        self.set_url_wrappers_modification_date(self.context['categories'])
-        self.set_url_wrappers_modification_date(self.context['tags'])
-        self.set_url_wrappers_modification_date(self.context['authors'])
+        self.set_url_wrappers_modification_date(self.context["categories"])
+        self.set_url_wrappers_modification_date(self.context["tags"])
+        self.set_url_wrappers_modification_date(self.context["authors"])
 
-        for article in self.context['articles']:
+        for article in self.context["articles"]:
             pages += article.translations
 
-        log.info('writing {0}'.format(path))
+        log.info("writing {0}".format(path))
 
-        with open(path, 'w', encoding='utf-8') as fd:
+        with open(path, "w", encoding="utf-8") as fd:
 
-            if self.format == 'xml':
+            if self.format == "xml":
                 fd.write(XML_HEADER)
             else:
                 fd.write(TXT_HEADER.format(self.siteurl))
 
-            FakePage = collections.namedtuple('FakePage',
-                                              ['status',
-                                               'date',
-                                               'url',
-                                               'save_as'])
+            FakePage = collections.namedtuple(
+                "FakePage", ["status", "date", "url", "save_as"]
+            )
 
-            for standard_page in self.context['DIRECT_TEMPLATES']:
-                standard_page_url = self.context.get('{}_URL'.format(standard_page.upper()))
-                standard_page_save_as = self.context.get('{}_SAVE_AS'.format(standard_page.upper()))
-                fake = FakePage(status='published',
-                                date=self.now,
-                                url=standard_page_url or '{}.html'.format(standard_page),
-                                save_as=standard_page_save_as or '{}.html'.format(standard_page))
+            for standard_page in self.context["DIRECT_TEMPLATES"]:
+                standard_page_url = self.context.get(
+                    "{}_URL".format(standard_page.upper())
+                )
+                standard_page_save_as = self.context.get(
+                    "{}_SAVE_AS".format(standard_page.upper())
+                )
+                fake = FakePage(
+                    status="published",
+                    date=self.now,
+                    url=standard_page_url or "{}.html".format(standard_page),
+                    save_as=standard_page_save_as
+                    or "{}.html".format(standard_page),
+                )
                 self.write_url(fake, fd)
 
             # add template pages
             # We use items for Py3k compat. .iteritems() otherwise
-            for path, template_page_url in self.context['TEMPLATE_PAGES'].items():
+            for path, template_page_url in self.context[
+                "TEMPLATE_PAGES"
+            ].items():
 
                 # don't add duplicate entry for index page
-                if template_page_url == 'index.html':
+                if template_page_url == "index.html":
                     continue
 
-                fake = FakePage(status='published',
-                                date=self.now,
-                                url=template_page_url,
-                                save_as=template_page_url)
+                fake = FakePage(
+                    status="published",
+                    date=self.now,
+                    url=template_page_url,
+                    save_as=template_page_url,
+                )
                 self.write_url(fake, fd)
 
             for page in pages:
                 self.write_url(page, fd)
 
-            if self.format == 'xml':
+            if self.format == "xml":
                 fd.write(XML_FOOTER)
 
 
