@@ -3,7 +3,7 @@ slug: about
 
 I have studied in the [Superior Technical Institute of Lisbon](https://tecnico.ulisboa.pt/en/), in the [Beijing Institute of Technology](http://english.bit.edu.cn/), and in the [Technical University of Denmark](https://www.dtu.dk/english). 
 
-Currently, I'm a consultant/hacker at [BCG Platinion](https://bcgplatinion.com/nordics/), where I help leading businesses solve problems in the areas of IT, Data, Machine Leaning and Cyber Security. 
+Currently, I'm a consultant/hacker at [BCG Platinion](https://bcgplatinion.com/nordics/), where I help leading businesses solve problems in the areas of IT, Data, Machine Learning and Cyber Security. 
 
 In the past, I've worked for [Jabra](https://jabra.com), the [WYGroup](https://www.wygroup.net/), [Bliss Applications](https://www.blissapplications.com/), and [OnLiquid](https://onliquid.com/). 
 

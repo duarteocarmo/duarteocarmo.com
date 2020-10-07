@@ -37,7 +37,7 @@ But that's just a tip of a large iceberg. And a bit shallow on my behalf.
 
 Let's take some real conclusions:
 
-* **Coronavirus response is unstable:** Coronavirus moves extremely fast, what was true for Portugal a month ago (cases rising) my not be true a month after. And what was true for Spain a month ago can also start changing very quickly. 
+* **Coronavirus response is unstable:** Coronavirus moves extremely fast, what was true for Portugal a month ago (cases rising) might not be true a month after. And what was true for Spain a month ago can also start changing very quickly. 
 * **Policy is hard:**  Policy making, especially in such times, is no small task. I love that Denmark can swiftly propose a legislation that is transparent and measurable. 
 * **Metrics should be regularly updated:** Having chosen a specific metric to define travel restrictions, we should make sure to update it regularly. As far as I know, the [original list](https://www.ssi.dk/-/media/arkiv/dk/aktuelt/sygdomsudbrud/covid19/covid-19-rejsekriterier/16_07_2020_tors/tabel_11_1.pdf?la=da) only updates every 2 weeks. But as we have seen here, a lot of things can change in 2 weeks. 
 
