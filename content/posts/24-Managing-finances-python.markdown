@@ -8,7 +8,7 @@ thumbnail: images/fava.png
 You can ready the whole story, or just jump to my [current setup.](#so-how-do-i-manage-my-finances-now) 
 
 <center>
-<img src="{static}/images/fava.png" alt="Fava example" style="max-width: 100%; margin-bottom: -2em">
+<img src="{static}/images/fava.png" alt="Fava example" style="max-width: 100%; margin-bottom: -1em">
 <figcaption><a href='https://beancount.github.io/fava/' target='_blank'>Fava</a>, one of the tools I use for keeping my books</figcaption>
 </center>
 
