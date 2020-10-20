@@ -55,9 +55,7 @@ At the end of the month, I like to be able to look back and see how much I have 
 ### The central piece: [Beancount](https://beancount.github.io/docs/)
 
 The whole overview of my finances, uses beancount. I’m not going to go deep on how awesome beancount is, or the whole feature set that it offers. (for that you can start with the incredible [documentation](https://beancount.github.io/docs/))
-
-It basically takes a “beacount file” and allows you to generate several reports / consistency checks/ queries on that same file. 
-
+It basically takes a “beacount file” and allows you to generate several reports / consistency checks/ queries on that same file.  
 Here’s an example of a beancount file:
 
 ```
@@ -110,4 +108,4 @@ And that’s the beauty of not using Excel. I’m now using something I can hack
 *Thanks to [Martin Blais](https://github.com/blais) for creating beancount and for actively maintaining and documenting such an awesome tool.*
 
 
-**Update:** This post has been featured in the awsome [plain text accouting website.](https://plaintextaccounting.org/#articles-blog-posts)
+**Update:** This post has been featured in the awesome <a href="https://plaintextaccounting.org/#articles-blog-posts" target="_blank">plain text accounting blog</a>.
