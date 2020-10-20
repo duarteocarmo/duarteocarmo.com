@@ -108,3 +108,6 @@ And that’s the beauty of not using Excel. I’m now using something I can hack
 
 
 *Thanks to [Martin Blais](https://github.com/blais) for creating beancount and for actively maintaining and documenting such an awesome tool.*
+
+
+**Update:** This post has been featured in the awsome [plain text accouting website.](https://plaintextaccounting.org/#articles-blog-posts)
