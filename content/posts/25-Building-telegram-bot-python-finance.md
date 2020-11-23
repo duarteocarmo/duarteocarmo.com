@@ -1,24 +1,23 @@
-title: Building a Telegram bot to track investments
-date: 22-11-2020 
-description: Building a telegram bot to helpo you track your portfolio performance.
-status: Draft
+title: Building a Telegram bot in Python to track your portfolio
+date: 23-11-2020 
+description: Building a telegram bot using Python to track your investment portfolio
 
 
-In the past months, I’ve been spending a lot of time researching about investing: building your portfolio, back testing it, tracking your performance and acting accordingly are all things that currently interest me. One of these endeavors (and my stubbornness of building my own tools) has led me to create a telegram bot, here’s a small write up in hope you’ll find it interesting. 
+_In the past months, I’ve been spending a lot of time researching about investing: building your portfolio, backtesting it, tracking its performance, and acting accordingly. One of these endeavors (and my stubbornness to build my own tools) has led me to create a telegram bot, here’s a small write up in hope you'll build your own._
 
 ## A Telegram Bot? Have you heard of Yahoo Finance?
 
-Yes, I have actually heard about and used [https://finance.yahoo.com/](https://finance.yahoo.com/) to track my portfolio, but there are a couple of reasons why I think it doesn't quite cut it. 
+Yes, I have actually heard about and used [Yahoo Finance](https://finance.yahoo.com/) to track my portfolio, but there are a couple of reasons why I think it doesn't quite cut it:
 
-- **<u>Notification systems</u>**: When you set up an app such as [Yahoo Finance](https://apps.apple.com/us/app/yahoo-finance/id328412701) with your Portfolio, you can either create a widget that you visit every so often, or you can also set up a system to alert you about a particular set of stocks. I consider myself a passive investor, and will not check my performance every day, or even every week. I want a system that adapts to my "passive needs". Every so often let me know the worth of my portfolio. That's it. I feel that creating a bot will give me the flexibility of controlling the flow of information. 
+- **<u>Notification systems</u>**: When you set up an app such as [Yahoo Finance](https://apps.apple.com/us/app/yahoo-finance/id328412701) with your Portfolio, you can either create a widget that you visit every so often, or you can set up a system to alert you about a particular set of stocks. I consider myself a passive investor, and will not check my performance every day, or even every week. I want a system that adapts to my "passive needs". Every so often let me know the worth of my portfolio. That's it. 
 - **<u>Accuracy</u>**: Before researching more on the topic I thought investment instruments (i.e., stocks or funds) were pretty standardized across apps and markets. Well, I was clearly wrong. Most financial data is a bit messy. Some apps can't show your particular funds, some do, but reference other exchanges. The whole thing is a bit of a mess. So by building something I control, I can make sure I am getting the right information from the right sources, at the right time. (Particularly being an [European investor](https://indexfundinvestor.eu/) - where information is even more scarce)
-- **<u>Customization</u>**: I don't want to simply track the value of my portfolio, I also want to control how it has evolved according to my expectations. And why stop there? There is a very specific set of information I want to keep track of. Let's say tomorrow I want to know a particular information regularly about a recent IPO. Building my own system allows me to customize it exactly to my present AND future needs. 
+- **<u>Customization</u>**: I don't want to simply track the value of my portfolio, I also want to control how it has evolved according to my expectations. And why stop there? There is a very specific set of items I want to keep track of. Let's say tomorrow I want to know a particular piece of information about a recent IPO. Building my own system allows me to customize it exactly to both my present AND my future needs. 
 
 Given these constraints (and my stubbornness to build my own tools), I decided I needed some sort of "programmable" notification system. Having heard a bit about telegram/discord bots, and being a subscriber to a couple of telegram channels myself, I decided to give [Telegram](https://telegram.org/) a shot. 
 
 ## Building a basic bot
 
-When I decided to build a Telegram bot, I can't say I was surprised to see a great Python wrapper written exactly for this purpose: [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot). Can't tell you how easy it was to set everything up using their extensive [Wiki](https://github.com/python-telegram-bot/python-telegram-bot/wiki). 
+I can't say I was surprised to see a great Python wrapper written exactly for this purpose: [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot). Can't tell you how easy it was to set everything up using their extensive [Wiki](https://github.com/python-telegram-bot/python-telegram-bot/wiki). 
 
 Let me walk you a bit through the process. You start by installing the library:
 
@@ -29,6 +28,7 @@ $ pip3 install python-telegram-bot
 Once that's up an running, I created a simple "shell" bot that responds whenever you send the message `/start`, let's call it `bot.py`:
 
 ```python
+# bot.py
 from telegram.ext import (
     Updater,
     CommandHandler,
@@ -64,6 +64,7 @@ If you now navigate back to your terminal and simply run this script by doing `p
 But we want to get a little more fancy, ideally, as an example, let's say that we want our bot to inform us on our portfolio worth. We create a `portfolio.py` file:
 
 ```python
+# portfolio.py
 import yfinance as yf # pip install yfinance
 
 # you bought 2 stocks of Microsoft
@@ -83,7 +84,7 @@ def get_current_value():
     return f"Your current gains on {STOCK_NAME}: {gain:.2f}"
 ```
 
-The above function, `get_current_value` will inform on how much your Microsoft stock is worth at any point in time, since you purchased it. 
+The above function, `get_current_value` will inform on how much your Microsoft stock is worth at any point in time, from when you purchased it. 
 
 ## Integrating financial updates with our Telegram bot
 
@@ -95,7 +96,7 @@ To do so, we create two functions:
 - `set_update`: a function that makes our bot run our alarm once a week (to decrease our stress level)
 
 ```python
-... the rest of your bot.py file
+# ... the rest of your bot.py file
 
 def alarm(context): # FIRST IMPORTANT ADDITION
     job = context.job # get context
@@ -127,7 +128,7 @@ After this, every time you send your bot the message `/set_update`, it will sche
 
 ## Adding a bit of security and deploying
 
-We don't want the whole world to access our bot, or our financial updates, therefore, it's smart to limit your bot to respond only to yourself (or your telegram username). And easy way to do so is to add an `if` statement to your `set_update` function like so:
+We don't want the whole world to access our bot (or our financial updates), so, it's smart to limit your bot to respond only to yourself (or your telegram username). And easy way to do so is to add an `if` statement to your `set_update` function like so:
 
 ```python
 def set_update(update: Update, context: CallbackContext):
@@ -143,39 +144,20 @@ def set_update(update: Update, context: CallbackContext):
         )
 ```
 
-This ensures your bot only gives financial updates to YOU, which is pretty important :) 
+This ensures your bot only gives financial updates to YOU, which is pretty important.. 
 
-For deployment, you only need somewhere to run a python script for an indefinite amount of time. I chose to use one of my Virtual Private Servers and run the script in a [tmux](https://en.wikipedia.org/wiki/Tmux) session. But there are also some [good alternatives in the docs](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Where-to-host-Telegram-Bots), if you are interested!
+For deployment, you only need to leave your `bot.py` script running somwhere. I chose to use one of my Virtual Private Servers and run the script in a [tmux](https://en.wikipedia.org/wiki/Tmux) session. But there are also some [good alternatives in the docs](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Where-to-host-Telegram-Bots) if you re interested!
 
 ## Closing thoughts
 
-This was a very simple example of how you can get something up and running really quickly. But some things differ from the setup that I have actually in place (and the one you'll probably build):
+This was a very simple example of how you can get your bot up and running really quickly. But some things differ from the setup that I have actually in place (and the one you'll probably build):
 
-- Here we used the `yfinance` data to track performance, but you can use WHATEVER you want. As an example, my bot is running some scrappers on stock exchanges related to my portfolio
+- Here we used the `yfinance` data to track performance, but you can use WHATEVER you want. As an example, my bot is running some scrappers on stock exchanges related to my portfolio (and not available through the library)
 - You can also add forward looking KPIs and information (what was the best performant stock of the ones you're watching?)
-- Add some alerts about news using a library like [Newspaper3k](https://newspaper.readthedocs.io/en/latest/)
+- Add some alerts about news using a library like [Newspaper3k](https://newspaper.readthedocs.io/en/latest/)! To make everything even more dynamic :) 
 
-This is why hacking on your own tools is more rewarding than just using an off the shelf app: Yes, it takes time, and yes, it can seem less "fancy". But you learn while doing it, and can build it to become YOUR tool, not A tool. 
+This is why hacking on your own tools is more rewarding than just using an off the shelf app: Yes, it takes time, and yes, it can seem a lot less "fancy". But you learn a lot while doing it, and more importantly: you build it to become YOUR tool, not A tool. 
 
+<br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+_Thanks for reading! If you like this post, consider [reaching out](mailto:me@duarteocarmo.com)! I'm thinking of starting a newsletter, and I'm interested in knowing if you would potentially sign up!_
