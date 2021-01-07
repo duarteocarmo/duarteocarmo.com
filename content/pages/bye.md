@@ -1,7 +1,6 @@
 title: Sorry to see you go..
 slug: bye
 
-Sorry to see you go!
+It's alright. No heart feelings. 
 
-Would love to know more about why you unsubscribed, if you feel like giving me some feedback, [email me](mailto:me@duarteocarmo.com)!
-
+However, I would love to know more about why you unsubscribed, if you feel like giving me some feedback, [email me](mailto:me@duarteocarmo.com)!
