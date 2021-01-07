@@ -177,6 +177,23 @@ h4 {
     text-decoration: none;
 }
 
+.form-button {
+    color: var(--primary);
+}
+
+.form-button:hover {
+    color: var(--background);
+}
+
+.form-input {
+    padding: 0.5em 1em;
+}
+
+.newsletter-form {
+    margin: 0em !important; 
+}
+
+
 @media (prefers-color-scheme: dark) {
     :root {
         --primary: var(--color-dark-primary);
@@ -194,5 +211,8 @@ h4 {
         max-width: 40ch;
         margin: 0.5em auto;
         padding: 0 0.5em;
+    }
+    .form-button {
+        margin-left: 0em;
     }
 }
