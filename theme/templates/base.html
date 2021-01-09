@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    <head>
         <title>{% block title %}{% endblock %}</title>
         {% include "header.html" %}
-</head>
+        <style type="text/css">
+        {% include "css/g_fonts.css" %}
+        </style>
+        <style type="text/css">
+        {% include "css/normalize.css" %}
+        </style>
+        <style type="text/css">
+        {% include "css/style.css" %}
+        </style>
+    </head>
 
-<body>
+    <body>
         <header>
             <p id="website-title"><a id="title-main" href="{{ SITEURL }}/">{{ SITENAME }}</a></p>
-                <a href="{{ SITEURL  }}/about">About</a> - 
-                <a href="{{ SITEURL }}/blog">Blog</a> - 
-                <a href="{{ SITEURL  }}/consulting">Consulting</a> - 
-                <a href="{{ SITEURL }}/cv.pdf" data-goatcounter-click="resume-clicks" data-goatcounter-title="CV from Home" id="myElement">Resume</a> - 
-                <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">RSS</a>
+            <a href="{{ SITEURL  }}/about">About</a> - 
+            <a href="{{ SITEURL }}/blog">Blog</a> - 
+            <a href="{{ SITEURL  }}/consulting">Consulting</a> - 
+            <a href="{{ SITEURL }}/cv.pdf" data-goatcounter-click="resume-clicks" data-goatcounter-title="CV from Home" id="myElement">Resume</a> - 
+            <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">RSS</a>
 
         </header>
         {% block content %}{% endblock %}
         <footer>
-                {% include "footer.html" %}
+            {% include "footer.html" %}
         </footer>
         {% include "analytics.html" %}
-</body>
+    </body>
 
 </html>
