@@ -9,6 +9,15 @@
 
 <!--<link rel="stylesheet" type="text/css" href="{{ SITEURL  }}/theme/css/normalize.css" />
 <link rel="stylesheet" type="text/css" href="{{ SITEURL  }}/theme/css/style.css" />-->
+<style type="text/css">
+{% include "css/normalize.css" %}
+</style>
+<style type="text/css">
+{% include "css/g_fonts.css" %}
+</style>
+<style type="text/css">
+{% include "css/style.css" %}
+</style>
 <link type="application/atom+xml" rel="alternate" href="{{SITEURL}}/{{FEED_ALL_ATOM }}" title="{{ SITENAME }}" />
 <!--<link rel="shortcut icon" href="{{SITEURL}}/favicon.ico" />-->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌄</text></svg>">
@@ -118,5 +127,7 @@
 
         }
 </script>
+
+
 {% endif %}
 
