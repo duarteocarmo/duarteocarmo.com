@@ -161,6 +161,11 @@ h4 {
     filter: invert(var(--image-filtering));
     max-width: 80%;
 }
+
+.social-logo {
+    max-width: 1.2em;
+    margin : auto auto;
+}
 .button {
     padding: 0.5em 1em;
     text-align: center;
