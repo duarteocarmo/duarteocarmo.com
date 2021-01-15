@@ -5,6 +5,8 @@ thumbnail: images/fava.png
 
 *Currently, my job has taken a lot of my time. But who doesn't have time for side projects? At the end of the day - they keep us sane. So I’ve been currently hacking on a good way of managing my finances - and oh boy I’m having fun.* 
 
+**Update**: [Part 2: Beancount on Beanstalk](/blog/hacking-on-my-finances-part-2-beancount-on-beanstalk.html)
+
 You can ready the whole story, or just jump to my [current setup.](#so-how-do-i-manage-my-finances-now) 
 
 <center>
