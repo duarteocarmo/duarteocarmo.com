@@ -1,6 +1,7 @@
 /* Fonts */
+/*
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
-
+*/
 /* Custom CSS*/
 :root {
     --color-light-primary: #cd2653;
@@ -23,7 +24,7 @@
     --image-filtering: var(--color-light-filtering);
     --code-color: var(--color-light-code);
     --code-background: var(--color-light-code-background);
-    --base-font: 'Merriweather', serif;
+    --base-font: 'merriweather', serif;
     --code-font: 'Monaco', 'Consolas', monospace;
 }
 
@@ -110,7 +111,7 @@ img {
 }
 
 label {
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 #website-title {
@@ -159,6 +160,11 @@ h4 {
 .logo {
     filter: invert(var(--image-filtering));
     max-width: 80%;
+}
+
+.social-logo {
+    max-width: 1.2em;
+    margin : auto auto;
 }
 .button {
     padding: 0.5em 1em;
