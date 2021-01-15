@@ -36,6 +36,7 @@ And a simplified view of the architecture (using [excalidraw](https://excalidraw
 ## Step 1: Using Docker to containerize the application
 
 For the deployment, I'm using two Docker containers: 
+
 - A [containerized version of the Fava web interface](https://hub.docker.com/r/yegle/fava/) that takes a `beancount` file as input and exposes the web interface
 - A [docker image](https://github.com/beevelop/docker-nginx-basic-auth) that provides an NGINX proxy with user-password authentication
 
