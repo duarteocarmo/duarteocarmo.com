@@ -1,6 +1,8 @@
 {% if GOOGLE_ANALYTICS %}
+<!-- GoatCounter -->
 <script rel="preload" data-goatcounter="https://duarteocarmo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GK9BEFGF21"></script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
