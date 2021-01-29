@@ -1,7 +1,6 @@
 <br>
-{% if article %}
-<p style="margin-bottom:0.5em;">Enjoyed the article? Get updates in your inbox. I don't spam.</p>
-{% endif %}
+<hr>
+<p style="margin-bottom:0.5em;">Get an email when I publish new posts. No spam. Ever.</p>
 <form
          action="https://buttondown.email/api/emails/embed-subscribe/duarteocarmo"
          method="post"
@@ -11,9 +10,6 @@
          >
          <input class="form-input" type="email" name="email" id="bd-email" placeholder="Email" required="required" aria-label="nwesletter-email"/>
          <input type="hidden" value="1" name="embed" />
-         {% if article %}
-         <input class="button form-button" type="submit" value="Subscribe" />
-         {% else %}
-         <input class="button form-button" type="submit" value="Subscribe to my newsletter" />
-         {% endif %}
+         <br>
+         <input class="button form-button" style="margin-left:0" type="submit" value="Let's go 🚀" />
 </form>
