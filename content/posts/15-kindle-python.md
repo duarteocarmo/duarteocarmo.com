@@ -3,6 +3,8 @@ date: 25-02-2020
 
 **tl;dr:** *use [this script](#code) to build a [GitHub Repo like this one](https://github.com/duarteocarmo/my-personal-zen) where you store all the highlights from your kindle books in an organized way.*
 
+**⚠️ Update:** Want to receive your kindle highlights as a newsletter? Well, I [built something your will probably like!](https://kindle-highlights.email/)
+
 ## Kindle sucks, kindle is great
 
 We all love reading in our Kindle. You can travel with more than one book at the time, you can search for words you don't understand, you have access to millions of books you can't find in your local library.. It's great!
