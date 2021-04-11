@@ -82,7 +82,7 @@ async def sign_up(
 
 Databases are a pain. I can't even begin to tell you how much I hate database migrations. Yes, I understand transforming python to SQL code can be insanely hard. But I mean, I just want to store something. So how hard can this possibly be? The premise was set: I was not going to use something like [SQLAlchemy](https://www.sqlalchemy.org/), even though FastAPI [recommends it](https://fastapi.tiangolo.com/tutorial/sql-databases/). 
 
-So I thought of storing everything in a [SQLite}(https://www.sqlite.org/index.html) database - that sounded like a good idea at first. But I also don't want to store a database file in the middle of my source code. I know, I know, I have serious issues. 
+So I thought of storing everything in a [SQLite](https://www.sqlite.org/index.html) database - that sounded like a good idea at first. But I also don't want to store a database file in the middle of my source code. I know, I know, I have serious issues. 
 
 One thing that came to mind was [mongoDB](https://www.mongodb.com/) - a documented oriented database is pretty simple to get up and running. But I have moved to the dark side, I must admit. And have been putting everything in AWS whenever I can. So what does AWS offer as a mongo clone? Let me introduce you to [DynamoDB](https://aws.amazon.com/dynamodb/)!
 
