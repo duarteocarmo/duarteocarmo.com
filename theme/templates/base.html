@@ -4,18 +4,18 @@
     <head>
         <title>{% block title %}{% endblock %}</title>
 
-            {% include "header.html" %}
+        {% include "header.html" %}
     </head>
 
     <body>
-        <header>
-            <p id="website-title"><a id="title-main" href="{{ SITEURL }}/">{{ SITENAME }}</a></p>
-            <a href="{{ SITEURL  }}/about">About</a> - 
-            <a href="{{ SITEURL }}/blog">Blog</a> - 
-            <a href="{{ SITEURL  }}/consulting">Consulting</a> - 
-            <a href="{{ SITEURL }}/cv.pdf" data-goatcounter-click="resume-clicks" data-goatcounter-title="CV from Home" id="myElement">Resume</a> - 
-            <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">RSS</a>
-
+        <header class="nu">
+            <h1 style="line-height:1.6;font-size:1rem;margin:0 0 0.25em 0;"><a style="text-decoration: none; color: #111"href="{{SITEURL}}/">{{SITENAME }}</a></h1>
+            <ul style="list-style:none;padding:0;margin:0;">
+                <li><a href="{{ SITEURL }}/about">About{% if output_file == 'about.html' %}⇠{% endif %}</a></li>
+                <li><a href="{{ SITEURL }}/consulting">Consulting{% if output_file == 'consulting.html' %}⇠{% endif %}</a></li>
+                <li><a href="{{ SITEURL }}/cv.pdf" data-goatcounter-click="resume-clicks" data-goatcounter-title="CV from Home" id="myElement">Resume</a></li>
+                <li><a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">RSS</a></li>
+            </ul>
         </header>
         {% block content %}{% endblock %}
         <footer>
