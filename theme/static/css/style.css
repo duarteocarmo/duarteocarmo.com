@@ -1,17 +1,17 @@
 /* Custom CSS*/
 :root {
     --color-light-primary: #111;
-    --color-light-secondary: hsl(222, 30%, 16%);
+    --color-light-secondary: #111;
     --color-light-background: #fff;
-    --color-light-code: hsl(39, 100%, 95%);
+    --color-light-code: #fff;
     --color-light-code-background:#fff;
     --color-light-filtering: 0%;
 
-    --color-dark-primary: #f5ab35;
-    --color-dark-secondary: #e4e4e4;
-    --color-dark-background: #444;
-    --color-dark-code: #e4e4e4;
-    --color-dark-code-background: #333;
+    --color-dark-primary: #fff;
+    --color-dark-secondary: #fff;
+    --color-dark-background: #111;
+    --color-dark-code: #111;
+    --color-dark-code-background: #111;
     --color-dark-filtering: 100%;
 
     --primary: var(--color-light-primary);
@@ -28,9 +28,6 @@
 }
 
 
-
-/* Custom css */
-
 body {
     color: var(--secondary);
     background-color: var(--background);
@@ -44,12 +41,12 @@ body {
 }
 
 a {
-    color:#000;
+    color: var(--secondary);
     text-decoration-skip-ink:auto;
     text-decoration:underline
 }
 a:visited {
-    color:#333
+    color: var(--secondary);
 }
 
 header {
@@ -79,7 +76,7 @@ header {
 
 .article-list time {
     padding-right: .25em;
-    color: #333;
+    color: var(--secondary);
     font-variant-numeric: tabular-nums;
     letter-spacing: -.012em;
     white-space: pre;
@@ -103,3 +100,15 @@ header {
 .nu a:hover  {
     text-decoration: underline;
 }
+/**
+@media (prefers-color-scheme: dark) {
+:root {
+--primary: var(--color-dark-primary);
+--secondary: var(--color-dark-secondary);
+--background: var(--color-dark-background);
+--image-filtering: var(--color-dark-filtering);
+--code-color: var(--color-dark-code);
+--code-background: var(--color-dark-code-background);
+}
+}
+ **/
