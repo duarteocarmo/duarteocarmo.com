@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import pelican
 
 AUTHOR = "Duarte O.Carmo"
-SITENAME = "duarte o.carmo"
+SITENAME = "Duarte O.Carmo"
 SITEURL = ""
 SITE_DESCRIPTION = (
     "My personal website. Here, you can read my blog posts, and learn about my"
