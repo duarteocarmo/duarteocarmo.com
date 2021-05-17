@@ -1,50 +1,51 @@
-/* Custom CSS*/
-:root {
-    --color-light-primary: #111;
-    --color-light-secondary: #111;
-    --color-light-background: #fff;
-    --color-light-code: #fff;
-    --color-light-code-background:#fff;
-    --color-light-filtering: 0%;
+{% include "newsletter.html" %}
+    /* Custom CSS*/
+    :root {
+        --color-light-primary: #111;
+        --color-light-secondary: #111;
+        --color-light-background: #fff;
+        --color-light-code: #fff;
+        --color-light-code-background:#fff;
+        --color-light-filtering: 0%;
 
-    --color-dark-primary: #fff;
-    --color-dark-secondary: #fff;
-    --color-dark-background: #111;
-    --color-dark-code: #111;
-    --color-dark-code-background: #111;
-    --color-dark-filtering: 100%;
+        --color-dark-primary: #fff;
+        --color-dark-secondary: #fff;
+        --color-dark-background: #111;
+        --color-dark-code: #111;
+        --color-dark-code-background: #111;
+        --color-dark-filtering: 100%;
 
-    --primary: var(--color-light-primary);
-    --secondary: var(--color-light-secondary);
-    --background: var(--color-light-background);
-    --image-filtering: var(--color-light-filtering);
-    --code-color: var(--color-light-code);
-    --code-background: var(--color-light-code-background);
-    --base-font: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
-    helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
-    sans-serif;
-    --code-font: an Francisco Mono, Monaco, "Consolas", "Lucida Console",
-    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
-}
+        --primary: var(--color-light-primary);
+        --secondary: var(--color-light-secondary);
+        --background: var(--color-light-background);
+        --image-filtering: var(--color-light-filtering);
+        --code-color: var(--color-light-code);
+        --code-background: var(--color-light-code-background);
+        --base-font: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+        helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
+        sans-serif;
+        --code-font: an Francisco Mono, Monaco, "Consolas", "Lucida Console",
+        "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+    }
 
 
-body {
-    color: var(--secondary);
-    background-color: var(--background);
-    font-family: var(--base-font);
-    margin: 1em auto;
-    padding: 0 1em;
-    max-width: 70ch;
-    --font-size: 1rem;
-    font-size: var(--font-size);
-    line-height: 1.6;
-}
+    body {
+        color: var(--secondary);
+        background-color: var(--background);
+        font-family: var(--base-font);
+        margin: 1em auto;
+        padding: 0 1em;
+        max-width: 70ch;
+        --font-size: 1rem;
+        font-size: var(--font-size);
+        line-height: 1.6;
+    }
 
-a {
-    color: var(--secondary);
-    text-decoration-skip-ink:auto;
-    text-decoration:underline
-}
+    a {
+        color: var(--secondary);
+        text-decoration-skip-ink:auto;
+        text-decoration:underline
+    }
 a:visited {
     color: var(--secondary);
 }
@@ -59,6 +60,11 @@ header {
     padding-left: 20px;
     padding-right: 20px;
     margin-left: auto;
+}
+
+footer {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .content {

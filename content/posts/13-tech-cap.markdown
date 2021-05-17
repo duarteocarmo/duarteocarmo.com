@@ -1,4 +1,4 @@
-title: My first research paper 🔬
+title: My first research paper 
 date:   2019-11-28 08:00:00 +0000
 
 After a lot of work, it finally got published!

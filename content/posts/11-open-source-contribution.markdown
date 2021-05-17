@@ -1,4 +1,4 @@
-title: Contributing to JupyterLab 🧪
+title: Contributing to JupyterLab 
 date: 2019-06-08
 
 *For a long time, I've been a lover of python. The language, the ecosystem, the projects, the conferences, and pretty much everything around it. However, the deeper I get into the ecosystem, the more I'm aware of the enourmous amount of open source infrastructure that feeds it. One of the things I aways wanted to do, was to contribute to an open source project.*
