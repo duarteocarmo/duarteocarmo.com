@@ -1,77 +1,84 @@
-{% include "newsletter.html" %}
-    /* Custom CSS*/
-    :root {
-        --color-light-primary: #111;
-        --color-light-secondary: #111;
-        --color-light-background: #fff;
-        --color-light-code: #fff;
-        --color-light-code-background:#fff;
-        --color-light-filtering: 0%;
+/* Custom CSS*/
+:root {
+    --color-light-primary: #111;
+    --color-light-secondary: #111;
+    --color-light-background: #fff;
+    --color-light-code: #fff;
+    --color-light-code-background:#fff;
+    --color-light-filtering: 0%;
 
-        --color-dark-primary: #fff;
-        --color-dark-secondary: #fff;
-        --color-dark-background: #111;
-        --color-dark-code: #111;
-        --color-dark-code-background: #111;
-        --color-dark-filtering: 100%;
+    --color-dark-primary: #fff;
+    --color-dark-secondary: #fff;
+    --color-dark-background: #111;
+    --color-dark-code: #111;
+    --color-dark-code-background: #111;
+    --color-dark-filtering: 100%;
 
-        --primary: var(--color-light-primary);
-        --secondary: var(--color-light-secondary);
-        --background: var(--color-light-background);
-        --image-filtering: var(--color-light-filtering);
-        --code-color: var(--color-light-code);
-        --code-background: var(--color-light-code-background);
-        --base-font: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
-        helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
-        sans-serif;
-        --code-font: an Francisco Mono, Monaco, "Consolas", "Lucida Console",
-        "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
-    }
-
-
-    body {
-        color: var(--secondary);
-        background-color: var(--background);
-        font-family: var(--base-font);
-        margin: 1em auto;
-        padding: 0 1em;
-        max-width: 70ch;
-        --font-size: 1rem;
-        font-size: var(--font-size);
-        line-height: 1.6;
-    }
-
-    a {
-        color: var(--secondary);
-        text-decoration-skip-ink:auto;
-        text-decoration:underline
-    }
-a:visited {
-    color: var(--secondary);
+    --primary: var(--color-light-primary);
+    --secondary: var(--color-light-secondary);
+    --background: var(--color-light-background);
+    --image-filtering: var(--color-light-filtering);
+    --code-color: var(--color-light-code);
+    --code-background: var(--color-light-code-background);
+    --base-font: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+    helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
+    sans-serif;
+    --code-font: an Francisco Mono, Monaco, "Consolas", "Lucida Console",
+    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
 }
 
-header {
-    position: absolute;
-    top: 40px;
-    right: 50%;
-    margin-right: 340px !important;
-    letter-spacing: -.009em;
+body {
+    color: var(--secondary);
+    background-color: var(--background);
+    font-family: var(--base-font);
+    margin: 0 auto;
+    --font-size: 1rem;
+    font-size: var(--font-size);
+    line-height: 1.6;
+    padding-top: 20px;
+}
+
+.container {
     max-width: 640px;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: auto;
+    margin-right: auto;
 }
 
-footer {
-    padding-left: 20px;
-    padding-right: 20px;
+.no-top {
+    margin-top:0;
+    line-height: 1.25;
 }
 
-.content {
-    margin-top: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
+.vertical-spacing {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
+
+header {
+    letter-spacing: -.009em;
+}
+
+
+@media screen and (min-width:1024px) {
+    header {
+        position: absolute;
+        top: 40px;
+        right: 50%;
+        margin-right: 340px !important;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    header {
+        padding-bottom: 20px;
+    }
+    .separator {
+        border-top: 1px dashed black;
+    }
+}
+
 
 .article-list {
     display: grid;
@@ -98,6 +105,19 @@ footer {
     font-weight: 500;
     letter-spacing: -.015em;
 }
+footer {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+a {
+    color: var(--secondary);
+    text-decoration-skip-ink:auto;
+    text-decoration:underline
+}
+a:visited {
+    color: var(--secondary);
+}
 
 .nu a {
     text-decoration: none;
@@ -105,6 +125,15 @@ footer {
 
 .nu a:hover  {
     text-decoration: underline;
+}
+
+.footer {
+    margin-top: 30px;
+    font-weight: lighter;
+}
+
+.logo {
+    max-width: inherit;
 }
 /**
 @media (prefers-color-scheme: dark) {
