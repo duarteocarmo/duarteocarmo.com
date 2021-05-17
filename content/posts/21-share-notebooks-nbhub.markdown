@@ -1,4 +1,4 @@
-title: NbHub: Share your jupyter notebooks with the world 💫
+title: NbHub: Share your jupyter notebooks with the world 
 date: 22-06-2020 
 description: A hacked command line tool that allows you to share jupyter notebooks with the world. 
 
