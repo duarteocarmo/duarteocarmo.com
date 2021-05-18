@@ -61,24 +61,6 @@ header {
 }
 
 
-@media screen and (min-width:1024px) {
-    header {
-        position: absolute;
-        top: 40px;
-        right: 50%;
-        margin-right: 340px !important;
-    }
-}
-
-@media screen and (max-width:1024px) {
-    header {
-        padding-bottom: 20px;
-    }
-    .separator {
-        border-top: 1px dashed black;
-    }
-}
-
 
 .article-list {
     display: grid;
@@ -135,6 +117,49 @@ a:visited {
 .logo {
     max-width: inherit;
 }
+
+
+@media screen and (min-width:1024px) {
+    header {
+        position: absolute;
+        top: 40px;
+        right: 50%;
+        margin-right: 340px !important;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    header {
+        padding-bottom: 20px;
+    }
+    .separator {
+        border-top: 1px solid black;
+    }
+}
+
+@media screen and (max-width:640px) {
+    header {
+        padding-bottom: 20px;
+    }
+
+    .article-list {
+        display: grid; 
+        grid-template-columns: 1fr;
+        grid-row-gap: 0px;
+    }
+
+    .article-list time {
+        padding-bottom: 20px;
+    }
+    .nu a {
+        text-decoration: underline;
+    }
+
+    .nu a:hover  {
+        text-decoration: underline;
+    }
+}
+
 /**
 @media (prefers-color-scheme: dark) {
 :root {
