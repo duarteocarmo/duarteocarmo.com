@@ -9,6 +9,9 @@
 
 <link rel="stylesheet" type="text/css" href="{{ SITEURL  }}/theme/css/style.css" />
 
+{% if article %}
+<link rel="stylesheet" type="text/css" href="{{ SITEURL  }}/theme/css/code_light.css" />
+{% endif %}
 
 <link type="application/atom+xml" rel="alternate" href="{{SITEURL}}/{{FEED_ALL_ATOM }}" title="{{ SITENAME }}" />
 <!--<link rel="shortcut icon" href="{{SITEURL}}/favicon.ico" />-->
