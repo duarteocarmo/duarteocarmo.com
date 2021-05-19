@@ -70,7 +70,7 @@ TWITTER_HANDLE = "duarteocarmo"
 
 # MARKDOWN
 MARKDOWN = {
-    "extensions": ["markdown.extensions.toc", "markdown.extensions.fenced_code",]
+    "extensions": ["markdown.extensions.toc", "markdown.extensions.fenced_code", "markdown.extensions.codehilite"]
 }
 
 # PLUGINS
