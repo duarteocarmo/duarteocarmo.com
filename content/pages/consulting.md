@@ -3,55 +3,20 @@ slug: consulting
 
 I love helping people solve challenging problems. 
 
-## Data Science and software
+## Data Science and Machine Learning
 
-I have contributed to popular open source projects such as [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/#) and [PaperMill](https://papermill.readthedocs.io/en/latest/#). I often [blog about it](https://duarteocarmo.com/) too. I have developped projects in datascience for [the European Union](https://thesis.duarteocarmo.com/) that resulted in a [published paper](https://www.sciencedirect.com/science/article/pii/S004016251930006X#!).
+I have contributed to popular open source projects such as [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/#) and [PaperMill](https://papermill.readthedocs.io/en/latest/#). I often [blog about it](https://duarteocarmo.com/) too. I have developed projects in data and network science for [the European Union](https://thesis.duarteocarmo.com/) that resulted in a [published paper](https://www.sciencedirect.com/science/article/pii/S004016251930006X#!). At Jabra, I got to create a new AI based venture, focused on machine learning applied to audio. I'm proficient in Python, and the whole data science stack, as well as web development, and machine learning pipelines. A good portion of my (public) work can be browsed in [GitHub](https://github.com/duarteocarmo). 
 
-<details markdown="1">
-<summary>Learn More</summary>
-<ul>
-<li>Data mining and processing</li>
-<li>Data analysis</li>
-<li>Data visualization and dashboard building</li>
-<li>Machine Learning (scikit and TF 2.0)</li>
-<li>Big data mining</li>
-<li>Web scrapping</li>
-</ul>
-<button class="button"><a href="mailto:me@duarteocarmo.com?subject=Enquiry:%20Data%20and%20Software">I'm interested</a></button>
-</details>
+## Business and management consulting
+
+I have worked in technology consulting for one of the [Big Three](https://en.wikipedia.org/wiki/Big_Three_(management_consultancies)) - [BCG](https://bcgplatinion.com/nordics/). I take small initiatives through management ranks, and deliver strong value to clients. I always keep the C-level perspective in anything I do, and put clients first. My experience includes clients in spaces such as Consumer Electronics, Financial Institutions, Digital Marketing shops, among others. I have also created a [crowdsourced deliveries startup](https://www.linkedin.com/company/eguru-delivery-service/), I helped create products for startups in the Boston MA area while working for [Bliss Applications](https://www.blissapplications.com/), and worked for 1.5 years for the Vice President of Strategy at [Jabra](https://jabra.com). 
 
 
-## Business and strategy consulting
+## Product development and management
 
-I created a [crowdsourced deliveries startup](https://www.linkedin.com/company/eguru-delivery-service/), I helped create products for startups in the Boston MA area while working for [Bliss Applications](https://www.blissapplications.com/), and worked for 1.5 years for the Vice President of Strategy at [Jabra](https://jabra.com).
+I have developed a wide range of touchable prototypes for apps and web interfaces while at [Bliss Applications](https://blissapplications.com) and at my own startup. I have worked as a product manager at [Jabra](https://jabra.com) of one of the best selling hardware products the company produces. I have experience in delivering both hardware and software products - and love "getting sh*t done". 
 
-<details markdown="1">
-<summary>Learn More</summary>
-<ul>
-<li>Business plan development</li>
-<li>Minimum viable product definition</li>
-<li>Strategic roadmap for the company and product</li>
-<li>Pitch deck development</li>
-<li>Market research and analysis</li>
-</ul>
-<button class="button"><a href="mailto:me@duarteocarmo.com?subject=Enquiry:%20Business%20and%20Strategy%20Consulting">I'm interested</a></button>
-</details>
+## Contact
 
-
-
-## Product development and technology
-
-I have developped a wide range of touchable prototypes for apps and web interfaces while at [Bliss Applications](https://blissapplications.com) and at my own startup. I have worked as a product manager at [Jabra](https://jabra.com) of one of the best selling hardware products the company produces. 
-
-<details markdown="1">
-<summary>Learn More</summary>
-<ul>
-<li>Wireframming and prototyping of mobile and web interfaces</li>
-<li>Technology stack consulting</li>
-<li>Product development plan</li>
-<li>Robotic automation</li>
-</ul>
-<button class="button"><a href="mailto:me@duarteocarmo.com?subject=Enquiry:%20Product%20Development">I'm interested</a></button>
-</details>
-
+Interested? Let's talk. Email me at: me@duarteocarmo.com
 
