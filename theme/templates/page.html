@@ -1,13 +1,7 @@
 {% extends "base.html" %}
 
-{% block title %}{{ page.title }} | {{ SITENAME }} {% endblock %}
+{% block title %}{{ page.title }} - {{ SITENAME }} {% endblock %}
 
 {% block content %}
-        {% if page.title == "About me"%}
-            <center>
-                <img class="logo" src="{{static}}/images/logo.svg" alt="logo.png">
-            </center>
-        {% endif %}
-        <h1 class="no-top">{{ page.title }}</h1>
         {{ page.content }}
 {% endblock %}

@@ -46,7 +46,7 @@ body {
     margin-right: auto;
 }
 
-.no-top {
+.no-top > :first-child {
     margin-top:0;
     line-height: 1.25;
 }
@@ -59,7 +59,6 @@ body {
 header {
     letter-spacing: -.009em;
 }
-
 
 
 .article-list {
@@ -114,9 +113,6 @@ a:visited {
     font-weight: lighter;
 }
 
-.logo {
-    max-width: inherit;
-}
 
 
 @media screen and (min-width:1024px) {
