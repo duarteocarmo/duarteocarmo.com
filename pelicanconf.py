@@ -75,7 +75,7 @@ MARKDOWN = {
 
 # PLUGINS
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ["sitemap"]
+PLUGINS = ["pelican.plugins.sitemap", "pelican.plugins.simple_footnotes"]
 SITEMAP = {
     "exclude": ["archives.html", "author/", "category/"],
     "format": "xml",
