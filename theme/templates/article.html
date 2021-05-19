@@ -4,7 +4,6 @@
 
 {% block content %}
 <h1>{{ article.title }}</h1>
-<label>{{  article.date | strftime('%d-%m-%Y') }}</label>
-<br>
 {{ article.content }}
+<label>{{  article.date | strftime('%B %-m, %Y') }}</label>
 {% endblock %}

@@ -5,7 +5,7 @@ thumbnail: images/kindle-highlights-cover.png
 status: published
 
 <center>
-<img src="{static}/images/kindle-highlights-cover.png" alt="Digital library" style="max-width:100%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<img src="{static}/images/kindle-highlights-cover.png" alt="Digital library" style="max-width:80%;">
 </center>
 
 My favourite way of learning is by reading extensively about a topic. For this, nothing better then my Kindle. But I have been growing increasingly envious of the large bookshelves of scratched and highlighted books that I see in older generations. 
@@ -16,7 +16,7 @@ But what else can we build to keep us connected to what we read? How can we guar
 
 This is how I did it. 
 
-### Ah shit, another newsletter 
+## Ah shit, another newsletter 
 
 So the solution that I wanted to build had some high-level requirements:
 
@@ -34,7 +34,7 @@ For reference, here's the high-level architecture of what I've built. Don't pani
 <img src="{static}/images/kindle-highlights-architecture.png" alt="Kindle higlights architecture diagram" style="max-width:100%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 </center>
 
-### The backbone: FastAPI
+## The backbone: FastAPI
 
 In the past I have experimented with a lot of different Python based web frameworks (e.g., Django, Flask, Pyramid). But recently, I have been hearing a lot of rage about [FastAPI](https://fastapi.tiangolo.com/). Word on the street is that its super fast, and async out of the box. This sounded pretty exciting, so I decided to give it a shot. (Note: If you are building something serious, do some research first)
 
@@ -78,7 +78,7 @@ async def sign_up(
         return templates.TemplateResponse("success.html", {"request": request})
 ```
 
-### Data layer: So Cloud, much native
+## Data layer: So Cloud, much native
 
 Databases are a pain. I can't even begin to tell you how much I hate database migrations. Yes, I understand transforming python to SQL code can be insanely hard. But I mean, I just want to store something. So how hard can this possibly be? The premise was set: I was not going to use something like [SQLAlchemy](https://www.sqlalchemy.org/), even though FastAPI [recommends it](https://fastapi.tiangolo.com/tutorial/sql-databases/). 
 
@@ -119,7 +119,7 @@ class HighlightModel(Model):
 
 Great you hava a web service, you are storing some data on the Cloud. How do we deploy this? 
 
-### Deployment: Elastic Beanstalk, thank you for existing
+## Deployment: Elastic Beanstalk, thank you for existing
 
 FastAPI [recommends](https://fastapi.tiangolo.com/deployment/docker/) Docker to deploy your applications. To do so, all I needed to do was to create a [Dockerfile](https://github.com/duarteocarmo/kindle-highlights-newsletter/blob/master/Dockerfile) and a [`docker-compose.yml` file](https://github.com/duarteocarmo/kindle-highlights-newsletter/blob/master/docker-compose.yml). Also, by using this image, you supposedly get [automatic performance scalling](https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker) which sounded pretty appealing (for when someone decided to DDoS my website)
 
@@ -131,14 +131,14 @@ One thing to note, is that my application should not only receive some highlight
 
 So where can I run scheduled tasks to send regular emails to my users? Cron? No, we are in the Cloud native era. 
 
-### CI/CD: GitHub - (ab)using GitHub actions
+## CI/CD: GitHub - (ab)using GitHub actions
 
 In the final application, I managed to use GitHub actions for two, pretty critical tasks:
 
 - **To automatically upgrade/update my application**([action file](https://github.com/duarteocarmo/kindle-highlights-newsletter/blob/master/.github/workflows/elastic_beanstalk.yml)): Every time I commit to my repository's master branch, GitHub automatically takes my application, and re-deploys it to Elastic Beanstalk. Taking all of my environment variables and secrets, zipping everything, and deploying 
 - **To automatically send the newsletter to all my users**([action file](https://github.com/duarteocarmo/kindle-highlights-newsletter/blob/master/.github/workflows/send_newsletter.yml)): I created a GitHub action that runs my `send_email.py` ([link](https://github.com/duarteocarmo/kindle-highlights-newsletter/blob/master/send_email.py)) script, every Friday morning. The job is a bit flaky, and doesn't run quite on time. But hey, it runs. 
 
-### Conclusion
+## Conclusion
 
 This took much more time than I expected to build. I gained a renewed respect for all the different newsletter services out there (at least the ones built from scratch). Through building my own newsletter platform I got to discover and learn a bunch of new technologies that will for sure serve me well in the future. 
 
