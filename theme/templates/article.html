@@ -5,5 +5,6 @@
 {% block content %}
 <h1>{{ article.title }}</h1>
 {{ article.content }}
+<br>
 <label>{{  article.date | strftime('%B %-m, %Y') }}</label>
 {% endblock %}
