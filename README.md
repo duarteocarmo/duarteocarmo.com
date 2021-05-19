@@ -7,7 +7,11 @@ Made with [Pelican](https://github.com/getpelican/pelican). Deployed with [Netli
 
 Bare with me, I'm still working on it. 
 
-## TODOs
-- [ ] Confirm redirects from old blog, especially blog entries. 
-- [x] Check sharing debuggers. 
-- [ ] Clean some of this python code. 
+## TODO
+- potential padding in code highlights
+- title wrapping when on mobile
+- date text in end of article
+- check mobile usability
+- check highlights and consider transition script
+- dark mode?
+- spacing in bottom
