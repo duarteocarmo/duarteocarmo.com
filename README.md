@@ -8,8 +8,7 @@ Made with [Pelican](https://github.com/getpelican/pelican). Deployed with [Netli
 Bare with me, I'm still working on it. 
 
 ## TODO
-- date text in end of article
+- shiver article
 - check mobile usability
 - check highlights and consider transition script
 - dark mode?
-- spacing in bottom
