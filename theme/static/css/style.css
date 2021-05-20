@@ -96,6 +96,7 @@ a {
     text-decoration-skip-ink:auto;
     text-decoration:underline
 }
+
 a:visited {
     color: var(--secondary);
 }
@@ -118,7 +119,6 @@ code {
     font-size: 90%;
 }
 
-
 pre code {
     display: block;
     background: none;
@@ -127,8 +127,8 @@ pre code {
     overflow-x: auto;
     max-width: 100%;
     min-width: 100px;
-    padding: 0;
     line-height: 1.5;
+    padding: 10px;
 }
 
 
