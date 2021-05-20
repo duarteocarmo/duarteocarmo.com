@@ -8,7 +8,6 @@ Made with [Pelican](https://github.com/getpelican/pelican). Deployed with [Netli
 Bare with me, I'm still working on it. 
 
 ## TODO
-- title wrapping when on mobile
 - date text in end of article
 - check mobile usability
 - check highlights and consider transition script
