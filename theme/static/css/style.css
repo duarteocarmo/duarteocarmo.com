@@ -128,7 +128,8 @@ pre code {
     max-width: 100%;
     min-width: 100px;
     line-height: 1.5;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 
