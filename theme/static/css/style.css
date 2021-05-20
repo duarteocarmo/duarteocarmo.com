@@ -36,6 +36,7 @@ body {
     font-size: var(--font-size);
     line-height: 1.6;
     padding-top: 20px;
+    text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -150,6 +151,10 @@ footer {
 @media screen and (max-width:640px) {
     header {
         padding-bottom: 20px;
+    }
+
+    .container {
+        width: auto;
     }
 
     .article-list {
