@@ -7,11 +7,11 @@
     --color-light-code-background:#fff;
     --color-light-filtering: 0%;
 
-    --color-dark-primary: #fff;
-    --color-dark-secondary: #fff;
-    --color-dark-background: #111;
-    --color-dark-code: #111;
-    --color-dark-code-background: #111;
+    --color-dark-primary: #eee;
+    --color-dark-secondary: #eee;
+    --color-dark-background: #4a525a;
+    --color-dark-code: #4a525a;
+    --color-dark-code-background: #4a525a;
     --color-dark-filtering: 100%;
 
     --primary: var(--color-light-primary);
@@ -144,7 +144,8 @@ footer {
         padding-bottom: 20px;
     }
     .separator {
-        border-top: 1px solid black;
+        border-top: 1px solid;
+        border-color: var(--secondary);
     }
 }
 
@@ -178,7 +179,6 @@ footer {
     }
 }
 
-/**
 @media (prefers-color-scheme: dark) {
 :root {
 --primary: var(--color-dark-primary);
@@ -189,4 +189,3 @@ footer {
 --code-background: var(--color-dark-code-background);
 }
 }
- **/
