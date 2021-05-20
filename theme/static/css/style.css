@@ -60,7 +60,6 @@ header {
     letter-spacing: -.009em;
 }
 
-
 .article-list {
     display: grid;
     grid-column-gap: 8px;
@@ -86,10 +85,6 @@ header {
     font-weight: 500;
     letter-spacing: -.015em;
 }
-footer {
-    padding-left: 20px;
-    padding-right: 20px;
-}
 
 a {
     color: var(--secondary);
@@ -109,10 +104,6 @@ a:visited {
     text-decoration: underline;
 }
 
-.footer {
-    margin-top: 30px;
-    font-weight: lighter;
-}
 
 code {
     font-family: var(--code-font);
@@ -130,6 +121,11 @@ pre code {
     line-height: 1.5;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+footer {
+    padding-top: 0px;
+    padding-bottom: 20px;
 }
 
 

@@ -3,8 +3,7 @@
 {% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
-<h1>{{ article.title }}</h1>
-{{ article.content }}
-<br>
-<label>{{  article.date | strftime('%B %-m, %Y') }}</label>
+    <h1>{{ article.title }}</h1>
+    {{ article.content }}
+    <i>{{  article.date | strftime('%B %-m, %Y') }}</i>
 {% endblock %}
