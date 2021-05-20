@@ -1,5 +1,6 @@
 title: About me
 slug: about
+
 <center>
 <img style="width:90%;margin-top:-10px;filter: invert(var(--image-filtering));" class="logo" src="{static}/images/logo-resized.svg" alt="logo.png">
 </center>
