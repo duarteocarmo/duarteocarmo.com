@@ -47,6 +47,10 @@ body {
     margin-right: auto;
 }
 
+.main-content img {
+    max-width: 100%;
+}
+
 .no-top > :first-child {
     margin-top:0;
     line-height: 1.25;
@@ -189,4 +193,4 @@ footer {
 --code-color: var(--color-dark-code);
 --code-background: var(--color-dark-code-background);
 }
-*/
+ */
