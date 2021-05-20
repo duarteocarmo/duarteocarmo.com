@@ -161,6 +161,9 @@ pre code {
         grid-template-columns: 1fr;
         grid-row-gap: 0px;
     }
+    .article-list > div {
+        white-space: normal;
+    }
 
     .article-list time {
         padding-bottom: 20px;
