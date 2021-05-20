@@ -5,7 +5,7 @@ thumbnail: images/kindle-highlights-cover.png
 status: published
 
 <center>
-<img src="{static}/images/kindle-highlights-cover.png" alt="Digital library" style="max-width:80%;">
+<img src="{static}/images/newsletter-cover.jpg" alt="Digital library" style="max-width:100%;">
 </center>
 
 My favourite way of learning is by reading extensively about a topic. For this, nothing better then my Kindle. But I have been growing increasingly envious of the large bookshelves of scratched and highlighted books that I see in older generations. 
@@ -31,7 +31,7 @@ So the premise was set, we are going to build a newsletter service.
 For reference, here's the high-level architecture of what I've built. Don't panic! We'll dive deeper into the details step by step. This is just for reference:
 
 <center>
-<img src="{static}/images/kindle-highlights-architecture.png" alt="Kindle higlights architecture diagram" style="max-width:100%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<img src="{static}/images/kindle-highlights-architecture.png" alt="Kindle higlights architecture diagram" style="max-width:100%;">
 </center>
 
 ## The backbone: FastAPI
@@ -147,7 +147,7 @@ So what was the end result for this project?
 [Kindle-highlights.email](https://kindle-highlights.email/), a free and open-source project where any user can upload their highlights file, and receive one highlighted passage every Friday morning. This allows me to keep track of important pieces of knowledge I want to remember in the future, and hopefully help a couple of folks out there looking to build something similar!
 
 <center>
-<img src="{static}/images/kindle-highlights.png" alt="Kindle higlights architecture diagram" style="max-width:100%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<img src="{static}/images/kindle-highlights.png" alt="Kindle higlights architecture diagram" style="max-width:100%;">
 </center>
 
 Have comments? Questions? Features? Just create an issue in the [GitHub repo](https://github.com/duarteocarmo/kindle-highlights-newsletter).
