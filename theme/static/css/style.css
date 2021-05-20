@@ -179,6 +179,7 @@ footer {
     }
 }
 
+/*
 @media (prefers-color-scheme: dark) {
 :root {
 --primary: var(--color-dark-primary);
@@ -188,4 +189,4 @@ footer {
 --code-color: var(--color-dark-code);
 --code-background: var(--color-dark-code-background);
 }
-}
+*/

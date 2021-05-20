@@ -8,7 +8,4 @@ Made with [Pelican](https://github.com/getpelican/pelican). Deployed with [Netli
 Bare with me, I'm still working on it. 
 
 ## TODO
-- shiver article
-- check mobile usability
-- check highlights and consider transition script
-- dark mode?
+- Dark mode? Not sure about this one - remember to check code snippets
