@@ -39,7 +39,7 @@ I believe these are a very good bank for your buck. And can certainly vouch for 
 
 ## Start the day right
 
-One of the worst mistakes is to keep your pijamas on. **ALWAYS** shower and get dressed! Even if you're not going anywhere, getting ready puts you in the mindset of getting things done.  Usually, this is how my morning goes:
+One of the worst mistakes is to keep your pajamas on. **ALWAYS** shower and get dressed! Even if you're not going anywhere, getting ready puts you in the mindset of getting things done.  Usually, this is how my morning goes:
 
 1. Get up
 2. (Sports, I usually go for a run)
@@ -79,7 +79,7 @@ Why? Because when someone Slacks you they expect a fast response. But what happe
 
 Email allows you to minimize interruptions, and communicate when you want to, not when others want to. 
 
-So close Slack, close Whatsapp, close Messenger, set your phone to Do not Disturb, and check your email 3 times a day. 
+So close Slack, close WhatsApp, close Messenger, set your phone to Do not Disturb, and check your email 3 times a day. 
 
 
 *Reading recommendation on the topic: ["It Doesn't Have to Be Crazy at Work"](https://www.goodreads.com/book/show/38900866-it-doesn-t-have-to-be-crazy-at-work)* 

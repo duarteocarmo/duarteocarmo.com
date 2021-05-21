@@ -3,7 +3,7 @@ date: 23-11-2020
 description: Building a telegram bot using Python to track your investment portfolio
 
 
-_In the past months, I’ve been spending a lot of time researching about investing: building your portfolio, backtesting it, tracking its performance, and acting accordingly. One of these endeavors (and my stubbornness to build my own tools) has led me to create a telegram bot, here’s a small write up in hope you'll build your own._
+_In the past months, I’ve been spending a lot of time researching about investing: building your portfolio, back testing it, tracking its performance, and acting accordingly. One of these endeavors (and my stubbornness to build my own tools) has led me to create a telegram bot, here’s a small write up in hope you'll build your own._
 
 ## A Telegram Bot? Have you heard of Yahoo Finance?
 
@@ -146,14 +146,14 @@ def set_update(update: Update, context: CallbackContext):
 
 This ensures your bot only gives financial updates to YOU, which is pretty important.. 
 
-For deployment, you only need to leave your `bot.py` script running somwhere. I chose to use one of my Virtual Private Servers and run the script in a [tmux](https://en.wikipedia.org/wiki/Tmux) session. But there are also some [good alternatives in the docs](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Where-to-host-Telegram-Bots) if you re interested!
+For deployment, you only need to leave your `bot.py` script running somewhere. I chose to use one of my Virtual Private Servers and run the script in a [tmux](https://en.wikipedia.org/wiki/Tmux) session. But there are also some [good alternatives in the docs](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Where-to-host-Telegram-Bots) if you re interested!
 
 ## Closing thoughts
 
 This was a very simple example of how you can get your bot up and running really quickly. But some things differ from the setup that I have actually in place (and the one you'll probably build):
 
 - Here we used the `yfinance` data to track performance, but you can use WHATEVER you want. As an example, my bot is running some scrappers on stock exchanges related to my portfolio (and not available through the library)
-- You can also add forward looking KPIs and information (what was the best performant stock of the ones you're watching?)
+- You can also add forward looking KPIs and information (what was the best performing stock of the ones you're watching?)
 - Add some alerts about news using a library like [Newspaper3k](https://newspaper.readthedocs.io/en/latest/)! To make everything even more dynamic :) 
 
 This is why hacking on your own tools is more rewarding than just using an off the shelf app: Yes, it takes time, and yes, it can seem a lot less "fancy". But you learn a lot while doing it, and more importantly: you build it to become YOUR tool, not A tool. 

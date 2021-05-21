@@ -8,7 +8,7 @@ description: An overview of linear regression techniques using python and scikit
 
 ## The data
 
-The dataset we built is a (very) large table where every row corresponds to a collaboration between two researchers. In that row, we have information about researcher #1 and researcher #2. 
+The data set we built is a (very) large table where every row corresponds to a collaboration between two researchers. In that row, we have information about researcher #1 and researcher #2. 
 
 If you are curious about the data, you can learn more about it in [this](https://nbhub.duarteocarmo.com/notebook/07f45cd3#1.About-the-data) section of my research notebook. 
 
@@ -17,7 +17,7 @@ If you are curious about the data, you can learn more about it in [this](https:/
 
 The number of collaborations between two researchers is obviously an integer (i.e John and Thomas have 1 co-authored paper on COVID-19). To model this problem we decided to start with a Linear Regression model. 
 
-If you are not completely familiar with it, a Linear Regression model looks at all of the columns in your dataset, and multiplies each column by a number, with the goal of predicting the column you are interested in, while trying to minimize the error. 
+If you are not completely familiar with it, a Linear Regression model looks at all of the columns in your data set, and multiplies each column by a number, with the goal of predicting the column you are interested in, while trying to minimize the error. 
 
 
 ## Linear Regression Model
@@ -29,9 +29,9 @@ My first attempt was to use an off-the-shelf Linear Regression model. One of the
 lr = linear_model.LinearRegression().fit(X_train, y_train)
 y_pred = lr.predict(X_test)
 ```
-This resulted in some ok [results](https://nbhub.duarteocarmo.com/notebook/07f45cd3#6.Linear-Regression). A popular metric to measure how good a Linear Regression model is, is a little something called MAE, you can think about it as an average error per prediction. 
+This resulted in some OK [results](https://nbhub.duarteocarmo.com/notebook/07f45cd3#6.Linear-Regression). A popular metric to measure how good a Linear Regression model is, is a little something called MAE, you can think about it as an average error per prediction. 
 
-After fitting this model, our MAE is sitting at 0.4. This might seem ok at first because it's not a large number. However, most authors only collaborate once (.i.e most rows have a y value of 1), which means that for all of those cases, such an MAE, we are often erroring on the number of collaboration by 50%(!). 
+After fitting this model, our MAE is sitting at 0.4. This might seem OK at first because it's not a large number. However, most authors only collaborate once (.i.e most rows have a y value of 1), which means that for all of those cases, such an MAE, we are often erring on the number of collaboration by 50%(!). 
 
 Here's a graph of some sample collaborations (in black), and some predictions (in red). 
 
@@ -75,10 +75,10 @@ When using Machine Learning to make predictions, starting with the basic models 
 
 Of course, all approaches should still be [validated](https://nbhub.duarteocarmo.com/notebook/07f45cd3#9.Validation), to make sure they make sense, and that you're not just shooting in the dark. 
 
-Here are some links if you want to digg deeper into this work:
+Here are some links if you want to dig deeper into this work:
 
 <div id="links"></div>
-* Full article: ["Matchmaking experiments using ML and Graph embeddings"](https://dataverz.gitbook.io/coronavirus-r-and-d/matchmaking-experiments)
+* Full article: ["Matchmaking experiments using ML and Graph embedding"](https://dataverz.gitbook.io/coronavirus-r-and-d/matchmaking-experiments)
 * Analysis and code: [Jupyter Notebook](https://nbhub.duarteocarmo.com/notebook/07f45cd3#9.Validation)
 * [Consulting services](https://duarteocarmo.com/consulting)
 
