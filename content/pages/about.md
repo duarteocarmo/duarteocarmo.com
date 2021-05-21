@@ -9,7 +9,7 @@ Hi, I'm Duarte,
 
 I'm a consultant/hacker currently working at [BCG Platinion](https://bcgplatinion.com/nordics/) in Copenhagen, Denmark. My work focuses on helping leading businesses solve challenging problems in the areas of Machine Learning & AI, Cloud, IT Infrastructure, Software development, and Cyber Security.
 
-Previously, I've worked for [Jabra](https://jabra.com), helping C-level executives shape the strategy, and creating new AI based ventures. Earlier endeavours include the [WYGroup](https://www.wygroup.net/) &  [Bliss Applications](https://www.blissapplications.com/) where I got to create new start-ups, and helped develop mobile applications using cutting edge technology.
+Previously, I've worked for [Jabra](https://jabra.com), helping C-level executives shape the strategy, and creating new AI based ventures. Earlier endeavors include the [WYGroup](https://www.wygroup.net/) &  [Bliss Applications](https://www.blissapplications.com/) where I got to create new start-ups, and helped develop mobile applications using cutting edge technology.
 
 My work is mostly shaped by my background and education. I've studied in the [Superior Technical Institute of Lisbon](https://tecnico.ulisboa.pt/en/), in the [Beijing Institute of Technology](http://english.bit.edu.cn/), and in the [Technical University of Denmark](https://www.dtu.dk/english).
 
