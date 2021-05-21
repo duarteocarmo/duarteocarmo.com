@@ -7,7 +7,7 @@ A quick look at Wikipedia and the meaning is clear: *a product with just enough 
 
 You might be wondering: “but what forms can an MVP take?” The answer is many. One might consider a simple landing page or product explainer video for your product/idea to be an MVP. Another common shape MVPs take are prototypes, for example, when starting a crowdfunding campaign, a simple prototype can increase your funding possibilities exponentially. An MVP can be said to be a form, part, or representation of your product that allows you to test it.
 
-The strategy of developing an MVP has become standard these days amongst start-ups. It can be summed up by putting something that is only “good enough” in the market.
+The strategy of developing an MVP has become standard these days among start-ups. It can be summed up by putting something that is only “good enough” in the market.
 
 After spending so many hours planning out your great app idea, you’re probably wondering: **Why on earth would I develop something that is only “good enough”?**
 

@@ -9,7 +9,7 @@ Curious about why the decision was made, I stumbled upon a couple of interesting
 
 *"[...]To be "open", a country must have less than 20 infected per. 100,000 inhabitants per. week. Once a country is open, the critical level for when a country changes status to "quarantine country" will be at 30 infected per. 100,000 inhabitants.[...]"*
 
-I also stumbled upon the [official document](https://www.ssi.dk/-/media/arkiv/dk/aktuelt/sygdomsudbrud/covid19/covid-19-rejsekriterier/16_07_2020_tors/tabel_11_1.pdf?la=da) where all of these calculations where made. Where we can clearly see that both Portugal and Sweden have more than 20 infected people per week per 100.000 habitants. On the other hand, countries such as Spain, or Romania have less than that number, and were hence declared as "open for travel".
+I also stumbled upon the [official document](https://www.ssi.dk/-/media/arkiv/dk/aktuelt/sygdomsudbrud/covid19/covid-19-rejsekriterier/16_07_2020_tors/tabel_11_1.pdf?la=da) where all of these calculations where made. Where we can clearly see that both Portugal and Sweden have more than 20 infected people per week per 100.000 people. On the other hand, countries such as Spain, or Romania have less than that number, and were hence declared as "open for travel".
 
 Since I am planning to go to Denmark on the beginning of August, and have heard no updates on the situation since, let's try to see how the situation evolved since the announcement:
 
@@ -17,9 +17,9 @@ Since I am planning to go to Denmark on the beginning of August, and have heard 
 <img src="{static}/images/portugal.png" alt="Vim" style="max-width: 100%">
 </center>
 
-**A good initial decision.** Taking data from [the official Johns Hopkins repository](https://github.com/CSSEGISandData/COVID-19), and some [manipulation](https://nbhub.duarteocarmo.com/notebook/573bf718). I was able to plot the number of cases per 100.000 habitants of the last 7 days, for every day since February 1st. We can clearly see that in the date of the announcement, Portuguese cases were in the *Orange Zone* (.i.e slightly above 20 per 100k pax per week). However, you might notice that in the last couple of weeks, the number of cases in Portugal has started to decrease, falling into the *Open to travel zone*. 
+**A good initial decision.** Taking data from [the official Johns Hopkins repository](https://github.com/CSSEGISandData/COVID-19), and some [manipulation](https://nbhub.duarteocarmo.com/notebook/573bf718). I was able to plot the number of cases per 100.000 people of the last 7 days, for every day since February 1st. We can clearly see that in the date of the announcement, Portuguese cases were in the *Orange Zone* (.i.e slightly above 20 per 100k pax per week). However, you might notice that in the last couple of weeks, the number of cases in Portugal has started to decrease, falling into the *Open to travel zone*. 
 
-**Coronavirus is unpredictable.** In the original [list of travel bans](https://www.ssi.dk/-/media/arkiv/dk/aktuelt/sygdomsudbrud/covid19/covid-19-rejsekriterier/16_07_2020_tors/tabel_11_1.pdf?la=da), countries such as Spain and Romania (to my surprise), were green lighted and allowed travelling to and from. Because at the date of the announcement, their number of cases per 100k people fell below 20. 
+**Coronavirus is unpredictable.** In the original [list of travel bans](https://www.ssi.dk/-/media/arkiv/dk/aktuelt/sygdomsudbrud/covid19/covid-19-rejsekriterier/16_07_2020_tors/tabel_11_1.pdf?la=da), countries such as Spain and Romania (to my surprise), were green lighted and allowed traveling to and from. Because at the date of the announcement, their number of cases per 100k people fell below 20. 
 
 Has this changed?
 

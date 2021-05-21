@@ -22,7 +22,7 @@ Of course there are many reasons to track your finances, but for me, the questio
 
 ## How I have tracked my finances in the past
 
-Like every “tracking afficionato”, I started tracking all of my finances using mobile applications. I’ve used everything from [DailyCost](https://apps.apple.com/us/app/dailycost-expense-tracker/id566587079) to [Spending Tracker](https://apps.apple.com/us/app/spending-tracker/id548615579). But all of these had drawbacks. Not because of the apps themselves, but because they did not fit my mindset/workflow. I want to know how much I have on account X, and how much I owe to someone next month. And even though some modern alternatives already connect to your bank accounts, I wanted something more “hackable”. 
+Like every “tracking aficionado”, I started tracking all of my finances using mobile applications. I’ve used everything from [DailyCost](https://apps.apple.com/us/app/dailycost-expense-tracker/id566587079) to [Spending Tracker](https://apps.apple.com/us/app/spending-tracker/id548615579). But all of these had drawbacks. Not because of the apps themselves, but because they did not fit my mindset/workflow. I want to know how much I have on account X, and how much I owe to someone next month. And even though some modern alternatives already connect to your bank accounts, I wanted something more “hackable”. 
 
 And so I fell into “Excel hell”. I found that I could use a simple app to track my spendings ([Spendee](https://www.spendee.com/)) and then, at regular intervals I would put that information into Excel. There, I would create my own overview of “how things are going”, and “where my money was spent”. 
 

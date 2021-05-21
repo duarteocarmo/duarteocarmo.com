@@ -8,7 +8,7 @@ _In [part 1](/blog/hacking-on-my-finances.html) of this series, I talked about t
 
 ## The goal: Accessing my finances from anywhere
 
-Currently, I [manage my finances using beancount](/blog/hacking-on-my-finances.html), a Python based plain-text accouting [library](https://beancount.github.io/). It allows me to create a personal ledger (aka, the `beancount` file), and then visualize my assets and expenses using [Fava](https://beancount.github.io/fava/) - a web interface/explorer for it.  
+Currently, I [manage my finances using beancount](/blog/hacking-on-my-finances.html), a Python based plain-text accounting [library](https://beancount.github.io/). It allows me to create a personal ledger (aka, the `beancount` file), and then visualize my assets and expenses using [Fava](https://beancount.github.io/fava/) - a web interface/explorer for it.  
 
 Although it works great in my machine, I envisioned something a bit more streamlined where:
 
@@ -17,7 +17,7 @@ Although it works great in my machine, I envisioned something a bit more streaml
 - The `beancount` file is validated ("bean-check runs without problems")
 - I can access the fava web interface from anywhere
 - The web interface is protected (I don't want _everyone_ analyzing my finances)
-- Everytime I commit a new beancount file, the fava web interface should update
+- Every time I commit a new beancount file, the fava web interface should update
 
 My goal was to automate this sequence of events, and to take maximum advantage of Cloud technologies during that process.
 
@@ -154,9 +154,9 @@ But hold up, there's still a couple of things to automate.
 
 ## Step 3: Using GitHub actions to automate the deployment
 
-Logging into to my AWS console and uploading a new `zip` everytime I change my `beancount` file is a pain. And I don't like pain. 
+Logging into to my AWS console and uploading a new `zip` every time I change my `beancount` file is a pain. And I don't like pain. 
 
-To avoid this, I created a github action that automatically watches the repo containing my `beancount` file and watches for changes in that file. If it changes, it then validates the ledger file, creates a new `.zip` version of the application, and uploads that to my AWS Beanstalk instance. 
+To avoid this, I created a GitHub action that automatically watches the repo containing my `beancount` file and watches for changes in that file. If it changes, it then validates the ledger file, creates a new `.zip` version of the application, and uploads that to my AWS Beanstalk instance. 
 
 It uses [this](https://github.com/einaregilsson/beanstalk-deploy) action as a base and adds a couple of features to it, like the validation  of the ledger file for example. 
 
@@ -224,7 +224,7 @@ jobs:
 
 </details>
 
-Once all of this is running in a private repo, everytime I commit a change to my `.beancount` file, my Beanstalk application gets updated! (It's not instant, but its fast enough!)
+Once all of this is running in a private repo, every time I commit a change to my `.beancount` file, my Beanstalk application gets updated! (It's not instant, but its fast enough!)
 
 ## Step 4: Securing everything with Cloudflare
 
@@ -237,14 +237,14 @@ Once all of this is running in a private repo, everytime I commit a change to my
 
 In a single place. Pretty insane.
 
-Will not go in depth about all of the setup details here, but I can really recomment using Cloudflare. Awsome tool. 
+Will not go in depth about all of the setup details here, but I can really recommend using Cloudflare. Awesome tool. 
 
 ## Final notes
 
 This was super fun to put together. It took me some hours to get everything set up nicely. But I learned a lot in the process. The setup far from perfect, but works pretty well for my use case. And that's enough. 
 
-The whole thing costs about 4 EUR/month which is pretty afordable. I could also just purchase a VPS for 2 EUR/month and call it a day. But would't learn much in the process. 
+The whole thing costs about 4 EUR/month which is pretty affordable. I could also just purchase a VPS for 2 EUR/month and call it a day. But wouldn't learn much in the process. 
 
 I also created a [sanitized version of the repo](https://github.com/duarteocarmo/hacking-on-my-finances) with all the files if you would like to hack around a bit. 
 
-Hope you found this walkthrough/showcase useful. My email's right in the bottom there if you have questions, don't be a stranger.
+Hope you found this walk-through/showcase useful. My email's right in the bottom there if you have questions, don't be a stranger.

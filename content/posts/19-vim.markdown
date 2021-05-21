@@ -41,11 +41,11 @@ Today I own a VIM sweater.
 <img src="{static}/images/vim_03.png" alt="VIM Sweater" style="">
 </center>
 
-I didn't start using VIM because there was X number of reasons to switch to it. I simply wanted to play around with something other people talked about online, and I fell in love. Now that I HAVE switched to it, I can defineltly recommend it for the following reasons:
+I didn't start using VIM because there was X number of reasons to switch to it. I simply wanted to play around with something other people talked about online, and I fell in love. Now that I HAVE switched to it, I can definitely recommend it for the following reasons:
 
-- __It works on all machines.__ Wether you are on Linux or MacOS, it comes with VIM straight out of the box. Simply go to your terminal and type `vi`. 
-- __It's fast.__ VIM uses something called modal editing, that makes editing and writting code (and text) much faster. You use commands such as hitting the `CI"` keys, to change the inside of a quote! Warning, VIM cheat sheets are [scary.](https://xianblog.wordpress.com/2015/03/18/the-vim-cheat-sheet/) 
-- __You can make it your own.__ VIM allows you to completely customize how it behaves and how it looks. Don't like a key combo? Remap it! Don't like a certain behaviour? Turn it off!
+- __It works on all machines.__ Whether you are on Linux or MacOS, it comes with VIM straight out of the box. Simply go to your terminal and type `vi`. 
+- __It's fast.__ VIM uses something called modal editing, that makes editing and writing code (and text) much faster. You use commands such as hitting the `CI"` keys, to change the inside of a quote! Warning, VIM cheat sheets are [scary.](https://xianblog.wordpress.com/2015/03/18/the-vim-cheat-sheet/) 
+- __You can make it your own.__ VIM allows you to completely customize how it behaves and how it looks. Don't like a key combo? Remap it! Don't like a certain behavior? Turn it off!
 
 ## General VIM Setup
 
@@ -59,7 +59,7 @@ For fonts, I have been currently changing the font to [JetBrains Mono](https://w
 
 When I am on my MacBook, I use [iTerm2](https://www.iterm2.com/) and run VIM straight from it. On Linux, the same, no need to configure anything, I just fire [Kitty](https://sw.kovidgoyal.net/kitty/), and run VIM from there. 
 
-On Windows, I normally just run [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) with an Ubuntu Virtual Machine. Which allows me to have a relatively fast linux machine inside Windows. *Note: If you go this route, definetly upgrade to [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/wsl2-index).*
+On Windows, I normally just run [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) with an Ubuntu Virtual Machine. Which allows me to have a relatively fast Linux machine inside Windows. *Note: If you go this route, definitely upgrade to [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/wsl2-index).*
 
 
 ## VIM for Python development
