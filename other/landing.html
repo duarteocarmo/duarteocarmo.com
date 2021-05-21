@@ -3,34 +3,225 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mobile Landing</title>
+        <title>Duarte O.Carmo</title>
     </head>
     <body>
-        <h1>Hey! 👋</h1>
+        <div class="container vertical-spacing no-top main-content">
+        <h1>Hey there</h1>
 
         <p>My name is Duarte, and I like making things on the internet.</p>
 
         <p>To keep stalking me, visit one of the following links:</p>
 
         <ul>
-            <li><a href="https://tinyurl.com/y34yff73">Learn more about me 🔎</a></li>
-            <li><a href="https://tinyurl.com/y3utdwmf">Read my blog 📝</a></li>
-            <li><a href="https://open.spotify.com/user/1168246945?si=A0N7lhKUTpW3SpmPOjGzvw">Listen to my playlists 🎧</a></li>
-            <li><a href="https://twitter.com/duarteocarmo">I also tweet sometimes 🐧</a></li>
+            <li><a href="https://tinyurl.com/y34yff73">Learn more about me</a></li>
+            <li><a href="https://tinyurl.com/y3utdwmf">Read my blog</a></li>
+            <li><a href="https://open.spotify.com/user/1168246945?si=A0N7lhKUTpW3SpmPOjGzvw">Listen to my playlists</a></li>
+            <li><a href="https://twitter.com/duarteocarmo">I also tweet sometimes</a></li>
         </ul>
 
         <p>If none of these interest you, <a href="https://cataas.com/cat/gif">maybe a random cat meme will?</p>
-
+        </div>
     </body>
 
     <style>
+/* Custom CSS*/
+:root {
+    --color-light-primary: #111;
+    --color-light-secondary: #111;
+    --color-light-background: #fff;
+    --color-light-code: #fff;
+    --color-light-code-background:#fff;
+    --color-light-filtering: 0%;
+
+    --color-dark-primary: #eee;
+    --color-dark-secondary: #eee;
+    --color-dark-background: #4a525a;
+    --color-dark-code: #4a525a;
+    --color-dark-code-background: #4a525a;
+    --color-dark-filtering: 100%;
+
+    --primary: var(--color-light-primary);
+    --secondary: var(--color-light-secondary);
+    --background: var(--color-light-background);
+    --image-filtering: var(--color-light-filtering);
+    --code-color: var(--color-light-code);
+    --code-background: var(--color-light-code-background);
+    --base-font: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+    helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
+    sans-serif;
+    --code-font: San Francisco Mono, Monaco, "Consolas", "Lucida Console",
+    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+}
+
 body {
-    background-color: #f5efe0;
-    font-family: Palatino,Times,Times New Roman,serif; 
+    color: var(--secondary);
+    background-color: var(--background);
+    font-family: var(--base-font);
+    margin: 0 auto;
+    --font-size: 1rem;
+    font-size: var(--font-size);
+    line-height: 1.6;
+    padding-top: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+.container {
+    max-width: 640px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-content img {
+    max-width: 100%;
+}
+
+.no-top > :first-child {
+    margin-top:0;
+    line-height: 1.25;
+}
+
+.vertical-spacing {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+header {
+    letter-spacing: -.009em;
+}
+
+.article-list {
+    display: grid;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    grid-template-columns: 1fr min-content;
+}
+
+.article-list time {
+    padding-right: .25em;
+    color: var(--secondary);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.012em;
+    white-space: pre;
+}
+
+.article-list > div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.article-list a {
+    font-weight: 500;
+    letter-spacing: -.015em;
 }
 
 a {
-    color: #cd2653;
+    color: var(--secondary);
+    text-decoration-skip-ink:auto;
+    text-decoration:underline
 }
+
+a:visited {
+    color: var(--secondary);
+}
+
+.nu a {
+    text-decoration: none;
+}
+
+.nu a:hover  {
+    text-decoration: underline;
+}
+
+
+code {
+    font-family: var(--code-font);
+    font-size: 90%;
+}
+
+pre code {
+    display: block;
+    background: none;
+    white-space: pre;
+    --webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    max-width: 100%;
+    min-width: 100px;
+    line-height: 1.5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer {
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+
+
+@media screen and (min-width:1024px) {
+    header {
+        position: absolute;
+        top: 40px;
+        right: 50%;
+        margin-right: 340px !important;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    header {
+        padding-bottom: 20px;
+    }
+    .separator {
+        border-top: 1px solid;
+        border-color: var(--secondary);
+    }
+}
+
+@media screen and (max-width:640px) {
+    header {
+        padding-bottom: 20px;
+    }
+
+    .container {
+        width: auto;
+    }
+
+    .article-list {
+        display: grid; 
+        grid-template-columns: 1fr;
+        grid-row-gap: 0px;
+    }
+    .article-list > div {
+        white-space: normal;
+    }
+
+    .article-list time {
+        padding-bottom: 20px;
+        padding-right: 0;
+    }
+    .nu a {
+        text-decoration: underline;
+    }
+
+    .nu a:hover  {
+        text-decoration: underline;
+    }
+
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+:root {
+--primary: var(--color-dark-primary);
+--secondary: var(--color-dark-secondary);
+--background: var(--color-dark-background);
+--image-filtering: var(--color-dark-filtering);
+--code-color: var(--color-dark-code);
+--code-background: var(--color-dark-code-background);
+}
+ */
     </style>
 </html>
