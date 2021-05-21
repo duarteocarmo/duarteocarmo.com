@@ -8,7 +8,7 @@ MarkupSafe==1.1.1
 pelican==4.6.0
 pelican-simple-footnotes==1.0.2
 pelican-sitemap==1.0.2
-Pygments==2.6.1
+Pygments==2.7.4
 python-dateutil==2.8.1
 pytz==2020.1
 six==1.14.0
