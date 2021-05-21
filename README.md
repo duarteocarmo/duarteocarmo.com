@@ -6,3 +6,4 @@ Made with [Pelican](https://github.com/getpelican/pelican). Deployed using [Clou
 
 ## TODO
 - Dark mode? Not sure about this one - remember to check code snippets
+- Other?
