@@ -173,6 +173,7 @@ footer {
 
     .article-list time {
         padding-bottom: 20px;
+        padding-right: 0;
     }
     .nu a {
         text-decoration: underline;
@@ -180,6 +181,11 @@ footer {
 
     .nu a:hover  {
         text-decoration: underline;
+    }
+
+    footer a{
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
 
