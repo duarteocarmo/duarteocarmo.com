@@ -6,12 +6,12 @@ description: A hacked command line tool that allows you to share jupyter noteboo
 
 ## Sharing jupyter notebooks is a pain
 
-We use jupyter notebooks for a wide range of things: quick analyses, serious projects, experimentations, and even for creating dashboards. However, when you want to share your work with someone that is not necessarily familiar with what a “jupyter notebook” actually is, you run into some problems. 
+We use jupyter notebooks for a wide range of things: quick analyses, serious projects, experimentation, and even for creating dashboards. However, when you want to share your work with someone that is not necessarily familiar with what a “jupyter notebook” actually is, you run into some problems. 
 
 Let’s take a look at some of the options you have available when you want to share a notebook:
 
 * __Send the file__: Given that the person you want to share the notebook with has a good grasp on files that end with “.ipynb”, you can potentially just send them the notebook file, and let them open it on their computer.  A major drawback here is that if the person you are sharing the notebook with has no clue about what a notebook is, they will have no idea on how to fire up a “.ipynb” file.
-* __Convert to a friendlier format and then send it__:  If the person you want to share the notebook with has no idea of what a notebook is, you can start by converting the notebook to, let’s say, an html format, and then send them the file via email. To do this, you would probably use a tool such as [nbconvert](https://nbconvert.readthedocs.io/en/latest/). But have you seen a notebook converted to pdf? It looks far from ideal. Also, if you convert it to html, not everyone (unfortunately) knows how to open “.html” files in their computer.
+* __Convert to a friendlier format and then send it__:  If the person you want to share the notebook with has no idea of what a notebook is, you can start by converting the notebook to, let’s say, an HTML format, and then send them the file via email. To do this, you would probably use a tool such as [nbconvert](https://nbconvert.readthedocs.io/en/latest/). But have you seen a notebook converted to PDF? It looks far from ideal. Also, if you convert it to HTML, not everyone (unfortunately) knows how to open “.HTML” files in their computer.
 * [__NbViewer__](https://nbviewer.jupyter.org/): Given that your notebook is hosted in a public repo, this is your best option. You simply go to the website, paste the url for a notebook you want to share, [and voila](https://nbviewer.jupyter.org/github/duarteocarmo/technological_capabilities/blob/master/notebooks/4_1_Macro%20Level%20Analysis.ipynb)! However, you’ll need to set up a rapport gist to do this. And your notebook will be accessible to anyone. 
 * [__GitHub__](https://github.com/duarteocarmo/technological_capabilities/blob/master/notebooks/4_1_Macro%20Level%20Analysis.ipynb): If your notebook is in a public repo, you can also send them the link to the notebook in GitHub. But notice how the table of contents does not work, you can’t link to a specific section, and you need to host your notebook in a repo.
 
@@ -209,7 +209,7 @@ if __name__ == "__main__":
 ## The road ahead
 My idea with NbHub was simply to build something that works for me. For the past 2 months, I have been using it every week with clients or co-workers in projects. Of course, I haven’t been using it for sensitive information since the password feature is still missing. 
 
-In the main repo, I included a [roadmap](https://github.com/duarteocarmo/nbhub#roadmap) of features I would like to implement to make the tool even more awesome: 
+In the main repo, I included a [road-map](https://github.com/duarteocarmo/nbhub#roadmap) of features I would like to implement to make the tool even more awesome: 
 
 * Date limit on notebooks to be destroyed.
 * Ability to set a password on link creation for private notebooks.Or protecting notebooks with passwords. 

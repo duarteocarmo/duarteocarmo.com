@@ -1,11 +1,11 @@
 title:  A “non-nerd” introduction to podcasts
 date:   2016-05-12 
 
-So you want to start listenning to podcasts? Alright here are some tips to get you started. Let me start by saying..
+So you want to start listening to podcasts? Alright here are some tips to get you started. Let me start by saying..
 
 Podcasts are a weird topic. Some people love them, some people hate them. From what I have noticed , younger audiences aren’t exactly “Podcast Lovers”. Most tech users prefer to watch a video our scroll a feed instead of hearing someone talk about a particular topic.
 
-But Podcasts can be really interesting, particularly if you are into a very specific topic. There are general podcasts about things like “Tech”, “Politics”, “Comedy”, “Sports”, of course. But podcasts are interesting when they get really specific, and they do. Podcasts about “Stuff you should know”, “The financials of a startup”, “Makeup”, “Apple only podcasts”. Podcasts are fun when you get into a very specific topic and listen to enthusiasts (just like you )talk about it.
+But Podcasts can be really interesting, particularly if you are into a very specific topic. There are general podcasts about things like “Tech”, “Politics”, “Comedy”, “Sports”, of course. But podcasts are interesting when they get really specific, and they do. Podcasts about “Stuff you should know”, “The finances of a startup”, “Makeup”, “Apple only podcasts”. Podcasts are fun when you get into a very specific topic and listen to enthusiasts (just like you )talk about it.
 
 _Podcasts are fun when you get into a very specific topic and listen to enthusiasts (just like you) talk about it._
 
@@ -25,7 +25,7 @@ Whenever I recommend an app to listen to podcasts I always recommend the same on
 
 * The player has features like “voice boost” and “smart speed” which can clearly improve your **listening experience**.
 
-* You have **more settings** to control storage, synching, and other stuff.
+* You have **more settings** to control storage, syncing, and other stuff.
 
 * The app **treats you like a Podcast beginner, and not just a user**, that matters.
 
@@ -49,13 +49,13 @@ So start by downloading it [here](https://itunes.apple.com/us/app/overcast-podca
 
 This podcast is hosted by Mashable’s tech team [Christina Warren](undefined), [Lance Ulanoff](undefined) and Pete Pachal. They take a very good approach to the week’s **top technology topics**. I recommend this podcast to anyone that want to get a **fast and clear tech digest of the week**.
 
-**2.2.[Too embarassed to ask](https://overcast.fm/+F18VhmgLU)**
+**2.2.[Too embarrassed to ask](https://overcast.fm/+F18VhmgLU)**
 
 Too embarrassed to ask is a podcast about technology in general that tries to **interact with listeners** as much as possible. Which is great to listen to replies to questions you could actually ask. [Lauren Goode](undefined)’s good mood and [Kara Swisher](https://twitter.com/karaswisher)’s cynicism match in a **glorious and funny way**.
 
 **2.3.[Clockwise](https://overcast.fm/+DjLOsfy6g)**
 
-Probably one of my favourite podcasts of all time. [Jason Snell](undefined) and [Dan Moren](https://twitter.com/dmoren) invite two guests each week and talk about **4 technology topics in 30 minutes or less**. A very interesting insight into the world of technology by two hosts that **clearly know their way around the topic**.
+Probably one of my favorite podcasts of all time. [Jason Snell](undefined) and [Dan Moren](https://twitter.com/dmoren) invite two guests each week and talk about **4 technology topics in 30 minutes or less**. A very interesting insight into the world of technology by two hosts that **clearly know their way around the topic**.
 
 ## 3. Top 3 non-tech podcasts I recommend.
 

@@ -11,9 +11,9 @@ This is a rundown of some of the tools I used. **(by no means a tutorial!!)**
 
 ## 1.The idea
 
-I keep a lot of greate ideas for giant technology companies in my notes app. But this time, the goal was just to build something from scratch.
+I keep a lot of great ideas for giant technology companies in my notes app. But this time, the goal was just to build something from scratch.
 
-I'm a big fan of [hackernews](https://news.ycombinator.com) and I also always felt that in Portugal, there are not many "commmunity focused" websites. Therefore, I decided to create a hackernews clone for portuguese hackers. 
+I'm a big fan of [hackernews](https://news.ycombinator.com) and I also always felt that in Portugal, there are not many "community focused" websites. Therefore, I decided to create a hackernews clone for Portuguese hackers. 
 
 
 <center>
@@ -25,10 +25,10 @@ I'm a big fan of [hackernews](https://news.ycombinator.com) and I also always fe
 
 Alright, that being said. What tools did I use to build it? 
 
-## 2.The technolgy
+## 2.The technology
 
 #### 2.1.[Python](https://www.python.org/)
-I would be lying if I tod you python was not my favorite language. If I can build it, I prefer to build it with python. For some years now, I have been totally embedded in the language's ecosystem. From data science projects, web development, devops, guis, or just scripts that help people arround me. I think python is big, and it's here to stay. For me, it's a bit like writting poetry. 
+I would be lying if I told you python was not my favorite language. If I can build it, I prefer to build it with python. For some years now, I have been totally embedded in the language's ecosystem. From data science projects, web development, devops, guis, or just scripts that help people around me. I think python is big, and it's here to stay. For me, it's a bit like writing poetry. 
 
 
 ```python
@@ -54,15 +54,15 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 ```
-This is just a small snipped og the syntax of flask. This actually got more complicated than this, but in flask, the general idea is that each function (in this case function `hello`), returns some html (in this case, the string `"Hello World""`). 
+This is just a small snipped of the syntax of flask. This actually got more complicated than this, but in flask, the general idea is that each function (in this case function `hello`), returns some HTML (in this case, the string `"Hello World""`). 
 
-Ok, you made some pages with some functions, what about data, and models?
+OK, you made some pages with some functions, what about data, and models?
 
 #### 2.3.[SQLAlchemy](https://www.sqlalchemy.org/)
 
 In order to make things work in our website, I had to come up with a way of managing all of the posts, users, comments, and votes. This "system" would have to both interact with my code, and at the same time, with a database (because we want to save information).
 
-There are a bunch of ways of doing this, but I decided to use SQL Alchemy. The basc idea is that you define a "model" in your code that can automatically interact with a database. 
+There are a bunch of ways of doing this, but I decided to use SQL Alchemy. The basic idea is that you define a "model" in your code that can automatically interact with a database. 
 
 Here is an example of the `User` class:
 
@@ -88,7 +88,7 @@ After building a website in flask that worked in my local machine, I had to put 
 
 For this process, I had to create two containers. One for my flask application, and one for my database. (why two and not one is a story for another post).
 
-But how do you do that? Well, the simple principle is that you create something called a `Dockerfile` which is a set of instrunctions docker follows, in order to create a container. Here is an example: 
+But how do you do that? Well, the simple principle is that you create something called a `Dockerfile` which is a set of instructions docker follows, in order to create a container. Here is an example: 
 
 
 ```docker
@@ -125,12 +125,12 @@ CONTAINER ID        IMAGE                    COMMAND                  CREATED   
 ```
 
 ## 3.The process
-I took a long time getting everything up and running ([about a month according to the github repository](https://github.com/duarteocarmo/devtuga-news/graphs/commit-activity)) but I had a lot of fun, and frustration also. In the end, I got a much better understanding of how real web applications work. So it was definetly worth it. 
+I took a long time getting everything up and running ([about a month according to the GitHub repository](https://github.com/duarteocarmo/devtuga-news/graphs/commit-activity)) but I had a lot of fun, and frustration also. In the end, I got a much better understanding of how real web applications work. So it was definitely worth it. 
 
 
 ## 4.The Result
 
-So [here's the result](https://devtuga.duarteocarmo.com) after some long hours of frustraring but very fun work. 
+So [here's the result](https://devtuga.duarteocarmo.com) after some long hours of frustrating but very fun work. 
 
 <center>
 <img src="{static}/images/devtuga.png" alt="Hackernews" style="width:120%">

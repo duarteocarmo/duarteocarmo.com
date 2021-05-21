@@ -36,7 +36,7 @@ Having the answer to these questions in your head is a great start and will help
 
 * Considering your users, what will they want to do with your product? Storytelling is a popular technique used to help in this process. *For example: As a [someone] I want to [do something] so that I can [get something].* Create a new Excel file and start writing these down. You can see how your idea starts taking shape.
 
-* What features do you see in the competition that you want to include? What are others doing in technological terms? This is what developers and designers call benchmarking.
+* What features do you see in the competition that you want to include? What are others doing in technological terms? This is what developers and designers call bench marking.
 
 **Map your idea.** Once you have all of the answers to the questions above, there’s still more to do. Ideas and concepts are often confusing. One tool you (and whomever you are speaking to) might find useful are mind maps. Mind maps are used to turn something mental into something visual.
 
@@ -56,7 +56,7 @@ Sure, you can use a piece of paper or a whiteboard once you are at the meeting, 
 
 * [Bubbl](https://bubbl.us/)
 
-**Make a prototype.** If you have come this far, why not get a little technical before the big meeting? Designers often use something called wireframes and mockups to base themselves, or to start a project. These are basically screens of your idea/product, linked together by arrows, to convey an idea of the product.
+**Make a prototype.** If you have come this far, why not get a little technical before the big meeting? Designers often use something called wire frames and mock-ups to base themselves, or to start a project. These are basically screens of your idea/product, linked together by arrows, to convey an idea of the product.
 
 ![](https://cdn-images-1.medium.com/max/2048/1*dslNoOm6THf8dARUpFVdsg.jpeg)
 
@@ -86,7 +86,7 @@ When meeting developers, they will start taking apart your idea. So why not take
 
 * What blocks are critical for your product to take shape?
 
-**Bottom Line.** The mind maps, mockups, and answers from the discovery questions above will help you to build, block by block. Completing the steps outlined above will not only make your idea easier to communicate but can potentially save you time, time that can be extremely valuable in the long run.
+**Bottom Line.** The mind maps, mock-ups, and answers from the discovery questions above will help you to build, block by block. Completing the steps outlined above will not only make your idea easier to communicate but can potentially save you time, time that can be extremely valuable in the long run.
 
 Developers and designers are used to working with business goals and ideas and making them into a reality. However, the pre-meeting planning depends on how far you are willing to go to have your idea outlined. The effort put into clearly defining your scope of work and refining your idea will help make your vision easier to understand and accelerate the process of development.
 

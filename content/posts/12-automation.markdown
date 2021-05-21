@@ -3,7 +3,7 @@ date:   2019-7-29 20:43:05 +0000
 
 During the month of July I wrote two blog posts for the popular [Practical Business Python blog](https://pbpython.com/). The Practical Business Python blog is one of the top 20 most popular blogs on python with about [200.000 visits](https://www.similarweb.com/website/pbpython.com#overview) per month. 
 
-The posts focus on how you can build an automation system that generates `Html` reports from excel files. The system uses python, jupyter, papermill, subprocess and Rclone. 
+The posts focus on how you can build an automation system that generates `Html` reports from excel files. The system uses python, jupyter, papermill, spruces and Rclone. 
 
 Here are the links to both parts:
 
