@@ -1,4 +1,4 @@
 env/
 output/
 __pycache__/
-*.md.bak
+*.bak
