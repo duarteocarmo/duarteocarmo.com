@@ -40,12 +40,6 @@ ARCHIVES_SAVE_AS = None
 CATEGORIES_SAVE_AS = None
 AUTHORS_SAVE_AS = None
 
-# Social widget
-SOCIAL = (
-    ("You can add links in your config file", "#"),
-    ("Another social link", "#"),
-)
-
 # pagination
 DEFAULT_PAGINATION = False
 
@@ -66,9 +60,6 @@ EXTRA_PATH_METADATA = {
     "extra/CNAME": {"extra/CNAME": {"path": "CNAME"}},
     "html/StateOfVim.html": {"path": "StateOfVim.html"},
 }
-
-# SOCIAL
-TWITTER_HANDLE = "duarteocarmo"
 
 # MARKDOWN
 MARKDOWN = {
