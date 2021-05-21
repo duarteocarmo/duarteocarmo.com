@@ -8,7 +8,7 @@ status: published
 <img src="{static}/images/newsletter-cover.jpg" alt="Digital library" style="max-width:100%;">
 </center>
 
-My favourite way of learning is by reading extensively about a topic. For this, nothing better then my Kindle. But I have been growing increasingly envious of the large bookshelves of scratched and highlighted books that I see in older generations. 
+My favorite way of learning is by reading extensively about a topic. For this, nothing better then my Kindle. But I have been growing increasingly envious of the large bookshelves of scratched and highlighted books that I see in older generations. 
 
 I mean, who doesn't dream about having their own private library of knowledge they can just jump into at any time? So I have been relentlessly building ways of storing the knowledge from my readings. Building my [highlight library](https://duarteocarmo.com/blog/managing-kindle-highlights-with-python-and-github.html) was the first attempt.
 
@@ -117,11 +117,11 @@ class HighlightModel(Model):
     highlight_index = NumberAttribute(range_key=True, null=False)
 ```
 
-Great you hava a web service, you are storing some data on the Cloud. How do we deploy this? 
+Great you have a web service, you are storing some data on the Cloud. How do we deploy this? 
 
 ## Deployment: Elastic Beanstalk, thank you for existing
 
-FastAPI [recommends](https://fastapi.tiangolo.com/deployment/docker/) Docker to deploy your applications. To do so, all I needed to do was to create a [Dockerfile](https://github.com/duarteocarmo/kindle-highlights-newsletter/blob/master/Dockerfile) and a [`docker-compose.yml` file](https://github.com/duarteocarmo/kindle-highlights-newsletter/blob/master/docker-compose.yml). Also, by using this image, you supposedly get [automatic performance scalling](https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker) which sounded pretty appealing (for when someone decided to DDoS my website)
+FastAPI [recommends](https://fastapi.tiangolo.com/deployment/docker/) Docker to deploy your applications. To do so, all I needed to do was to create a [Dockerfile](https://github.com/duarteocarmo/kindle-highlights-newsletter/blob/master/Dockerfile) and a [`docker-compose.yml` file](https://github.com/duarteocarmo/kindle-highlights-newsletter/blob/master/docker-compose.yml). Also, by using this image, you supposedly get [automatic performance scaling](https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker) which sounded pretty appealing (for when someone decided to DDoS my website)
 
 For me, by far the easiest way to deploy a docker-based application nowadays is [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/). In short, AWS takes a .zip file with your application, together with a `docker-compose.yml` file, and automatically runs it in EC2 instances. Additionally, you can integrate this process into your workflow with [GitHub actions](https://github.com/features/actions) - but we'll get deeper into that in a second. 
 
