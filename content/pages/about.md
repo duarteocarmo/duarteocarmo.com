@@ -15,6 +15,8 @@ My work is mostly shaped by my background and education. I've studied in the [Su
 
 In my free time you can probably find me learning about new gadgets, [writing code]({static}/images/code.jpg), [reading](https://github.com/duarteocarmo/my-personal-zen), [taking photos]({static}/images/photos.jpg), or [running]({static}/images/run.jpg). 
 
-If you wish to know more about my career, feel free to browse [my resume](/cv.pdf). To get in touch, just email me: me@duarteocarmo.com
+If you wish to know more about my career, feel free to browse [my resume](/cv.pdf). 
+
+To get in touch, just email me: me@duarteocarmo.com
 
 *The illustration above was made by my very skilled aunt - [Cleia (Titi)](https://cleiaribeirophotostylist.carbonmade.com/)*
