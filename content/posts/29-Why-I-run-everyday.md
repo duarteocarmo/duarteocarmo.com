@@ -1,4 +1,4 @@
-title: Run everyday
+title: Run every day
 date: 24-05-2021
 description: Rant on why you should run every day
 status: published
