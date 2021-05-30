@@ -1,7 +1,8 @@
 title: Creating devtuga
 date: 2019-03-22
+description: Creating a hackernews clone from scratch - devtuga
 
-So I finally got to it. After finishing my Msc.Thesis and relaxing for a couple of months in my sunny home country of Portugal, I built a "big" project. Here are some words about it. 
+So I finally got to it. After finishing my Msc.Thesis and relaxing for a couple of months in my sunny home country of Portugal, I built a 'big' project. Here are some words about it. 
 
 This is a rundown of some of the tools I used. **(by no means a tutorial!!)**
 
