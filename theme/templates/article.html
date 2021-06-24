@@ -5,5 +5,6 @@
 {% block content %}
     <h1>{{ article.title }}</h1>
     {{ article.content }}
-    <i>{{  article.date | strftime('%B %-d, %Y') }}</i>
+    <p>{{  article.date | strftime('%B %-d, %Y') }}</p>
+    <p><a target="_blank" href="https://follow.it/duarte-o-carmo?action=followPub">Get new posts in your inbox</a></p>
 {% endblock %}
