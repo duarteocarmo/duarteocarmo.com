@@ -138,3 +138,9 @@ I did learn a couple of valuable lessons in the process. (1) That these types of
 
 *If you have some valuable information/experience with these types of scams, do [reach out](mailto:me@duarteocarmo.com), and I'll include it in this post.* 
 
+<hr>
+
+#### Updates & notes
+
+- A nice reddit user by the name of Sungod23 took the time to dive a bit deeper into the scam. One of the name [servers points to Russia](https://www.ip-adress.com/website/ns2.nameserverflux.be). And another name server [points to an IP in Ukraine](https://www.ip-adress.com/website/ns1.well-wall.to). It looks like my suspicion from Russia appears accurate. 
+- Another user by the name of Julian, suggested I report the scam to namecheap, and to the Danish authorities. I have informed the Danish authorities prior to writing this post. And I just sent an email to namecheap reporting it as well. 
