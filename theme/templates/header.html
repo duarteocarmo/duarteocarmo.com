@@ -53,7 +53,7 @@
         }	}, 
           "image": "{{ SITEURL }}/{{ SITELOGO }}",
           "url": "{{ SITEURL }}/{{ article.url }}",
-          "description": "{{ article.summary|striptags }}"
+          "description": "{{ article.summary|striptags|e }}"
         }
 </script>
 
