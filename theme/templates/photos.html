@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ SITENAME }}{% endblock %}
+{% block content %}
+<div class="gallery">
+    {% for i in range(3) %}
+    <div> 
+        <img loading="lazy" src="https://picsum.photos/200/300?random={{ i  }}"></img>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+

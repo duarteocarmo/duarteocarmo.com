@@ -21,10 +21,10 @@
     --code-color: var(--color-light-code);
     --code-background: var(--color-light-code-background);
     --base-font: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
-    helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
-    sans-serif;
+        helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
+        sans-serif;
     --code-font: San Francisco Mono, Monaco, "Consolas", "Lucida Console",
-    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+        "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
 }
 
 body {
@@ -133,6 +133,28 @@ footer {
     padding-bottom: 20px;
 }
 
+div.gallery {
+    padding: 20px;
+    gap: 10px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+div.gallery > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    aspect-ratio:1;
+    /**background-color:red;**/
+}
+
+div.gallery img {
+    object-fit: cover;
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
 
 @media screen and (min-width:1024px) {
     header {
@@ -150,6 +172,9 @@ footer {
     .separator {
         border-top: 1px solid;
         border-color: var(--secondary);
+    }
+    div.gallery {
+        gap: 5px;
     }
 }
 
@@ -183,7 +208,14 @@ footer {
         text-decoration: underline;
     }
 
+
+    div.gallery {
+        gap: 2px;
+    }
+
 }
+
+
 
 /*
 @media (prefers-color-scheme: dark) {
@@ -195,4 +227,4 @@ footer {
 --code-color: var(--color-dark-code);
 --code-background: var(--color-dark-code-background);
 }
- */
+*/
