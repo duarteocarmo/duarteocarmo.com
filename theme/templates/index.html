@@ -3,8 +3,8 @@
 {% block content %}
 <p class="no-top">Hey there, I'm <a href="{{ SITEURL  }}/about">Duarte</a> <i><code>/du-art/</code></i>, a technologist from Lisbon, living in Copenhagen.</p>
 <div class="article-list nu">
-    {% for article in articles %}
-    <div><a href="{{ article.url }}">{{ article.title }}</a></div>
+    {% for article in articles | selectattr('category', '==', 'blog')%}
+    <div><a href="{{ article.url }}">{{ article.title }} {{article.category}}</a></div>
     <time>{{  article.date | strftime('%d-%m-%Y') }}</time>
     {% else %}
     No posts yet!

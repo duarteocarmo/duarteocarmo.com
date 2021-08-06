@@ -2,12 +2,12 @@
 {% block title %}{{ SITENAME }}{% endblock %}
 {% block content %}
 <div class="gallery">
-    {% for i in range(3) %}
-    <div> 
-        <img loading="lazy" src="https://picsum.photos/200/300?random={{ i  }}"></img>
+    {% for photo in articles | selectattr('category', '==', 'photos')%}
+    <div>
+        <a href="{{ photo.url }}">
+            <img loading="lazy" src="{{ photo.thumbnail_url }}"></img>
+        </a>
     </div>
     {% endfor %}
 </div>
 {% endblock %}
-
-
