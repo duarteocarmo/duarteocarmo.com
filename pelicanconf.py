@@ -3,6 +3,10 @@
 from __future__ import unicode_literals
 import pelican
 
+# TODO script to create thumbnails
+# TODO upload to S3 bucket
+# TODO ensure CDN
+
 AUTHOR = "Duarte O.Carmo"
 SITENAME = "Duarte O.Carmo"
 SITEURL = ""
@@ -19,9 +23,13 @@ DEFAULT_LANG = "en"
 
 PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}.html"
-ARTICLE_URL = "blog/{slug}.html"
-ARTICLE_SAVE_AS = "blog/{slug}.html"
+DEFAULT_CATEGORY = "blog"
+ARTICLE_URL = "{category}/{slug}.html"
+ARTICLE_SAVE_AS = "{category}/{slug}.html"
 ARTICLE_EXCLUDES = ["html"]
+CATEGORY_URL = "category/{slug}.html"
+CATEGORY_SAVE_AS = "category/{slug}.html"
+USE_FOLDER_AS_CATEGORY = False
 
 # SEO
 PELICAN_VERSION = pelican.__version__
@@ -33,6 +41,11 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 FEED_ALL_ATOM = "feed.xml"
+FEED_FILTER = {
+    "feed.xml": {
+        "exclude.categories": ["photos"],
+    }
+}
 
 # NO EXTRAS
 TAGS_SAVE_AS = None
@@ -63,15 +76,27 @@ EXTRA_PATH_METADATA = {
 
 # MARKDOWN
 MARKDOWN = {
-    "extensions": ["markdown.extensions.toc", "markdown.extensions.fenced_code", "markdown.extensions.codehilite"]
+    "extensions": [
+        "markdown.extensions.toc",
+        "markdown.extensions.fenced_code",
+        "markdown.extensions.codehilite",
+    ]
 }
 
 # PLUGINS
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ["pelican.plugins.sitemap", "pelican.plugins.simple_footnotes"]
+PLUGINS = [
+    "pelican.plugins.sitemap",
+    "pelican.plugins.simple_footnotes",
+    "pelican.plugins.feed_filter",
+]
 SITEMAP = {
     "exclude": ["archives.html", "author/", "category/"],
     "format": "xml",
     "priorities": {"articles": 0.9, "indexes": 0.5, "pages": 0.9},
-    "changefreqs": {"articles": "hourly", "indexes": "hourly", "pages": "hourly",},
+    "changefreqs": {
+        "articles": "hourly",
+        "indexes": "hourly",
+        "pages": "hourly",
+    },
 }
