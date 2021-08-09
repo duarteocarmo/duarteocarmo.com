@@ -3,10 +3,6 @@
 from __future__ import unicode_literals
 import pelican
 
-# TODO script to create thumbnails
-# TODO upload to S3 bucket
-# TODO ensure CDN
-
 AUTHOR = "Duarte O.Carmo"
 SITENAME = "Duarte O.Carmo"
 SITEURL = ""
