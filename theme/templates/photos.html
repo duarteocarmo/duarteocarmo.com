@@ -2,10 +2,10 @@
 {% block title %}{{ SITENAME }}{% endblock %}
 {% block content %}
 <div class="gallery">
-    {% for photo in articles | selectattr('category', '==', 'photos')%}
+    {% for photo in articles | selectattr('category', '==', 'photos') |sort(attribute='date', reverse=True)%}
     <div>
         <a href="{{ photo.url }}">
-            <img loading="lazy" src="{{ photo.thumbnail_url }}"></img>
+            <img loading="lazy" src="{{ photo.thumbnail_url }}" alt="image-not-available"></img>
         </a>
     </div>
     {% endfor %}

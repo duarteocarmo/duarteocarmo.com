@@ -8,10 +8,12 @@
     <p><a target="_blank" href="https://follow.it/duarte-o-carmo?action=followPub">Get new posts in your inbox</a></p>
 {% elif article.category == 'photos' %}
     <center>
-        <img style="max-height: 75vh;" src="{{ article.photo_url }}"></img>
+        <img style="max-height: 75vh;" src="{{ article.photo_url }}" alt="image-not-available"></img>
     </center>
-    <p> {{ article.caption }}</p>
-    <p><i>Taken in {{ article.location }}</i></p>
+    <p> {{ article.content }}</p>
+    {% if article.location != 'None' %}
+        <p><i>Taken in {{ article.location }}</i></p>
+    {% endif %}
     <p>{{  article.date | strftime('%B %-d, %Y') }}</p>
 {% endif %}
 {% endblock %}
