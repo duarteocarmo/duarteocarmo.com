@@ -7,7 +7,7 @@ slug: about
 
 Hi, I'm Duarte, 
 
-I'm an advanced Machine Learning Engineer/hacker at [DSB](dsb.dk/), the largest train operating company in Scandinavia. Here, I'm focusing on scaling up the recently created Artificial Intelligence and Machine Learning department. My day-to-day is a mix of strategy, advisory, leadership, technical architecture, and development. 
+I'm an advanced Machine Learning Engineer/hacker at [DSB](https://www.dsb.dk/), the largest train operating company in Scandinavia. Here, I'm focusing on scaling up the recently created Artificial Intelligence and Machine Learning department. My day-to-day is a mix of strategy, advisory, leadership, technical architecture, and development. 
 
 Previously, I was employed at the [Boston Consulting Group](https://bcgplatinion.com/nordics/), where I helped leading businesses in the areas of AI & ML, Software Development, and Cyber Security. I've also worked for [Jabra](https://jabra.com), helping C-level executives shape the strategy, and creating new AI based ventures. 
 
