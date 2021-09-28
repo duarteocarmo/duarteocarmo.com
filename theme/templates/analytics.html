@@ -1,6 +1,8 @@
-{% if GOOGLE_ANALYTICS %}
+{% if GOAT_COUNTER %}
 <!-- GoatCounter -->
 <script rel="preload" data-goatcounter="https://duarteocarmo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{% endif %}
+{% if GOOGLE_ANALYTICS %}
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS }}"></script>
 <script>
@@ -11,4 +13,3 @@
   gtag('config', '{{ GOOGLE_ANALYTICS }}');
 </script>
 {% endif %}
-
