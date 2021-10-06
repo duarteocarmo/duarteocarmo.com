@@ -41,9 +41,9 @@ We're not doctors, but [our craft](https://www.calnewport.com/blog/2011/08/11/th
 
 ![alt-text-2]({static}/images/python-books.png)
 
-Either it's contributing to open-source, going to [PyCon](https://pycon.org/) or [PyData](https://pydata.org/), or answering questions in Stack Overflow - we should strive to get continuously better in our craft. Recently, [Practices of the Python Pro by Dane Hillard](https://www.manning.com/books/practices-of-the-python-pro), and The [Hacker's Guide to Scaling Python by Julien Danjou](https://scaling-python.com/) have been incredibly useful in further developing my knowledge of the language. 
+Whether it's contributing to open-source, going to [PyCon](https://pycon.org/) or [PyData](https://pydata.org/), or answering questions in Stack Overflow - we should strive to get continuously better in our craft. Recently, [Practices of the Python Pro by Dane Hillard](https://www.manning.com/books/practices-of-the-python-pro), and The [Hacker's Guide to Scaling Python by Julien Danjou](https://scaling-python.com/) have been incredibly useful in further developing my knowledge of the language. 
 
-The more I work with Python (and other languages), the more I fall in love with our of craft. On the surface, it's pretty easy to get a small script running, and doing something simple. 
+The more I work with Python (and other languages), the more I fall in love with our craft. On the surface, it's pretty easy to get a small script running, and doing something simple. 
 
 However, as your work evolves, and you grow, things start getting complicated, convoluted, and challenging. And that's where these principles can make a difference. 
 
