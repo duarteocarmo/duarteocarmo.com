@@ -3,8 +3,8 @@
 
     <head>
         <title>{% block title %}{% endblock %}</title>
-
         {% include "header.html" %}
+        {% include "analytics.html" %}
     </head>
 
     <body>
@@ -26,6 +26,5 @@
         <footer class="container nu no-top">
             {% include "footer.html" %}
         </footer>
-        {% include "analytics.html" %}
     </body>
 </html>
