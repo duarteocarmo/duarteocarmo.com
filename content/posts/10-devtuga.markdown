@@ -131,17 +131,17 @@ I took a long time getting everything up and running ([about a month according t
 
 ## 4.The Result
 
-So [here's the result](https://devtuga.duarteocarmo.com) after some long hours of frustrating but very fun work. 
+So [here's the result](https://devtuga.herokuapp.com/) after some long hours of frustrating but very fun work. 
 
 <center>
 <img src="{static}/images/devtuga.png" alt="Hackernews" style="width:120%">
-  <figcaption>I called it: <a href="https://devtuga.duarteocarmo.com">devtuga.duarteocarmo.com</a> </figcaption>
+  <figcaption>I called it: <a href="https://devtuga.herokuapp.com/">devtuga.herokuapp.com</a> </figcaption>
 </center>
 
 
 ### Link hub 
 <a name="links"></a> 
 
-- [Just show me the final result.](https://devtuga.duarteocarmo.com)
+- [Just show me the final result.](https://devtuga.herokuapp.com/)
 - [I just came here for the code.](https://github.com/duarteocarmo/devtuga-news)
 - [I want a tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
