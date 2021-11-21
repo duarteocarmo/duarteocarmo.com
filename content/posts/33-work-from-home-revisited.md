@@ -1,6 +1,6 @@
 title: How to work from home - revisited
 date: 21-11-2021
-description: Lessons learned from fours years of writing Python
+description: A revisit of my setup and thoughts on how to work from home
 status: published
 slug: how-to-work-from-home-revisited
 thumbnail: images/setup_post_2_alternate.jpeg
