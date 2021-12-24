@@ -1,4 +1,4 @@
-title: NFTuga: AI generated politician faces as NFTs
+title: NFTs are dumb. Let's make some.
 date: 24-12-2021
 description: Putting artificially generated faces of Portuguese politicians on Solana
 status: draft
