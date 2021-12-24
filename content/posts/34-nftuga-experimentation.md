@@ -3,11 +3,10 @@ date: 24-12-2021
 description: Experimenting with GANs, NFTs, and web3
 status: draft
 slug: nftuga-nft-experimentation
-thumbnail: images/setup_post_2_alternate.jpeg 
+thumbnail: images/nftuga/model-results.png
 lang: en
 
 [English](/blog/nftuga-nft-experimentation) | [Português](/nftuga-nft-experimentation-pt) 
-
 
 Old people don't like new ideas. We see it everywhere around us. Our parents still don't understand most of today's tech trends. Even my dad still *doesn't trust* online shopping. Which I find hilarious.
 
@@ -80,5 +79,3 @@ Here's the list to all 20 NFTugas, with links to their location on the Solana bl
 - [ribolhos - CYDXjb7D4rkTt1JWvc7DSRtf5pRWADFTiNJGRuUMi3kQ](https://explorer.solana.com/address/CYDXjb7D4rkTt1JWvc7DSRtf5pRWADFTiNJGRuUMi3kQ)
 - [quintas da torre - 7LQ2r5p7cQrabyWK8hgHEcHnasMkqabwyrpY2ikPrDqW](https://explorer.solana.com/address/7LQ2r5p7cQrabyWK8hgHEcHnasMkqabwyrpY2ikPrDqW)
 - [helenos - GiB3Goa2nEBFKLdZjNxrXGjBfNasEXopCR18NaUTR2fc](https://explorer.solana.com/address/GiB3Goa2nEBFKLdZjNxrXGjBfNasEXopCR18NaUTR2fc)
-
-TODO change thumbnail
