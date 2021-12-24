@@ -1,6 +1,6 @@
 title: NFTuga: AI generated politician faces as NFTs
 date: 24-12-2021
-description: Experimenting with GANs, NFTs, and web3
+description: Putting artificially generated faces of Portuguese politicians on Solana
 status: draft
 slug: nftuga-nft-experimentation
 thumbnail: images/nftuga/model-results.png
