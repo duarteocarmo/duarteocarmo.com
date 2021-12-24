@@ -55,7 +55,7 @@ After some trial and a lot of error, I did managed to mint all 20 unique NFTugas
 
 I *did* learn a lot during the process, which was my main goal.  And even though I wasn't totally sold on the concept, I did end up with 20 unique items in a database that might exist for a long time. Bobino already asked me for one, and I'll give a couple away to friends as well. 
 
-If you, dear reader are interested in any of these, leave me an email with your public key address on Solana, and I'll send you one as well. 
+If you, dear reader are interested in any of these, leave me an email with your public key address on Solana, or fill out [this](https://forms.gle/q9NeyfQdwbFBaSbc8) form, and I'll send you one as well. 
 
 Here's the list to all 20 NFTugas, with links to their location on the Solana blockchain:
 
