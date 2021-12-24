@@ -59,23 +59,24 @@ If you, dear reader are interested in any of these, leave me an email with your 
 
 Here's the list to all 20 NFTugas, with links to their location on the Solana blockchain:
 
-- [gasparões - EmfVGHYqTa76x82jh8133Hp6iQvE43e8NSimfm4jXywq](https://explorer.solana.com/address/EmfVGHYqTa76x82jh8133Hp6iQvE43e8NSimfm4jXywq) - *Sold*
-- [cetos - HLugPDkBNZfgFhvuHeYxP5W9LEYbQi2BmPaYkyek7vKm](https://explorer.solana.com/address/HLugPDkBNZfgFhvuHeYxP5W9LEYbQi2BmPaYkyek7vKm)
-- [cumieira - BU1ZcT5xthBfiF9tgSKUACVKdCEvvZppbST2Eh7gHz9H](https://explorer.solana.com/address/BU1ZcT5xthBfiF9tgSKUACVKdCEvvZppbST2Eh7gHz9H)
-- [ameais - GKobcrnMSvwFTBVLjYbW2bQpaeSASN68ryTBTr68QYYt](https://explorer.solana.com/address/)
-- [fanhais - GG2wNV2gJTgnsfNbryc3Eb7pKHvxr1hEMU192y6pxtUY](https://explorer.solana.com/address/GG2wNV2gJTgnsfNbryc3Eb7pKHvxr1hEMU192y6pxtUY)
-- [sernelha - 391L2c8ZDHZExvfN6joy36Pna4K1pLEPBYz6Ay7wo5zM](https://explorer.solana.com/address/391L2c8ZDHZExvfN6joy36Pna4K1pLEPBYz6Ay7wo5zM)
-- [charneca - 8hf2UiWPtpmuE7gPFu3D2cU3b4z2PRNHG9BxSUVwvkaR](https://explorer.solana.com/address/8hf2UiWPtpmuE7gPFu3D2cU3b4z2PRNHG9BxSUVwvkaR)
-- [albarraque - 85Cm9f2XUWSEsCWwHibce2miitcrz2ajCvx6AQ2ACmpd](https://explorer.solana.com/address/85Cm9f2XUWSEsCWwHibce2miitcrz2ajCvx6AQ2ACmpd)
-- [cernadela - F7ni1Qa9iSiVK8yLr4ZwPUKbAriRzaNUjeTcHUqgW1bQ](https://explorer.solana.com/address/F7ni1Qa9iSiVK8yLr4ZwPUKbAriRzaNUjeTcHUqgW1bQ)
-- [cavada_nova - 6pxqLQs9w4c2tyKJ4jRnpFcdi1G5Zo31McnqzihmNSxp](https://explorer.solana.com/address/6pxqLQs9w4c2tyKJ4jRnpFcdi1G5Zo31McnqzihmNSxp)
-- [moita_redonda - 7niUipVkr58B6zfdx92VUNak1CBWxMfEaAu3MJ5xy8Zv](https://explorer.solana.com/address/7niUipVkr58B6zfdx92VUNak1CBWxMfEaAu3MJ5xy8Zv)
-- [gradissimo - GSaAtwFjja979nSYeK7jYJ5rF5teDKGHyie2MPjV7KXG](https://explorer.solana.com/address/GSaAtwFjja979nSYeK7jYJ5rF5teDKGHyie2MPjV7KXG)
-- [senhor_da_serra - Caiv1ZKkqxg4x2tKK422ny51MDuvCqkSgnX8jbkRYspj](https://explorer.solana.com/address/Caiv1ZKkqxg4x2tKK422ny51MDuvCqkSgnX8jbkRYspj)
-- [torre_dos_namorados - ESRtgAmNRaxupepvuFD61JFDS85j9YRfc6cDJX633Uw6](https://explorer.solana.com/address/ESRtgAmNRaxupepvuFD61JFDS85j9YRfc6cDJX633Uw6)
-- [santana - AntpwziEwHw9SaSAUF1cpXysDbVrfnZfzbB61jSC6DP1](https://explorer.solana.com/address/AntpwziEwHw9SaSAUF1cpXysDbVrfnZfzbB61jSC6DP1)
-- [cacela_velha - HiRHzSe8CCjTqdGTtojKiKf45t3WJsPieu54Vd2XAEJP](https://explorer.solana.com/address/HiRHzSe8CCjTqdGTtojKiKf45t3WJsPieu54Vd2XAEJP)
-- [arrota_da_moita - gNZ6g1jn1QRmSNuaHLaLSqpZebZT4fEgfy8R14rTBHS](https://explorer.solana.com/address/gNZ6g1jn1QRmSNuaHLaLSqpZebZT4fEgfy8R14rTBHS)
-- [ribolhos - CYDXjb7D4rkTt1JWvc7DSRtf5pRWADFTiNJGRuUMi3kQ](https://explorer.solana.com/address/CYDXjb7D4rkTt1JWvc7DSRtf5pRWADFTiNJGRuUMi3kQ)
-- [quintas da torre - 7LQ2r5p7cQrabyWK8hgHEcHnasMkqabwyrpY2ikPrDqW](https://explorer.solana.com/address/7LQ2r5p7cQrabyWK8hgHEcHnasMkqabwyrpY2ikPrDqW)
-- [helenos - GiB3Goa2nEBFKLdZjNxrXGjBfNasEXopCR18NaUTR2fc](https://explorer.solana.com/address/GiB3Goa2nEBFKLdZjNxrXGjBfNasEXopCR18NaUTR2fc)
+- [gasparões](https://explorer.solana.com/address/EmfVGHYqTa76x82jh8133Hp6iQvE43e8NSimfm4jXywq) - *Sold*
+- [cetos](https://explorer.solana.com/address/HLugPDkBNZfgFhvuHeYxP5W9LEYbQi2BmPaYkyek7vKm) - *Reserved*
+- [cumieira](https://explorer.solana.com/address/BU1ZcT5xthBfiF9tgSKUACVKdCEvvZppbST2Eh7gHz9H) 
+- [ameais](https://explorer.solana.com/address/)
+- [fanhais](https://explorer.solana.com/address/GG2wNV2gJTgnsfNbryc3Eb7pKHvxr1hEMU192y6pxtUY)
+- [sernelha](https://explorer.solana.com/address/391L2c8ZDHZExvfN6joy36Pna4K1pLEPBYz6Ay7wo5zM)
+- [charneca](https://explorer.solana.com/address/8hf2UiWPtpmuE7gPFu3D2cU3b4z2PRNHG9BxSUVwvkaR)
+- [albarraque](https://explorer.solana.com/address/85Cm9f2XUWSEsCWwHibce2miitcrz2ajCvx6AQ2ACmpd)
+- [cernadela](https://explorer.solana.com/address/F7ni1Qa9iSiVK8yLr4ZwPUKbAriRzaNUjeTcHUqgW1bQ)
+- [cavada_nova](https://explorer.solana.com/address/6pxqLQs9w4c2tyKJ4jRnpFcdi1G5Zo31McnqzihmNSxp)
+- [moita_redonda](https://explorer.solana.com/address/7niUipVkr58B6zfdx92VUNak1CBWxMfEaAu3MJ5xy8Zv)
+- [gradissimo](https://explorer.solana.com/address/GSaAtwFjja979nSYeK7jYJ5rF5teDKGHyie2MPjV7KXG)
+- [senhor_da_serra](https://explorer.solana.com/address/Caiv1ZKkqxg4x2tKK422ny51MDuvCqkSgnX8jbkRYspj) - *Reserved*
+- [torre_dos_namorados](https://explorer.solana.com/address/ESRtgAmNRaxupepvuFD61JFDS85j9YRfc6cDJX633Uw6)
+- [santana](https://explorer.solana.com/address/AntpwziEwHw9SaSAUF1cpXysDbVrfnZfzbB61jSC6DP1)
+- [cacela_velha](https://explorer.solana.com/address/HiRHzSe8CCjTqdGTtojKiKf45t3WJsPieu54Vd2XAEJP)
+- [arrota_da_moita](https://explorer.solana.com/address/gNZ6g1jn1QRmSNuaHLaLSqpZebZT4fEgfy8R14rTBHS)
+- [ribolhos](https://explorer.solana.com/address/CYDXjb7D4rkTt1JWvc7DSRtf5pRWADFTiNJGRuUMi3kQ)
+- [quintas da torre](https://explorer.solana.com/address/7LQ2r5p7cQrabyWK8hgHEcHnasMkqabwyrpY2ikPrDqW)
+- [helenos](https://explorer.solana.com/address/GiB3Goa2nEBFKLdZjNxrXGjBfNasEXopCR18NaUTR2fc)
+
