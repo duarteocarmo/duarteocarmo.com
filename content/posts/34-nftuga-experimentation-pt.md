@@ -1,8 +1,8 @@
 title: Os NFTs são estúpidos. Bora fazer uns. 
-date: 24-12-2021
+date: 27-12-2021
 description: Criando NFTs a partir de caras de deputados geradas por inteligência artificial 
 status: draft
-slug: nftuga-nft-experimentation-pt
+slug: nftuga-nft-experimentation
 thumbnail: images/nftuga/model-results.png
 lang: pt
 translation: true
