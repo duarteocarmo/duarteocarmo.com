@@ -1,7 +1,7 @@
 title: NFTs are dumb. Let's make some.
-date: 27-12-2021
+date: 26-12-2021
 description: Putting artificially generated faces of Portuguese politicians on Solana
-status: draft
+status: published
 slug: nftuga-nft-experimentation
 thumbnail: images/nftuga/model-results.png
 lang: en
@@ -32,7 +32,7 @@ For a long time I've been pondering on the idea of making artificially generated
 
 ## Teaching a model how to make faces
 
-The premise was set -  I [downloaded](https://github.com/duarteocarmo/nftuga/blob/master/download_images.py) 1500 photos of past and present members of the Portuguese Parliament (here's the [Kaggle dataset](https://www.kaggle.com/duarteocarmo/diplomatas-download)). After some data wrangling, 8.5 hours of model training, and being blocked for using too many GPU resources, I finally got to some satisfactory results. I used an implementation of GAN where cropped the images to the facial boundaries. If your interested in diving deeper into the technical stuff, [here's the Kaggle notebook](https://www.kaggle.com/duarteocarmo/nftuga-training). 
+The premise was set -  I [downloaded](https://github.com/duarteocarmo/nftuga/blob/master/download_images.py) 1500 photos of past and present members of the Portuguese Parliament (here's the [Kaggle dataset](https://www.kaggle.com/duarteocarmo/diplomatas-download)). After some data wrangling, 8.5 hours of model training, and being blocked for using too many GPU resources, I finally got to some satisfactory results. I used an implementation of GAN in which cropped the images to the facial boundaries. If you're interested in diving deeper into the technical stuff, [here's the Kaggle notebook](https://www.kaggle.com/duarteocarmo/nftuga-training). 
 
 
 It was now time to take the face generator and create some NFTugas. From a pool of 100 randomly generated images, I selected 20 that I believe were *interesting*. Some look like a mix of male and female (and the latter are rare, *especially* in Portuguese Parliament), others look a bit like aliens, or not humans at all. I didn't want to give them boring names such as "BORED APE #007". So I scrapped names of Portuguese villages from the web, and assigned them to the 20 selected images (names like *fanhais*, or *charneca*). 
@@ -52,6 +52,8 @@ While researching, I came accross [Metaplex](https://github.com/metaplex-foundat
 ## NFTugas on the Solana blockchain
 
 After some trial and a lot of error, I did managed to mint all 20 unique NFTugas into the Solana blockchain. I'm surprised by how immature some of the developer tooling is - at least on Solana. Also, transactions on the chain seem to be *very* expensive. I spent about ~30 EUR to mint (e.g., create) about 20 NFTs (we are talking no more than 2MB). 
+
+So are NFTs stupid? Yeah. As stupid as a [banana on a wall selling for 120.000 USD](https://news.artnet.com/market/maurizio-cattelan-banana-art-basel-miami-beach-1722516). The value of objects is only determined by what individuals are willing to pay for them. If people believe that a digital token on Ethereum is worth a million dollars, who the hell am I to prove them wrong? 
 
 I *did* learn a lot during the process, which was my main goal.  And even though I wasn't totally sold on the concept, I did end up with 20 unique items in a database that might exist for a long time. Bobino already asked me for one, and I'll give a couple away to friends as well. 
 

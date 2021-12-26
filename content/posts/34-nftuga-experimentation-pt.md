@@ -1,7 +1,7 @@
 title: Os NFTs são estúpidos. Bora fazer uns. 
-date: 27-12-2021
+date: 26-12-2021
 description: Criando NFTs a partir de caras de deputados geradas por inteligência artificial 
-status: draft
+status: published
 slug: nftuga-nft-experimentation
 thumbnail: images/nftuga/model-results.png
 lang: pt
@@ -54,6 +54,8 @@ Enquanto estava a estudar a assunto, descobri uma framework chamada [Metaplex](h
 Depois de muitas tentativas falhadas, la acabei por conseguir criar os 20 NFTugas na blockchain. Fiquei surpreendido pela qualidade das ferramentas que existem no espaço (pelo menos no espaço Solana) que deixam um pouco a desejar. Além de que as transações na blockchain parecem ser *bastante* caras. No total, acabei por gastar a volta de 30 EUR só para os criar (não estamos a falar de mais de 2 MB de imagens).
 
 Também acabei por aprender bastante durante o processo - o meu objectivo principal. Fico feliz também por ter 20 itens "únicos", criados por mim (or por um AI que eu criei) numa blockchain. Se calhar ficarão lá muito tempo. Se calhar isto é tudo uma bolha e rebenta amanhã. Segue jogo. 
+
+Continuam a ser estúpidos? Sim, tão estúpidos quanto [uma banana numa parede por 120.000 USD](https://news.artnet.com/market/maurizio-cattelan-banana-art-basel-miami-beach-1722516). Ou seja, a arte, e o valor dos objectos é proporcional ao valor que nós lhe atribuímos. Se existem pessoas que acreditam que o valor de um token digital é superior a um milhão de euros, quem sou eu para as desmentir? 
 
 A Bobino já me pediu um dos NFTugas, e outros dois amigos também me pediram para lhes enviar um. Se estiveres interessado/a manda -me um email com a tua public key, ou preenche [este](https://forms.gle/q9NeyfQdwbFBaSbc8) formulário e eu mando-te um também.  
 
