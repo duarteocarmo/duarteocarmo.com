@@ -4,7 +4,7 @@
 {% if article.category == 'blog' %}
     <h1>{{ article.title }}</h1>
     {{ article.content }}
-    <p>{{  article.date | strftime('%B %-d, %Y') }}</p>
+    <p><i>{{  article.date | strftime('%B %-d, %Y') }}</i></p>
     <p><a target="_blank" href="https://follow.it/duarte-o-carmo?action=followPub">Get new posts in your inbox</a></p>
 {% elif article.category == 'photos' %}
     <center>
@@ -14,6 +14,6 @@
     {% if article.location != 'None' %}
         <p><i>Taken in {{ article.location }}</i></p>
     {% endif %}
-    <p>{{  article.date | strftime('%B %-d, %Y') }}</p>
+    <p><i>{{  article.date | strftime('%B %-d, %Y') }}</i></p>
 {% endif %}
 {% endblock %}
