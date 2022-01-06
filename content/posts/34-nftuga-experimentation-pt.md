@@ -1,4 +1,4 @@
-title: Os NFTs são estúpidos. Bora fazer uns. 
+title: Os NFTs são estúpidos. Bora fazer uns
 date: 26-12-2021
 description: Criando NFTs a partir de caras de deputados geradas por inteligência artificial 
 status: published
