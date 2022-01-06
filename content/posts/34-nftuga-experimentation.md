@@ -1,4 +1,4 @@
-title: NFTs are dumb. Let's make some.
+title: NFTs are dumb. Let's make some
 date: 26-12-2021
 description: Putting artificially generated faces of Portuguese politicians on Solana
 status: published
