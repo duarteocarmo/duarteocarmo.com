@@ -1,5 +1,5 @@
 title: Simple software
-date: 06-01-2022
+date: 01-06-2022
 description: Keep it simple, stupid 
 status: published
 slug: simple-software
