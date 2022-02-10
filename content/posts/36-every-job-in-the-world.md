@@ -1,5 +1,5 @@
 title: Visualizing every job in the world
-date: 02-08-2022
+date: 02-10-2022 09:00
 description: A visualization of every single job in the world (or at least in the EU)
 status: published
 slug: every-job-world
