@@ -7,15 +7,15 @@ slug: about
 
 Hi, I'm Duarte, 
 
-I'm an advanced Machine Learning Engineer/hacker at [DSB](https://www.dsb.dk/), the largest train operating company in Scandinavia. Here, I'm focusing on scaling up the recently created Artificial Intelligence and Machine Learning department. My day-to-day is a mix of strategy, advisory, leadership, technical architecture, and development. 
+I'm a Technologist/hacker, born and raised in Portugal, now based in Copenhagen. My work lies in the intersection of Machine Learning, Data, Software Engineering, and People. I'm in love with Technology, and how it improves people's lives. 
 
-Previously, I was employed at the [Boston Consulting Group](https://bcgplatinion.com/nordics/), where I helped leading businesses in the areas of AI & ML, Software Development, and Cyber Security. I've also worked for [Jabra](https://jabra.com), helping C-level executives shape the strategy, and creating new AI based ventures. 
+Currently, I'm leading the Machine Learning efforts at [Amplemarket](https://amplemarket.com/), a Y Combinator-backed startup that helps companies do sales and grow. I also do some independent [consulting](/consulting) for startups and established companies. 
 
-Earlier endeavors include the [WYGroup](https://www.wygroup.net/) &  [Bliss Applications](https://www.blissapplications.com/) where I got to create new start-ups, and helped develop mobile applications using cutting edge technology.
+Previously, I was employed at the [Boston Consulting Group](https://bcgplatinion.com/nordics/), where I helped large businesses in the areas of AI & ML, Software Development, and Cyber Security. I've also worked for [Jabra](https://jabra.com), helping C-level executives shape the strategy, and creating new AI-based ventures. 
 
-My work is also shaped by my background and education. I've studied in the [Superior Technical Institute of Lisbon](https://tecnico.ulisboa.pt/en/), in the [Beijing Institute of Technology](http://english.bit.edu.cn/), and in the [Technical University of Denmark](https://www.dtu.dk/english).
+My work is also shaped by my background and education. I've studied at the [Superior Technical Institute of Lisbon](https://tecnico.ulisboa.pt/en/), the [Beijing Institute of Technology](http://english.bit.edu.cn/), and the [Technical University of Denmark](https://www.dtu.dk/english).
 
-In my free time you can probably find me learning about new gadgets, [writing code]({static}/images/code.jpg), [reading](https://github.com/duarteocarmo/my-personal-zen), [taking photos]({static}/images/photos.jpg), or [running]({static}/images/run.jpg). 
+In my free time, you can probably find me learning about new gadgets, [writing code]({static}/images/code.jpg), [reading](https://github.com/duarteocarmo/my-personal-zen), [taking photos]({static}/images/photos.jpg), or [running]({static}/images/run.jpg). 
 
 If you wish to know more about my career, feel free to browse [my resume](/cv.pdf). 
 
