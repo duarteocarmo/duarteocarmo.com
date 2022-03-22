@@ -10,7 +10,7 @@ Someone once told me that my professional network is one of the most important t
 
 ## The idea
 
-The idea is pretty simple, you want to stay in touch with a group of people, by talking to them every X days/months/years. Let's say you want to keep up with Jane every two months. If two months have passed and you haven't talked, you should get nudged into talking doing it. 
+The idea is pretty simple, you want to stay in touch with a group of people, by talking to them every X days/months/years. Let's say you want to keep up with Jane every two months. If two months have passed and you haven't talked, you should get nudged into doing it. 
 
 To solve this, I started with a recurring item in my to-do list, but it quickly got messy. I tested [Dex](https://getdex.com/), but they would only allow me to keep tabs on 15 people. [Monica](https://www.monicahq.com/) looks like a fun deployment challenge - that's not what I'm looking for. 
 
