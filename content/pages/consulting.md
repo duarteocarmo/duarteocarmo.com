@@ -12,7 +12,7 @@ Yours doesn't have to.
 
 I'm known to take a *full-stack* approach to helping customers solve problems with AI. I proud myself for delivering projects from start to finish. 
 
-Here are problems I helped solve in the past: 
+Some problems I've helped solve in the past: 
 
 - An *emotion recognition system* for call centres. Helping call center agents get visibility on the emotion/state of customers
 - A *large scale end-to-end data pipeline* to analyse text from millions of companies.  Used for ESG reporting
