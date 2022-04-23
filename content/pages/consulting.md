@@ -10,7 +10,7 @@ slug: consulting
 
 Yours doesn't have to.
 
-I'm known to take a *full-stack* approach to helping customers solve problems with AI. I proud myself for delivering projects from start to finish. 
+I'm known to take a *full-stack* approach to helping customers solve problems with AI. I pride myself on delivering projects from start to finish. 
 
 Some problems I've helped solve in the past: 
 
