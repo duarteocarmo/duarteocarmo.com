@@ -31,7 +31,7 @@ At the core of the tool is a simple folder. In it, every person that I want to s
 
 At the top of the file: the person's name, our relationship, and the frequency at which we should keep in touch. After that, every entry is a header with a date of contact, and some notes about what happened in that date. Here's an example:
 
-```markdown
+```md
 Name: John Snow
 Relationship: Idol
 Interval(every): 2 months
