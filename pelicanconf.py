@@ -63,7 +63,8 @@ STATIC_PATHS = [
     "html",
 ]
 EXTRA_PATH_METADATA = {
-    "extra/favicon.ico": {"path": "favicon.ico"},
+    # "extra/favicon.ico": {"path": "favicon.ico"},
+    "extra/favicon.svg": {"path": "favicon.svg"},
     "extra/robots.txt": {"path": "robots.txt"},
     "pdfs/cv.pdf": {"path": "cv.pdf"},
     "extra/CNAME": {"extra/CNAME": {"path": "CNAME"}},
