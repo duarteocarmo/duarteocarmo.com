@@ -1,63 +1,17 @@
-/* FONTS */
-
-/* inter-regular - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/theme/css/fonts/inter-v11-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/theme/css/fonts/inter-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/theme/css/fonts/inter-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/theme/css/fonts/inter-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('/theme/css/fonts/inter-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/theme/css/fonts/inter-v11-latin-regular.svg#Inter') format('svg'); /* Legacy iOS */
-}
-
-/* inter-500 - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  src: url('/theme/css/fonts/inter-v11-latin-500.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/theme/css/fonts/inter-v11-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/theme/css/fonts/inter-v11-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/theme/css/fonts/inter-v11-latin-500.woff') format('woff'), /* Modern Browsers */
-       url('/theme/css/fonts/inter-v11-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/theme/css/fonts/inter-v11-latin-500.svg#Inter') format('svg'); /* Legacy iOS */
-}
-
-/* inter-700 - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/theme/css/fonts/inter-v11-latin-700.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/theme/css/fonts/inter-v11-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/theme/css/fonts/inter-v11-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/theme/css/fonts/inter-v11-latin-700.woff') format('woff'), /* Modern Browsers */
-       url('/theme/css/fonts/inter-v11-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/theme/css/fonts/inter-v11-latin-700.svg#Inter') format('svg'); /* Legacy iOS */
-}
-
-/* Custom CSS*/
-
 :root {
     --color-light-primary: #111;
     --color-light-secondary: #111;
     --color-light-background: #fff;
-    /* --color-light-background: #e8e5df; */
+    --color-light-background: #fff;
     --color-light-code: #fff;
-    --color-light-code-background:#fff;
+    --color-light-code-background: #f6f8fa;
     --color-light-filtering: 0%;
 
     --color-dark-primary: #eee;
     --color-dark-secondary: #eee;
     --color-dark-background: #272c34;
     --color-dark-code: #4a525a;
-    --color-dark-code-background: #272c34;
+    --color-dark-code-background: #171b21;
     --color-dark-filtering: 100%;
 
     --primary: var(--color-light-primary);
@@ -66,29 +20,37 @@
     --image-filtering: var(--color-light-filtering);
     --code-color: var(--color-light-code);
     --code-background: var(--color-light-code-background);
-    --base-font: "Inter", -apple-system, BlinkMacSystemFont, "avenir next", avenir,
-        helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
-        sans-serif;
-    --code-font: San Francisco Mono, Monaco, "Consolas", "Lucida Console",
-        "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+    /* --base-font: "Inter", -apple-system, BlinkMacSystemFont, "avenir next", avenir, */
+    /*     helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, */
+    /*     sans-serif; */
+    /* --code-font: San Francisco Mono, Monaco, "Consolas", "Lucida Console", */
+    /*     "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace; */
+    --base-font: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    --fancy-font: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    --code-font: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }
 
 body {
     color: var(--secondary);
     background-color: var(--background);
     font-family: var(--base-font);
-    font-display: swap;
     margin: 0 auto;
     --font-size: 1rem;
     font-size: var(--font-size);
-    line-height: 1.8;
+    line-height: 1.7;
     padding-top: 20px;
     text-rendering: optimizeLegibility;
-    letter-spacing: -0.009em;
+    /* letter-spacing: -0.009em; */
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight:500;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    /* font-family: var(--fancy-font) */
 }
 
 
@@ -104,8 +66,8 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
 }
 
-.no-top > :first-child {
-    margin-top:0;
+.no-top> :first-child {
+    margin-top: 0;
     line-height: 1.25;
 }
 
@@ -133,7 +95,7 @@ header {
     white-space: pre;
 }
 
-.article-list > div {
+.article-list>div {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -146,8 +108,8 @@ header {
 
 a {
     color: var(--secondary);
-    text-decoration-skip-ink:auto;
-    text-decoration:underline
+    text-decoration-skip-ink: auto;
+    text-decoration: underline
 }
 
 a:visited {
@@ -158,18 +120,25 @@ a:visited {
     text-decoration: none;
 }
 
-.nu a:hover  {
+.nu a:hover {
     text-decoration: underline;
 }
 
 
 code {
     font-family: var(--code-font);
+    background-color: var(--code-background);
     font-size: 90%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 6px;
 }
 
 pre code {
     background-color: var(--code-background);
+    font-size: 80%;
     display: block;
     white-space: pre;
     --webkit-overflow-scrolling: touch;
@@ -179,6 +148,13 @@ pre code {
     line-height: 1.5;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 6px;
+}
+
+.not-here {
+    background-color: var(--background);
 }
 
 footer {
@@ -189,16 +165,16 @@ footer {
 div.gallery {
     padding: 20px;
     gap: 10px;
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-div.gallery > div {
+div.gallery>div {
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    aspect-ratio:1;
+    aspect-ratio: 1;
     /**background-color:red;**/
 }
 
@@ -224,10 +200,12 @@ div.gallery img {
     header {
         padding-bottom: 20px;
     }
+
     .separator {
         border-top: 1px solid;
         border-color: var(--secondary);
     }
+
     div.gallery {
         gap: 5px;
     }
@@ -243,11 +221,12 @@ div.gallery img {
     }
 
     .article-list {
-        display: grid; 
+        display: grid;
         grid-template-columns: 1fr;
         grid-row-gap: 0px;
     }
-    .article-list > div {
+
+    .article-list>div {
         white-space: normal;
     }
 
@@ -255,11 +234,12 @@ div.gallery img {
         padding-bottom: 20px;
         padding-right: 0;
     }
+
     .nu a {
         text-decoration: underline;
     }
 
-    .nu a:hover  {
+    .nu a:hover {
         text-decoration: underline;
     }
 
@@ -271,11 +251,11 @@ div.gallery img {
 }
 
 @media (prefers-color-scheme: dark) {
-:root {
---primary: var(--color-dark-primary);
---secondary: var(--color-dark-secondary);
---background: var(--color-dark-background);
---image-filtering: var(--color-dark-filtering);
---code-color: var(--color-dark-code);
---code-background: var(--color-dark-code-background);
-}
+    :root {
+        --primary: var(--color-dark-primary);
+        --secondary: var(--color-dark-secondary);
+        --background: var(--color-dark-background);
+        --image-filtering: var(--color-dark-filtering);
+        --code-color: var(--color-dark-code);
+        --code-background: var(--color-dark-code-background);
+    }

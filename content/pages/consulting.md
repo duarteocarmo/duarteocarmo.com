@@ -2,9 +2,10 @@ title: Consulting
 slug: consulting
 
 <center>
-<img  src="{static}/images/companies_all.png" alt="companies">
+<img  src="{static}/images/companies_all.png" alt="companies" style="border-radius: 6px;">
 </center>
 <br>
+
 
 87% of <a href="https://venturebeat.com/2019/07/19/why-do-87-of-data-science-projects-never-make-it-into-production/" target="_blank">all data science projects fail</a>. 
 
