@@ -60,7 +60,7 @@ STATIC_PATHS = [
     "pdfs/cv.pdf",
     "extra/CNAME",
     "html",
-    "extra/favicons"
+    "extra/favicons",
 ]
 EXTRA_PATH_METADATA = {
     "extra/favicons/": {"path": "favicons/"},
