@@ -1,6 +1,6 @@
 {% if PLAUSIBLE %}
 <!-- Plausible -->
-<script defer data-domain="duarteocarmo.com" src="https://plausible.io/js/plausible.js"></script>
+<script defer data-domain="duarteocarmo.com" src="https://plausible.io/js/script.outbound-links.js"></script>
 {% endif %}
 {% if GOAT_COUNTER %}
 <!-- GoatCounter -->
@@ -10,10 +10,13 @@
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS }}"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', '{{ GOOGLE_ANALYTICS }}');
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', '{{ GOOGLE_ANALYTICS }}');
 </script>
 {% endif %}
