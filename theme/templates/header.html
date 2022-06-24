@@ -9,10 +9,6 @@
 
 <link rel="stylesheet" type="text/css" href="{{ SITEURL  }}/theme/css/style.css" />
 
-{% if article %}
-<link rel="stylesheet" type="text/css" href="{{ SITEURL  }}/theme/css/code.css" />
-{% endif %}
-
 <link type="application/atom+xml" rel="alternate" href="{{SITEURL}}/{{FEED_ALL_ATOM }}" title="{{ SITENAME }}" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="{{SITEURL}}/favicons/apple-touch-icon.png">
@@ -25,6 +21,7 @@
 <meta property="og:type" content="website" />
 
 {% if article %}
+<link rel="stylesheet" type="text/css" href="{{ SITEURL  }}/theme/css/code.css" />
 <link rel="canonical" href="{{ SITEURL }}/{{ article.url  }}" />
 
 <meta property="og:title" content="{{ article.title }}" />
@@ -34,30 +31,31 @@
 <meta name="twitter:title" content="{{ article.title }}">
 
 <script type="application/ld+json">
-        {
-          "@context": "http://schema.org",
-          "@type": "BlogPosting",
-          "name": "{{ article.title }}",
-          "headline": "{{ article.title }}",
-          "datePublished": "{{ article.date }}",
-          "dateModified": "{{ article.modified }}",
-          "author": {
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "name": "{{ article.title }}",
+        "headline": "{{ article.title }}",
+        "datePublished": "{{ article.date }}",
+        "dateModified": "{{ article.modified }}",
+        "author": {
             "@type": "Person",
             "name": "{{ AUTHOR }}",
             "url": "{{ SITEURL }}"
-          },
-           "publisher": {
+        },
+        "publisher": {
             "@type": "Organization",
-            "name": "{{ AUTHOR }}", 
-"logo": {
-          "@type": "ImageObject",
-          "url": "{{ SITEURL }}/{{ SITELOGO }}"
+            "name": "{{ AUTHOR }}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ SITEURL }}/{{ SITELOGO }}"
 
-        }	}, 
-          "image": "{{ SITEURL }}/{{ SITELOGO }}",
-          "url": "{{ SITEURL }}/{{ article.url }}",
-          "description": "{{ article.summary|striptags|e }}"
-        }
+            }
+        },
+        "image": "{{ SITEURL }}/{{ SITELOGO }}",
+        "url": "{{ SITEURL }}/{{ article.url }}",
+        "description": "{{ article.summary|striptags|e }}"
+    }
 </script>
 
 {% if article.description %}
@@ -76,6 +74,23 @@
 <meta property="og:image" content="{{ SITEURL }}/{{ SITELOGO }}" />
 <meta name="twitter:image" content="{{ SITEURL }}/{{ SITELOGO }}">
 {% endif %}
+{% if 'vega' in article.include %}
+<style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+
+    .error {
+        color: red;
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+{% endif %}
 {% elif  page %}
 <meta name="description" content="{{ SITE_DESCRIPTION }}" />
 <meta name="twitter:url" content="{{ SITEURL }}/{{ page.url }}">
@@ -90,20 +105,20 @@
 <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
 
 <script type="application/ld+json">
-        {
-          "@context" : "http://schema.org",
-          "@type" : "Blog",
-          "name": "{{ SITENAME  }}",
-          "url" : "{{ SITEURL  }}/{{ page.url }}",
-          "image": "{{SITEURL}}/{{ SITELOGO  }}",
-          "description": "{{ SITE_DESCRIPTION  }}"
+    {
+        "@context": "http://schema.org",
+        "@type": "Blog",
+        "name": "{{ SITENAME  }}",
+        "url": "{{ SITEURL  }}/{{ page.url }}",
+        "image": "{{SITEURL}}/{{ SITELOGO  }}",
+        "description": "{{ SITE_DESCRIPTION  }}"
 
-        }
+    }
 </script>
 {% else %}
 <meta name="description" content="{{ SITE_DESCRIPTION }}" />
 <link rel="canonical" href="{{ SITEURL }}" />
-<meta name="follow_it-verification-code" content="KRrlNDwePq9uk4Fcv4Nr"/>
+<meta name="follow_it-verification-code" content="KRrlNDwePq9uk4Fcv4Nr" />
 
 <meta property="og:title" content="{{ SITENAME }}" />
 <meta property="og:url" content="{{ SITEURL }}" />
@@ -116,14 +131,14 @@
 <meta name="twitter:image" content="{{ SITEURL }}/{{ SITELOGO }}">
 
 <script type="application/ld+json">
-        {
-          "@context" : "http://schema.org",
-          "@type" : "Blog",
-          "name": "{{ SITENAME  }}",
-          "url" : "{{ SITEURL  }}",
-          "image": "{{SITEURL}}/{{ SITELOGO  }}",
-          "description": "{{ SITE_DESCRIPTION  }}"
+    {
+        "@context": "http://schema.org",
+        "@type": "Blog",
+        "name": "{{ SITENAME  }}",
+        "url": "{{ SITEURL  }}",
+        "image": "{{SITEURL}}/{{ SITELOGO  }}",
+        "description": "{{ SITE_DESCRIPTION  }}"
 
-        }
+    }
 </script>
 {% endif %}

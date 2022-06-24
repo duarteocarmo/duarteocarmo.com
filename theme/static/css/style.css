@@ -187,6 +187,14 @@ div.gallery img {
     min-height: 100%
 }
 
+
+canvas.marks {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+
+
 @media screen and (min-width:1024px) {
     header {
         position: absolute;
