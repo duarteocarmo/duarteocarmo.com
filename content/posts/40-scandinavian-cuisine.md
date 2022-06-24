@@ -21,11 +21,11 @@ I'm not a fan of the culinary arts (the opposite really). But I decided to build
 
 Here's a sample: 
 
-<img alt="table data" style="border-radius: 5px;" src="{static}/images/40/table.png"/>
+<img alt="table data" style="border-radius: 5px;" src="{static}/images/40/table.png">
 
 And here's there distribution of recipes across regions:
 
-<img alt="value counts" style="border-radius: 5px;" src="{static}/images/40/value_counts.png"/>
+<img alt="value counts" style="border-radius: 5px;" src="{static}/images/40/value_counts.png">
 
 ## Vectors are dope, more of those
 
