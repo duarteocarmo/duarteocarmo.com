@@ -1,8 +1,9 @@
-title: Icelandic Caramel Potatoes
-date: 06-27-2022 12:00
-description: Using Python, Embeddings, and FAISS to find my favourite recipes. 
-status: draft
+title: A recipe recommendation system 
+date: 06-26-2022 11:55
+description: Building a recipe recommendation system with Python, embeddings and FAISS
+status: published
 slug: scandinavia-food-python-recommendation-systems
+thumbnail: images/40/netflix_shuffle.png
 include: vega
 
 
@@ -136,9 +137,9 @@ df.loc[df.ingredient_string.str.lower().str.contains("|".join(hated_ingredients)
 df.loc[df.ingredient_string.str.lower().str.contains("|".join(liked_ingredients)), "like"] = +1
 ```
 
-Yeah,I don't like spinach. Let me be. 
+Yeah, I don't like spinach. Let me be. 
 
-Once we've what recipes I like, and recipes I don't, we can use our leverage our embeddings again, to visualise *my own* network of recipes. Here's a sample of 500:
+Once I've defined what recipes I like, and what recipes I don't, we can use our leverage our embeddings again, to visualise *my own* network of recipes. Here's a sample of 500:
 
 <div id="vis"></div>
 <script>
