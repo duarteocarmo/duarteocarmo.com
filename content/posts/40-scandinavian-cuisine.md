@@ -176,7 +176,7 @@ If you're the visual kind:
 <img alt="agarwall" style="border-radius: 5px;" src="{static}/images/40/agarwall.png"/>
 
 
-With the above methodology, we can score every single "unseen" company. We scored every liked and disliked company as a `-1` or a `+1`.  Therefore, every unlabelled company will have a score between these two numbers. If that score is above `0`, I am more likely to *like* the recipe, if not, I'm  more likely to *dislike* it. 
+With the above methodology, we can score every single "unseen" recipe. We scored every liked and disliked recipe as a `-1` or a `+1`.  Therefore, every unlabelled recipe will have a score between these two numbers. If that score is above `0`, I am more likely to *like* the recipe, if not, I'm  more likely to *dislike* it. 
 
 But wait. This sounds computationally expensive.
 
