@@ -1,0 +1,12 @@
+title: Talks
+slug: talks
+
+#### 2022
+
+- **Machine learning! (But in the real world)** [LIP Coimbra](https://pages.lip.pt/data-science/) - [slides](/pdfs/lip-2022-sanitized.pdf)
+- **Four years of Python (extended)** [PyCon Italia](https://pycon.it/en) - [slides](/pdfs/four-years-of-python-pycon.pdf) - [video](https://www.youtube.com/watch?v=zB_Hr-05Stc)
+- **Four years of Python** [PyData Copenhagen](https://www.meetup.com/pydata-copenhagen/) - [slides](/pdfs/four-years-of-python-pydata.pdf)
+
+#### 2018
+
+- **Measuring the uniqueness of technological capabilities** [DTU](https://www.dtu.dk/english) - [slides](https://dl.dropboxusercontent.com/s/8h2kvhu6detyo82/Presentation%20Public.pdf)
