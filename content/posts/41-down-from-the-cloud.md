@@ -21,7 +21,7 @@ I have a love-hate relationship with Docker. For me, it's still the most straigh
 
 Every application will run inside its own containerized environment. To ensure this doesn't get overly complicated, I went with `docker compose`. Why not Kubernetes you may ask? Because I have other things to do. 
 
-Inside the server, this is what is look like: 
+Inside the server, things look a little something like: 
 
 ```bash
 |-- Caddyfile <- more on this later
