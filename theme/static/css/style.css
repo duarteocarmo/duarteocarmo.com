@@ -7,11 +7,11 @@
     --color-light-code-background: #f6f8fa;
     --color-light-filtering: 0%;
 
-    --color-dark-primary: #eee;
+    --color-dark-primary: #fff;
     --color-dark-secondary: #eee;
-    --color-dark-background: #272c34;
-    --color-dark-code: #4a525a;
-    --color-dark-code-background: #171b21;
+    --color-dark-background: #0d1117;
+    --color-dark-code: #161b22;
+    --color-dark-code-background: #161b22;
     --color-dark-filtering: 100%;
 
     --primary: var(--color-light-primary);
