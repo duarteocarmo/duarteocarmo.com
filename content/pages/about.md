@@ -7,11 +7,9 @@ slug: about
 
 Hi, I'm Duarte, 
 
-I'm a Technologist/hacker, born and raised in Portugal, now based in Copenhagen. My work lies in the intersection of Machine Learning, Data, Software Engineering, and People. I'm in love with Technology, and how it improves people's lives. 
+I'm a Technologist/hacker, born and raised in sunny Portugal, now based in Copenhagen. My work lies in the intersection of Machine Learning, Data, Software Engineering, and People. I'm in love with Technology, and how it can improve people's lives. 
 
-Currently, I'm leading the Machine Learning efforts at [Amplemarket](https://amplemarket.com/), a Y Combinator-backed startup that helps companies do sales and grow. I also do some independent [consulting](/consulting) for startups and established companies. 
-
-Previously, I was employed at the [Boston Consulting Group](https://bcgplatinion.com/nordics/), where I helped large businesses in the areas of AI & ML, Software Development, and Cyber Security. I've also worked for [Jabra](https://jabra.com), helping C-level executives shape the strategy, and creating new AI-based ventures. 
+In the past, I've worked in Consumer Electronics, Public Institutions, Big Three Management Consulting, and Startups. The common thread? Solving problems end-to-end. 
 
 My work is also shaped by my background and education. I've studied at the [Superior Technical Institute of Lisbon](https://tecnico.ulisboa.pt/en/), the [Beijing Institute of Technology](http://english.bit.edu.cn/), and the [Technical University of Denmark](https://www.dtu.dk/english).
 
