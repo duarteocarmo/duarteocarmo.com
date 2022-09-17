@@ -1,20 +1,21 @@
-{% extends "base.html" %}
-{% block title %}{{ article.title }}{% endblock %}
-{% block content %}
-{% if article.category == 'blog' %}
-    <h1>{{ article.title }}</h1>
-    {{ article.content }}
-    <p><i>{{  article.date | strftime('%B %-d, %Y') }}</i></p>
-    <!-- <p><a target="_blank" href="https://follow.it/duarte-o-carmo?action=followPub">Get new posts in your inbox</a></p> -->
-    <p><a target="_blank" href="http://eepurl.com/hLZEtn">Get new posts in your inbox</a></p>
+{% extends "base.html" %} {% block title %}{{ article.title }} - {{ SITENAME
+}}{% endblock %} {% block content %} {% if article.category == 'blog' %}
+<h1 class="article-title">{{ article.title }}</h1>
+{{ article.content }}
+<p><i>{{ article.date | strftime('%B %-d, %Y') }}</i></p>
+<!-- <p><a target="_blank" href="https://follow.it/duarte-o-carmo?action=followPub">Get new posts in your inbox</a></p> -->
+<p>
+  <a target="_blank" href="http://eepurl.com/hLZEtn"
+    >Get new posts in your inbox</a
+  >
+</p>
 {% elif article.category == 'photos' %}
-    <center>
-        <img style="max-height: 75vh;" src="{{ article.photo_url }}" alt="Photo"/>
-    </center>
-    <p> {{ article.content }}</p>
-    {% if article.location != 'None' %}
-        <p><i>Taken in {{ article.location }}</i></p>
-    {% endif %}
-    <p><i>{{  article.date | strftime('%B %-d, %Y') }}</i></p>
+<center>
+  <img style="max-height: 75vh" src="{{ article.photo_url }}" alt="Photo" />
+</center>
+<p>{{ article.content }}</p>
+{% if article.location != 'None' %}
+<p><i>Taken in {{ article.location }}</i></p>
 {% endif %}
-{% endblock %}
+<p><i>{{ article.date | strftime('%B %-d, %Y') }}</i></p>
+{% endif %} {% endblock %}

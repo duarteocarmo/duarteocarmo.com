@@ -37,7 +37,7 @@ body {
     margin: 0 auto;
     --font-size: 1rem;
     font-size: var(--font-size);
-    line-height: 1.7;
+    line-height: 1.6;
     padding-top: 20px;
     text-rendering: optimizeLegibility;
     /* letter-spacing: -0.009em; */
@@ -53,6 +53,9 @@ h6 {
     /* font-family: var(--fancy-font) */
 }
 
+.article-title {
+    font-weight: 600;
+}
 
 .container {
     max-width: 640px;
