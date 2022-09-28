@@ -3,8 +3,9 @@ slug: talks
 
 #### 2022
 
+- **How early-stage startups tackle ML** [MLOps Live](https://podcasts.bcast.fm/mlops-live) - [linkedin](https://www.linkedin.com/video/event/urn:li:ugcPost:6972918515984928769/)
 - **Machine learning! (But in the real world)** [LIP Coimbra](https://pages.lip.pt/data-science/) - [slides](/pdfs/lip-2022-sanitized.pdf)
-- **Four years of Python (extended)** [PyCon Italia](https://pycon.it/en) - [slides](/pdfs/four-years-of-python-pycon.pdf) - [video](https://www.youtube.com/watch?v=zB_Hr-05Stc)
+- **Four years of Python** [PyCon Italia](https://pycon.it/en) - [slides](/pdfs/four-years-of-python-pycon.pdf) - [video](https://www.youtube.com/watch?v=zB_Hr-05Stc)
 - **Four years of Python** [PyData Copenhagen](https://www.meetup.com/pydata-copenhagen/) - [slides](/pdfs/four-years-of-python-pydata.pdf)
 
 #### 2018
