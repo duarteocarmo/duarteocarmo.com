@@ -3,7 +3,7 @@ slug: talks
 
 #### 2022
 
-- **How early-stage startups tackle ML** [MLOps Live](https://podcasts.bcast.fm/mlops-live) - [podcast](https://podcasts.bcast.fm/e/r8k1qky8-early-stage-startups-small-teams-mlops-duarte-carmo)
+- **How early-stage startups tackle ML** [MLOps Live](https://podcasts.bcast.fm/mlops-live) - [podcast](https://podcasts.bcast.fm/e/r8k1qky8-early-stage-startups-small-teams-mlops-duarte-carmo) - [video](https://www.youtube.com/watch?v=sqv1ydViDgA&t=328s)
 - **Machine learning! (But in the real world)** [LIP Coimbra](https://pages.lip.pt/data-science/) - [slides](/pdfs/lip-2022-sanitized.pdf)
 - **Four years of Python** [PyCon Italia](https://pycon.it/en) - [slides](/pdfs/four-years-of-python-pycon.pdf) - [video](https://www.youtube.com/watch?v=zB_Hr-05Stc)
 - **Four years of Python** [PyData Copenhagen](https://www.meetup.com/pydata-copenhagen/) - [slides](/pdfs/four-years-of-python-pydata.pdf)
