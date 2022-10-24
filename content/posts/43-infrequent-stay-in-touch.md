@@ -23,7 +23,7 @@ Infrequent is a system to stay in touch with those I care about. A system that I
 <img src="{static}/images/43/dashboard.png" alt="Infrequent dashboard" style="max-width:100%;">
 </a>
 
-I'm not gonna lie, it's been pretty fun to get back into web development. I love AI&ML, but there's something _special_ about web development. And [Django](https://www.djangoproject.com/), [htmx](htmx.org/), and [tailwind](https://tailwindcss.com/) have been a joy to work with. The stack is not straightforward to set up, but once you get going, it's a breeze to work with. Django is an _incredibly_ powerful framework. 
+I'm not gonna lie, it's been pretty fun to get back into web development. I love AI&ML, but there's something _special_ about web development. And [Django](https://www.djangoproject.com/), [htmx](https://htmx.org/), and [tailwind](https://tailwindcss.com/) have been a joy to work with. The stack is not straightforward to set up, but once you get going, it's a breeze to work with. Django is an _incredibly_ powerful framework. 
 
 I don't have million-dollar plans for infrequent just yet. For now, I plan to continue using it, and entice others to do so too. I'll keep adding features to it, as mine (and maybe your) needs evolve. Feel free to give it a spin, and don't hesitate to [email me](mailto:me@duarteocarmo.com) if you like it, or think something is missing. 
 
