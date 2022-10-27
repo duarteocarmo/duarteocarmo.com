@@ -5,7 +5,7 @@ status: published
 slug: monitoring-ml-models-fastapi-evidently
 thumbnail: images/42/dashboard.png
 
-I've deployed a good amount of ML models to production. For many, deployment to production is the last step of the process. Once that's done, work is done. This is far from true. Once your model is out there, problems _will_ start to arise. Some predictions will be wrong. Some labels will more often than they should, and some examples _will_ surprise the model. 
+I've deployed a good amount of ML models to production. For many, deployment to production is the last step of the process. Once that's done, work is done. This is far from true. Once your model is out there, problems _will_ start to arise. Some predictions will be wrong. Some labels will occur more often than they should, and some examples _will_ surprise the model. 
 
 Setting up the right lenses & triggers _into_ your model is critical. It helps to ensure everything is running smoothly, or to know when issues need to be tackled. Let's open up the black box. 
 
