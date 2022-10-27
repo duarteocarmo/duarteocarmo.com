@@ -51,7 +51,7 @@ def predict(features: Item):
 ```
 
 ## Prerequisite: Storing all predictions 
-To monitor model live, we must first make sure two things are happening:
+To monitor our model, we must first make sure two things are happening:
 
 - Prediction logging:  We're actively logging all predictions our model is making
 - Access to a reference dataset: We have access to the dataset where our model was trained  (e.g., the training data)
