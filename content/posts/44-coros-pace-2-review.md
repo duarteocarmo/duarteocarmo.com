@@ -1,7 +1,7 @@
 title: Coros Pace 2: a review
 date: 25-10-2022 12:00
 description: I stopped using the Apple watch for the first time in 4 years.
-status: published
+status: draft
 slug: coros-pace-2-review
 thumbnail: images/43/website.png
 
