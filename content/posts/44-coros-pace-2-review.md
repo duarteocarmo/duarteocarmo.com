@@ -37,9 +37,9 @@ Sleep tracking. You know that thing you _sometimes_ do with your Apple Watch, bu
 
 It's not an Apple Watch. Yes, I could write about the fact that some parts of the Coros app are kinda rough, or the fact that the watch interface is a bit clunky. Or even the fact that it uses some sort of weird proprietary charger. But the bottom line is, I keep comparing it to the Apple Watch. 
 
-One side of me now understands why Apple has never given us custom watch faces. Coros has _at least_ 100 watch faces to chose from, and they all look… Well,  not great. This watch is clearly missing the aesthetic appeal that the Apple Watch has.
+One side of me now understands why Apple has never given us custom watch faces. Coros has _at least_ 100 watch faces to chose from, and they all look… well,  not great. This watch is clearly missing the aesthetic appeal that the Apple Watch has.
 
-I have a love/hate relationship with Apple's beautiful walled garden of an ecosystem. How can I miss paying with my wrist so much? How can I miss controlling music playback on my wrist so much? Seeing those circles close in very widget I own. Getting all the notifications in your watch. The next even in your calendar at wrist glance. The "Do not disturb until I leave this location", two taps away. Even the haptic motor. 
+I have a love/hate relationship with Apple's beautiful walled garden of an ecosystem. How can I miss paying with my wrist so much? How can I miss controlling music playback on my wrist so much? Seeing those circles close in every widget I own. Getting all the notifications in your watch. The next event in your calendar at wrist glance. The "Do not disturb until I leave this location", two taps away. Even the haptic motor. 
 
 I miss the cozy ecosystem. It's a bit like a withdrawal - it will fade. I think.
 
