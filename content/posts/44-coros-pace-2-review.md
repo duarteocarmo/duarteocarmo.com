@@ -3,10 +3,10 @@ date: 29-10-2022 12:00
 description: After 5 years of wearing the Apple Watch, I said goodbye last week. 
 status: published
 slug: coros-pace-2-apple-watch
-thumbnail: images/44/cover.png
+thumbnail: images/44/cover_small.jpg
 
 <center>
-<img src="{static}/images/44/cover.png" alt="Coros pace 2 outside shot" style="max-width:100%;border-radius: 2px">
+<img src="{static}/images/44/cover_small.jpg" alt="Coros pace 2 outside shot" style="max-width:100%;border-radius: 2px">
 </center>
 
 1768 days. 
