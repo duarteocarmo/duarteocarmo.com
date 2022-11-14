@@ -6,7 +6,7 @@ slug: coros-pace-2-apple-watch
 thumbnail: images/44/cover_small.jpg
 
 <center>
-<img src="{static}/images/44/cover_small.jpg" alt="Coros pace 2 outside shot" style="max-width:100%;border-radius: 2px">
+<img src="{static}/images/44/cover_small_optim.png" alt="Coros pace 2 outside shot" style="max-width:100%;border-radius: 2px">
 </center>
 
 1768 days. 
