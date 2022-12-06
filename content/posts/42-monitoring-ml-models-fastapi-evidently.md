@@ -199,3 +199,10 @@ I've found this to be a _relatively_  straightforward way of adding a bit of vis
 There's a way we could increase the speed here. Instead of computing the entire dashboard every time we visit `/monitoring`, we [could](https://fastapi-utils.davidmontague.xyz/user-guide/repeated-tasks/#the-repeat_every-decorator) compute it every X time period in the _background_. This would result in much faster response from the `/monitoring` endpoint. 
 
 Is this dashboard enough to make sure everything is going well in production? No. But it's a _great_ first step towards figuring out what's _really_ going on. 
+
+<hr>
+
+#### Updates & notes
+
+- [This post was republished by the MLOps Community blog](https://mlops.community/monitoring-ml-models-with-fastapi-and-evidently-ai/)
+- I also wrote a [more general post](/blog/monitoring-machine-learning-apis.html) on how to monitor machine learning APIs 
