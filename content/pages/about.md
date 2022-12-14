@@ -7,7 +7,7 @@ slug: about
 
 Hi, I'm Duarte, 
 
-I'm a Technologist/hacker, born and raised in sunny Portugal, now based in Copenhagen. My work lies in the intersection of Machine Learning, Data, Software Engineering, and People. I'm in love with Technology, and how it can improve people's lives. 
+I'm a technologist, born and raised in sunny Portugal, now based in Copenhagen. My work lies in the intersection of Machine Learning, Data, Software Engineering, and People. I'm in love with Technology, and how it can improve people's lives. 
 
 In the past, I've worked in Consumer Electronics, Public Institutions, Big Three Management Consulting, and Startups. The common thread? Solving problems end-to-end. 
 
