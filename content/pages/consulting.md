@@ -20,4 +20,4 @@ Some problems I've helped solve in the past:
 - Web app showing *insights from large amounts of unstructured data*. Used for traffic incident reporting and analysis
 - *AI and Cloud Strategy* for two large public institutions in the Nordics. Conceived, designed, and presented to board
 
-Interested? <a href="https://cal.com/duarteocarmo/45min" target="_blank"> Let's talk</a>
+Interested? <a href="https://cal.com/duarteocarmo/meeting?duration=30" target="_blank"> Let's talk</a>
