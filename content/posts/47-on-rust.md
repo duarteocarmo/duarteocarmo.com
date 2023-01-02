@@ -35,8 +35,8 @@ struct Vector3 {
     z: f32
 }
 
-float dot_product(Vector3 const& a, Vector3 const& b) {
-    return a.x*b.x + a.y*b.y + a.z*b.z
+fn dot_product(a: Vector3, b: Vector3) -> float {
+    a.x*b.x + a.y*b.y + a.z*b.z
 }
 
 fn do_math_by_copy(p1: Vector3, p2: Vector3, d1: Vector3, d2: Vector3, s: f32, t: f32) -> f32 {
