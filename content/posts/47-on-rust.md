@@ -5,7 +5,7 @@ status: published
 slug: on-rust
 thumbnail: images/47/rust_logo.png
 
-It's that time of the year again. The family is getting together and celebrating. Grandma is cooking something amazing for dinner. I'm trying to solve [Advent of Code](adventofcode.com/) puzzles. This year, I decided to do something _different_. Instead of solving the puzzles in Python, I decided that I would try to solve them in [Rust](https://www.rust-lang.org/). Why?
+It's that time of the year again. The family is getting together and celebrating. Grandma is cooking something amazing for dinner. I'm trying to solve [Advent of Code](https://adventofcode.com/) puzzles. This year, I decided to do something _different_. Instead of solving the puzzles in Python, I decided that I would try to solve them in [Rust](https://www.rust-lang.org/). Why?
 
 Rust has been getting a lot of attention lately. The language is in its _7th_ year as the [most loved programming language](https://survey.stackoverflow.co/2022/#technology-most-loved-dreaded-and-wanted) according to the latest Stack Overflow developer survey. Why do people love it so much? So I decided to learn it. What better way to get frustrated during my Christmas break?
 
@@ -52,7 +52,7 @@ fn do_math_by_borrow(p1: &Vector3, p2: &Vector3, d1: &Vector3, d2: &Vector3, s: 
 }
 ```
 
-**Borrowing.** References and borrowing have been the hardest concepts to grasp for me. Again. This might be very well due to my lack of experience in compiled languages. Look at the example above example, taken from [this](https://www.forrestthewoods.com/blog/should-small-rust-structs-be-passed-by-copy-or-by-borrow/) great post. There is no obvious reason why you would go with `do_math_by_borrow`. It's uglier, less readable, and to the best of my knowledge, _not_ significantly faster. This whole borrowing and ownership dance is probably necessary for Rust. But I felt like doing a lot of `.Clone()` and `.Copy()` to escape this problem. 
+**Borrowing.** References and borrowing have been the hardest concepts to grasp for me. Again. This might be very well due to my lack of experience in compiled languages. Look at the example above, taken from [this](https://www.forrestthewoods.com/blog/should-small-rust-structs-be-passed-by-copy-or-by-borrow/) great post. There is no obvious reason why you would go with `do_math_by_borrow`. It's uglier, less readable, and to the best of my knowledge, _not_ significantly faster. This whole borrowing and ownership dance is probably necessary for Rust. But I felt like doing a lot of `.Clone()` and `.Copy()` to escape this problem. 
 
 ## Closing thoughts
 
