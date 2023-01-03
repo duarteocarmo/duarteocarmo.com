@@ -56,7 +56,7 @@ fn do_math_by_borrow(p1: &Vector3, p2: &Vector3, d1: &Vector3, d2: &Vector3, s: 
 
 ## Closing thoughts
 
-AoC was great to learn a new language! Perhaps next year something easier though. I didn't finish all the puzzles [by any means](https://www.forrestthewoods.com/blog/should-small-rust-structs-be-passed-by-copy-or-by-borrow/). But by day 10, I had a good grasp of the basics of Rust and could write simple programs without too much hassle. The problem with AoC is the steep curve in puzzle difficulty. By day 15, I was already spending one hour just to parse the input correctly. 
+AoC was great to learn a new language! Perhaps next year something easier though. I didn't finish all the puzzles [by any means](https://github.com/duarteocarmo/advent2022/). But by day 10, I had a good grasp of the basics of Rust and could write simple programs without too much hassle. The problem with AoC is the steep curve in puzzle difficulty. By day 15, I was already spending one hour just to parse the input correctly. 
 
 I can understand why Rust is loved. It's fast, effective, and it makes you a better programmer. It requires you to make deliberate choices on every variable you create, and every statement you write. This is a double-edged sword. On one side, it makes you write better and safer code. On the other side, it makes you write code slower, and experiments should be fast. It does look great for production. But it's [early](https://mdwdotla.medium.com/using-rust-at-a-startup-a-cautionary-tale-42ab823d9454) still. 
 
