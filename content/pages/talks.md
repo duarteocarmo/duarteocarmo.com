@@ -1,6 +1,10 @@
 title: Talks
 slug: talks
 
+#### 2023
+
+- **Taming the black box** [DTU MLOps Course](https://skaftenicki.github.io/dtu_mlops/) - [slides](/pdfs/mlops-monitoring-sanitized.pdf) 
+
 #### 2022
 
 - **MLOps for the rest of us** [PyData Global](https://pydata.org/global2022/) - [slides](/pdfs/mlops-for-the-rest-of-us.pdf) - [video](https://www.youtube.com/watch?v=LjtixglMLCg&t=32448s)
