@@ -3,6 +3,7 @@ slug: talks
 
 #### 2023
 
+- **Bag of tricks to scale ML Apps** [DTU MLOps Course](https://skaftenicki.github.io/dtu_mlops/) - [slides](/pdfs/bag-of-tricks-scalable-api.pdf) 
 - **Taming the black box** [DTU MLOps Course](https://skaftenicki.github.io/dtu_mlops/) - [slides](/pdfs/mlops-monitoring-sanitized.pdf) 
 
 #### 2022
