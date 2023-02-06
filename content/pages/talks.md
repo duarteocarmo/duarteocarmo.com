@@ -3,6 +3,7 @@ slug: talks
 
 #### 2023
 
+- **ML in the wild** [DIS](https://disabroad.org/copenhagen/) - [slides](/pdfs/ml-in-the-wild.pdf) 
 - **MLOps for the rest of us** [PyData Copenhagen](https://www.meetup.com/pydata-copenhagen/) - [slides](/pdfs/pydata-cph-mlops-for-the-rest-of-us.pdf) 
 - **Bag of tricks to scale ML Apps** [DTU MLOps Course](https://skaftenicki.github.io/dtu_mlops/) - [slides](/pdfs/bag-of-tricks-scalable-api.pdf) 
 - **Taming the black box** [DTU MLOps Course](https://skaftenicki.github.io/dtu_mlops/) - [slides](/pdfs/mlops-monitoring-sanitized.pdf) 
