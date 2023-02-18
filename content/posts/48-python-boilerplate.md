@@ -31,7 +31,8 @@ dependencies = ["pandas>=1.5.3", "numpy", "fastapi"]
 dev = ["pytest"]
 ```
 To create your `requirements` files, all you need to do is:
-```
+
+```bash
 (env) $ pip-compile  --generate-hashes --output-file=requirements.txt pyproject.toml
 (env) $ pip-compile  --generate-hashes --extra=dev --output-file=requirements-dev.txt pyproject.toml
 ```
