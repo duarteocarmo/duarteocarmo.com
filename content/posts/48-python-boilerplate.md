@@ -16,6 +16,8 @@ I've started my fair share of Python projects. By failing, _a lot_, I've converg
 
 Now I don't want to start a packaging war. If [Poetry](https://python-poetry.org/) works for you, then by all means, go for it. I've tried most of the stuff out there, from the good old `pip freeze > requirements.txt`, [pipenv](https://pipenv.pypa.io/en/latest/), all the way to Poetry. After many battles, I've stuck with [pip-tools](https://github.com/jazzband/pip-tools). Pip-tools strikes the right balance between simplicity, effectiveness, and speed. And yes, _speed_ matters. I don't want to way a whole minute for my dependencies to compile. 
 
+With recent pip updates, I can just specify my dependencies in a `pyproject.toml` and install them with `pip install -e .`. However, there are benefits to pinning your dependencies using something like [pip-tools](https://github.com/jazzband/pip-tools#pip-tools--pip-compile--pip-sync). Especially in Machine Learning environments. Yes Anaconda exists - but speed _is_ a requirement. 
+
 The folks at [Jazzband](https://jazzband.co/) have created an easy-to-use tool that has yet to let me down. For example, suppose I have a `dreambox` project. Here's an example `pyproject.toml` file:
 ```toml
 [build-system]
@@ -30,13 +32,13 @@ dependencies = ["pandas>=1.5.3", "numpy", "fastapi"]
 [project.optional-dependencies]
 dev = ["pytest"]
 ```
-To create your `requirements` files, all you need to do is:
+To create a pinned and hashed `requirements` file , all you need to do is:
 
 ```bash
-(env) $ pip-compile  --generate-hashes --output-file=requirements.txt pyproject.toml
-(env) $ pip-compile  --generate-hashes --extra=dev --output-file=requirements-dev.txt pyproject.toml
+(env) $ pip-compile --generate-hashes --output-file=requirements.txt pyproject.toml
+(env) $ pip-compile --generate-hashes --extra=dev --output-file=requirements-dev.txt pyproject.toml
 ```
-That's it. I don't need more. I like using `requirements.txt`, I just don't like managing it. Pip-tools takes care of that pain for me. 
+That ensures whatever you build in production is reproducible in my own machine, to the exact dependency and hash. 
 
 ##  [Pyproject.toml](https://peps.python.org/pep-0621/) for configuration
 
@@ -125,11 +127,10 @@ So what is the easiest way to add a good project "map", without much work? Enter
 install:
 	python -m pip install --upgrade pip
 	python -m pip install -e .
-	python3 -m pip install -r requirements.txt
 
 ## Install for development 
 install-dev: install
-	python3 -m pip install -r requirements-dev.txt
+	python -m pip install -e ".[dev]"
 
 ## Build dependencies
 build: 
@@ -163,6 +164,7 @@ format:
 	isort .
 	black .
 ```
+_Note: Apparently ruff [supports](https://twitter.com/charliermarsh/status/1597661264800813056) import sorting now? Wow. My boilerplate is already obsolete._ 
 
 ## pre-commit hooks (I don't)
 
