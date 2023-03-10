@@ -205,3 +205,10 @@ At some of my previous [talks](/talks), people normally ask me to share my proje
 This boilerplate is made of choices (or traumas) I've experienced over time. It's tailored exactly to _my_ needs (e.g., data science, machine learning, API design). I like [simple](/blog/simple-software.html) things a lot. 
 
 I do think it could serve some as a starting point for their own _opinionated_ boilerplate. So [here's](https://github.com/duarteocarmo/boilerplate) the code, fellow Pythonista. Have fun out there. 
+
+<hr>
+
+#### Updates & notes
+
+- This post was featured in [Episode #326](https://www.youtube.com/live/Mh760W_M2ro?feature=share&t=1040) of the PythonBytes podcast 
+
