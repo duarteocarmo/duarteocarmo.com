@@ -14,7 +14,7 @@ I've started my fair share of Python projects. By failing, _a lot_, I've converg
 
 ## [Pip-tools](https://pip-tools.readthedocs.io/en/latest/) for dependency management
 
-Now I don't want to start a packaging war. If [Poetry](https://python-poetry.org/) works for you, then by all means, go for it. I've tried most of the stuff out there, from the good old `pip freeze > requirements.txt`, [pipenv](https://pipenv.pypa.io/en/latest/), all the way to Poetry. After many battles, I've stuck with [pip-tools](https://github.com/jazzband/pip-tools). Pip-tools strikes the right balance between simplicity, effectiveness, and speed. And yes, _speed_ matters. I don't want to way a whole minute for my dependencies to compile. 
+Now I don't want to start a packaging war. If [Poetry](https://python-poetry.org/) works for you, then by all means, go for it. I've tried most of the stuff out there, from the good old `pip freeze > requirements.txt`, [pipenv](https://pipenv.pypa.io/en/latest/), all the way to Poetry. After many battles, I've stuck with [pip-tools](https://github.com/jazzband/pip-tools). Pip-tools strikes the right balance between simplicity, effectiveness, and speed. And yes, _speed_ matters. I don't want to wait a whole minute for my dependencies to compile. 
 
 With recent pip updates, I can just specify my dependencies in a `pyproject.toml` and install them with `pip install -e .`. However, there are benefits to pinning your dependencies using something like [pip-tools](https://github.com/jazzband/pip-tools#pip-tools--pip-compile--pip-sync). Especially in Machine Learning environments. Yes Anaconda exists - but speed _is_ a requirement. 
 
