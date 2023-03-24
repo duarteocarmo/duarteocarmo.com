@@ -3,6 +3,7 @@ slug: talks
 
 #### 2023
 
+- **Real Python Podcast** [podcast](https://realpython.com/podcasts/rpp/150/)
 - **ML in the wild** [DIS](https://disabroad.org/copenhagen/) - [slides](/pdfs/ml-in-the-wild.pdf) - [feedback](/pdfs/dis_feedback.pdf)
 - **MLOps for the rest of us** [PyData Copenhagen](https://www.meetup.com/pydata-copenhagen/) - [slides](/pdfs/pydata-cph-mlops-for-the-rest-of-us.pdf) 
 - **Bag of tricks to scale ML Apps** [DTU MLOps Course](https://skaftenicki.github.io/dtu_mlops/) - [slides](/pdfs/bag-of-tricks-scalable-api.pdf) 
@@ -11,7 +12,7 @@ slug: talks
 #### 2022
 
 - **MLOps for the rest of us** [PyData Global](https://pydata.org/global2022/) - [slides](/pdfs/mlops-for-the-rest-of-us.pdf) - [video](https://www.youtube.com/watch?v=R6lPb9Meqoc)
-- **How early-stage startups tackle ML** [MLOps Live](https://podcasts.bcast.fm/mlops-live) - [podcast](https://podcasts.bcast.fm/e/r8k1qky8-early-stage-startups-small-teams-mlops-duarte-carmo) - [video](https://youtu.be/sqv1ydViDgA)
+- **MLOps Live Podcast** [podcast](https://podcasts.bcast.fm/e/r8k1qky8-early-stage-startups-small-teams-mlops-duarte-carmo) - [video](https://youtu.be/sqv1ydViDgA)
 - **Machine learning! (But in the real world)** [LIP Coimbra](https://pages.lip.pt/data-science/) - [slides](/pdfs/lip-2022-sanitized.pdf)
 - **Four years of Python** [PyCon Italia](https://pycon.it/en) - [slides](/pdfs/four-years-of-python-pycon.pdf) - [video](https://www.youtube.com/watch?v=zB_Hr-05Stc)
 - **Four years of Python** [PyData Copenhagen](https://www.meetup.com/pydata-copenhagen/) - [slides](/pdfs/four-years-of-python-pydata.pdf)
