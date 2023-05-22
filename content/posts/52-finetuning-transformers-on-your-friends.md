@@ -701,6 +701,7 @@ for i in range(NUMBER_OF_ROUNDS):
     print(f"New conversation:\n{conversation}\n----")
 ```
 
+```bash
     New conversation:
     Tiago Pereira: 2 votos por pessoa pfv.
     Hugo Silva: Nao é anonymous?
@@ -761,4 +762,4 @@ for i in range(NUMBER_OF_ROUNDS):
     André Ferreira: Ainda no estou?
     Raul Carvalho: Haha nvel queres meeses
     ----
-
+```
