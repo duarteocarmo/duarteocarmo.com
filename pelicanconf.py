@@ -26,6 +26,7 @@ ARTICLE_EXCLUDES = ["html"]
 CATEGORY_URL = "category/{slug}.html"
 CATEGORY_SAVE_AS = "category/{slug}.html"
 USE_FOLDER_AS_CATEGORY = False
+DRAFT_URL = 'drafts/{slug}.html'
 
 # SEO
 PELICAN_VERSION = pelican.__version__
