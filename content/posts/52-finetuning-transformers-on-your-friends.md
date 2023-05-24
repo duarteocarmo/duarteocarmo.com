@@ -559,6 +559,7 @@ print(f"Response:\n{output_decoded}")
 Another fun thing to do, is to let the model generate conversations completely by himself. 
 
 The idea here is to: 
+
 1. Start with a real conversation (5 replies)
 2. Generate a response using our model 
 3. Create a new exchange (4 real replies + 1 AI generated)
