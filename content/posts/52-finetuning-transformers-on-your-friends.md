@@ -1,8 +1,8 @@
-title: Fine-tuning FLAN-T5 to replace your friends
-date: 23-05-2023 16:30
-description: How to fine tune Google's FLAN-T5 on your friend's group chat. 
-status: draft
-slug: fine-tune-flan-t5
+title: Fine-tuning FLAN-T5 to replace my friends
+date: 24-05-2023 16:15
+description: Fine-tuning FLAN-T5 my Telegram 
+status: published
+slug: fine-tune-flan-t5-telegram
 thumbnail: images/52/flan.png
 
 [View Code](https://github.com/duarteocarmo/fine-tune-flant5/blob/master/notebooks/t5_train.ipynb)
@@ -46,8 +46,7 @@ With that. Let's get things started.
 
 _Note: This tutorial was run on a NVIDIA A100 with 40GB of RAM_
 
-If you want to run this project but don't have a powerful GPU at hand, you can get started quickly using a great service called [Unweave](https://docs.unweave.io/docs/getting-started). After signing up and installing, you can launch this project in two steps: 
-
+If you want to run this project but don't have a powerful GPU at hand, you can get started quickly using [Unweave](https://docs.unweave.io/docs/getting-started). After signing up and installing, you can launch this project in two steps: 
 
 ``` 
 # link this repo to your unweave account
