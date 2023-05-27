@@ -3,6 +3,7 @@ slug: talks
 
 #### 2023
 
+- **On Scaling Machine Learning Microservices** [PyCon Italia](https://pycon.it/en) - [slides](/pdfs/pycon-italia-scalable-ml.pdf) 
 - **Real Python Podcast** [podcast](https://realpython.com/podcasts/rpp/150/)
 - **ML in the wild** [DIS](https://disabroad.org/copenhagen/) - [slides](/pdfs/ml-in-the-wild.pdf) - [feedback](/pdfs/dis_feedback.pdf)
 - **MLOps for the rest of us** [PyData Copenhagen](https://www.meetup.com/pydata-copenhagen/) - [slides](/pdfs/pydata-cph-mlops-for-the-rest-of-us.pdf) 
