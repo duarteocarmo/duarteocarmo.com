@@ -1,5 +1,5 @@
 title: Supercharging my Telegram group with the help of ChatGPT
-date: 10-06-2023 02:00
+date: 06-10-2023 02:00
 description: Using Python and LLMs to build a couple of features my Telegram group chat was missing. 
 status: published
 slug: supercharging-telegram-bot-chatgpt-python
