@@ -5,7 +5,7 @@ status: published
 slug: supercharging-telegram-bot-chatgpt-python
 thumbnail: images/53/cover.png
 
-While most people in Europe use WhatsApp, my group of friends and I use Telegram.. For years now we've used things like [Combot](https://combot.org/) to see who's more silent than usual, and [MissRose](https://missrose.org/) to give our monthly elected group admins moderation rights. Yeah, we take friendship that seriously. 
+While most people in Europe use WhatsApp, my group of friends and I use Telegram. For years now we've used things like [Combot](https://combot.org/) to see who's more silent than usual, and [MissRose](https://missrose.org/) to give our monthly elected group admins moderation rights. Yeah, we take friendship that seriously. 
 
 But now we have access to LLMs right? So I decided to build two new features for our group chat. One is _pretty_ useful, and the other.. Well, you be the judge.
 
