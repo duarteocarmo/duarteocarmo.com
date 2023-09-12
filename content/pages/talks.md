@@ -3,6 +3,7 @@ slug: talks
 
 #### 2023
 
+- **ML in the wild 2nd Edition** [DIS](https://disabroad.org/copenhagen/) - [slides](/pdfs/ml-in-the-wild-v2.pdf) 
 - **An introduction to Google Earth Engine** [EuroSciPy](https://www.euroscipy.org/2023/) - [slides](/pdfs/euroscipy-gee-intro.pdf) - [video](https://youtu.be/GXBPOlSxfoY?si=79ZSKAFu8vdW8J8W)
 - **On Scaling Machine Learning Microservices** [PyCon Italia](https://pycon.it/en) - [slides](/pdfs/pycon-italia-scalable-ml.pdf) - [video](https://www.youtube.com/watch?v=T1Je3UHkxVk)
 - **Real Python Podcast** [podcast](https://realpython.com/podcasts/rpp/150/)
