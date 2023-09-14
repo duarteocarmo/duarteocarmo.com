@@ -26,11 +26,11 @@ _That’s it, no Apple Pay, no NFC bullshit_
 
 Let’s say you are in a queue in a Chinese 7Eleven (pretty specific), and the person right in front of you is paying for their coffee. Instead of reaching for their wallet, they reach for their smartphone, and with two clicks, they pay for their cup of coffee. That’s it, no Apple Pay, no NFC bullshit. Paying with QR codes is a fully developed technology in China. Anyone can pay and receive money at anytime, just with WeChat and an internet connection.
 
-![](https://cdn-images-1.medium.com/max/2000/1*_WHYuwgIThn3Zl2Jo-Fk_A.png)
+![post image 1](https://cdn-images-1.medium.com/max/2000/1*_WHYuwgIThn3Zl2Jo-Fk_A.png)
 
-![](https://cdn-images-1.medium.com/max/2000/1*cWdJ8MfW5R8iLAU08pBJbw.png)
+![post image 2](https://cdn-images-1.medium.com/max/2000/1*cWdJ8MfW5R8iLAU08pBJbw.png)
 
-![](https://cdn-images-1.medium.com/max/2000/1*X8rKGAHXh9-n-MYqdGjHBA.png)
+![post image 3](https://cdn-images-1.medium.com/max/2000/1*X8rKGAHXh9-n-MYqdGjHBA.png)
 
 Of course this can raise some security-related doubts, but from the tech point of view: its pure awesomeness. Think of the possibilities: maybe your friend owes you money, maybe you want to pay some street food you just bought, a taxi driver, a meal. Pay for everything!
 

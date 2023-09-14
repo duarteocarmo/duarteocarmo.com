@@ -39,11 +39,11 @@ So start by downloading it [here](https://itunes.apple.com/us/app/overcast-podca
 
 ## 2. Top 3 Technology-related podcasts I recommend.
 
-![](https://cdn-images-1.medium.com/max/2000/1*ep4lI0vZqnFEzu3z_65xbA.jpeg)
+![podcast image 1](https://cdn-images-1.medium.com/max/2000/1*ep4lI0vZqnFEzu3z_65xbA.jpeg)
 
-![](https://cdn-images-1.medium.com/max/3998/1*mMxKe75gEZHZo0UXHTiJRA.jpeg)
+![podcast image 2](https://cdn-images-1.medium.com/max/3998/1*mMxKe75gEZHZo0UXHTiJRA.jpeg)
 
-![](https://cdn-images-1.medium.com/max/2800/1*yboqPehhxb5eqJec3AHG8Q.png)
+![podcast image 3](https://cdn-images-1.medium.com/max/2800/1*yboqPehhxb5eqJec3AHG8Q.png)
 
 **2.1.[Mashtalk](https://overcast.fm/+EuQkHpOns)**
 

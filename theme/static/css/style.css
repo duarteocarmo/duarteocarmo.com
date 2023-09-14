@@ -1,306 +1,3 @@
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedBoldItalic.eot");
-  src:
-    local("Config Rounded Bold Italic"),
-    local("ConfigRoundedBoldItalic"),
-    url("fonts/ConfigRoundedBoldItalic.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedBoldItalic.woff2") format("woff2"),
-    url("fonts/ConfigRoundedBoldItalic.woff") format("woff"),
-    url("fonts/ConfigRoundedBoldItalic.ttf") format("truetype");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedBold.eot");
-  src:
-    local("Config Rounded Bold"),
-    local("ConfigRoundedBold"),
-    url("fonts/ConfigRoundedBold.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedBold.woff2") format("woff2"),
-    url("fonts/ConfigRoundedBold.woff") format("woff"),
-    url("fonts/ConfigRoundedBold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Config Rounded Extralight Itali";
-  src: url("fonts/ConfigRoundedExtralightItalic.eot");
-  src:
-    local("Config Rounded Extralight Italic"),
-    local("ConfigRoundedExtralightItalic"),
-    url("fonts/ConfigRoundedExtralightItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("fonts/ConfigRoundedExtralightItalic.woff2") format("woff2"),
-    url("fonts/ConfigRoundedExtralightItalic.woff") format("woff"),
-    url("fonts/ConfigRoundedExtralightItalic.ttf") format("truetype");
-  font-weight: 200;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedExtrabold.eot");
-  src:
-    local("Config Rounded Extrabold"),
-    local("ConfigRoundedExtrabold"),
-    url("fonts/ConfigRoundedExtrabold.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedExtrabold.woff2") format("woff2"),
-    url("fonts/ConfigRoundedExtrabold.woff") format("woff"),
-    url("fonts/ConfigRoundedExtrabold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedExtraboldItalic.eot");
-  src:
-    local("Config Rounded Extrabold Italic"),
-    local("ConfigRoundedExtraboldItalic"),
-    url("fonts/ConfigRoundedExtraboldItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("fonts/ConfigRoundedExtraboldItalic.woff2") format("woff2"),
-    url("fonts/ConfigRoundedExtraboldItalic.woff") format("woff"),
-    url("fonts/ConfigRoundedExtraboldItalic.ttf") format("truetype");
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedBlack.eot");
-  src:
-    local("Config Rounded Black"),
-    local("ConfigRoundedBlack"),
-    url("fonts/ConfigRoundedBlack.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedBlack.woff2") format("woff2"),
-    url("fonts/ConfigRoundedBlack.woff") format("woff"),
-    url("fonts/ConfigRoundedBlack.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedBlackItalic.eot");
-  src:
-    local("Config Rounded Black Italic"),
-    local("ConfigRoundedBlackItalic"),
-    url("fonts/ConfigRoundedBlackItalic.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedBlackItalic.woff2") format("woff2"),
-    url("fonts/ConfigRoundedBlackItalic.woff") format("woff"),
-    url("fonts/ConfigRoundedBlackItalic.ttf") format("truetype");
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedLightItalic.eot");
-  src:
-    local("Config Rounded Light Italic"),
-    local("ConfigRoundedLightItalic"),
-    url("fonts/ConfigRoundedLightItalic.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedLightItalic.woff2") format("woff2"),
-    url("fonts/ConfigRoundedLightItalic.woff") format("woff"),
-    url("fonts/ConfigRoundedLightItalic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedLight.eot");
-  src:
-    local("Config Rounded Light"),
-    local("ConfigRoundedLight"),
-    url("fonts/ConfigRoundedLight.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedLight.woff2") format("woff2"),
-    url("fonts/ConfigRoundedLight.woff") format("woff"),
-    url("fonts/ConfigRoundedLight.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedMedium.eot");
-  src:
-    local("Config Rounded Medium"),
-    local("ConfigRoundedMedium"),
-    url("fonts/ConfigRoundedMedium.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedMedium.woff2") format("woff2"),
-    url("fonts/ConfigRoundedMedium.woff") format("woff"),
-    url("fonts/ConfigRoundedMedium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedMediumItalic.eot");
-  src:
-    local("Config Rounded Medium Italic"),
-    local("ConfigRoundedMediumItalic"),
-    url("fonts/ConfigRoundedMediumItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("fonts/ConfigRoundedMediumItalic.woff2") format("woff2"),
-    url("fonts/ConfigRoundedMediumItalic.woff") format("woff"),
-    url("fonts/ConfigRoundedMediumItalic.ttf") format("truetype");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedExtralight.eot");
-  src:
-    local("Config Rounded Extralight"),
-    local("ConfigRoundedExtralight"),
-    url("fonts/ConfigRoundedExtralight.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedExtralight.woff2") format("woff2"),
-    url("fonts/ConfigRoundedExtralight.woff") format("woff"),
-    url("fonts/ConfigRoundedExtralight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedItalic.eot");
-  src:
-    local("Config Rounded Italic"),
-    local("ConfigRoundedItalic"),
-    url("fonts/ConfigRoundedItalic.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedItalic.woff2") format("woff2"),
-    url("fonts/ConfigRoundedItalic.woff") format("woff"),
-    url("fonts/ConfigRoundedItalic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedRegular.eot");
-  src:
-    local("Config Rounded Regular"),
-    local("ConfigRoundedRegular"),
-    url("fonts/ConfigRoundedRegular.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedRegular.woff2") format("woff2"),
-    url("fonts/ConfigRoundedRegular.woff") format("woff"),
-    url("fonts/ConfigRoundedRegular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedThin.eot");
-  src:
-    local("Config Rounded Thin"),
-    local("ConfigRoundedThin"),
-    url("fonts/ConfigRoundedThin.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedThin.woff2") format("woff2"),
-    url("fonts/ConfigRoundedThin.woff") format("woff"),
-    url("fonts/ConfigRoundedThin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedThinItalic.eot");
-  src:
-    local("Config Rounded Thin Italic"),
-    local("ConfigRoundedThinItalic"),
-    url("fonts/ConfigRoundedThinItalic.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedThinItalic.woff2") format("woff2"),
-    url("fonts/ConfigRoundedThinItalic.woff") format("woff"),
-    url("fonts/ConfigRoundedThinItalic.ttf") format("truetype");
-  font-weight: 100;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Config Rounded Text";
-  src: url("fonts/ConfigRoundedText.eot");
-  src:
-    local("Config Rounded Text"),
-    local("ConfigRoundedText"),
-    url("fonts/ConfigRoundedText.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedText.woff2") format("woff2"),
-    url("fonts/ConfigRoundedText.woff") format("woff"),
-    url("fonts/ConfigRoundedText.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Config Rounded Text";
-  src: url("fonts/ConfigRoundedTextItalic.eot");
-  src:
-    local("Config Rounded Text Italic"),
-    local("ConfigRoundedTextItalic"),
-    url("fonts/ConfigRoundedTextItalic.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedTextItalic.woff2") format("woff2"),
-    url("fonts/ConfigRoundedTextItalic.woff") format("woff"),
-    url("fonts/ConfigRoundedTextItalic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedSemibold.eot");
-  src:
-    local("Config Rounded Semibold"),
-    local("ConfigRoundedSemibold"),
-    url("fonts/ConfigRoundedSemibold.eot?#iefix") format("embedded-opentype"),
-    url("fonts/ConfigRoundedSemibold.woff2") format("woff2"),
-    url("fonts/ConfigRoundedSemibold.woff") format("woff"),
-    url("fonts/ConfigRoundedSemibold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/ConfigRoundedSemiboldItalic.eot");
-  src:
-    local("Config Rounded Semibold Italic"),
-    local("ConfigRoundedSemiboldItalic"),
-    url("fonts/ConfigRoundedSemiboldItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("fonts/ConfigRoundedSemiboldItalic.woff2") format("woff2"),
-    url("fonts/ConfigRoundedSemiboldItalic.woff") format("woff"),
-    url("fonts/ConfigRoundedSemiboldItalic.ttf") format("truetype");
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
 :root {
   --color-light-primary: #111;
   --color-light-secondary: #111;
@@ -311,10 +8,10 @@
   --color-light-filtering: 0%;
 
   --color-dark-primary: #fff;
-  --color-dark-secondary: #eee;
-  --color-dark-background: #0d1117;
+  --color-dark-secondary: #ccc;
+  --color-dark-background: #000;
   --color-dark-code: #161b22;
-  --color-dark-code-background: #161b22;
+  --color-dark-code-background: #333;
   --color-dark-filtering: 100%;
 
   --primary: var(--color-light-primary);
@@ -331,9 +28,9 @@
   /* --base-font: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, */
   /*   helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, */
   /*   sans-serif; */
-  --base-font: config rounded, -apple-system, BlinkMacSystemFont, avenir next,
-    avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
-    arial, sans-serif;
+  --base-font: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
   --fancy-font: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
     Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol;
@@ -346,12 +43,11 @@ body {
   background-color: var(--background);
   font-family: var(--base-font);
   margin: 0 auto;
-  --font-size: 105%;
+  --font-size: 1rem;
   font-size: var(--font-size);
   line-height: 1.6;
   padding-top: 20px;
   text-rendering: optimizeLegibility;
-  /* letter-spacing: -0.009em; */
 }
 
 h1,
@@ -408,7 +104,7 @@ header {
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.012em;
   white-space: pre;
-  font-weight: 300;
+  /* font-weight: 300; */
 }
 
 .article-list > div {
