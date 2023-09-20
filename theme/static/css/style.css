@@ -4,14 +4,15 @@
   --color-light-background: #fff;
   --color-light-background: #fff;
   --color-light-code: #fff;
-  --color-light-code-background: #f6f8fa;
+  --color-light-code-background: transparent;
   --color-light-filtering: 0%;
 
   --color-dark-primary: #fff;
   --color-dark-secondary: #ccc;
   --color-dark-background: #000;
   --color-dark-code: #161b22;
-  --color-dark-code-background: #333;
+  /* --color-dark-code-background: #0d1117; */
+  --color-dark-code-background: transparent;
   --color-dark-filtering: 100%;
 
   --primary: var(--color-light-primary);
@@ -275,4 +276,3 @@ canvas.marks {
   }
 }
 
-/* FONTS */
