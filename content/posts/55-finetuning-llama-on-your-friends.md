@@ -12,15 +12,10 @@ Around four months ago, I [wrote a small tutorial](/blog/fine-tune-flan-t5-teleg
 So, here we are, four months later, with the same question: How easy is it to train an LLM on my friend's group chat? Turns out, for a couple of dollars and one hour you can get pretty far.
 
 
-<center>
-<br>
 <video  style="max-width:100%;border-radius: 2px" autoplay loop muted playsinline>
   <source src="{static}/images/55/llama-tiger.mp4" type="video/mp4" />
   <source src="{static}/images/55/llama-tiger.webm" type="video/webm" onerror="fallback(parentNode)"/>
-
 </video>
-<figcaption>_Tiger-llama in action, simulating a Telegram conversation_</figcaption>
-</center>
 
 
 
