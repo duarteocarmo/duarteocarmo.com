@@ -15,7 +15,7 @@ So, here we are, four months later, with the same question: How easy is it to tr
 <center>
 <br>
 <video  style="max-width:100%;border-radius: 2px" autoplay loop>
-  <source src="{static}/images/55/llama-tiger.web" type="video/webm" />
+  <source src="{static}/images/55/llama-tiger.webm" type="video/webm" />
   <source src="{static}/images/55/llama-tiger.mp4" type="video/mp4" />
 </video>
 <figcaption>_Tiger-llama in action, simulating a Telegram conversation_</figcaption>
