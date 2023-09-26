@@ -3,7 +3,7 @@ date: 09-26-2023 13:00
 description: How I fine-tuned a Llama 2 model on a group chat for a couple of dollars and one hour.
 status: published
 slug: fine-tune-llama-2-telegram
-thumbnail: images/55/llama.png
+thumbnail: images/55/llama.jpg
 
 Last Friday, [Kostas](https://orbit.dtu.dk/en/persons/konstantinos-kalogeropoulos) and I found ourselves discussing AI over beers again. He was telling me how he thinks everyone else is _decades_ away from OpenAI - and that they likely won't catch up soon. I disagreed. In _fact_, I think open source is quickly catching up, and getting [closer](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard) by the day. 
 
@@ -223,3 +223,4 @@ Compared to the [last](/blog/fine-tune-flan-t5-telegram.html) time I fine-tuned 
 The model is still not perfect though. It captures some of my friends' quirks and ways of speaking, and the generated conversations make sense around ~70% of the time. But that's _still_ 30% nonsense. Could be a couple of things: the size (I used the "smaller" 7 billion version of the model), or even the language (Portuguese from Portugal). For example, when I prompt the model to simulate a politics discussion between my friends, someone starts discussing something about [Dilma](https://da.wikipedia.org/wiki/Dilma_Rousseff) (which is _wildly_ inaccurate given we're from Portugal).
 
 So Kostas was right, ["open source"](https://opensourceconnections.com/blog/2023/07/19/is-llama-2-open-source-no-and-perhaps-we-need-a-new-definition-of-open/) hasn't caught up yet. But oh boy, we're getting damn close.
+
