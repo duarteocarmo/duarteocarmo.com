@@ -1,13 +1,13 @@
 title: Changelog neural search
-date: 10-05-2023 13:00
-description: Vector database powered search and chat for podcasts on the Changelog network
-status: draft
+date: 10-06-2023 05:00
+description: A vector database backed search and chat portal for podcasts on the Changelog network
+status: published
 slug: changelog-neural-search-superduperdb
 thumbnail: images/56/changelog-cover.png
 
-Search is one of the most important breakthroughs of the internet. Some are saying a list of blue links is not enough - and that AI _will_ overthrow search. I don't know if we're about to witness a revolution. But as with most things - there's only one way to know - to build and use it myself. 
+Search is one of the most important breakthroughs of the internet. Some are saying a list of blue links is not enough - and that AI _will_ overthrow search. I don't know if we're about to witness a revolution. But as with most things - there's only one way to know - to build and use it _myself_. 
 
-I like podcasts a lot. There's really nothing like hearing people talk about things I know nothing about. Some of my favorite podcasts are produced by the [Changelog](https://changelog.com/) network. More than once, I've had to use their [search engine](https://changelog.com/search?q=embedding) when researching something that was said during an episode.
+I like podcasts a lot. There's really nothing like hearing people talk about things I know _nothing_ about. Some of my favorite podcasts are produced by the [Changelog](https://changelog.com/) network. More than once, I've had to use their [search engine](https://changelog.com/search?q=embedding) when researching something that was said during an episode.
 
 One of the best things about the Changelog is that the [whole thing is open source](https://github.com/thechangelog). From the podcast engine itself, to the [transcripts of every episode](https://github.com/thechangelog/transcripts). Why not take all of these transcripts and build an AI-powered™ search engine around them?
 
