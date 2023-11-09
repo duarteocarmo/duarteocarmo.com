@@ -42,7 +42,7 @@
 body {
   color: var(--secondary);
   background-color: var(--background);
-  font-family: var(--base-font);
+  font-family: var(--fancy-font);
   margin: 0 auto;
   --font-size: 1rem;
   font-size: var(--font-size);
@@ -273,6 +273,10 @@ canvas.marks {
     --image-filtering: var(--color-dark-filtering);
     --code-color: var(--color-dark-code);
     --code-background: var(--color-dark-code-background);
+  }
+
+  img.companies {
+    filter: invert(1) ;
   }
 }
 
