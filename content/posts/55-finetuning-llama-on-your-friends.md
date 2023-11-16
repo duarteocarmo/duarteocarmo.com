@@ -25,7 +25,7 @@ So, here we are, four months later, with the same question: How easy is it to tr
 
 ## Data
 
-The goal is clear: fine-tune [Llama 2](https://huggingface.co/meta-llama/Llama-2-7b-hf), to automatically generate conversations that would normally happen in the group chat that I've held with my close friend for years now. The first step is to export the data from Telegram (which is pretty [easy](https://telegram.org/blog/export-and-more)).
+The goal is clear: fine-tune [Llama 2](https://huggingface.co/meta-llama/Llama-2-7b-hf), to automatically generate conversations that would normally happen in the group chat that I've held with my close friends for years now. The first step is to export the data from Telegram (which is pretty [easy](https://telegram.org/blog/export-and-more)).
 
 For most LLMs, you need to massage the data into a specific format before training. This means providing things like the `instruction`, the `input`, the `system_prompt`, etc. But all I wanted was to generate conversations, so I started by creating a large `jsonl` file with chunks of conversations separated by a `###` token to indicate the speaker. 
 
