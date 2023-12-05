@@ -4,7 +4,7 @@
 {% if 'mp3_link' in article.metadata  %}
 <details>
   <summary><span style="opacity: 0.7">🎧 Listen</span></summary>
-<audio controls style="width: 100%; display: block">
+<audio controls style="width: 100%; display: block" preload="metadata">
   <source src="{{ article.metadata.mp3_link }}" type="audio/mpeg">
 </audio>
 </details>
