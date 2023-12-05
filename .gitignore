@@ -7,3 +7,4 @@ output/
 __pycache__/
 .DS_Store
 *.bak
+.tool-versions
