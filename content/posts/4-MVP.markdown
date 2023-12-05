@@ -33,7 +33,7 @@ Developing an MVP allows you to incrementally develop your product in a step-by-
 
 In case that was confusing (sorry) here is a sketch:
 
-![](https://cdn-images-1.medium.com/max/2000/0*0LyDchAZUvJljzRp.)
+![something](https://cdn-images-1.medium.com/max/2000/0*0LyDchAZUvJljzRp.)
 
 ## Bottom Line.
 

@@ -40,7 +40,7 @@ Having the answer to these questions in your head is a great start and will help
 
 **Map your idea.** Once you have all of the answers to the questions above, there’s still more to do. Ideas and concepts are often confusing. One tool you (and whomever you are speaking to) might find useful are mind maps. Mind maps are used to turn something mental into something visual.
 
-![](https://cdn-images-1.medium.com/max/2000/0*JIO4wRg2GGtrhZFA.)
+![mapping](https://cdn-images-1.medium.com/max/2000/0*JIO4wRg2GGtrhZFA.)
 
 Most people that work in software development are extremely visual. Start by typing your main idea and work your way from there, using most of the elements answered above so that your idea comes to life in a form of a map.
 
@@ -58,7 +58,7 @@ Sure, you can use a piece of paper or a whiteboard once you are at the meeting, 
 
 **Make a prototype.** If you have come this far, why not get a little technical before the big meeting? Designers often use something called wire frames and mock-ups to base themselves, or to start a project. These are basically screens of your idea/product, linked together by arrows, to convey an idea of the product.
 
-![](https://cdn-images-1.medium.com/max/2048/1*dslNoOm6THf8dARUpFVdsg.jpeg)
+![prototype](https://cdn-images-1.medium.com/max/2048/1*dslNoOm6THf8dARUpFVdsg.jpeg)
 
 This will be one of the first steps in designing a product that users really love, and since the developers and designers are going to use it anyway, why not start doing them yourself? It doesn’t have to be pretty, it just has to send a message. After all, a picture is worth a thousand words.
 

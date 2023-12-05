@@ -32,7 +32,7 @@ Some of theses LLMs that are actually free an open source, even for comercial us
 
 In 2020, Google released a paper called _["Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer"](https://arxiv.org/pdf/1910.10683.pdf_)_, where they presented their T5 model. T5 is a encoder-decoder model that was trained in a variety of tasks (e.g., translate to german, summarize the following sentence, etc). [FLAN-T5](https://huggingface.co/docs/transformers/model_doc/flan-t5) is basically the exact same thing as T5, but pretty much [better at everything it does](https://huggingface.co/google/flan-t5-small#tldr). 
 
-![](https://camo.githubusercontent.com/623b4dea0b653f2ad3f36c71ebfe749a677ac0a1/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f343030362f312a44304a31674e51663876727255704b657944387750412e706e67)
+![FLAN-T5](https://camo.githubusercontent.com/623b4dea0b653f2ad3f36c71ebfe749a677ac0a1/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f343030362f312a44304a31674e51663876727255704b657944387750412e706e67)
 
 There are a couple of other reasons why we're using Flan-T5 for this guide: 
 
