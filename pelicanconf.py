@@ -86,6 +86,7 @@ PLUGINS = [
     "pelican.plugins.sitemap",
     "pelican.plugins.simple_footnotes",
     "pelican.plugins.feed_filter",
+    "plugins.podcast"
 ]
 SITEMAP = {
     "exclude": ["archives.html", "author/", "category/"],

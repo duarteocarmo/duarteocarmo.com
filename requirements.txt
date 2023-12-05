@@ -31,3 +31,4 @@ pytz==2020.1
 six==1.14.0
 Unidecode==1.1.1
 webencodings==0.5.1
+feedparser==6.0.10
