@@ -43,11 +43,11 @@ The **first** one is the simplest one. You scan a code, and the WeChat browser o
 The **second** one is definitely a quicker one. Let’s say you enter a coffee-shop; you scan their QR code. That QR code adds the coffee shop to your WeChat subscriptions. You click in the subscription and send them a message with the text “Wi-Fi”. The page/chat sends you back a link to a page where you can directly log in. Click that blue link and you’re surfing! Its easier to show than to explain:
 > # These three examples of QR code uses are just the tip of the iceberg
 
-![](https://cdn-images-1.medium.com/max/2000/1*zsyReizFugn-G46uT3UzRg.png)
+![qr-code-1](https://cdn-images-1.medium.com/max/2000/1*zsyReizFugn-G46uT3UzRg.png)
 
-![](https://cdn-images-1.medium.com/max/2000/1*fo92LC66hDECYRPwfBuoOA.png)
+![qr-code-3](https://cdn-images-1.medium.com/max/2000/1*fo92LC66hDECYRPwfBuoOA.png)
 
-![](https://cdn-images-1.medium.com/max/2000/1*z0LrXo73ohCZaLrDjfgKDw.png)
+![qr-code-3](https://cdn-images-1.medium.com/max/2000/1*z0LrXo73ohCZaLrDjfgKDw.png)
 
 **These three examples of QR code uses are just the tip of the iceberg. While on our side of the world QR codes are not a part of our technology day-to-day. In places like China, scanning is something they do on a regular basis. Adding someone, paying, joining a page/community, subscribing to news, downloading documents, reading regulations, standing in line of a restaurant, seeing in what station you are, listening to a new advertised singer, scanning your movie ticket or watching a movie trailer. QR codes are everywhere.**
 
@@ -61,7 +61,7 @@ On another hand, it seems like some big tech players on our side of things are s
 
 **Snapchat**: Every Snapchat user has a QR code, and by swiping down on the Snapchat camera you can easily see yours. Adding someone in Snapchat is as simple as pointing the Snapchat camera at a QR code of a friend, and then taping and holding that code.
 
-![](https://cdn-images-1.medium.com/max/2000/1*ISgHud8g4Qc74x21agCwqA.png)
+![image](https://cdn-images-1.medium.com/max/2000/1*ISgHud8g4Qc74x21agCwqA.png)
 
 **WhatsApp**: Although I think WhatsApp could have a major role in this field, like copying some of WeChat’s features, *they seem, for some reason to be much more concerned about privacy*. If launching WhatsApp calling took them 4–5 years, I have really lost hope for them in terms of investing in other things. Their use of QR code has been restricted to their Web based login that you use when you want to use WhatsApp Web.
 

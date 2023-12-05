@@ -29,11 +29,11 @@ Whenever I recommend an app to listen to podcasts I always recommend the same on
 
 * The app **treats you like a Podcast beginner, and not just a user**, that matters.
 
-![](https://cdn-images-1.medium.com/max/2484/1*EaFZW9W-VXX6aG_1y49P1g.png)
+![overcast-1](https://cdn-images-1.medium.com/max/2484/1*EaFZW9W-VXX6aG_1y49P1g.png)
 
-![](https://cdn-images-1.medium.com/max/2484/1*4JRbUsxCYHNCnZZ_j6pY3Q.png)
+![overcast-2](https://cdn-images-1.medium.com/max/2484/1*4JRbUsxCYHNCnZZ_j6pY3Q.png)
 
-![](https://cdn-images-1.medium.com/max/2484/1*aonku0EnBwe76hWp6wxW4g.png)
+![overcast-3](https://cdn-images-1.medium.com/max/2484/1*aonku0EnBwe76hWp6wxW4g.png)
 
 So start by downloading it [here](https://itunes.apple.com/us/app/overcast-podcast-player/id888422857?mt=8). Time to add some podcasts.
 
@@ -59,11 +59,11 @@ Probably one of my favorite podcasts of all time. [Jason Snell](undefined) and [
 
 ## 3. Top 3 non-tech podcasts I recommend.
 
-![](https://cdn-images-1.medium.com/max/4014/1*20UXugBZmcxbHordnB1KEw.png)
+![non](https://cdn-images-1.medium.com/max/4014/1*20UXugBZmcxbHordnB1KEw.png)
 
-![](https://cdn-images-1.medium.com/max/2836/1*Vw_NuW30KEud_dBfWewlTQ.png)
+![non](https://cdn-images-1.medium.com/max/2836/1*Vw_NuW30KEud_dBfWewlTQ.png)
 
-![](https://cdn-images-1.medium.com/max/3200/1*IhexqJ1o9AIeYeKfZlHqkg.jpeg)
+![non](https://cdn-images-1.medium.com/max/3200/1*IhexqJ1o9AIeYeKfZlHqkg.jpeg)
 
 **3.1.[On Being](https://overcast.fm/+BYAbbPgf4)**
 
@@ -79,11 +79,11 @@ Josh and Chuck pick a topic each week, do in-depth research about it and then ta
 
 ## 4. Top 3 Portuguese podcasts I recommend.
 
-![](https://cdn-images-1.medium.com/max/2000/1*mBhCKHmSIxQ_lD55qHBijA.jpeg)
+![tuga-1](https://cdn-images-1.medium.com/max/2000/1*mBhCKHmSIxQ_lD55qHBijA.jpeg)
 
-![](https://cdn-images-1.medium.com/max/2000/1*3HTbcIfZSuruPMkiuJNHew.jpeg)
+![tuga-2](https://cdn-images-1.medium.com/max/2000/1*3HTbcIfZSuruPMkiuJNHew.jpeg)
 
-![](https://cdn-images-1.medium.com/max/2000/1*K4-ywv7WVdicH-mDR_GzPw.jpeg)
+![tuga-3](https://cdn-images-1.medium.com/max/2000/1*K4-ywv7WVdicH-mDR_GzPw.jpeg)
 
 **4.1.[Uma nêspera no cu](https://overcast.fm/+EZNijBPrs)**
 
