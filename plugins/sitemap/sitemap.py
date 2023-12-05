@@ -8,17 +8,16 @@ The sitemap plugin generates plain-text or XML sitemaps.
 
 from __future__ import unicode_literals
 
-import re
 import collections
-import os.path
 import logging
-
-from datetime import datetime
+import os.path
+import re
 from codecs import open
-from pytz import timezone
+from datetime import datetime
 
-from pelican import signals, contents
+from pelican import contents, signals
 from pelican.utils import get_date
+from pytz import timezone
 
 log = logging.getLogger(__name__)
 

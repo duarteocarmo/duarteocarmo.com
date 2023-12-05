@@ -1,9 +1,16 @@
 {% extends "base.html" %} {% block title %}{{ article.title }} - {{ SITENAME
 }}{% endblock %} {% block content %} {% if article.category == 'blog' %}
 <h1 class="article-title">{{ article.title }}</h1>
+{% if 'mp3_link' in article.metadata  %}
+<details>
+  <summary><span style="opacity: 0.7">🎧 Listen</span></summary>
+<audio controls style="width: 100%; display: block">
+  <source src="{{ article.metadata.mp3_link }}" type="audio/mpeg">
+</audio>
+</details>
+{% endif %}
 {{ article.content }}
 <p><i>{{ article.date | strftime('%B %-d, %Y') }}</i></p>
-<!-- <p><a target="_blank" href="https://follow.it/duarte-o-carmo?action=followPub">Get new posts in your inbox</a></p> -->
 <p>
   <a target="_blank" href="http://eepurl.com/hLZEtn"
     >Get new posts in your inbox</a
