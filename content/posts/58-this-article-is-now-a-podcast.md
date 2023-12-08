@@ -17,7 +17,7 @@ The premise did not appear simple to build, but was easy to understand. Somethin
 
 The result is [podcaster](https://github.com/duarteocarmo/podcaster/). It runs 100% on GitHub Actions, it scans every new blog post in my RSS feed and uses [XTTS-v2](https://huggingface.co/coqui/XTTS-v2) to transcribe it. The only thing it needs from me is a 1-min audio file. I tried [Bark](https://tts.readthedocs.io/en/latest/models/bark.html) and a couple of other models, but this was the only one that made Vittoria come into the room when I was testing things around. 
 
-It's not that I hate infrastructure, but I just wanted the whole thing to run on CI. But all these TTS models are slow when running on the CPU. But instead of embarking on another painful journey through the world of GPU computing, I found [Modal](https://modal.com). I'm happy to report that I've regained faith in the future of serverless GPUs:
+It's not that I hate infrastructure, I just wanted the whole thing to run on CI. All these TTS models are slow when running on the CPU. But instead of embarking on another painful journey through the world of GPU computing, I found [Modal](https://modal.com). I'm happy to report that I've regained faith in the future of serverless GPUs:
 
 ```python
 # define the image
@@ -53,7 +53,7 @@ Fortunately, [Justin](https://justinmayer.com/about/) besides being great compan
 
 I had a lot of fun building this, and also learned a lot. First, it demystified the whole podcast hosting thing for me. Turns out, it's just a bunch of mp3 files in a bucket with [a rss feed](https://podcasts.apple.com/dk/podcast/duarte-o-carmos-articles/id1719493997). 
 
-Often I've settled for running ML models on CPU just because deploying with a GPU was much more of a pain, and didn't add any happiness to the process. But at least for now, GPUs are here to stay, but hopefully so are services like [Modal](https://modal.com/). Pythonic, easy to use, and easy to isolate from the rest of the code base.
+Often I've settled for running ML models on CPU just because deploying with a GPU was much more of a pain, and didn't add any happiness to the process. At least for now, GPUs are here to stay, hopefully so are services like [Modal](https://modal.com/). Pythonic, easy to use, and easy to isolate from the rest of the code base.
 
 Finally, I was very impressed with the state of TTS and voice cloning technology. Is it perfect? No. Does it have some artifacts? Yes. Does it sound like a robot sometimes? Sure. But remember, I _only gave it a minute_ of my voice.
 
