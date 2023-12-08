@@ -1,24 +1,23 @@
 title: You can now listen to this blog
-date: 12-07-2023 08:00
-description:  # TODO 
+date: 12-08-2023 05:00
+description: Cloning my voice and automatically generating transcripts for my blog
 status: published
 slug: you-can-now-listen-to-this-blog
-thumbnail: # TODO 
+thumbnail: images/58/podcaster.png
 
-One of my favorite [Portuguese columnists](https://www.publico.pt/autor/joao-miguel-tavares) has this weird thing about his opinion column. Maybe it's more common than I thought. But for every piece he publishes, he also publishes a podcast version along with it. 
+One of my favorite [Portuguese columnists](https://www.publico.pt/autor/joao-miguel-tavares) has this weird thing about his column. Maybe it's more common than I thought. For every piece he publishes, he also publishes a podcast version along with it. 
 
-Now, either Publico.pt has 27th century text-to-speech (TTS) technology, or he's _actually_ reading them. I don't have a problem with that, but I'm _pretty_ sure we could automate that part of the deal on today's age. 
+Now, either [Publico](https://www.publico.pt/) has 27th century text-to-speech (TTS) technology, or he's _actually_ reading them. I don't have a problem with that, but I'm _pretty_ sure we could automate that part of the process with today's tech. 
 
-And sure, I've heard all the rage about voice cloning services like [ElevenLabs](https://elevenlabs.io/pricing). But if you've been following this blog for while, you probably guessed that we're not just going to use an API. We'll probably build one from scratch. 
+And yeah, I've heard all the rage about voice cloning services like [ElevenLabs](https://elevenlabs.io/pricing). But if you've been following this blog for a while, you probably guessed that we're not just gonna use an API. We're probably gonna build one from scratch. 
 
-## The engine
+## An engine
 
-The premise was not simple, but pretty easy to understand. I wanted something that transcribed every new article of this blog, using _my own_ voice. It needed to be cheap, automatic, and not get in the way of my writing/publishing flow. 
+The premise did not appear simple to build, but was easy to understand. Something that transcribes every new article of this blog using _my own_ voice. It needs to be cheap, seamless, and most importantly, not get in the way. Writing is _enough_ work as is. 
 
-[Podcaster](https://github.com/duarteocarmo/podcaster/) is the result. It runs 100% on github actions, scans every new blog post in my RSS feed, and uses [XTTS-v2](https://huggingface.co/coqui/XTTS-v2) to transcribe it with a clone of my voice. The only thing it needs is a 1 min snippet of my voice. I tried [Bark](https://tts.readthedocs.io/en/latest/models/bark.html), 
-and a couple of other models, but this was the only one that made Vittoria come into the room when I was testing things around. 
+The result is [podcaster](https://github.com/duarteocarmo/podcaster/). It runs 100% on GitHub Actions, it scans every new blog post in my RSS feed and uses [XTTS-v2](https://huggingface.co/coqui/XTTS-v2) to transcribe it. The only thing it needs from me is a 1-min audio file. I tried [Bark](https://tts.readthedocs.io/en/latest/models/bark.html) and a couple of other models, but this was the only one that made Vittoria come into the room when I was testing things around. 
 
-I wanted the whole thing to run on [Github Actions](https://github.com/duarteocarmo/podcaster/actions). But these models are pretty slow when running on CPU. Fortunately, I finally took [Modal](https://modal.com) for a spin, and I'm happy to report that the future of serverless GPUs could not look brighter:
+It's not that I hate infrastructure, but I just wanted the whole thing to run on CI. But all these TTS models are slow when running on the CPU. But instead of embarking on another painful journey through the world of GPU computing, I found [Modal](https://modal.com). I'm happy to report that I've regained faith in the future of serverless GPUs:
 
 ```python
 # define the image
@@ -41,20 +40,21 @@ def transcribe(
     # ...
 ```
 
-Podcaster also stores all the transcripts in S3, automatically generates a podcast feed from them, and triggers a new build of this blog. Again, pretty much for free. 
-
-If you're interested in taking it for a spin, [should be straightforward](https://github.com/duarteocarmo/podcaster#readme) to get started.
+The engine stores all transcripts in S3, automatically generates a podcast feed from them (using [feedgen](https://feedgen.kiesow.be/)), and uses web hooks to trigger a new build of this blog. Again, pretty much for free. If you're curious or interested in taking it for a spin, [should be straightforward](https://github.com/duarteocarmo/podcaster#readme) to get started.
 
 ## Integrating with Pelican
 
-I really _don't_ like adding friction to my publishing flow. I mean, writing is already hard as is! So I needed to figure out a way of automatically updating it with transcripts once I publish. Without me having to do anything at all. 
+As I said before: I really _don't_ like adding friction to my writing. It's already hard as is! The challenge then was to figure a way of automagically updating the blog with available transcripts after I publish, without me having to do anything at all. 
 
-Fortunately, [Justin](https://justinmayer.com/about/) is not only great company at PyCon Italia every year, but has also built a pretty easy and [robust plugin system for Pelican](https://docs.getpelican.com/en/latest/plugins.html). All I really had to do, was to add a [`podcaster` plugin](https://github.com/duarteocarmo/duarteocarmo.com/tree/master/plugins) to my website. Without me worrying, it will add the html to every article if there's a transcript available in the podcast feed. So it _should_ run without me having to do anything.
+Fortunately, [Justin](https://justinmayer.com/about/) besides being great company at PyCon Italia every year, has also built a pretty [robust plugin system for Pelican](https://docs.getpelican.com/en/latest/plugins.html). All I had to do, was to add a [`podcaster` plugin](https://github.com/duarteocarmo/duarteocarmo.com/tree/master/plugins) to this website. The plugin automatically matches articles to corresponding episodes, and adds that short html snippet you're seeing above. Should be _build once_ and let run. Hopefully at least.
+
 
 ## Final thoughts
 
-Not gonna lie, I had a lot of fun building this, and also learned a lot. First, it demystified the whole podcast hosting thing for me. Turns just a bunch of mp3 files in a bucket with a feed [will do it](https://podcasts.apple.com/dk/podcast/duarte-o-carmos-articles/id1719493997). 
+I had a lot of fun building this, and also learned a lot. First, it demystified the whole podcast hosting thing for me. Turns out, it's just a bunch of mp3 files in a bucket with [a rss feed](https://podcasts.apple.com/dk/podcast/duarte-o-carmos-articles/id1719493997). 
 
-Second, many times I've settled for running ML models on CPU. Using GPUs at runtime meant having to deal with infrastructure I didn't needed. I was really impressed at how easy [Modal](https://modal.com/) was to use, and can definitely think of other applications where it would be useful. 
+Often I've settled for running ML models on CPU just because deploying with a GPU was much more of a pain, and didn't add any happiness to the process. But at least for now, GPUs are here to stay, but hopefully so are services like [Modal](https://modal.com/). Pythonic, easy to use, and easy to isolate from the rest of the code base.
 
-Finally, I was super impressed with the state of TTS and voice cloning technology. Is it perfect? No. Does it have some artifacts? Yes. Does it sound like a robot sometimes? Yes. But remember, I _only_ gave it a minute of my voice. Open source never seizes to amaze me
+Finally, I was very impressed with the state of TTS and voice cloning technology. Is it perfect? No. Does it have some artifacts? Yes. Does it sound like a robot sometimes? Sure. But remember, I _only gave it a minute_ of my voice.
+
+Open source never ceases to amaze me.
