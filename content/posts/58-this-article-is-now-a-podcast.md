@@ -46,7 +46,7 @@ The engine stores all transcripts in S3, automatically generates a podcast feed 
 
 As I said before: I really _don't_ like adding friction to my writing. It's already hard as is! The challenge then was to figure a way of automagically updating the blog with available transcripts after I publish, without me having to do anything at all. 
 
-Fortunately, [Justin](https://justinmayer.com/about/) besides being great company at PyCon Italia every year, has also built a pretty [robust plugin system for Pelican](https://docs.getpelican.com/en/latest/plugins.html). All I had to do, was to add a [`podcaster` plugin](https://github.com/duarteocarmo/duarteocarmo.com/tree/master/plugins) to this website. The plugin automatically matches articles to corresponding episodes, and adds that short html snippet you're seeing above. Should be _build once_ and let run. Hopefully at least.
+Fortunately, [Justin](https://justinmayer.com/about/) besides being great company at PyCon Italia every year, has also built a pretty [robust plugin system for Pelican](https://docs.getpelican.com/en/latest/plugins.html). All I had to do, was to add a [`podcaster` plugin](https://github.com/duarteocarmo/duarteocarmo.com/blob/master/plugins/podcast/podcast.py) to this website. The plugin automatically matches articles to corresponding episodes, and adds that short html snippet you're seeing above. Should be _build once_ and let run. Hopefully at least.
 
 
 ## Final thoughts
