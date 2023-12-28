@@ -7,20 +7,23 @@ import json
 import boto3
 import os
 from concurrent.futures import ThreadPoolExecutor
+from diskcache import Cache
 
 PHOTO_BUCKET_URL = os.getenv("PHOTO_BUCKET_URL", "")
+PHOTO_BUCKET_PUBLIC_URL = os.getenv("PHOTO_BUCKET_PUBLIC_URL", "")
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID", "")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY", "")
 PHOTO_BUCKET_NAME = os.getenv("PHOTO_BUCKET_NAME", "")
 
 
 log = logging.getLogger(__name__)
+cache = Cache(".cachedir/")
 
 
-def addPhotos(articleGenerator, bucket_name: str = PHOTO_BUCKET_NAME):
+def addPhotos(articleGenerator):
     settings = articleGenerator.settings
     baseReader = BaseReader(settings)
-    photos_data = load_photos_from(bucket_name)
+    photos_data = load_photos_from(PHOTO_BUCKET_NAME)
     counter = 0
 
     for photo in photos_data:
@@ -30,8 +33,8 @@ def addPhotos(articleGenerator, bucket_name: str = PHOTO_BUCKET_NAME):
         location = photo.get("location")
         caption = photo.get("caption")
         _id = photo.get("id")
-        photo_url = f"{PHOTO_BUCKET_URL}/{_id}.jpg"
-        thumbnail_url = f"{PHOTO_BUCKET_URL}/{_id}.webp"
+        photo_url = f"{PHOTO_BUCKET_PUBLIC_URL}/{_id}.jpg"
+        thumbnail_url = f"{PHOTO_BUCKET_PUBLIC_URL}/{_id}.webp"
 
         newArticle = Article(
             caption,
@@ -42,15 +45,18 @@ def addPhotos(articleGenerator, bucket_name: str = PHOTO_BUCKET_NAME):
                 "photo_url": photo_url,
                 "thumbnail_url": thumbnail_url,
                 "category": baseReader.process_metadata("category", "photos"),
+                "url": f"photos/{date}.html",
+                "save_as": f"photos/{date}.html",
             },
         )
 
-        articleGenerator.articles.insert(0, newArticle)
+        articleGenerator.articles.append(newArticle)
         counter += 1
 
     log.warning(f"Added {counter} photos to the article list")
 
 
+@cache.memoize(expire=3600)
 def load_photos_from(bucket_name: str) -> list[dict]:
     s3 = boto3.client(
         "s3",
@@ -92,4 +98,4 @@ def get_photo_metadata(json_file_key, s3, bucket_name):
 
 
 def register():
-    signals.article_generator_pretaxonomy.connect(addPhotos)
+    signals.article_generator_finalized.connect(addPhotos)
