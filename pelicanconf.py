@@ -26,7 +26,7 @@ ARTICLE_EXCLUDES = ["html"]
 CATEGORY_URL = "category/{slug}.html"
 CATEGORY_SAVE_AS = "category/{slug}.html"
 USE_FOLDER_AS_CATEGORY = False
-DRAFT_URL = 'drafts/{slug}.html'
+DRAFT_URL = "drafts/{slug}.html"
 
 # SEO
 PELICAN_VERSION = pelican.__version__
@@ -86,7 +86,8 @@ PLUGINS = [
     "pelican.plugins.sitemap",
     "pelican.plugins.simple_footnotes",
     "pelican.plugins.feed_filter",
-    "plugins.podcast"
+    "plugins.podcast",
+    "plugins.photos",
 ]
 SITEMAP = {
     "exclude": ["archives.html", "author/", "category/"],
