@@ -53,7 +53,7 @@ def addPhotos(articleGenerator):
         articleGenerator.articles.append(newArticle)
         counter += 1
 
-    log.warning(f"Added {counter} photos to the article list")
+    log.info(f"Added {counter} photos to the article list")
 
 
 @cache.memoize(expire=3600)
