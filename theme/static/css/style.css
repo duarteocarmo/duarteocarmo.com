@@ -1,308 +1,3 @@
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-BoldItalic.eot");
-  src:
-    local("Figtree Bold Italic"),
-    local("Figtree-BoldItalic"),
-    url("fonts/Figtree-BoldItalic.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-BoldItalic.woff2") format("woff2"),
-    url("fonts/Figtree-BoldItalic.woff") format("woff"),
-    url("fonts/Figtree-BoldItalic.ttf") format("truetype");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-Bold.eot");
-  src:
-    local("Figtree Bold"),
-    local("Figtree-Bold"),
-    url("fonts/Figtree-Bold.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-Bold.woff2") format("woff2"),
-    url("fonts/Figtree-Bold.woff") format("woff"),
-    url("fonts/Figtree-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Figtree Extralight Itali";
-  src: url("fonts/Figtree-ExtralightItalic.eot");
-  src:
-    local("Figtree Extralight Italic"),
-    local("Figtree-ExtralightItalic"),
-    url("fonts/Figtree-ExtralightItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("fonts/Figtree-ExtralightItalic.woff2") format("woff2"),
-    url("fonts/Figtree-ExtralightItalic.woff") format("woff"),
-    url("fonts/Figtree-ExtralightItalic.ttf") format("truetype");
-  font-weight: 200;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-Extrabold.eot");
-  src:
-    local("Figtree Extrabold"),
-    local("Figtree-Extrabold"),
-    url("fonts/Figtree-Extrabold.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-Extrabold.woff2") format("woff2"),
-    url("fonts/Figtree-Extrabold.woff") format("woff"),
-    url("fonts/Figtree-Extrabold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-ExtraboldItalic.eot");
-  src:
-    local("Figtree Extrabold Italic"),
-    local("Figtree-ExtraboldItalic"),
-    url("fonts/Figtree-ExtraboldItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("fonts/Figtree-ExtraboldItalic.woff2") format("woff2"),
-    url("fonts/Figtree-ExtraboldItalic.woff") format("woff"),
-    url("fonts/Figtree-ExtraboldItalic.ttf") format("truetype");
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-Black.eot");
-  src:
-    local("Figtree Black"),
-    local("Figtree-Black"),
-    url("fonts/Figtree-Black.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-Black.woff2") format("woff2"),
-    url("fonts/Figtree-Black.woff") format("woff"),
-    url("fonts/Figtree-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-BlackItalic.eot");
-  src:
-    local("Figtree Black Italic"),
-    local("Figtree-BlackItalic"),
-    url("fonts/Figtree-BlackItalic.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-BlackItalic.woff2") format("woff2"),
-    url("fonts/Figtree-BlackItalic.woff") format("woff"),
-    url("fonts/Figtree-BlackItalic.ttf") format("truetype");
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-LightItalic.eot");
-  src:
-    local("Figtree Light Italic"),
-    local("Figtree-LightItalic"),
-    url("fonts/Figtree-LightItalic.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-LightItalic.woff2") format("woff2"),
-    url("fonts/Figtree-LightItalic.woff") format("woff"),
-    url("fonts/Figtree-LightItalic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-Light.eot");
-  src:
-    local("Figtree Light"),
-    local("Figtree-Light"),
-    url("fonts/Figtree-Light.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-Light.woff2") format("woff2"),
-    url("fonts/Figtree-Light.woff") format("woff"),
-    url("fonts/Figtree-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-Medium.eot");
-  src:
-    local("Figtree Medium"),
-    local("Figtree-Medium"),
-    url("fonts/Figtree-Medium.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-Medium.woff2") format("woff2"),
-    url("fonts/Figtree-Medium.woff") format("woff"),
-    url("fonts/Figtree-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-MediumItalic.eot");
-  src:
-    local("Figtree Medium Italic"),
-    local("Figtree-MediumItalic"),
-    url("fonts/Figtree-MediumItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("fonts/Figtree-MediumItalic.woff2") format("woff2"),
-    url("fonts/Figtree-MediumItalic.woff") format("woff"),
-    url("fonts/Figtree-MediumItalic.ttf") format("truetype");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-Extralight.eot");
-  src:
-    local("Figtree Extralight"),
-    local("Figtree-Extralight"),
-    url("fonts/Figtree-Extralight.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-Extralight.woff2") format("woff2"),
-    url("fonts/Figtree-Extralight.woff") format("woff"),
-    url("fonts/Figtree-Extralight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-Italic.eot");
-  src:
-    local("Figtree Italic"),
-    local("Figtree-Italic"),
-    url("fonts/Figtree-Italic.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-Italic.woff2") format("woff2"),
-    url("fonts/Figtree-Italic.woff") format("woff"),
-    url("fonts/Figtree-Italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-Regular.eot");
-  src:
-    local("Figtree Regular"),
-    local("Figtree-Regular"),
-    url("fonts/Figtree-Regular.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-Regular.woff2") format("woff2"),
-    url("fonts/Figtree-Regular.woff") format("woff"),
-    url("fonts/Figtree-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-Thin.eot");
-  src:
-    local("Figtree Thin"),
-    local("Figtree-Thin"),
-    url("fonts/Figtree-Thin.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-Thin.woff2") format("woff2"),
-    url("fonts/Figtree-Thin.woff") format("woff"),
-    url("fonts/Figtree-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-ThinItalic.eot");
-  src:
-    local("Figtree Thin Italic"),
-    local("Figtree-ThinItalic"),
-    url("fonts/Figtree-ThinItalic.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-ThinItalic.woff2") format("woff2"),
-    url("fonts/Figtree-ThinItalic.woff") format("woff"),
-    url("fonts/Figtree-ThinItalic.ttf") format("truetype");
-  font-weight: 100;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Figtree Text";
-  src: url("fonts/Figtree-Text.eot");
-  src:
-    local("Figtree Text"),
-    local("Figtree-Text"),
-    url("fonts/Figtree-Text.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-Text.woff2") format("woff2"),
-    url("fonts/Figtree-Text.woff") format("woff"),
-    url("fonts/Figtree-Text.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Figtree Text";
-  src: url("fonts/Figtree-TextItalic.eot");
-  src:
-    local("Figtree Text Italic"),
-    local("Figtree-TextItalic"),
-    url("fonts/Figtree-TextItalic.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-TextItalic.woff2") format("woff2"),
-    url("fonts/Figtree-TextItalic.woff") format("woff"),
-    url("fonts/Figtree-TextItalic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-Semibold.eot");
-  src:
-    local("Figtree Semibold"),
-    local("Figtree-Semibold"),
-    url("fonts/Figtree-Semibold.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Figtree-Semibold.woff2") format("woff2"),
-    url("fonts/Figtree-Semibold.woff") format("woff"),
-    url("fonts/Figtree-Semibold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: config rounded;
-  src: url("fonts/Figtree-SemiboldItalic.eot");
-  src:
-    local("Figtree Semibold Italic"),
-    local("Figtree-SemiboldItalic"),
-    url("fonts/Figtree-SemiboldItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("fonts/Figtree-SemiboldItalic.woff2") format("woff2"),
-    url("fonts/Figtree-SemiboldItalic.woff") format("woff"),
-    url("fonts/Figtree-SemiboldItalic.ttf") format("truetype");
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-
 :root {
   --color-light-primary: #111;
   --color-light-secondary: #111;
@@ -326,20 +21,8 @@
   --image-filtering: var(--color-light-filtering);
   --code-color: var(--color-light-code);
   --code-background: var(--color-light-code-background);
-  /* --base-font: "Inter", -apple-system, BlinkMacSystemFont, "avenir next", avenir, */
-  /*     helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, */
-  /*     sans-serif; */
-  /* --code-font: San Francisco Mono, Monaco, "Consolas", "Lucida Console", */
-  /*     "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace; */
-  /* --base-font: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, */
-  /*   helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, */
-  /*   sans-serif; */
-  --base-font: figtree, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
-    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
-    sans-serif;
-  --fancy-font: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
-    Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
-    Segoe UI Emoji, Segoe UI Symbol;
+  --base-font: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --fancy-font: font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   --code-font: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
     monospace;
 }
@@ -383,7 +66,7 @@ h6 {
   max-width: 100%;
 }
 
-.no-top > :first-child {
+.no-top> :first-child {
   margin-top: 0;
   line-height: 1.25;
 }
@@ -413,14 +96,14 @@ header {
   /* font-weight: 300; */
 }
 
-.article-list > div {
+.article-list>div {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .article-list a {
-  font-weight: 550;
+  font-weight: 500;
   letter-spacing: -0.015em;
 }
 
@@ -486,7 +169,7 @@ div.gallery {
   grid-template-columns: repeat(3, 1fr);
 }
 
-div.gallery > div {
+div.gallery>div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -548,7 +231,7 @@ canvas.marks {
     grid-row-gap: 0px;
   }
 
-  .article-list > div {
+  .article-list>div {
     white-space: normal;
   }
 
@@ -581,23 +264,23 @@ canvas.marks {
   }
 
   img.companies {
-    filter: invert(1) ;
+    filter: invert(1);
   }
 }
 
 
-details summary { 
+details summary {
   cursor: pointer;
 }
 
-details summary > * {
+details summary>* {
   display: inline;
 }
 
 details summary::-webkit-details-marker,
 details summary::marker {
- display: none; 
- content: "";
+  display: none;
+  content: "";
 }
 
 .talks {
@@ -611,8 +294,8 @@ details summary::marker {
 }
 
 .talks li {
-    list-style-type: none;
-    list-style-position: outside;
+  list-style-type: none;
+  list-style-position: outside;
 }
 
 .talks a {
