@@ -9,3 +9,5 @@ __pycache__/
 *.bak
 .tool-versions
 .ztr-directory
+.cachedir/
+.env_variables
