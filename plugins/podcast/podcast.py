@@ -3,11 +3,14 @@ from pelican.contents import Article
 from pelican.generators import ArticlesGenerator
 import feedparser
 import logging
+from diskcache import Cache
 
 PODCAST_FEED = "https://r2.duarteocarmo.com/podcast.xml"
 log = logging.getLogger(__name__)
+cache = Cache(".cachedir/")
 
 
+@cache.memoize(expire=3600)
 def download_podcast_feed():
     feed = feedparser.parse(PODCAST_FEED)
     link_to_mp3_map = {}

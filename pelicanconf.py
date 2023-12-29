@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
-import pelican
-
 AUTHOR = "Duarte O.Carmo"
 SITENAME = "Duarte O.Carmo"
 SITEURL = ""
@@ -19,17 +14,17 @@ DEFAULT_LANG = "en"
 
 PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}.html"
+PAGE_PATHS = ["pages"]
 DEFAULT_CATEGORY = "blog"
 ARTICLE_URL = "{category}/{slug}.html"
 ARTICLE_SAVE_AS = "{category}/{slug}.html"
 ARTICLE_EXCLUDES = ["html"]
+ARTICLE_PATHS = ["posts"]
 CATEGORY_URL = "category/{slug}.html"
 CATEGORY_SAVE_AS = "category/{slug}.html"
 USE_FOLDER_AS_CATEGORY = False
-DRAFT_URL = 'drafts/{slug}.html'
+DRAFT_URL = "drafts/{slug}.html"
 
-# SEO
-PELICAN_VERSION = pelican.__version__
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -63,13 +58,27 @@ STATIC_PATHS = [
     "html",
     "extra/favicons",
 ]
+
+
 EXTRA_PATH_METADATA = {
-    "extra/favicons/": {"path": "favicons/"},
     "extra/robots.txt": {"path": "robots.txt"},
     "pdfs/cv.pdf": {"path": "cv.pdf"},
     "extra/CNAME": {"extra/CNAME": {"path": "CNAME"}},
     "html/StateOfVim.html": {"path": "StateOfVim.html"},
 }
+
+FAVICONS_LIST = [
+    "android-chrome-192x192.png",
+    "android-chrome-512x512.png",
+    "apple-touch-icon.png",
+    "favicon-16x16.png",
+    "favicon-32x32.png",
+    "favicon.ico",
+    "site.webmanifest",
+]
+
+for favicon in FAVICONS_LIST:
+    EXTRA_PATH_METADATA[f"extra/favicons/{favicon}"] = {"path": f"favicons/{favicon}"}
 
 # MARKDOWN
 MARKDOWN = {
@@ -83,10 +92,9 @@ MARKDOWN = {
 # PLUGINS
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = [
-    "pelican.plugins.sitemap",
-    "pelican.plugins.simple_footnotes",
     "pelican.plugins.feed_filter",
-    "plugins.podcast"
+    "plugins.podcast",
+    "plugins.photos",
 ]
 SITEMAP = {
     "exclude": ["archives.html", "author/", "category/"],
