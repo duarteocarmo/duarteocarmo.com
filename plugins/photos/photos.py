@@ -28,10 +28,14 @@ def addPhotos(articleGenerator):
 
     for photo in photos_data:
         date = photo.get("date", "")
+
+        if len(date) > 10:
+            date = date[:10]
+
         date_object = datetime.datetime.strptime(date, "%Y-%m-%d")
 
         location = photo.get("location")
-        caption = photo.get("caption")
+        caption = photo.get("caption", "")
         _id = photo.get("id")
         photo_url = f"{PHOTO_BUCKET_PUBLIC_URL}/{_id}.jpg"
         thumbnail_url = f"{PHOTO_BUCKET_PUBLIC_URL}/{_id}.webp"
