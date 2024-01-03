@@ -1,5 +1,5 @@
 title: Rebuilding /photos
-date: 02-01-2024 22:35
+date: 01-02-2024 22:35
 description: Rebuilding the /photos part of my blog 
 status: published
 slug: rebuilding-photos
