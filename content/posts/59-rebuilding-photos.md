@@ -5,7 +5,7 @@ status: published
 slug: rebuilding-photos
 thumbnail: images/59/ambrosio_preview.png
 
-A couple of years ago, I decided to remove all my photos from Instagram. I wanted something for myself that suited what I needed. The result was [/photos](/photos). I wrote about it when I built it [too](/blog/self-hosting-instagram-python). Here's a snippet from that post: 
+A couple of years ago, I decided to remove all my photos from Instagram. I wanted something for myself. Something that suited what I needed. The result was [/photos](/photos.html). I wrote about it when I built it [too]({filename}/posts/31-self-hosting-my-instagram-profile.md). Here's a snippet from that post:
 
 _[...] Uploading is by no means as simple as opening an app and snapping a picture. But I've created a small Python script that processes a photo, generates a thumbnail, asks some questions about it, and uploads it to S3 and my blog. And that's good enough [...]_
 
