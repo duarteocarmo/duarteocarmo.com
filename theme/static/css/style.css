@@ -269,19 +269,19 @@ canvas.marks {
 }
 
 
-/* details summary { */
-/*   cursor: pointer; */
-/* } */
-/**/
-/* details summary>* { */
-/*   display: inline; */
-/* } */
-/**/
-/* details summary::-webkit-details-marker, */
-/* details summary::marker { */
-/*   display: none; */
-/*   content: ""; */
-/* } */
+.transcript details summary {
+  cursor: pointer;
+}
+
+.transcript details summary>* {
+  display: inline;
+}
+
+.transcript details summary::-webkit-details-marker,
+.transcript details summary::marker {
+  display: none;
+  content: "";
+}
 
 .talks {
   line-height: 1.6;
