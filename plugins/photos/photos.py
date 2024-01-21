@@ -48,6 +48,7 @@ def addPhotos(articleGenerator):
                 "location": location,
                 "photo_url": photo_url,
                 "thumbnail_url": thumbnail_url,
+                "thumbnail": thumbnail_url,
                 "category": baseReader.process_metadata("category", "photos"),
                 "url": f"photos/{_id}.html",
                 "save_as": f"photos/{_id}.html",
