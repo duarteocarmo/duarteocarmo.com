@@ -8,8 +8,8 @@
   --color-light-filtering: 0%;
 
   --color-dark-primary: #fff;
-  --color-dark-secondary: #ccc;
-  --color-dark-background: #000;
+  --color-dark-secondary: rgb(236, 233, 230);
+  --color-dark-background: #1b2732;
   --color-dark-code: #161b22;
   /* --color-dark-code-background: #0d1117; */
   --color-dark-code-background: #171b21;
@@ -263,9 +263,9 @@ canvas.marks {
     --code-background: var(--color-dark-code-background);
   }
 
-  img.companies {
-    filter: invert(1);
-  }
+  /* img.companies { */
+  /*   filter: invert(1); */
+  /* } */
 }
 
 
