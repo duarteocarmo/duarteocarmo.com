@@ -95,9 +95,10 @@ PLUGINS = [
     "pelican.plugins.feed_filter",
     "plugins.podcast",
     "plugins.photos",
+    "sitemap",
 ]
 SITEMAP = {
-    "exclude": ["archives.html", "author/", "category/"],
+    "exclude": ["archives.html", "author/", "category/", "photos/"],
     "format": "xml",
     "priorities": {"articles": 0.9, "indexes": 0.5, "pages": 0.9},
     "changefreqs": {
