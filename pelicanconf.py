@@ -96,6 +96,7 @@ PLUGINS = [
     "plugins.podcast",
     "plugins.photos",
     "sitemap",
+    "simple_footnotes",
 ]
 SITEMAP = {
     "exclude": ["archives.html", "author/", "category/", "photos/"],
