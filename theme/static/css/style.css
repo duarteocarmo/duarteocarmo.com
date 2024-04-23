@@ -2,16 +2,15 @@
   --color-light-primary: #111;
   --color-light-secondary: #111;
   --color-light-background: #fff;
-  --color-light-background: #fff;
   --color-light-code: #fff;
   --color-light-code-background: #f6f8fa;
   --color-light-filtering: 0%;
 
-  --color-dark-primary: #fff;
-  --color-dark-secondary: #ccc;
-  --color-dark-background: #000;
-  --color-dark-code: #161b22;
-  --color-dark-code-background: #171b21;
+  --color-dark-primary: rgb(245, 250, 255);
+  --color-dark-secondary: rgb(245, 250, 255);
+  --color-dark-background: hsl(211 calc(100% - 20%) 2%);
+  --color-dark-code: hsl( 211 calc(100% - 10%) 63% / 0.075 );
+  --color-dark-code-background: hsl( 211 calc(100% - 10%) 63% / 0.075 );
   --color-dark-filtering: 100%;
 
   --primary: var(--color-light-primary);
