@@ -1,30 +1,46 @@
-{% extends "base.html" %} {% block title %}{{ article.title }} - {{ SITENAME
-}}{% endblock %} {% block content %} {% if article.category == 'blog' %}
-<h1 class="article-title">{{ article.title }}</h1>
-{% if 'mp3_link' in article.metadata  %}
-<div class="transcript">
-  <details>
-    <summary><span style="opacity: 0.7">🎧 Listen</span></summary>
-    <audio controls style="width: 100%; display: block" preload="metadata">
-      <source src="{{ article.metadata.mp3_link }}" type="audio/mpeg">
-    </audio>
-  </details>
-</div>
-{% endif %}
-{{ article.content }}
-<p><i>{{ article.date | strftime('%B %-d, %Y') }}</i></p>
-<p>
-  <a target="_blank" href="http://eepurl.com/hLZEtn"
-    >Get new posts in your inbox</a
-  >
-</p>
-{% elif article.category == 'photos' %}
-<center>
-  <img style="max-height: 75vh" src="{{ article.photo_url }}" alt="Photo" />
-</center>
-<p>{{ article.content }}</p>
-{% if article.location != 'None' %}
-<p><i>Taken in {{ article.location }}</i></p>
-{% endif %}
-<p><i>{{ article.date | strftime('%B %-d, %Y') }}</i></p>
-{% endif %} {% endblock %}
+{% extends "base.html" %}
+{% block title %}
+    {{ article.title }} - {{ SITENAME
+    }}
+{% endblock %}
+{% block content %}
+    {% if article.category == 'blog' %}
+        <h1 class="article-title">{{ article.title }}</h1>
+        {% if 'mp3_link' in article.metadata %}
+            <div class="transcript">
+                <details>
+                    <summary>
+                        <span style="opacity: 0.7">🎧 Listen</span>
+                    </summary>
+                    <audio controls style="width: 100%; display: block" preload="metadata">
+                        <source src="{{ article.metadata.mp3_link }}" type="audio/mpeg">
+                    </audio>
+                </details>
+            </div>
+        {% endif %}
+        {{ article.content }}
+        <br>
+        <div style="display: flex;
+                    justify-content: space-between;
+                    align-items: center">
+            <i>{{ article.date | strftime("%B %-d, %Y") }}</i>
+            <div>
+                <a href="http://eepurl.com/hLZEtn">Subscribe</a>
+                <a href="mailto:me@duarteocarmo.com?subject={{ article.title|urlencode }}">Reply</a>
+            </div>
+        </div>
+    {% elif article.category == 'photos' %}
+        <center>
+            <img style="max-height: 75vh" src="{{ article.photo_url }}" alt="Photo" />
+        </center>
+        <p>{{ article.content }}</p>
+        {% if article.location != 'None' %}
+            <p>
+                <i>Taken in {{ article.location }}</i>
+            </p>
+        {% endif %}
+        <p>
+            <i>{{ article.date | strftime("%B %-d, %Y") }}</i>
+        </p>
+    {% endif %}
+{% endblock %}
