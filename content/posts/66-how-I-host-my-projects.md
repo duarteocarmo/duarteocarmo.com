@@ -29,8 +29,8 @@ The migration was pretty smooth, except for [a](https://aicoverlettercreator.com
 style="max-width:100%;border-radius: 2px">
 </center>
 
-There are a lot of things I love about Coolify. It also scans my GitHub repos and automatically redeploys when I push any change. It also sends me notifications when something gets deployed, with direct links anything that possibly went wrong. 
+There are a lot of things I love about Coolify. It scans my GitHub repos and redeploys when needed via webhooks. It also sends me Telegram notifications when something gets updated to a new version. Finally, it also provides a wide range of other applications you can deploy (Databases, S3-compatible storages, and a [wide range](https://coolify.io/docs/resources/services/index) of other services). 
 
-Don't get me wrong - I love the Cloud. But essentially, the cloud is just someone else’s computer. So why shouldn’t it be my computer? Additionally, my self-hosting everything, I can pay a fixed price for my hardware, and _not_ for the number of applications that run on it. And even though I did like my little _hacked-together_ setup, I love being able to use, AND [contribute](https://github.com/coollabsio/coolify/pull/2028) to a promising open source project. 
+Don't get me wrong - I love the Cloud. But essentially, the Cloud is just someone else’s computer. So why shouldn’t it be my computer? Self-hosting everything means I can pay a fixed price for my hardware, and _not_ for the number of applications that run on it. And even though I did like my little _hacked-together_ setup, I love being able to use, AND [contribute](https://github.com/coollabsio/coolify/pull/2028) to a promising open source project!
 
 There's something incredible about what a [1-man team](https://github.com/andrasbacsai) can accomplish with the support of the open source community.
