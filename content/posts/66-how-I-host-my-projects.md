@@ -14,7 +14,7 @@ Some months ago my small server started giving me some problems. The 4 vCPUs and
 It was time for an upgrade.
 
 <center>
-<img src="{static}/images/66/apps.png" alt="Setup view happy hacking keyboard" 
+<img src="{static}/images/66/coolify-apps.png" alt="Coolify apps" 
 style="max-width:100%;border-radius: 2px">
 </center>
 
@@ -25,7 +25,7 @@ With better hardware, I needed to decide whether I would keep my [old setup]({fi
 The migration was pretty smooth, except for [a](https://aicoverlettercreator.com/) [couple](https://infrequent.app/) of more complicated Django applications with databases on docker volumes. Since everything was already running on containers, it was pretty much plug-and-play. In a couple of days everything was migrated. 
 
 <center>
-<img src="{static}/images/66/kuma.png" alt="Setup view happy hacking keyboard" 
+<img src="{static}/images/66/kuma-screenshot.png" alt="Kuma screenshot" 
 style="max-width:100%;border-radius: 2px">
 </center>
 
