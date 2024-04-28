@@ -14,8 +14,7 @@ Some months ago my small server started giving me some problems. The 4 vCPUs and
 It was time for an upgrade.
 
 <center>
-<img src="{static}/images/66/apps.png" alt="Apps deployed with Coolify" 
-style="max-width:100%;border-radius: 2px">
+<img src="{static}/images/66/apps.png" alt="Apps deployed with Coolify" style="max-width:100%;border-radius: 2px">
 </center>
 
 First, I needed to upgrade my hardware. Not sure if [Hetzner](https://www.hetzner.com/) is the cheapest out there, but after using them for 5+ years I can definitely say they're reliable. I went with their [server auction](https://www.hetzner.com/sb), which is a great (and sustainable) way of getting a nice refurbished server for a fair price. For about 30 EUR/month, I upgraded to a nice Intel i7 with 64GB RAM(!). Should be more than enough.
@@ -25,8 +24,7 @@ With better hardware, I needed to decide whether I would keep my [old setup]({fi
 The migration was pretty smooth, except for [a](https://aicoverlettercreator.com/) [couple](https://infrequent.app/) of more complicated Django applications with databases on docker volumes. Since everything was already running on containers, it was pretty much plug-and-play. In a couple of days everything was migrated. 
 
 <center>
-<img src="{static}/images/66/kuma.png" alt="Status page and telegram notifications" 
-style="max-width:100%;border-radius: 2px">
+<img src="{static}/images/66/kuma.png" alt="Status page and telegram notifications" style="max-width:100%;border-radius: 2px">
 </center>
 
 There are a lot of things I love about Coolify. It also scans my GitHub repos and automatically redeploys when I push any change. It also sends me notifications when something gets deployed, with direct links anything that possibly went wrong. 
