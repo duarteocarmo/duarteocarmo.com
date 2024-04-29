@@ -7,7 +7,7 @@ thumbnail: images/66/cover.png
 
 I'm a sucker for side projects. There's nothing quite like building something to learn about it.
 
-Over the last 5+ years I've accumulated a little over 15 small web apps and websites. Almost all of them are hosted on a small Hetzner server and deployed using [a mix of ssh, docker-compose, and Caddy](). 
+Over the last 5+ years I've accumulated a little over 15 small web apps and websites. Almost all of them are hosted on a small Hetzner server and deployed using [a mix of ssh, docker-compose, and Caddy]({filename}/posts/41-down-from-the-cloud.md). 
 
 Some months ago my small server started giving me some problems. The 4 vCPUs and 16 GB RAM weren't enough, and hiccups became more frequent. I also want to run more and more small LLMs on it, which turned out to be _[challenging](https://github.com/duarteocarmo/lusiaidas/blob/master/app.py#L1)_. The whole ["ssh with root using github actions"](https://github.com/duarteocarmo/governosombra/blob/master/.github/workflows/workflow.yml) started to look like more of a limitation than a feature. 
 
