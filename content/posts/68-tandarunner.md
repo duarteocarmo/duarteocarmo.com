@@ -1,4 +1,4 @@
-title: Tanda Runner: A personalized running dashboard powered by LLMs
+title: Tanda Runner: A personalized running dashboard
 date: 22-07-2024 17:55
 description: A dashboard for visualizing your Strava running data and getting personalized recommendations for your next big race.
 status: published
