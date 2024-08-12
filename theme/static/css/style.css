@@ -1,26 +1,40 @@
+* {
+  /* margin: 0; */
+  /* padding: 0; */
+  /* box-sizing: border-box; */
+  /* border: 0.5px solid white; */
+}
+
 :root {
-  --color-light-primary: #111;
-  --color-light-secondary: #111;
-  --color-light-background: #fff;
+  --color-light-primary: #454545;
+  --color-light-secondary: #454545;
+  --color-light-background: #f8f8f8;
+  --color-light-tertiary: rgba(0, 0, 0, 0.3);
   --color-light-code: #fff;
   --color-light-code-background: #f6f8fa;
   --color-light-filtering: 0%;
 
-  --color-dark-primary: rgb(245, 250, 255);
-  --color-dark-secondary: rgb(245, 250, 255);
-  --color-dark-background: hsl(211 calc(100% - 20%) 2%);
-  --color-dark-code: hsl( 211 calc(100% - 10%) 63% / 0.075 );
-  --color-dark-code-background: hsl( 211 calc(100% - 10%) 63% / 0.075 );
+  --color-dark-primary: #bbbbbb;
+  --color-dark-secondary: #999999;
+  --color-dark-tertiary: rgba(255, 255, 255, 0.2);
+  --color-dark-background: #212121;
+  --color-dark-code: hsl(211 calc(100% - 10%) 63% / 0.075);
+  --color-dark-code-background: hsl(211 calc(100% - 10%) 63% / 0.075);
   --color-dark-filtering: 100%;
 
   --primary: var(--color-light-primary);
   --secondary: var(--color-light-secondary);
+  --tertiary: var(--color-light-tertiary);
   --background: var(--color-light-background);
   --image-filtering: var(--color-light-filtering);
   --code-color: var(--color-light-code);
   --code-background: var(--color-light-code-background);
-  --base-font: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-  --fancy-font: font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --base-font: sohne, -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
+  --fancy-font: font-family: Iowan Old Style, Apple Garamond, Baskerville,
+    Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   --code-font: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
     monospace;
 }
@@ -45,11 +59,16 @@ h5,
 h6 {
   font-weight: 500;
   /* font-family: var(--fancy-font) */
+  color: var(--primary);
 }
 
 .article-title {
   font-weight: 600;
   overflow-wrap: break-word;
+}
+
+.article-title a {
+  text-decoration: none;
 }
 
 .container {
@@ -64,7 +83,7 @@ h6 {
   max-width: 100%;
 }
 
-.no-top> :first-child {
+.no-top > :first-child {
   margin-top: 0;
   line-height: 1.25;
 }
@@ -85,34 +104,47 @@ header {
   grid-template-columns: 1fr min-content;
 }
 
+.article-content {
+  display: grid;
+  grid-template-columns: min-content auto;
+}
+
+.article-content hr {
+  height: 0;
+  border: 0;
+  margin: 0.5rem;
+  align-self: center;
+  width: 100%;
+  border-bottom: 0.6px dashed var(--tertiary);
+}
+
 .article-list time {
   padding-right: 0.25em;
   color: var(--secondary);
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.012em;
   white-space: pre;
-  /* font-weight: 300; */
 }
 
-.article-list>div {
+.article-list > div {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .article-list a {
-  font-weight: 500;
-  letter-spacing: -0.015em;
+  font-weight: 400;
+  /* letter-spacing: -0.015em; */
 }
 
 a {
-  color: var(--secondary);
+  color: var(--primary);
   text-decoration-skip-ink: auto;
   text-decoration: underline;
 }
 
 a:visited {
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 .nu a {
@@ -167,7 +199,7 @@ div.gallery {
   grid-template-columns: repeat(3, 1fr);
 }
 
-div.gallery>div {
+div.gallery > div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -229,7 +261,7 @@ canvas.marks {
     grid-row-gap: 0px;
   }
 
-  .article-list>div {
+  .article-list > div {
     white-space: normal;
   }
 
@@ -249,12 +281,21 @@ canvas.marks {
   div.gallery {
     gap: 2px;
   }
+
+  .article-content hr {
+    display: none;
+  }
+
+  .article-content {
+    display: block;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --primary: var(--color-dark-primary);
     --secondary: var(--color-dark-secondary);
+    --tertiary: var(--color-dark-tertiary);
     --background: var(--color-dark-background);
     --image-filtering: var(--color-dark-filtering);
     --code-color: var(--color-dark-code);
@@ -266,12 +307,11 @@ canvas.marks {
   }
 }
 
-
 .transcript details summary {
   cursor: pointer;
 }
 
-.transcript details summary>* {
+.transcript details summary > * {
   display: inline;
 }
 
@@ -283,7 +323,8 @@ canvas.marks {
 
 .talks {
   line-height: 1.6;
-  font-weight: 550;
+  font-weight: 500;
+  color: var(--primary);
 }
 
 .talks ul {
@@ -299,4 +340,39 @@ canvas.marks {
 .talks a {
   font-weight: 400;
   opacity: 0.7;
+}
+
+/* FONTS */
+/* this is my own customized version of soehne */
+
+@font-face {
+  font-family: "Sohne";
+  src: url("/theme/fonts/sb.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sohne";
+  src: url("/theme/fonts/sbk.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sohne";
+  src: url("/theme/fonts/sk.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sohne";
+  src: url("/theme/fonts/skk.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
 }
