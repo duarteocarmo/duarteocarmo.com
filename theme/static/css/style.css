@@ -29,7 +29,7 @@
   --image-filtering: var(--color-light-filtering);
   --code-color: var(--color-light-code);
   --code-background: var(--color-light-code-background);
-  --base-font: sohne, -apple-system, BlinkMacSystemFont, avenir next, avenir,
+  --base-font: figtree, -apple-system, BlinkMacSystemFont, avenir next, avenir,
     segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
     sans-serif;
   --fancy-font: font-family: Iowan Old Style, Apple Garamond, Baskerville,
@@ -88,6 +88,11 @@ h6 {
   line-height: 1.25;
 }
 
+.sitename {
+  text-decoration: none;
+  font-weight: 500;
+}
+
 .vertical-spacing {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -133,7 +138,7 @@ header {
 }
 
 .article-list a {
-  font-weight: 400;
+  font-weight: 500;
   /* letter-spacing: -0.015em; */
 }
 
@@ -303,7 +308,7 @@ canvas.marks {
   }
 
   img.companies {
-    filter: invert(1);
+    background-color: var(--background);
   }
 }
 
@@ -343,23 +348,6 @@ canvas.marks {
 }
 
 /* FONTS */
-/* this is my own customized version of soehne */
-
-@font-face {
-  font-family: "Sohne";
-  src: url("/theme/fonts/sb.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Sohne";
-  src: url("/theme/fonts/sbk.woff2") format("woff2");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
 
 @font-face {
   font-family: "Sohne";
