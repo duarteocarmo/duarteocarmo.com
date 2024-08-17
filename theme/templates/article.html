@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
     {% if article.category == 'blog' %}
-        <h1 class="article-title">{{ article.title }}</h1>
+        <h1 class="article-title"><a href="{{ SITEURL  }}/{{ article.url }}">{{ article.title }}</a></h1>
         {% if 'mp3_link' in article.metadata %}
             <div class="transcript">
                 <details>

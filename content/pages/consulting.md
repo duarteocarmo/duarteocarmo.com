@@ -2,13 +2,15 @@ title: Consulting
 slug: consulting
 
 <center>
-<img  src="{static}/images/companies_all_v2.png" alt="companies" style="border-radius: 6px;" class="companies">
+<img  src="{static}/images/companies_transparent.png" alt="companies" style="border-radius: 6px;" class="companies">
 </center>
+
 
 I help clients solve hard problems using Machine Learning, Data, and Software. I'm known to take a  _full-stack_ approach that starts with _people_. I don't believe in building in the basement, but in establishing a true partnership.
 
 Some problems I've helped solve in the past: 
 
+- Lead the development of a **next generation insights analysis dashboard** for healthcare professionals powered by LLMs.
 - Researched and built a **deep-learning model based on satellite imagery** to generate soil profiles for unseen areas
 - A **multi-modal corporate search engine** that helps employees get the information they need, fast
 - End-to-end **NLP models that categorize 50M+ professionals**. For a next-gen lead prospecting platform
