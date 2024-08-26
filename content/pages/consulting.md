@@ -2,7 +2,7 @@ title: Consulting
 slug: consulting
 
 <center>
-<img  src="{static}/images/companies_transparent.png" alt="companies" style="border-radius: 6px;" class="companies">
+<img  src="{static}/images/companies.png" alt="companies" style="border-radius: 6px;" class="companies">
 </center>
 
 
