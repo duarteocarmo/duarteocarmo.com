@@ -57,7 +57,7 @@ After another 45 min drive and we finally ended up at one of the highlights of t
 
 Recklessly ignoring the weather warnings, we then drove along the Eastern coast. It was a scary drive, with *very strong* winds; between the mountain and the ocean - on a narrow road. Had we gotten a larger van, we would’ve probably stopped right then and there.  
 
-But with Vitto’s co-piloting, we managed to get into the [Fossárdalur Campsite](https://maps.app.goo.gl/2xNgDRZZ4FXLM9G96); probably the most of the most beautiful campsite we stayed at. Hidden amongst the Fjords, sheltered from the wind. The kitchen area was super cozy, with electricity, many stoves, and some long tables to enjoy a warm meal. 
+But with Vitto’s co-piloting, we managed to get into the [Fossárdalur Campsite](https://maps.app.goo.gl/2xNgDRZZ4FXLM9G96); probably the most beautiful campsite we stayed at. Hidden amongst the Fjords, sheltered from the wind. The kitchen area was super cozy, with electricity, many stoves, and some long tables to enjoy a warm meal. 
 
 <center>
 <img src="{static}/images/69/whales_optim.png" alt="Icelandic Landscape" style="max-width:100%;border-radius: 2px">
