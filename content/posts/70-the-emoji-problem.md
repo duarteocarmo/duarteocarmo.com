@@ -7,7 +7,7 @@ thumbnail: images/70/thumbnail.png
 
 
 <center>
-<img src="{static}/images/70/header_169.png" alt="Fruits and bowl" style="max-width:100%;border-radius: 2px; aspect-ratio: 0.5;">
+<img src="{static}/images/70/header_169.png" alt="Fruits and bowl" style="max-width:100%;border-radius: 2px;">
 </center>
 
 For the past years Vitto and I have used [Tricount](https://tricount.com/) to track our shared expenses. The app is actually pretty good, but there’s one small thing that annoys me quite a bit. 
