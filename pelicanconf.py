@@ -86,6 +86,7 @@ MARKDOWN = {
         "markdown.extensions.toc",
         "markdown.extensions.fenced_code",
         "markdown.extensions.codehilite",
+        "markdown.extensions.tables"
     ]
 }
 
