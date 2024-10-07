@@ -345,3 +345,19 @@ canvas.marks {
   font-weight: 400;
   opacity: 0.7;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--tertiary);
+}
+
+table {
+  overflow-x: auto;
+  display: block;
+}
