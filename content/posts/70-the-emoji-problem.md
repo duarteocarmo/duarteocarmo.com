@@ -224,6 +224,47 @@ classify_expense(
 # prints '🍩'
 ```
 
+<details>
+  <summary>Note: Using Instructor to accomplish the same </summary>
+  
+A kind user on <a href=https://x.com/molasalex/status/1843553936407703666>twitter</a> reached out mentioning you could do the same with <a href=https://python.useinstructor.com/>Instructor</a>
+
+
+I got a lot of Validation errors at the time, so I did not go this route, the code gets a lot simpler, so worth the test! 
+```python
+def classify_expense(
+    expense_description: str,
+    model: str,
+    retries: int = 3,
+    base_url: str = "http://localhost:11434/v1",
+    api_key: str = "ollama",
+) -> EmojiClassification:
+
+    client = instructor.from_openai(
+        OpenAI(
+            base_url=base_url,
+            api_key=api_key,
+        ),
+        mode=instructor.Mode.TOOLS_STRICT,
+    )
+
+    classification_prompt = f"User: {expense_description}"
+
+    response = client.chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": classification_prompt},
+        ],
+        response_model=EmojiClassification,
+        max_retries=retries,
+    )
+
+    return response
+```
+</details>
+
+
 Perfect, we can now use any local Ollama model that supports function calling and classify our expense description as well. 
 
 Why don’t we try some old-school machine learning? 
