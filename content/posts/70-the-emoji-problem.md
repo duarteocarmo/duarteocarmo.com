@@ -85,7 +85,7 @@ Just liked that, we now have a dataset of ~50 expenses. Great. Let’s get to cl
 
 ## Classification using `gpt-4o` and structured outputs
 
-Before we do anything else, how do the *big guns* perform? What if we just ask `gpt-4o` to classify? This is the simplest of options, even simpler now that OpenAI directly supports Pedantic base models via structured outputs. We can solve this problem in a couple dozen lines of code: 
+Before we do anything else, how do the *big guns* perform? What if we just ask `gpt-4o` to classify? This is the simplest of options, even simpler now that OpenAI directly supports Pydantic base models via structured outputs. We can solve this problem in a couple dozen lines of code: 
 
 
 ```python 
