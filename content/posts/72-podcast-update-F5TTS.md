@@ -15,10 +15,11 @@ Late this year a new model from Microsoft came out, called [E2-TTS](https://arxi
 
 I tested the engine with [one of my latest posts]({filename}/posts/69-iceland):
 
-|                                                 |                                                                                                                                                                                              |
-|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [XTTS-v2](https://huggingface.co/coqui/XTTS-v2) | <audio controls style="width: 100%; display: block" preload="metadata"><source src="https://r2.duarteocarmo.com/old/old.mp3" type="audio/mpeg"></audio>                                      |
-| [F5-TTS](https://github.com/SWivid/F5-TTS)      | <audio controls style="width: 100%; display: block" preload="metadata"><source src="https://r2.duarteocarmo.com/transcripts/10bb68f8f7200f19b71bb095af3c5f32.mp3" type="audio/mpeg"></audio> |
+**[XTTS-v2](https://huggingface.co/coqui/XTTS-v2)**  
+<audio controls style="width: 100%; display: block" preload="metadata"><source src="https://r2.duarteocarmo.com/old/old.mp3" type="audio/mpeg"></audio>
+
+**[F5-TTS](https://github.com/SWivid/F5-TTS)**  
+<audio controls style="width: 100%; display: block" preload="metadata"><source src="https://r2.duarteocarmo.com/transcripts/10bb68f8f7200f19b71bb095af3c5f32.mp3" type="audio/mpeg"></audio>
 
 I mean, would you just hear that. No more weird accelerations and squeeky voices. The new model is just much more stable and reliable than the previous one. It's light day and night! It's still not perfect though. One might argue the voice gets a bit _too_ intense some times. The problem with prounounciation persists. It still doesn't know how to say my name properly - but then again - most people also can't.
 
