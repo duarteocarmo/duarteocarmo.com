@@ -13,7 +13,7 @@ Unfortunately, for state of the art text-to-speech there is still a single undis
 
 Late this year a new model from Microsoft came out, called [E2-TTS](https://arxiv.org/abs/2406.18009). Sometime after, [F5-TTS](https://github.com/SWivid/F5-TTS) was released - an improvement over E2 focued on inference and optimization. I was amazed by the [demos](https://www.microsoft.com/en-us/research/project/e2-tts/) - they sounded _crisp_ and _natural_. After browsing the code for a little bit, it seemed like an easy thing to test out.
 
-I tested the engine with [one of my latest posts]({filename}/posts/69-iceland):
+I tested the engine with [one of my latest posts]({filename}/posts/69-iceland.md):
 
 **[XTTS-v2](https://huggingface.co/coqui/XTTS-v2)**  
 <audio controls style="width: 100%; display: block" preload="metadata"><source src="https://r2.duarteocarmo.com/old/old.mp3" type="audio/mpeg"></audio>
