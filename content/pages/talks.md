@@ -2,6 +2,7 @@ title: Talks
 slug: talks
 template: talks
 
+- You also hate SQL? Let the LLM handle it [PyCon Wroclaw](https://pyconwroclaw.com/) - [slides](/pdfs/pycon-wroclaw-llm-text-to-sql.pdf)
 - Go Time [podcast](https://changelog.com/gotime/308) 
 - The A.I. and Digital Transformation Podcast [podcast](https://www.gmscconsulting.com/ai-and-digital-transformation-podcast/episode-12) - [video](https://youtu.be/9l0BTZipArQ?si=uSpvwFWcIjYwu7Xn)
 - Verbos AI Podcast [podcast](https://open.spotify.com/episode/0Ja8xzuiOAYZeD4WSP8TxL?si=0JFkY1fWRwCf0_BkiUUfvA&nd=1) - [video](https://youtu.be/7nT4NrdjUF4?si=oLVzEF_iRE4qz_Qy)
