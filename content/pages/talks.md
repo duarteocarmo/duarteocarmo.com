@@ -2,6 +2,7 @@ title: Talks
 slug: talks
 template: talks
 
+- Panel: The Dashboard That Grew - A Scaling Saga [PyData Global 2024](https://pydata.org/global2024) - [slides](/pdfs/pydata-global-panel-the-dashboard-that-grew.pdf)
 - You also hate SQL? Let the LLM handle it [PyCon Wroclaw](https://pyconwroclaw.com/) - [slides](/pdfs/pycon-wroclaw-llm-text-to-sql.pdf)
 - Go Time [podcast](https://changelog.com/gotime/308) 
 - The A.I. and Digital Transformation Podcast [podcast](https://www.gmscconsulting.com/ai-and-digital-transformation-podcast/episode-12) - [video](https://youtu.be/9l0BTZipArQ?si=uSpvwFWcIjYwu7Xn)
