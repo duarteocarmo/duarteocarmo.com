@@ -451,15 +451,6 @@ print(llm(build_prompt(question, context)))
 ```
 
 ```text
-items_per_cluster=2
-
-
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-    - Avoid using `tokenizers` before the fork if possible
-    - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-
-
 Based on the provided context, it appears that there are various "skeets" ( likely referring to Twitter threads or short conversations) scattered throughout the text. However, without further information, I can only provide a general high-level summary:
 
 The skeets seem to be a collection of miscellaneous conversations and comments from various individuals on topics such as:
