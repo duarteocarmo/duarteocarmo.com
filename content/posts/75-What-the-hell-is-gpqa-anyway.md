@@ -1,4 +1,4 @@
-title: What the hell Is GPQA, Anyway?
+title: What the hell Is GPQA, anyway?
 date: Wed 15 Jan 2025
 description: MMLU, HumanEval, SimpleQA, GPQA. Confused? You’re not alone. A short deep-dive into LLM evaluations and benchmarks, focused on GPQA.
 status: published
