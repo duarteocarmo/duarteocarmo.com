@@ -1,14 +1,12 @@
-{% extends "base.html" %}
-
-{% block title %}{{ page.title }} - {{ SITENAME }} {% endblock %}
-
-
-{% block content %}
-        <div>
-
-<div class="talks">
-        {{ page.content }}
+{% extends "base.html" %} {% block title %}{{ SITENAME }}{% endblock %} {% block
+content %}
+<div class="article-list nu">
+  {% for talk in TALKS %}
+  <div class="article-content">
+    <span>{{ talk.text }}</span>- {% for link in talk.links %}
+    <a href="{{ link.url }}">{{ link.text }}</a> {% endfor %}
+  </div>
+  <div></div>
+  {% else %} No posts yet! {% endfor %}
 </div>
-
-        </div>
 {% endblock %}
