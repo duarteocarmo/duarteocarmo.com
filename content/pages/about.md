@@ -7,7 +7,7 @@ slug: about
 
 Hey there. Welcome to my website.
 
-My name is Duarte (`du-art`), I'm a technologist, born and raised in sunny Lisbon, now based in Copenhagen. My work lies in the intersection of Machine Learning, Data, Software, and People. I'm in love with Technology, and how it can improve people's lives. 
+My name is Duarte (`du-art`), I'm a technologist, born and raised in sunny Lisbon, now based in Copenhagen. My work lies in the intersection of Machine Learning & AI, Data, Software, and People. I'm in love with Technology, and how it can make people's lives better.
 
 In the past, I've worked in Consumer Electronics, Public Institutions, Big Three Management Consulting, and YC-backed startups. The common thread? Solving _hard_ problems end-to-end.
 

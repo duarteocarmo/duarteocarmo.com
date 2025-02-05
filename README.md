@@ -10,8 +10,9 @@ Made with [Pelican](https://github.com/getpelican/pelican). Deployed using [Clou
 
 - [x] Review about page
 - [x] Review consulting page
-- [ ] Review talks page
+- [x] Review talks page
+- [x] Review photos page
 - [ ] Review article page
-- [ ] Review photos page
 - [ ] Dark mode
 - [ ] Responsiveness and screen sizes
+- [ ] Review SEO data and metadata

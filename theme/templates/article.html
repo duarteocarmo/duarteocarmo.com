@@ -31,7 +31,7 @@
         </div>
     {% elif article.category == 'photos' %}
         <center>
-            <img style="max-height: 75vh" src="{{ article.photo_url }}" alt="Photo" />
+            <img style="max-height: 75vh" src="{{ article.photo_url }}" class="round-image" alt="Photo" />
         </center>
         <p>{{ article.content }}</p>
         {% if article.location != 'None' %}
