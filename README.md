@@ -12,7 +12,8 @@ Made with [Pelican](https://github.com/getpelican/pelican). Deployed using [Clou
 - [x] Review consulting page
 - [x] Review talks page
 - [x] Review photos page
-- [ ] Review article page
-- [ ] Dark mode
+- [x] Review article page
+- [x] Dark mode
 - [ ] Responsiveness and screen sizes
 - [ ] Review SEO data and metadata
+- [ ] Lighthouse test on main pages
