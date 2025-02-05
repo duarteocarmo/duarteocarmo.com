@@ -1,5 +1,3 @@
-from typing import List, Dict, Any
-
 AUTHOR = "Duarte O.Carmo"
 SITENAME = "Duarte O.Carmo"
 SITEURL = ""
@@ -88,7 +86,7 @@ MARKDOWN = {
         "markdown.extensions.toc",
         "markdown.extensions.fenced_code",
         "markdown.extensions.codehilite",
-        "markdown.extensions.tables"
+        "markdown.extensions.tables",
     ]
 }
 
@@ -111,34 +109,175 @@ SITEMAP = {
         "pages": "hourly",
     },
 }
-
-# Define a TALKS variable accessible in your templates
-TALKS: List[Dict[str, Any]] = [
+TALKS = [
     {
-        "title": "Panel: The Dashboard That Grew - A Scaling Saga",
-        "url": "https://pydata.org/global2024",
-        "resources": [
-            {"text": "slides", "url": "/pdfs/pydata-global-panel-the-dashboard-that-grew.pdf"}
+        "text": "Panel: The Dashboard That Grew - A Scaling Saga",
+        "links": [
+            {"text": "PyData Global 2024", "url": "https://pydata.org/global2024"},
+            {
+                "text": "slides",
+                "url": "/pdfs/pydata-global-panel-the-dashboard-that-grew.pdf",
+            },
         ],
     },
     {
-        "title": "You also hate SQL? Let the LLM handle it",
-        "url": "https://pyconwroclaw.com/",
-        "resources": [
-            {"text": "slides", "url": "/pdfs/pycon-wroclaw-llm-text-to-sql.pdf"}
+        "text": "You also hate SQL? Let the LLM handle it",
+        "links": [
+            {"text": "PyCon Wroclaw", "url": "https://pyconwroclaw.com/"},
+            {"text": "slides", "url": "/pdfs/pycon-wroclaw-llm-text-to-sql.pdf"},
         ],
     },
     {
-        "title": "Go Time",
-        "url": "https://changelog.com/gotime/308",
-        "resources": []
+        "text": "Go Time",
+        "links": [{"text": "podcast", "url": "https://changelog.com/gotime/308"}],
     },
     {
-        "title": "The A.I. and Digital Transformation Podcast",
-        "url": "https://www.gmscconsulting.com/ai-and-digital-transformation-podcast/episode-12",
-        "resources": [
-            {"text": "video", "url": "https://youtu.be/9l0BTZipArQ?si=uSpvwFWcIjYwu7Xn"}
+        "text": "The A.I. and Digital Transformation Podcast [podcast]",
+        "links": [
+            {
+                "text": "podcast",
+                "url": "https://www.gmscconsulting.com/ai-and-digital-transformation-podcast/episode-12",
+            },
+            {
+                "text": "video",
+                "url": "https://youtu.be/9l0BTZipArQ?si=uSpvwFWcIjYwu7Xn",
+            },
         ],
     },
-    # Add more talk entries as needed
+    {
+        "text": "Verbos AI Podcast",
+        "links": [
+            {
+                "text": "podcast",
+                "url": "https://open.spotify.com/episode/0Ja8xzuiOAYZeD4WSP8TxL?si=0JFkY1fWRwCf0_BkiUUfvA&nd=1",
+            },
+            {
+                "text": "video",
+                "url": "https://youtu.be/7nT4NrdjUF4?si=oLVzEF_iRE4qz_Qy",
+            },
+        ],
+    },
+    {
+        "text": "ML in the wild 2nd Edition",
+        "links": [
+            {"text": "DIS", "url": "https://disabroad.org/copenhagen/"},
+            {"text": "slides", "url": "/pdfs/ml-in-the-wild-v2.pdf"},
+        ],
+    },
+    {
+        "text": "An introduction to Google Earth Engine [EuroSciPy]",
+        "links": [
+            {"text": "EuroSciPy", "url": "https://www.euroscipy.org/2023/"},
+            {"text": "slides", "url": "/pdfs/euroscipy-gee-intro.pdf"},
+            {
+                "text": "video",
+                "url": "https://youtu.be/GXBPOlSxfoY?si=79ZSKAFu8vdW8J8W",
+            },
+        ],
+    },
+    {
+        "text": "On Scaling Machine Learning Microservices",
+        "links": [
+            {"text": "PyCon Italia", "url": "https://pycon.it/en"},
+            {"text": "slides", "url": "/pdfs/pycon-italia-scalable-ml.pdf"},
+            {"text": "video", "url": "https://www.youtube.com/watch?v=T1Je3UHkxVk"},
+        ],
+    },
+    {
+        "text": "Real Python Podcast",
+        "links": [
+            {"text": "podcast", "url": "https://realpython.com/podcasts/rpp/150/"}
+        ],
+    },
+    {
+        "text": "ML in the wild",
+        "links": [
+            {"text": "DIS", "url": "https://disabroad.org/copenhagen/"},
+            {"text": "slides", "url": "/pdfs/ml-in-the-wild.pdf"},
+            {"text": "feedback", "url": "/pdfs/dis_feedback.pdf"},
+        ],
+    },
+    {
+        "text": "MLOps for the rest of us",
+        "links": [
+            {
+                "text": "PyData Copenhagen",
+                "url": "https://www.meetup.com/pydata-copenhagen/",
+            },
+            {"text": "slides", "url": "/pdfs/pydata-cph-mlops-for-the-rest-of-us.pdf"},
+        ],
+    },
+    {
+        "text": "Bag of tricks to scale ML Apps",
+        "links": [
+            {
+                "text": "DTU MLOps Course",
+                "url": "https://skaftenicki.github.io/dtu_mlops/",
+            },
+            {"text": "slides", "url": "/pdfs/bag-of-tricks-scalable-api.pdf"},
+        ],
+    },
+    {
+        "text": "Taming the black box",
+        "links": [
+            {
+                "text": "DTU MLOps Course",
+                "url": "https://skaftenicki.github.io/dtu_mlops/",
+            },
+            {"text": "slides", "url": "/pdfs/mlops-monitoring-sanitized.pdf"},
+        ],
+    },
+    {
+        "text": "MLOps for the rest of us",
+        "links": [
+            {"text": "PyData Global", "url": "https://pydata.org/global2022/"},
+            {"text": "slides", "url": "/pdfs/mlops-for-the-rest-of-us.pdf"},
+            {"text": "video", "url": "https://www.youtube.com/watch?v=R6lPb9Meqoc"},
+        ],
+    },
+    {
+        "text": "MLOps Live Podcast",
+        "links": [
+            {
+                "text": "podcast",
+                "url": "https://podcasts.bcast.fm/e/r8k1qky8-early-stage-startups-small-teams-mlops-duarte-carmo",
+            },
+            {"text": "video", "url": "https://youtu.be/sqv1ydViDgA"},
+        ],
+    },
+    {
+        "text": "Machine learning! (But in the real world)",
+        "links": [
+            {"text": "LIP Coimbra", "url": "https://pages.lip.pt/data-science/"},
+            {"text": "slides", "url": "/pdfs/lip-2022-sanitized.pdf"},
+        ],
+    },
+    {
+        "text": "Four years of Python",
+        "links": [
+            {"text": "PyCon Italia", "url": "https://pycon.it/en"},
+            {"text": "slides", "url": "/pdfs/four-years-of-python-pycon.pdf"},
+            {"text": "video", "url": "https://www.youtube.com/watch?v=zB_Hr-05Stc"},
+        ],
+    },
+    {
+        "text": "Four years of Python",
+        "links": [
+            {
+                "text": "PyData Copenhagen",
+                "url": "https://www.meetup.com/pydata-copenhagen/",
+            },
+            {"text": "slides", "url": "/pdfs/four-years-of-python-pydata.pdf"},
+        ],
+    },
+    {
+        "text": "Measuring the uniqueness of technological capabilities",
+        "links": [
+            {"text": "DTU", "url": "https://www.dtu.dk/english"},
+            {
+                "text": "slides",
+                "url": "https://dl.dropboxusercontent.com/s/8h2kvhu6detyo82/Presentation%20Public.pdf",
+            },
+        ],
+    },
 ]
