@@ -104,8 +104,8 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 {% endif %}
-{% elif  page %}
-<meta name="description" content="{{ SITE_DESCRIPTION }}" />
+{% elif page %}
+<meta name="description" content="{{ page.description | default(SITE_DESCRIPTION) }}" />
 <meta name="twitter:url" content="{{ SITEURL }}/{{ page.url }}">
 <meta name="twitter:title" content="{{ page.title }}">
 <meta name="twitter:description" content="{{ page.title }}">
