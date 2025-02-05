@@ -1,12 +1,13 @@
 {% extends "base.html" %} {% block title %}{{ SITENAME }}{% endblock %} {% block
 content %}
-<div class="article-list nu">
+<div class="talk-list nu">
   {% for talk in TALKS %}
-  <div class="article-content">
-    <span>{{ talk.text }}</span>- {% for link in talk.links %}
-    <a href="{{ link.url }}">{{ link.text }}</a> {% endfor %}
+  <div class="talk-title">
+    <span>{{ talk.text }}</span>
   </div>
-  <div></div>
+  <div class="talk-links">
+    {% for link in talk.links %}<a class="greyed-out dimmed" href="{{ link.url }}">{{ link.text }}</a>{{ " - " if not loop.last else "" }}{% endfor %}
+  </div>
   {% else %} No posts yet! {% endfor %}
 </div>
 {% endblock %}

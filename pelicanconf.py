@@ -115,7 +115,7 @@ TALKS = [
         "links": [
             {"text": "PyData Global 2024", "url": "https://pydata.org/global2024"},
             {
-                "text": "slides",
+                "text": "Slides",
                 "url": "/pdfs/pydata-global-panel-the-dashboard-that-grew.pdf",
             },
         ],
@@ -124,22 +124,22 @@ TALKS = [
         "text": "You also hate SQL? Let the LLM handle it",
         "links": [
             {"text": "PyCon Wroclaw", "url": "https://pyconwroclaw.com/"},
-            {"text": "slides", "url": "/pdfs/pycon-wroclaw-llm-text-to-sql.pdf"},
+            {"text": "Slides", "url": "/pdfs/pycon-wroclaw-llm-text-to-sql.pdf"},
         ],
     },
     {
         "text": "Go Time",
-        "links": [{"text": "podcast", "url": "https://changelog.com/gotime/308"}],
+        "links": [{"text": "Podcast", "url": "https://changelog.com/gotime/308"}],
     },
     {
-        "text": "The A.I. and Digital Transformation Podcast [podcast]",
+        "text": "The A.I. and Digital Transformation Podcast",
         "links": [
             {
-                "text": "podcast",
+                "text": "Podcast",
                 "url": "https://www.gmscconsulting.com/ai-and-digital-transformation-podcast/episode-12",
             },
             {
-                "text": "video",
+                "text": "Video",
                 "url": "https://youtu.be/9l0BTZipArQ?si=uSpvwFWcIjYwu7Xn",
             },
         ],
@@ -148,11 +148,11 @@ TALKS = [
         "text": "Verbos AI Podcast",
         "links": [
             {
-                "text": "podcast",
+                "text": "Podcast",
                 "url": "https://open.spotify.com/episode/0Ja8xzuiOAYZeD4WSP8TxL?si=0JFkY1fWRwCf0_BkiUUfvA&nd=1",
             },
             {
-                "text": "video",
+                "text": "Video",
                 "url": "https://youtu.be/7nT4NrdjUF4?si=oLVzEF_iRE4qz_Qy",
             },
         ],
@@ -161,16 +161,16 @@ TALKS = [
         "text": "ML in the wild 2nd Edition",
         "links": [
             {"text": "DIS", "url": "https://disabroad.org/copenhagen/"},
-            {"text": "slides", "url": "/pdfs/ml-in-the-wild-v2.pdf"},
+            {"text": "Slides", "url": "/pdfs/ml-in-the-wild-v2.pdf"},
         ],
     },
     {
-        "text": "An introduction to Google Earth Engine [EuroSciPy]",
+        "text": "An introduction to Google Earth Engine",
         "links": [
             {"text": "EuroSciPy", "url": "https://www.euroscipy.org/2023/"},
-            {"text": "slides", "url": "/pdfs/euroscipy-gee-intro.pdf"},
+            {"text": "Slides", "url": "/pdfs/euroscipy-gee-intro.pdf"},
             {
-                "text": "video",
+                "text": "Video",
                 "url": "https://youtu.be/GXBPOlSxfoY?si=79ZSKAFu8vdW8J8W",
             },
         ],
@@ -179,22 +179,22 @@ TALKS = [
         "text": "On Scaling Machine Learning Microservices",
         "links": [
             {"text": "PyCon Italia", "url": "https://pycon.it/en"},
-            {"text": "slides", "url": "/pdfs/pycon-italia-scalable-ml.pdf"},
-            {"text": "video", "url": "https://www.youtube.com/watch?v=T1Je3UHkxVk"},
+            {"text": "Slides", "url": "/pdfs/pycon-italia-scalable-ml.pdf"},
+            {"text": "Video", "url": "https://www.youtube.com/watch?v=T1Je3UHkxVk"},
         ],
     },
     {
         "text": "Real Python Podcast",
         "links": [
-            {"text": "podcast", "url": "https://realpython.com/podcasts/rpp/150/"}
+            {"text": "Podcast", "url": "https://realpython.com/podcasts/rpp/150/"}
         ],
     },
     {
         "text": "ML in the wild",
         "links": [
             {"text": "DIS", "url": "https://disabroad.org/copenhagen/"},
-            {"text": "slides", "url": "/pdfs/ml-in-the-wild.pdf"},
-            {"text": "feedback", "url": "/pdfs/dis_feedback.pdf"},
+            {"text": "Slides", "url": "/pdfs/ml-in-the-wild.pdf"},
+            {"text": "Feedback", "url": "/pdfs/dis_feedback.pdf"},
         ],
     },
     {
@@ -204,7 +204,7 @@ TALKS = [
                 "text": "PyData Copenhagen",
                 "url": "https://www.meetup.com/pydata-copenhagen/",
             },
-            {"text": "slides", "url": "/pdfs/pydata-cph-mlops-for-the-rest-of-us.pdf"},
+            {"text": "Slides", "url": "/pdfs/pydata-cph-mlops-for-the-rest-of-us.pdf"},
         ],
     },
     {
@@ -214,7 +214,7 @@ TALKS = [
                 "text": "DTU MLOps Course",
                 "url": "https://skaftenicki.github.io/dtu_mlops/",
             },
-            {"text": "slides", "url": "/pdfs/bag-of-tricks-scalable-api.pdf"},
+            {"text": "Slides", "url": "/pdfs/bag-of-tricks-scalable-api.pdf"},
         ],
     },
     {
@@ -224,40 +224,40 @@ TALKS = [
                 "text": "DTU MLOps Course",
                 "url": "https://skaftenicki.github.io/dtu_mlops/",
             },
-            {"text": "slides", "url": "/pdfs/mlops-monitoring-sanitized.pdf"},
+            {"text": "Slides", "url": "/pdfs/mlops-monitoring-sanitized.pdf"},
         ],
     },
     {
         "text": "MLOps for the rest of us",
         "links": [
             {"text": "PyData Global", "url": "https://pydata.org/global2022/"},
-            {"text": "slides", "url": "/pdfs/mlops-for-the-rest-of-us.pdf"},
-            {"text": "video", "url": "https://www.youtube.com/watch?v=R6lPb9Meqoc"},
+            {"text": "Slides", "url": "/pdfs/mlops-for-the-rest-of-us.pdf"},
+            {"text": "Video", "url": "https://www.youtube.com/watch?v=R6lPb9Meqoc"},
         ],
     },
     {
         "text": "MLOps Live Podcast",
         "links": [
             {
-                "text": "podcast",
+                "text": "Podcast",
                 "url": "https://podcasts.bcast.fm/e/r8k1qky8-early-stage-startups-small-teams-mlops-duarte-carmo",
             },
-            {"text": "video", "url": "https://youtu.be/sqv1ydViDgA"},
+            {"text": "Video", "url": "https://youtu.be/sqv1ydViDgA"},
         ],
     },
     {
         "text": "Machine learning! (But in the real world)",
         "links": [
             {"text": "LIP Coimbra", "url": "https://pages.lip.pt/data-science/"},
-            {"text": "slides", "url": "/pdfs/lip-2022-sanitized.pdf"},
+            {"text": "Slides", "url": "/pdfs/lip-2022-sanitized.pdf"},
         ],
     },
     {
         "text": "Four years of Python",
         "links": [
             {"text": "PyCon Italia", "url": "https://pycon.it/en"},
-            {"text": "slides", "url": "/pdfs/four-years-of-python-pycon.pdf"},
-            {"text": "video", "url": "https://www.youtube.com/watch?v=zB_Hr-05Stc"},
+            {"text": "Slides", "url": "/pdfs/four-years-of-python-pycon.pdf"},
+            {"text": "Video", "url": "https://www.youtube.com/watch?v=zB_Hr-05Stc"},
         ],
     },
     {
@@ -267,7 +267,7 @@ TALKS = [
                 "text": "PyData Copenhagen",
                 "url": "https://www.meetup.com/pydata-copenhagen/",
             },
-            {"text": "slides", "url": "/pdfs/four-years-of-python-pydata.pdf"},
+            {"text": "Slides", "url": "/pdfs/four-years-of-python-pydata.pdf"},
         ],
     },
     {
@@ -275,7 +275,7 @@ TALKS = [
         "links": [
             {"text": "DTU", "url": "https://www.dtu.dk/english"},
             {
-                "text": "slides",
+                "text": "Slides",
                 "url": "https://dl.dropboxusercontent.com/s/8h2kvhu6detyo82/Presentation%20Public.pdf",
             },
         ],
