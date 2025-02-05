@@ -1,3 +1,5 @@
+from typing import List, Dict, Any
+
 AUTHOR = "Duarte O.Carmo"
 SITENAME = "Duarte O.Carmo"
 SITEURL = ""
@@ -109,3 +111,34 @@ SITEMAP = {
         "pages": "hourly",
     },
 }
+
+# Define a TALKS variable accessible in your templates
+TALKS: List[Dict[str, Any]] = [
+    {
+        "title": "Panel: The Dashboard That Grew - A Scaling Saga",
+        "url": "https://pydata.org/global2024",
+        "resources": [
+            {"text": "slides", "url": "/pdfs/pydata-global-panel-the-dashboard-that-grew.pdf"}
+        ],
+    },
+    {
+        "title": "You also hate SQL? Let the LLM handle it",
+        "url": "https://pyconwroclaw.com/",
+        "resources": [
+            {"text": "slides", "url": "/pdfs/pycon-wroclaw-llm-text-to-sql.pdf"}
+        ],
+    },
+    {
+        "title": "Go Time",
+        "url": "https://changelog.com/gotime/308",
+        "resources": []
+    },
+    {
+        "title": "The A.I. and Digital Transformation Podcast",
+        "url": "https://www.gmscconsulting.com/ai-and-digital-transformation-podcast/episode-12",
+        "resources": [
+            {"text": "video", "url": "https://youtu.be/9l0BTZipArQ?si=uSpvwFWcIjYwu7Xn"}
+        ],
+    },
+    # Add more talk entries as needed
+]

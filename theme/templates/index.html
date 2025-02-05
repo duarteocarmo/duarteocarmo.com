@@ -1,18 +1,13 @@
 {% extends "base.html" %}
 {% block title %}{{ SITENAME }}{% endblock %}
 {% block content %}
-        <p class="no-top">
-                <a href="{{ SITEURL }}/about"><i><code class="not-here">/du-art/</code></i></a>, a technologist from Lisbon, based in Copenhagen.
-        </p>
-        <div class="article-list nu">
-                {% for article in articles | selectattr('category', '==', 'blog') %}
-                        <div class="article-content">
-                                <a href="{{ article.url }}">{{ article.title }}</a>
-                                <hr>
-                        </div>
-                        <time>{{ article.date | strftime("%d-%m-%Y") }}</time>
-                {% else %}
-                        No posts yet!
-                {% endfor %}
-        </div>
+<div class="article-list nu">
+  {% for article in articles | selectattr('category', '==', 'blog') %}
+  <div class="article-content">
+    <a href="{{ article.url }}">{{ article.title }}</a>
+    <hr />
+  </div>
+  <time class="greyed-out">{{ article.date | strftime("%d-%m-%Y") }}</time>
+  {% else %} No posts yet! {% endfor %}
+</div>
 {% endblock %}
