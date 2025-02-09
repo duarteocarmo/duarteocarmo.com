@@ -10,7 +10,7 @@
             <div class="transcript">
                 <details>
                     <summary>
-                        <span style="opacity: 0.7">🎧 Listen</span>
+                        <span class="greyed-out dimmed">🎧 Listen</span>
                     </summary>
                     <audio controls style="width: 100%; display: block" preload="metadata">
                         <source src="{{ article.metadata.mp3_link }}" type="audio/mpeg">
@@ -18,12 +18,14 @@
                 </details>
             </div>
         {% endif %}
+        <div class="article-body">
         {{ article.content }}
+        </div>
         <br>
         <div style="display: flex;
                     justify-content: space-between;
                     align-items: center">
-            <i>{{ article.date | strftime("%B %-d, %Y") }}</i>
+            <i class="greyed-out">{{ article.date | strftime("%B %-d, %Y") }}</i>
             <div>
                 <a href="https://duarteocarmo.substack.com">Subscribe</a>
                 <a href="mailto:me@duarteocarmo.com?subject={{ article.title|urlencode }}">Reply</a>
@@ -31,7 +33,7 @@
         </div>
     {% elif article.category == 'photos' %}
         <center>
-            <img style="max-height: 75vh" src="{{ article.photo_url }}" alt="Photo" />
+            <img style="max-height: 75vh" src="{{ article.photo_url }}" class="round-image" alt="Photo" />
         </center>
         <p>{{ article.content }}</p>
         {% if article.location != 'None' %}

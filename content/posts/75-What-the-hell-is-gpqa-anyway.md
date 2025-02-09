@@ -37,7 +37,7 @@ The dataset is available in three versions, each with varying levels of difficul
 
 Here’s an example of a question from the dataset:
 
-```
+```text
 Methylcyclopentadiene (which exists as a fluxional mixture of isomers) was allowed to react with methyl isoamyl ketone
 and a catalytic amount of pyrrolidine. A bright yellow, cross-conjugated polyalkenyl hydrocarbon product formed (as
 a mixture of isomers), with water as a side product. These products are derivatives of fulvene. This product was then
@@ -56,7 +56,7 @@ With that in mind, it’s intriguing to see how large language models (LLMs) are
 
 Zero-shot prompt: 
 
-```
+```text
 What is the correct answer to this question: What is the solubility of the stochiometric tricalcium
 phosphate in a solution with the pH level of a) pH = 9, b) pH = 7 and c) pH = 5 (25 °C)?
 The Ksp for Ca3(PO4)2 is 2𝑥10− 29, the dissociation constants of phosphoric acid are Ka1 =
@@ -71,7 +71,7 @@ Format your response as follows: "The correct answer is (insert answer here)".
 ```
 
 Zero-shot chain-of-thought prompt:
-```
+```text
 What is the correct answer to this question: What is the solubility of the stochiometric tricalcium
 phosphate in a solution with the pH level of a) pH = 9, b) pH = 7 and c) pH = 5 (25 °C)?
 The Ksp for Ca3(PO4)2 is 2𝑥10− 29, the dissociation constants of phosphoric acid are Ka1 =
@@ -119,7 +119,7 @@ After some poking around, I managed to find the [part of the repo](https://githu
 
 We can see that they support the following [tasks](https://github.com/EleutherAI/lm-evaluation-harness/tree/main/lm_eval/tasks/gpqa#tasks): 
 
-```
+```text
 * `gpqa_{main, diamond, extended}_zeroshot`
 * `gpqa_{main, diamond, extended}_n_shot`
 * `gpqa_{main, diamond, extended}_generative_n_shot`
@@ -144,7 +144,7 @@ lm-eval --model openai-chat-completions \
 
 This errors out: 
 
-```
+```text
 NotImplementedError: Loglikelihood (and therefore `multiple_choice`-type tasks) is not supported for chat completions as OpenAI does not provide prompt logprobs. See https://github.com/EleutherAI/lm-evaluation-harness/issues/942#issuecomment-1777836312 or https://github.com/EleutherAI/lm-evaluation-harness/issues/1196 for more background on this limitation.
 ```
 

@@ -1,14 +1,14 @@
-{% extends "base.html" %}
-
-{% block title %}{{ page.title }} - {{ SITENAME }} {% endblock %}
-
-
+{% extends "base.html" %} {% block title %}{{ SITENAME }} - talks{% endblock %} 
 {% block content %}
-        <div>
-
-<div class="talks">
-        {{ page.content }}
+<div></div>
+<div class="talk-list nu">
+  {% for talk in TALKS %}
+  <div class="talk-title">
+    <span>{{ talk.text }}</span>
+  </div>
+  <div class="talk-links">
+    {% for link in talk.links %}<a class="greyed-out dimmed" href="{{ link.url }}">{{ link.text }}</a>{{ " - " if not loop.last else "" }}{% endfor %}
+  </div>
+  {% else %} No posts yet! {% endfor %}
 </div>
-
-        </div>
 {% endblock %}
