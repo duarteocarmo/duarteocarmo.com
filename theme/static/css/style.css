@@ -27,9 +27,9 @@
   --image-filtering: var(--color-light-filtering);
   --code-color: var(--color-light-code);
   --code-background: var(--color-light-code-background);
-  --base-font: "Roboto Serif", -apple-system, BlinkMacSystemFont, "avenir next",
-    avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui",
-    arial, sans-serif;
+  --base-font: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+    helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
+    sans-serif;
   --fancy-font: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
     Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol;
@@ -45,10 +45,10 @@ body {
   margin: 0 auto;
   --font-size: 1rem;
   font-size: var(--font-size);
-  line-height: 1.6;
   padding-top: 20px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
 }
 
 h1,
