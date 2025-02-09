@@ -5,11 +5,6 @@ status: published
 slug: the-marathon
 thumbnail: images/73/cover.png
 
-<center>
-<img src="{static}/images/73/marathon.jpg" alt="Vienna Marathon" style="max-width:100%;border-radius: 4px;filter: grayscale(100%);">
-</center>
-
-<br>
 
 I'm flying over the Atlantic just between France and Spain for my yearly Christmas trip back to Lisbon. For some reason, I just remembered the blog post I always wanted to write. This one is not about tech, but it's about something I'm equally passionate about: The Marathon.
 

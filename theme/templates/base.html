@@ -8,22 +8,20 @@
     </head>
 
     <body>
-        <header class="container nu">
-            <h1 style="line-height:1.6;font-size:105%;letter-spacing:0.004rem;margin:0 0 0.25em 0;"><a class="sitename" href="/">{{SITENAME }}</a></h1>
-            <ul style="list-style:none;padding:0;margin:0;">
-                <li><a href="/" {% if output_file == 'index.html' %}style="text-decoration: underline"{% endif %}>Blog</a></li>
-                <li><a href="/about" {% if output_file == 'about.html' %}style="text-decoration: underline"{% endif %}>About</a></li>
-                <li><a href="/consulting" {% if output_file == 'consulting.html' %}style="text-decoration: underline"{% endif %}>Consulting</a></li>
-                <li><a href="/talks" {% if output_file == 'talks.html' %}style="text-decoration: underline"{% endif %}>Talks</a></li>
-                <li><a target="_blank" href="/cv.pdf">Resume</a></li>
-                <li><a href="/photos" {% if output_file == 'photos.html' %}style="text-decoration: underline"{% endif %}>Photos</a></li>
-                <li><a href="https://duarteocarmo.substack.com">Subscribe</a></li>
-            </ul>
+        <header class="container nu ">
+            <h1 style=""><a class="sitename {% if article %}dimmed greyed-out{% endif %}" href="/">{{SITENAME }}</a></h1>
+            <div>
+                <a href="/" {% if output_file == 'index.html' %}class="highlighted underlined" {% endif %}>Blog</a> |
+                <a href="/about" {% if output_file == 'about.html' %}class="highlighted underlined"{% endif %}>About</a> |
+                <a href="/consulting" {% if output_file == 'consulting.html' %}class="highlighted underlined"{% endif %}>Consulting</a> |
+                <a target="_blank" href="/cv.pdf">Resume</a> |
+                <a href="/talks" {% if output_file == 'talks.html' %}class="highlighted underlined"{% endif %}>Talks</a> |
+                <a href="/photos" {% if output_file == 'photos.html' %}class="highlighted underlined"{% endif %}>Photos</a> |
+                <a href="https://duarteocarmo.substack.com">Newsletter</a>
+            </div>
         </header>
-        <div class="separator">
         <div class="container vertical-spacing no-top main-content">
             {% block content %}{% endblock %}
-        </div>
         </div>
         <footer class="container nu no-top">
             {% include "footer.html" %}

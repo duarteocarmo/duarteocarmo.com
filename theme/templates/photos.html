@@ -5,7 +5,7 @@
     {% for photo in articles | selectattr('category', '==', 'photos') |sort(attribute='date', reverse=True)%}
     <div>
         <a href="{{ photo.url }}">
-            <img loading="lazy" src="{{ photo.thumbnail_url }}" alt="Photo"/>
+            <img loading="lazy" src="{{ photo.thumbnail_url }}" alt="Photo" class="round-image"/>
         </a>
     </div>
     {% endfor %}

@@ -1,23 +1,21 @@
 * {
-  /* margin: 0; */
-  /* padding: 0; */
   /* box-sizing: border-box; */
-  /* border: 0.5px solid white; */
+  /* border: 0.5px solid black; */
 }
 
 :root {
   --color-light-primary: #111;
-  --color-light-secondary: #111;
+  --color-light-secondary: #333;
   --color-light-background: #fff;
-  --color-light-tertiary: rgba(0, 0, 0, 0.3);
-  --color-light-code: #fff;
+  --color-light-tertiary: rgb(216, 58, 34);
+  --color-light-code: #111;
   --color-light-code-background: #f6f8fa;
   --color-light-filtering: 0%;
 
-  --color-dark-primary: rgb(245, 250, 255);
-  --color-dark-secondary: rgb(245, 250, 255);
-  --color-dark-background: hsl(211 calc(100% - 20%) 2%);
-  --color-dark-tertiary: rgba(255, 255, 255, 0.2);
+  --color-dark-primary: rgb(255, 255, 255);
+  --color-dark-secondary: rgb(175, 175, 175);
+  --color-dark-background: #171717;
+  --color-dark-tertiary: #e04f38;
   --color-dark-code: hsl(211 calc(100% - 10%) 63% / 0.075);
   --color-dark-code-background: hsl(211 calc(100% - 10%) 63% / 0.075);
   --color-dark-filtering: 100%;
@@ -29,18 +27,19 @@
   --image-filtering: var(--color-light-filtering);
   --code-color: var(--color-light-code);
   --code-background: var(--color-light-code-background);
-  --base-font: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
-    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
-    sans-serif;
+  --base-font: "Roboto Serif", -apple-system, BlinkMacSystemFont, "avenir next",
+    avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui",
+    arial, sans-serif;
   --fancy-font: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
     Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol;
-  --code-font: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
-    monospace;
+  --code-font: "Berkeley Mono", "JetBrains Mono", "Fira Code",
+    San Francisco Mono, Monaco, "Consolas", "Lucida Console",
+    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
 }
 
 body {
-  color: var(--secondary);
+  color: var(--primary);
   background-color: var(--background);
   font-family: var(--base-font);
   margin: 0 auto;
@@ -49,6 +48,7 @@ body {
   line-height: 1.6;
   padding-top: 20px;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -71,6 +71,10 @@ h6 {
   text-decoration: none;
 }
 
+.article-body a:hover {
+  color: var(--tertiary);
+}
+
 .container {
   max-width: 640px;
   padding-left: 20px;
@@ -90,6 +94,10 @@ h6 {
 
 .sitename {
   font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  letter-spacing: 0.004rem;
+  margin: 0 0 0.25em 0;
 }
 
 .vertical-spacing {
@@ -98,7 +106,29 @@ h6 {
 }
 
 header {
+  /* margin-bottom: 2em; */
   letter-spacing: -0.009em;
+}
+
+header h1 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5em 0;
+  letter-spacing: 0.004rem;
+  line-height: 1.6;
+}
+
+.header-nav {
+  font-size: 0.95rem;
+  color: var(--secondary);
+}
+
+.header-nav a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.header-nav a:hover {
+  text-decoration: underline;
 }
 
 .article-list {
@@ -120,6 +150,7 @@ header {
   align-self: center;
   width: 100%;
   border-bottom: 0.6px dashed var(--tertiary);
+  display: none;
 }
 
 .article-list time {
@@ -138,7 +169,11 @@ header {
 
 .article-list a {
   font-weight: 500;
-  /* letter-spacing: -0.015em; */
+  letter-spacing: -0.015em;
+}
+
+.article-list a:visited {
+  color: var(--secondary);
 }
 
 a {
@@ -147,16 +182,13 @@ a {
   text-decoration: underline;
 }
 
-a:visited {
-  color: var(--primary);
-}
-
 .nu a {
   text-decoration: none;
 }
 
 .nu a:hover {
   text-decoration: underline;
+  color: var(--tertiary);
 }
 
 code {
@@ -185,10 +217,10 @@ pre code {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 6px;
-}
-
-.not-here {
-  background-color: var(--background);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid black;
 }
 
 footer {
@@ -197,8 +229,8 @@ footer {
 }
 
 div.gallery {
-  padding: 20px;
-  gap: 10px;
+  /* padding: 20px; */
+  gap: 5px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -226,24 +258,40 @@ canvas.marks {
   height: auto !important;
 }
 
+.talk-title {
+  font-weight: 500;
+}
+
+.talk-list {
+  display: grid;
+  grid-column-gap: 8px;
+  grid-template-columns: 1fr;
+  grid-row-gap: 0px;
+}
+
+.talk-list .talk-links {
+  padding-bottom: 10px;
+  font-size: 95%;
+}
+
 @media screen and (min-width: 1024px) {
-  header {
-    position: absolute;
-    top: 40px;
-    right: 50%;
-    margin-right: 340px !important;
-  }
+  /* header { */
+  /*   position: absolute; */
+  /*   top: 40px; */
+  /*   right: 50%; */
+  /*   margin-right: 340px !important; */
+  /* } */
+}
+
+.separator {
+  /* border-top: 1px solid; */
+  border-color: var(--secondary);
 }
 
 @media screen and (max-width: 1024px) {
-  header {
-    padding-bottom: 20px;
-  }
-
-  .separator {
-    border-top: 1px solid;
-    border-color: var(--secondary);
-  }
+  /*header {*/
+  /*  padding-bottom: 20px;*/
+  /*}*/
 
   div.gallery {
     gap: 5px;
@@ -251,9 +299,9 @@ canvas.marks {
 }
 
 @media screen and (max-width: 640px) {
-  header {
-    padding-bottom: 20px;
-  }
+  /*header {*/
+  /*  padding-bottom: 20px;*/
+  /*}*/
 
   .container {
     width: auto;
@@ -309,6 +357,13 @@ canvas.marks {
   img.companies {
     filter: invert(100%);
   }
+
+  pre code {
+    border: 0.5px solid #444;
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.3),
+      0 2px 4px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .transcript details summary {
@@ -325,39 +380,40 @@ canvas.marks {
   content: "";
 }
 
-.talks {
-  line-height: 1.6;
-  font-weight: 500;
-  color: var(--primary);
-}
-
-.talks ul {
-  padding-left: 0px;
-  margin-top: 0px;
-}
-
-.talks li {
-  list-style-type: none;
-  list-style-position: outside;
-}
-
-.talks a {
-  font-weight: 400;
-  opacity: 0.7;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   padding: 8px;
   text-align: left;
-  border-bottom: 1px solid var(--tertiary);
+  border-bottom: 1px solid var(--primary);
 }
 
 table {
   overflow-x: auto;
   display: block;
+}
+
+.greyed-out {
+  color: var(--secondary);
+}
+
+.highlighted {
+  color: var(--tertiary);
+  font-weight: bold;
+}
+
+.underlined {
+  text-decoration: underline !important;
+}
+
+.dimmed {
+  opacity: 0.8;
+}
+
+.round-image {
+  border-radius: 2px;
 }
