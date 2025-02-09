@@ -15,7 +15,7 @@
   --color-dark-primary: rgb(255, 255, 255);
   --color-dark-secondary: rgb(175, 175, 175);
   --color-dark-background: #171717;
-  --color-dark-tertiary: #E04F38;
+  --color-dark-tertiary: #e04f38;
   --color-dark-code: hsl(211 calc(100% - 10%) 63% / 0.075);
   --color-dark-code-background: hsl(211 calc(100% - 10%) 63% / 0.075);
   --color-dark-filtering: 100%;
@@ -28,14 +28,14 @@
   --code-color: var(--color-light-code);
   --code-background: var(--color-light-code-background);
   --base-font: "Roboto Serif", -apple-system, BlinkMacSystemFont, "avenir next",
-    avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
-    sans-serif;
+    avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui",
+    arial, sans-serif;
   --fancy-font: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
     Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol;
   --code-font: "Berkeley Mono", "JetBrains Mono", "Fira Code",
-    San Francisco Mono, Monaco, "Consolas", "Lucida Console", "DejaVu Sans Mono",
-    "Bitstream Vera Sans Mono", monospace;
+    San Francisco Mono, Monaco, "Consolas", "Lucida Console",
+    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
 }
 
 body {
@@ -87,9 +87,9 @@ h6 {
   max-width: 100%;
 }
 
-.no-top> :first-child {
+.no-top > :first-child {
   margin-top: 0;
-  /* line-height: 1.25; */
+  line-height: 1.25;
 }
 
 .sitename {
@@ -161,7 +161,7 @@ header h1 {
   white-space: pre;
 }
 
-.article-list>div {
+.article-list > div {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -181,7 +181,6 @@ a {
   text-decoration-skip-ink: auto;
   text-decoration: underline;
 }
-
 
 .nu a {
   text-decoration: none;
@@ -218,11 +217,11 @@ pre code {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.1);
   border: 0.5px solid black;
 }
-
-
 
 footer {
   padding-top: 0px;
@@ -236,7 +235,7 @@ div.gallery {
   grid-template-columns: repeat(3, 1fr);
 }
 
-div.gallery>div {
+div.gallery > div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -259,7 +258,6 @@ canvas.marks {
   height: auto !important;
 }
 
-
 .talk-title {
   font-weight: 500;
 }
@@ -276,7 +274,6 @@ canvas.marks {
   font-size: 95%;
 }
 
-
 @media screen and (min-width: 1024px) {
   /* header { */
   /*   position: absolute; */
@@ -292,10 +289,9 @@ canvas.marks {
 }
 
 @media screen and (max-width: 1024px) {
-  header {
-    padding-bottom: 20px;
-  }
-
+  /*header {*/
+  /*  padding-bottom: 20px;*/
+  /*}*/
 
   div.gallery {
     gap: 5px;
@@ -303,9 +299,9 @@ canvas.marks {
 }
 
 @media screen and (max-width: 640px) {
-  header {
-    padding-bottom: 20px;
-  }
+  /*header {*/
+  /*  padding-bottom: 20px;*/
+  /*}*/
 
   .container {
     width: auto;
@@ -317,7 +313,7 @@ canvas.marks {
     grid-row-gap: 0px;
   }
 
-  .article-list>div {
+  .article-list > div {
     white-space: normal;
   }
 
@@ -364,7 +360,9 @@ canvas.marks {
 
   pre code {
     border: 0.5px solid #444;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.3),
+      0 2px 4px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -372,7 +370,7 @@ canvas.marks {
   cursor: pointer;
 }
 
-.transcript details summary>* {
+.transcript details summary > * {
   display: inline;
 }
 
