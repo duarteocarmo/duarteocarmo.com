@@ -11,3 +11,5 @@ __pycache__/
 .ztr-directory
 .cachedir/
 .env_variables
+content/posts/.obsidian
+content/posts/images
