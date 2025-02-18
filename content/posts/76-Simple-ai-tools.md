@@ -16,7 +16,7 @@ Models are great - but just like ChatGPT showed everyone, the interface really m
 
 There are a lot of things I like about BoltAI. But my favorite one is that I can use a single interface for just about any model under the sun (and running on my laptop). I've also setup [OpenRouter](https://openrouter.ai/), so I can try out any tropical model/provider combo with just a few clicks. It's a one time purchase - and [Daniel](https://danielnguyen.me/) is [super responsive](https://boltai.canny.io/).
 
-![BoltAI LLM application]({static}/images/76/boltai.png)
+![BoltAI LLM application]({static}/images/76/boltai.webp)
 
 There are two things that are currently missing from my workflow for everyday tools and I haven't solved yet. The first is some sort of canvas interface, [artifacts](https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them) are my favorite for this. The second thing I'm missing is some sort of LLM + web search integration. I've been experimenting with [Perplexity](https://www.perplexity.ai/), [Phind](https://www.phind.com/), and some [plugins](https://docs.boltai.com/docs/chat-ui/ai-plugins) for BoltAI - but I'm still skeptical of LLM's interpretation of search results.
 
