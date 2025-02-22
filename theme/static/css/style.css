@@ -6,7 +6,7 @@
 :root {
   --color-light-primary: #111;
   --color-light-secondary: #333;
-  --color-light-background: #fff;
+  --color-light-background: #fff; /* Remember change in header */
   --color-light-tertiary: rgb(216, 58, 34);
   --color-light-code: #111;
   --color-light-code-background: #f6f8fa;
