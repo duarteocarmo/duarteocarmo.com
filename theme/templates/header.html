@@ -16,22 +16,13 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
 <link rel="manifest" href="/favicons/site.webmanifest">
 
-
-<!-- <link rel="preload" href="/theme/css/fonts/ConfigRoundedRegular.woff2" as="font" type="font/woff" /> -->
-<!-- <link rel="preload" href="/theme/css/fonts/ConfigRoundedBold.woff2" as="font" type="font/woff" /> -->
-<!-- <link rel="preload" href="/theme/css/fonts/ConfigRoundedItalic.woff2" as="font" type="font/woff" /> -->
-<!-- <link rel="preload" href="/theme/css/fonts/ConfigRoundedBoldItalic.woff2" as="font" type="font/woff" /> -->
-<!-- <link rel="preload" href="/theme/css/fonts/ConfigRoundedLight.woff2" as="font" type="font/woff" /> -->
-<!-- <link rel="preload" href="/theme/css/fonts/ConfigRoundedLightItalic.woff2" as="font" type="font/woff" /> -->
-<!-- <link rel="preload" href="/theme/css/fonts/ConfigRoundedMedium.woff2" as="font" type="font/woff" /> -->
-<!-- <link rel="preload" href="/theme/css/fonts/ConfigRoundedSemibold.woff2" as="font" type="font/woff" /> -->
-
-
 <link rel="me" href="https://mas.to/@duarteocarmo">
 
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="{{ SITENAME }}" />
 <meta property="og:type" content="website" />
+
+<!-- theme colors (safari only) -->
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#171717" />
 
@@ -45,33 +36,6 @@
 <meta name="twitter:url" content="{{ SITEURL }}/{{article.url}}">
 <meta name="twitter:title" content="{{ article.title }}">
 
-<script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "name": "{{ article.title }}",
-        "headline": "{{ article.title }}",
-        "datePublished": "{{ article.date }}",
-        "dateModified": "{{ article.modified }}",
-        "author": {
-            "@type": "Person",
-            "name": "{{ AUTHOR }}",
-            "url": "{{ SITEURL }}"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "{{ AUTHOR }}",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "{{ SITEURL }}/{{ SITELOGO }}"
-
-            }
-        },
-        "image": "{{ SITEURL }}/{{ SITELOGO }}",
-        "url": "{{ SITEURL }}/{{ article.url }}",
-        "description": "{{ article.summary|striptags|e }}"
-    }
-</script>
 
 {% if article.description %}
 <meta name="description" content="{{ article.description }}" />
@@ -119,17 +83,6 @@
 <meta property="og:title" content="{{ page.title }}" />
 <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
 
-<script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "Blog",
-        "name": "{{ SITENAME  }}",
-        "url": "{{ SITEURL  }}/{{ page.url }}",
-        "image": "{{SITEURL}}/{{ SITELOGO  }}",
-        "description": "{{ SITE_DESCRIPTION  }}"
-
-    }
-</script>
 {% else %}
 <meta name="description" content="{{ SITE_DESCRIPTION }}" />
 <link rel="canonical" href="{{ SITEURL }}" />
@@ -145,15 +98,4 @@
 <meta property="og:image" content="{{ SITEURL }}/{{ SITELOGO }}" />
 <meta name="twitter:image" content="{{ SITEURL }}/{{ SITELOGO }}">
 
-<script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "Blog",
-        "name": "{{ SITENAME  }}",
-        "url": "{{ SITEURL  }}",
-        "image": "{{SITEURL}}/{{ SITELOGO  }}",
-        "description": "{{ SITE_DESCRIPTION  }}"
-
-    }
-</script>
 {% endif %}
