@@ -2,9 +2,8 @@ AUTHOR = "Duarte O.Carmo"
 SITENAME = "Duarte O.Carmo"
 SITEURL = ""
 SITE_DESCRIPTION = (
-    "My personal website. Here, you can read my blog posts, and learn about my"
-    " projects. I write about data science, AI, programming, business, and"
-    " other topics. "
+    "The personal website of Duarte O.Carmo. A technologist/consultant "
+    "from Lisbon, now based in Copenhagen."
 )
 # TODO
 SITELOGO = "images/logo.png"

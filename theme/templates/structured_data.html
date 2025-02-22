@@ -1,0 +1,50 @@
+{% if article %}
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "name": "{{ article.title }}",
+    "headline": "{{ article.title }}",
+    "image": "{{ SITEURL }}/{{ SITELOGO }}",
+    "url": "{{ SITEURL }}/{{ article.url }}",
+    "description": "{{ article.summary|striptags|e }}"
+    "author": {
+      "@type": "Person",
+      "name": "{{ AUTHOR }}",
+      "url": "{{ SITEURL }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ AUTHOR }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ SITEURL }}/{{ SITELOGO }}"
+      }
+    },
+    "datePublished": "{{ article.date }}",
+    "dateModified": "{{ article.date }}",
+  }
+</script>
+
+{% else %}
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Person",
+    "name": "{{ AUTHOR }}",
+    "url": "{{ SITEURL }}",
+    "image": "{{ SITEURL }}/{{ SITELOGO }}",
+    "sameAs": [
+      "https://x.com/duarteocarmo",
+      "https://github.com/duarteocarmo",
+      "{{ SITEURL }}"
+    ],
+    "jobTitle": "Technologist/Consultant",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "{{ AUTHOR }}"
+    }
+  }
+</script>
+{% endif %}
