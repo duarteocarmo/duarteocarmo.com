@@ -7,7 +7,7 @@
     "headline": "{{ article.title }}",
     "image": "{{ SITEURL }}/{{ SITELOGO }}",
     "url": "{{ SITEURL }}/{{ article.url }}",
-    "description": "{{ article.summary|striptags|e }}"
+    "description": "{{ article.summary|striptags|e }}",
     "author": {
       "@type": "Person",
       "name": "{{ AUTHOR }}",
@@ -22,7 +22,7 @@
       }
     },
     "datePublished": "{{ article.date }}",
-    "dateModified": "{{ article.date }}",
+    "dateModified": "{{ article.date }}"
   }
 </script>
 
