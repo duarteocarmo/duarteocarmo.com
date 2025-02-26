@@ -17,4 +17,5 @@ My work is greatly shaped by my background and education. I've studied at the [S
 When I'm not solving hard problems, you can find me geeking out about new gadgets, [writing code]({static}/images/code.jpg), [reading](https://github.com/duarteocarmo/my-personal-zen), [taking photos]({static}/images/photos.jpg), or [running]({static}/images/run.jpg).
 
 If you want to learn more about my work, you can browse my [resume](/cv.pdf), my [talks](/talks), or my [consulting](/consulting) page.
+
 I like emails from strangers: [me@duarteocarmo.com](mailto:me@duarteocarmo.com?subject=Hi)
