@@ -223,6 +223,14 @@ pre code {
   border: 0.5px solid black;
 }
 
+.shadow {
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  max-width: 100%;
+}
+
 footer {
   padding-top: 0px;
   padding-bottom: 20px;
