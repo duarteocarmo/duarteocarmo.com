@@ -51,7 +51,7 @@ In the 3rd chapter I finally start focusing on the task at hand. Text-to-SQL.
 
 <img src="{static}/images/77/pycon-wroclaw-llm-text-to-sql_page-0014.webp" class="shadow"/>
 
-I took some time to present the [BIRD-SQL](https://gist.github.com/duarteocarmo/85435ce9209d1824f68e11b6126ab5c9) benchmark. One of the most popular benchmarks for text-to-sql. 
+I took some time to present the [BIRD-SQL](https://bird-bench.github.io/) benchmark. One of the most popular benchmarks for text-to-sql. 
 
 <img src="{static}/images/77/pycon-wroclaw-llm-text-to-sql_page-0015.webp" class="shadow"/>
 
