@@ -95,6 +95,7 @@ PLUGINS = [
     "pelican.plugins.feed_filter",
     "plugins.podcast",
     "plugins.photos",
+    "plugins.llms",
     "sitemap",
     "simple_footnotes",
 ]
