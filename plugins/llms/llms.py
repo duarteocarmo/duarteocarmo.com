@@ -49,7 +49,9 @@ class LLMSGenerator:
         if not about_page:
             return f"> No description available for {self.sitename}."
         content = md(about_page.content)
-        return f"> {content.strip().replace('\n', ' ')}"
+        content = content.strip().replace("\n", " ")
+
+        return f"> {content}"
 
     def _format_entry(self, item: contents.Content) -> str:
         return f"- [{item.title}]({self.siteurl}/{item.url}.md)"
