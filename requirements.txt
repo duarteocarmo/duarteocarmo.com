@@ -31,3 +31,4 @@ urllib3==2.0.7
 watchfiles==0.21.0
 pelican-sitemap==1.1.0
 pelican-simple-footnotes==1.0.2
+markdownify==1.1.0
