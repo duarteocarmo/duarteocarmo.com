@@ -118,6 +118,10 @@ TALKS = [
                 "text": "Slides",
                 "url": "/pdfs/pydata-global-panel-the-dashboard-that-grew.pdf",
             },
+            {
+                "text": "Video",
+                "url": "https://youtu.be/xDcGtPgxXEk?si=XlojRaqBZ9lb0Sjh",
+            },
         ],
     },
     {
