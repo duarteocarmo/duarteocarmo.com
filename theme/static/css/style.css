@@ -34,8 +34,8 @@
     Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol;
   --code-font: "Berkeley Mono", "JetBrains Mono", "Fira Code",
-    San Francisco Mono, Monaco, "Consolas", "Lucida Console",
-    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+    San Francisco Mono, Monaco, "Consolas", "Lucida Console", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", monospace;
 }
 
 body {
@@ -217,16 +217,12 @@ pre code {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 6px;
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.1),
-    0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 0.5px solid black;
 }
 
 .shadow {
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.1),
-    0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
   max-width: 100%;
 }
@@ -368,9 +364,7 @@ canvas.marks {
 
   pre code {
     border: 0.5px solid #444;
-    box-shadow:
-      0 4px 8px rgba(0, 0, 0, 0.3),
-      0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -424,4 +418,22 @@ table {
 
 .round-image {
   border-radius: 2px;
+}
+
+blockquote {
+  margin: 1em 0;
+  padding: 0.2em 1em;
+  background: none;
+  border: none;
+  color: inherit;
+  font-style: normal;
+  border-radius: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  blockquote {
+    background: none;
+    border: none;
+    color: inherit;
+  }
 }
