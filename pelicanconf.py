@@ -111,6 +111,20 @@ SITEMAP = {
 }
 TALKS = [
     {
+        "text": "RAG: Tricks from the trenches.",
+        "links": [
+            {"text": "PyCon Italia 2025", "url": "https://2025.pycon.it/en"},
+            {
+                "text": "Slides",
+                "url": "/pdfs/pycon-italia-rag-tricks-from-the-trenches.pdf",
+            },
+            # {
+            #     "text": "Video",
+            #     "url": "https://youtu.be/xDcGtPgxXEk?si=XlojRaqBZ9lb0Sjh",
+            # },
+        ],
+    },
+    {
         "text": "Panel: The Dashboard That Grew - A Scaling Saga",
         "links": [
             {"text": "PyData Global 2024", "url": "https://pydata.org/global2024"},
