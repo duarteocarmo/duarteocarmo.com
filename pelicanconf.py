@@ -111,6 +111,15 @@ SITEMAP = {
 }
 TALKS = [
     {
+        "text": "Merge to main",
+        "links": [
+            {
+                "text": "Podcast",
+                "url": "https://podcasts.apple.com/us/podcast/beyond-the-hype-how-to-actually-use-ai-for/id1809992066?i=1000715423474",
+            }
+        ],
+    },
+    {
         "text": "RAG: Tricks from the trenches.",
         "links": [
             {"text": "PyCon Italia 2025", "url": "https://2025.pycon.it/en"},
