@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Benchmark Comparison</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        .ai-benchmark-chart {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Light mode (default) */
+        body {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #171717;
+                color: #e0e0e0;
+            }
+
+            .chart-title,
+            .bar-label,
+            .axis text,
+            .axis-label,
+            .legend,
+            .benchmark-name,
+            .benchmark-description {
+                color: #e0e0e0 !important;
+            }
+        }
+
+        .chart-container {
+            max-width: 700px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 14px;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab:hover {
+            color: #333;
+        }
+
+        .tab.active {
+            color: #333;
+            border-bottom-color: #007acc;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .tabs {
+                border-bottom-color: #404040;
+            }
+
+            .tab {
+                color: #aaa;
+            }
+
+            .tab:hover {
+                color: #e0e0e0;
+            }
+
+            .tab.active {
+                color: #e0e0e0;
+                border-bottom-color: #4a9eff;
+            }
+        }
+
+        #chart {
+            width: 100%;
+            height: auto;
+        }
+
+        .chart-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .bar-label {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+        }
+
+        .axis text {
+            font-size: 12px;
+        }
+
+        .axis-label {
+            font-size: 10px;
+            font-weight: 500;
+        }
+
+        .legend {
+            font-size: 10px;
+        }
+
+        .benchmark-name {
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .benchmark-description {
+            font-size: 8px;
+            opacity: 0.7;
+        }
+
+        .grid line {
+            stroke-dasharray: 2, 2;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ai-benchmark-chart">
+        <div class="chart-container">
+            <div class="tabs" id="tabs"></div>
+            <svg id="chart"></svg>
+        </div>
+
+        <script>
+            // Benchmark definitions (shared across all categories)
+            const benchmarks = {
+                "SST2-PT": "(Sentiment Classification)",
+                "HAREM": "(Named Entity Recognition)",
+                "ScaLA-pt": "(Linguistic Acceptability)",
+                "MMLU-pt": "(Knowledge)",
+                "GoldenSwag-pt": "(Common-sense Reasoning)",
+                "Publico": "(Summarization)"
+            };
+
+            const categories = {
+                "cat1": {
+                    name: "Large Foundational",
+                    models: ["Claude Sonnet 4", "GPT-4.1", "DeepSeek R1 0528", "Magistral Medium 2506"],
+                    stripedModels: [],
+                    scores: {
+                        "SST2-PT": [94.86, 94.28, 89.64, 93.65],
+                        "HAREM": [66.95, 42.91, 18.95, 31.43],
+                        "ScaLA-pt": [75.93, 57.6, 45.7, 44.96],
+                        "MMLU-pt": [92.23, 86.99, 83.71, 80.82],
+                        "GoldenSwag-pt": [99.57, 94.18, 90.35, 92.66],
+                        "Publico": [64.82, 65.38, 62.37, 64.32]
+                    },
+                    standardErrors: {
+                        "SST2-PT": [1.02, 1.01, 3.22, 1.27],
+                        "HAREM": [4.31, 2.6, 3.83, 2.38],
+                        "ScaLA-pt": [3.76, 5.43, 2.20, 2.34],
+                        "MMLU-pt": [1.07, 1.39, 1.22, 1.32],
+                        "GoldenSwag-pt": [0.29, 0.58, 1.80, 1.41],
+                        "Publico": [0.22, 0.15, 0.15, 0.17]
+                    }
+                },
+                "cat2": {
+                    name: "Small Foundational",
+                    models: ["GPT-4.1 Mini", "GPT-4.1 Nano", "Gemini 2.5 Flash Lite", "Mistral Small 3.2 24B"],
+                    stripedModels: [],
+                    scores: {
+                        "SST2-PT": [93.61, 91.73, 94.94, 94.0],
+                        "GoldenSwag-pt": [90.59, 76.25, 91.37, 96.02],
+                        "MMLU-pt": [80.27, 65.82, 80.12, 75.7],
+                        "ScaLA-pt": [45.95, 49.47, 58.37, 48.44],
+                        "HAREM": [46.29, 32.6, 44.51, 33.75],
+                        "BoolQ-pt": [83.09, 79.77, 83.32, 83.59],
+                        "Publico": [65.16, 64.97, 65.0, 64.63]
+                    },
+                    standardErrors: {
+                        "SST2-PT": [0.78, 1.03, 0.99, 0.89],
+                        "GoldenSwag-pt": [1.03, 2.55, 1.30, 0.56],
+                        "MMLU-pt": [2.05, 1.89, 1.24, 1.89],
+                        "ScaLA-pt": [2.32, 2.44, 3.27, 2.94],
+                        "HAREM": [2.56, 1.78, 3.50, 2.17],
+                        "BoolQ-pt": [2.23, 2.07, 1.62, 1.28],
+                        "Publico": [0.14, 0.11, 0.15, 0.11]
+                    }
+                },
+                "cat3": {
+                    name: "Mini Open",
+                    models: ["DeepSeek R1 1.5B", "Qwen2.5 0.5B", "LLaMA 3.2 1B", "SmollM2 135M"],
+                    stripedModels: [],
+                    scores: {
+                        "SST2-PT": [35.92, 84.03, 85.11, 44.78],
+                        "GoldenSwag-pt": [26.68, 27.81, 26.45, 24.84],
+                        "MMLU-pt": [24.73, 35.59, 30.78, 23.98],
+                        "ScaLA-pt": [33.87, 34.89, 47.87, 35.62],
+                        "HAREM": [15.67, 19.36, 24.74, 11.66],
+                        "BoolQ-pt": [56.09, 60.98, 50.08, 45.0],
+                        "Publico": [58.12, 63.55, 64.13, 59.23]
+                    },
+                    standardErrors: {
+                        "SST2-PT": [3.40, 1.67, 1.95, 4.89],
+                        "GoldenSwag-pt": [1.85, 1.61, 2.10, 2.30],
+                        "MMLU-pt": [1.51, 1.65, 2.16, 1.48],
+                        "ScaLA-pt": [1.53, 1.57, 2.12, 2.11],
+                        "HAREM": [1.61, 2.07, 2.29, 3.49],
+                        "BoolQ-pt": [1.82, 1.43, 2.12, 3.37],
+                        "Publico": [0.17, 0.22, 0.24, 0.28]
+                    }
+                }
+            };
+
+
+            // Helper function to convert compact format to chart format
+            function getCategoryData(categoryKey) {
+                const category = categories[categoryKey];
+                return Object.keys(benchmarks).map(benchmark => ({
+                    benchmark: benchmark,
+                    description: benchmarks[benchmark],
+                    models: category.models.map((modelName, index) => ({
+                        name: modelName,
+                        value: category.scores[benchmark][index],
+                        standardError: category.standardErrors[benchmark] ? category.standardErrors[benchmark][index] : 0,
+                        pattern: category.stripedModels.includes(modelName) ? "striped" : undefined
+                    }))
+                }));
+            }
+
+            // Current active category
+            let currentCategory = 'cat1';
+
+            // Function to generate automatic color palettes
+            function generateColorPalette(categoryKey) {
+                const category = categories[categoryKey];
+
+                // Color palettes for different categories
+                const colorSchemes = {
+                    "cat1": [
+                        "#85C1E9", // Light blue
+                        "#5DADE2", // Medium-light blue  
+                        "#3498DB", // Standard blue
+                        "#2980B9", // Medium-dark blue
+                        "#1B4F72"  // Dark blue
+                    ],
+                    "cat2": [
+                        "#82E0AA", // Light green
+                        "#58D68D", // Medium-light green
+                        "#2ECC71", // Standard green
+                        "#27AE60", // Medium-dark green
+                        "#196F3D"  // Dark green
+                    ],
+                    "cat3": [
+                        "#F8C471", // Light orange
+                        "#F39C12", // Orange
+                        "#E74C3C", // Red
+                        "#D35400", // Dark orange
+                        "#922B21"  // Dark red
+                    ]
+                };
+
+                const palette = {};
+                const colors = colorSchemes[categoryKey] || colorSchemes["large"];
+
+                category.models.forEach((model, index) => {
+                    palette[model] = colors[index % colors.length];
+                });
+
+                return palette;
+            }
+
+            // Dark mode detection function
+            function getThemeColors() {
+                const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                return {
+                    textColor: isDarkMode ? '#e0e0e0' : '#333333',
+                    gridColor: isDarkMode ? '#404040' : '#e0e0e0',
+                    backgroundColor: isDarkMode ? '#171717' : '#ffffff'
+                };
+            }
+
+            // Fixed dimensions for compact layout
+            function getDimensions() {
+                const margin = { top: 60, right: 30, bottom: 80, left: 40 };
+                const width = 600 - margin.left - margin.right;
+                const height = 380 - margin.top - margin.bottom;
+
+                return { width, height, margin };
+            }
+
+            // Function to create tabs
+            function createTabs() {
+                const tabsContainer = d3.select("#tabs");
+                tabsContainer.selectAll("*").remove();
+
+                const tabs = tabsContainer.selectAll(".tab")
+                    .data(Object.keys(categories))
+                    .enter()
+                    .append("button")
+                    .attr("class", d => d === currentCategory ? "tab active" : "tab")
+                    .text(d => categories[d].name)
+                    .on("click", function (event, d) {
+                        currentCategory = d;
+                        createTabs();
+                        createChart();
+                    });
+            }
+
+            function createChart() {
+                // Clear any existing chart
+                d3.select("#chart").selectAll("*").remove();
+
+                const { width, height, margin } = getDimensions();
+                const { textColor, gridColor, backgroundColor } = getThemeColors();
+                const data = getCategoryData(currentCategory);
+                const colors = generateColorPalette(currentCategory);
+
+                // Create SVG with responsive viewBox
+                const svg = d3.select("#chart")
+                    .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+                    .attr("preserveAspectRatio", "xMidYMid meet");
+
+                const g = svg.append("g")
+                    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+                // Create scales
+                const x0 = d3.scaleBand()
+                    .domain(data.map(d => d.benchmark))
+                    .range([0, width])
+                    .paddingOuter(0.1)
+                    .paddingInner(0.2);
+
+                const x1 = d3.scaleBand()
+                    .domain(data[0].models.map(d => d.name))
+                    .range([0, x0.bandwidth()])
+                    .padding(0.02);
+
+                const y = d3.scaleLinear()
+                    .domain([0, 100])
+                    .range([height, 0]);
+
+                // Create pattern for striped bars
+                const defs = svg.append("defs");
+
+                Object.entries(colors).forEach(([model, color]) => {
+                    const pattern = defs.append("pattern")
+                        .attr("id", `stripe-${model.replace(/[^a-zA-Z0-9]/g, '')}`)
+                        .attr("patternUnits", "userSpaceOnUse")
+                        .attr("width", 4)
+                        .attr("height", 4)
+                        .attr("patternTransform", "rotate(45)");
+
+                    pattern.append("rect")
+                        .attr("width", 4)
+                        .attr("height", 4)
+                        .attr("fill", color);
+
+                    pattern.append("rect")
+                        .attr("x", 0)
+                        .attr("y", 0)
+                        .attr("width", 2)
+                        .attr("height", 4)
+                        .attr("fill", backgroundColor);
+                });
+
+                // Add horizontal grid lines
+                g.append("g")
+                    .attr("class", "grid")
+                    .selectAll("line")
+                    .data(y.ticks(10))
+                    .enter()
+                    .append("line")
+                    .attr("x1", 0)
+                    .attr("x2", width)
+                    .attr("y1", d => y(d))
+                    .attr("y2", d => y(d))
+                    .attr("stroke", gridColor)
+                    .attr("stroke-width", 1);
+
+                // Add Y axis
+                g.append("g")
+                    .attr("class", "axis")
+                    .call(d3.axisLeft(y).ticks(10))
+                    .selectAll("text")
+                    .attr("fill", textColor);
+
+                g.selectAll(".axis path, .axis line")
+                    .attr("stroke", textColor);
+
+                // Add Y axis label
+                g.append("text")
+                    .attr("class", "axis-label")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 0 - margin.left)
+                    .attr("x", 0 - (height / 2))
+                    .attr("dy", "1em")
+                    .style("text-anchor", "middle")
+                    .attr("fill", textColor)
+                    .text("Score");
+
+                // Add X axis (without labels since we'll add custom ones)
+                const xAxis = g.append("g")
+                    .attr("class", "axis")
+                    .attr("transform", `translate(0,${height})`)
+                    .call(d3.axisBottom(x0).tickSize(0).tickFormat(""));
+
+                g.selectAll(".axis path, .axis line")
+                    .attr("stroke", textColor);
+
+                // Function to wrap text
+                function wrapText(text, maxWidth) {
+                    const words = text.replace(/[()]/g, '').split(' ');
+                    const lines = [];
+                    let currentLine = '';
+
+                    for (let word of words) {
+                        const testLine = currentLine ? currentLine + ' ' + word : word;
+                        if (testLine.length * 6 <= maxWidth) { // Rough character width estimation
+                            currentLine = testLine;
+                        } else {
+                            if (currentLine) lines.push(currentLine);
+                            currentLine = word;
+                        }
+                    }
+                    if (currentLine) lines.push(currentLine);
+                    return lines;
+                }
+
+                // Add benchmark names and descriptions
+                g.selectAll(".benchmark-name")
+                    .data(data)
+                    .enter()
+                    .append("text")
+                    .attr("class", "benchmark-name")
+                    .attr("x", d => x0(d.benchmark) + x0.bandwidth() / 2)
+                    .attr("y", height + 20)
+                    .attr("text-anchor", "middle")
+                    .attr("fill", textColor)
+                    .text(d => d.benchmark);
+
+                // Add benchmark descriptions with text wrapping
+                data.forEach(d => {
+                    const lines = wrapText(d.description, x0.bandwidth());
+                    const xPos = x0(d.benchmark) + x0.bandwidth() / 2;
+
+                    lines.forEach((line, i) => {
+                        g.append("text")
+                            .attr("class", "benchmark-description")
+                            .attr("x", xPos)
+                            .attr("y", height + 35 + (i * 12))
+                            .attr("text-anchor", "middle")
+                            .attr("fill", textColor)
+                            .text(line);
+                    });
+                });
+
+                // Create bars
+                const benchmarkGroups = g.selectAll(".benchmark")
+                    .data(data)
+                    .enter()
+                    .append("g")
+                    .attr("class", "benchmark")
+                    .attr("transform", d => `translate(${x0(d.benchmark)},0)`);
+
+                const bars = benchmarkGroups.selectAll(".bar")
+                    .data(d => {
+                        const maxValue = Math.max(...d.models.map(m => m.value));
+                        return d.models.map(m => ({ ...m, isTop: m.value === maxValue }));
+                    })
+                    .enter()
+                    .append("rect")
+                    .attr("class", "bar")
+                    .attr("x", d => x1(d.name))
+                    .attr("width", x1.bandwidth())
+                    .attr("y", d => y(d.value))
+                    .attr("height", d => height - y(d.value))
+                    .attr("fill", d => d.pattern === "striped" ?
+                        `url(#stripe-${d.name.replace(/[^a-zA-Z0-9]/g, '')})` :
+                        colors[d.name])
+                    .attr("opacity", d => d.isTop ? 1.0 : 0.8)
+                    .attr("stroke", d => d.isTop ? textColor : "none")
+                    .attr("stroke-width", d => d.isTop ? 1 : 0);
+
+                // Add value labels only on top-performing bars
+                benchmarkGroups.selectAll(".bar-label")
+                    .data(d => {
+                        const maxValue = Math.max(...d.models.map(m => m.value));
+                        return d.models.filter(m => m.value === maxValue);
+                    })
+                    .enter()
+                    .append("text")
+                    .attr("class", "bar-label")
+                    .attr("x", d => x1(d.name) + x1.bandwidth() / 2)
+                    .attr("y", d => y(d.value) - 5)
+                    .attr("text-anchor", "middle")
+                    .attr("fill", textColor)
+                    .attr("font-weight", "600")
+                    .text(d => d.value);
+
+                // Create horizontal legend at top
+                const legend = svg.append("g")
+                    .attr("class", "legend")
+                    .attr("transform", `translate(${margin.left}, 20)`);
+
+                const legendItems = legend.selectAll(".legend-item")
+                    .data(Object.keys(colors))
+                    .enter()
+                    .append("g")
+                    .attr("class", "legend-item")
+                    .attr("transform", (d, i) => {
+                        const itemWidth = width / Object.keys(colors).length;
+                        return `translate(${i * itemWidth + itemWidth / 2}, 0)`;
+                    });
+
+                legendItems.append("rect")
+                    .attr("x", -60)
+                    .attr("y", -9)
+                    .attr("width", 18)
+                    .attr("height", 18)
+                    .attr("fill", d => colors[d])
+                    .attr("opacity", 0.9);
+
+                // No striped patterns
+
+                legendItems.append("text")
+                    .attr("x", -35)
+                    .attr("y", 0)
+                    .attr("dy", "0.35em")
+                    .attr("text-anchor", "start")
+                    .attr("fill", textColor)
+                    .text(d => {
+                        const maxLength = 20; // Adjust based on available space
+                        return d.length > maxLength ? d.substring(0, maxLength) + "..." : d;
+                    });
+
+                // Create tooltip
+                const tooltip = d3.select("body").append("div")
+                    .attr("class", "tooltip")
+                    .style("opacity", 0)
+                    .style("position", "absolute")
+                    .style("background", "rgba(0, 0, 0, 0.8)")
+                    .style("color", "white")
+                    .style("padding", "8px")
+                    .style("border-radius", "4px")
+                    .style("font-size", "12px")
+                    .style("font-family", "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif")
+                    .style("pointer-events", "none")
+                    .style("z-index", "1000");
+
+                // Add hover effects
+                bars
+                    .on("mouseover", function (event, d) {
+                        d3.select(this)
+                            .attr("opacity", 1)
+                            .attr("stroke", textColor)
+                            .attr("stroke-width", 1);
+
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", 0.9);
+                        tooltip.html(`${d.name}<br/>Score: ${d.value}% ± ${d.standardError}%`)
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function (event, d) {
+                        d3.select(this)
+                            .attr("opacity", d => d.isTop ? 1.0 : 0.8)
+                            .attr("stroke", d => d.isTop ? textColor : "none")
+                            .attr("stroke-width", d => d.isTop ? 1 : 0);
+
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+            }
+
+            // Initial setup
+            createTabs();
+            createChart();
+
+            // Listen for theme changes
+            if (window.matchMedia) {
+                const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+                const handleThemeChange = function (e) {
+                    console.log('Theme changed to:', e.matches ? 'dark' : 'light');
+                    createChart();
+                };
+
+                if (mediaQuery.addEventListener) {
+                    mediaQuery.addEventListener('change', handleThemeChange);
+                } else if (mediaQuery.addListener) {
+                    mediaQuery.addListener(handleThemeChange);
+                }
+            }
+        </script>
+</body>
+
+</html>
