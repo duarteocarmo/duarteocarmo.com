@@ -4,14 +4,15 @@ date: 21st of July 2025
 status: published
 thumbnail: images/82/cover.png
 
-<center>
-<div id="ifram-container">
+<div class="iframe-container">
   <iframe
-    id="euroeval-frame"
-    src="{static}/html/pt-euroeval.html">
+    src="{static}/html/pt-euroeval.html"
+    title="EuroEval European Portuguese Benchmarks"
+    loading="lazy">
   </iframe>
 </div>
-</center>
+
+
 
 A couple of weeks ago in Lisbon, I went to a friend's birthday dinner. In front of me sat someone that recently started working for the Portuguese government where they focus on modernization and technology. It's not everyday that I talk to someone that works for the Portuguese government in an area similar to mine, so I was very curious. I asked about the [AMÁLIA](https://www.it.pt/News/NewsPost/5065) project. The 5.5 Million Euro project about creating a new LLM *specifically* designed for Portuguese. 
 
@@ -71,61 +72,25 @@ And I *don't* know if investing 5.5M Euro in developing a Portuguese Language Mo
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style>
-  #ifram-container {
-    margin: 0;
-    padding: 0;
-  }
-
-  #euroeval-frame {
+  .iframe-container {
     width: 100%;
-    border: none;
-    display: block;
-    margin: 0;
-    padding: 0;
+    max-width: 100%;
+    aspect-ratio: 16 / 12; /* taller */
+    overflow: hidden;
+    margin: 1em 0;
   }
-
-  .after-iframe {
-    margin-top: 0;
-  }
-</style>
-<script>
-  const iframe = document.getElementById('euroeval-frame');
-
-  function resizeIframe() {
-    const doc = iframe.contentDocument || iframe.contentWindow.document;
-    if (doc && doc.body && doc.body.scrollHeight) {
-      iframe.style.height = doc.body.scrollHeight + 'px';
+  
+  @media (max-width: 768px) {
+    .iframe-container {
+      aspect-ratio: 4 / 3; /* even taller on mobile */
     }
   }
-
-  iframe.onload = () => {
-    setTimeout(resizeIframe, 100); // Let layout settle
-  };
-
-  window.addEventListener("resize", () => {
-    setTimeout(resizeIframe, 100);
-  });
-</script>
+  
+  .iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+</style>
