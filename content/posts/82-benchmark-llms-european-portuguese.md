@@ -4,13 +4,48 @@ date: 21st of July 2025
 status: published
 thumbnail: images/82/cover.png
 
+
 <div class="iframe-container">
   <iframe
+    scrolling="no"
+    id="euroeval-frame"
     src="{static}/html/pt-euroeval.html"
     title="EuroEval European Portuguese Benchmarks"
     loading="lazy">
   </iframe>
 </div>
+
+<style>
+  .iframe-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+  }
+  
+  #euroeval-frame {
+    width: 100%;
+    height: 500px;
+    border: none;
+    display: block;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 768px) {
+    #euroeval-frame {
+      height: 450px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #euroeval-frame {
+      height: 350px;
+    }
+  }
+</style>
+
+
+
 
 
 
@@ -72,25 +107,4 @@ And I *don't* know if investing 5.5M Euro in developing a Portuguese Language Mo
 
 
 
-<style>
-  .iframe-container {
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: 16 / 12; /* taller */
-    overflow: hidden;
-    margin: 1em 0;
-  }
-  
-  @media (max-width: 768px) {
-    .iframe-container {
-      aspect-ratio: 4 / 3; /* even taller on mobile */
-    }
-  }
-  
-  .iframe-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-  }
-</style>
+
