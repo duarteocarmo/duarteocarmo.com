@@ -4,8 +4,10 @@ date: 21st of July 2025
 status: published
 thumbnail: images/82/cover.png
 
+
 <div class="iframe-container">
   <iframe
+    scrolling="no"
     id="euroeval-frame"
     src="{static}/html/pt-euroeval.html"
     title="EuroEval European Portuguese Benchmarks"
@@ -16,41 +18,35 @@ thumbnail: images/82/cover.png
 <style>
   .iframe-container {
     width: 100%;
-    max-width: 100%;
-    margin: 1em auto;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
   }
-
+  
   #euroeval-frame {
     width: 100%;
+    height: 500px;
     border: none;
     display: block;
-    height: auto;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 768px) {
+    #euroeval-frame {
+      height: 450px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #euroeval-frame {
+      height: 350px;
+    }
   }
 </style>
 
-<script>
-  function resizeIframe() {
-    const iframe = document.getElementById('euroeval-frame');
-    if (!iframe) return;
 
-    try {
-      const doc = iframe.contentDocument || iframe.contentWindow.document;
-      if (!doc || !doc.body) return;
 
-      const bodyHeight = doc.body.scrollHeight;
-      const htmlHeight = doc.documentElement.scrollHeight;
 
-      // Use the smaller of the two to avoid bottom whitespace
-      iframe.style.height = Math.min(bodyHeight, htmlHeight) + 'px';
-    } catch (e) {
-      console.warn("Cannot access iframe contents to resize:", e);
-    }
-  }
-
-  window.addEventListener('load', resizeIframe);
-  window.addEventListener('resize', resizeIframe);
-  document.getElementById('euroeval-frame').addEventListener('load', resizeIframe);
-</script>
 
 
 A couple of weeks ago in Lisbon, I went to a friend's birthday dinner. In front of me sat someone that recently started working for the Portuguese government where they focus on modernization and technology. It's not everyday that I talk to someone that works for the Portuguese government in an area similar to mine, so I was very curious. I asked about the [AMÁLIA](https://www.it.pt/News/NewsPost/5065) project. The 5.5 Million Euro project about creating a new LLM *specifically* designed for Portuguese. 
