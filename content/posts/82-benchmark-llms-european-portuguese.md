@@ -6,12 +6,51 @@ thumbnail: images/82/cover.png
 
 <div class="iframe-container">
   <iframe
+    id="euroeval-frame"
     src="{static}/html/pt-euroeval.html"
     title="EuroEval European Portuguese Benchmarks"
     loading="lazy">
   </iframe>
 </div>
 
+<style>
+  .iframe-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 1em auto;
+  }
+
+  #euroeval-frame {
+    width: 100%;
+    border: none;
+    display: block;
+    height: auto;
+  }
+</style>
+
+<script>
+  function resizeIframe() {
+    const iframe = document.getElementById('euroeval-frame');
+    if (!iframe) return;
+
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (!doc || !doc.body) return;
+
+      const bodyHeight = doc.body.scrollHeight;
+      const htmlHeight = doc.documentElement.scrollHeight;
+
+      // Use the smaller of the two to avoid bottom whitespace
+      iframe.style.height = Math.min(bodyHeight, htmlHeight) + 'px';
+    } catch (e) {
+      console.warn("Cannot access iframe contents to resize:", e);
+    }
+  }
+
+  window.addEventListener('load', resizeIframe);
+  window.addEventListener('resize', resizeIframe);
+  document.getElementById('euroeval-frame').addEventListener('load', resizeIframe);
+</script>
 
 
 A couple of weeks ago in Lisbon, I went to a friend's birthday dinner. In front of me sat someone that recently started working for the Portuguese government where they focus on modernization and technology. It's not everyday that I talk to someone that works for the Portuguese government in an area similar to mine, so I was very curious. I asked about the [AMÁLIA](https://www.it.pt/News/NewsPost/5065) project. The 5.5 Million Euro project about creating a new LLM *specifically* designed for Portuguese. 
@@ -72,25 +111,4 @@ And I *don't* know if investing 5.5M Euro in developing a Portuguese Language Mo
 
 
 
-<style>
-  .iframe-container {
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: 16 / 12; /* taller */
-    overflow: hidden;
-    margin: 1em 0;
-  }
-  
-  @media (max-width: 768px) {
-    .iframe-container {
-      aspect-ratio: 4 / 3; /* even taller on mobile */
-    }
-  }
-  
-  .iframe-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-  }
-</style>
+
