@@ -127,10 +127,10 @@ TALKS = [
                 "text": "Slides",
                 "url": "/pdfs/pycon-italia-rag-tricks-from-the-trenches.pdf",
             },
-            # {
-            #     "text": "Video",
-            #     "url": "https://youtu.be/xDcGtPgxXEk?si=XlojRaqBZ9lb0Sjh",
-            # },
+            {
+                "text": "Video",
+                "url": "https://youtu.be/oKXRph8K0hY?si=UFI_6LeSesmqIJiS",
+            },
         ],
     },
     {
