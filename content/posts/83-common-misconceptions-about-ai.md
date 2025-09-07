@@ -50,34 +50,12 @@ As usual, we are somewhere in the middle: useful and overhyped. [No one knows an
 
 ### **Humanity is doomed and technology sucks**
 
+Why are we investing money in going to Mars? Why are we inventing these new things that destroy creativity? Why are we submitting our children to such a future? We should go back to pen and paper, we should stop this right now, we should invest only in our dear planet. These are just some of the fears that I've heard about. I understand, change is scary, we are always scared of the unknown. Especially if we are older, and used to things in their *normal* state - whatever that is. 
 
+In a lot of ways, it has never been more interesting to be alive. Code is easier, learning is easier, diagnosing is easier, and those things are great! Using all of those easier things to build something stupid has also never been easier. Still, it's exciting to be alive. 
 
+### **Final thoughts**
 
+I'm an optimist. Where a lot of people see doom, I see something interesting. If you should take something from this post is that the truth is always somewhere in the middle. When changes are this big, fear, uncertainty, and doubt prevail. And even though nobody knows anything. There are some absolute truths about how things work that everyone should be aware of. 
 
-
-
-
-
-
-
-- Humanity is doomed and technology sucks
-	- Should we go back to pencil and paper 
-	- Older generations are scared. The best reaction is rejection
-	- Tech is used more and more
-	- Come more stupid ways, come more interesting ways as well
-- Final thoughts
-	- Nobody knows anything 
-	- I can't write blog posts 
-	- Creativity is never been more important
-	- Like Vitto says. There are many fun things to do. Let's do them
-
-
-
-
-
-
-
-
-misconceptions about AI (internet, sources, icecream flavour, humanity is doomed)
-
-
+When the dust has settled, one thing is clear: taste, creativity, and the will of doing interesting things has never been more important. If I used ChatGPT to write this entire post, it would probably suck. But if I use ChatGPT strategically to give me feedback on how to make it better, then it probably will give me some interesting feedback. Some of it good, and some of it bad. Like Vitto says: There are many fun things to do: go do them. 
