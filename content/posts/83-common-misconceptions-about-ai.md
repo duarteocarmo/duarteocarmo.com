@@ -1,61 +1,63 @@
 title: Common misconceptions about AI
 description: TODO
-date: 5th of Sept 2025
+date: 7th of Sept 2025
 status: draft
 thumbnail: TODO
 include: math
 
-It's that time of year again. We took a couple of weeks off and came down south. The usual: a bit of Portugal, a bit of Italy, and a lot of friends and family. My family has a long-running joke that I hate people and love my computer. That's not (entirely) true. I did talk to a lot of people this summer. But this year, something was off. 
+It's that time of year again. As usual, we took a couple of weeks off and came south: a bit of Portugal, a bit of Italy, a lot of friends and family. My family has a long-running joke that I hate people and love my computer. That's not (entirely) true. I talked to lots of people this summer. But something felt off. 
 
-Everyone was talking to me about “AI.” And when I say *everyone*, I mean *everyone*. ChatGPT this, AI that, Copilot here, Gemini there. The funny thing, though, was that nobody had a clue what they were talking about. And no, I don’t consider myself the greatest “AI specialist” in the universe—but hey, I’ve worked in the field for a few years now. My point isn’t that people are stupid; my concern is that I believe people are effectively misinformed. 
+ChatGPT this, AI that, Copilot here, Gemini there. Nobody had a clue what they were talking about. I’m not an AI guru, but I have worked in the field for some years. People are not stupid; people are misinformed. 
 
-And yes dear reader. I do live in a bubble, and I believe some of the readers of this blog do too. I'm talking about *you*, you that knows what a Mixture-of-experts or KV cache is. If you're - like me - that person. I found it super interesting that people had some of these misconceptions. If you don't know what LayerNorm is, don't despair, this blog post is also for you. You might have some of the misconceptions below as well. Don't worry - you wouldn't imaging the misconceptions I have about your field. Feel free to send me a blog post about them. 
+If you know what a Mixture-of-experts or KV cache is - some of these misconceptions might be surprising. If you don’t, then it’s time to clear some things up.
 
-Without further ado. Let's get to them. 
+
 ### **Large Language Models are connected to the internet**
 
-Large language models (LLMs) are not connected to the internet. Think of a model as a zip file, a file you can run in your own laptop[ref]You should try [LM Studio](https://lmstudio.ai/)[/ref]. A file that compressed the whole internet it was trained on. But that training started and stopped. Everything that happened after the training the model knows *nothing* about. If you ask a model - in its purest form - the news from today, it will effectively make something up. 
+Large language models (LLMs) are not connected to the internet. A model is a zip file, a file you can even run in your own laptop[ref]You should try [LM Studio](https://lmstudio.ai/)[/ref]. A file that compresses the whole internet it was trained on. But that training had a beginning and an end. The model knows nothing about what happened after it was trained. Ask a model - in its purest form - the news from today and it will refuse or make something up. 
 
-"But Duarte, when I ask ChatGPT today's news it knows". What ChatGPT - and many other apps - is doing is effectively injecting internet into the prompt. ChatGPT used to have a Search button, remember? (I know my sister cata was pissed I didn't tell her sooner). ChatGPT still has a "Search Web" button. But since people didn't know what it meant - it now just enables the "web search" stuff if your question requires it. 
+"But Duarte, when I ask ChatGPT today's news it knows". What ChatGPT - and many other apps - are doing is stuffing search results into the model context. ChatGPT used to have a Search button, remember? (I know my sister Cata was pissed I didn't tell her sooner). ChatGPT still has a "Search Web" button, it just now automatically detects if your question needs a web search and uses it. So you don’t have to think about it. 
 
 ### **Large Language Models should cite their sources**
 
-Let’s say you, dear reader, are training your own LLM. To do it, you effectively collect the entire internet into a single Word document. You then run a probabilistic model over this entire document. The model starts learning certain patterns. For example, whenever the model sees “The president of the USA is,” the most likely sequence of words it has seen after it is “Barack Obama.” This is a large document; it has seen that sentence many times—in websites, Wikipedia, blogs, books, etc.
+Let’s say you are training your own LLM. You start by collecting the entire internet into a single Word document. You run a probabilistic model over it. The model starts learning. For example, whenever the model sees “The president of the USA is,” it always sees “Barack Obama” next to it. This is a large document; it has seen that pattern many times—in websites, Wikipedia, blogs, books, etc. And so it learns it. 
 
-Once you are done training, you prompt the model: “The president of the USA is,” and it responds, “Barack Obama,” simply because that was the most *likely* completion of words. Now, how can we cite the whole internet? It wasn’t a single website that made the LLM respond like that. It was the fact that it had seen that sentence so often. But what exactly has it seen?—you might ask—and how much? That’s where things get [tricky](https://www.nytimes.com/2025/09/05/technology/anthropic-settlement-copyright-ai.html).
+Once training stops, you prompt the model: “The president of the USA is,” and it responds: “Barack Obama,” simply because it is *likely*. It sounds wrong today, and that’s exactly the point: the model only knows what it saw during training. How can we cite this process? It wasn’t a single website that made the LLM respond like that. It was the effect of the entire corpus. But what exactly has it seen?—you might ask—and how much? Well, that’s where things get [tricky](https://www.nytimes.com/2025/09/05/technology/anthropic-settlement-copyright-ai.html).
 
 ### **An Ice-cream flavor generated by artificial intelligence**
 
-There are a lot of things that can be generated by AI. Some of them good, some of them less bad, and a lot of them useless. Just because you *can* do something with AI does not mean you actually should. Someone prompted ChatGPT for weird flavors of ice-cream, posted them online and got thousands of likes. Lots of it, is [slop](https://en.wikipedia.org/wiki/AI_slop).
+There are a lot of things that can be generated by AI. Some of them good, some of them less bad, a lot of them useless. Just because you *can* do something with AI does not mean you should. Someone prompted ChatGPT for weird flavors of ice-cream, posted them online and got thousands of likes. We have a name for that. It’s called [slop](https://en.wikipedia.org/wiki/AI_slop).
 
 $$
 \text{AI Generated} \neq \text{Good}
 $$
 
-So half our feeds are low quality AI content, the other half of influencers *know* that adding the two magic letters to their post will triple the interactions. In summary: it's a period to be *extra* careful with all "AI" related content - even if it has nothing to do with AI. 
+Half our feeds are low quality AI content, the other is filled with influencers that *know* that adding the two magic letters will triple the interactions. In summary: be skeptical of anything with “AI” slapped on it. 
 
 ### **It automatically learns from what you tell it**
 
-This is another misconception. My entire family thinks AI is some sort of all powerful monster that learns continuously from whatever you tell it. I must debunk this again. A model is an artifact that is stuck in time. In order for it to learn something new, you need to retrain it. Retraining is a long and expensive process as I'm sure you've seen in the news. If you tell ChatGPT that your mom's name is Elsa, and create another conversation, the *model* itself does not *know* it. [ref]They do [use your data](https://privacy.anthropic.com/en/articles/10023580-is-my-data-used-for-model-training) for training - but this loop takes a while - it's not instant[/ref]
+My entire family thinks AI is some sort of all powerful monster that learns continuously from whatever they tell it. Another myth. A model is an artifact that is stuck in time. In order for it to learn something new, you need to retrain it. Retraining is a long and expensive process. If you tell ChatGPT that your mom's name is Elsa, and create another conversation, the *model* itself does *not* know that. [ref]Even if they [use your data](https://privacy.anthropic.com/en/articles/10023580-is-my-data-used-for-model-training) for training - but this loop takes a while - it's not instant[/ref]
 
-I know if feels like it's continuously learning. But this is because AI providers are using small "tricks" to make this happen. What they are doing is that they are writing what you said to a file, and then injecting that file into the context when you start a conversation. Effectively giving you the idea it's learning. In short it is not a monster that automatically re-learns from whatever you tell it, we need to actively retrain it for it to gain new knowledge. 
+I know if feels like it's continuously learning. AI providers are use small "tricks" to make that happen.They write what you said to it in a file, and then inject that file into the context when you start a conversation. Effectively giving you the idea it's learning even though it’s not. The model needs to be retrained to get new knowledge.
 
 ### **Are we in a bubble?**
 
-Of course we are in a bubble, even [Sam has said it](https://www.cnbc.com/2025/08/18/openai-sam-altman-warns-ai-market-is-in-a-bubble.html). There are many companies out there that are pivoting overnight to AI, and getting crazy investments as a byproduct. Researchers are getting [millions of dollars](https://www.nytimes.com/2025/07/31/technology/ai-researchers-nba-stars.html) from the biggest companies in the world. Influencers are getting crazy engagement just by mentioning AI in their posts. We are at peak stupid. 
+Of course we are, even [Sam has said it](https://www.cnbc.com/2025/08/18/openai-sam-altman-warns-ai-market-is-in-a-bubble.html). Many companies are pivoting overnight to AI, and getting crazy investments as a byproduct, much like the dot-com days. Researchers are getting paid [millions of dollars](https://www.nytimes.com/2025/07/31/technology/ai-researchers-nba-stars.html). Influencers are getting crazy engagement just by mentioning AI. This is peak stupid. 
 
-But AI is - in fact - insanely useful. And that has real effects. Just look at your everyday life. Are you using Google as much? Are you taking advantage of models in any way? I'm sure you do. These models are very useful. These models are powerful. And the open source ecosystem of models is very exciting. 
+But AI is also insanely useful. That has real effects. Just look at your everyday now: Are you using Google as much? Are you taking advantage of models in any way? I am pretty sure you are. These models are useful. These models are powerful. And the open source ecosystem of models is genuinely growing and exciting. The whole world in your pocket? The whole internet’s knowledge without WiFi! 
 
-As usual, we are somewhere in the middle: useful and overhyped. [No one knows anything.](https://calnewport.com/no-one-knows-anything-about-ai/)
+As usual, we are somewhere in the middle of the useful and important the overhyped.
 
 ### **Humanity is doomed and technology sucks**
 
-Why are we investing money in going to Mars? Why are we inventing these new things that destroy creativity? Why are we submitting our children to such a future? We should go back to pen and paper, we should stop this right now, we should invest only in our dear planet. These are just some of the fears that I've heard about. I understand, change is scary, we are always scared of the unknown. Especially if we are older, and used to things in their *normal* state - whatever that is. 
+Why are we investing money in going to Mars? Why are we inventing these new things that destroy creativity? Why are we submitting our children to such a future? We should go back to pen and paper, we should stop this right now, we should invest only in our planet and nothing else. I understand, change is scary, we are scared of the unknown. Especially when we are older and used to things in their *normal* state - whatever that is. 
 
-In a lot of ways, it has never been more interesting to be alive. Code is easier, learning is easier, diagnosing is easier, and those things are great! Using all of those easier things to build something stupid has also never been easier. Still, it's exciting to be alive. 
+In a lot of ways though, it has never been more interesting to be alive. Code is easier, learning is easier, diagnosing is easier, boring things are easier. That is progress. But using all of those easier things to build something stupid has also never been easier. And that feels like the opposite of progress. 
 
 ### **Final thoughts**
 
-I'm an optimist. Where a lot of people see doom, I see something interesting. If you should take something from this post is that the truth is always somewhere in the middle. When changes are this big, fear, uncertainty, and doubt prevail. And even though nobody knows anything. There are some absolute truths about how things work that everyone should be aware of. 
+I'm an optimist. Where a lot of people see doom, I see something interesting. That’s why I am in love with technology. When changes are this big then fear, uncertainty, and doubt prevail. Keep two things in mind: it’s relevant to understand how AI works to some extent, and  remember that [no one knows anything.](https://calnewport.com/no-one-knows-anything-about-ai/)
 
-When the dust has settled, one thing is clear: taste, creativity, and the will of doing interesting things has never been more important. If I used ChatGPT to write this entire post, it would probably suck. But if I use ChatGPT strategically to give me feedback on how to make it better, then it probably will give me some interesting feedback. Some of it good, and some of it bad. Like Vitto says: There are many fun things to do: go do them. 
+When the dust has settled another thing will become clear: taste, creativity, and the will of doing interesting things has never been more important. If I used ChatGPT to write this entire post, it would probably suck. But if I use ChatGPT strategically to give me feedback on how to make it better - it probably will.
+
+Like Vitto says: There are many fun things to do: go do them. 
