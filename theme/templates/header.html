@@ -70,6 +70,20 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 {% endif %}
+{% if 'math' in article.include %}
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [["$","$"], ["\\(","\\)"]],
+    displayMath: [["$$","$$"]],
+    processEscapes: true
+  }
+});
+</script>
+{% endif %}
 {% elif page %}
 <meta name="description" content="{{ page.description | default(SITE_DESCRIPTION) }}" />
 <meta name="twitter:url" content="{{ SITEURL }}/{{ page.url }}">
