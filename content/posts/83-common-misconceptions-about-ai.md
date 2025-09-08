@@ -55,7 +55,7 @@ Of course we are, even [Sam has said it](https://www.cnbc.com/2025/08/18/openai-
 
 But AI is also insanely useful. That has real effects. Just look at your everyday now: Are you using Google as much? Are you taking advantage of models in any way? I am pretty sure you are. These models are useful. These models are powerful. And the open source ecosystem of models is genuinely growing and exciting. The whole world in your pocket? The whole internet’s knowledge without WiFi! 
 
-As usual, we are somewhere in the middle of the useful and important the overhyped.
+As usual, we are somewhere in the middle of the useful and the overhyped.
 
 ### **Humanity is doomed and technology sucks**
 
