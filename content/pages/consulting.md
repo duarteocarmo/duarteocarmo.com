@@ -10,11 +10,11 @@ I help clients solve hard problems using Machine Learning, Data, and Software. I
 
 Some problems I've helped solve in the past: 
 
-- Led the development of a healthcare insights platform powered by LLMs, scaling from 100 to 20K global users and growing team from 2 to 15 people
-- Developed NLP models categorizing 50M+ professionals for a lead prospecting platform while leading ML/AI team and mentoring junior engineers
-- Built AI and Cloud Strategy for two large public institutions in the Nordics. Conceived, designed, and presented to the board
-- Built API for multi-modal enterprise search engine integrating 12 NLP/Audio/Video models to unify company-wide resource discovery 
-- Spearheaded R&D for state-of-the-art carbon stock segmentation using satellite imagery for climate tech startup - automated entire farm stratification system
+- Scaled a healthcare insights platform powered by LLMs from 100 to 20K global users and grew the team from 2 to 15  
+- Built NLP models categorizing 50M+ professionals for lead prospecting, while leading the ML/AI team and mentoring engineers  
+- Cut pharmaceutical risk review times by 50% by designing and deploying an LLM-based adverse event and compliance detection system  
+- Developed an API for a multi-modal enterprise search engine integrating 12 NLP/Audio/Video models for unified resource discovery  
+- Automated farm stratification and carbon stock segmentation with state-of-the-art satellite imagery models for a climate tech startup
 
 If you wish to learn more about my work, feel free to [browse my resume](/cv.pdf) or [talks](/talks) page.
 
