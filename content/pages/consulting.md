@@ -16,6 +16,12 @@ Some problems I've helped solve in the past:
 - Developed an API for a multi-modal enterprise search engine integrating 12 NLP/Audio/Video models for unified resource discovery  
 - Automated farm stratification and carbon stock segmentation with state-of-the-art satellite imagery models for a climate tech startup
 
+Selected testimonials:
+
+- **YM**: *"[...] would not exist without him, and his brilliant work on [...] and countless other initiatives shows he is one of the best engineers I have ever had the privilege to work with."*
+
+
 If you wish to learn more about my work, feel free to [browse my resume](/cv.pdf) or [talks](/talks) page.
 
 To get in touch, send me an [email](mailto:me@duarteocarmo.com), or <a href="https://cal.com/duarteocarmo/meeting?duration=30" target="_blank">schedule some time.</a>
+
