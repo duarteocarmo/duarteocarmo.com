@@ -13,3 +13,4 @@ __pycache__/
 .env_variables
 content/posts/.obsidian
 content/posts/images
+.envrc
