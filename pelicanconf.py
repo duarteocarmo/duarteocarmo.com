@@ -111,6 +111,15 @@ SITEMAP = {
 }
 TALKS = [
     {
+        "text": "GenAI & Data Day London",
+        "links": [
+            {
+                "text": "Website",
+                "url": "https://aws.amazon.com/events/genai-data-day-london/",
+            }
+        ],
+    },
+    {
         "text": "Merge to main",
         "links": [
             {
