@@ -7,15 +7,15 @@
   --color-light-primary: #111;
   --color-light-secondary: #333;
   --color-light-background: #fff; /* Remember change in header */
-  --color-light-tertiary: rgb(216, 58, 34);
+  --color-light-tertiary: #da3a25;
   --color-light-code: #111;
   --color-light-code-background: #f6f8fa;
   --color-light-filtering: 0%;
 
   --color-dark-primary: rgb(255, 255, 255);
   --color-dark-secondary: rgb(175, 175, 175);
-  --color-dark-background: #171717;
-  --color-dark-tertiary: #e04f38;
+  --color-dark-background: #191919;
+  --color-dark-tertiary: #de523f;
   --color-dark-code: hsl(211 calc(100% - 10%) 63% / 0.075);
   --color-dark-code-background: hsl(211 calc(100% - 10%) 63% / 0.075);
   --color-dark-filtering: 100%;
@@ -30,9 +30,9 @@
   /* Font websites: No need to complicate.. */
   /* - https://modernfontstacks.com/ */
   /* - https://systemfontstack.com/ */
-  --base-font: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
-    helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
-    sans-serif;
+  --base-font: ui-sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji",
+    Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   --fancy-font: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
     Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol;
@@ -60,9 +60,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 500;
-  /* font-family: var(--fancy-font) */
   color: var(--primary);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
 }
 
 .article-title {
@@ -76,6 +77,10 @@ h6 {
 
 .article-body a:hover {
   color: var(--tertiary);
+}
+
+.article-body p {
+  margin-top: 0.5em;
 }
 
 .container {
@@ -96,7 +101,7 @@ h6 {
 }
 
 .sitename {
-  font-weight: 600;
+  /* font-weight: 600; */
   font-size: 1.2rem;
   line-height: 1.6;
   letter-spacing: 0.004rem;
@@ -175,9 +180,9 @@ header h1 {
   letter-spacing: -0.015em;
 }
 
-.article-list a:visited {
-  color: var(--secondary);
-}
+/* .article-list a:visited { */
+/*   color: var(--secondary); */
+/* } */
 
 a {
   color: var(--primary);
@@ -285,35 +290,17 @@ canvas.marks {
   font-size: 95%;
 }
 
-@media screen and (min-width: 1024px) {
-  /* header { */
-  /*   position: absolute; */
-  /*   top: 40px; */
-  /*   right: 50%; */
-  /*   margin-right: 340px !important; */
-  /* } */
-}
-
 .separator {
-  /* border-top: 1px solid; */
   border-color: var(--secondary);
 }
 
 @media screen and (max-width: 1024px) {
-  /*header {*/
-  /*  padding-bottom: 20px;*/
-  /*}*/
-
   div.gallery {
     gap: 5px;
   }
 }
 
 @media screen and (max-width: 640px) {
-  /*header {*/
-  /*  padding-bottom: 20px;*/
-  /*}*/
-
   .container {
     width: auto;
   }
@@ -377,16 +364,18 @@ canvas.marks {
   }
 }
 
-.transcript details summary {
+/* Transcript styles */
+.transcript details > summary {
   cursor: pointer;
+  list-style: none;
 }
 
-.transcript details summary > * {
+.transcript details > summary > * {
   display: inline;
 }
 
-.transcript details summary::-webkit-details-marker,
-.transcript details summary::marker {
+.transcript details > summary::-webkit-details-marker,
+.transcript details > summary::marker {
   display: none;
   content: "";
 }
@@ -426,8 +415,9 @@ table {
 }
 
 .listen {
-  font-size: 0.9rem;
-  opacity: 0.5;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  font-family: var(--code-font);
 }
 
 .round-image {

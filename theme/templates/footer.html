@@ -1,8 +1,14 @@
 <center>
-<p><a rel="noopener" target="_blank" href="mailto:me@duarteocarmo.com" aria-label="email-link">Email</a> | 
-<a rel="noopener" target="_blank" href="https://github.com/duarteocarmo" aria-label="github-link">GitHub</a> | 
-<a rel="noopener" target="_blank" href="https://bsky.app/profile/duarteocarmo.com" aria-label="bluesky-link">Bluesky</a> | 
-<a rel="noopener" target="_blank" href="https://www.linkedin.com/in/duarteocarmo" aria-label="linkedin-link">LinkedIn</a> | 
-<a rel="noopener" target="_blank" href="https://twitter.com/duarteocarmo" aria-label="twitter-link">X</a> | 
+<form action="https://duckduckgo.com/" method="get" target="_blank" style="margin-bottom: 1em; display: inline-flex; gap: 4px; align-items: center;" onsubmit="document.getElementById('search-query').value = 'site:duarteocarmo.com ' + document.getElementById('search-input').value;">
+<input type="text" id="search-input" placeholder="Search"
+style="padding: 6px 10px; font-size: 0.9rem; border: 1px solid var(--secondary); border-radius: 4px; background-color: var(--background); color: var(--primary); font-family: var(--base-font); width: 200px;" />
+<input type="hidden" id="search-query" name="q" />
+<button type="submit" style="padding: 6px 12px; font-size: 0.9rem; border: 1px solid var(--secondary); border-radius: 4px; background-color: var(--background); color: var(--primary); font-family: var(--base-font); cursor: pointer;">Search</button>
+</form>
+<p><a rel="noopener" target="_blank" href="mailto:me@duarteocarmo.com" aria-label="email-link">Email</a> |
+<a rel="noopener" target="_blank" href="https://github.com/duarteocarmo" aria-label="github-link">GitHub</a> |
+<a rel="noopener" target="_blank" href="https://bsky.app/profile/duarteocarmo.com" aria-label="bluesky-link">Bluesky</a> |
+<a rel="noopener" target="_blank" href="https://www.linkedin.com/in/duarteocarmo" aria-label="linkedin-link">LinkedIn</a> |
+<a rel="noopener" target="_blank" href="https://twitter.com/duarteocarmo" aria-label="twitter-link">X</a> |
 <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">RSS</a></p>
 </center>

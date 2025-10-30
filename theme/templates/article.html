@@ -6,11 +6,11 @@
 {% block content %}
     {% if article.category == 'blog' %}
         <h1 class="article-title"><a href="{{ SITEURL  }}/{{ article.url }}">{{ article.title }}</a></h1>
-        {% if 'mp3_link' in article.metadata %}
+        {% if 'mp3_link' in article.metadata and (not 'audio' in article.metadata or article.audio != 'false') %}
             <div class="transcript">
                 <details>
                     <summary>
-                        <span class="greyed-out listen">⏯︎ <i>Listen</i></span>
+                        <span class="greyed-out listen">[Listen]</span>
                     </summary>
                     <audio controls style="width: 100%; display: block" preload="metadata">
                         <source src="{{ article.metadata.mp3_link }}" type="audio/mpeg">
@@ -27,8 +27,7 @@
                     align-items: center">
             <i class="greyed-out">{{ article.date | strftime("%B %-d, %Y") }}</i>
             <div>
-                <a href="https://duarteocarmo.substack.com">Subscribe</a>
-                <a href="mailto:me@duarteocarmo.com?subject={{ article.title|urlencode }}">Reply</a>
+                <a href="https://duarteocarmo.substack.com/subscribe?ref=duarteocarmo.com">Newsletter</a>
             </div>
         </div>
     {% elif article.category == 'photos' %}
