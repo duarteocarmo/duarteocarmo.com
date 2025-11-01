@@ -18,7 +18,7 @@ The endless chase for the perfect browser continues. I’ve been a long time Fir
 
 It’s a fruitful period for tech! In the AI-tool space there’s [Claude Code](https://www.claude.com/product/claude-code), [Codex](https://developers.openai.com/codex/cli/), [Cursor](https://cursor.com/blog/2-0), [Cline](https://cline.bot/), [Copilot](https://github.com/features/copilot/cli), and probably 54 others. We are the ones that get to benefit from every company fighting to get us to use their tools.
 
-When I’m asked about what I’m using, my answer has consistently been: “It changes every week”. Recently I’ve gone back to what I love: [Neovim](https://neovim.io/), [tmux](https://github.com/tmux/tmux/wiki), and a couple of CLI based agents. To pull everything together [Sidekick](https://github.com/folke/sidekick.nvim) has been a good way of bringing everything together.
+When I’m asked about what I’m using, my answer has consistently been: “It changes every week”. Recently I’ve gone back to what I love: [Neovim](https://neovim.io/), [tmux](https://github.com/tmux/tmux/wiki), and a couple of CLI based agents. To pull everything together [Sidekick](https://github.com/folke/sidekick.nvim) has been great.
 
 ## Reading
 
