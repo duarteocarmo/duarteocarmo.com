@@ -4,7 +4,7 @@ date: 31th of October 2025
 status: published
 audio: false
 
-Welcome to _Retrospectiva._ Retrospectiva is a monthly update about what I’ve been up. In the age of LLMs, I’ve heard many argue that it’s hard (and useless) to write anything at all anymore. When anyone can prompt a model and get some text from the magic box, what’s the point?
+Welcome to _Retrospectiva._ Retrospectiva is a monthly update about what I’ve been up to. In the age of LLMs, I’ve heard many argue that it’s hard (and useless) to write anything at all anymore. When anyone can prompt a model and get some text from the magic box, what’s the point?
 
 I couldn’t disagree more. Creativity, personality, and _good taste_ have never been so important. If anything, I’m planning to write more.
 
