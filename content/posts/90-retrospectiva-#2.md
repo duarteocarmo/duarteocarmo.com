@@ -3,6 +3,7 @@ description: A monthly newsletter about life.
 date: 25th of November 2025
 status: published
 audio: true
+thumbnail: images/90/cover.png
 
 Big news in the state of Denmark. And no, [nothing's rotten](https://www.shakespeare-online.com/quickquotes/quickquotehamletdenmark.html). Allegra just came into the world.
 
