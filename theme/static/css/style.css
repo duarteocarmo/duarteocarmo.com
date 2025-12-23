@@ -95,6 +95,16 @@ h6 {
   max-width: 100%;
 }
 
+figcaption {
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: -0.5em;
+  margin-bottom: 1em;
+  opacity: 0.7;
+  color: var(--secondary);
+}
+
 .no-top > :first-child {
   margin-top: 0;
   line-height: 1.25;
