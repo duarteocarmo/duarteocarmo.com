@@ -43,9 +43,9 @@ The first one is **Italian indie alternative**. One of my favourite things about
 
 The second one I call **jazz ambient**. When I play music (almost always), I tend to play it all over the house. Recently, both [Nala Sinephro](https://open.spotify.com/artist/2h5syT5XdsQgKLq8Yn1klO?si=HBNSUbwURWGRA1vervExSQ) and [cktrl](https://open.spotify.com/artist/2eO4klJg324zroGqnBkqk3?si=OdCnbiz4Q86HcVcXcct39g) have been on heavy rotation. They surely put me in the Christmas spirit.
 
-<div style="display: flex; gap: 12px; max-width: 100%;">
-  <iframe data-testid="embed-iframe" style="border-radius:12px; flex:1;" src="https://open.spotify.com/embed/track/3zrfPWeaPgpUZyu19BjBTf?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  <iframe data-testid="embed-iframe" style="border-radius:12px; flex:1;" src="https://open.spotify.com/embed/track/2QUXnZuZYqc5RAgSJILpb6?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<div style="display: flex; flex-wrap: wrap; gap: 12px;">
+  <iframe style="border-radius:12px; flex:1 1 300px; min-width:0;" src="https://open.spotify.com/embed/track/3zrfPWeaPgpUZyu19BjBTf?utm_source=generator" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <iframe style="border-radius:12px; flex:1 1 300px; min-width:0;" src="https://open.spotify.com/embed/track/2QUXnZuZYqc5RAgSJILpb6?utm_source=generator" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </div>
 
 <br>
