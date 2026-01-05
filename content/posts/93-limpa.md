@@ -3,6 +3,7 @@ description: Limpa is a small web application that removes ads from podcast feed
 date: 5th of January 2026
 status: published
 audio: true
+thumbnail: images/93/limpa_cover.png
 
 
 I get up feeling sleepy. I lace up my running shoes and head out the door. I fire up my favourite podcast. "This show is brought to you by..." I *hate* ads.
