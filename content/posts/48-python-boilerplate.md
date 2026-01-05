@@ -3,7 +3,7 @@ date: 2023-02-18
 description: A very opinionated set of tools and practices for my Python projects.
 status: published
 slug: opinionated-python-boilerplate
-thumbnail: images/python-illustration.png
+thumbnail: images/32/python-illustration.png
 
 
 There's nothing quite like starting a new project. A greenfield, _filled_ with possibilities. It's a privilege many don't come across. A lot of us, get thrown into projects with a lot of legacy code. But sometimes, we start from scratch.

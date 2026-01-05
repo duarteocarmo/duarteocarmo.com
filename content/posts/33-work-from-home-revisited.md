@@ -3,10 +3,10 @@ date: 21-11-2021
 description: A revisit of my setup and thoughts on how to work from home
 status: published
 slug: how-to-work-from-home-revisited
-thumbnail: images/setup_post_2_alternate.jpeg
+thumbnail: images/33/setup_post_2_alternate.jpeg
 
 
-![setup-image-perspective]({static}/images/setup_post_2_alternate.jpeg)  
+![setup-image-perspective]({static}/images/33/setup_post_2_alternate.jpeg)  
 
 ### Revisiting
 Back in March last year, [I wrote](/blog/how-to-work-from-home) about how I was keeping sane while working from home. From then to now, a lot of things have changed. New house, new job, new habits. Not all has changed though. COVID is, and will be for some time, a reality. And with it, work-from-home is here to stay. While some people hate working from home, I for another hand, find it to be something very close to "the future of work". Whatever that is.
@@ -18,7 +18,7 @@ I've upgraded to a [larger curved monitor](https://www.lg.com/uk/monitors/lg-35w
 
 I am completely sold on [Keychron](https://www.keychron.com/products/keychron-k2-wireless-mechanical-keyboard) - I've been trying to upgrade to the [K3](https://www.keychron.com/collections/keyboard/products/keychron-k3-wireless-mechanical-keyboard?variant=32220198535257), but it seems impossible to buy one right now. The mouse, is still the mighty [MX Master 3](https://www.logitech.com/en-roeu/products/mice/mx-master-3-mac-wireless-mouse.910-005696.html) - which is ridiculously expensive, but such a joy to use.
 
-![setup-image-front]({static}/images/setup_post_2_cover.jpeg)  
+![setup-image-front]({static}/images/33/setup_post_2_cover.jpeg)  
 
 ### Habits
 I'm still trying to keep [good habits](/blog/how-to-work-from-home#start-the-day-right) while working - especially now that my default mode is working from home. I still [run everyday](/blog/run-every-day), always get dressed before starting to work. I still try to read the news in the morning using my [RSS reader](https://reederapp.com/).

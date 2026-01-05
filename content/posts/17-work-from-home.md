@@ -32,7 +32,7 @@ I believe these are a very good bank for your buck. And can certainly vouch for 
 <br/>
 <br/>
 <center>
-<img src="{static}/images/setup.png" alt="Setup" style="width:90%;border-radius: 2px;">
+<img src="{static}/images/17/setup.png" alt="Setup" style="width:90%;border-radius: 2px;">
 </center>
 <br/>
 
@@ -65,7 +65,7 @@ At the end of the day, I like having all of my todos (Personal, Work, Side Proje
 <br/>
 <br/>
 <center>
-<img src="{static}/images/ticktick.png" alt="TickTick" style="width:100%;">
+<img src="{static}/images/17/ticktick.png" alt="TickTick" style="width:100%;">
 </center>
 <br/>
 
@@ -97,7 +97,7 @@ Here are some of my personal favorites:
 <br/>
 <br/>
 <center>
-<img src="{static}/images/soundcloud.png" alt="Soundcloud" style="width:100%;">
+<img src="{static}/images/17/soundcloud.png" alt="Soundcloud" style="width:100%;">
 </center>
 <br/>
 
