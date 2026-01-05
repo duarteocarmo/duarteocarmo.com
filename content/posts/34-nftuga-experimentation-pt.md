@@ -3,7 +3,7 @@ date: 26-12-2021
 description: Criando NFTs a partir de caras de deputados geradas por inteligência artificial 
 status: published
 slug: nftuga-nft-experimentation
-thumbnail: images/nftuga/model-results.png
+thumbnail: images/34/model-results.png
 lang: pt
 translation: true
 
@@ -17,7 +17,7 @@ Mas se há uma razão pela qual eu trabalho em tecnologia é porque  estas coisa
 
 Decidi fazer uns NFTs. Chamei-lhes: *NFTugas*. 
 
-![training-nftuga-gif]({static}/images/nftuga/nftuga-gif.gif)
+![training-nftuga-gif]({static}/images/34/nftuga-gif.gif)
 
 ## Caras deputados geradas artificialmente
 
@@ -28,7 +28,7 @@ Há muito tempo que tenho uma ideia na minha cabeça: Gerar caras de deputados P
 Para este tipo de projecto, costumam-se usar [GANs](https://en.wikipedia.org/wiki/Generative_adversarial_network) (Generative Adversarial Networks). Em resumo, cria-se um modelo *generator* (e.g., cria novas caras) e um modelo *discriminator* (e.g., detecta se as caras são falsas ou não). "Treinar" este modelo significa por o nosso gerador contra o nosso discriminador durante um longo período de tempo. Quanto mais a batalha se prolonga, mais o *generator* começa a tentar enganar o nosso *discriminator*, e acaba por criar umas caras bem estranhas. 
 
 <center>
-![raw-dataset]({static}/images/nftuga/raw-images.png)
+![raw-dataset]({static}/images/34/raw-images.png)
 </center>
 
 ## Ensinar um modelo a criar caras 
@@ -38,7 +38,7 @@ Ideia decidida, era hora de criar o nosso dataset. Consegui [scrappar](https://g
 Era hora de criar uns NFTs. Com o nosso *generator* criado, gerei cerca de 100 caras de deputados. Destas, selecionei 20 que achei mais *interessantes*. Algumas parecem uma mistura de homens e mulheres (não há muitas), umas parecem  extra-terrestres, outras, parece que fizeram uma cirurgia plástica que correu mal. Não lhes queria dar um nome qualquer (*tipo NFTuga #004*) - portanto decidi dar um nome de uma aldeia portuguesa a cada um deles. Há um chamado *Gasparões*, outro chamado *Quintas da Torre*, etc. (lista completa em baixo do post)
 
 <center>
-![model-results]({static}/images/nftuga/model-results.png)
+![model-results]({static}/images/34/model-results.png)
 </center>
 
 ## De PNGs a NFTs: Nada fácil 

@@ -1,7 +1,7 @@
 title: Can I go home yet? 
 date: 23-07-2020 
 description: An investigation on Denmark's travel ban and how its implementation criteria has evolved since.
-thumbnail: images/others.png
+thumbnail: images/23/others.png
 
 On the 18th of June, Denmark [announced new travel policies after the Coronavirus outbreak](https://www.reuters.com/article/us-health-coronavirus-denmark-borders/denmark-will-reopen-to-most-european-nations-except-portugal-much-of-sweden-idUSKBN23P1OD). From that date on, it allowed travel to all European countries except for Portugal and Sweden. Of course, this caused several news outlets to write on the issue ([Local.dk](https://www.thelocal.dk/20200618/denmark-opens-to-tourists-from-every-eu-country-but-sweden), [Politiken.dk](https://politiken.dk/rejser/art7839386/Nu-kan-danskerne-tage-til-endnu-flere-steder-i-Sverige), [Reuters.com](https://www.reuters.com/article/us-health-coronavirus-denmark-borders/denmark-will-reopen-to-most-european-nations-except-portugal-much-of-sweden-idUSKBN23P1OD)). But now, one month later, let us try to investigate the issue, and whether these bans make sense.
 
@@ -14,7 +14,7 @@ I also stumbled upon the [official document](https://www.ssi.dk/-/media/arkiv/dk
 Since I am planning to go to Denmark on the beginning of August, and have heard no updates on the situation since, let's try to see how the situation evolved since the announcement:
 
 <center>
-<img src="{static}/images/portugal.png" alt="Vim" style="max-width: 100%">
+<img src="{static}/images/23/portugal.png" alt="Vim" style="max-width: 100%">
 </center>
 
 **A good initial decision.** Taking data from [the official Johns Hopkins repository](https://github.com/CSSEGISandData/COVID-19), and some [manipulation](https://nbhub.duarteocarmo.com/notebook/573bf718). I was able to plot the number of cases per 100.000 people of the last 7 days, for every day since February 1st. We can clearly see that in the date of the announcement, Portuguese cases were in the *Orange Zone* (.i.e slightly above 20 per 100k pax per week). However, you might notice that in the last couple of weeks, the number of cases in Portugal has started to decrease, falling into the *Open to travel zone*. 
@@ -26,7 +26,7 @@ Has this changed?
 Yes!!
 
 <center>
-<img src="{static}/images/others.png" alt="Vim" style="max-width: 100%">
+<img src="{static}/images/23/others.png" alt="Vim" style="max-width: 100%">
 </center>
 
 Upon closer inspection, notice how the number of cases per capita in Portugal has decreased in the last couple of weeks. On the other hand, **the metric for Spain and Romania** has exploded. This means that, according to the original criteria, these two countries should now be banned from all travel (Romania even approaches the red *Quarantine region*).

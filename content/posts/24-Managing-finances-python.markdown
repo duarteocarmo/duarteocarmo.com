@@ -1,7 +1,7 @@
 title: Hacking on my finances
 date: 18-10-2020 
 description: Notes on using plain text accounting software.
-thumbnail: images/fava.png
+thumbnail: images/24/fava.png
 
 *Currently, my job has taken a lot of my time. But who doesn't have time for side projects? At the end of the day - they keep us sane. So I’ve been currently hacking on a good way of managing my finances - and oh boy I’m having fun.* 
 
@@ -10,7 +10,7 @@ thumbnail: images/fava.png
 You can ready the whole story, or just jump to my [current setup.](#so-how-do-i-manage-my-finances-now) 
 
 <center>
-<img src="{static}/images/fava.png" alt="Fava example" style="max-width: 100%; margin-bottom: -1em">
+<img src="{static}/images/24/fava.png" alt="Fava example" style="max-width: 100%; margin-bottom: -1em">
 <figcaption><a href='https://beancount.github.io/fava/' target='_blank'>Fava</a>, one of the tools I use for keeping my books</figcaption>
 </center>
 

@@ -17,6 +17,6 @@ It's raining. It's cold. My leg hurts. My head hurts. It's too early. There are 
 
 One-mile-a-day guy gets it - the rest of the table doesn't.  
 
-![alt-text-1]({static}/images/29-app-screenshots.png)  
+![alt-text-1]({static}/images/29/29-app-screenshots.png)  
 
 Two apps I love to use for running. [Trail router](https://apps.apple.com/us/app/trail-router/id1500479574) allows you to discover new running routes, wherever you are in the world. [Zones](https://apps.apple.com/us/app/zones-for-training/id1139688415), allows you to visualize running stats in ways Apple doesn't.

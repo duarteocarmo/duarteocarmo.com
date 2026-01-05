@@ -3,7 +3,7 @@ date: 26-12-2021
 description: Putting artificially generated faces of Portuguese politicians on Solana
 status: published
 slug: nftuga-nft-experimentation
-thumbnail: images/nftuga/model-results.png
+thumbnail: images/34/model-results.png
 lang: en
 
 [English](/blog/nftuga-nft-experimentation) | [Português](/nftuga-nft-experimentation-pt) 
@@ -16,7 +16,7 @@ But there's a reason I work with technology - I have a natural tendency to be cu
 
 So I decided to built some NFTs. I called them: *NFTugas*.
 
-![training-nftuga-gif]({static}/images/nftuga/nftuga-gif.gif)
+![training-nftuga-gif]({static}/images/34/nftuga-gif.gif)
 
 ## Artificially generated faces of Portuguese politicians
 
@@ -27,7 +27,7 @@ For a long time I've been pondering on the idea of making artificially generated
 [GANs](https://en.wikipedia.org/wiki/Generative_adversarial_network) (Generative Adversarial Networks) are what's usually used for this type of project. On a high level, you create a *generator* (e.g., make faces) and a *discriminator* (e.g., tells if faces are fake or real). *Training* a GAN means battling the generator against the discriminator for a long period of time. As the generator tries to trick the discriminator more and more, it starts coming up with some pretty weird faces.
 
 <center>
-![raw-dataset]({static}/images/nftuga/raw-images.png)
+![raw-dataset]({static}/images/34/raw-images.png)
 </center>
 
 ## Teaching a model how to make faces
@@ -38,7 +38,7 @@ The premise was set -  I [downloaded](https://github.com/duarteocarmo/nftuga/blo
 It was now time to take the face generator and create some NFTugas. From a pool of 100 randomly generated images, I selected 20 that I believe were *interesting*. Some look like a mix of male and female (and the latter are rare, *especially* in Portuguese Parliament), others look a bit like aliens, or not humans at all. I didn't want to give them boring names such as "BORED APE #007". So I scrapped names of Portuguese villages from the web, and assigned them to the 20 selected images (names like *fanhais*, or *charneca*). 
 
 <center>
-![model-results]({static}/images/nftuga/model-results.png)
+![model-results]({static}/images/34/model-results.png)
 </center>
 
 ## From PNGs to NFTs: A bumpy road

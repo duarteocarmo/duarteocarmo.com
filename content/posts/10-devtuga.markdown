@@ -18,7 +18,7 @@ I'm a big fan of [hackernews](https://news.ycombinator.com) and I also always fe
 
 
 <center>
-<img src="{static}/images/hackernews.png" alt="Hackernews" style="width:80%">
+<img src="{static}/images/10/hackernews.png" alt="Hackernews" style="width:80%">
   <figcaption>The inspiration</figcaption>
 </center>
 
@@ -134,7 +134,7 @@ I took a long time getting everything up and running ([about a month according t
 So [here's the result](https://devtuga.herokuapp.com/) after some long hours of frustrating but very fun work. 
 
 <center>
-<img src="{static}/images/devtuga.png" alt="Hackernews" style="width:120%">
+<img src="{static}/images/10/devtuga.png" alt="Hackernews" style="width:120%">
   <figcaption>I called it: <a href="https://devtuga.herokuapp.com/">devtuga.herokuapp.com</a> </figcaption>
 </center>
 
