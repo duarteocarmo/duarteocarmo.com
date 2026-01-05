@@ -1,7 +1,7 @@
 title: Studying in Denmark as an international student
 date: 18-06-2020 14:45
 description: How to study, work, and live in Denmark as an international student
-thumbnail: images/dtu_photo.jpg
+thumbnail: images/20/dtu_photo.jpg
 
 *It's now been almost 4 years since I first landed in Denmark to start my Master's degree at the Technical University of Denmark, here in Copenhagen. This is a small retrospective filled with tips, tricks, and memories from an international student. It serves no particular purpose other than possibly having enjoyed reading something like it before moving here.*
 
@@ -12,7 +12,7 @@ thumbnail: images/dtu_photo.jpg
 Most countries in the EU also have great universities, places like London or Paris are filled with great schools. Most public Universities in Europe are pretty cheap (comparing to countries like the US). A normal public university in Portugal, for example, will set you back about 1000€ per year. In Denmark though, school is completely free. Which, as a student, is a GREAT price for extraordinary academic experience. 
 
 <br>
-<img src="{static}/images/dtu_photo.jpg" alt="DTU Images" style="">
+<img src="{static}/images/20/dtu_photo.jpg" alt="DTU Images" style="">
 <br>
 <br>
 
@@ -39,7 +39,7 @@ The other possibility (the one I went for), is to get a student job in a company
 
 
 <br>
-<img src="{static}/images/ballerup.jpg" alt="Ballerup HQ" style="">
+<img src="{static}/images/20/ballerup.jpg" alt="Ballerup HQ" style="">
 <br>
 <br>
 
@@ -51,7 +51,7 @@ If you are lucky enough to find work as a student assistant in a company, this e
 
 
 <br>
-<img src="{static}/images/bike_john.jpg" alt="Johnny Biking" style="">
+<img src="{static}/images/20/bike_john.jpg" alt="Johnny Biking" style="">
 <br>
 <br>
 

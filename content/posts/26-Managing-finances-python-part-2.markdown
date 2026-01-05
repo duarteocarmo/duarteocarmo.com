@@ -1,7 +1,7 @@
 title: Hacking on my finances (Part 2: Beancount on Beanstalk)
 date: 15-01-2021
 description: Notes on using plain text accounting software.
-thumbnail: images/beanstalk-thumbnail.png
+thumbnail: images/26/beanstalk-thumbnail.png
 status: published
 
 _In [part 1](/blog/hacking-on-my-finances.html) of this series, I talked about the setup that I'm using to manage my finances and investments. In this part, I'll talk about how I migrated my accounting setup to the Cloud, and what I have learned in the process._
@@ -30,7 +30,7 @@ And a simplified view of the architecture (using [excalidraw](https://excalidraw
 <br>
 
 <center>
-<img src="{static}/images/beancount-beanstalk.png" alt="Fava example" style="max-width: 100%; margin-bottom: 1em; border-radius: 5px">
+<img src="{static}/images/26/beancount-beanstalk.png" alt="Fava example" style="max-width: 100%; margin-bottom: 1em; border-radius: 5px">
 </center>
 
 ## Step 1: Using Docker to containerize the application

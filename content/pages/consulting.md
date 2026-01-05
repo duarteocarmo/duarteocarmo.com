@@ -3,7 +3,7 @@ slug: consulting
 description: Consulting services
 
 <center>
-<img  src="{static}/images/companies.webp" alt="companies" class="companies">
+<img  src="{static}/images/pages/companies.webp" alt="companies" class="companies">
 </center>
 
 I help clients solve hard problems using Machine Learning, Data, and Software. I'm known to take a  _full-stack_ approach that starts with _people_. I don't believe in building in the basement, but in tackling problems together.

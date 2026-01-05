@@ -13,7 +13,7 @@ I have used python for a wide range of project types, but data analysis and data
 <br/>
 <br/>
 <center>
-<img src="{static}/images/jupyterlab.png" alt="JupyterLab" style="width:80%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<img src="{static}/images/11/jupyterlab.png" alt="JupyterLab" style="width:80%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 </center>
 <br/>
 
@@ -27,7 +27,7 @@ However, after a long time looking into how to do that, I finally [found an issu
 <br/>
 <br/>
 <center>
-<img src="{static}/images/issue.png" alt="JupyterLab" style="width:80%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<img src="{static}/images/11/issue.png" alt="JupyterLab" style="width:80%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 </center>
 <br/>
 
@@ -49,7 +49,7 @@ I basically needed to create a `.rst` (restructured text) file where I explained
 <br/>
 <br/>
 <center>
-<img src="{static}/images/wip.png" alt="JupyterLab" style="width:100%; ">
+<img src="{static}/images/11/wip.png" alt="JupyterLab" style="width:100%; ">
 </center>
 <br/>
 
@@ -59,7 +59,7 @@ When you do that, GitHub will automatically suggest the creation of a pull reque
 <br/>
 <br/>
 <center>
-<img src="{static}/images/pull-request.png" alt="JupyterLab" style="width:80%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<img src="{static}/images/11/pull-request.png" alt="JupyterLab" style="width:80%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 </center>
 <br/>
 
@@ -75,7 +75,7 @@ Here is a snippet of the page:
 <br/>
 <br/>
 <center>
-<img src="{static}/images/result-doc.png" alt="JupyterLab" style="width:80%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<img src="{static}/images/11/result-doc.png" alt="JupyterLab" style="width:80%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 </center>
 <br/>
 

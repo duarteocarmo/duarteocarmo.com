@@ -18,7 +18,7 @@ Now that you have the gist of it, what we actually do is that we look at the evo
  
 <br>
 <center>
-<img src="{static}/images/method.png" alt="JupyterLab" style="width:90%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<img src="{static}/images/13/method.png" alt="JupyterLab" style="width:90%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 </center>
 <br>
 

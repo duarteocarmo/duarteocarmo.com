@@ -1,10 +1,10 @@
 title: VIM for Python development (and not only)
 date: 06-05-2020 12:59
 description: My VIM setup for writing Python and other things.
-thumbnail: images/vim_01.png
+thumbnail: images/19/vim_01.png
 
 <center>
-<img src="{static}/images/vim_01.png" alt="Vim" style="">
+<img src="{static}/images/19/vim_01.png" alt="Vim" style="">
 </center>
 
 *__tl;dr__: This is a write up on how and why I use the famously hard-to-use VIM text editor.*
@@ -26,7 +26,7 @@ VIM is famously know to be very hard to learn, but insanely productive once you 
 
 <br>
 <center>
-<img src="{static}/images/vim_02.png" alt="VIM illustration" style="max-width:70%;">
+<img src="{static}/images/19/vim_02.png" alt="VIM illustration" style="max-width:70%;">
 </center>
 
 So why the hell would you even use it?
@@ -38,7 +38,7 @@ I was once the guy that had no clue how to quit VIM. "You need to do what to qui
 Today I own a VIM sweater. 
 <br>
 <center>
-<img src="{static}/images/vim_03.png" alt="VIM Sweater" style="">
+<img src="{static}/images/19/vim_03.png" alt="VIM Sweater" style="">
 </center>
 
 I didn't start using VIM because there was X number of reasons to switch to it. I simply wanted to play around with something other people talked about online, and I fell in love. Now that I HAVE switched to it, I can definitely recommend it for the following reasons:
@@ -50,7 +50,7 @@ I didn't start using VIM because there was X number of reasons to switch to it. 
 ## General VIM Setup
 
 <center>
-<img src="{static}/images/vim_04.png" alt="VIM Screenshot 1" style="">
+<img src="{static}/images/19/vim_04.png" alt="VIM Screenshot 1" style="">
 </center>
 
 My favorite color scheme is [badwolf](https://github.com/sjl/badwolf), mainly for its Python highlighting. The markdown also doesn't look bad. The `html` though, could definitely be better. 
