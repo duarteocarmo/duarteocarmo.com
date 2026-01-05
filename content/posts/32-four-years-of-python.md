@@ -3,7 +3,7 @@ date: 10-06-2021
 description: Lessons learned from fours years of writing Python
 status: published
 slug: four-years-python
-thumbnail: images/python-illustration.png
+thumbnail: images/32/python-illustration.png
 
 The other day I realized: I've been programming in Python for about 4 years now. I do get paid to write code, but for some reason still don't consider myself a _pro._ I did learn some valuable lessons though.
 
@@ -45,7 +45,7 @@ Dad's a doctor - and from a very young age I've seen him studying every weekend 
 
 We're not doctors, but [our craft](https://www.calnewport.com/blog/2011/08/11/the-career-craftsman-manifesto/) lies in creating reliable, fast, and scalable systems; in this case, by leveraging Python.
 
-![alt-text-2]({static}/images/python-books.png)
+![alt-text-2]({static}/images/32/python-books.png)
 
 Whether it's contributing to open-source, going to [PyCon](https://pycon.org/) or [PyData](https://pydata.org/), or answering questions in Stack Overflow - we should strive to get continuously better in our craft. Recently, [Practices of the Python Pro by Dane Hillard](https://www.manning.com/books/practices-of-the-python-pro), and The [Hacker's Guide to Scaling Python by Julien Danjou](https://scaling-python.com/) have been incredibly useful in further developing my knowledge of the language.
 

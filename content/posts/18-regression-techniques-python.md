@@ -36,7 +36,7 @@ After fitting this model, our MAE is sitting at 0.4. This might seem OK at first
 Here's a graph of some sample collaborations (in black), and some predictions (in red). 
 
 <center>
-<img src="{static}/images/linear-regression.png" alt="Linear Regression" style="">
+<img src="{static}/images/18/linear-regression.png" alt="Linear Regression" style="">
 </center>
 
 Yeah, that doesn't look great. Notice how the red dots are often very far away from the black line (our truth). 
@@ -61,7 +61,7 @@ Again, [full code here.](https://nbhub.duarteocarmo.com/notebook/07f45cd3#8.Neur
 This model resulted on an MAE of 0.20, we just reduced our error by **50%** (from an MAE of 0.4 to one of 0.2). Here's a graph of some predictions from our neural network regression: 
 
 <center>
-<img src="{static}/images/neural-network.png" alt="Neural Network" style="">
+<img src="{static}/images/18/neural-network.png" alt="Neural Network" style="">
 </center>
 
 
