@@ -1,13 +1,14 @@
 {% extends "base.html" %}
-{% block title %}{{ page.title }} - {{ SITENAME }} {% endblock %}
+{% block title %}Photos - {{ SITENAME }}{% endblock %}
 {% block content %}
+<h1 class="sr-only">Photos</h1>
 <div class="gallery">
-    {% for photo in articles | selectattr('category', '==', 'photos') |sort(attribute='date', reverse=True)%}
-    <div>
-        <a href="{{ photo.url }}">
-            <img loading="lazy" src="{{ photo.thumbnail_url }}" alt="Photo" class="round-image"/>
-        </a>
-    </div>
-    {% endfor %}
+  {% for photo in articles | selectattr('category', '==', 'photos') | sort(attribute='date', reverse=True) %}
+  <div>
+    <a href="{{ photo.url }}">
+      <img loading="lazy" src="{{ photo.thumbnail_url }}" alt="Photo">
+    </a>
+  </div>
+  {% endfor %}
 </div>
 {% endblock %}

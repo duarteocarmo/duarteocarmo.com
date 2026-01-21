@@ -5,6 +5,10 @@ SITE_DESCRIPTION = (
     "The personal website of Duarte O.Carmo. A technologist/consultant "
     "from Lisbon, now based in Copenhagen."
 )
+INTRO_TEXT = [
+    "Hi there — I'm <i><code>du-art</code></i> — a technologist, born and raised in sunny Lisbon, now based in Copenhagen. My work lies in the intersection of Machine Learning & AI, Data, Software, and People. I'm in love with Technology, and how it can improve people's lives.",
+    "In the past, I've worked in Consumer Electronics, Public Institutions, Big Three Management Consulting, and YC-backed startups. The common thread? Solving hard problems end-to-end.",
+]
 # TODO
 SITELOGO = "images/logo.png"
 PATH = "content"

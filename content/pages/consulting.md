@@ -18,7 +18,7 @@ Some problems I've helped solve in the past:
 
 Selected testimonials:
 
-- **YM**: *"[...] would not exist without him, and his brilliant work on [...] and countless other initiatives shows he is one of the best engineers I have ever had the privilege to work with."*
+> "... would not exist without him, and his brilliant work on _ and countless other initiatives shows he is one of the best engineers I have ever had the privilege to work with." - client, 2025
 
 
 If you wish to learn more about my work, feel free to [browse my resume](/cv.pdf) or [talks](/talks) page.

@@ -3,6 +3,7 @@ date: 15-01-2021
 description: Notes on using plain text accounting software.
 thumbnail: images/26/beanstalk-thumbnail.png
 status: published
+popular: true
 
 _In [part 1](/blog/hacking-on-my-finances.html) of this series, I talked about the setup that I'm using to manage my finances and investments. In this part, I'll talk about how I migrated my accounting setup to the Cloud, and what I have learned in the process._
 
