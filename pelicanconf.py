@@ -6,7 +6,7 @@ SITE_DESCRIPTION = (
     "from Lisbon, now based in Copenhagen."
 )
 INTRO_TEXT = [
-    "Hi there — I'm Duarte <code>du-art</code> — a technologist, born and raised in sunny Lisbon, now based in Copenhagen. I work at the intersection of ML/AI, Data, Software, and People.",
+    "Hi, I'm Duarte <i><code>du-art</code></i> — a technologist — born and raised in sunny Lisbon, now based in Copenhagen. I work at the intersection of ML/AI, Data, Software, and People.",
     "I've worked in Consumer Electronics, Public Institutions, Big Three Management Consulting, and YC-backed startups. The common thread? Solving hard problems end-to-end.",
 ]
 SITELOGO = "images/logo.png"

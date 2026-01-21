@@ -229,6 +229,8 @@ h1 {
   margin: 1rem 0;
 }
 
+
+
 .prose figcaption {
   font-size: 0.875rem;
   color: #525252;
@@ -572,5 +574,9 @@ footer {
 
   .subscribe-link:hover {
     color: #f5f5f5;
+  }
+
+  img.companies {
+    filter: invert(100%) brightness(2);
   }
 }
