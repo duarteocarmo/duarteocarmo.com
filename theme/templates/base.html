@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% include "header.html" %}
+  {% include "analytics.html" %}
+  {% include "structured_data.html" %}
+</head>
+<body>
+  <nav>
+    <a href="/">home</a>
+    <a href="/consulting">consulting</a>
+    <a href="/cv.pdf">cv</a>
+    <a href="/talks">talks</a>
+    <a href="/photos">photos</a>
+    <a href="https://duarteocarmo.substack.com/subscribe?ref=duarteocarmo.com">newsletter</a>
+  </nav>
 
-    <head>
-        <title>{% block title %}{% endblock %}</title>
-        {% include "header.html" %}
-        {% include "analytics.html" %}
-        {% include "structured_data.html" %}
-    </head>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
 
-    <body>
-        <header class="container nu ">
-            <h1 style=""><a class="sitename {% if article %}dimmed greyed-out{% endif %}" href="/">{{SITENAME }}</a></h1>
-            <div>
-                <a href="/" {% if output_file == 'index.html' %}class="highlighted underlined" {% endif %}>Blog</a> |
-                <a href="/about" {% if output_file == 'about.html' %}class="highlighted underlined"{% endif %}>About</a> |
-                <a href="/consulting" {% if output_file == 'consulting.html' %}class="highlighted underlined"{% endif %}>Consulting</a> |
-                <a target="_blank" href="/cv.pdf">Resume</a> |
-                <a href="/talks" {% if output_file == 'talks.html' %}class="highlighted underlined"{% endif %}>Talks</a> |
-                <a href="/photos" {% if output_file == 'photos.html' %}class="highlighted underlined"{% endif %}>Photos</a> |
-                <a href="https://duarteocarmo.substack.com/subscribe?ref=duarteocarmo.com">Newsletter</a>
-            </div>
-        </header>
-        <div class="container vertical-spacing no-top main-content">
-            {% block content %}{% endblock %}
-        </div>
-        <footer class="container nu no-top">
-            {% include "footer.html" %}
-        </footer>
-    </body>
+  <footer>
+    {% include "footer.html" %}
+  </footer>
+</body>
 </html>

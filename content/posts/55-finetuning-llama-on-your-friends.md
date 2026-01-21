@@ -4,6 +4,7 @@ description: How I fine-tuned a Llama 2 model on a group chat for a couple of do
 status: published
 slug: fine-tune-llama-2-telegram
 thumbnail: images/55/llama-small-cover.jpg
+popular: true
 
 Last Friday, [Kostas](https://orbit.dtu.dk/en/persons/konstantinos-kalogeropoulos) and I found ourselves discussing AI over beers again. He was telling me how he thinks everyone else is _decades_ away from OpenAI - and that they likely won't catch up soon. I disagreed. In _fact_, I think open source is quickly catching up, and getting [closer](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard) by the day. 
 
