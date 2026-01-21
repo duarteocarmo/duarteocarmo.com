@@ -6,10 +6,9 @@ SITE_DESCRIPTION = (
     "from Lisbon, now based in Copenhagen."
 )
 INTRO_TEXT = [
-    "Hi there — I'm <i><code>du-art</code></i> — a technologist, born and raised in sunny Lisbon, now based in Copenhagen. My work lies in the intersection of Machine Learning & AI, Data, Software, and People. I'm in love with Technology, and how it can improve people's lives.",
-    "In the past, I've worked in Consumer Electronics, Public Institutions, Big Three Management Consulting, and YC-backed startups. The common thread? Solving hard problems end-to-end.",
+    "Hi there — I'm Duarte <code>du-art</code> — a technologist, born and raised in sunny Lisbon, now based in Copenhagen. I work at the intersection of ML/AI, Data, Software, and People.",
+    "I've worked in Consumer Electronics, Public Institutions, Big Three Management Consulting, and YC-backed startups. The common thread? Solving hard problems end-to-end.",
 ]
-# TODO
 SITELOGO = "images/logo.png"
 PATH = "content"
 TIMEZONE = "Europe/Copenhagen"
