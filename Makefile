@@ -7,3 +7,7 @@ help: # Show help for each of the Makefile recipes.
 .PHONY: run
 run: # Run website
 	pelican -s pelicanconf.py -t theme -o output -l -r
+
+.PHONY: lint
+lint: # Lint markdown files
+	markdownlint-cli2 "content/**/*.md"

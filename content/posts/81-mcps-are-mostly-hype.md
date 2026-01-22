@@ -3,6 +3,7 @@ description: You don't really need to install that vulnerable MCP server. Solve 
 date: 6th of June 2025
 status: published
 thumbnail: images/81/cover.png
+popular: true
 
 
 ..but they can also be a lot of fun. If you work in tech, I'd say there's a 98% chance you've heard about it. MCPs are the future of agents, MCPs will be everywhere, MCPs are the future. The Model Context Protocol, first introduced by Anthropic is blowing up. For both [good](https://modelcontextprotocol.io/introduction#why-mcp%3F) and [bad](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/#mixing-tools-with-untrusted-instructions-is-inherently-dangerous) reasons. 

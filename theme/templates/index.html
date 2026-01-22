@@ -1,14 +1,33 @@
 {% extends "base.html" %}
 {% block title %}{{ SITENAME }}{% endblock %}
 {% block content %}
-<div></div>
-<div class="article-list nu">
-  {% for article in articles | selectattr('category', '==', 'blog') %}
-  <div class="article-content">
-    <a href="{{ article.url }}">{{ article.title }}</a>
-    <hr />
-  </div>
-  <time class="greyed-out">{{ article.date | strftime("%d-%m-%Y") }}</time>
-  {% else %} No posts yet! {% endfor %}
-</div>
+    <h1>Duarte O.Carmo</h1>
+    {% for paragraph in INTRO_TEXT %}
+    <p class="intro">{{ paragraph }}</p>
+    {% endfor %}
+    <div class="posts">
+        {% for article in articles | selectattr('category', '==', 'blog') %}
+            <a class="post-link" href="{{ article.url }}">
+                <div class="post-content">
+                    <p class="post-date">{{ article.date | strftime("%d-%m-%Y") }}</p>
+                    <p class="post-title">
+                        {{ article.title }}
+                        {% if article.popular %}
+                            <svg class="popular-icon"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 width="14"
+                                 height="14"
+                                 fill="currentColor"
+                                 viewBox="0 0 256 256">
+                                <path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z">
+                                </path>
+                            </svg>
+                        {% endif %}
+                    </p>
+                </div>
+            </a>
+        {% else %}
+            <p>No posts yet!</p>
+        {% endfor %}
+    </div>
 {% endblock %}

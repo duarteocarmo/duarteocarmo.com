@@ -4,6 +4,7 @@ description: Practical tips for building better Retrieval-Augmented Generation (
 status: published
 slug: rag-tricks-from-the-trenches
 thumbnail: images/74/cover.png
+popular: true
 
 <img src="{static}/images/74/main.jpg" alt="Men fishing" style="max-width:100%;border-radius: 2px;">
 
