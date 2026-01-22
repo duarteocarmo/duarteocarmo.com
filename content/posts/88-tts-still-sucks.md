@@ -3,6 +3,7 @@ description: Some updates to my rss to podcast pipeline and the quest for the be
 date: 10th of November 2025
 status: published
 audio: true
+popular: true
 
 or at least the open versions of it. I have this very stupid rule. A couple of years ago I decided to [turn this blog into a podcast](https://duarteocarmo.com/blog/you-can-now-listen-to-this-blog). At the time, I decided to make up a stupid rule: whatever model I use to clone my voice and generate article transcripts needs to be an open model.
 

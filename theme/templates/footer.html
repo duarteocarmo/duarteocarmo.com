@@ -1,92 +1,32 @@
-<center>
-  <form
-    action="https://www.google.com/search"
-    method="get"
-    target="_blank"
-    style="
-      margin-bottom: 1em;
-      display: inline-flex;
-      gap: 4px;
-      align-items: center;
-    "
-    onsubmit="
-          document.getElementById('q-field').value =
-            'site:duarteocarmo.com -site:*.duarteocarmo.com ' +
-            document.getElementById('search-input').value;
-      "
-  >
-    <input
-      type="text"
-      id="search-input"
-      placeholder="Search"
-      style="
-        padding: 6px 10px;
-        font-size: 0.9rem;
-        border: 1px solid var(--secondary);
-        border-radius: 4px;
-        background-color: var(--background);
-        color: var(--primary);
-        font-family: var(--base-font);
-        width: 200px;
-      "
-    />
-    <input type="hidden" id="q-field" name="q" />
-    <button
-      type="submit"
-      style="
-        padding: 6px 12px;
-        font-size: 0.9rem;
-        border: 1px solid var(--secondary);
-        border-radius: 4px;
-        background-color: var(--background);
-        color: var(--primary);
-        font-family: var(--base-font);
-        cursor: pointer;
-      "
-    >
-      Search
-    </button>
-  </form>
-  <p>
-    <a
-      rel="noopener"
-      target="_blank"
-      href="mailto:me@duarteocarmo.com"
-      aria-label="email-link"
-      >Email</a
-    >
-    |
-    <a
-      rel="noopener"
-      target="_blank"
-      href="https://github.com/duarteocarmo"
-      aria-label="github-link"
-      >GitHub</a
-    >
-    <!-- | -->
-    <!-- <a -->
-    <!--   rel="noopener" -->
-    <!--   target="_blank" -->
-    <!--   href="https://bsky.app/profile/duarteocarmo.com" -->
-    <!--   aria-label="bluesky-link" -->
-    <!--   >Bluesky</a -->
-    <!-- > -->
-    |
-    <a
-      rel="noopener"
-      target="_blank"
-      href="https://www.linkedin.com/in/duarteocarmo"
-      aria-label="linkedin-link"
-      >LinkedIn</a
-    >
-    |
-    <a
-      rel="noopener"
-      target="_blank"
-      href="https://twitter.com/duarteocarmo"
-      aria-label="twitter-link"
-      >X</a
-    >
-    | <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">RSS</a>
-  </p>
-</center>
+<ul class="footer-links">
+  <li>
+    <a class="footer-link" href="mailto:me@duarteocarmo.com" target="_blank" rel="noopener noreferrer">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z" fill="currentColor"/></svg>
+      <p>email</p>
+    </a>
+  </li>
+  <li>
+    <a class="footer-link" href="https://github.com/duarteocarmo" target="_blank" rel="noopener noreferrer">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z" fill="currentColor"/></svg>
+      <p>github</p>
+    </a>
+  </li>
+  <li>
+    <a class="footer-link" href="https://linkedin.com/in/duarteocarmo" target="_blank" rel="noopener noreferrer">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z" fill="currentColor"/></svg>
+      <p>linkedin</p>
+    </a>
+  </li>
+  <li>
+    <a class="footer-link" href="https://x.com/duarteocarmo" target="_blank" rel="noopener noreferrer">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z" fill="currentColor"/></svg>
+      <p>x</p>
+    </a>
+  </li>
+  <li>
+    <a class="footer-link" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" target="_blank" rel="noopener noreferrer">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z" fill="currentColor"/></svg>
+      <p>rss</p>
+    </a>
+  </li>
+</ul>

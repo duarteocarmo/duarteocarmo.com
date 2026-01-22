@@ -3,6 +3,7 @@ description: Evals are a buzzword. How I used evals to systematically improve my
 date: 4th of May 2025
 status: published
 thumbnail: images/80/cover.png
+popular: true
 
 Last month, I built an app called [Taralli]({filename}/posts/79-Taralli-simple-food-tracking.md). It was fun to close the loop and get it out there. Still - there was an elephant in the room:
 

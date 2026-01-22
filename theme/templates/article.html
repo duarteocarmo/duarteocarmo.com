@@ -1,47 +1,55 @@
 {% extends "base.html" %}
-{% block title %}
-    {{ article.title }} - {{ SITENAME
-    }}
-{% endblock %}
+{% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
 {% block content %}
     {% if article.category == 'blog' %}
-        <h1 class="article-title"><a href="{{ SITEURL  }}/{{ article.url }}">{{ article.title }}</a></h1>
-        {% if 'mp3_link' in article.metadata and (not 'audio' in article.metadata or article.audio != 'false') %}
-            <div class="transcript">
-                <details>
-                    <summary>
-                        <span class="greyed-out listen">[Listen]</span>
-                    </summary>
-                    <audio controls style="width: 100%; display: block" preload="metadata">
+        <article>
+            <h1 class="title">{{ article.title }}</h1>
+            <div class="meta">
+                <p>{{ article.date | strftime("%B %-d, %Y") }}</p>
+                {% if 'mp3_link' in article.metadata and (not 'audio' in article.metadata or article.audio != 'false') %}
+                    <button class="listen-btn"
+                            onclick="this.parentElement.nextElementSibling.classList.toggle('open')">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="14"
+                             height="14"
+                             fill="currentColor"
+                             viewBox="0 0 256 256">
+                            <path d="M212.92,17.69a8,8,0,0,0-6.86-1.45l-128,32A8,8,0,0,0,72,56V166.08A36,36,0,1,0,88,196V110.25l112-28v51.83A36,36,0,1,0,216,164V24A8,8,0,0,0,212.92,17.69ZM52,216a20,20,0,1,1,20-20A20,20,0,0,1,52,216ZM88,93.75V62.25l112-28v31.5ZM180,184a20,20,0,1,1,20-20A20,20,0,0,1,180,184Z">
+                            </path>
+                        </svg>
+                    </button>
+                {% endif %}
+            </div>
+            {% if 'mp3_link' in article.metadata and (not 'audio' in article.metadata or article.audio != 'false') %}
+                <div class="audio-player">
+                    <audio controls preload="metadata">
                         <source src="{{ article.metadata.mp3_link }}" type="audio/mpeg">
                     </audio>
-                </details>
+                </div>
+            {% endif %}
+            <div class="prose">{{ article.content }}</div>
+            <div class="meta" style="margin-top: 2rem; margin-bottom: 0;">
+                <p></p>
+                <a class="subscribe-link"
+                   href="https://duarteocarmo.substack.com/subscribe?ref=duarteocarmo.com"
+                   target="_blank">
+                    <svg width="12"
+                         height="12"
+                         viewBox="0 0 12 12"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z" fill="currentColor" />
+                    </svg>
+                    <span>subscribe via email</span>
+                </a>
             </div>
-        {% endif %}
-        <div class="article-body">
-        {{ article.content }}
-        </div>
-        <br>
-        <div style="display: flex;
-                    justify-content: space-between;
-                    align-items: center">
-            <i class="greyed-out">{{ article.date | strftime("%B %-d, %Y") }}</i>
-            <div>
-                <a href="https://duarteocarmo.substack.com/subscribe?ref=duarteocarmo.com">Subscribe via Email</a>
-            </div>
-        </div>
+        </article>
     {% elif article.category == 'photos' %}
-        <center>
-            <img style="max-height: 75vh" src="{{ article.photo_url }}" class="round-image" alt="Photo" />
-        </center>
-        <p>{{ article.content }}</p>
-        {% if article.location != 'None' %}
-            <p>
-                <i>Taken in {{ article.location }}</i>
-            </p>
-        {% endif %}
-        <p>
-            <i>{{ article.date | strftime("%B %-d, %Y") }}</i>
-        </p>
+        <div class="photo-single">
+            <img src="{{ article.photo_url }}" alt="Photo">
+            <div class="photo-description">{{ article.content }}</div>
+            {% if article.location != 'None' %}<p class="photo-meta">Taken in {{ article.location }}</p>{% endif %}
+            <p class="photo-meta">{{ article.date | strftime("%B %-d, %Y") }}</p>
+        </div>
     {% endif %}
 {% endblock %}

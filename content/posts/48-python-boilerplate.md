@@ -4,6 +4,7 @@ description: A very opinionated set of tools and practices for my Python project
 status: published
 slug: opinionated-python-boilerplate
 thumbnail: images/32/python-illustration.png
+popular: true
 
 
 There's nothing quite like starting a new project. A greenfield, _filled_ with possibilities. It's a privilege many don't come across. A lot of us, get thrown into projects with a lot of legacy code. But sometimes, we start from scratch.

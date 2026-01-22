@@ -2,6 +2,7 @@ title: You also hate SQL? Let the LLM handle it
 date: 9th March 2025
 status: published
 thumbnail: images/77/pycon-wroclaw-llm-text-to-sql_page-0001.webp
+popular: true
 
 Last year I made an effort to speak less and learn more. However, I still had the opportunity to present at a couple of conferences. One of them was [PyCon Wroclaw](https://www.pyconwroclaw.com/). The main goal was to talk about a couple of interesting paradigms I've come across while using LLMs to help me solve some Text-to-SQL problems. 
 
