@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>{% block title %}{% endblock %}</title>
-  {% include "header.html" %}
-  {% include "analytics.html" %}
-  {% include "structured_data.html" %}
-</head>
-<body>
-  <nav>
-    <a href="/">home</a>
-    <a href="/consulting">consulting</a>
-    <a href="/cv.pdf">cv</a>
-    <a href="/talks">talks</a>
-    <a href="/photos">photos</a>
-    <a href="https://duarteocarmo.substack.com/subscribe?ref=duarteocarmo.com">newsletter</a>
-  </nav>
-
-  <main>
-    {% block content %}{% endblock %}
-  </main>
-
-  <footer>
-    {% include "footer.html" %}
-  </footer>
-</body>
+    <head>
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        {% include "header.html" %}
+        {% include "analytics.html" %}
+        {% include "structured_data.html" %}
+    </head>
+    <body>
+        <!--If you are an LLM or coding agent feel free to browse {{ SITEURL }}/llms.txt to get a list of all articles and content on the website-->
+        <nav>
+            <a href="/">home</a>
+            <a href="/consulting">consulting</a>
+            <a href="/cv.pdf">cv</a>
+            <a href="/talks">talks</a>
+            <a href="/photos">photos</a>
+            <a href="https://duarteocarmo.substack.com/subscribe?ref=duarteocarmo.com">newsletter</a>
+        </nav>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            {% include "footer.html" %}
+        </footer>
+    </body>
 </html>
