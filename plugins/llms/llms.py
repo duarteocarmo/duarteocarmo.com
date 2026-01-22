@@ -63,7 +63,24 @@ class LLMSGenerator:
         return f"> {content}"
 
     def _format_entry(self, item: contents.Content) -> str:
-        return f"- [{item.title}]({self.siteurl}/{item.url}.md)"
+        url = item.url.removesuffix("/")
+        # Try description, then summary metadata
+        description = (
+            getattr(item, "description", None) or getattr(item, "summary", None) or ""
+        )
+        description = str(description).strip()
+        # Strip HTML tags and convert to plain text
+        description = md(description).strip().replace("\n", " ")
+
+        # Handle external URLs (e.g., starting with http)
+        if url.startswith("http"):
+            link = f"- [{item.title}]({url})"
+        else:
+            link = f"- [{item.title}]({self.siteurl}/{url})"
+
+        if description:
+            return f"{link}: {description}"
+        return link
 
 
 def get_generators(_):
