@@ -20,9 +20,7 @@ Browse my [resume](/cv.pdf) or [talks](/talks) to learn more. Ready to chat? [Em
 <img  src="{static}/images/pages/companies.webp" alt="companies" class="companies">
 </center>
 
-
 ## Testimonials
 
 > "Our platform would not exist without him — one of the best engineers I've ever had the privilege to work with."
 > — Y.M, Pharma Client, 2025
-
