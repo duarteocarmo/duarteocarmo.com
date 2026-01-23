@@ -18,6 +18,8 @@ body {
   max-width: 36rem;
   margin: 0 auto;
   padding: 2rem 1rem;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
 }
 
 a {
@@ -29,6 +31,7 @@ a {
 /* Navigation */
 nav {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 4rem;
   margin-left: -8px;
   letter-spacing: -0.025em;
