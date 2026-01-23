@@ -126,7 +126,8 @@ extend-select = [
   "TD",  # Be diligent with TODO comments
   "NPY", # Some numpy-specific things
 ]
-# Note: Shamelessly stolen from reddit user
+# Note: Shamelessly stolen from reddit user TheBB
+# https://www.reddit.com/r/Python/comments/1kttfst/ruff_users_what_rules_are_using_and_what_are_you/
 ```
 
 It's a nice, programmatic, and deterministic way of enforcing rules without having to write each one into an `AGENTS.md` and hope the agent follows them. With that, every time the agent writes some code, it runs `make format` and then `make check`. If anything fails, it fixes it.
