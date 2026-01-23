@@ -6,6 +6,7 @@ help: # Show help for each of the Makefile recipes.
 
 .PHONY: run
 run: # Run website
+	rm -rf output
 	pelican -s pelicanconf.py -t theme -o output -l -r
 
 .PHONY: lint
