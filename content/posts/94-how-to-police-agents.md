@@ -5,10 +5,7 @@ status: published
 audio: true
 thumbnail: images/94/cover.png
 
-
-
 <img src="{static}/images/94/police-agents.jpg" alt="Monahan the Police Chief" style="max-width:100%;border-radius: 2px;">
-
 
 Let's face it. It *might just be* the year of agents. If you work in tech and your workflow hasn't changed in the last year or so - you're probably doing something wrong. For those of you who have. It's fun. We're building more than ever before!
 
@@ -28,21 +25,26 @@ Here are some highlights from my `AGENTS.md`
 
 ```markdown
 ...
+
 ## Documentation and plans
+
 - If docs were touched, make sure you update them with latest changes. You can run some quick ripgreps with md files to confirm if needed.
 - For docs: Be concise and durable - point to source code for specifics rather than hardcoding values that will get out of sync
 - Every time the user starts repeating something very specific about a project, consider adding a rule to the AGENTS.md or CLAUDE.md of that project if one exists.
 ...
 
 ## Languages
+
 - I understand portuguese, french, italian, spanish, and english. Everything else, you should show the original AND the translation
 - Outputing in any other language is useless, and show come with a corresponding translation
 
 ## Principles
+
 - Every line of code is a liability - we should strive to make our code simple and concise
-- I prefer my functions to be small in interface but long in functionality 
+- I prefer my functions to be small in interface but long in functionality
 - We don't MOCK in tests. We use real data and real APIs. I absolutely hate mocking
 ...
+
 ```
 
 It's a series of *very* specific rules I want my agents to respect. You might like a different set of rules — and that's fine — I don't expect us to like the same things. But I don't believe you don't have preferences. So make sure to create one as well.
@@ -58,6 +60,7 @@ Your project's `AGENTS.md` defines the rules of the game. That's where you infor
 ```markdown
 ... Global AGENTS.md
 - Every time the user starts repeating something very specific about a project, consider adding a rule to the AGENTS.md or CLAUDE.md of that project if one exists.
+
 ```
 
 Here's an example snippet of a real world project `AGENTS.md`. This one is for a Machine Learning pipeline built using AWS CDK:
@@ -74,11 +77,12 @@ Here's an example snippet of a real world project `AGENTS.md`. This one is for a
 - Maintain consistency with the style used throughout the file
 - Add comments when we are doing something non-obvious or complex, not to separate every line of code
 ...
+
 ```
 
 *Note: You might also consider using something like [Skills](https://code.claude.com/docs/en/skills) to solve this level of policing. Some people prefer them. I use a mix.*
 
-This ensures that whoever is building here, will generally follow the same guidelines. And these rules can go a long way to making your life easier — but they still don't *enforce* anything — for that, we need **the police**.  
+This ensures that whoever is building here, will generally follow the same guidelines. And these rules can go a long way to making your life easier — but they still don't *enforce* anything — for that, we need **the police**.
 
 ## The police
 
@@ -102,6 +106,7 @@ check: # Run linting and check
  uv run ruff check .
  uv run pyright
  uv run deptry .
+
 ```
 
 We are so annoying, that we enforce more rules that we would enforce to ourselves. So, for example, for ruff, we extend the rules to avoid our agent dropping a sneaky TODO comment instead of implementing something that should be there.
@@ -126,8 +131,11 @@ extend-select = [
   "TD",  # Be diligent with TODO comments
   "NPY", # Some numpy-specific things
 ]
+
 # Note: Shamelessly stolen from reddit user TheBB
+
 # https://www.reddit.com/r/Python/comments/1kttfst/ruff_users_what_rules_are_using_and_what_are_you/
+
 ```
 
 It's a nice, programmatic, and deterministic way of enforcing rules without having to write each one into an `AGENTS.md` and hope the agent follows them. With that, every time the agent writes some code, it runs `make format` and then `make check`. If anything fails, it fixes it.

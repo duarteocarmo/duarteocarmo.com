@@ -24,9 +24,7 @@ A **40.9 score in GPQA** - what the _hell_ does that even mean?
 
 [Code and prompts](https://gist.github.com/duarteocarmo/3eeb2200af74880e034d45e63e30aafe)
 
-
 ## A quick intro to GPQA
-
 
 GPQA stands for "Graduate-Level Google-Proof Q\&A Benchmark." It is a [dataset](https://huggingface.co/datasets/Idavidrein/gpqa) and [methodology](https://github.com/idavidrein/gpqa) introduced in a [paper](https://arxiv.org/pdf/2311.12022) by researchers from NYU, Cohere, and Anthropic. In essence, GPQA focuses on a subset of exceptionally challenging questions from the fields of physics, chemistry, and biology.
 
@@ -48,8 +46,8 @@ A) 2
 B) 16
 C) 8
 D) 4
-```
 
+```
 
 For context, a 'non-expert' human-with unlimited time and internet access-achieves roughly 30.4% accuracy on the main set.
 
@@ -69,9 +67,11 @@ Choices:
 (D) 1.43𝑥10- 5; 1.29𝑥10- 4; 4.58𝑥10- 3
 
 Format your response as follows: "The correct answer is (insert answer here)".
+
 ```
 
 Zero-shot chain-of-thought prompt:
+
 ```text
 What is the correct answer to this question: What is the solubility of the stochiometric tricalcium
 phosphate in a solution with the pH level of a) pH = 9, b) pH = 7 and c) pH = 5 (25 °C)?
@@ -87,6 +87,7 @@ Let's think step by step:
 
 Based on the above, what is the single, most likely answer choice? Answer in the format "The
 correct answer is (insert answer here)".
+
 ```
 
 A curious reader might notice that the 'zero-shot' chain-of-thought (COT) prompt actually involves two calls to the model: the first to generate a response and the second to finalize the answer. This approach is likely **not** representative of how these models are typically used in real-world scenarios-but we'll explore that further in a moment.
@@ -99,7 +100,6 @@ If you've explored LLM evaluations, you're likely familiar with the [Open LLM Le
 
 Here's a snapshot of the top-performing models under 8 billion parameters, sorted by GPQA score:
 
-
 <img src="{static}/images/75/86a23c7296cb79b43c2eff265f26cf56.png" alt="Open LLM leaderboard" style="max-width:100%;border-radius: 2px;">
 
 You'll notice there are some familiar names in there like Phi, or Qwen 2.5 7B. Of course, models from OpenAI, Google or Claude are off this list, since it relates to Open models - which those aren't.
@@ -110,7 +110,6 @@ You'll notice there are some familiar names in there like Phi, or Qwen 2.5 7B. O
 2. Another intesting tid-bit is how they run these benchmarks: '_...using the [Eleuther AI Language Model Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness) , a unified framework to test generative language models..._'
 
 Great - so now we have at least _some_ clue of how to reproduce this.
-
 
 ## Testing EleutherAI's LM Evaluation Harness
 
@@ -126,6 +125,7 @@ We can see that they support the following [tasks](https://github.com/EleutherAI
 * `gpqa_{main, diamond, extended}_generative_n_shot`
 * `gpqa_{main, diamond, extended}_cot_zeroshot`
 * `gpqa_{main, diamond, extended}_cot_n_shot`
+
 ```
 
 We can also see the [config and prompt](https://github.com/EleutherAI/lm-evaluation-harness/blob/main/lm_eval/tasks/gpqa/zeroshot/_gpqa_zeroshot_yaml#L9) they use for the `gpqa_main_zeroshot` task which is the one we're interested in. The attentive reader might notice already that [the prompt](https://github.com/EleutherAI/lm-evaluation-harness/blob/bb098f13b05e361f01a5afe7b612779ce362b3f2/lm_eval/tasks/gpqa/zeroshot/_gpqa_zeroshot_yaml#L9) that is being used here is quite different from the one from the original paper. But let's ignore that for now.
@@ -133,6 +133,7 @@ We can also see the [config and prompt](https://github.com/EleutherAI/lm-evaluat
 Here's how I tried to run the evaluation:
 
 ```
+
 lm-eval --model openai-chat-completions \
 		--model_args model=gpt-4o-mini,num_concurrent=10,max_retries=3 \
 		--tasks gpqa_main_zeroshot \
@@ -141,12 +142,14 @@ lm-eval --model openai-chat-completions \
 		--log_samples \
 		--wandb_args project=lmeval \
 		--use_cache model_cache
+
 ```
 
 This errors out:
 
 ```text
 NotImplementedError: Loglikelihood (and therefore `multiple_choice`-type tasks) is not supported for chat completions as OpenAI does not provide prompt logprobs. See https://github.com/EleutherAI/lm-evaluation-harness/issues/942#issuecomment-1777836312 or https://github.com/EleutherAI/lm-evaluation-harness/issues/1196 for more background on this limitation.
+
 ```
 
 Oh wait? What's happening here? Well - most of these multiple-choice benchmarks use loglikelihood to understand what the choice is with the highest probability. This is a bit weird - since it's not the methodology outlined in the original GPQA paper. However, seems to be a deliberate choice to maintain the framework consistent.[ref]See [this](https://github.com/EleutherAI/lm-evaluation-harness/issues/942#issuecomment-1777836312) and [this](https://github.com/EleutherAI/lm-evaluation-harness/issues/1196).[/ref]
@@ -154,6 +157,7 @@ Oh wait? What's happening here? Well - most of these multiple-choice benchmarks 
 However, there's another benchmark we could run and appears to work - the zero-shot chain-of-thought one.
 
 ```
+
 lm-eval --model openai-chat-completions \
 		--model_args model=gpt-4o-mini,num_concurrent=10,max_retries=3 \
 		--tasks gpqa_main_cot_zeroshot \ #<- cot version
@@ -162,20 +166,23 @@ lm-eval --model openai-chat-completions \
 		--log_samples \
 		--wandb_args project=lmeval \
 		--use_cache model_cache
+
 ```
+
 This gives us:
 
 ```
+
 |        Tasks         |Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
 |----------------------|------:|----------------|-----:|-----------|---|-----:|---|-----:|
 |gpqa_main_cot_zeroshot|      1|flexible-extract|     0|exact_match|↑  |0.1205|±  |0.0154|
 |                      |       |strict-match    |     0|exact_match|↑  |0.0000|±  |0.0000|
+
 ```
 
 Now, I haven't dug too deeply into these results for the COT version, but they seem very low since they rely on the `flexible-extract` metric, which _could_ perform poorly if it's regex-based. One thing we notice is that the [prompt](https://github.com/EleutherAI/lm-evaluation-harness/blob/main/lm_eval/tasks/gpqa/cot_zeroshot/_gpqa_cot_zeroshot_yaml#L9) used here is closer to the original one from the paper. However, it lacks the two-model-call approach outlined there.
 
 At this point, I was starting to lose faith in this entire evaluation system. What's the most straightforward way to achieve an interesting score on this benchmark? Something that can work for any model, whether open or closed?
-
 
 ## Running GPQA zero-shot with DsPy
 
@@ -185,12 +192,15 @@ We start by getting the data in:
 
 ```python
 import polars as pl
+
 # Load the dataset from Hugging Face and prepare it
+
 df = (
     pl.scan_csv("hf://datasets/Idavidrein/gpqa/*_main.csv")
     .collect()
     .sort("Question")
 )
+
 ```
 
 The next step is to configure our llm and the Signatures (think data-model) we'll use:
@@ -206,6 +216,7 @@ class Answer(dspy.Signature):
     answer: str = dspy.OutputField()
 
 generate_answer = dspy.Predict(Answer)
+
 ```
 
 Here's an example of how to use it:
@@ -214,7 +225,9 @@ Here's an example of how to use it:
 answer = generate_answer(
     question="What's the capital of Le Marche?", choices=["Ancona", "Senigallia"]
 )
+
 # prints Prediction(answer='Ancona')
+
 ```
 
 Let's juggle our data into a dataset:
@@ -261,6 +274,7 @@ evaluator = Evaluate(
 )
 accuracy, predictions, scores = evaluator(generate_answer, metric=validate_response)
 print(f"Accuracy: {accuracy}") # prints 33.48
+
 ```
 
 Great, so a single run for GPQA gives us a 33.48% accuracy. Still a bit far off the 40.2% that is [advertised by OpenAI](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) - but again - there's apparently no way we can effectively verify that.
@@ -275,6 +289,7 @@ The first one, is to try a Chain-of-thought prompt (COT) to understand how that 
 cot = dspy.ChainOfThought("question, choices -> answer")
 accuracy, predictions, scores = evaluator(cot, metric=validate_response)
 print(f"Accuracy: {accuracy}") # prints 35.71
+
 ```
 
 That's a ~7% increase on our GPQA score. Probably just noise.
@@ -300,12 +315,13 @@ tp = dspy.MIPROv2(metric=validate_response, auto="light", num_threads=10) # opti
 optimized_cot = tp.compile(cot, trainset=extended_set) # run optimization
 
 # evaluate optimized prompt
+
 accuracy, predictions, scores = evaluator(optimized_cot, metric=validate_response)
 print(f"Accuracy: {accuracy}") # prints 38.39
+
 ```
 
 This produces an [optimized prompt](https://gist.github.com/duarteocarmo/3eeb2200af74880e034d45e63e30aafe#file-optimized_cot-json) with some few example questions. When evaluating, we get a further increased score of another 7.5%. As you can see - the results of these benchmark are HIGHLY prompt dependent. It seems to be possible to even optimize a much smaller model to be able to perform well on this 'benchmark'.
-
 
 ## Final thoughts
 

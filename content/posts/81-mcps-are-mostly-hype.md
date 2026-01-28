@@ -1,31 +1,29 @@
 title: MCPs are mostly hype
-description: You don't really need to install that vulnerable MCP server. Solve your problem with 200 lines of Python and UV. 
+description: You don't really need to install that vulnerable MCP server. Solve your problem with 200 lines of Python and UV.
 date: 6th of June 2025
 status: published
 thumbnail: images/81/cover.png
 popular: true
 
+..but they can also be a lot of fun. If you work in tech, I'd say there's a 98% chance you've heard about it. MCPs are the future of agents, MCPs will be everywhere, MCPs are the future. The Model Context Protocol, first introduced by Anthropic is blowing up. For both [good](https://modelcontextprotocol.io/introduction#why-mcp%3F) and [bad](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/#mixing-tools-with-untrusted-instructions-is-inherently-dangerous) reasons.
 
-..but they can also be a lot of fun. If you work in tech, I'd say there's a 98% chance you've heard about it. MCPs are the future of agents, MCPs will be everywhere, MCPs are the future. The Model Context Protocol, first introduced by Anthropic is blowing up. For both [good](https://modelcontextprotocol.io/introduction#why-mcp%3F) and [bad](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/#mixing-tools-with-untrusted-instructions-is-inherently-dangerous) reasons. 
+For me, as always, I refrain from judgement before taking anything for a spin. At the end of the day, MCP is a standardized way of giving access to tools to an LLM. Those tools come in the form of function calling. So nothing groundbreaking.
 
-For me, as always, I refrain from judgement before taking anything for a spin. At the end of the day, MCP is a standardized way of giving access to tools to an LLM. Those tools come in the form of function calling. So nothing groundbreaking. 
+I've tested a few MCP servers. Adding the Gitlab MCP server to Zen, adding the Polars docs MCP to Claude, adding a TickTick (my todo list) MCP server to Bolt. They all worked *sometimes*. And in computers, when something works sometimes, well - I prefer using something else.
 
-I've tested a few MCP servers. Adding the Gitlab MCP server to Zen, adding the Polars docs MCP to Claude, adding a TickTick (my todo list) MCP server to Bolt. They all worked *sometimes*. And in computers, when something works sometimes, well - I prefer using something else. 
-
-As the training for Oslo ramps up, I've once again felt the need to give an LLM access to "the outside world". 
+As the training for Oslo ramps up, I've once again felt the need to give an LLM access to "the outside world".
 
 ### Accessing my training textbooks
 
 For Oslo (and for the past 3 years) - I've been following Phitzinger's training methodology. In short, I believe mostly in volume. I have the pdf version of the book, it's great. Whenever I dropped the book into any of the LLM/Chat apps, I almost always got the same "context is full" or "too many tokens within X mins" message.
 
-I don't want the LLM to access the whole book. I want it to access some parts of the book. If your mind jumps straight to RAG, let me stop you right there. It's not RAG, it's search. We don't want a whole vector database. We don't want a whole retrieval system. We want keyword search, over my book. That's it. 
-
+I don't want the LLM to access the whole book. I want it to access some parts of the book. If your mind jumps straight to RAG, let me stop you right there. It's not RAG, it's search. We don't want a whole vector database. We don't want a whole retrieval system. We want keyword search, over my book. That's it.
 
 ```python
 def prep_book() -> tuple[BM25Okapi, list[str]]:
     script_dir = Path(__file__).resolve().parent
     # uvx --from "markitdown[pdf]" markitdown marathon.pdf > marathon.md (make it a md file)
-    book = script_dir / "marathon.md" 
+    book = script_dir / "marathon.md"
     with open(book, "r", encoding="utf-8") as file:
         content = file.read()
 
@@ -64,12 +62,12 @@ def search_marathon_training_book(
     {results_as_bullets}
     </search_marathon_training_book>
     """.strip()
-```
 
+```
 
 ### Accessing my training plan
 
-Now that we have a function to access my training "philosophy", we also need the LLM to be able to access my training plan. I'm a simple guy, [I like my training plan in my calendar](https://defy.org/hacks/calendarhack). It's one less tool I need to use. Well - we can also give the LLM access to my calendar's `ics` file. We can just call the `get_training_program_events` and access the training events within a time range. Simple, effective. 
+Now that we have a function to access my training "philosophy", we also need the LLM to be able to access my training plan. I'm a simple guy, [I like my training plan in my calendar](https://defy.org/hacks/calendarhack). It's one less tool I need to use. Well - we can also give the LLM access to my calendar's `ics` file. We can just call the `get_training_program_events` and access the training events within a time range. Simple, effective.
 
 ```python
 def get_training_program_events(start_date: str, end_date: str) -> str:
@@ -127,11 +125,12 @@ def get_training_program_events(start_date: str, end_date: str) -> str:
 </event>""")
 
     return "<events>\n" + "\n".join(events_xml) + "\n</events>"
+
 ```
 
 ### Checking my runs
 
-The LLM also needs to be able to compare the planned training sessions to the actual runs I've made (you know - to keep me in check, or give me feedback). The easiest (NOT the safest) way to do this is to use the `garminconnect` library. We can also wrap that up in a simple function: 
+The LLM also needs to be able to compare the planned training sessions to the actual runs I've made (you know - to keep me in check, or give me feedback). The easiest (NOT the safest) way to do this is to use the `garminconnect` library. We can also wrap that up in a simple function:
 
 ```python
 def fetch_athlete_runs(lookback_days: int) -> str:
@@ -171,24 +170,33 @@ def fetch_athlete_runs(lookback_days: int) -> str:
 
     output.append("</Runs>")
     return "\n".join(output)
-```
 
+```
 
 ### Putting it all together
 
-Our goal would be to give an LLM access to all these tools at the same time, and let it analyze and give me feedback on my training. MCP is supposed to solve just that - putting all your tools in a single place. This is the moment where we would start developing our complicated 12-factor MCP architecture. But instead of doing that, why don't we just use uv scripts? 
+Our goal would be to give an LLM access to all these tools at the same time, and let it analyze and give me feedback on my training. MCP is supposed to solve just that - putting all your tools in a single place. This is the moment where we would start developing our complicated 12-factor MCP architecture. But instead of doing that, why don't we just use uv scripts?
 
 The only thing to do, is to drop all the functions we want to give an LLM in a single file. With that in place, we can run `uv run oslo_marathon_mcp.py`
 
 ```python
+
 # /// script
+
 # requires-python = ">=3.12"
+
 # dependencies = [
+
 #     "mcp[cli]",
+
 #     "garminconnect",
+
 #     "rank-bm25",
+
 #     "icalendar",
+
 # ]
+
 # ///
 
 from mcp.server.fastmcp import FastMCP
@@ -214,8 +222,6 @@ def search_marathon_training_book(
     """
     ...
 
-
-
 @MCP.tool()
 def fetch_athlete_runs(lookback_days: int) -> str:
     """
@@ -224,7 +230,6 @@ def fetch_athlete_runs(lookback_days: int) -> str:
         lookback_days (int): Number of days to look back for running activities.
     """
     ...
-
 
 @MCP.tool()
 def get_training_program_events(start_date: str, end_date: str) -> str:
@@ -240,7 +245,6 @@ def get_training_program_events(start_date: str, end_date: str) -> str:
     """
     ...
 
-
 @MCP.tool()
 def get_current_date() -> str:
     """
@@ -248,14 +252,14 @@ def get_current_date() -> str:
     """
     return datetime.datetime.now(tz=ZoneInfo("UTC")).isoformat()
 
-
 if __name__ == "__main__":
     MCP.run(transport="stdio")
+
 ```
 
 [Entire file here.](https://gist.github.com/duarteocarmo/8f1463500e0c843b6e7848e0b5466ecc)
 
-Our MCP is ready. There are just short of 8984 ways to use an MCP server with an LLM. My favorite one is *still* BoltAI. We open our MCP server configuration and add our nice little MCP server: 
+Our MCP is ready. There are just short of 8984 ways to use an MCP server with an LLM. My favorite one is *still* BoltAI. We open our MCP server configuration and add our nice little MCP server:
 
 ```json
 {
@@ -269,26 +273,24 @@ Our MCP is ready. There are just short of 8984 ways to use an MCP server with an
     }
   }
 }
+
 ```
 
-One of the nice features of BoltAI, is the ability to create "projects". These are similar to the [projects](https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt) feature of ChatGPT. In short, BoltAI gives you the ability to create a template that will be used for a group of chats. I created a "Running" project where I defined the model I'd like to use, as well as the `oslo_marathon` MCP server. BoltAI also gives you the ability to investigate the MCP server to quickly check what tools are made available to the LLM. 
-
+One of the nice features of BoltAI, is the ability to create "projects". These are similar to the [projects](https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt) feature of ChatGPT. In short, BoltAI gives you the ability to create a template that will be used for a group of chats. I created a "Running" project where I defined the model I'd like to use, as well as the `oslo_marathon` MCP server. BoltAI also gives you the ability to investigate the MCP server to quickly check what tools are made available to the LLM.
 
 ![bolt mcp server]({static}/images/81/mcp_bolt.webp)
 
-
-Finally, once everything is configured, we can now ask the LLM something very specific according to my run. And as you can see, the LLM will call all the necessary tools in order. Just like the [ReAct paper](https://arxiv.org/abs/2210.03629) introduced - the LLM now gives us much more contextualized information about my run, and searches the Pfitzinger training book for information on recovering strategies.  
+Finally, once everything is configured, we can now ask the LLM something very specific according to my run. And as you can see, the LLM will call all the necessary tools in order. Just like the [ReAct paper](https://arxiv.org/abs/2210.03629) introduced - the LLM now gives us much more contextualized information about my run, and searches the Pfitzinger training book for information on recovering strategies.
 
 ![bolt mcp calls]({static}/images/81/chat.webp)
 
-
 ### Final thoughts
 
-For the past months, I've seen many people talking about MCP (and even [A2A](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)) as things that will revolutionize AI and how we interact with LLMs. As always, there's A LOT of claims out there about what these protocols can do, and the promise they carry. It's hype and over-excitement in its purest form. 
+For the past months, I've seen many people talking about MCP (and even [A2A](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)) as things that will revolutionize AI and how we interact with LLMs. As always, there's A LOT of claims out there about what these protocols can do, and the promise they carry. It's hype and over-excitement in its purest form.
 
-I can't help but cringe sometimes when I see a big tech CTO talking about their incredibly great MCP server. For the rest of us that work in the industry. MCP is *just* a list of functions we give the LLM access to, wrapped in a FastAPI server. 
+I can't help but cringe sometimes when I see a big tech CTO talking about their incredibly great MCP server. For the rest of us that work in the industry. MCP is *just* a list of functions we give the LLM access to, wrapped in a FastAPI server.
 
-And we can't deny. Tool calling is *incredibly* powerful, but it's *still* tool calling. Tools should be targeted, well described, and made easy to understand by the Large Language Model. It's not about throwing a hammer around in a dark room and hoping that it will pick up an API call that was designed for programmers - it's about giving LLMs the right access in a controlled manner. 
+And we can't deny. Tool calling is *incredibly* powerful, but it's *still* tool calling. Tools should be targeted, well described, and made easy to understand by the Large Language Model. It's not about throwing a hammer around in a dark room and hoping that it will pick up an API call that was designed for programmers - it's about giving LLMs the right access in a controlled manner.
 
-Don't be fooled. You don't need to download one of the [thousands](https://mcp.so/) of MCP servers of [dubious](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/#mixing-tools-with-untrusted-instructions-is-inherently-dangerous) quality and security. You can just create a [200 line Python file](https://gist.github.com/duarteocarmo/8f1463500e0c843b6e7848e0b5466ecc) and give it to the LLM, it has the same (probably better) effect. 
+Don't be fooled. You don't need to download one of the [thousands](https://mcp.so/) of MCP servers of [dubious](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/#mixing-tools-with-untrusted-instructions-is-inherently-dangerous) quality and security. You can just create a [200 line Python file](https://gist.github.com/duarteocarmo/8f1463500e0c843b6e7848e0b5466ecc) and give it to the LLM, it has the same (probably better) effect.
 

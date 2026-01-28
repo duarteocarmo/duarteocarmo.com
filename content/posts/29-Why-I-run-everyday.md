@@ -15,8 +15,8 @@ It's raining. It's cold. My leg hurts. My head hurts. It's too early. There are 
 
 1 mile? 10K? 5K? 21K? Nobody cares. It doesn't matter. Really, for the first years of running, I didn't wear a smartwatch, measured my pace, or paid attention to my breathing (still don't do the last). Why? Cause it's not about competing with others, it's about claiming *your* time back. People get overly concerned about times, paces, and distances. Trying to use some external motivator so they can get their ass out of bed. Motivation comes from within.
 
-One-mile-a-day guy gets it - the rest of the table doesn't.  
+One-mile-a-day guy gets it - the rest of the table doesn't.
 
-![alt-text-1]({static}/images/29/29-app-screenshots.png)  
+![alt-text-1]({static}/images/29/29-app-screenshots.png)
 
 Two apps I love to use for running. [Trail router](https://apps.apple.com/us/app/trail-router/id1500479574) allows you to discover new running routes, wherever you are in the world. [Zones](https://apps.apple.com/us/app/zones-for-training/id1139688415), allows you to visualize running stats in ways Apple doesn't.

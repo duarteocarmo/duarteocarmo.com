@@ -21,12 +21,10 @@ I started by looking at some of the stuff from [Fish Audio](https://fish.audio/)
 
 My second-best option on the list was [Chatterbox](https://github.com/resemble-ai/chatterbox). This wave of TTS models comes with major limitations. They're all restricted to short character counts - around 1,000–2,000 characters, sometimes even less. Ask them to generate anything longer, and the voice starts hallucinating or speeds up uncontrollably.
 
-
-
-**[XTTS-v2](https://huggingface.co/coqui/XTTS-v2)**  
+**[XTTS-v2](https://huggingface.co/coqui/XTTS-v2)**
 <audio controls style="width: 75%; display: block;" preload="metadata"><source src="https://r2.duarteocarmo.com/old/xtts_v2.mp3" type="audio/mpeg"></audio>
 
-**[F5-TTS](https://github.com/SWivid/F5-TTS)**  
+**[F5-TTS](https://github.com/SWivid/F5-TTS)**
 <audio controls style="width: 75%; display: block" preload="metadata"><source src="https://r2.duarteocarmo.com/old/f5_tts.mp3" type="audio/mpeg"></audio>
 
 **[Chatterbox](https://github.com/resemble-ai/chatterbox)** (latest version)

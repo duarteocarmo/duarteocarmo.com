@@ -16,19 +16,20 @@ popular: true
 
 ## Some context
 
-We had a database of 50M strings and I couldn't wait to embed them all. Embeddings for recommender systems were, _for a long time_, the HOLY grail I longed for. I still remember, long before the RAG rage, having conversations with [Pedro](https://www.parraguezr.net/) about the amazing types of applications we could build with embeddings. 
+We had a database of 50M strings and I couldn't wait to embed them all. Embeddings for recommender systems were, _for a long time_, the HOLY grail I longed for. I still remember, long before the RAG rage, having conversations with [Pedro](https://www.parraguezr.net/) about the amazing types of applications we could build with embeddings.
 
-In a way - RAG has come a **long** way. From another side: but RAG is still _the same_. It's just search! Over embeddings. 
+In a way - RAG has come a **long** way. From another side: but RAG is still _the same_. It's just search! Over embeddings.
 
-For the past 2/3 years, the number of applications doing some sort of RAG has increased significantly. I've learned a trick or two over that time. 
+For the past 2/3 years, the number of applications doing some sort of RAG has increased significantly. I've learned a trick or two over that time.
 
 Here are some tricks I've learned along the way in hope someone else can benefit from them as well.
 
-Important notice: Almost _none_ of these are mine. And that's why I like them. 
-
+Important notice: Almost _none_ of these are mine. And that's why I like them.
 
 ```python
+
 # !pip install polars jupyter_black fasttext huggingface_hub lancedb litellm sklearn sentence_transformers
+
 import polars as pl
 import jupyter_black
 import fasttext
@@ -42,28 +43,29 @@ from sklearn.cluster import KMeans
 import random
 import json
 
-
 pl.set_random_seed(42)
 jupyter_black.load()
+
 ```
 
-
 ```python
+
 # CONFIGURATION
+
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 LLM = "ollama_chat/llama3.1"
 TABLE_NAME = "skeets"
 DEVICE = "mps"
+
 ```
 
 ## Our data: A controversial dataset
 
 Remember that [guy that got pretty much banned from BlueSky](https://www.404media.co/someone-made-a-dataset-of-one-million-bluesky-posts-for-machine-learning-research/) for collecting a dataset of 1 Million skeets? Well, our dataset is a nice collection of not 1, but 2! [2 Million BlueSky posts](https://huggingface.co/datasets/alpindale/two-million-bluesky-posts). Isn't that controversial?
 
-I'm really enjoying Bluesky by the way. You should [follow me](https://bsky.app/profile/duarteocarmo.com) there in case you come across this! 
+I'm really enjoying Bluesky by the way. You should [follow me](https://bsky.app/profile/duarteocarmo.com) there in case you come across this!
 
 Alright, let's load the dataset using Polars:
-
 
 ```python
 df = (
@@ -78,8 +80,8 @@ df = df.sample(50_000)  # so that we run fast.
 print(f"{df.shape=}")
 print("Example skeets:")
 df.sample(2).to_dicts()
-```
 
+```
 
 ```text
 df.shape=(50000, 8)
@@ -100,10 +102,10 @@ Example skeets:
   'reply_to': None,
   'month_year': '2009-10',
   'year': '2009'}]
+
 ```
 
-Without much surprise, most of our posts (88%) are from November '24. 
-
+Without much surprise, most of our posts (88%) are from November '24.
 
 ```python
 min_date = df["created_at"].min()
@@ -115,13 +117,14 @@ print(f"total_months: {total_months}")
 df.get_column("month_year").value_counts(normalize=True).sort(
     "month_year", descending=True
 ).head(10)
+
 ```
 
-```text 
+```text
 min_date: 2007-10-19 21:50:33, max_date: 2024-11-28 05:08:13.636000
 total_months: 205
-```
 
+```
 
 | month_year | proportion |
 |------------|------------|
@@ -136,12 +139,9 @@ total_months: 205
 | 2024-03    | 0.00032    |
 | 2024-02    | 0.00054    |
 
+Even though the dataset mentions to have a configuration with the language of each skeet, I didn't manage to find it.
 
-
-Even though the dataset mentions to have a configuration with the language of each skeet, I didn't manage to find it. 
-
-But to keep things simple, let's use the [same model](https://github.com/cisnlp/GlotLID) they did (`glotlid`) and keep skeets in English only. 
-
+But to keep things simple, let's use the [same model](https://github.com/cisnlp/GlotLID) they did (`glotlid`) and keep skeets in English only.
 
 ```python
 model_path = hf_hub_download(repo_id="cis-lmu/glotlid", filename="model.bin")
@@ -155,19 +155,18 @@ df = df.with_columns(pl.Series(is_english, dtype=pl.UInt8).alias("is_english"))
 print(f"total rows: {df.shape[0]}")
 df = df.filter(pl.col("is_english") == 1)
 print(f"total rows after filtering: {df.shape[0]}")
+
 ```
 
-```text 
+```text
 total rows: 50000
 total rows after filtering: 22528
+
 ```
-
-
 
 ## A stupid simple vector store
 
-[Lancedb](https://lancedb.github.io/lancedb/) provides a great interface that combines [sentence-transformers](https://sbert.net/) + pydantic. 
-
+[Lancedb](https://lancedb.github.io/lancedb/) provides a great interface that combines [sentence-transformers](https://sbert.net/) + pydantic.
 
 ```python
 db = lancedb.connect("/tmp/db")
@@ -177,13 +176,11 @@ model = (
     .create(name=EMBEDDING_MODEL, device=DEVICE)
 )
 
-
 class Skeet(LanceModel):
     text: str = model.SourceField()
     vector: Vector(model.ndims()) = model.VectorField()
     author: str
     created_at: datetime
-
 
 if TABLE_NAME in db.table_names():
     db.drop_table(TABLE_NAME)
@@ -192,25 +189,23 @@ if TABLE_NAME in db.table_names():
 table = db.create_table(TABLE_NAME, schema=Skeet)
 
 # this will automatically add and embed the items.
+
 table.add(df.to_dicts())
 table.create_fts_index("text", replace=True)
-```
 
+```
 
 ## Plain RAG
 
-In it's most pure form. Retrieval Augmented Generation has 3 simple components: 
+In it's most pure form. Retrieval Augmented Generation has 3 simple components:
 
 * Retrieve context (e.g., search)
 * Build prompt
 * Answer question
 
-
-
 ```python
 def search(question: str, top_k: int = 10) -> list[Skeet]:
     return table.search(question).limit(top_k).to_pydantic(Skeet)
-
 
 def build_prompt(question: str, context: list[Skeet]) -> str:
     context_str = ""
@@ -218,8 +213,8 @@ def build_prompt(question: str, context: list[Skeet]) -> str:
         context_str += f"- {c.text}\n======\n"
 
     PROMPT = f"""
-* You are an expert at answering questions from the user given a context. 
-* Use the context section to answer the questions from the user. 
+* You are an expert at answering questions from the user given a context.
+* Use the context section to answer the questions from the user.
 * Answer the question directly. No BS.
 
 <context>
@@ -233,14 +228,12 @@ def build_prompt(question: str, context: list[Skeet]) -> str:
 
     return PROMPT
 
-
 def llm(prompt: str, model: str = LLM) -> str:
     response = completion(
         model=model,
         messages=[{"content": prompt, "role": "user"}],
     )
     return response["choices"][0]["message"]["content"]
-
 
 question = "What are the main reasons people are switching from twitter/X to bluesky?"
 context = search(question)
@@ -249,12 +242,14 @@ response = llm(prompt)
 
 print("Question: ", question)
 print(f"Answer: \n'{response}'")
+
 # print(f"Context chunks:\n{context}")
+
 ```
 
-```text 
+```text
 Question:  What are the main reasons people are switching from twitter/X to bluesky?
-Answer: 
+Answer:
 'Based on the context, the main reasons people are switching from Twitter/X to Bluesky seem to be:
 
 1. A desire for a more focused and curated experience, as mentioned in "Trying to be way more active here than Twitter..." and "My favorite thing about Twitter was looking at 'What's Trending'... Does that exist in Bluesky?"
@@ -264,22 +259,17 @@ Answer:
 
 ```
 
-
-
-
-Great, that works. Now, what can we do more? 
+Great, that works. Now, what can we do more?
 
 ## Complicating things: Hybrid Search
 
-LanceDB also provides a nice hybrid search option - allowing us to use full text search in combination with semantic search. In the default configuration, it will weight vector similarity and full text search around 70-30. 
+LanceDB also provides a nice hybrid search option - allowing us to use full text search in combination with semantic search. In the default configuration, it will weight vector similarity and full text search around 70-30.
 
 All we need to do is add `query_type='hybrid'`
-
 
 ```python
 def hybrid_search(question: str, top_k: int = 10) -> list[Skeet]:
     return table.search(question, query_type="hybrid").limit(top_k).to_pydantic(Skeet)
-
 
 question = "What are the main reasons people are switching from twitter/X to bluesky?"
 context = hybrid_search(question)
@@ -288,11 +278,12 @@ response = llm(prompt)
 
 print("Question: ", question)
 print(f"Answer: \n'{response}'")
+
 ```
 
-```text 
+```text
 Question:  What are the main reasons people are switching from twitter/X to bluesky?
-Answer: 
+Answer:
 'Based on the context, the main reasons people are switching from Twitter/X to Bluesky include:
 
 * The ability to see what's trending and have a better understanding of current events and public discourse
@@ -301,9 +292,8 @@ Answer:
 * The presence of internet trolls on Twitter, who are also migrating to Bluesky
 
 These factors seem to be driving users to leave Twitter/X and join Bluesky.'
+
 ```
-
-
 
 Now, keep in mind. There are already at least 2 parameters we would need to tune and evaluate here. (1) the number of chunks we want to stuff in the context (here, `top_k`), and (2) the type of search we would like to conduct (hybrid, full-text, vector only).
 
@@ -311,11 +301,11 @@ But if that was not complicated enough, we could complicate a bit more!
 
 ## What if we ask for a summary?
 
-Let's look at the following question: 
-
+Let's look at the following question:
 
 ```python
 question = "Give me a high level summary of the skeets"
+
 ```
 
 If we take the naive approach of simply embedding this query, we are likely going to retrieve context with skeets that are similar to our question. At the extreme, this will surface skeets that contain the words high level summary and skeets.
@@ -330,9 +320,7 @@ First of all, how do we detect if the user asks such a question?
 
 ### Detecting representative questions
 
-
-The most basic approach to detecting "representative" questions, is to use an LLM itself to handle them: 
-
+The most basic approach to detecting "representative" questions, is to use an LLM itself to handle them:
 
 ```python
 def get_intent(question: str):
@@ -355,7 +343,6 @@ def get_intent(question: str):
     """.strip()
     return llm(INTENT_PROMPT)
 
-
 for question in [
     "Summarize the skeets",
     "What are the main trends in this dataset?",
@@ -364,6 +351,7 @@ for question in [
     question,
 ]:
     print(f"'{question}'", get_intent(question))
+
 ```
 
 ```text
@@ -372,28 +360,32 @@ for question in [
 'What's the current weather in Lisbon?' Keyword filter
 'Why are people leaving Twitter/X?' Keyword filter
 'Give me a high level summary of the skeets' Representative filter
+
 ```
 
-The LLM manages to understand if we need a general overview or a specific context quite well. 
+The LLM manages to understand if we need a general overview or a specific context quite well.
 
 ### Answering questions that require the entire dataset in context
 
-There's an interesting article that dives a bit more into this topic [here](https://pashpashpash.substack.com/p/tackling-the-challenge-of-document). One idea I stole from there is the idea of passing a 'representative' sample of our dataset to the context. 
+There's an interesting article that dives a bit more into this topic [here](https://pashpashpash.substack.com/p/tackling-the-challenge-of-document). One idea I stole from there is the idea of passing a 'representative' sample of our dataset to the context.
 
-Now how can we build a representative sample? Here's one idea: 
+Now how can we build a representative sample? Here's one idea:
 
 - The user asks a general question that requires the whole dataset in context
 - We know we can stuff a maximum of `Z` chunks into the context
-- We retrieve a large number of embeddings from our dataset at random 
+- We retrieve a large number of embeddings from our dataset at random
 - We run K-means clustering or [something more fancy](https://hdbscan.readthedocs.io/en/latest/how_hdbscan_works.html) to cluster those embeddings into `N` clusters/topics
 - From each of those topics we draw `n` items so that `n * N ~= Z`
-- We stuff those into the context 
+- We stuff those into the context
 
 ```python
 question
+
 ```
+
 ```text
 'Give me a high level summary of the skeets'
+
 ```
 
 ```python
@@ -446,9 +438,9 @@ def get_representative_context(
 
     return context_items
 
-
 context = get_representative_context()
 print(llm(build_prompt(question, context)))
+
 ```
 
 ```text
@@ -466,29 +458,26 @@ These conversations seem to be a mix of humorous, sarcastic, and serious discuss
 
 ```
 
-
-
-There are a lot of ways we could make this better. But this is the basic idea. 
+There are a lot of ways we could make this better. But this is the basic idea.
 
 ## Expanding user queries
 
-Another interesting concept is the concept of query expansion. I read this one in the [_LLM Engineer's Handbook_](https://www.amazon.com/LLM-Engineers-Handbook-engineering-production/dp/1836200072). It's a great book - you should read it to! 
+Another interesting concept is the concept of query expansion. I read this one in the [_LLM Engineer's Handbook_](https://www.amazon.com/LLM-Engineers-Handbook-engineering-production/dp/1836200072). It's a great book - you should read it to!
 
 In this case we use an LLM to expand the user query in hope of retrieving even more relevant items into our context. Here's how it works:
-
 
 ```python
 def expand_query_for(question: str, expand_to_n: int = 5) -> list[str]:
 
     # could be much better by using json mode, structured outputs, or any of these: https://simmering.dev/blog/structured_output/
     EXPAND_QUERY_PROMPT = f"""
-* You are an AI language model assistant. 
-* Your task is to generate {expand_to_n} different versions of the given user question to retrieve relevant documents from a vector database. 
+* You are an AI language model assistant.
+* Your task is to generate {expand_to_n} different versions of the given user question to retrieve relevant documents from a vector database.
 * By generating multiple perspectives on the user question, your goal is to help the user overcome some of the limitations of the distance-based similarity search.
 * Return a json string with a 'questions' key, which is a list of strings. It should be parseable by json.loads in Python.
 * IMPORTANT: Do not include ```json or any other text in the response.
 
-Original question: 
+Original question:
 
 '{question}'""".strip()
 
@@ -496,12 +485,13 @@ Original question:
     questions = json.loads(response)["questions"] + [question]
     return questions
 
-
 question = "What are the main reasons people are switching from twitter/X to bluesky?"
 expanded_questions = expand_query_for(question)
 for q in expanded_questions:
     print(f"- '{q}'")
+
 ```
+
 ```text
 - 'Why did users leave Twitter and join Bluesky?'
 - 'What factors contribute to the migration of users from X (formerly Twitter) to Bluesky?'
@@ -509,25 +499,22 @@ for q in expanded_questions:
 - 'What are the primary reasons users are abandoning their old social media accounts on Twitter/X and joining a new platform like Bluesky?'
 - 'How does the user experience and feature set of Bluesky differ from that of Twitter/X, leading to increased adoption?'
 - 'What are the main reasons people are switching from twitter/X to bluesky?'
+
 ```
 
-
-
-We can now take these questions, do a retrieval for each one of them, and answer the question. 
-
+We can now take these questions, do a retrieval for each one of them, and answer the question.
 
 ```python
 context = []
 for q in expanded_questions:
     context.extend(search(q))
 
-
 print(f"Question: {question}")
 print(f"Answer:\n{llm(build_prompt(question, context))}")
 
 ```
 
-```text 
+```text
 Question: What are the main reasons people are switching from twitter/X to bluesky?
 Answer:
 Based on the context provided, the main reasons people are switching from Twitter/X to Bluesky include:

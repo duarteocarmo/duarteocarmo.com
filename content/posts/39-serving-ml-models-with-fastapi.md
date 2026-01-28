@@ -6,7 +6,7 @@ slug: serving-ml-models-fastapi
 
 _Disclaimer: This post was originally published in the [Amplemarket blog](http://blog.amplemarket.com/)_
 
-Serving and deploying Machine Learning models is a topic that can get complicated quite fast. At Amplemarket, my team and I, like to keep things simple. 
+Serving and deploying Machine Learning models is a topic that can get complicated quite fast. At Amplemarket, my team and I, like to keep things simple.
 
 Let's talk about it.
 
@@ -14,11 +14,11 @@ Let's talk about it.
 
 At [Amplemarket](https://amplemarket.com/), we’re big fans of simplifying. We know that the less code we have to write, the fewer bugs we're likely to introduce. [FastAPI](https://fastapi.tiangolo.com/) allows us to take a trained model and create an API for it, in less than 10 lines of code! That’s pretty incredible.
 
-Let’s say you are creating a model that is trained on the Iris data set that predicts the species of a plant given some information about it. Previously, we would have saved our model to a `pickle` file, and sent it to our engineering team; perhaps we would have even scheduled a meeting with them to discuss how to use this model. We would also have sent some documentation on how to use that model and how it can inference on some data. 
+Let’s say you are creating a model that is trained on the Iris data set that predicts the species of a plant given some information about it. Previously, we would have saved our model to a `pickle` file, and sent it to our engineering team; perhaps we would have even scheduled a meeting with them to discuss how to use this model. We would also have sent some documentation on how to use that model and how it can inference on some data.
 
 But the likelihood that something will go wrong in one of those steps is greater than we’d like.
 Every time the model gets updated, we would need to have another discussion, about how the model has changed, and what gets improved - documentation would get outdated, etc.
- 
+
 To avoid dealing with that house of cards, we at Amplemarket have settled on a process that significantly reduces the complexity of deploying the machine learning models we develop.
 
 As an example, the following snippet trains a classifier and saves it to the model.joblib file:
@@ -31,32 +31,41 @@ from sklearn import datasets
 import joblib
 
 # create model
+
 clf = svm.SVC(probability=true)
 X, y = datasets.load_iris(return_X_y=True)
 clf.fit(X, y)
 
 # save model
+
 joblib.dump(clf, 'model.joblib')
+
 ```
 
 With [FastAPI](https://fastapi.tiangolo.com/), serving your model is as simple as creating an `app.py` file with the following contents:
 
 ```python
+
 # app.py
+
 from typing import Optional
 from fastapi import FastAPI
 import joblib
 
 # create FastAPI app and load model
+
 app = FastAPI()
 model = joblib.load("model.joblib")
 
 # create an endpoint that receives POST requests
+
 # and returns predictions
+
 @app.post("/predict/")
 def predict(features):
     predictions = model.predict([eval(features)]).tolist()
     return predictions
+
 ```
 
 You can then launch the API with `uvicorn app:app --reload`.
@@ -82,8 +91,11 @@ from fastapi import FastAPI
 import joblib
 
 # some documentation in markdown
+
 description = """
+
 ## Documentation
+
 **ℹ️ Read carefully before using**
 
 This api allows you to predict the type of Iris plant given a list of features.
@@ -98,6 +110,7 @@ _Build by:_
 """
 
 # create FastAPI app and load model
+
 app = FastAPI(
     title="IRIS Classification",
     description=description,
@@ -108,28 +121,32 @@ app = FastAPI(
         "email": "support@yourcompany.com",
     },
 )
+
 # ... rest of the file ....
+
 ```
 
 If we now turn back to our docs, we see that the markdown we've added has been rendered at the top of the page. Now, when someone needs to check some details about this model, all the information that person might need is neatly described - and we even provide a support email if they run into trouble!
 
 ![API-screenshot-2]({static}/images/39/2.png)
 
-But FastAPI doesn’t stop there. 
+But FastAPI doesn’t stop there.
 
 With a couple more lines of code, and thanks to a small library called [Pydantic](https://pydantic-docs.helpmanual.io/), we can also add data validation to our model’s API. By doing so, API users will know what kind of data it expects to receive and what kind of data the API will respond back with.
 
 We start by creating two classes, one to handle requests, and the other for responses:
 
 ```python
+
 # We'll take this in:
+
 class Features(BaseModel):
-    sepal_length: confloat(ge=0.0, le=1.0) # ensures values  are between 0 and 1 
+    sepal_length: confloat(ge=0.0, le=1.0) # ensures values  are between 0 and 1
     sepal_width: confloat(ge=0.0, le=1.0)
     petal_length: confloat(ge=0.0, le=1.0)
     petal_width: confloat(ge=0.0, le=1.0)
 
-        # with an example    
+        # with an example
     class Config:
         schema_extra = {
             "example": {
@@ -141,11 +158,12 @@ class Features(BaseModel):
         }
 
 # We'll respond something like this:
+
 class Response(BaseModel):
     setosa_probability: confloat(ge=0.0, le=1.0)
     versicolor_probability: confloat(ge=0.0, le=1.0)
     virginica_probability: confloat(ge=0.0, le=1.0)
-        
+
         # with an example
     class Config:
         schema_extra = {
@@ -155,13 +173,15 @@ class Response(BaseModel):
                 "virginica_probability": 0.2,
             }
         }
-```
 
+```
 
 And we tweak our endpoint code:
 
 ```python
+
 # the endpoint
+
 @app.post("/predict/", response_model=Response)
 def predict(features: Features):
     feature_list = [
@@ -177,12 +197,15 @@ def predict(features: Features):
         virginica_probability=predictions[2],
     )
     return predictions_clean
+
 ```
 
 The two classes above are particularly strict about what our API can receive and what it will respond back with. Suppose a developer tries to query the API with a `petal_width` of 1.3. Because we’ve specified that petal width must be a number between 0.0 and 1.1, our API will reject the query and reply back with:
 
 ```python
-## request 
+
+## request
+
 curl -X 'POST' \\
   '<http://localhost:8000/predict/>' \\
   -H 'accept: application/json' \\
@@ -193,7 +216,9 @@ curl -X 'POST' \\
   "petal_length": 0.8,
   "petal_width": 1.1
 }'
-## response 
+
+## response
+
 {
   "detail": [
     {
@@ -209,6 +234,7 @@ curl -X 'POST' \\
     }
   ]
 }
+
 ```
 
 As an added bonus, the model Config classes also help provide developers with an example request and response:
@@ -217,15 +243,15 @@ As an added bonus, the model Config classes also help provide developers with an
 
 With this documentation page at hand, our users know exactly what our API is, what it *expects*, and what it will *reply back*.
 
-All of this comes without us having to invest much time and effort into ensuring the documentation has all the information that future developers might need. And notice how we didn’t have to write any extra documentation. 
+All of this comes without us having to invest much time and effort into ensuring the documentation has all the information that future developers might need. And notice how we didn’t have to write any extra documentation.
 
 Our documentation *is* our code.
 
 ## Make it fast (enough)
 
-Python is far from the fastest language out there, nor does it claim to be. We don’t use Python for its speed, but for its ecosystem, especially as it relates to data science and its many needs. 
+Python is far from the fastest language out there, nor does it claim to be. We don’t use Python for its speed, but for its ecosystem, especially as it relates to data science and its many needs.
 
-Even with [several](https://andrewbrookins.com/python/is-fastapi-a-fad/) [claims](https://fastapi.tiangolo.com/benchmarks/) that FastAPI is a very performant web framework, we know we’re not using the [fastest web framework](https://www.techempower.com/benchmarks/) out there. 
+Even with [several](https://andrewbrookins.com/python/is-fastapi-a-fad/) [claims](https://fastapi.tiangolo.com/benchmarks/) that FastAPI is a very performant web framework, we know we’re not using the [fastest web framework](https://www.techempower.com/benchmarks/) out there.
 
 However, even if FastAPI was slower than it currently is, we would still be willing to compromise that speed for time-to-market, documentation, and ease of use.
 
@@ -236,6 +262,7 @@ FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
 COPY ./requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 COPY ./app /app
+
 ```
 
 If you’re running on Kubernetes or something like that, you [probably don’t need this image](https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker#-warning-you-probably-dont-need-this-docker-image) - but if you have a simpler setup, this image will come very in handy!
@@ -244,11 +271,9 @@ If you’re running on Kubernetes or something like that, you [probably don’t 
 
 At [Amplemarket](https://amplemarket.com/) we like to adopt best practices from Software Development and apply them to our Machine Learning projects. That means every model we develop and deploy is version controlled, tested, and continuously deployed.
 
-Using CI/CD automation, we can continuously deploy our model and code to several targets (e.g., staging and production). Allowing us to serve different versions of our model in different endpoints, and roll back with ease. 
+Using CI/CD automation, we can continuously deploy our model and code to several targets (e.g., staging and production). Allowing us to serve different versions of our model in different endpoints, and roll back with ease.
 
 FastAPI also allows us to [easily test](https://fastapi.tiangolo.com/tutorial/testing/) our code. This is especially important when we are inferencing. What if we receive a different set of numbers? Will we make a prediction? What if the user sends us a string, and it gets evaluated as a float? How do we account for that? Testing matters. And FastAPI allows us to do it with ease.
-
-
 
 ## Closing thoughts
 
