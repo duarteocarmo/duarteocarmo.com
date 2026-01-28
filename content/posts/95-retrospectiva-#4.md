@@ -47,6 +47,6 @@ On another note, two podcast recommendations this month:
 
 While in Portugal, Vitto and I binged [The Pitt](https://www.rottentomatoes.com/tv/the_pitt) on HBO Max. It's like Grey's Anatomy, on steroids, at 4x speed, and 5x the intensity, with a lot less drama. Or at least the soap opera one. We haven't finished it, but definitely recommend it.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ufR_08V38sQ?si=vG6TXcfs7fsWJwW_&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/ufR_08V38sQ?si=vG6TXcfs7fsWJwW_&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Since we're in Italy, and it's Australian Open time, we've been watching a good amount of that as well. Tennis skyrocketed here in popularity due to Sinner, Musetti, and Paolini. So when Tennis is being played, Italy stops. But it's not only sports. We also watch intellectually rewarding things. [But not this month](https://en.wikipedia.org/wiki/Affari_tuoi).
