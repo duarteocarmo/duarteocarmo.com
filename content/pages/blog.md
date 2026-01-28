@@ -1,3 +1,3 @@
 title: Blog
-slug: blog 
+slug: blog
 template: index

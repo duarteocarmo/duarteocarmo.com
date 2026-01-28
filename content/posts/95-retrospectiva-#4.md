@@ -11,9 +11,10 @@ Well—that was quick. Just like that, the first month of the year is gone. Wint
 It's hard to give into winter blues when you get to run every day around the beautiful hills of the [Conero Regional Park](https://www.parcodelconero.org/). If you read this, don't tell anyone please: let them visit the usual suspects instead.
 
 Here, life moves slow. You *enjoy* things. You *savor* things. You talk loud. You socialize. You live for 100 years. It's Italy.
+
 ## Using
 
-I would be lying if I told you I haven't been using a [bunch of agents](https://duarteocarmo.com/blog/how-to-police-your-agents). I've been using LLM based tools for the better part of 2025. But something clicked towards the end, and I haven't looked back since. As for my post on [policing agents](https://duarteocarmo.com/blog/how-to-police-your-agents), my fear is still the same. That *quantity* and *quality* are inversely proportional. All I can do is find out ways of keeping quality high. It's nice to fire them off to do work I'm not interested in doing. Like redesigning this website for the Nth time. Or correcting typos in all my blog posts since the beginning of time. 
+I would be lying if I told you I haven't been using a [bunch of agents](https://duarteocarmo.com/blog/how-to-police-your-agents). I've been using LLM based tools for the better part of 2025. But something clicked towards the end, and I haven't looked back since. As for my post on [policing agents](https://duarteocarmo.com/blog/how-to-police-your-agents), my fear is still the same. That *quantity* and *quality* are inversely proportional. All I can do is find out ways of keeping quality high. It's nice to fire them off to do work I'm not interested in doing. Like redesigning this website for the Nth time. Or correcting typos in all my blog posts since the beginning of time.
 
 On another note. We always travel light, *even* with a newborn. This means I have to pack just enough things - especially running gear. The [FuelCell Rebel v5](https://www.newbalance.com/pd/fuelcell-rebel-v5/MFCXV5-50690.html#dwvar_MFCXV5-50690_style=MFCXLV5&dwvar_MFCXV5-50690_width=D&pid=MFCXV5-50690&quantity=1) have been a pleasant surprise. I'm not loyal to brands but this model won me over. They slip where it's muddy though, so beware.
 
@@ -25,6 +26,7 @@ Read more short form than long form this month. I continue going through the [fa
 <figcaption>From <a href="https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1">🍷 FineWeb: decanting the web for the finest text data at scale</a></figcaption>
 
 I'm still finishing up both books I talked about in the last issue: [Old Man's War](https://en.wikipedia.org/wiki/Old_Man%27s_War) from John Scalzi and [LLMOps](https://www.oreilly.com/library/view/llmops/9781098154196/).
+
 ## Listening
 
 I follow a lot of DJs on SoundCloud. One that has consistently released good mixes is [Sasha Marie](https://www.instagram.com/sashamvrie/). It's the best soundtrack for doing deep work. Whatever it is you're doing, you'll do it better when this is in the background:

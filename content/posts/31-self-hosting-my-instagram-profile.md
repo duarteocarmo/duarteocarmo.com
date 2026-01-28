@@ -12,8 +12,8 @@ Bulk downloading them was quite straightforward. Using Python and [Instaloader](
 
 The actual photos are now stored in a (probably insecure) S3 bucket, which I sync to a local folder. To keep things fast, I have both Cloudfront (for the photos) and Cloudflare (for the actual blog) sitting on top of them. I'm also using [Pillow](https://pillow.readthedocs.io/en/stable/) to generate thumbnails in `.webp` format, just to ensure the [/photos](https://duarteocarmo.com/photos) page loads relatively fast.
 
-Uploading is by no means as simple as opening an app and snapping a picture. But I've created a small python script that processes a photo, generates a thumbnail, asks some questions about it, and uploads it to S3 and my blog. And that's good enough. 
+Uploading is by no means as simple as opening an app and snapping a picture. But I've created a small python script that processes a photo, generates a thumbnail, asks some questions about it, and uploads it to S3 and my blog. And that's good enough.
 
-For those wondering, I still have my [Instagram profile](https://www.instagram.com/duarteoc/) up, which now just serves to redirect people back to my website via a [landing page](https://tinyurl.com/duarteintheinterwebs/). Instagram blocked my url a long time ago - reasons unknown. 
+For those wondering, I still have my [Instagram profile](https://www.instagram.com/duarteoc/) up, which now just serves to redirect people back to my website via a [landing page](https://tinyurl.com/duarteintheinterwebs/). Instagram blocked my url a long time ago - reasons unknown.
 
-Vittoria suggested I should also email my close friends and family automatically when I upload a photo, I think that's a great idea - but probably a story for another day. 
+Vittoria suggested I should also email my close friends and family automatically when I upload a photo, I think that's a great idea - but probably a story for another day.

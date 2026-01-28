@@ -14,7 +14,7 @@ After talking with Nuno and a couple of other friends, I quickly realized they w
 
 Enter [Taralli](https://apps.apple.com/dk/app/taralli/id6743634022).
 
-![taralli app screenshots]({static}/images/79/taralli-screenshot-food.webp)  
+![taralli app screenshots]({static}/images/79/taralli-screenshot-food.webp)
 
 Taralli allows you to track *anything* you eat (really!). A [pão com chouriço](https://www.pingodoce.pt/receitas/pao-com-chourico/), a [pão de Deus](https://encomendas.apadariaportuguesa.pt/produto/pao-de-deus/), half a handful of peanuts – whatever language, whatever text, whatever you're eating, Taralli can handle it. Just type what you ate, and it'll handle the rest. It gives you macros, calories, fiber, and food group. It also has a bunch of analytics from the past week so you can see what's going on at a high level. You can also connect it to Apple Health to track your weight (if you're interested in that sort of stuff.)
 
@@ -22,7 +22,7 @@ Taralli is built using [SwiftUI](https://developer.apple.com/xcode/swiftui/). Wh
 
 For estimating the calories I'm using `gpt-4o-mini` with some [structured generation](https://platform.openai.com/docs/guides/structured-outputs) served over FastAPI. It actually sucks right now. Accuracy isn’t great, and it makes some pretty basic mistakes. I’ve got plans to fix that — but I’ll leave them for another release. [Remember](https://duarteocarmo.com/blog/simple-software), first make it work, _then_ make it pretty.
 
-![taralli app screenshots]({static}/images/79/taralli-screenshot-graphs.webp)  
+![taralli app screenshots]({static}/images/79/taralli-screenshot-graphs.webp)
 
 You'll notice that unlike other apps, Taralli doesn't tell you what to do. That's because I don't care what you do. The goal of Taralli is to help you track. And its goal stops there. Just write anything in the text box. The more specific you are, the better.
 

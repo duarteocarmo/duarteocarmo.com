@@ -1,4 +1,4 @@
-title:  A poor man's guide to fine-tuning Llama 2 
+title:  A poor man's guide to fine-tuning Llama 2
 date: 09-26-2023 13:00
 description: How I fine-tuned a Llama 2 model on a group chat for a couple of dollars and one hour.
 status: published
@@ -6,13 +6,11 @@ slug: fine-tune-llama-2-telegram
 thumbnail: images/55/llama-small-cover.jpg
 popular: true
 
-Last Friday, [Kostas](https://orbit.dtu.dk/en/persons/konstantinos-kalogeropoulos) and I found ourselves discussing AI over beers again. He was telling me how he thinks everyone else is _decades_ away from OpenAI - and that they likely won't catch up soon. I disagreed. In _fact_, I think open source is quickly catching up, and getting [closer](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard) by the day. 
+Last Friday, [Kostas](https://orbit.dtu.dk/en/persons/konstantinos-kalogeropoulos) and I found ourselves discussing AI over beers again. He was telling me how he thinks everyone else is _decades_ away from OpenAI - and that they likely won't catch up soon. I disagreed. In _fact_, I think open source is quickly catching up, and getting [closer](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard) by the day.
 
-Around four months ago, I [wrote a small tutorial](/blog/fine-tune-flan-t5-telegram.html) on fine-tuning Flan T5 to generate conversations in my friends group chat. It worked _ok(ish)_, but the process was clunky and took way too long. 
+Around four months ago, I [wrote a small tutorial](/blog/fine-tune-flan-t5-telegram.html) on fine-tuning Flan T5 to generate conversations in my friends group chat. It worked _ok(ish)_, but the process was clunky and took way too long.
 
 So, here we are, four months later, with the same question: How easy is it to train an LLM on my friend's group chat? Turns out, for a couple of dollars and one hour you can get pretty far.
-
-
 
 <center>
 <br>
@@ -22,32 +20,37 @@ So, here we are, four months later, with the same question: How easy is it to tr
 <figcaption><em>Tiger-llama in action, simulating a Telegram conversation</em></figcaption>
 </center>
 
-
 ## Data
 
 The goal is clear: fine-tune [Llama 2](https://huggingface.co/meta-llama/Llama-2-7b-hf), to automatically generate conversations that would normally happen in the group chat that I've held with my close friends for years now. The first step is to export the data from Telegram (which is pretty [easy](https://telegram.org/blog/export-and-more)).
 
-For most LLMs, you need to massage the data into a specific format before training. This means providing things like the `instruction`, the `input`, the `system_prompt`, etc. But all I wanted was to generate conversations, so I started by creating a large `jsonl` file with chunks of conversations separated by a `###` token to indicate the speaker. 
+For most LLMs, you need to massage the data into a specific format before training. This means providing things like the `instruction`, the `input`, the `system_prompt`, etc. But all I wanted was to generate conversations, so I started by creating a large `jsonl` file with chunks of conversations separated by a `###` token to indicate the speaker.
 
 ```python
+
 # dataset.jsonl
+
 {"text": "### Friend 1: This is a question### Friend 2: This is a reply### Friend 3: What the hell are you guys talking about?"}
 {"text": "### Friend 4: Who's coming tonight?### Friend 2: No one, it's literally Monday."}
 #...
+
 ```
 
-After getting the data ready, I went ahead and pushed it to the hugging face hub: 
+After getting the data ready, I went ahead and pushed it to the hugging face hub:
 
 ```python
+
 # huggingface-cli login --token hf_XXXXXXXX (to log into Hugging Face)
 
 # read and split
+
 tiger_llama =  pd.read_json('dataset.jsonl', lines=True)
 train_tiger, test_tiger = train_test_split(
     tiger_llama, test_size=0.15, random_state=42, shuffle=True
 )
 
 # push to hub
+
 train_tiger = Dataset.from_pandas(train_tiger)
 test_tiger = Dataset.from_pandas(test_tiger)
 
@@ -57,6 +60,7 @@ ds["test"] = test_tiger
 
 dataset_name = "duarteocarmo/tiger-llama"
 ds.push_to_hub(dataset_name, branch="main", private=True)
+
 ```
 
 With all the conversations pushed to the hub (_cough_ - privacy - _cough_), it was now time to train this model.
@@ -68,34 +72,48 @@ For the first couple of days, I got a bit frustrated. I tested a bunch of [diffe
 [Axolotl](https://github.com/OpenAccess-AI-Collective/axolotl) is designed to "_streamline the fine-tuning of LLMs_". It supports a bunch of different models and training configurations. The best part? To fine-tune a model, all you is pretty much a config file. Yes, you heard that right - _just_ a `yaml` file. The only things I needed to tweak were the base model (in our case, Llama 2 - `meta-llama/Llama-2-7b-hf`), and the dataset sections:
 
 ```yaml
+
 # llama-tiger.yaml
+
 # base model
+
 base_model: meta-llama/Llama-2-7b-hf
 base_model_config: meta-llama/Llama-2-7b-hf
 model_type: LlamaForCausalLM
 tokenizer_type: LlamaTokenizer
 is_llama_derived_model: true
-# ... 
+
+# ...
+
 # my dataset
+
 # other formats: https://github.com/OpenAccess-AI-Collective/axolotl#dataset
+
 datasets:
   - path: duarteocarmo/tiger-llama
-    type: completion # 
+    type: completion #
     field: text
 dataset_prepared_path: last_run_prepared
 hub_model_id: duarteocarmo/tiger-llama
 val_set_size: 0.01
 output_dir: ./qlora-out
+
 # wandb monitoring
+
 wandb_project: "llama-tiger"
 wandb_log_model: "checkpoint"
-### ... 
+
+### ...
+
 ```
 
 <details>
   <summary>Expand for the full <code>tiger-llama.yaml</code> file</summary>
+
 ```yaml
-# Image: winglian/axolotl:main-py3.10-cu118-2.0.1 
+
+# Image: winglian/axolotl:main-py3.10-cu118-2.0.1
+
 base_model: meta-llama/Llama-2-7b-hf
 base_model_config: meta-llama/Llama-2-7b-hf
 model_type: LlamaForCausalLM
@@ -169,17 +187,20 @@ special_tokens:
   bos_token: "<s>"
   eos_token: "</s>"
   unk_token: "<unk>"
+
 ```
+
 </details>
 
-Unfortunately, with these things, I needed a GPU to run the training. Given that I'm (_apparently_) considered [GPU poor](https://www.businessinsider.com/gpu-rich-vs-gpu-poor-tech-companies-in-each-group-2023-8?r=US&IR=T), I used [Vast.ai](https://vast.ai/). I got a machine with at least ~40GB of GPU RAM, and that was relatively close to me. These cost around 1 USD/hour. I also used the Axololt docker image (e.g., `winglian/axolotl:main-py3.10-cu118-2.0.1`) so that everything was pre-installed when the machine turned on. 
+Unfortunately, with these things, I needed a GPU to run the training. Given that I'm (_apparently_) considered [GPU poor](https://www.businessinsider.com/gpu-rich-vs-gpu-poor-tech-companies-in-each-group-2023-8?r=US&IR=T), I used [Vast.ai](https://vast.ai/). I got a machine with at least ~40GB of GPU RAM, and that was relatively close to me. These cost around 1 USD/hour. I also used the Axololt docker image (e.g., `winglian/axolotl:main-py3.10-cu118-2.0.1`) so that everything was pre-installed when the machine turned on.
 
-Once the machine was up, I ssh'd into it and ran: 
+Once the machine was up, I ssh'd into it and ran:
 
 ```bash
 $ huggingface-cli login --token hf_MY_HUGGINGFACE_TOKEN_WITH_WRITE_ACCESS
 $ wandb login MY_WANDB_API_KEY
 $ accelerate launch -m axolotl.cli.train llama-tiger.yaml
+
 ```
 
 And we were off to the races. With a single command, I was fine-tuning Llama 2 on my custom dataset. While training, Axolotl automatically logs everything to Weights & Biases, so we can monitor how the losses are evolving. As a bonus, it also shows the model outputs so that I can follow how to model is improving its generation during training:
@@ -194,17 +215,21 @@ Once training was done, your fine-tuned model (or [adapter](https://huggingface.
 
 ## Inference
 
-The fine-tuning result is not an actual Llama 2 model, but an _adapter_ to the model (Axolotl uses [qlora](https://github.com/artidoro/qlora) by default for Llama models). So in the end, the adapter is a mere 320 MB. 
+The fine-tuning result is not an actual Llama 2 model, but an _adapter_ to the model (Axolotl uses [qlora](https://github.com/artidoro/qlora) by default for Llama models). So in the end, the adapter is a mere 320 MB.
 
-Using Axolotl, inference is also pretty straightforward: All I need to do is download the model, and launch the Axolotl inference command: 
+Using Axolotl, inference is also pretty straightforward: All I need to do is download the model, and launch the Axolotl inference command:
 
 ```bash
+
 # download from fine tuned repo
+
 git lfs install
-git clone https://huggingface.co/duarteocarmo/tiger-llama 
+git clone https://huggingface.co/duarteocarmo/tiger-llama
 
 # run axolotl inference
+
 accelerate launch -m axolotl.cli.inference tiger-llama.yaml --lora_model_dir="./tiger-llama"
+
 ```
 
 Once downloaded and launched, I can give the model the start of a fake conversation, and it will go on to generate a completely fake conversation based on my group chat:
@@ -212,13 +237,14 @@ Once downloaded and launched, I can give the model the start of a fake conversat
 ```bash
 Input: ### SZ: Quem vem a Lisboa no natal?
 Output: ### SZ: Quem vem a Lisboa no natal?### PK: Acho que tenho tive uma surpresa de aniversario da malta, não tenho férias até janeiro### SZ: Fodass, faltamos 2 ...
+
 ```
 
 ## Closing thoughts
 
-Compared to the [last](/blog/fine-tune-flan-t5-telegram.html) time I fine-tuned a model, open source is definitely moving fast. The process was not only much faster, and simpler than fine-tuning Flan T5 using a notebook, but the results were also much better than anything I had seen so far. 
+Compared to the [last](/blog/fine-tune-flan-t5-telegram.html) time I fine-tuned a model, open source is definitely moving fast. The process was not only much faster, and simpler than fine-tuning Flan T5 using a notebook, but the results were also much better than anything I had seen so far.
 
-[Axolotl](https://github.com/OpenAccess-AI-Collective/axolotl) did almost all the heavy lifting. Making the whole process super smooth. All I needed was a dataset, a config file, 2 USD, and about an hour to fine-tune a model. We've come a _long_ way. 
+[Axolotl](https://github.com/OpenAccess-AI-Collective/axolotl) did almost all the heavy lifting. Making the whole process super smooth. All I needed was a dataset, a config file, 2 USD, and about an hour to fine-tune a model. We've come a _long_ way.
 
 The model is still not perfect though. It captures some of my friends' quirks and ways of speaking, and the generated conversations make sense around ~70% of the time. But that's _still_ 30% nonsense. Could be a couple of things: the size (I used the "smaller" 7 billion version of the model), or even the language (Portuguese from Portugal). For example, when I prompt the model to simulate a politics discussion between my friends, someone starts discussing something about [Dilma](https://da.wikipedia.org/wiki/Dilma_Rousseff) (which is _wildly_ inaccurate given we're from Portugal).
 

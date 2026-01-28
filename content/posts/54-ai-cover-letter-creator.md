@@ -15,15 +15,15 @@ _Get rid of all applications that don't have a cover letter_
 
 I remember it like it was yesterday. As I was leaving one of the first companies I've ever worked for, my manager asked me to hire my replacement. Drowning in hundreds of applications for the position, I still recall his exact words.
 
-I don't want to start a debate on if you should include a cover letter in your job application or not. I've heard good arguments on both sides. There's one thing I'd like to point out though: in the days of ChatGPT, it's hard to get a good excuse *not* to write one. 
+I don't want to start a debate on if you should include a cover letter in your job application or not. I've heard good arguments on both sides. There's one thing I'd like to point out though: in the days of ChatGPT, it's hard to get a good excuse *not* to write one.
 
 Enter: <a href="https://aicoverlettercreator.com?ref=blog_post" target="_blank">aicoverlettercreator.com</a>
 
 ## Why I built it
 
-The short answer: _Why not?_ 
+The short answer: _Why not?_
 
-The long answer, for a couple of reasons. 
+The long answer, for a couple of reasons.
 
 I like mentoring/helping people that are just entering the industry (or just getting out of University) regarding their careers. Most people, when applying for positions, don't really pay close attention to the cover letter. I believe it can be a really big differentiator. Even though I hope they are aware of just how much ChatGPT can help them, I integrated in this version a little bit of _secret juice_. I think that secret juice will make those cover letters even better. And that's the first reason, to help people.
 
@@ -37,6 +37,6 @@ For this app, I went with [Django](https://www.djangoproject.com/) and [htmx](ht
 
 One of the biggest hurdles when building this, was the implementation of streaming from OpenAI's API. There's nothing I hate more than clicking a button and having to wait 10 seconds for something to appear on screen. Turns out, integrating [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) with Django is not so straightforward. And even though Django supports [streaming responses](https://docs.djangoproject.com/en/4.2/ref/request-response/#streaminghttpresponse-objects). At the end of the day, you can't really escape some good old Javascript. And I'm ok with that.
 
-Still sticking to my premise of keeping things as simple as possible. Every component I add to an app during development is a component I'll have to maintain during its lifetime. And I'm not the biggest fan of maintenance work. Because of this, [aicoverlettercreator.com](https://aicoverlettercreator.com) is both simple to use _and_ to operate. It's a simple Django app with no [queues](https://docs.celeryq.dev/en/stable/django/first-steps-with-django.html) and no self hosted PostgreSQL containers. It's a Dockerfile that connects to a [PlanetScale](https://planetscale.com/) database. That's it, every git commit automatically updates the app. 
+Still sticking to my premise of keeping things as simple as possible. Every component I add to an app during development is a component I'll have to maintain during its lifetime. And I'm not the biggest fan of maintenance work. Because of this, [aicoverlettercreator.com](https://aicoverlettercreator.com) is both simple to use _and_ to operate. It's a simple Django app with no [queues](https://docs.celeryq.dev/en/stable/django/first-steps-with-django.html) and no self hosted PostgreSQL containers. It's a Dockerfile that connects to a [PlanetScale](https://planetscale.com/) database. That's it, every git commit automatically updates the app.
 
-Nothing like keeping things simple. 
+Nothing like keeping things simple.

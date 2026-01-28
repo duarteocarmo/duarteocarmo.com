@@ -5,7 +5,6 @@ status: published
 slug: the-marathon
 thumbnail: images/73/cover.png
 
-
 I'm flying over the Atlantic just between France and Spain for my yearly Christmas trip back to Lisbon. For some reason, I just remembered the blog post I always wanted to write. This one is not about tech, but it's about something I'm equally passionate about: The Marathon.
 
 Funnily - I'm flying pretty close from where my last battle went down: right off the beautiful Cote d'Azure, about 1 month ago, for the [Nice Marathon](https://cotedazurfrance.com/discover/the-top-events-and-festivals-on-the-cote-dazur/the-alpes-maritimes-nice-cannes-marathon/), my seventh in ~3 years.
@@ -14,11 +13,9 @@ And if that makes you think that Duarte is probably addicted. You're probably ri
 
 Let me explain.
 
-
 * "_What's your shoe rotation?_"
 * "_What gear should I buy?_"
 * "_Should I join a run club?_"
-
 
 All of these miss the point of running completely. Running is a solo sport. And a marathon prep is a tough mental challenge to do well. "_I have to work_", "_I won't make it this time_", "_I'm feeling tired today_". These are just a small taste of the challenge you are really up against: yourself.
 

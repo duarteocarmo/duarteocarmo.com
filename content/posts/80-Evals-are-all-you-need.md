@@ -1,5 +1,5 @@
 title: Evals are all you need
-description: Evals are a buzzword. How I used evals to systematically improve my LLM-powered food tracking app Taralli. 
+description: Evals are a buzzword. How I used evals to systematically improve my LLM-powered food tracking app Taralli.
 date: 4th of May 2025
 status: published
 thumbnail: images/80/cover.png
@@ -52,11 +52,13 @@ class NutritionAnalysis(BaseModel):
     food_items: list[FoodItem] = Field(
         description="A list of food items with their nutritional information"
     )
+
 ```
 
 With this in place - it's relatively simple to build an API that does the following:
 
 Input: `a handful of peanuts`, output:
+
 ```json
 {
    "food_items":[
@@ -74,11 +76,13 @@ Input: `a handful of peanuts`, output:
       }
    ]
 }
+
 ```
 
 The system returns not only calories but also macronutrients (carbs, fat, protein, fiber, and food groups). And even though the model respected the format almost 100% of the time, cracks started showing pretty quickly:
 
 Input: `100g of peanut butter`, output:
+
 ```json
 {
   "food_items": [
@@ -96,17 +100,18 @@ Input: `100g of peanut butter`, output:
     }
   ]
 }
+
 ```
 
-Wait a second, 100 x 588? That’s 58,800 calories for 100g of peanut butter. That’s _wildly_ off (the model is [misinterpreting](https://www.google.com/search?q=calories+in+100g+of+peanut+butter&oq=calories+in+100g+of+pean&gs_lcrp=EgZjaHJvbWUqBwgCEAAYgAQyBggAEEUYOTIHCAEQABiABDIHCAIQABiABDIICAMQABgWGB4yCAgEEAAYFhgeMggIBRAAGBYYHjIICAYQABgWGB4yCAgHEAAYFhgeMggICBAAGBYYHjIICAkQABgWGB7SAQgzOTc0ajFqN6gCALACAA&sourceid=chrome&ie=UTF-8) what I want for quantity here). It should have set name to "100g of peanut butter" and quantity to 1. For example. 
+Wait a second, 100 x 588? That’s 58,800 calories for 100g of peanut butter. That’s _wildly_ off (the model is [misinterpreting](https://www.google.com/search?q=calories+in+100g+of+peanut+butter&oq=calories+in+100g+of+pean&gs_lcrp=EgZjaHJvbWUqBwgCEAAYgAQyBggAEEUYOTIHCAEQABiABDIHCAIQABiABDIICAMQABgWGB4yCAgEEAAYFhgeMggIBRAAGBYYHjIICAYQABgWGB4yCAgHEAAYFhgeMggICBAAGBYYHjIICAkQABgWGB7SAQgzOTc0ajFqN6gCALACAA&sourceid=chrome&ie=UTF-8) what I want for quantity here). It should have set name to "100g of peanut butter" and quantity to 1. For example.
 
 ## Creating a golden dataset
 
-When I published Taralli, I made the app completely free (even though I was paying for every LLM call). I did warn users that I was logging all of their inputs into the food tracking model. Using [W&B Weave](https://wandb.ai/site/weave/) and a simple decorator, I was able to log every input-output of the system. 
+When I published Taralli, I made the app completely free (even though I was paying for every LLM call). I did warn users that I was logging all of their inputs into the food tracking model. Using [W&B Weave](https://wandb.ai/site/weave/) and a simple decorator, I was able to log every input-output of the system.
 
 ![weave screenshot]({static}/images/80/weave.png)
 
-That allowed me to start capturing real-world examples of where the prompt was failing. Looking through the data, I found several cases where my zero-shot prompt was just not cutting it (wrong food groups, lots of wrong quantities). Using this data, I started collecting a *golden dataset*: a collection of food descriptions and their corresponding nutritional analysis. Using OpenAI's o3 and Google's Gemini 2.5 Pro - I was able to make sure all the quantities, descriptions, and food groups were exactly like I wanted them. 
+That allowed me to start capturing real-world examples of where the prompt was failing. Looking through the data, I found several cases where my zero-shot prompt was just not cutting it (wrong food groups, lots of wrong quantities). Using this data, I started collecting a *golden dataset*: a collection of food descriptions and their corresponding nutritional analysis. Using OpenAI's o3 and Google's Gemini 2.5 Pro - I was able to make sure all the quantities, descriptions, and food groups were exactly like I wanted them.
 
 But I still wanted a way to visualize, edit and update the dataset. So I built a small visualizer where I could see everything that was going on, and edit whatever was wrong. 200% vibe coded.
 
@@ -114,7 +119,7 @@ But I still wanted a way to visualize, edit and update the dataset. So I built a
 
 ## A simple metric
 
-With my golden dataset in place, I needed a way of evaluating whether a given prediction from the prompt was *good* or *bad*. By looking at my entries - the most common mistakes were pretty obvious. Either it was calorie totals - or missing food groups. 
+With my golden dataset in place, I needed a way of evaluating whether a given prediction from the prompt was *good* or *bad*. By looking at my entries - the most common mistakes were pretty obvious. Either it was calorie totals - or missing food groups.
 
 My approach was very basic (again) - and could be even more refined. Given a certain food description:
 
@@ -124,10 +129,10 @@ My approach was very basic (again) - and could be even more refined. Given a cer
 If the answer to **both** questions is 'Yes' - then the prediction is good. In code, that roughly translates to:
 
 ```python
-def eval_metric(example, pred, trace=None) -> bool | float: 
+def eval_metric(example, pred, trace=None) -> bool | float:
     gold_items = [dict(i) for i in example.food_items]
     pred_items = [dict(i) for i in pred.food_items]
-    
+
 	def _totals(items: list[dict[str, Any]]) -> tuple[float, set[str]]:
 	    calories = sum(i["calories"] * i["quantity"] for i in items)
 	    groups: set[str] = set().union(*(i["food_groups"] for i in items))
@@ -145,11 +150,13 @@ def eval_metric(example, pred, trace=None) -> bool | float:
 
     sum_ok = calories_ok + groups_ok
     is_ok = sum_ok == 2 # if both are ok
-    
+
     return is_ok
+
 ```
 
 Now that we have a metric - we can make number go up.
+
 ## Using DSPy to Improve the Model
 
 The first step was to use DSPy, [a framework I've talked about before]({filename}/posts/75-What-the-hell-is-gpqa-anyway.md), to evaluate our *current* performance. After splitting my golden dataset into training and testing splits, and I had my metric ready, I could easily assess how well my current system was performing:
@@ -159,9 +166,9 @@ def process_example(val_example):
     pred = classify_food(val_example.food_description)
     return eval_metric(val_example, pred)
 
-
 with concurrent.futures.ThreadPoolExecutor() as executor:
     results = list(executor.map(process_example, val_set))
+
 ```
 
 Which resulted in:
@@ -185,8 +192,11 @@ gold_groups={'vegetable', 'meat and alternatives'}
 pred_groups={<FoodGroup.grain: 'grain'>, <FoodGroup.vegetable: 'vegetable'>, <FoodGroup.meat_and_alternatives: 'meat and alternatives'>}
 GROUPS_OK? True
 is_ok=False
+
 # more examples, truncated for brevity..
+
 Score: 17.24%
+
 ```
 
 The score of my production system on the dataset was only about **17%**, not great - we know. To get yet another baseline for my system, I first tried using `Gemini 2.5 Flash`, as I wanted to keep costs reasonable while still getting better performance. I evaluated it on the dataset using DSPy:
@@ -205,7 +215,9 @@ with dspy.context(lm=gemini_flash_preview):
     evaluator(classify, metric=eval_metric)
 
 # Average Metric: 7.00 / 28 (25.0%): 100%|██████████| 29/29 [00:00<00:00, 960.39it/s]
+
 # 2025/04/30 19:46:41 INFO dspy.evaluate.evaluate: Average Metric: 7.0 / 29 (24.1%)
+
 ```
 
 Using this zero-shot approach, the score was about 25% - better than my `GPT-4o mini` implementation, but still far from acceptable for users.
@@ -222,8 +234,9 @@ with dspy.context(lm=gemini_flash_preview):
         trainset=trainset,
         valset=val_set,
     )
-    
+
 # final evaluation
+
 with dspy.context(lm=gemini_flash_preview):
     evaluator = Evaluate(
         devset=val_set,
@@ -234,7 +247,9 @@ with dspy.context(lm=gemini_flash_preview):
     evaluator(bootstrap_fewshot_random_search, metric=eval_metric)
 
 # Average Metric: 22.00 / 29 (75.9%): 100%|██████████| 29/29 [00:00<00:00, 3096.37it/s]
+
 # 2025/04/30 19:46:45 INFO dspy.evaluate.evaluate: Average Metric: 22 / 29 (75.9%)
+
 ```
 
 After a few minutes of optimization and testing, we achieved 76% accuracy on our validation dataset - an incredible improvement over both our previous system and the zero-shot approach.
@@ -248,6 +263,7 @@ with dspy.context(lm=gemini_flash_preview):
     print(bootstrap_fewshot_random_search(food_description="100 g of peanut butter"))
 
 # Prediction(food_items=[FoodItem(name='Peanut butter (100g)', quantity=1.0, calories=588.0, carbs=20.0, fat=50.0, protein=25.0, fiber=6.0, food_groups=['meat and alternatives'])])
+
 ```
 
 Here's [the full prompt](https://gist.github.com/duarteocarmo/83487a0da408c2470c9b23b257e66931) that DSPy uses for the example above. As you can see, it's essentially a few-shot approach to solving the problem, and it works surprisingly well.
@@ -257,11 +273,14 @@ Here's [the full prompt](https://gist.github.com/duarteocarmo/83487a0da408c2470c
 Now that we have an optimized prompt that performs well, we can save it and integrate it into our `FastAPI` application:
 
 ```python
+
 # save our dspy program
+
 PATH_TO_PROMPT = "../optimized_prompts/bootstrap_fewshot_random_search.json"
 bootstrap_fewshot_random_search.save(PATH_TO_PROMPT)
 
 # create a function to process food descriptions
+
 def get_classifier_async() -> dspy.Predict:
     lm = dspy.LM(LM_NAME)
     dspy.settings.configure(lm=lm, async_max_workers=4)
@@ -271,6 +290,7 @@ def get_classifier_async() -> dspy.Predict:
     return dspy_program
 
 # create an async processor
+
 DSPY_PROGRAM = get_classifier_async()
 @weave.op()
 async def get_calories_for_dspy(food: str) -> NutritionAnalysis:
@@ -288,6 +308,7 @@ async def get_calories_for_dspy(food: str) -> NutritionAnalysis:
     return parsed_message
 
 # integrate it into our fastapi application
+
 @app.post(
     "/calories-v2",
     response_model=NutritionAnalysis,
@@ -298,6 +319,7 @@ async def get_calories_v2(request: FoodRequest, api_key: Optional[str] = Header(
     if api_key != API_KEY:
         raise HTTPException(status_code=403, detail="Invalid or missing API Key")
     return await get_calories_for_dspy(request.food_description)
+
 ```
 
 Along with some other new features in `Taralli`, I integrated this new API endpoint, and now all users of the app benefit from our improved food prediction model, which is much more accurate and an overall better experience. Still room for improvement though!
@@ -310,10 +332,10 @@ What I like about this approach is that it creates a flywheel effect. As more us
 
 ## Final thoughts
 
-I've seen many projects in the wild just using a prompt or model and leaving it as is. Without a good idea of how good (or probably bad) it really is. My first step - is - as always - just put it out there. There are just too many unknowns to get stuck on the 0 to 1 stage. 
+I've seen many projects in the wild just using a prompt or model and leaving it as is. Without a good idea of how good (or probably bad) it really is. My first step - is - as always - just put it out there. There are just too many unknowns to get stuck on the 0 to 1 stage.
 
-Once things are out there, then it's time to start asking yourself: OK - what does good look like? With some simple monitoring, you'll start understanding what REALLY matters. Once that's done - then - **evaluations are truly all you need**. 
+Once things are out there, then it's time to start asking yourself: OK - what does good look like? With some simple monitoring, you'll start understanding what REALLY matters. Once that's done - then - **evaluations are truly all you need**.
 
-Also - check out [Taralli](https://apps.apple.com/dk/app/taralli/id6743634022) - and let me know what you think! 
+Also - check out [Taralli](https://apps.apple.com/dk/app/taralli/id6743634022) - and let me know what you think!
 
 ![Taralli in action]({static}/images/80/taralli.webp)
