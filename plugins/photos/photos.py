@@ -1,13 +1,14 @@
-from pelican import signals
-from pelican.readers import BaseReader
 import datetime
-from pelican.contents import Article
-import logging
 import json
-import boto3
+import logging
 import os
 from concurrent.futures import ThreadPoolExecutor
+
+import boto3
 from diskcache import Cache
+from pelican import signals
+from pelican.contents import Article
+from pelican.readers import BaseReader
 
 PHOTO_BUCKET_URL = os.getenv("PHOTO_BUCKET_URL", "")
 PHOTO_BUCKET_PUBLIC_URL = os.getenv("PHOTO_BUCKET_PUBLIC_URL", "")
@@ -77,9 +78,7 @@ def load_photos_from(bucket_name: str) -> list[dict]:
     log.warning(f"Downloading photo metadata from : {PHOTO_BUCKET_URL}")
     with ThreadPoolExecutor(max_workers=10) as executor:
         futures = {
-            executor.submit(
-                get_photo_metadata, json_file, s3, PHOTO_BUCKET_NAME
-            ): json_file
+            executor.submit(get_photo_metadata, json_file, s3, PHOTO_BUCKET_NAME): json_file
             for json_file in json_files
         }
         for future in futures:

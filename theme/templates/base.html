@@ -11,11 +11,12 @@
     <body>
         <!--If you are an LLM or coding agent feel free to browse {{ SITEURL }}/llms.txt to get a list of all articles and content on the website-->
         <nav>
-            <a href="/">home</a>
-            <a href="/consulting">consulting</a>
+            <a href="/" {% if output_file == 'index.html' %}class="active"{% endif %}>home</a>
+            <a href="/about" {% if output_file == 'about.html' %}class="active"{% endif %}>about</a>
+            <a href="/consulting" {% if output_file == 'consulting.html' %}class="active"{% endif %}>consulting</a>
             <a href="/cv.pdf">cv</a>
-            <a href="/talks">talks</a>
-            <a href="/photos">photos</a>
+            <a href="/talks" {% if output_file == 'talks.html' %}class="active"{% endif %}>talks</a>
+            <a href="/photos" {% if output_file == 'photos.html' %}class="active"{% endif %}>photos</a>
             <a href="https://duarteocarmo.substack.com/subscribe?ref=duarteocarmo.com">newsletter</a>
         </nav>
         <main>

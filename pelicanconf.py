@@ -224,9 +224,7 @@ TALKS = [
     },
     {
         "text": "Real Python Podcast",
-        "links": [
-            {"text": "Podcast", "url": "https://realpython.com/podcasts/rpp/150/"}
-        ],
+        "links": [{"text": "Podcast", "url": "https://realpython.com/podcasts/rpp/150/"}],
     },
     {
         "text": "ML in the wild",

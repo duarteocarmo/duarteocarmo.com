@@ -47,6 +47,13 @@ nav a:hover {
   color: #262626;
 }
 
+nav a.active {
+  color: #da3a25;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+}
+
 /* Homepage title */
 h1 {
   font-size: 24px;
@@ -428,6 +435,24 @@ footer {
   color: #262626;
 }
 
+/* About photo hover */
+.about-photo {
+  position: relative;
+  display: inline-block;
+}
+
+.about-photo .about-photo-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.about-photo:hover .about-photo-hover {
+  opacity: 1;
+}
+
 /* Responsive */
 @media (min-width: 768px) {
   .post-content {
@@ -468,6 +493,13 @@ footer {
 
   nav a:hover {
     color: #e5e5e5;
+  }
+
+  nav a.active {
+    color: #de523f;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
   }
 
   .post-date {
