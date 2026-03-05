@@ -7,6 +7,7 @@ help: # Show help for each of the Makefile recipes.
 .PHONY: install
 install: # Install dependencies
 	uv sync
+	uv export --frozen --no-hashes -o requirements.txt
 
 .PHONY: run
 run: # Run website locally
