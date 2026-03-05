@@ -1,12 +1,9 @@
-# -*- coding: utf-8 -*-
 """
 Sitemap
 -------
 
 The sitemap plugin generates plain-text or XML sitemaps.
 """
-
-from __future__ import unicode_literals
 
 import collections
 import logging
@@ -65,7 +62,7 @@ def format_date(date):
     return date.strftime("%Y-%m-%dT%H:%M:%S") + tz
 
 
-class SitemapGenerator(object):
+class SitemapGenerator:
     def __init__(self, context, settings, path, theme, output_path, *null):
 
         self.output_path = output_path
@@ -100,12 +97,8 @@ class SitemapGenerator(object):
             self.sitemapExclude = config.get("exclude", [])
 
             if fmt not in ("xml", "txt"):
-                log.warning(
-                    "sitemap plugin: SITEMAP['format'] must be `txt' or `xml'"
-                )
-                log.warning(
-                    "sitemap plugin: Setting SITEMAP['format'] on `xml'"
-                )
+                log.warning("sitemap plugin: SITEMAP['format'] must be `txt' or `xml'")
+                log.warning("sitemap plugin: Setting SITEMAP['format'] on `xml'")
             elif fmt == "txt":
                 self.format = fmt
                 return
@@ -126,19 +119,14 @@ class SitemapGenerator(object):
                 for k, v in pris.items():
                     if k in valid_keys and not isinstance(v, (int, float)):
                         default = self.priorities[k]
+                        log.warning("sitemap plugin: priorities must be numbers")
                         log.warning(
-                            "sitemap plugin: priorities must be numbers"
-                        )
-                        log.warning(
-                            "sitemap plugin: setting SITEMAP['priorities']"
-                            "['{0}'] on {1}".format(k, default)
+                            f"sitemap plugin: setting SITEMAP['priorities']['{k}'] on {default}"
                         )
                         pris[k] = default
                 self.priorities.update(pris)
             elif pris is not None:
-                log.warning(
-                    "sitemap plugin: SITEMAP['priorities'] must be a dict"
-                )
+                log.warning("sitemap plugin: SITEMAP['priorities'] must be a dict")
                 log.warning("sitemap plugin: using the default values")
 
             if isinstance(chfreqs, dict):
@@ -146,21 +134,14 @@ class SitemapGenerator(object):
                 for k, v in chfreqs.items():
                     if k in valid_keys and v not in valid_chfreqs:
                         default = self.changefreqs[k]
+                        log.warning(f"sitemap plugin: invalid changefreq `{v}'")
                         log.warning(
-                            "sitemap plugin: invalid changefreq `{0}'".format(
-                                v
-                            )
-                        )
-                        log.warning(
-                            "sitemap plugin: setting SITEMAP['changefreqs']"
-                            "['{0}'] on '{1}'".format(k, default)
+                            f"sitemap plugin: setting SITEMAP['changefreqs']['{k}'] on '{default}'"
                         )
                         chfreqs[k] = default
                 self.changefreqs.update(chfreqs)
             elif chfreqs is not None:
-                log.warning(
-                    "sitemap plugin: SITEMAP['changefreqs'] must be a dict"
-                )
+                log.warning("sitemap plugin: SITEMAP['changefreqs'] must be a dict")
                 log.warning("sitemap plugin: using the default values")
 
     def write_url(self, page, fd):
@@ -183,11 +164,7 @@ class SitemapGenerator(object):
         try:
             lastdate = self.get_date_modified(page, lastdate)
         except ValueError:
-            log.warning(
-                "sitemap plugin: "
-                + page.save_as
-                + " has invalid modification date,"
-            )
+            log.warning("sitemap plugin: " + page.save_as + " has invalid modification date,")
             log.warning("sitemap plugin: using date value as lastmod.")
         lastmod = format_date(lastdate)
 
@@ -213,14 +190,10 @@ class SitemapGenerator(object):
             if not flag:
                 # patch for external pages:
                 if pageurl.startswith("http"):
-                    fd.write(
-                        XML_URL_EXT.format(pageurl, lastmod, chfreq, pri)
-                    )
+                    fd.write(XML_URL_EXT.format(pageurl, lastmod, chfreq, pri))
 
                 else:
-                    fd.write(
-                        XML_URL.format(self.siteurl, pageurl, lastmod, chfreq, pri)
-                    )
+                    fd.write(XML_URL.format(self.siteurl, pageurl, lastmod, chfreq, pri))
         else:
             fd.write(self.siteurl + "/" + pageurl + "\n")
 
@@ -233,16 +206,14 @@ class SitemapGenerator(object):
             return default
 
     def set_url_wrappers_modification_date(self, wrappers):
-        for (wrapper, articles) in wrappers:
+        for wrapper, articles in wrappers:
             lastmod = datetime.min.replace(tzinfo=self.timezone)
             for article in articles:
-                lastmod = max(
-                    lastmod, article.date.replace(tzinfo=self.timezone)
-                )
+                lastmod = max(lastmod, article.date.replace(tzinfo=self.timezone))
                 try:
-                    modified = self.get_date_modified(
-                        article, datetime.min
-                    ).replace(tzinfo=self.timezone)
+                    modified = self.get_date_modified(article, datetime.min).replace(
+                        tzinfo=self.timezone
+                    )
                     lastmod = max(lastmod, modified)
                 except ValueError:
                     # Supressed: user will be notified.
@@ -250,9 +221,7 @@ class SitemapGenerator(object):
             setattr(wrapper, "modified", str(lastmod))
 
     def generate_output(self, writer):
-        path = os.path.join(
-            self.output_path, "sitemap.{0}".format(self.format)
-        )
+        path = os.path.join(self.output_path, f"sitemap.{self.format}")
 
         pages = (
             self.context["pages"]
@@ -269,41 +238,30 @@ class SitemapGenerator(object):
         for article in self.context["articles"]:
             pages += article.translations
 
-        log.info("writing {0}".format(path))
+        log.info(f"writing {path}")
 
         with open(path, "w", encoding="utf-8") as fd:
-
             if self.format == "xml":
                 fd.write(XML_HEADER)
             else:
                 fd.write(TXT_HEADER.format(self.siteurl))
 
-            FakePage = collections.namedtuple(
-                "FakePage", ["status", "date", "url", "save_as"]
-            )
+            FakePage = collections.namedtuple("FakePage", ["status", "date", "url", "save_as"])
 
             for standard_page in self.context["DIRECT_TEMPLATES"]:
-                standard_page_url = self.context.get(
-                    "{}_URL".format(standard_page.upper())
-                )
-                standard_page_save_as = self.context.get(
-                    "{}_SAVE_AS".format(standard_page.upper())
-                )
+                standard_page_url = self.context.get(f"{standard_page.upper()}_URL")
+                standard_page_save_as = self.context.get(f"{standard_page.upper()}_SAVE_AS")
                 fake = FakePage(
                     status="published",
                     date=self.now,
-                    url=standard_page_url or "{}.html".format(standard_page),
-                    save_as=standard_page_save_as
-                    or "{}.html".format(standard_page),
+                    url=standard_page_url or f"{standard_page}.html",
+                    save_as=standard_page_save_as or f"{standard_page}.html",
                 )
                 self.write_url(fake, fd)
 
             # add template pages
             # We use items for Py3k compat. .iteritems() otherwise
-            for path, template_page_url in self.context[
-                "TEMPLATE_PAGES"
-            ].items():
-
+            for path, template_page_url in self.context["TEMPLATE_PAGES"].items():
                 # don't add duplicate entry for index page
                 if template_page_url == "index.html":
                     continue

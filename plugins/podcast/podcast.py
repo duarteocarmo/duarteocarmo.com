@@ -1,9 +1,10 @@
+import logging
+
+import feedparser
+from diskcache import Cache
 from pelican import signals
 from pelican.contents import Article
 from pelican.generators import ArticlesGenerator
-import feedparser
-import logging
-from diskcache import Cache
 
 PODCAST_FEED = "https://r2.duarteocarmo.com/podcast.xml"
 log = logging.getLogger(__name__)
@@ -23,7 +24,7 @@ def download_podcast_feed():
 
 
 def add_podcast_link(instance, link_to_mp3_map):
-    if type(instance) != Article:
+    if not isinstance(instance, Article):
         return
 
     if instance.metadata.get("category") != "blog":
