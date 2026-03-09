@@ -23,14 +23,14 @@
 
         /* Light mode (default) */
         body {
-            background-color: #ffffff;
+            background-color: #fff;
             color: #333333;
         }
 
         /* Dark mode */
         @media (prefers-color-scheme: dark) {
             body {
-                background-color: #171717;
+                background-color: #000;
                 color: #e0e0e0;
             }
 
@@ -299,7 +299,7 @@
                 return {
                     textColor: isDarkMode ? '#e0e0e0' : '#333333',
                     gridColor: isDarkMode ? '#404040' : '#e0e0e0',
-                    backgroundColor: isDarkMode ? '#171717' : '#ffffff'
+                    backgroundColor: isDarkMode ? '#000' : '#fff'
                 };
             }
 
