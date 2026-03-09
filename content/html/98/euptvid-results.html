@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        :root { --text: #333; --muted: #888; --grid: #e0e0e0; --bg: #ffffff; }
+        @media (prefers-color-scheme: dark) {
+            :root { --text: #e0e0e0; --muted: #888; --grid: #333; --bg: #000000; }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 16px;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .chart-wrapper {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--grid);
+        }
+
+        .tab {
+            padding: 8px 18px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--muted);
+            border-bottom: 3px solid transparent;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        .tab:hover { color: var(--text); }
+        .tab.active { color: var(--text); border-bottom-color: #da3a25; }
+
+        svg text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+        .annotation {
+            font-size: 12px;
+            color: var(--muted);
+            text-align: center;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-wrapper">
+        <div class="tabs" id="tabs"></div>
+        <svg id="chart"></svg>
+        <div class="annotation" id="annotation">Average PT-PT F1 (DSL-TL + FRMT) vs inference speed<br>measured on Apple M3 Max · <a href="https://github.com/duarteocarmo/eupt_vid/blob/master/scripts/eval_all.py" target="_blank" style="color:var(--muted)">reproduce</a></div>
+    </div>
+
+    <script>
+        const models = [
+            { name: "FastText quantized (71 MB)", shortName: "FT quantized", dsl: 73.62, frmt: 75.96, speedNum: 13896, speed: "~14k/s", ours: true },
+            { name: "FastText full (1.1 GB)", shortName: "FT full", dsl: 71.97, frmt: 76.31, speedNum: 33408, speed: "~33k/s", ours: true },
+            { name: "PtVId — BERTimbau-large (334M)", shortName: "PtVId", dsl: 74.53, frmt: 76.07, speedNum: 82, speed: "~82/s", ours: false },
+            { name: "LVI — BERTimbau-base (109M)", shortName: "LVI", dsl: 71.43, frmt: 67.66, speedNum: 254, speed: "~254/s", ours: false },
+            { name: "PeroVaz (67M)", shortName: "PeroVaz", dsl: 64.41, frmt: 63.05, speedNum: 4445, speed: "~4.4k/s", ours: false },
+        ];
+
+        const tabs = [
+            { key: "scatter", label: "Speed vs Accuracy" },
+            { key: "dsl", label: "DSL-TL" },
+            { key: "frmt", label: "FRMT" },
+        ];
+
+        let currentTab = "scatter";
+
+        function getTheme() {
+            const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            return {
+                text: isDark ? '#e0e0e0' : '#333',
+                muted: isDark ? '#888' : '#888',
+                grid: isDark ? '#333' : '#e0e0e0',
+                bg: isDark ? '#000000' : '#ffffff',
+                oursColor: isDark ? '#e8564a' : '#da3a25',
+                otherColor: isDark ? '#555' : '#bbb',
+            };
+        }
+
+        function createTabs() {
+            const container = d3.select("#tabs");
+            container.selectAll("*").remove();
+            tabs.forEach(t => {
+                container.append("button")
+                    .attr("class", t.key === currentTab ? "tab active" : "tab")
+                    .text(t.label)
+                    .on("click", () => { currentTab = t.key; createTabs(); draw(); });
+            });
+        }
+
+        function drawBars(theme) {
+            const svg = d3.select("#chart");
+            const margin = { top: 10, right: 70, bottom: 30, left: 220 };
+            const width = 620 - margin.left - margin.right;
+            const height = models.length * 38;
+
+            svg.attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+               .attr("preserveAspectRatio", "xMidYMid meet")
+               .style("width", "100%");
+
+            const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+            const x = d3.scaleLinear().domain([55, 85]).range([0, width]);
+            const y = d3.scaleBand().domain(models.map(m => m.name)).range([0, height]).padding(0.25);
+
+            g.selectAll(".grid-line").data(x.ticks(6)).enter().append("line")
+                .attr("x1", d => x(d)).attr("x2", d => x(d))
+                .attr("y1", 0).attr("y2", height)
+                .attr("stroke", theme.grid).attr("stroke-dasharray", "2,2");
+
+            g.append("g").attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(x).ticks(6).tickFormat(d => d + "%"))
+                .selectAll("text").attr("fill", theme.text).attr("font-size", "12px");
+            g.selectAll(".domain, .tick line").attr("stroke", theme.grid);
+
+            g.selectAll(".bar").data(models).enter().append("rect")
+                .attr("x", x(55))
+                .attr("y", d => y(d.name))
+                .attr("width", d => x(d[currentTab]) - x(55))
+                .attr("height", y.bandwidth())
+                .attr("fill", d => d.ours ? theme.oursColor : theme.otherColor)
+                .attr("rx", 3);
+
+            g.selectAll(".model-label").data(models).enter().append("text")
+                .attr("x", -8).attr("y", d => y(d.name) + y.bandwidth() / 2)
+                .attr("dy", "0.35em").attr("text-anchor", "end")
+                .attr("fill", theme.text).attr("font-size", "12px")
+                .attr("font-weight", d => d.ours ? "600" : "400")
+                .text(d => d.name);
+
+            g.selectAll(".value-label").data(models).enter().append("text")
+                .attr("x", d => x(d[currentTab]) + 5)
+                .attr("y", d => y(d.name) + y.bandwidth() / 2)
+                .attr("dy", "0.35em").attr("fill", theme.muted).attr("font-size", "11px")
+                .text(d => `${d[currentTab]}% · ${d.speed}`);
+
+            d3.select("#annotation").html('PT-PT F1 score (%) · higher is better<br>speed measured on Apple M3 Max · <a href="https://github.com/duarteocarmo/eupt_vid/blob/master/scripts/eval_all.py" target="_blank" style="color:var(--muted)">reproduce</a>');
+        }
+
+        function drawScatter(theme) {
+            const svg = d3.select("#chart");
+            const margin = { top: 20, right: 30, bottom: 45, left: 55 };
+            const width = 620 - margin.left - margin.right;
+            const height = 280;
+
+            svg.attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+               .attr("preserveAspectRatio", "xMidYMid meet")
+               .style("width", "100%");
+
+            const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+            // use average F1 of DSL-TL and FRMT
+            const points = models.map(m => ({
+                ...m,
+                avgF1: (m.dsl + m.frmt) / 2,
+            }));
+
+            const x = d3.scaleLog().domain([50, 50000]).range([0, width]);
+            const y = d3.scaleLinear().domain([60, 80]).range([height, 0]);
+
+            // grid
+            g.selectAll(".grid-h").data(y.ticks(5)).enter().append("line")
+                .attr("x1", 0).attr("x2", width)
+                .attr("y1", d => y(d)).attr("y2", d => y(d))
+                .attr("stroke", theme.grid).attr("stroke-dasharray", "2,2");
+            g.selectAll(".grid-v").data([100, 1000, 10000]).enter().append("line")
+                .attr("x1", d => x(d)).attr("x2", d => x(d))
+                .attr("y1", 0).attr("y2", height)
+                .attr("stroke", theme.grid).attr("stroke-dasharray", "2,2");
+
+            // axes
+            const xAxis = g.append("g").attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(x).tickValues([100, 1000, 10000]).tickFormat(d => {
+                    if (d >= 1000) return (d/1000) + "k";
+                    return d;
+                }));
+            xAxis.selectAll("text").attr("fill", theme.text).attr("font-size", "12px");
+            xAxis.selectAll(".domain, .tick line").attr("stroke", theme.grid);
+
+            const yAxis = g.append("g").call(d3.axisLeft(y).ticks(5).tickFormat(d => d + "%"));
+            yAxis.selectAll("text").attr("fill", theme.text).attr("font-size", "12px");
+            yAxis.selectAll(".domain, .tick line").attr("stroke", theme.grid);
+
+            // axis labels
+            g.append("text").attr("x", width / 2).attr("y", height + 38)
+                .attr("text-anchor", "middle").attr("fill", theme.muted).attr("font-size", "12px")
+                .text("Inference speed (samples/sec)");
+            g.append("text").attr("transform", "rotate(-90)")
+                .attr("x", -height / 2).attr("y", -42)
+                .attr("text-anchor", "middle").attr("fill", theme.muted).attr("font-size", "12px")
+                .text("Accuracy (F1 score)");
+
+            // tooltip
+            const tooltip = d3.select("body").selectAll(".scatter-tooltip").data([0]);
+            const tip = tooltip.enter().append("div").attr("class", "scatter-tooltip")
+                .style("position", "absolute").style("pointer-events", "none")
+                .style("background", "rgba(0,0,0,0.85)").style("color", "#fff")
+                .style("padding", "6px 10px").style("border-radius", "4px")
+                .style("font-size", "12px").style("font-family", "inherit")
+                .style("opacity", 0).style("z-index", 1000)
+                .merge(tooltip);
+
+            // dots
+            g.selectAll(".dot").data(points).enter().append("circle")
+                .attr("cx", d => x(d.speedNum))
+                .attr("cy", d => y(d.avgF1))
+                .attr("r", 6)
+                .attr("fill", d => d.ours ? theme.oursColor : theme.otherColor)
+                .attr("stroke", theme.text)
+                .attr("stroke-width", 1)
+                .style("cursor", "pointer")
+                .on("mouseover", function(event, d) {
+                    d3.select(this).attr("r", 8);
+                    tip.style("opacity", 1)
+                        .html(`<b>${d.shortName}</b><br>F1: ${d.avgF1.toFixed(1)}% (DSL: ${d.dsl}% · FRMT: ${d.frmt}%)<br>Inference speed: ${d.speed}`)
+                        .style("left", (event.pageX + 12) + "px")
+                        .style("top", (event.pageY - 10) + "px");
+                })
+                .on("mouseout", function() {
+                    d3.select(this).attr("r", 6);
+                    tip.style("opacity", 0);
+                });
+
+            // labels below each dot
+            g.selectAll(".dot-label").data(points).enter().append("text")
+                .attr("x", d => x(d.speedNum))
+                .attr("y", d => y(d.avgF1) + 16)
+                .attr("text-anchor", "middle")
+                .attr("fill", theme.text)
+                .attr("font-size", "11px")
+                .attr("font-weight", d => d.ours ? "600" : "400")
+                .text(d => d.shortName);
+
+            d3.select("#annotation").html('Average PT-PT F1 (DSL-TL + FRMT) vs inference speed<br>measured on Apple M3 Max · <a href="https://github.com/duarteocarmo/eupt_vid/blob/master/scripts/eval_all.py" target="_blank" style="color:var(--muted)">reproduce</a>');
+        }
+
+        function draw() {
+            const theme = getTheme();
+            const svg = d3.select("#chart");
+            svg.selectAll("*").remove();
+
+            if (currentTab === "scatter") {
+                drawScatter(theme);
+            } else {
+                drawBars(theme);
+            }
+        }
+
+        createTabs();
+        draw();
+
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+        }
+    </script>
+</body>
+</html>

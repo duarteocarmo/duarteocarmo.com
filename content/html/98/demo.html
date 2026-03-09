@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        :root { --border-color: #ccc; --bg: #ffffff; --text: #333; --muted: #888; }
+        @media (prefers-color-scheme: dark) {
+            :root { --border-color: #444; --bg: #000000; --text: #e0e0e0; --muted: #888; }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            padding: 16px;
+            font-size: 14px;
+        }
+
+        .container { max-width: 600px; margin: 0 auto; }
+
+        textarea {
+            width: 100%;
+            min-height: 90px;
+            font-family: inherit;
+            font-size: 14px;
+            padding: 10px;
+            resize: vertical;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: var(--bg);
+            color: var(--text);
+        }
+        textarea:focus { outline: none; border-color: var(--muted); }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+        }
+        .controls small { color: var(--muted); font-size: 13px; }
+
+        button {
+            font-family: inherit;
+            font-size: 14px;
+            padding: 4px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: var(--bg);
+            color: var(--text);
+            cursor: pointer;
+        }
+        button:hover { opacity: 0.7; }
+
+        .results { margin-top: 8px; }
+        .results:empty { display: none; }
+
+        .result-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            padding: 6px 8px;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .result-row:first-child { border-top: 1px solid var(--border-color); }
+        .result-row:last-child { border-bottom: 1px solid var(--border-color); }
+
+        .result-label { font-weight: 600; white-space: nowrap; }
+        .result-prob { color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; font-size: 13px; }
+        .result-text { flex: 1; word-break: break-word; }
+
+        .timing { font-size: 13px; color: var(--muted); padding: 4px 0; }
+
+        .examples { padding-top: 12px; }
+        .examples p { margin: 0 0 6px; color: var(--muted); font-size: 13px; }
+
+        .example-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 5px 8px;
+            margin-bottom: 2px;
+            font-family: inherit;
+            font-size: 14px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            background: inherit;
+            color: var(--text);
+            cursor: pointer;
+        }
+        .example-btn:hover { border-color: var(--border-color); }
+
+        #loading {
+            padding: 30px 0;
+            text-align: center;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid var(--border-color);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        #app { display: none; }
+        #app.visible { display: block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="loading">
+            <p><span class="spinner"></span> <span id="loader-status">loading model…</span></p>
+        </div>
+
+        <div id="app">
+            <textarea id="input" placeholder="Escreva ou cole texto em português…" spellcheck="false">Patrões terminam negociações do pacote laboral sem acordo. Na reunião desta segunda-feira, UGT assumiu que as cedências não eram ainda suficientes para um acordo. Perante esta posição, os patrões entenderam que não vale a pena continuar o diálogo.</textarea>
+            <div class="controls">
+                <small>one line per prediction · <a href="https://huggingface.co/duarteocarmo/fasttext-euptvid" target="_blank" style="color:var(--muted)">model</a> · shift+enter to classify</small>
+                <button id="classify-btn">Classify</button>
+            </div>
+
+            <div class="timing" id="timing"></div>
+            <div class="results" id="results"></div>
+
+            <div class="examples">
+                <p>Examples:</p>
+                <button class="example-btn" data-text="Vazamentos de Vorcaro causam nova disputa de narrativas no WhatsApp">→ Folha de São Paulo (PT-BR)</button>
+                <button class="example-btn" data-text="Patrões terminam negociações do pacote laboral sem acordo. Na reunião desta segunda-feira, UGT assumiu que as cedências não eram ainda suficientes para um acordo. Perante esta posição, os patrões entenderam que não vale a pena continuar o diálogo.">→ Público.pt (PT-PT)</button>
+                <button class="example-btn" data-text="Vou buscar o autocarro para ir ao centro.&#10;Vou pegar o ônibus para ir ao centro.">→ autocarro vs ônibus</button>
+                <button class="example-btn" data-text="Estou a trabalhar no meu computador portátil.&#10;Estou trabalhando no meu notebook.">→ Gerund and vocabulary</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { FastText, addOnPostRun } from "./fasttext.js";
+
+        const MODEL_URL = "https://huggingface.co/duarteocarmo/fasttext-euptvid/resolve/main/model_quantized.ftz";
+
+        const inputEl = document.getElementById("input");
+        const resultsEl = document.getElementById("results");
+        const timingEl = document.getElementById("timing");
+        const loadingEl = document.getElementById("loading");
+        const appEl = document.getElementById("app");
+        const statusEl = document.getElementById("loader-status");
+        const classifyBtn = document.getElementById("classify-btn");
+
+        let model = null;
+
+        function escapeHtml(s) {
+            const d = document.createElement("div");
+            d.textContent = s;
+            return d.innerHTML;
+        }
+
+        function classify(text) {
+            if (!model || !text.trim()) return;
+            const lines = text.split("\n").map(l => l.trim()).filter(Boolean);
+            resultsEl.innerHTML = "";
+
+            const t0 = performance.now();
+            lines.forEach(line => {
+                const predictions = model.predict(line, 2, 0.0);
+                if (predictions.size() === 0) return;
+                const top = predictions.get(0);
+                const label = top[1].replace("__label__", "");
+                const prob = top[0];
+                const row = document.createElement("div");
+                row.className = "result-row";
+                row.innerHTML = `<span class="result-label">${label}</span><span class="result-prob">${(prob * 100).toFixed(1)}%</span><span class="result-text">${escapeHtml(line)}</span>`;
+                resultsEl.appendChild(row);
+            });
+
+            const elapsed = (performance.now() - t0).toFixed(1);
+            timingEl.textContent = `${lines.length} line${lines.length > 1 ? "s" : ""} · ${elapsed} ms`;
+        }
+
+        classifyBtn.addEventListener("click", () => classify(inputEl.value));
+        inputEl.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" && e.shiftKey) {
+                e.preventDefault();
+                classify(inputEl.value);
+            }
+        });
+
+        document.querySelectorAll(".example-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                inputEl.value = btn.dataset.text;
+                resultsEl.innerHTML = "";
+                timingEl.textContent = "";
+            });
+        });
+
+        addOnPostRun(async () => {
+            const ft = new FastText();
+            statusEl.textContent = "downloading model (~68 MB)…";
+            try {
+                model = await ft.loadModel(MODEL_URL);
+                loadingEl.style.display = "none";
+                appEl.classList.add("visible");
+                inputEl.focus();
+            } catch (err) {
+                statusEl.textContent = "error: " + err.message;
+            }
+        });
+    </script>
+</body>
+</html>
