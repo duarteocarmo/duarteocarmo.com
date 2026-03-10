@@ -210,7 +210,6 @@
                 model = await ft.loadModel(MODEL_URL);
                 loadingEl.style.display = "none";
                 appEl.classList.add("visible");
-                inputEl.focus();
             } catch (err) {
                 statusEl.textContent = "error: " + err.message;
             }
