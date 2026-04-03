@@ -4,6 +4,8 @@ date: 3rd of April 2026
 status: published
 audio: true
 
+![Ponte 25 de Abril over the Tagus river]({static}/images/100/ponte-25-de-abril.webp)
+
 Well, now would you look at that. Article 100 on this website. Ten years of writing on this small corner of the web. I'm writing this week's newsletter from my favourite place: the airplane.
 
 Happy Easter if you celebrate. With clients spread across time zones, I didn't really get the time. Next week I'll be at <a href="https://www.ai.engineer/london" target="_blank">AI Engineer London</a>. Email me if you're coming too!
@@ -12,13 +14,13 @@ I'm experimenting with a _slightly_ different format this week.
 
 ## Using
 
-**<a href="https://shittycodingagent.ai/" target="_blank">Pi.dev</a>**: After watching <a href="https://www.youtube.com/watch?v=0RLIlNWv1xo" target="_blank">this talk</a> on how some people use Pi, I decided to (re-)double down. It's become my main driver. I've created a nice collection of <a href="https://github.com/duarteocarmo/dotfiles/tree/master/.agents/skills" target="_blank">skills</a> (some private), <a href="https://github.com/duarteocarmo/dotfiles/tree/master/.pi/agent/extensions" target="_blank">extensions</a>, and even ported my favorite <a href="https://github.com/duarteocarmo/dotfiles/tree/master/.pi/agent/themes" target="_blank">theme</a> to it. An [agent harness](/blog/how-to-police-your-agents.html) is a bit like an editor: it needs to be _yours_. I want to `/preview` a longer agent plan in a nice web page. I want to answer questions in a nice interface with `/answer`, I want the theme to adapt to my macOS system theme. And, most of all, I want to be able to use it with ANY model. Even <a href="https://github.com/duarteocarmo/dotfiles/blob/master/.pi/agent/models.json#L9" target="_blank">local ones</a>.
+**<a href="https://shittycodingagent.ai/" target="_blank">Pi.dev</a>**: After watching [this talk](https://www.youtube.com/watch?v=0RLIlNWv1xo) on how some people use Pi, I decided to (re-)double down. It's become my main driver. I've created a nice collection of [skills](https://github.com/duarteocarmo/dotfiles/tree/master/.agents/skills) (some private), [extensions](https://github.com/duarteocarmo/dotfiles/tree/master/.pi/agent/extensions), and even ported my favorite [theme](https://github.com/duarteocarmo/dotfiles/tree/master/.pi/agent/themes) to it. An [agent harness](/blog/how-to-police-your-agents.html) is a bit like an editor: it needs to be _yours_. I want to `/preview` a longer agent plan in a nice web page. I want to answer questions in a nice interface with `/answer`, I want the theme to adapt to my macOS system theme. And, most of all, I want to be able to use it with ANY model. Even [local ones](https://github.com/duarteocarmo/dotfiles/blob/master/.pi/agent/models.json#L9).
 
 **<a href="https://developers.openai.com/codex/app/" target="_blank">Codex</a>**: Some things need my full attention. Others don't. When it's a quick fix, a breaking test, a simpler analysis, or something I can run in parallel, Codex has been my go to. You can preview diffs, open in a terminal, create PRs, all from the same place. I tend to throw at it the smaller parallel things that are not "high risk".
 
 **<a href="https://www.hevyapp.com/" target="_blank">Hevy</a>**: I [continue to run](/blog/an-opinionated-running-dashboard.html). Not as much as I'd like. As you get older, weight lifting and strength training become increasingly important. After freestyling my gym routine for the past years, I wanted something a bit more sophisticated. After testing 3-4 apps, I landed on Hevy. It's paid but not expensive. 
 
-**<a href="https://apps.apple.com/us/app/snapseed/id439438619" target="_blank">Snapseed</a>**: My inspiration to take [photos](/photos) comes and goes. But I need an editing app that makes the ugly Danish sky just a tad prettier. The previous version of Snapseed looked largely abandoned so I resorted to <a href="https://darkroom.co/" target="_blank">Darkroom</a>. Now that everything is a subscription everywhere I started looking again. The new Snapseed app is excellent. 
+**<a href="https://apps.apple.com/us/app/snapseed/id439438619" target="_blank">Snapseed</a>**: My inspiration to take [photos](/photos) comes and goes. But I need an editing app that makes the ugly Danish sky just a tad prettier. The previous version of Snapseed looked largely abandoned so I resorted to [Darkroom](https://darkroom.co/). Now that everything is a subscription everywhere I started looking again. The new Snapseed app is excellent. 
 
 
 ## Reading
@@ -34,6 +36,11 @@ I'm experimenting with a _slightly_ different format this week.
 **<a href="https://www.philschmid.de/kimi-composer-context" target="_blank">How Kimi, Cursor, and Chrome Train Agentic Models with RL - Phil Schmid</a>**: An incredible roundup of the reinforcement learning techniques some of the larger players are using to train models.
 
 ## Listening
+
+
+<br>
+<lite-youtube videoid="1bsBBU_ETy8"></lite-youtube>
+<br>
 
 **<a href="https://bit.donado.co/1xAhBA" target="_blank">The Roving - Bonny Light Horseman</a>**: What can I say? After clicking "don't recommend" on those Ruff songs on my Discover Weekly, sometimes Spotify eventually makes you discover something new and interesting.
 
@@ -51,8 +58,9 @@ I'm experimenting with a _slightly_ different format this week.
 <lite-youtube videoid="Pdp3p23P-TI"></lite-youtube>
 <br>
 
+
+
 **<a href="https://www.youtube.com/watch?v=Pdp3p23P-TI" target="_blank">Living in the Matrix - Casey Neistat</a>**: From the master, extremely relatable. I also feel like chasing the green quadrant every time. But maybe the other 3 are a necessary evil.
 
 
 The flight attendant is about to come by and scream at me for not closing my laptop. See you next month!
-

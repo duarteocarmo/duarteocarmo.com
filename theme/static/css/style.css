@@ -251,11 +251,12 @@ h1 {
 }
 
 .prose blockquote {
-  border-left: 2px solid #e5e5e5;
-  padding-left: 1rem;
-  margin: 1rem 0;
+  border-left: 4px solid #da3a25;
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0 1.5rem 1.5rem;
   color: #525252;
   font-style: italic;
+  font-size: 1.1em;
 }
 
 .prose table {
@@ -550,7 +551,7 @@ footer {
   }
 
   .prose blockquote {
-    border-left-color: #404040;
+    border-left-color: #de523f;
     color: #a3a3a3;
   }
 

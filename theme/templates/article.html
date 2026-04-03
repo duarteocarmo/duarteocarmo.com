@@ -27,6 +27,10 @@
                     </audio>
                 </div>
             {% endif %}
+            {% if '<lite-youtube' in article.content %}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.css" />
+            <script defer src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.js"></script>
+            {% endif %}
             <div class="prose">{{ article.content }}</div>
             <div class="meta" style="margin-top: 2rem; margin-bottom: 0;">
                 <p></p>
