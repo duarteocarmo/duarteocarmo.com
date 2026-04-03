@@ -6,7 +6,7 @@ audio: true
 
 ![Ponte 25 de Abril over the Tagus river]({static}/images/100/ponte-25-de-abril.webp)
 
-Well, now would you look at that. Article 100 on this website. Ten years of writing on this small corner of the web. I'm writing this week's newsletter from my favourite place: the airplane.
+Well, now would you look at that. Article 100 on this website. Ten years of writing on this small corner of the web. I'm writing this month's newsletter from my favourite place: the airplane.
 
 Happy Easter if you celebrate. With clients spread across time zones, I didn't really get the time. Next week I'll be at <a href="https://www.ai.engineer/london" target="_blank">AI Engineer London</a>. Email me if you're coming too!
 
@@ -16,7 +16,7 @@ I'm experimenting with a _slightly_ different format this week.
 
 **<a href="https://shittycodingagent.ai/" target="_blank">Pi.dev</a>**: After watching [this talk](https://www.youtube.com/watch?v=0RLIlNWv1xo) on how some people use Pi, I decided to (re-)double down. It's become my main driver. I've created a nice collection of [skills](https://github.com/duarteocarmo/dotfiles/tree/master/.agents/skills) (some private), [extensions](https://github.com/duarteocarmo/dotfiles/tree/master/.pi/agent/extensions), and even ported my favorite [theme](https://github.com/duarteocarmo/dotfiles/tree/master/.pi/agent/themes) to it. An [agent harness](/blog/how-to-police-your-agents.html) is a bit like an editor: it needs to be _yours_. I want to `/preview` a longer agent plan in a nice web page. I want to answer questions in a nice interface with `/answer`, I want the theme to adapt to my macOS system theme. And, most of all, I want to be able to use it with ANY model. Even [local ones](https://github.com/duarteocarmo/dotfiles/blob/master/.pi/agent/models.json#L9).
 
-**<a href="https://developers.openai.com/codex/app/" target="_blank">Codex</a>**: Some things need my full attention. Others don't. When it's a quick fix, a breaking test, a simpler analysis, or something I can run in parallel, Codex has been my go to. You can preview diffs, open in a terminal, create PRs, all from the same place. I tend to throw at it the smaller parallel things that are not "high risk".
+**<a href="https://developers.openai.com/codex/app/" target="_blank">Codex</a>**: Some things need my full attention. Others don't. When it's a quick fix, a breaking test, a simpler analysis, or something I can run in parallel, Codex has been my go-to. You can preview diffs, open in a terminal, create PRs, all from the same place. I tend to throw at it the smaller parallel things that are not "high risk".
 
 **<a href="https://www.hevyapp.com/" target="_blank">Hevy</a>**: I [continue to run](/blog/an-opinionated-running-dashboard.html). Not as much as I'd like. As you get older, weight lifting and strength training become increasingly important. After freestyling my gym routine for the past years, I wanted something a bit more sophisticated. After testing 3-4 apps, I landed on Hevy. It's paid but not expensive. 
 
@@ -31,7 +31,7 @@ I'm experimenting with a _slightly_ different format this week.
 
 > "If the cluster is not on fire, you are not using it enough" 
 
-**<a href="https://emerge-lab.github.io/papers/an-unsolicited-guide-to-good-research.pdf" target="_blank">An unsolicited guide to good research - Eugene Vinitsky</a>**: A great deck on how to do great ML research, and how to find interesting problems. I liked the framing: pragmatic and to the point. _"If the cluster is not on fire, you are not using it enough."_
+**<a href="https://emerge-lab.github.io/papers/an-unsolicited-guide-to-good-research.pdf" target="_blank">An unsolicited guide to good research - Eugene Vinitsky</a>**: A great deck on how to do great ML research, and how to find interesting problems. I liked the framing: pragmatic and to the point. 
 
 **<a href="https://www.philschmid.de/kimi-composer-context" target="_blank">How Kimi, Cursor, and Chrome Train Agentic Models with RL - Phil Schmid</a>**: An incredible roundup of the reinforcement learning techniques some of the larger players are using to train models.
 
