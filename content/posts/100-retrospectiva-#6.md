@@ -23,11 +23,13 @@ I'm experimenting with a _slightly_ different format this week.
 
 ## Reading
 
-**[Empire of AI](https://www.goodreads.com/book/show/222725518-empire-of-ai) - Karen Hao**: Allegra is going through a small sleep regression, so I tested a new reading routine this month. One chapter per day, usually in the mornings. Ended up finishing this one. The book has some interesting tidbits about the history of OpenAI and some backstories on its key people. Some slightly deeper commentary on the ethics of AI and the infrastructure around. But a lot of TMZ-style tech drama that I don't find either interesting or entertaining.
+**[Empire of AI](https://www.goodreads.com/book/show/222725518-empire-of-ai) - Karen Hao**: I tested a new reading routine this month: One chapter a day. Ended up finishing this one. The book has some interesting tidbits about the history of OpenAI and how it all came to be. It also has some slightly deeper commentary on the ethics of AI models and infrastructure build outs. Unfortnunately, it had a bit too much _TMZ-style_ tech drama I don't really find interesting.
 
-**[Inference Engineering](https://www.baseten.co/inference-engineering/) - Philip Kiely**: Since I left this physical stack at home, I picked this one up on my [Palma](/blog/goodbye-kindle-i-dont-think-ill-miss-you.html). Even though I'm still early in it, I can already recommend it. As I work with larger and larger models, datasets, and infrastructure - it's a great field guide.
+**[Inference Engineering](https://www.baseten.co/inference-engineering/) - Philip Kiely**: I picked this one up on my [Palma](/blog/goodbye-kindle-i-dont-think-ill-miss-you.html). Even though I just started, I can already recommend it. As I work with larger models, datasets, and infrastructure - it's a great field guide.
 
-**[An unsolicited guide to good research](https://emerge-lab.github.io/papers/an-unsolicited-guide-to-good-research.pdf) - Gaurig Gupta**: A great deck on how to do great research, and how to find interesting problems. I liked the framing, pragmatic and to the point.
+> If the cluster is not on fire, you are not using it enough - Eugene Vinitsky
+
+**[An unsolicited guide to good research](https://emerge-lab.github.io/papers/an-unsolicited-guide-to-good-research.pdf) - Eugene Vinitsky**: A great deck on how to do great ML research, and how to find interesting problems. I liked the framing: pragmatic and to the point. _"If the cluster is not on fire, you are not using it enough."_
 
 **[How Kimi, Cursor, and Chrome Train Agentic Models with RL](https://www.philschmid.de/kimi-composer-context) - Phil Schmid**: An incredible roundup of the reinforcement learning techniques some of the larger players are using to train models.
 
@@ -43,9 +45,10 @@ I'm experimenting with a _slightly_ different format this week.
 
 ## Watching
 
-**[Everything We Got Wrong About Research-Plan-Implement](https://www.youtube.com/watch?v=YwZR6tc7qYg)**: Loved this one. Talks about how engineers are tackling larger codebases. Some interesting mentions of: _"Hey - we let the agent rip, and actually regretted it. Then we went back, and thought about how to do it properly"_. Agents are going to eat software. But we are still learning how to deal with it. Exciting times!
+**[Everything We Got Wrong About Research-Plan-Implement](https://www.youtube.com/watch?v=YwZR6tc7qYg)**: Loved this one. On how to tackle codebases with agents. Some interesting mentions of: _"Hey - we let the agent rip, and actually regretted it. Then we went back, and thought about how to do it properly"_. Agents are are likely to eat software, but we are still learning how to deal with it.
 
-**[Living in the Matrix](https://www.youtube.com/watch?v=Pdp3p23P-TI) - Casey Neistat**: As always, from the master, extremely relatable. I also feel like chasing the green quadrant every time. But maybe the other 3 are a necessary evil.
+**[Living in the Matrix](https://www.youtube.com/watch?v=Pdp3p23P-TI) - Casey Neistat**: From the master, extremely relatable. I also feel like chasing the green quadrant every time. But maybe the other 3 are a necessary evil.
+
 
 The flight attendant is about to come by and scream at me for not closing my laptop. See you next month!
 
