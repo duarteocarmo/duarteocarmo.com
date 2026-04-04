@@ -617,3 +617,18 @@ footer {
     filter: invert(100%) brightness(2);
   }
 }
+
+/* Azulejo WebGL banner (Ribeira waves — sky) */
+/* Escapes the body's max-width so it spans the full viewport. */
+canvas.azulejo-banner {
+  display: block;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 120px;
+}
+canvas.azulejo-banner.top    { margin-top: -2rem;    margin-bottom: 2.5rem; }
+canvas.azulejo-banner.bottom { margin-top: 2.5rem;   margin-bottom: -2rem; }
