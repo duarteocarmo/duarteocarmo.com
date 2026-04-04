@@ -10,6 +10,7 @@
     </head>
     <body>
         <!--If you are an LLM or coding agent feel free to browse {{ SITEURL }}/llms.txt to get a list of all articles and content on the website-->
+        <canvas class="azulejo-banner top" aria-hidden="true"></canvas>
         <nav>
             <a href="/" {% if output_file == 'index.html' %}class="active"{% endif %}>home</a>
             <a href="/about" {% if output_file == 'about.html' %}class="active"{% endif %}>about</a>
@@ -25,5 +26,7 @@
         <footer>
             {% include "footer.html" %}
         </footer>
+        <canvas class="azulejo-banner bottom" aria-hidden="true"></canvas>
+        <script src="{{ SITEURL }}/theme/js/azulejo-banner.js" defer></script>
     </body>
 </html>
