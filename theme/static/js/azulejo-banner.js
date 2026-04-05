@@ -1,6 +1,3 @@
-// Animated azulejo banner — "Ribeira waves, sky" variant.
-// Auto-initializes every <canvas class="azulejo-banner"> on the page.
-// Fixed palette: does NOT react to dark/light mode.
 (function () {
   const VS = `attribute vec2 a_pos; void main(){ gl_Position=vec4(a_pos,0.0,1.0); }`;
 
@@ -23,8 +20,8 @@
       uv.x -= 0.5*u_res.x/u_res.y;
       float t = u_time*0.4;
 
-      vec3 sky  = vec3(0.071, 0.161, 0.349); // #122959
-      vec3 foam = vec3(0.957, 0.937, 0.902); // #F4EFE6
+      vec3 sky  = vec3(0.071, 0.161, 0.349);
+      vec3 foam = vec3(0.957, 0.937, 0.902);
       vec3 col  = sky;
 
       for (int i=0; i<5; i++){
@@ -101,7 +98,6 @@
     const start = performance.now();
     let running = true;
 
-    // Pause when offscreen to save cycles
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => (running = e.isIntersecting)),
       { threshold: 0 },
