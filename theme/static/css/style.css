@@ -618,7 +618,6 @@ footer {
   }
 }
 
-/* Azulejo WebGL banner (Ribeira waves — sky) */
 canvas.azulejo-banner {
   display: block;
   width: 100%;
@@ -626,4 +625,4 @@ canvas.azulejo-banner {
   border-radius: 6px;
 }
 canvas.azulejo-banner.top    { margin: 0 0 2.5rem; }
-canvas.azulejo-banner.bottom { margin: 2.5rem 0 0; }
+canvas.azulejo-banner.bottom { margin: 1rem 0 0; }
