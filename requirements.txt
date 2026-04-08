@@ -56,7 +56,7 @@ pelican-simple-footnotes==1.0.2
     # via duarteocarmo-com
 pelican-sitemap==1.1.0
     # via duarteocarmo-com
-pygments==2.17.2
+pygments==2.20.0
     # via
     #   duarteocarmo-com
     #   pelican
