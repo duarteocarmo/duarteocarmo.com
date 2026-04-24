@@ -246,8 +246,12 @@ h1 {
   font-size: 0.875rem;
   color: #525252;
   text-align: center;
-  margin-top: -0.5rem;
+  margin-top: -1.35rem;
   margin-bottom: 1rem;
+}
+
+.prose .simple-footnotes {
+  margin-top: 8rem;
 }
 
 .prose blockquote {

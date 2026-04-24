@@ -1,10 +1,15 @@
 title: AMÁLIA and the future of European Portuguese LLMs
 description: Thoughts on the new technical report from AMÁLIA: The Open Source LLM for European Portuguese
-date: 23rd of April 2026
+date: 24th of April 2026
 status: published
 audio: true
+thumbnail: images/101/cover.webp
 
-In December 2024, the Portuguese government [announced](https://portugal.gov.pt/gc24/comunicacao/noticias/modelo-de-linguagem-em-grande-escala-para-a-lingua-portuguesa) AMÁLIA: a 5.5 Million Euro investment on a large-scale LLM for European Portuguese.[ref] When I refer to Portuguese in this post, I mean European Portuguese - it's just shorter - get over it.[/ref]. 
+<a href="https://en.wikipedia.org/wiki/Am%C3%A1lia_Rodrigues" target="_blank">
+<img src="{static}/images/101/hero.webp" alt="Amália Rodrigues promotional photograph by Augusto Cabrita" style="max-width:100%;border-radius: 2px;">
+</a>
+
+In December 2024, the Portuguese government [announced](https://portugal.gov.pt/gc24/comunicacao/noticias/modelo-de-linguagem-em-grande-escala-para-a-lingua-portuguesa) AMÁLIA: a 5.5 Million Euro investment on a large-scale LLM for European Portuguese[ref] When I refer to Portuguese in this post, I mean European Portuguese - it's just shorter - get over it.[/ref].
 
 The other day, while building an [overview](https://doc-public-s3.duarteocarmo.com/pt-llm.html) of the different Portuguese NLP efforts, I stumbled upon the [technical report](https://arxiv.org/pdf/2603.26511)! I couldn't believe my eyes. Much to talk about! Let's get straight to it!
 
@@ -19,6 +24,15 @@ Contrary to what I would have expected, AMÁLIA is *not* trained from scratch. I
 
 Now, how does AMÁLIA focus on Portuguese? One word: **Data**. Across every different training stage they tried to increase the share of European Portuguese data the model was trained on. During pre-training they used [Arquivo.pt](https://arquivo.pt/) data, during supervised fine tuning (SFT) they synthetically generated Portuguese data, and during preference training they sub-sampled some of the data from the SFT phase. 
 
+<center>
+<a href="{static}/images/101/benchmark-results.webp" target="_blank">
+<img src="{static}/images/101/benchmark-results.webp" alt="AMÁLIA benchmark results on PT-PT benchmarks" style="max-width:100%;border-radius: 2px">
+</a>
+<figcaption>
+Click to open the full resolution version in a new tab. Reconstructed from the AMÁLIA and ALBA papers.
+</figcaption>
+</center>
+
 Training is interesting and all, but even more interesting is to measure if what was trained was any good. Which for this particular case, can be [especially challenging.](https://duarteocarmo.substack.com/p/a-benchmark-for-language-models-on) The team created four new benchmarks specific for European Portuguese. The most prominent one of these is [ALBA](https://arxiv.org/pdf/2603.26516). 
 
 ## How open source, really?
@@ -31,11 +45,17 @@ Maybe it's a matter of time. Maybe there's something beyond my understanding as 
 
 But even if they released weights tomorrow, I'm not sure I'm completely sold on the approach. 
 
+<center>
+<img src="{static}/images/101/pretraining-mix.webp" alt="AMÁLIA continued pretraining data distribution" style="max-width:100%;border-radius: 2px">
+</center>
+
 ## How much Portuguese data for a Portuguese model? 
 
 So how much actual Portuguese data was used in training this model?
 
-According to the report the extended pre-training was a total of 107B tokens. Of those, the only clearly European Portuguese component is the 5.8B tokens from Arquivo.pt. That's **around 5.5%**, which is not a lot. To be fair - there surely is some Portuguese data in the [EuroLLM](https://arxiv.org/pdf/2506.04079) mixture already. But we don't know (1) how much, (2) and if it's actually European Portuguese or something else.
+According to the report the extended pre-training was a total of 107B tokens. Of those, the only clearly European Portuguese component is the 5.8B tokens from Arquivo.pt. That's **around 5.5%**, which is not a lot.
+
+To be fair - there surely is some Portuguese data in the [EuroLLM](https://arxiv.org/pdf/2506.04079) mixture already. But we don't know (1) how much, (2) and if it's actually European Portuguese or something else.
 
 On the SFT side, the percentage is higher - more like 17-18%. But is that enough? To be transparent, I don't have a completely clear picture of how much European Portuguese is in total in this model. And I would like to. 
 
@@ -58,5 +78,4 @@ First of all - I hesitated to write this one. I don't like to criticize anyone's
 Second - it's very challenging to make a LARGE language model for such a TINY country and "language". The data is limited, but it's [out there](https://huggingface.co/datasets/duarteocarmo/fineweb2-bagaco), we just need to get [creative](https://duarteocarmo.com/blog/portuguese-variety-identification-the-bitter-lesson) on how we find it. 
 
 Third - this is a good first step towards an exciting direction. The future is bright for European Portuguese LLMs! We just need to keep our minds, weights, data, and evals - **open**. 
-
 
