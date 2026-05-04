@@ -4,6 +4,7 @@ date: 24th of April 2026
 status: published
 audio: true
 thumbnail: images/101/cover.webp
+popular: true
 
 <a href="https://en.wikipedia.org/wiki/Am%C3%A1lia_Rodrigues" target="_blank">
 <img src="{static}/images/101/hero.webp" alt="Amália Rodrigues promotional photograph by Augusto Cabrita" style="max-width:100%;border-radius: 2px;">
