@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Books - {{ SITENAME }}{% endblock %}
+{% block content %}
+<h1 class="sr-only">Books</h1>
+<div class="posts books-list">
+  {% for book in BOOKS | sort(attribute='completed_date', reverse=True) %}
+  <div class="post-link book-row">
+    <div class="post-content book-content">
+      <div class="book-meta">
+        <p class="post-title">{{ book.title }}</p>
+        <p class="post-date book-author">{{ book.author }}</p>
+      </div>
+      {% if book.rating %}
+      <div class="book-rating" aria-label="{{ book.rating }} out of 5 stars">
+        {% for star_index in range(5) %}
+          <svg class="popular-icon {% if star_index < book.rating %}book-star-filled{% else %}book-star-empty{% endif %}"
+               xmlns="http://www.w3.org/2000/svg"
+               width="14"
+               height="14"
+               fill="currentColor"
+               viewBox="0 0 256 256"
+               aria-hidden="true">
+            <path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path>
+          </svg>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% else %}
+  <p>No books yet!</p>
+  {% endfor %}
+</div>
+{% endblock %}
