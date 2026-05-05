@@ -1,5 +1,11 @@
 BOOKS = [
     {
+        "title": "Lifestyle Medicine",
+        "author": "Valerio Rosso",
+        "completed_date": "2026-05-05",
+        "rating": 2,
+    },
+    {
         "title": "Anaximander",
         "author": "Carlo Rovelli",
         "completed_date": "2026-04-01",
