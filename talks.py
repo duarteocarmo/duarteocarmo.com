@@ -1,5 +1,18 @@
 TALKS = [
     {
+        "text": "The Great Cleanup",
+        "links": [
+            {
+                "text": "Data Makers Fest",
+                "url": "https://www.datamakersfest.com/",
+            },
+            {
+                "text": "Slides",
+                "url": "/pdfs/the_great_cleanup_compressed.pdf",
+            }
+        ],
+    },
+    {
         "text": "GenAI & Data Day London",
         "links": [
             {

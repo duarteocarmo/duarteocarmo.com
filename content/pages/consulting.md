@@ -8,6 +8,7 @@ Browse my [resume](/cv.pdf) or [talks](/talks) to learn more. Ready to chat? [Em
 
 ## Selected work
 
+- Replaced ElevenLabs text-to-speech model with a custom model, reducing monthly costs by 70% while matching quality and availability
 - Scaled a healthcare insights platform powered by LLMs from 100 to 20K global users and grew the team from 2 to 15
 - Built NLP models categorizing 50M+ professionals for lead prospecting, while leading the ML/AI team and mentoring engineers
 - Cut pharmaceutical risk review times by 50% by designing and deploying an LLM-based adverse event and compliance detection system
