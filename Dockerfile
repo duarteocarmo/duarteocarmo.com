@@ -30,10 +30,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 FROM nginxinc/nginx-unprivileged:1.27-alpine
 
-USER root
-RUN sed -i 's/listen       8080;/listen       1111;/' /etc/nginx/conf.d/default.conf
-
+COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/output /usr/share/nginx/html
 
-USER 101
 EXPOSE 1111
