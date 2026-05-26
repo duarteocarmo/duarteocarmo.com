@@ -41,7 +41,7 @@ Here's an example article transcription with the old vs. the new model:
 **Chatterbox (original - not the new ones)**
 <audio controls style="width: 75%; display: block; margin-top: 0.5rem" preload="metadata"><source src="{static}/images/104/chatterbox.mp3" type="audio/mpeg"></audio>
 
-**Qwen3-TTS 0.6B fine-tune - 200 samples, 6 epochs** - [Hugging Face](https://huggingface.co/duarteocarmo/qwen_tts_finetune_0.6B_e10_l1e6) [ref] I trained on only 30 minutes of audio - I should add a lot more in the future to make the audio even better. Might sound a bit *less* like me - but certainly cleaner to listener's ear imo.[/ref]
+**Qwen3-TTS 0.6B fine-tune - 200 samples, 6 epochs** - [Hugging Face](https://huggingface.co/duarteocarmo/qwen_tts_finetune_0.6B_e10_l1e6) [ref] I trained on only 30 minutes of audio - I should add a lot more in the future to make the audio even better. Might sound a bit *less* like me - but certainly cleaner to listener's ear imo. I might upgrade to the 1.7B model to make it even better. [/ref]
 <audio controls style="width: 75%; display: block; margin-top: 0.5rem" preload="metadata"><source src="{static}/images/104/qwen3-tts.mp3" type="audio/mpeg"></audio>
 
 
