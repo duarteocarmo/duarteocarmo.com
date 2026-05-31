@@ -1,7 +1,7 @@
 {% if article %}
 <script type="application/ld+json">
   {
-    "@context": "http://schema.org",
+    "@context": "https://schema.org",
     "@type": "BlogPosting",
     "name": "{{ article.title }}",
     "headline": "{{ article.title }}",
@@ -38,13 +38,9 @@
     "sameAs": [
       "https://x.com/duarteocarmo",
       "https://github.com/duarteocarmo",
-      "{{ SITEURL }}"
+      "https://linkedin.com/in/duarteocarmo"
     ],
-    "jobTitle": "Technologist/Consultant",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "{{ AUTHOR }}"
-    }
+    "jobTitle": "Technologist/Consultant"
   }
 </script>
 {% endif %}

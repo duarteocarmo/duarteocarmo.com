@@ -19,7 +19,7 @@
 
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="{{ SITENAME }}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{% if article %}article{% else %}website{% endif %}">
 
 <!-- Theme colors -->
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff">
@@ -86,7 +86,7 @@ MathJax.Hub.Config({
 <meta name="description" content="{{ page.description | default(SITE_DESCRIPTION) }}">
 <meta name="twitter:url" content="{{ SITEURL }}/{{ page.url }}">
 <meta name="twitter:title" content="{{ page.title }}">
-<meta name="twitter:description" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.description | default(SITE_DESCRIPTION) }}">
 <meta property="og:image" content="{{ SITEURL }}/{{ SITELOGO }}">
 <meta name="twitter:image" content="{{ SITEURL }}/{{ SITELOGO }}">
 <link rel="canonical" href="{{ SITEURL }}/{{ page.url }}">
