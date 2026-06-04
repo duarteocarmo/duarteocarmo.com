@@ -1,9 +1,16 @@
 title: Retrospectiva #8
 description: A monthly newsletter about life.
 date: 4th of June 2026
-status: draft
+status: published
 audio: true
+thumbnail: images/105/cover.webp
 
+
+<center>
+<a href="{static}/images/105/italy-allegra.webp" target="_blank">
+<img src="{static}/images/105/italy-allegra.webp" alt="Walking with Allegra in the Italian countryside" style="max-width:100%;border-radius: 2px">
+</a>
+</center>
 
 If there's one thing Retrospectiva does for me - other than giving me an excuse to write for you of course - it's making me realise how fast time moves.
 
@@ -31,6 +38,15 @@ So yeah - the month felt hectic.
 
 **<a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-gemma-4-12b" target="_blank">A Visual Guide to Gemma 4 12B - Maarten Grootendorst</a>**: Local models are becoming increasingly viable. Especially the 4 to 27B range. This is a nice deep dive into one of the latest models from DeepMind. Instead of using an image or audio encoder, the model uses a lightweight embedding layer. A great write-up from Maarten. Worth the read.
 
+<center>
+<a href="{static}/images/105/gemma-4-encoder-free.webp" target="_blank">
+<img src="{static}/images/105/gemma-4-encoder-free.webp" alt="Gemma 4 encoder-free diagram" style="max-width:75%;border-radius: 2px">
+</a>
+<figcaption>
+Image from Maarten Grootendorst's <a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-gemma-4-12b" target="_blank">A Visual Guide to Gemma 4 12B</a>.
+</figcaption>
+</center>
+
 **<a href="https://microsoft.ai/wp-content/uploads/2026/06/main_20260602_2.pdf" target="_blank">MAI-Thinking-1: Building a Hill-Climbing Machine - Microsoft AI</a>**: Microsoft [announced](https://microsoft.ai/news/introducing-mai-thinking-1/) a nice set of [new models](https://microsoft.ai/models/). Among them is MAI-Thinking-1, a new reasoning foundation model. This technical report is a gold mine. Unlike many, it answers the *why*, rather than only the what.
 
 This was a month where I scanned many books, but had a hard time sticking to one.
@@ -54,6 +70,7 @@ This was a month where I scanned many books, but had a hard time sticking to one
 ## Watching
 
 **<a href="https://www.rolandgarros.com/en-us/" target="_blank">Roland-Garros 2026</a>**: Vitto and I love to watch tennis. The top three players in the world are out, and we will have a new Grand Slam winner. There are still two Italians in the draw, and they will play each other tomorrow. I think that's what I love about tennis. It's always a bit like an adventure - you never know what will happen.
+<br>
 <br>
 <lite-youtube videoid="r4Osxyp0fTY"></lite-youtube>
 <br>
