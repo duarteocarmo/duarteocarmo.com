@@ -18,6 +18,8 @@ A few possible beats to fill in:
 
 - **<a href="https://vast.ai/" target="_blank">Vast.ai</a>**: TODO — what you rented, what worked well, what was annoying, and whether it still feels like the best option for cheap GPUs.
 
+- **<a href="https://www.hoka.com/en/us/mens-trail-hiking-shoes/hopara-2/1147650.html" target="_blank">HOKA Hopara 2</a>**: TODO — where you used them, whether they worked as travel / summer / water shoes, and if they are ugly-good or just ugly.
+
 - **<a href="https://huggingface.co/google/translategemma-27b-it" target="_blank">TranslateGemma</a>**: TODO — why you tried it, for which translation direction / use case, and whether the quality is good enough to keep around.
 
 ## Reading
