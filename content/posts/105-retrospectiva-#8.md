@@ -8,8 +8,9 @@ TODO: intro / month recap.
 
 A few possible beats to fill in:
 
+- TODO: house in Italy — what happened, why it matters, and how it feels.
+- TODO: Copenhagen Marathon — training, race day, result, and what you learned.
 - TODO: where you are writing from / what the month felt like.
-- TODO: one or two personal updates.
 - TODO: one sentence setting up the list below.
 
 ## Using
