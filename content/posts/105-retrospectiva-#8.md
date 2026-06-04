@@ -4,56 +4,59 @@ date: 4th of June 2026
 status: draft
 audio: true
 
-TODO: intro / month recap.
 
-TODO: House in Italy — what happened, why it matters, and how it feels.
+If there's one thing Retrospectiva does for me - other than writing it for you of course, dear reader - is make me realise how times flows by faster and faster. 
 
-TODO: Copenhagen Marathon — training, race day, result, and what you learned.
+Its June already - and May was a hectic month to say the least. [DataMakers](https://www.datamakersfest.com/) was awesome. The [talk](https://duarteocarmo.com/pdfs/the_great_cleanup_compressed.pdf) resonated. Many had questions after the talk - which I didn't have answers to. 
 
-TODO: Where you are writing from / what the month felt like.
+A week after that, while out on a Saturday morning run - I started seeing all the runners around Copenhagen with the Marathon goodie bags. Extremely jealousy started running through my veins. A Marathon? In my own hometown? And I'm going to skip it? "So - what are you waiting for?" Vitto said. I signed up for a last minute ticket - and the rest is history. 
 
-TODO: One sentence setting up the list below.
+We then came to Italy. And spent the last half of the month putting things in order here - making sure we feel at home. Making sure Allegra's happy. 
 
+So yeah - the month felt hectic. 
 ## Using
 
-**<a href="https://artificialanalysis.ai/models/deepseek-v4-pro" target="_blank">DeepSeek V4 Pro</a>**: TODO — what you used it for, where it surprised you, and how it compares to the other models in your workflow.
+**<a href="https://artificialanalysis.ai/models/deepseek-v4-pro" target="_blank">DeepSeek V4 Pro</a>**: I know I've talked about Hermes before. I know I'm still owing this blog a post about how I use Hermes on a daily basis. Agent harnesses (like OpenClaw) - can became real token hoarders. But for the past weeks, I've barely felt the cost. DeepSeek V4 Pro - is not only an incredibly smart model, but also insanely cheap. And what I thought was a momentary discount - [became the official price](https://www.reddit.com/r/ArtificialInteligence/comments/1tlgw8d/deepseek_just_confirmed_that_their_75_promo/). I always use it through the official DeepSeek API. It has some special things about it (like the fact that it never rejects a request), but it has been reliable, and cheap. Recommend.
 
-**<a href="https://vast.ai/" target="_blank">Vast.ai</a>**: TODO — what you rented, what worked well, what was annoying, and whether it still feels like the best option for cheap GPUs.
+**<a href="https://vast.ai/" target="_blank">Vast.ai</a>**: Remember when I wrote about Scaleway in the last Retrospectiva? Scaleway is awesome. But sometimes - I want compute at a dirt cheap price. Sometimes, I need to run a 27B model on a reliable A100 at 1.5 USD/hour. And even though machines in Scaleway are more reliable, and higher quality. Sometimes, I just need to run a cheap one off job. Also, [their CLI](https://vast.ai/developers/cli) is pretty good, and I can rely on my agent to ssh into machines, and check the status of running jobs - and decide which machine fits the job. 
 
-**<a href="https://www.hoka.com/en/us/mens-trail-hiking-shoes/hopara-2/1147650.html" target="_blank">HOKA Hopara 2</a>**: TODO — where you used them, whether they worked as travel / summer / water shoes, and if they are ugly-good or just ugly.
+**<a href="https://runrepeat.com/hoka-hopara-2" target="_blank">HOKA Hopara 2</a>**: Are these shoes incredibly ugly? Yes. Are they the sort of thing you probably don't want to take out of the door? Yes. But for someone that loves to walk freely, run, hike, and pack light - these have been one of the best purchases of the past years (at least clothing wise). I use them with socks most of the time. They can get wet, and dry off incredibly fast. If you don't care what other people think (hint: you shouldn't), consider them. 
 
-**<a href="https://huggingface.co/google/translategemma-27b-it" target="_blank">TranslateGemma</a>**: TODO — why you tried it, for which translation direction / use case, and whether the quality is good enough to keep around.
+**<a href="https://huggingface.co/collections/google/translategemma" target="_blank">TranslateGemma</a>**: You probably read here and there that I'm on a quest to build European-Portuguese Large Language Models. I feel like this release is under-hiped. Completely open source. Supports underepresented languages like Catalan, European Portuguese [and others](https://huggingface.co/google/translategemma-4b-it/resolve/main/chat_template.jinja). Is available in 3 different sizes. If I have one downside, is that this model is underexplored. No unsloth GGUFs, poor support on llama cpp. Should be possible to build, with enough time. [vLLM supports it - and that's plenty already](https://docs.vllm.ai/projects/recipes/en/latest/Google/TranslateGemma.html). The rest is up to the community to build if interested. 
 
 ## Reading
 
-TODO: short reading intro — e.g. what kind of books you gravitated towards this month.
+**<a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-gemma-4-12b" target="_blank">A Visual Guide to Gemma 4 12B - Maarten Grootendorst</a>**: Local models are becoming big contenders. The 4 to 27B range of models has been packing more and more punch. This is a nice deep dive into one of the latest models from DeepMind. Instead of using an image or audio encoder, the model just uses a lightweight embedding layer instead. This is a great write up from Maarteen. Worth the read. 
 
-**<a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-gemma-4-12b" target="_blank">A Visual Guide to Gemma 4 12B - Maarten Grootendorst</a>**: TODO — what clicked visually, whether it helped you understand the architecture, and how it connects to your Gemma / translation experiments.
+**<a href="https://microsoft.ai/wp-content/uploads/2026/06/main_20260602_2.pdf" target="_blank">MAI-Thinking-1: Building a Hill-Climbing Machine - Microsoft AI</a>**: Microsoft announced a nice set of [new models](https://microsoft.ai/models/). Between them, MAI-Thinking-1, a new reasoning, foundational model. The technical report is a gold mine. The pre-training data, the data filtering, why certain decisions were made, the architecture, the ablations. Contrary to other technical reports, it also answers the *why*, rather than only the what. 
 
-**<a href="https://microsoft.ai/wp-content/uploads/2026/06/main_20260602_2.pdf" target="_blank">MAI-Thinking-1: Building a Hill-Climbing Machine - Microsoft AI</a>**: TODO — what stood out from the technical report, how Microsoft describes their training process, and whether any of the results feel surprising.
+This was a month where I scanned many books, but had a hard time sticking to one. 
 
-**<a href="https://www.goodreads.com/book/show/231191100-ai-systems-performance-engineering" target="_blank">AI Systems Performance Engineering</a>**: TODO — main takeaway, who should read it, and whether it changed how you think about AI infra / performance.
+**<a href="https://www.goodreads.com/book/show/231191100-ai-systems-performance-engineering" target="_blank">AI Systems Performance Engineering</a>**: Started this one and read about 2-3 Chapters. Too dense (which is not something I usually say). I felt like reading a Cuda documentation book. It could be interesting! But this one didn't really convince me.
 
-**<a href="https://www.goodreads.com/book/show/223853703-deep-learning-for-biology" target="_blank">Deep Learning for Biology</a>**: TODO — what was interesting, how approachable it was, and whether it connected to anything you are working on.
+**<a href="https://www.goodreads.com/book/show/223853703-deep-learning-for-biology" target="_blank">Deep Learning for Biology</a>**: Around 50% done of this one and I can already say that this is a great read. I've worked in a few biology related projects - but was always curious to learn more about the field as well. This book delivers. It's well written, practical, and tangible. 
 
-**<a href="https://www.goodreads.com/book/show/58988399-raising-raffi" target="_blank">Raising Raffi - Keith Gessen</a>**: TODO — what resonated, what annoyed you, and whether it says something useful about parenting.
+**<a href="https://www.goodreads.com/book/show/58988399-raising-raffi" target="_blank">Raising Raffi - Keith Gessen</a>**: Every single parenting book is focused on what you are not doing and should be doing. I'm a bit sick of that approach. This book is the first real, honest, and raw tale about parenting from the eyes of a new father. It's chaos! You are not ready. And that's ok - nobody is. It's the first book that resonated with me. And I haven't even finished the book yet. 
 
 ## Listening
 
-**<a href="https://open.spotify.com/track/6tnqBTSp8YM622LKgdvxSJ" target="_blank">Eyes Off You - Tokyo Tea Room</a>**: TODO — why it stuck, when you listened to it, and what kind of mood it has.
+**<a href="https://open.spotify.com/track/6tnqBTSp8YM622LKgdvxSJ" target="_blank">Eyes Off You - Tokyo Tea Room</a>**: My favourite band of the past 3 years has a new single. That single is now on repeat. 
 
-**<a href="https://open.spotify.com/album/4yITNJlltc0Tiu679pnWu7" target="_blank">Superkilen - Svaneborg Kardyb</a>**: TODO — what you liked about the album, where it fits in your work / running / travel soundtrack.
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6tnqBTSp8YM622LKgdvxSJ?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
+**<a href="https://open.spotify.com/artist/2aGCFk3Mvhs9Am7JHwoyRr" target="_blank">Svaneborg Kardyb</a>**: May has definetly "Nordic Jazz" month for me. Svaneborg Kardyb is a duo from Denmark that has beautifully simple music. You can feel where their Superkilen album takes them name from. Recommend getting lost in the discography.  
+
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2UDn2Wim426pQUy0j1LgBr?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 ## Watching
 
-**<a href="https://www.rolandgarros.com/en-us/" target="_blank">Roland-Garros 2026</a>**: TODO — matches, storylines, who you rooted for, and whether the tournament felt different this year.
-
+**<a href="https://www.rolandgarros.com/en-us/" target="_blank">Roland-Garros 2026</a>**: Vitto and I love to watch Tennis together. We will have a new Grand Slam winner this year - there's no other option. The top 3 players in the world are out. There are still 2 Italians in the run, which will play each other tomorrow. I think that's what I love about Tennis, it's always a bit like an adventure - you never know what will happen. 
 <br>
 <lite-youtube videoid="r4Osxyp0fTY"></lite-youtube>
 <br>
 
-**<a href="https://www.youtube.com/watch?v=r4Osxyp0fTY" target="_blank">A Beginner's Guide To Ryuichi Sakamoto - Derrick Gee</a>**: TODO — what sent you down the Ryuichi Sakamoto rabbit hole, what you learned, and whether it changed how you listen to his music.
+**<a href="https://www.youtube.com/watch?v=r4Osxyp0fTY" target="_blank">A Beginner's Guide To Ryuichi Sakamoto - Derrick Gee</a>**: For years, I heard my dad blast Sakamoto while studying for long stretches over the weekend. Dad always had good taste in music. It's been 3 years now that we lost Ryuichi to cancer. His music though - his music is timeless. 
 
-**Italy**: TODO — what you watched / noticed while in Italy. Add a more specific link if this becomes about a show, film, place, or event.
 
-See you next month!
+Add
+https://arxiv.org/pdf/2601.09012 - add this link somewhere 
+https://microsoft.ai/news/introducing-mai-thinking-1/
