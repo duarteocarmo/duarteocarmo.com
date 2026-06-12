@@ -1,7 +1,7 @@
 title: How I Hermes
 description: Coding on the go, reminders, fitness coaching and more. Here's how I use Saramago, my Hermes Agent.
 date: 13 June 2026
-status: draft
+status: published
 audio: true
 thumbnail: images/106/thumbnail.webp
 
@@ -49,20 +49,20 @@ Right now, Saramago runs primarily on three models. DeepSeek V4 (flash or pro de
 Enough babbling. What about use cases?
 
 
-## 1. Coding on the go
+## Use case 1: Coding on the go
 
 <center>
 <a href="{static}/images/106/code-mockups.webp" target="_blank">
 <img src="{static}/images/106/code-mockups.webp" alt="Saramago helping with coding tasks from Telegram" style="max-width:100%;border-radius: 2px">
 </a>
 <figcaption>
-Creating PR's and iterating on the go.
+Creating PRs and iterating on the go.
 </figcaption>
 </center>
 
 The first use case is the most obvious one. Having Hermes is a bit like having a [insert your favourite coding agent here] that is available 24/7 on the go. I don't use it when I need to do especially *deep* work. But it's very nice for small annoyances while I am on the go. It has access to the [GitHub CLI](https://cli.github.com/) and a GitHub CLI skill so it can interact with any repo. So whenever I want to fix a broken pipeline, a typo on this blog, a small fix - it just creates a PR and sends me a link for review.
 
-## 2. Reminders
+## Use case 2: Setting dynamic/reactive reminders
 
 <center>
 <a href="{static}/images/106/reminders-mockups.webp" target="_blank">
@@ -79,11 +79,11 @@ Some examples:
 
 - "Remind me to pack up my rain jacket if it rains outside tomorrow"
 - "Remind me which type of trash to bring outside for pickup tomorrow" - This is complicated, [especially in Italy](https://www.atarifiuti.an.it/comuni.php?idcomune=36&pag=calendario).
-- “Remind me to email X if I don’t get that email on my inbox”
+- “Remind me to email X if I don’t get that email in my inbox”
 
 Hermes also knows when to stay silent. If it doesn't rain tomorrow it just won't text me, instead of texting me - "Hey - no rain tomorrow". Which is just annoying.
 
-## 3. Monitor long-running jobs
+## Use case 3: Monitoring long-running jobs
 
 <center>
 <a href="{static}/images/106/monitoring-mockups.webp" target="_blank">
@@ -98,13 +98,13 @@ More often than not, I run long-running jobs on remote computers. Sometimes it's
 
 I used to have to click a browser, ssh into a server, leave tmux open, and see if anything broke. Now - Saramago can do it for me. "SSH into the machine X and give me an update on the running job every 15 mins - turn off the machine when done". By giving access to CLIs/SDKs, like the [vast.ai CLI](https://vast.ai/developers/cli), the whole loop is automated.
 
-## 4. Manage my calendar
+## Use case 4: Managing my calendar for me
 
 I'm not particularly proud of it. But most of my email runs on Gmail. Saramago has access to the [Google Workspace CLI](https://github.com/googleworkspace/cli). It can read my email, check my calendar - and interact with both. 
 
 This unlocks yet another space for convenient automations. "Check email for the last train trip and add it to my calendar". "Every time a new email comes in - if it mentions a work location - add an all-day event to my calendar". Most of the useful (and not dangerous) things here come from the agent connecting your email to your calendar better than Google does. 
 
-## 5. Choosing flights
+## Use case 5: Choosing flights
 
 <center>
 <a href="{static}/images/106/flights-mockups.webp" target="_blank">
@@ -117,9 +117,9 @@ The future of flight search: Matplotlib.
 
 "An agent that books flights for you" is the dream that has been sold to us for many years. An LLM taking pictures of a browser and trying to click around the Google Flights interface has never worked. 
 
-But not anymore. Saramago has access to the [Google Flights CLI](https://github.com/punitarani/fli). That means I can search flights on my own terms. I can be as annoying as I want with my peculiar travelling choices. And plot them just the way I like. When is time to book - I will do it. Much better than any Momondo-like experience.
+But not anymore. Saramago has access to the [Google Flights CLI](https://github.com/punitarani/fli). That means I can search flights on my own terms. I can be as annoying as I want with my peculiar travelling choices. And plot them just the way I like. When it's time to book - I will do it. Much better than any Momondo-like experience.
 
-## 6. Writing and brainstorming
+## Use case 6: Writing and brainstorming
 
 <center>
 <a href="{static}/images/106/writing-mockups.webp" target="_blank">
@@ -134,7 +134,7 @@ With a kid, I have less and less time in front of the actual computer. Thankfull
 
 Creating the structure for my blog post, adding the images and figcaptions, the boilerplate, etc. The agent can do that. And I can focus on the writing. Massive productivity booster. With the [Telegram API](https://core.telegram.org/api/transcribe), I can also send a voice message to Saramago, and it will understand. Telegram will transcribe automatically.
 
-## 7. Fitness coaching
+## Use case 7: Fitness coaching
 
 <center>
 <a href="{static}/images/106/fitness-mockups.webp" target="_blank">
@@ -151,16 +151,15 @@ I like running. I have both a Garmin and an Oura ring. I've been on a quest to m
 
 [OpenClaw](https://openclaw.ai/), [NemoClaw](https://github.com/NVIDIA/NemoClaw), [NanoClaw](https://nanoclaw.dev/), [Nanobot](https://github.com/HKUDS/nanobot), [IronClaw](https://www.ironclaw.com/). There are a lot of alternatives out there. So why Hermes? I don't know. It's a bit like asking about tabs vs. spaces or Vim vs. Emacs. I tried 3-4 and nothing really stuck with me - except for Hermes. I didn't notice any feature impairing bugs - which was a good start. 
 
-If I had to mention two things: The first is the robust [cron jobs + reminders setup](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron/). The agent automatically creates jobs, re-runs them aat a schedule, knows when NOT to ping you. The second is the [automated skill-creation](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills#agent-managed-skills-skill_manage-tool). Then the agent does something "complex" it creates a skill for it. Next time it needs to do it - it loads that same skill. It works really well. 
+If I had to mention two things: The first is the robust [cron jobs + reminders setup](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron/). The agent automatically creates jobs, re-runs them at a schedule, knows when NOT to ping you. The second is the [automated skill-creation](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills#agent-managed-skills-skill_manage-tool). When the agent does something "complex" it creates a skill for it. Next time it needs to do it - it loads that same skill. It works really well. 
 
 
 ## There's something great here.
 
 Some say that tools like OpenClaw and Hermes are gigantic piles of vibe-coded slop. And I agree - some of it definitely is. There are bugs here and there. But they're getting more and more fixed. And I like Hermes' [Philosophy](https://github.com/NousResearch/hermes-agent/blob/main/AGENTS.md#contribution-rubric--what-we-want--what-we-dont) on this. 
 
-But these products are also deeply interesting. They are a tinkerer's dream. With enough time and care, you can really transform them into something insanely useful. It takes time. It takes patience, and a good amount of technical expertise. It reminds me of spending time Jailbreaking my iPhone, or learning about VIM. It's fun! 
+But these products are also deeply interesting. They are a tinkerer's dream. With enough time and care, you can really transform them into something insanely useful. It takes time. It takes patience, and a good amount of technical expertise. It reminds me of spending time Jailbreaking my iPhone, or learning about Vim. It's fun! 
 
 Not only fun - these tools are also a productivity boost - a small glance into the future. Even the big boys have noticed. [Google's Gemini Spark](https://gemini.google/overview/agent/spark/) is a good example. 
 
-Let's hope they don't ruin it for the rest of us. 
-
+Let's hope they don't ruin it for the rest of us. [ref]I would feel bad if I didn't include a sentence or two about security. So here it is. None of these personal assistants are perfect. They are all vulnerable to the [lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/). Act [accordingly](https://hermes-agent.nousresearch.com/docs/user-guide/security/).[/ref]
