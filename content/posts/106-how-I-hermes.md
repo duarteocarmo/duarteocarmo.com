@@ -17,13 +17,13 @@ A couple months later I decided to download [Hermes Agent](https://hermes-agent.
 
 Once you install it, you configure the agent by creating (or installing) [skills](https://hermes-agent.nousresearch.com/docs/skills/). More on that below.
 
-Hermes is not a plug-and-play experience. Do not expect to just install it and be amazed. You can even follow a [tutorials](https://www.youtube.com/watch?v=1ve4Atbqmoo) and still not get much out of it. You need to make it your own. You need to spend a considerable amount of time doing it. It reminds me a bit of Vim.
+Hermes is not a plug-and-play experience. Do not expect to just install it and be amazed. You can even follow a [tutorial](https://www.youtube.com/watch?v=1ve4Atbqmoo) and still not get much out of it. You need to make it your own. You need to spend a considerable amount of time doing it. It reminds me a bit of Vim.
 
 ## My agent setup: Saramago
 
 There's a pretty recent [meme of programmers leaving their laptops open.](https://www.businessinsider.com/coders-keep-laptops-open-in-public-ai-agent-2026-5). I don't like to keep my computer open in random places. I'm also not particularly interested in having an agent running freely inside my main machine. 
 
-Fortunately, for the past 5 years, I've been running most of my remote computing on a refurbished Hetzner server. For a fixed monthly price, I have my own Debian machine that is available 24/7. This is where Saramago (yes, I gave him a name) runs. 
+Fortunately, for the past 5 years, I've been running most of my remote computing on a [refurbished Hetzner server]({filename}/posts/66-how-I-host-my-projects.md). For a fixed monthly price, I have my own Debian machine that is available 24/7. This is where Saramago (yes, I gave him a name) runs. 
 
 To keep things simple and reliable - I talk to Saramago via Telegram. I've heard WhatsApp is a bit flaky. And streaming message support in Telegram is great!
 
@@ -57,13 +57,13 @@ I used to have to click a browser, ssh into a server, leave tmux open, and see i
 
 ### Use case 4: Manage my calendar 
 
-I'm not particularly proud of it. But most of my email runs on Gmail. Saramago has access to the [Google Workspace CLI](https://github.com/googleworkspace/cli). It can read my email, check my calendar - and interact them. 
+I'm not particularly proud of it. But most of my email runs on Gmail. Saramago has access to the [Google Workspace CLI](https://github.com/googleworkspace/cli). It can read my email, check my calendar - and interact with both. 
 
 This unlocks yet another space for convenient automations. "Check email for the last train trip and add it to my calendar". "Every time a new email comes in - if it mentions a work location - add an all-day event to my calendar". Most of the useful (and not dangerous) things here come from the agent connecting your email to your calendar better than Google does. 
 
 ### Use case 5: Choosing flights 
 
-"An agent that books flights for you" is the dream that has been sold to us for many years. An LLM taking pictures of a browser and trying to click around the Google Flights interface bas never worked. 
+"An agent that books flights for you" is the dream that has been sold to us for many years. An LLM taking pictures of a browser and trying to click around the Google Flights interface has never worked. 
 
 But not anymore. Saramago has access to the [Google Flights CLI](https://github.com/punitarani/fli). That means I can search flights on my own terms. I can be as annoying as I want with my peculiar travelling choices. And plot them just the way I like. When is time to book - I will do it. Much better than any Momondo-like experience. 
 
@@ -72,7 +72,7 @@ But not anymore. Saramago has access to the [Google Flights CLI](https://github.
 
 With a kid, I have less and less time in front of the actual computer. Thankfully, I have Saramago. That means that I can do a lot of the prep work on the go, and once I sit down - I can do what matters. 
 
-Creating the structure for my blog post, adding the images and figcaptions, the boilerplate, etc. The agent can do that. And I can focus on the writing. Massive productivity booster. With the Telegram API I can also send a voice message to Saramago, and it will understand. [Telegram will transcribe automatically](https://telegram.org/blog/700-million-and-premium#voice-to-text). 
+Creating the structure for my blog post, adding the images and figcaptions, the boilerplate, etc. The agent can do that. And I can focus on the writing. Massive productivity booster. With the [Telegram API](https://core.telegram.org/api/transcribe), I can also send a voice message to Saramago, and it will understand. Telegram will transcribe automatically. 
 
 
 ### Use case 7: Fitness coaching
@@ -82,17 +82,12 @@ I like running. I have both a Garmin and an Oura ring. I've been on a quest to m
 
 ## There's something great here.
 
-Some say that tools like OpenClaw and Hermes are gigantic piles of vibe-coded slop. And I agree - some of it definetly is. There are bugs here and there. But they're getting more and more fixed. And I like Herme's [Philosophy](https://github.com/NousResearch/hermes-agent/blob/main/AGENTS.md#contribution-rubric--what-we-want--what-we-dont) on this. 
+Some say that tools like OpenClaw and Hermes are gigantic piles of vibe-coded slop. And I agree - some of it definitely is. There are bugs here and there. But they're getting more and more fixed. And I like Hermes' [Philosophy](https://github.com/NousResearch/hermes-agent/blob/main/AGENTS.md#contribution-rubric--what-we-want--what-we-dont) on this. 
 
 But these products are also deeply interesting. They are a tinkerer's dream. With enough time and care, you can really transform them into something insanely useful. It takes time. It takes patience, and a good amount of technical expertise. It reminds me of spending time Jailbreaking my iPhone, or learning about VIM. It's fun! 
 
-Not only fun - these tools are also a productivity boost - a small glance into the future. Even the big boys have noticed. 
+Not only fun - these tools are also a productivity boost - a small glance into the future. Even the big boys have noticed. [Google's Gemini Spark](https://gemini.google/overview/agent/spark/) is a good example. 
 
 Let's hope they don't ruin it for the rest of us. 
 
-
-Notes: 
-- Add link to how I self host blog post in the hetzner mention
-- replace link for telegram - it's like the api that automatically transcribes - i don't know how - check it
-- add google spark link
 
