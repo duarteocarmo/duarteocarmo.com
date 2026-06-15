@@ -4,7 +4,7 @@ description: Consulting services
 
 I help clients solve hard problems using ML/AI, Data, and Software. I take a full-stack approach that starts with _people_. I don't believe in building in the basement, but in tackling problems together.
 
-Browse my [resume](/cv.pdf) or [talks](/talks) to learn more. Ready to chat? [Email me](mailto:me@duarteocarmo.com) or [schedule a call](https://cal.com/duarteocarmo/meeting?duration=30).
+Browse my <a href="/cv.pdf" data-umami-event="Resume download">resume</a> or [talks](/talks) to learn more. Ready to chat? [Email me](mailto:me@duarteocarmo.com) or [schedule a call](https://cal.com/duarteocarmo/meeting?duration=30).
 
 ## Selected work
 

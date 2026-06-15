@@ -14,11 +14,11 @@
         <nav>
             <a href="/" {% if output_file == 'index.html' %}class="active"{% endif %}>home</a>
             <a href="/about" {% if output_file == 'about.html' %}class="active"{% endif %}>about</a>
-            <a href="/consulting" {% if output_file == 'consulting.html' %}class="active"{% endif %}>consulting</a>
-            <a href="/cv.pdf">cv</a>
+            <a href="/consulting" data-umami-event="Consulting click" {% if output_file == 'consulting.html' %}class="active"{% endif %}>consulting</a>
+            <a href="/cv.pdf" data-umami-event="Resume download">cv</a>
             <a href="/talks" {% if output_file == 'talks.html' %}class="active"{% endif %}>talks</a>
             <a href="/photos" {% if output_file == 'photos.html' %}class="active"{% endif %}>photos</a>
-            <a href="https://duarteocarmo.substack.com/subscribe?ref=duarteocarmo.com">newsletter</a>
+            <a href="https://duarteocarmo.substack.com/subscribe?ref=duarteocarmo.com" data-umami-event="Newsletter click">newsletter</a>
         </nav>
         <main>
             {% block content %}{% endblock %}
