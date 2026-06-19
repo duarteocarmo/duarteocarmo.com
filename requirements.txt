@@ -92,7 +92,7 @@ tzdata==2025.3 ; sys_platform == 'win32'
     #   pelican
 unidecode==1.4.0
     # via pelican
-urllib3==2.6.3
+urllib3==2.7.0
     # via botocore
 watchfiles==0.21.0
     # via
