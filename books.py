@@ -1,5 +1,11 @@
 BOOKS = [
     {
+        "title": "Deep Learning for Biology",
+        "author": "Charles Ravarani and Natasha Latysheva",
+        "completed_date": "2026-06-22",
+        "rating": 2,
+    },
+    {
         "title": "Lifestyle Medicine",
         "author": "Valerio Rosso",
         "completed_date": "2026-05-05",
