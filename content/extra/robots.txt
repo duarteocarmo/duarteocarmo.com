@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://duarteocarmo.com/sitemap.xml
+LLMs: https://duarteocarmo.com/llms.txt

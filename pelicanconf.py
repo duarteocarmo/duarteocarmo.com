@@ -14,6 +14,7 @@ def load_variable_from(*, filename: str, variable_name: str):
 AUTHOR = "Duarte O.Carmo"
 SITENAME = "Duarte O.Carmo"
 SITEURL = ""
+TWITTER_HANDLE = "@duarteocarmo"
 SITE_DESCRIPTION = (
     "The personal website of Duarte O.Carmo. A technologist/consultant "
     "from Lisbon, now based in Copenhagen."
@@ -78,7 +79,7 @@ STATIC_PATHS = [
 EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt"},
     "pdfs/cv.pdf": {"path": "cv.pdf"},
-    "extra/CNAME": {"extra/CNAME": {"path": "CNAME"}},
+    "extra/CNAME": {"path": "CNAME"},
     "html/StateOfVim.html": {"path": "StateOfVim.html"},
 }
 
@@ -120,9 +121,9 @@ SITEMAP = {
     "format": "xml",
     "priorities": {"articles": 0.9, "indexes": 0.5, "pages": 0.9},
     "changefreqs": {
-        "articles": "hourly",
-        "indexes": "hourly",
-        "pages": "hourly",
+        "articles": "monthly",
+        "indexes": "daily",
+        "pages": "weekly",
     },
 }
 BOOKS = load_variable_from(filename="books.py", variable_name="BOOKS")

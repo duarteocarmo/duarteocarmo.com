@@ -55,10 +55,10 @@ class LLMSGenerator:
         about_page = next((p for p in self.context.get("pages", []) if p.slug == "about"), None)
         if not about_page:
             return f"> No description available for {self.sitename}."
-        content = md(about_page.content)
-        content = content.strip().replace("\n", " ")
-
-        return f"> {content}"
+        content = md(about_page.content).strip()
+        # Prefix each line with blockquote marker
+        lines = [f"> {line}" if line.strip() else ">" for line in content.splitlines()]
+        return "\n".join(lines)
 
     def _format_entry(self, item: contents.Content) -> str:
         url = item.url.removesuffix("/")
