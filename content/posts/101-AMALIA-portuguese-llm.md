@@ -10,6 +10,8 @@ popular: true
 <img src="{static}/images/101/hero.webp" alt="Amália Rodrigues promotional photograph by Augusto Cabrita" style="max-width:100%;border-radius: 2px;">
 </a>
 
+***Update July 2026:** The AMÁLIA models have now been released! You can find the weights/datasets on [Hugging Face](https://huggingface.co/amalia-llm). Some parts of this blog post might be out of date. So beware!*
+
 In December 2024, the Portuguese government [announced](https://portugal.gov.pt/gc24/comunicacao/noticias/modelo-de-linguagem-em-grande-escala-para-a-lingua-portuguesa) AMÁLIA: a 5.5 Million Euro investment on a large-scale LLM for European Portuguese[ref] When I refer to Portuguese in this post, I mean European Portuguese - it's just shorter - get over it.[/ref].
 
 The other day, while building an [overview](https://doc-public-s3.duarteocarmo.com/pt-llm.html) of the different Portuguese NLP efforts, I stumbled upon the [technical report](https://arxiv.org/pdf/2603.26511)! I couldn't believe my eyes. Much to talk about! Let's get straight to it!
