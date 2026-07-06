@@ -1,8 +1,9 @@
 title: Retrospectiva #9
 description: A monthly newsletter about life.
-date: 4th of July 2026
+date: 6th of July 2026
 status: published
-audio: true 
+audio: true
+thumbnail: images/107/cover.webp
 
 
 This month's Retrospectiva comes a little later than usual. The whole house got sick battling the flu the past couple weeks. Mixed with a small heatwave here in Copenhagen, means summer hasn't blessed us like we expected. At least not yet.
@@ -11,7 +12,7 @@ Now that I'm feeling a bit better, I finally managed to get some writing in. Let
 
 ## Using
 
-**<a href="https://huggingface.co/zai-org/GLM-5.2" target="_blank">GLM-5.2</a>**: Finally. An open-weights model that competes with the big frontier models. For the past weeks I've been using GLM-5.2 extensively. Through [OpenCode Go](https://opencode.ai/go) it starts at 5 USD/month. It's different than using your GPT 5.5 or Fable, but it good in the Open Source way. I urge you to take it for a spin. It costs about one-fourth what Fable costs. And it deals with 99% of issues Fable does.
+**<a href="https://huggingface.co/zai-org/GLM-5.2" target="_blank">GLM-5.2</a>**: Finally. An open-weights model that competes with the big frontier models. For the past weeks I've been using GLM-5.2 extensively. Through [OpenCode Go](https://opencode.ai/go) it starts at 5 USD/month. It's different than using your GPT 5.5 or Fable, but it feels good in the open-source way. I urge you to take it for a spin. It costs about one-fourth of what Fable costs. And it deals with 99% of issues Fable does.
 
 <center>
 <a href="{static}/images/107/glm-52.webp" target="_blank">
@@ -22,30 +23,32 @@ GLM-5.2 catching up - <a href="https://artificialanalysis.ai/" target="_blank">A
 </figcaption>
 </center>
 
-**<a href="https://github.com/phun333/pi-infobar" target="_blank">Pi Stats</a>**: You probably know by now that I'm a big fan of the [Pi](https://pi.dev/) harness. If you like Claude Code better, that's fine - enjoy yourself. One issue with Pi, is that it's hard to know exactly how much you're spending. I discovered this little application called [Pi Stats](https://github.com/phun333/pi-infobar), which gives me a widget in my menu bar that shows me exactly how much I've spent and on what. Even though I still pay for a fixed plan every month, it's still important to know (in terms of real value) what's going where.
+**<a href="https://github.com/phun333/pi-infobar" target="_blank">Pi Stats</a>**: You probably know by now that I'm a big fan of the [Pi](https://pi.dev/) harness. If you like Claude Code better, that's fine - enjoy yourself. One issue with Pi is that it's hard to know exactly how much you're spending. I discovered this little application called [Pi Stats](https://github.com/phun333/pi-infobar), which gives me a widget in my menu bar that shows me exactly how much I've spent and on what. Even though I still pay for a fixed plan every month, it's still important to know (in terms of real value) what's going where.
 
-<center>
-<a href="{static}/images/107/pistats-overview.webp" target="_blank">
-<img src="{static}/images/107/pistats-overview.webp" alt="Pi Stats overview screen" style="max-width:45%;border-radius: 2px">
+<figure style="margin: 0;">
+<div style="display:flex;gap:1rem;justify-content:center;align-items:flex-start;flex-wrap:wrap;">
+<a href="{static}/images/107/pistats-overview.webp" target="_blank" style="flex:1 1 260px;max-width:45%;text-decoration:none;">
+<img src="{static}/images/107/pistats-overview.webp" alt="Pi Stats overview screen" style="width:100%;max-width:100%;border-radius: 2px">
 </a>
-<a href="{static}/images/107/pistats-languages.webp" target="_blank">
-<img src="{static}/images/107/pistats-languages.webp" alt="Pi Stats languages screen" style="max-width:45%;border-radius: 2px">
+<a href="{static}/images/107/pistats-languages.webp" target="_blank" style="flex:1 1 260px;max-width:45%;text-decoration:none;">
+<img src="{static}/images/107/pistats-languages.webp" alt="Pi Stats languages screen" style="width:100%;max-width:100%;border-radius: 2px">
 </a>
+</div>
 <figcaption>
 Pi Stats in action (not my usage)
 </figcaption>
-</center>
+</figure>
 
-**<a href="https://github.com/jesseduffield/lazygit" target="_blank">Lazygit</a>**: We write less code, but we produce much more code nowadays. Some of it is not worth looking at. The important bits are. For the past few months I've experimented with a lot of "code diff viewers". I need somewhere I can review the changes the agent has made, and direct it in case anything goes wrong or weird. I've tried [Hunk](https://github.com/modem-dev/hunk) (and even contributed a couple of PRs: [#310](https://github.com/modem-dev/hunk/pull/310), [#347](https://github.com/modem-dev/hunk/pull/347)), and [codediff.nvim](https://github.com/esmuellert/codediff.nvim) in Neovim, which is what my `<space>d+d` mapping calls. But lazygit paired with [difftastic](https://github.com/Wilfred/difftastic) has been hard to beat. Fast to iterate, great diff highlighting.
+**<a href="https://github.com/jesseduffield/lazygit" target="_blank">Lazygit</a>**: We write less code, but we are accountable for more. Some of it is not worth looking at — but the important bits are. For the past few months I've experimented with a lot of "code diff viewers". I need somewhere I can review the changes the agent has made, and direct it in case anything goes wrong or weird. I've tried [Hunk](https://github.com/modem-dev/hunk) (and even contributed a couple of PRs: [#310](https://github.com/modem-dev/hunk/pull/310), [#347](https://github.com/modem-dev/hunk/pull/347)), and [codediff.nvim](https://github.com/esmuellert/codediff.nvim) in Neovim, which is what my `<space>d+d` mapping calls. But lazygit paired with [difftastic](https://github.com/Wilfred/difftastic) has been hard to beat. Fast to iterate and great diff highlighting.
 
-**<a href="https://www.sofascore.com/" target="_blank">Sofascore</a>**: I like watching sports. Not all sports, not all the time. But when I do (surprise), I like looking at the data. Sofascore is the app I've been using for many years now that gives me the data I need about the match I'm watching. Who plays where? Who used to play where? Those questions, and many more. This team out of Croatia has built an incredible app!
+**<a href="https://www.sofascore.com/" target="_blank">Sofascore</a>**: I like watching sports. Not all sports, not all the time. But when I do (surprise), I like looking at the data. Sofascore is the app that gives me all of this - in a way I love. Who plays where? Who used to play where? When you're not 15 and playing FIFA extensively - it's hard to keep up. This team out of Croatia has built an incredible app!
 
 
 ## Reading
 
-**<a href="https://www.oreilly.com/library/view/deep-learning-for/9781098168025/" target="_blank">Deep Learning for Biology</a>**: I finished this one over 2-3 weeks. It is an interesting introduction to the area that intersects bio with deep learning. Definitely a lot of inspiration for what is possible and what there is left to do! 
+**<a href="https://www.oreilly.com/library/view/deep-learning-for/9781098168025/" target="_blank">Deep Learning for Biology</a>**: I finished this one over 2-3 weeks. I recommend it. A great read in an area where there's much left to do!
 
-**<a href="https://medarc-ai.github.io/mindeye/" target="_blank">Reconstructing the Mind's Eye</a>**: Some nuts research out of Princeton that shows how they reconstruct images from brain activity. Yes. You heard that right. 
+**<a href="https://medarc-ai.github.io/mindeye/" target="_blank">Reconstructing the Mind's Eye</a>**: Some wild research out of Princeton that shows how they reconstruct images from brain activity. Yes. You heard that right. 
 
 **<a href="https://lilianweng.github.io/posts/2026-06-24-scaling-laws/" target="_blank">Scaling Laws, Carefully - Lilian Weng</a>**: What is the ideal amount of data given a certain model size? Given a certain compute budget? And vice versa? These are just some of the questions researchers have been asking themselves. Lilian writes about them beautifully.
 
@@ -54,7 +57,7 @@ Pi Stats in action (not my usage)
 <img src="{static}/images/107/chinchilla-2.webp" alt="Chinchilla scaling laws comparison" style="max-width:100%;border-radius: 2px">
 </a>
 <figcaption>
-Image from Lilian Weng's <a href="https://lilianweng.github.io/posts/2026-06-24-scaling-laws/" target="_blank">Scaling Laws, Carefully</a>.
+Image source: <a href="https://arxiv.org/abs/2203.15556" target="_blank">Hoffmann et al. 2022</a>, as shown in Lilian Weng's <a href="https://lilianweng.github.io/posts/2026-06-24-scaling-laws/" target="_blank">Scaling Laws, Carefully</a>.
 </figcaption>
 </center>
 
@@ -77,9 +80,9 @@ Not the most inspiring month musically. Being sick means less running, which mea
 
 ## Watching
 
-**<a href="https://www.sofascore.com/football/tournament/world/world-championship/16#id:58210" target="_blank">World Cup 2026</a>**: Norway just eliminated Brazil. Morocco eliminated Canada. Portugal drew with Congo and is playing Spain today. I'm not a sports fanatic, but I come from a place where football is very close to a religion. 
+**<a href="https://www.sofascore.com/football/tournament/world/world-championship/16#id:58210" target="_blank">World Cup 2026</a>**: Norway just eliminated Brazil. Morocco eliminated Canada. Portugal drew with Congo and is playing Spain today. I'm not a sports fanatic, but I come from a place where football is very close to religion. 
 
-**<a href="https://www.wser.org/" target="_blank">Western States</a>**: When I can't run, I watch other people run. This year's Western States 100-Mile was an exciting one to watch. Even though I was rooting for Hans to win this one, Vincent Bouillard made an amazing run! Record broken, again! 
+**<a href="https://www.wser.org/" target="_blank">Western States</a>**: When I can't run, I watch other people run. This year's Western States 100 miler was an exciting one to watch. Even though I was rooting for [Hans Troyer](https://utmb.world/runner/5883300.hans.troyer) to win this one, [Vincent Bouillard](https://www.wser.org/2026/06/29/2026-race-recap/) made an amazing run! Record broken, again! 
 
 
 
