@@ -146,6 +146,10 @@ h1 {
   color: inherit;
 }
 
+.book-search-link:hover {
+  color: var(--color-accent);
+}
+
 .book-author {
   margin-top: 0;
   white-space: normal;
