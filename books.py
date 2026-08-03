@@ -1,5 +1,11 @@
 BOOKS = [
     {
+        "title": "Show Your Work!",
+        "author": "Austin Kleon",
+        "completed_date": "2026-08-03",
+        "rating": 4,
+    },
+    {
         "title": "Deep Learning for Biology",
         "author": "Charles Ravarani and Natasha Latysheva",
         "completed_date": "2026-06-22",
