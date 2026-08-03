@@ -7,7 +7,9 @@
   <div class="post-link book-row">
     <div class="post-content book-content">
       <div class="book-meta">
-        <p class="post-title">{{ book.title }}</p>
+        <p class="post-title">
+          <a href="https://duckduckgo.com/?q={{ (book.title ~ ' ' ~ book.author) | urlencode }}" target="_blank" rel="noopener" class="book-search-link" aria-label="Search DuckDuckGo for {{ book.title }} by {{ book.author }}">{{ book.title }}</a>
+        </p>
         <p class="post-date book-author">{{ book.author }}</p>
       </div>
       {% if book.rating %}
