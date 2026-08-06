@@ -3,10 +3,10 @@ description: Faísca is a uv-runnable script that implements the modern LLM stac
 date: 15th of October 2025
 status: published
 thumbnail: images/86/cover.png
+toc: true
 
 <img src="{static}/images/86/cover.webp" alt="Flower Clouds - Odilon Redon" style="max-width:100%;border-radius: 2px;">
 
-[TOC]
 
 ## Why do this?
 

@@ -5,10 +5,10 @@ status: published
 slug: rag-tricks-from-the-trenches
 thumbnail: images/74/cover.png
 popular: true
+toc: true
 
 <img src="{static}/images/74/main.jpg" alt="Men fishing" style="max-width:100%;border-radius: 2px;">
 
-[TOC]
 
 [Notebook download](https://gist.github.com/duarteocarmo/79346dacdfcccbf0ed9184ddbaa49a32) - [nbsanity preview](http://nbsanity.com/static/1637e83c083a69e81cfa19006502fced/summarization.html)
 

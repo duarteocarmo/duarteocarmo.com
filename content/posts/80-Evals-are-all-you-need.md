@@ -4,6 +4,7 @@ date: 4th of May 2025
 status: published
 thumbnail: images/80/cover.png
 popular: true
+toc: true
 
 Last month, I built an app called [Taralli]({filename}/posts/79-Taralli-simple-food-tracking.md). It was fun to close the loop and get it out there. Still - there was an elephant in the room:
 
@@ -11,7 +12,6 @@ Last month, I built an app called [Taralli]({filename}/posts/79-Taralli-simple-f
 
 And things started failing pretty early. `100g of peanut butter` came back with 58 000 kcal - `350g of pasta` as 60 000 kcal - quantities were all over the place. And even though most users were giving me good feedback - It was time to fix things. After some work, I managed to improve tracking accuracy from **17% to 76%**. It turns out, evals are all you need.
 
-[TOC]
 
 ## Naive is good, but it fails eventually
 

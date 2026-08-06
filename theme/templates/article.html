@@ -31,7 +31,13 @@
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.css" />
             <script defer src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.js"></script>
             {% endif %}
+            {% if article.toc %}
+            <aside class="article-toc" aria-label="Table of contents" hidden>
+                <ol></ol>
+            </aside>
+            {% endif %}
             <div class="prose">{{ article.content }}</div>
+            <script src="{{ SITEURL }}/theme/js/article-toc.js" defer></script>
             <div class="meta" style="margin-top: 2rem; margin-bottom: 0;">
                 <p></p>
                 <a class="subscribe-link"

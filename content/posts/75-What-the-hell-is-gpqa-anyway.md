@@ -5,6 +5,7 @@ status: published
 slug: what-the-hell-is-gqpa-anyway
 thumbnail: images/75/cover.png
 popular: true
+toc: true
 
 In the period of the generative AI boom, everything is happening all at once. Every day a new model comes out, every week a billion dollar company teases a great new advancement.
 
@@ -18,9 +19,7 @@ A healthy person might look at this and just think - great - the higher the scor
 
 A **40.9 score in GPQA** - what the _hell_ does that even mean?
 
-## Table of contents and code
-
-[TOC]
+## Code
 
 [Code and prompts](https://gist.github.com/duarteocarmo/3eeb2200af74880e034d45e63e30aafe)
 

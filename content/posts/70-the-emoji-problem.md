@@ -4,6 +4,7 @@ description: A rundown of modern text classification techniques in the age of LL
 status: published
 slug: classification-llms-emoji-open-source-ollama
 thumbnail: images/70/thumbnail.png
+toc: true
 
 <center>
 <img src="{static}/images/70/header_169.png" alt="Fruits and bowl" style="max-width:100%;border-radius: 2px;">
@@ -22,7 +23,6 @@ For the average calm and relaxed reader, this might not seem like much. But for 
 
 Now. Is this a big problem? No. Is it an annoying problem? Yes. Is this a solved problem? *Probably*. But in the age of LLMs and 400 Billion parameters models, what options do we have?
 
-[TOC]
 
 ## Creating a labeled dataset from screenshots
 
