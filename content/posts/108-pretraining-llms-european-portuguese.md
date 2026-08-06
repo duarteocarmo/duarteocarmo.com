@@ -12,7 +12,7 @@ toc: true
 </a>
 </center>
 
-For the past year, I've been very curious about the intersection of Large Language Models (LLMs) and the European Portuguese Language. I've built [evaluations]({filename}/posts/82-benchmark-llms-european-portuguese.md), [classifiers]({filename}/posts/98-fasttext-vs-bert-portuguese.md), and eventually [the largest pretraining dataset in European Portuguese]({filename}/posts/103-bagacov2-dataset.md).
+For the past year, I've been very curious about the intersection of Large Language Models (LLMs) and the European Portuguese language. I've built [evaluations]({filename}/posts/82-benchmark-llms-european-portuguese.md), [classifiers]({filename}/posts/98-fasttext-vs-bert-portuguese.md), and eventually [the largest pretraining dataset in European Portuguese]({filename}/posts/103-bagacov2-dataset.md).
 
 Now, that's all fine and dandy, but it raises the obvious question: Can we pretrain an LLM fully in European Portuguese? And is it any good?
 
@@ -20,7 +20,7 @@ Welcome to project Ginjinha.
 
 But before we start training models, we need a harness.
 
-## A pre-training harness: NanoChat
+## A pretraining harness: NanoChat
 
 In 2025, Andrej Karpathy released [NanoChat](https://github.com/karpathy/nanochat): a small, hackable codebase for training GPT-2-style language models. It's easy to understand and modify. Exactly what I needed.
 
@@ -36,7 +36,7 @@ To measure how good a base model is, NanoChat uses something called the CORE met
 
 ## From CORE to PTCORE
 
-The CORE metric is an evaluation suite designed to measure the capability of a language model on downstream tasks. For CORE, there are 22 tasks. These tasks are things like [ARC](https://arxiv.org/abs/1803.05457), [HellaSwag](https://arxiv.org/abs/1905.07830), and [BIG-bench](https://arxiv.org/abs/2206.04615). Each one is made of questions (usually multiple choice). We take each answer and measure the loss that the model gives to it. If the correct answer gets the lowest loss, we consider the model answered correctly.
+The CORE metric is an evaluation suite designed to measure the capability of a language model on downstream tasks. For CORE, there are 22 tasks. These tasks are things like [ARC](https://arxiv.org/abs/1803.05457), [HellaSwag](https://arxiv.org/abs/1905.07830), and [BIG-bench](https://arxiv.org/abs/2206.04615). Each one is made up of questions (usually multiple choice). We take each answer and measure the loss that the model assigns to it. If the correct answer gets the lowest loss, we consider the model answered correctly.
 
 A trivial example:
 
@@ -98,7 +98,7 @@ For each task, we can measure two scores: accuracy and a centered score. Accurac
 
 ## Educational ablations
 
-Now that we have a way of measuring how good a model is in European Portuguese, the next step was to run some experiments: How good is the Bagaço v2 dataset for pretraining language models? If we filter data by [educational score]({filename}/posts/96-bagaco-dataset.md), do we see a change in the capability of the base model?
+Now that we have a way of measuring how good a model is at European Portuguese, the next step was to run some experiments: How good is the Bagaço v2 dataset for pretraining language models? If we filter data by [educational score]({filename}/posts/96-bagaco-dataset.md), do we see a change in the capability of the base model?
 
 If you remember, every document in the Bagaço v2 dataset has an educational score associated with it:
 
@@ -129,7 +129,7 @@ I don't work for a big lab and don't have an H100 GPU sitting under my desk, so 
 | Seeds | 42 · 1337 · 2026 |
 | Filters | All · ≥1 · ≥2 · ≥3 |
 
-About $50 and five hours later, I had the results. For each filter, we get a PTCORE score and a validation BPB (validation bits per byte—lower is better). PTCORE is shown as a percentage, and each value is the mean ± standard deviation across three seeds. You can also expand the full task-level table to see every individual run.
+About $50 and five hours later, I had the results. For each filter, we get a PTCORE score and a validation BPB (bits per byte, lower is better). PTCORE is shown as a percentage, and each value is the mean ± standard deviation across three seeds. You can also expand the full task-level table to see every individual run.
 
 | Filter | PTCORE (%) ↑ | Final validation BPB ↓ |
 |---|---:|---:|
@@ -240,6 +240,6 @@ This was a fun exercise. We already knew that better-quality data results in bet
 
 The Ginjinha project also showed me what an enormous advantage labs with access to compute have. If I had a single H100 for a year, I could conduct many more ablations and experiments—and do so *much* faster. Perhaps I should invest in one.
 
-And even though I haven't trained on the entire Bagaço v2 dataset, I did realize that it has a major shortcoming: data quality. Approximately [50% of the documents in Bagaço v2 have an educational score of 0 (e.g., they have zero educational value)](https://huggingface.co/datasets/duarteocarmo/fineweb2-bagaco2#statistics--counts). Yes, you read that right. That's not going to get us where we need to be. It might add some diversity, but we need much more high-quality data.
+And even though I haven't trained on the entire Bagaço v2 dataset, I did realize that it has a major shortcoming: data quality. Approximately [50% of the documents in Bagaço v2 have an educational score of 0 (i.e., they have zero educational value)](https://huggingface.co/datasets/duarteocarmo/fineweb2-bagaco2#statistics--counts). Yes, you read that right. That's not going to get us where we need to be. It might add some diversity, but we need much more high-quality data.
 
 Yes. I'm working on it!
