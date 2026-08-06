@@ -1,36 +1,84 @@
 title: Ginjinha: Pretraining LLMs on European Portuguese
-description: TODO
-date: TODO
+description: Training small European Portuguese base models with NanoChat, Bagaço v2, and PTCORE.
+date: 6th August 2026
 status: published
 audio: true
-thumbnail: TODO
+thumbnail: images/108/wandb-pt-exams-evolution.webp
+toc: true
 
-For the past year, I've been very curious about training a Large Language Model on European Portuguese data. I built [classifiers to filter European Portuguese]({filename}/posts/98-fasttext-vs-bert-portuguese.md) and [datasets that gathered a large amount of European Portuguese data]({filename}/posts/103-bagacov2-dataset.md).
+<center>
+<a href="{static}/images/108/wandb-pt-exams-evolution.webp" target="_blank">
+<img src="{static}/images/108/wandb-pt-exams-evolution.webp" alt="Portuguese History and Geography exam accuracy during pretraining for three Ginjinha runs" style="max-width:100%;border-radius: 2px">
+</a>
+</center>
 
-Now, that's all fine and dandy. But the natural next step is obvious: Can we train a Large Language Model on these datasets? Is that model any good?
+For the past year, I've been very curious about training Large Language Models on European Portuguese data. I built evaluations in European Portuguese, [classifiers to filter European Portuguese]({filename}/posts/98-fasttext-vs-bert-portuguese.md) and eventually, [Bagaco, the largest pre-training dataset in European Portuguese]({filename}/posts/103-bagacov2-dataset.md).
 
-It's time to get out of the rabbit hole and show some of the work I've done over the past few weeks: project Ginjinha.
+Now, that's all fine and dandy. But it begs the question: Can you train an LLM on that dataset? Is it any good? 
+
+Welcome to project Ginjinha.
 
 ## A hacker's harness: NanoChat
 
-In 2025, Andrej Karpathy released [NanoChat](https://github.com/karpathy/nanochat): a small and hackable codebase to train GPT-2-style models. It's small, easy to understand, and very hackable. Exactly what I needed.
+In 2025, Andrej Karpathy released [NanoChat](https://github.com/karpathy/nanochat): a small and hackable codebase to train GPT-2-style language models. It's small, easy to understand and modify. Exactly what I needed.
 
-The first step was to adapt [NanoChat](https://github.com/duarteocarmo/nanochat) to my needs. NanoChat aims to mirror the full flow of training LLMs and includes all the steps we need to train a model from start to finish. These are:
+The first step was to adapt it to Ginjinha. Nanochat includes all the stages to train a ChatGPT style of model: 
 
 - **Pretraining:** Where we train a text-completion model to predict the next token.
-- **Supervised fine-tuning (SFT):** Where we further train a model to follow instructions.
-- **Reinforcement learning (RL):** Where we "align" a model via preference tuning or verifiable rewards (which are getting increasingly popular).
+- **Supervised fine-tuning (SFT):** Where we further train a model to follow instructions.(i.e., chat)
+- **Reinforcement learning (RL):** Where we "align" a model via preference tuning or verifiable rewards (this part is getting increasingly popular)
 
-Now, we could do all of these stages. But Ginjinha focuses only on the first one: pretraining. Using our [Bagaço v2 dataset](https://huggingface.co/datasets/duarteocarmo/fineweb2-bagaco2), how good a Portuguese text-completion model can we get? The result of pretraining is what is known as a "base model". This is not a model to chat with. This is a model that is really good at completing text and serves as a good "base" for SFT and RL.
+Now, we could do all of these (provided we had the data). But Bagaco v2 is a dataset for pre-training, therefore, we are only interested in the first stage here. If we use Bagaco as a pre-training dataset for an LLM, how good a model can we get? 
 
-In the pretraining phase, NanoChat focuses on something called the [CORE metric](https://arxiv.org/abs/2406.11794). The CORE metric allows us to measure how "good" a base model is at completing text.
+To measure this, NanoChat focuses on something called the CORE metric.
+
 
 
 ## From CORE to PTCORE
 
-When evaluating a base model, NanoChat uses the [CORE metric](https://arxiv.org/abs/2406.11794), a set of evaluations designed to measure the capability of the model on downstream tasks. Currently, there are 22 tasks, like [ARC](https://arxiv.org/abs/1803.05457), [HellaSwag](https://arxiv.org/abs/1905.07830), and [BIG-bench](https://arxiv.org/abs/2206.04615). For each one, we measure how often the model gets it right.
+The CORE metric is a set of evaluations designed to measure the capability of a language model model on downstream tasks. For CORE, there are 22 tasks. These tasks are things like [ARC](https://arxiv.org/abs/1803.05457), [HellaSwag](https://arxiv.org/abs/1905.07830), and [BIG-bench](https://arxiv.org/abs/2206.04615). Each one of these tasks is made of questions (usually multiple choice). We can take each answer and measure the loss that the model gives to the correct answer. If the correct answer gets the lowest loss, we consider that the model answered correctly.
 
-For example:
+A trivial example:
+
+```text
+Question:
+What is the capital of Le Marche?
+
+Candidate completions:
+A. Camerano
+   → average loss: 1.76
+B. Ancona
+   → average loss: 1.12
+
+Prediction: B (lowest loss)
+Correct answer: B ✓
+```
+
+The CORE metric is a great way of evaluating a model if you are building a general-purpose LLM (think ChatGPT). 
+
+For our use case, since we're training on European Portuguese data, we're interested in capabilities that measure knowledge about Portugal and the Portuguese language: enter **PTCORE**.
+
+<center>
+<a href="{static}/images/108/ptcore-vs-training-tokens.webp" target="_blank">
+<img src="{static}/images/108/ptcore-vs-training-tokens.webp" alt="PTCORE compared with training tokens across all Ginjinha runs" style="max-width:100%;border-radius: 2px">
+</a>
+<figcaption>PTCORE across training budgets. Bubble size represents the model's total number of parameters.</figcaption>
+</center>
+
+[PTCORE](https://huggingface.co/datasets/duarteocarmo/ptcore-eval) is a collection of six tasks that aim to measure the capability of base models on everything related to Portuguese Language and Culture. It's a version of CORE but specialy made for European Portuguese. It leverages a lot of the recent work from the [AMÁLIA team]({filename}/posts/101-AMALIA-portuguese-llm.md) and a couple of other datasets I curated. Here's the full list:
+
+
+| Task | What it measures | Examples |
+|---|---|---:|
+| [SST2-PT](https://huggingface.co/datasets/duarteocarmo/ptcore-eval/viewer/sst2_pt_mini/validation) | Sentiment classification in Portuguese | 2,048 |
+| [ALBA-MCQ](https://huggingface.co/datasets/duarteocarmo/ptcore-eval/viewer/alba_mcq/validation) | European Portuguese linguistics, language variety, and wordplay | 240 |
+| [CulturaVivaPT](https://huggingface.co/datasets/duarteocarmo/ptcore-eval/viewer/cultura_viva_pt_mcq/validation) | Portuguese culture, places, history, and personalities | 1,000 |
+| [PT Exams](https://huggingface.co/datasets/duarteocarmo/ptcore-eval/viewer/pt_exams_history_geography/validation) | History and Geography questions from Portuguese national exams | 544 |
+| [SAUDADE](https://huggingface.co/datasets/duarteocarmo/ptcore-eval/viewer/saudade_pt/validation) | Temporal reasoning about Portuguese events | 8,573 |
+| [OpenBookQA-PT](https://huggingface.co/datasets/duarteocarmo/ptcore-eval/viewer/openbookqa_mt_pt/validation) | Commonsense and elementary science questions translated into Portuguese | 500 |
+
+
+And here's an example question from the `SAUDADE` task:
 
 ```text
 Question:
@@ -46,151 +94,153 @@ Prediction: B (lowest loss)
 Correct answer: B ✓
 ```
 
-The CORE metric is a great way of evaluating a model—if you are building a general-purpose ChatGPT-like model. But for our use case, since we are training on European Portuguese data, we are much more interested in capabilities that measure knowledge about Portugal and the European Portuguese language: enter PTCORE.
-
-[PTCORE](https://huggingface.co/datasets/duarteocarmo/ptcore-eval) is a collection of six tasks that aim to measure the capability of base models on everything related to Portugal (culture + language). It leverages a lot of the recent work from the [AMÁLIA team]({filename}/posts/101-AMALIA-portuguese-llm.md) and a couple of other datasets I curated. Here's the full list:
-
-| Task | What it measures | N |
-|---|---|---:|
-| [SST2-PT](https://huggingface.co/datasets/duarteocarmo/ptcore-eval/viewer/sst2_pt_mini/validation) | Sentiment classification in Portuguese | 2,048 |
-| [ALBA-MCQ](https://huggingface.co/datasets/duarteocarmo/ptcore-eval/viewer/alba_mcq/validation) | European Portuguese linguistics, language variety, and wordplay | 240 |
-| [CulturaVivaPT](https://huggingface.co/datasets/duarteocarmo/ptcore-eval/viewer/cultura_viva_pt_mcq/validation) | Portuguese culture, places, history, and personalities | 1,000 |
-| [PT Exams](https://huggingface.co/datasets/duarteocarmo/ptcore-eval/viewer/pt_exams_history_geography/validation) | History and Geography questions from Portuguese national exams | 544 |
-| [SAUDADE](https://huggingface.co/datasets/duarteocarmo/ptcore-eval/viewer/saudade_pt/validation) | Temporal reasoning about Portuguese events | 8,573 |
-| [OpenBookQA-PT](https://huggingface.co/datasets/duarteocarmo/ptcore-eval/viewer/openbookqa_mt_pt/validation) | Commonsense and elementary science questions translated into Portuguese | 500 |
-
-Just like CORE, for each of these, we can measure two scores: accuracy and the centered score. The centered score is actually pretty cool: it goes from 0 to 1, with 0 being the same performance as random (for example, 33% accuracy on a multiple-choice question with three options gives a centered score of 0) and 1 being a perfect score. We can then aggregate all these scores into a single [PTCORE centered metric](https://github.com/duarteocarmo/nanochat/blob/master/nanochat/ptcore_eval.py) that goes from 0 to 1, giving us a single number for how good a base model is on our evaluation.
+For each task, we can measure two scores: accuracy and a centered score. The accuracy is self explanatory (how many questions the model got right). The centered score is a bit more interesting: it goes from 0 to 1, with 0 being the same performance as random (for example, 33% accuracy on a multiple choice with 3 options gives 0) and 1 being a perfect score. We can then aggregate these centered scores for each task, giving us a single number (the PTCORE score) for a base model.
 
 ## Educational ablations
 
-Now that we have a way of measuring how good a model is in European Portuguese, the next step was to run some ablations and experiments. How good is the Bagaço v2 dataset for pretraining language models? If we filter data by [educational score]({filename}/posts/96-bagaco-dataset.md), do we see a change in the capability of the base model?
+Now that we have a way of measuring how good a model is in European Portuguese, the next step was to run some experiments: How good is the Bagaço v2 dataset for pretraining language models? If we filter data by [educational score]({filename}/posts/96-bagaco-dataset.md), do we see a change in the capability of the base model?
 
-Now, I don't work for a big lab and don't really have an H100 GPU sitting under my desk, so I needed something small. For this experiment, I trained 12 small language models, each with approximately 75 million parameters and approximately 928 million Bagaço v2 training tokens. I trained four groups of models, using a different educational-score threshold for each group.
+If you remember, every single document in the Bagaco v2 dataset has an educational score associated to it: 
 
-About $50 and five hours later, here are the results. Task scores are centered and shown on a 0–100 scale. Values are the mean ± standard deviation across three seeds; validation BPB is not centered, and lower is better:
+<details style="margin:1rem 0">
+  <summary style="cursor:pointer;font-weight:600">Expand the educational-score rubric</summary>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Score</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>0</td><td>No meaningful educational information</td></tr>
+        <tr><td>1</td><td>Some basic educational information, but mostly promotional, irrelevant, or poorly suited to teaching</td></tr>
+        <tr><td>2</td><td>Potentially useful educational material, but superficial, disorganized, or mixed with non-educational content</td></tr>
+        <tr><td>3</td><td>Coherent and appropriate for education, introducing curriculum-relevant concepts, but incomplete or containing some irrelevant material</td></tr>
+        <tr><td>4</td><td>Highly relevant, clear, focused, and substantial educational content suitable for structured learning</td></tr>
+        <tr><td>5</td><td>Outstanding educational material, perfectly suited to teaching, with detailed reasoning and thorough explanations</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
 
-| Filter | Seeds | SST2-PT | ALBA | Cultura Viva | History / Geo | SAUDADE | OpenBookQA-PT | PTCORE ↑ | Final val BPB ↓ |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| All scores | 3 | **24.2 ± 5.1** | 18.3 ± 3.1 | 3.3 ± 2.3 | 11.7 ± 1.1 | −2.7 ± 0.7 | 7.3 ± 1.2 | 10.4 ± 0.9 | **1.0166 ± 0.0016** |
-| Score ≥1 | 3 | 21.0 ± 2.4 | 18.1 ± 0.0 | 4.0 ± 1.1 | 14.1 ± 1.6 | −1.7 ± 0.6 | 7.0 ± 0.9 | 10.4 ± 0.3 | 1.0562 ± 0.0009 |
-| Score ≥2 | 3 | 23.1 ± 5.8 | **23.3 ± 1.8** | 4.9 ± 0.1 | 14.4 ± 1.8 | 2.6 ± 0.7 | **8.5 ± 0.9** | **12.8 ± 1.3** | 1.0849 ± 0.0012 |
-| Score ≥3 | 3 | 16.8 ± 5.5 | 20.4 ± 1.9 | **5.8 ± 1.2** | **14.6 ± 0.8** | **4.6 ± 0.3** | 8.0 ± 0.8 | 11.7 ± 1.2 | 1.1059 ± 0.0008 |
+Now, I don't work for a big lab and don't really have an H100 GPU sitting under my desk, so I to run an experiment that wouldn't costs me thousands of dollars. I trained 12 small language models of around ~73 Million parameters each:
 
-There are a couple of interesting things about this table:
+| Setup | Value |
+|---|---:|
+| Depth | D6 |
+| Total parameters | 73.53M |
+| Training tokens | 927.99M |
+| Seeds | 42 · 1337 · 2026 |
+| Filters | All · ≥1 · ≥2 · ≥3 |
 
-1. Filtering the pretraining data to documents with higher educational scores improved the performance of the base model, but only up to a certain threshold. Filtering by an educational score of ≥2 performed better than filtering by ≥3.
-2. The base models trained without filtering any of the data (the first row) modeled language best. We can see this in the validation BPB (validation bits per byte—lower is better). This is probably because they generalize better.
+About $50 and five hours later, I got the results. For each filtering, we get a PTCORE score and a validation BPB (more on that below). You can also expand the full task-level table that shows every indivual run.
 
-Now, the fact that higher-quality pretraining data creates better language models is not breakthrough research. This is the idea behind a lot of research work, such as [FineWeb and FineWeb-Edu](https://arxiv.org/abs/2406.17557), and even language models such as Microsoft's [Phi](https://arxiv.org/abs/2306.11644). Still, it's very interesting to see it in practice!
+| Filter | PTCORE ↑ | Final validation BPB ↓ |
+|---|---:|---:|
+| All scores | 10.4 ± 0.9 | **1.0166 ± 0.0016** |
+| Score ≥1 | 10.4 ± 0.3 | 1.0562 ± 0.0009 |
+| Score ≥2 | **12.8 ± 1.3** | 1.0849 ± 0.0012 |
+| Score ≥3 | 11.7 ± 1.2 | 1.1059 ± 0.0008 |
+
+
+<details>
+  <summary>Expand all D6 task scores</summary>
+  <center>
+  <a href="{static}/images/108/d6-task-results.webp" target="_blank">
+  <img src="{static}/images/108/d6-task-results.webp" alt="PTCORE task scores for all 12 D6 educational-filter runs" style="max-width:100%;border-radius: 2px">
+  </a>
+  <figcaption>All 12 matched D6 runs. Bold marks the best result for each seed and the best mean for each task. Click to expand.</figcaption>
+  </center>
+</details>
+
+
+Some interesting notes: 
+
+1. Filtering the pretraining data on documents with higher educational scores improved the performance of the base model, but only up to a certain threshold.(Filtering by ≥2 performed better than filtering by ≥3)
+2. The base models trained without filtering (the first row) modeled language best. We can see this in the validation BPB (validation bits per byte—lower is better). This is probably because they generalize better.
+
+Now, the fact that higher-quality pretraining data creates better language models is not breakthrough research. This is the idea behind a lot of research work, such as [FineWeb and FineWeb-Edu](https://arxiv.org/abs/2406.17557), and even language models such as Microsoft's [Phi](https://arxiv.org/abs/2306.11644). Still, it's very interesting to see it in practice! 
+
+The best base model will likely have to carry a balance of PTCORE score and validation BPB. Caring about data quality but also about diversity of data.
 
 ## Training larger and for longer
 
-During this work, I tested a lot (trust me) of small language models on the Bagaço v2 dataset. More than I should have, honestly. It took me some time to start experimenting in a nice, structured way.
+During this work, I trained and tested a lot of small language models on the Bagaço dataset. More than I should have, to be very honest. 
 
 The two best-performing models were:
 
-- [`ginjinha_d8_ratio80_ptcore5_education_score_gte2`](https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d8_ratio80_ptcore5_education_score_gte2) — PTCORE ≈ 0.163 (125M parameters)
-- [`ginjinha_d11_ratio130_ptcore5_education_score_gte1`](https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d11_ratio130_ptcore5_education_score_gte1) — PTCORE ≈ 0.162 (280M parameters)
+- [`ginjinha_d8_ratio80_ptcore5_education_score_gte2`](https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d8_ratio80_ptcore5_education_score_gte2) — PTCORE ≈ 0.163 (126M parameters @ 80 tokens per parameter)
+- [`ginjinha_d11_ratio130_ptcore5_education_score_gte1`](https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d11_ratio130_ptcore5_education_score_gte1) — PTCORE ≈ 0.162 (279M parameters @ 130 tokens per parameter)
 
-It's interesting to see how a model that is half the size performs so well, just because we filtered the data to be higher quality. You can find the models and evaluation results in the [Ginjinha repository](https://huggingface.co/duarteocarmo/ginjinha).
+It's interesting to see how a model that is half the size performs as well as much bigger model, just because we filtered the pre-training data. [I stored all the Ginjinha runs in this repository](https://huggingface.co/duarteocarmo/ginjinha).
 
-These models can complete European Portuguese text pretty well!
 
-[TODO: Include two completion examples generated with:
+<center>
+<a href="{static}/images/108/wandb-ptcore-metric-evolution.webp" target="_blank">
+<img src="{static}/images/108/wandb-ptcore-metric-evolution.webp" alt="Earlier five-task PTCORE metric during pretraining for three Ginjinha runs" style="max-width:100%;border-radius: 2px">
+</a>
+<figcaption>*This is an earlier, pretty unstable five-task PTCORE metric. The 126M-parameter runs have the same training budget.</figcaption>
+</center>
 
-```bash
-uv run python -m scripts.chat_pretrain \
-    --temperature 0.8 \
-    --top-k 40 \
-    "O bairro de Alvalade"
+Here are all 22 runs, sorted by PTCORE. Click an available model to open its weights and evaluation files.
+
+<details style="margin:1rem 0">
+  <summary style="cursor:pointer;font-weight:600">Expand all Ginjinha runs</summary>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Tokens</th><th>Parameters</th><th>Filter</th><th>Model</th><th>PTCORE</th></tr></thead>
+      <tbody>
+        <tr><td>3.355B</td><td>125.829M</td><td>≥2</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d8_ratio80_ptcore5_education_score_gte2"><code>D8 · ratio 80</code></a></td><td>0.163</td></tr>
+        <tr><td>13.393B</td><td>279.184M</td><td>≥1</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d11_ratio130_ptcore5_education_score_gte1"><code>D11 · ratio 130</code></a></td><td>0.162</td></tr>
+        <tr><td>1.678B</td><td>125.829M</td><td>≥3</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d8_ratio40_ptcore5_education_score_gte3"><code>D8 · ratio 40</code></a></td><td>0.154</td></tr>
+        <tr><td>9.787B</td><td>279.184M</td><td>≥1</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d11_ratio95_ptcore5_education_score_gte1"><code>D11 · ratio 95</code></a></td><td>0.150</td></tr>
+        <tr><td>927.99M</td><td>73.532M</td><td>≥2</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d6_ratio40_education_score_gte2_seed42"><code>D6 · ratio 40 · seed 42</code></a></td><td>0.140</td></tr>
+        <tr><td>1.678B</td><td>125.829M</td><td>≥1</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d8_ratio40_ptcore5_education_score_gte1"><code>D8 · ratio 40</code></a></td><td>0.138</td></tr>
+        <tr><td>3.355B</td><td>125.829M</td><td>≥1</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d8_ratio80_ptcore5_education_score_gte1"><code>D8 · ratio 80</code></a></td><td>0.137</td></tr>
+        <tr><td>3.355B</td><td>125.829M</td><td>All</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d8_ratio80_ptcore5_education_all_scores"><code>D8 · ratio 80</code></a></td><td>0.133</td></tr>
+        <tr><td>1.678B</td><td>125.829M</td><td>≥2</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d8_ratio40_ptcore5_education_score_gte2"><code>D8 · ratio 40</code></a></td><td>0.133</td></tr>
+        <tr><td>927.99M</td><td>73.532M</td><td>≥2</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d6_ratio40_education_score_gte2_seed1337"><code>D6 · ratio 40 · seed 1337</code></a></td><td>0.131</td></tr>
+        <tr><td>927.99M</td><td>73.532M</td><td>≥3</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d6_ratio40_education_score_gte3_seed2026"><code>D6 · ratio 40 · seed 2026</code></a></td><td>0.130</td></tr>
+        <tr><td>927.99M</td><td>73.532M</td><td>≥3</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d6_ratio40_education_score_gte3_seed42"><code>D6 · ratio 40 · seed 42</code></a></td><td>0.114</td></tr>
+        <tr><td>927.99M</td><td>73.532M</td><td>≥2</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d6_ratio40_education_score_gte2_seed2026"><code>D6 · ratio 40 · seed 2026</code></a></td><td>0.114</td></tr>
+        <tr><td>927.99M</td><td>73.532M</td><td>All</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d6_ratio40_education_all_scores_seed42"><code>D6 · ratio 40 · seed 42</code></a></td><td>0.110</td></tr>
+        <tr><td>1.678B</td><td>125.829M</td><td>All</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d8_ratio40_ptcore5_education_all_scores"><code>D8 · ratio 40</code></a></td><td>0.110</td></tr>
+        <tr><td>927.99M</td><td>73.532M</td><td>All</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d6_ratio40_education_all_scores_seed1337"><code>D6 · ratio 40 · seed 1337</code></a></td><td>0.108</td></tr>
+        <tr><td>927.99M</td><td>73.532M</td><td>≥3</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d6_ratio40_education_score_gte3_seed1337"><code>D6 · ratio 40 · seed 1337</code></a></td><td>0.108</td></tr>
+        <tr><td>927.99M</td><td>73.532M</td><td>≥1</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d6_ratio40_education_score_gte1_seed1337"><code>D6 · ratio 40 · seed 1337</code></a></td><td>0.107</td></tr>
+        <tr><td>927.99M</td><td>73.532M</td><td>≥1</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d6_ratio40_education_score_gte1_seed2026"><code>D6 · ratio 40 · seed 2026</code></a></td><td>0.103</td></tr>
+        <tr><td>927.99M</td><td>73.532M</td><td>≥1</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d6_ratio40_education_score_gte1_seed42"><code>D6 · ratio 40 · seed 42</code></a></td><td>0.102</td></tr>
+        <tr><td>927.99M</td><td>73.532M</td><td>All</td><td><a href="https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d6_ratio40_education_all_scores_seed2026"><code>D6 · ratio 40 · seed 2026</code></a></td><td>0.093</td></tr>
+        <tr><td>9.375B</td><td>279.184M</td><td>≥1</td><td><code>D11 · ratio 91</code></td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+
+These models can complete Portuguese text pretty well! Here are two unedited completions from the [D8 ratio-40 model trained on scores ≥3](https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d8_ratio40_ptcore5_education_score_gte3), using a temperature of 0.8 and top-k of 40:
+
+**Prompt: `O bairro de Alvalade`**
+
+```text
+O bairro de Alvalade em Lisboa, um bairro de ruas largas e estreitas, onde os lisboetas passam 2/3 do tempo que passa em Lisboa, não tem nada a ver com a sua dimensão.
+A partir de um mapa, o percurso que liga Lisboa ao bairro de Alvalade passa por pequenas ruas com traçado irregular e estreitas, com alguns metros de largura, e com pequenas praças a marcarem a malha urbana dos pequenos núcleos urbanos do bairro.
+O percurso que liga Alvalade ao bairro de Alvalade passa por pequenas ruas com traçado irregular e estreita, com algumas metros de largura, e com pequenas praças a marcarem a malha urbana dos pequenos núcleos urbanos do bairro.
+Há
 ```
-]
 
-Not AGI, but you can definitely see how these can actually become quite capable after some SFT and RL on top. Still, PTCORE gives us an idea of where we can go.
+**Prompt: `A cidade do Porto`**
 
+```text
+A cidade do Porto possui uma gastronomia única e uma arquitetura única. Desde os pratos de peixe grelhado ao bacalhau guisado e à doçaria conventual. A cidade do Porto oferece uma experiência culinária única, não se afastando muito dos restaurantes, mas convidando a uma boa esplanada enquanto se aprecia o pôr-do-sol.
+Para os viajantes que procuram uma experiência gastronómica de excelência, uma viagem ao Porto é indispensável, uma vez que a cidade é muito conhecida pela sua gastronomia rica e requintada. Desde as famosas caves de Vila Nova de Gaia até às famosas caves de vinho do Porto, cada refeição, à refeição principal, é uma oportunidade para conhecer
+```
+
+Not AGI, but you can see how these can actually become quite capable after some SFT and RL on top. 
 
 ## Lessons learned and next steps
 
-This was a fun exercise. Again—not breakthrough research. Many people already knew that better-quality data results in better pretrained models—or at least more capable ones. But doing these experiments on a limited budget really taught me how much a structured approach to experimentation matters. I started off with a lot of YOLO runs—until I really thought about what I wanted to prove. Define the research goal first.
+This was a fun exercise. We already knew that better-quality data results in better (or at least more capable) models. But running these experiments on a tight budget really taught me how structured you need to be in the research. I started off with a lot of *YOLO* style runs. Until I had to really think: "Ok, what do I want to test here?"
 
-The Ginjinha project also made me realize what an enormous advantage labs with access to compute have. If I had even a single H100, there are a lot of interesting things I could do with it, and I could do them much faster. With the rise of local AI, I'm increasingly considering investing in my own compute.
+The Ginjinha project also showed me what an enormous advantage labs with access to compute have. If I had a single H100 for a year, I could not only conduct many more ablations and experiements - but also do so *much* faster. Perhaps I should invest in some.
 
-Bagaço v2 has a problem: data quality. Approximately [50% of the data in Bagaço v2 has an educational score of 0](https://huggingface.co/datasets/duarteocarmo/fineweb2-bagaco2#statistics--counts). Yes, you read that right. That data might be useful for some diversity in pretraining, but we need more high-quality educational data, whether synthetic or original.
+And even thought I havent' trained in the entire Bagaco v2 dataset, I did realize it has a large shortcoming: data quality. Approximately [50% of the data in Bagaço v2 has an educational score of 0](https://huggingface.co/datasets/duarteocarmo/fineweb2-bagaco2#statistics--counts). Yes, you read that right. That's not going to get us where we need. It might be useful for some diversity in pretraining. But we need much more high quality data. Either synthetic or original. 
 
-And yes—I'm working on it.
-
-
-
-
-TODO:
-- Add a miscellaneous section with other experiments.
-- Add completion examples.
-- Add thoughts on SFT and RL.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- [TABLE] The controlled D6 experiment setup
-- [IMAGE] PTCORE by educational-score filter and seed
-- [IMAGE] Validation BPB by educational-score filter
-- [TABLE] Aggregate D6 results
-- [IMAGE] The longer runs in W&B
-- [TABLE] D11 model sizes, training tokens, and results
-
-### What the Bagaço v2 educational scores mean
-
-The labels use the additive rubric documented in the original Bagaço dataset and adapted from FineWeb-Edu: a document receives another point each time it satisfies a stricter educational-quality criterion.
-
-| Score | Meaning |
-|---:|---|
-| 0 | No meaningful educational information |
-| 1 | Some basic educational information, but mostly promotional, irrelevant, or poorly suited to teaching |
-| 2 | Potentially useful educational material, but superficial, disorganized, or mixed with non-educational content |
-| 3 | Coherent and appropriate for education, introducing curriculum-relevant concepts, but incomplete or containing some irrelevant material |
-| 4 | Highly relevant, clear, focused, and substantial educational content suitable for structured learning |
-| 5 | Outstanding educational material, perfectly suited to teaching, with detailed reasoning and thorough explanations |
-
-In practice, none of the 30,000 reference annotations received a 5, so the trained classifier effectively produces scores from 0 to 4.
-
-*Source: [Bagaço educational-score rubric](https://huggingface.co/datasets/duarteocarmo/fineweb2-bagaco#educational-score).*
+Yes. I'm working on it!
 
