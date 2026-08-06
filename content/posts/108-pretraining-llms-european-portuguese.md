@@ -12,29 +12,31 @@ toc: true
 </a>
 </center>
 
-For the past year, I've been very curious about training large language models on European Portuguese data. I built evaluations in European Portuguese, [classifiers to filter European Portuguese]({filename}/posts/98-fasttext-vs-bert-portuguese.md), and eventually [Bagaço, the largest pretraining dataset in European Portuguese]({filename}/posts/103-bagacov2-dataset.md).
+For the past year, I've been very curious about the intersection of Large Language Models (LLMs) and the European Portuguese Language. I've built [evaluations]({filename}/posts/82-benchmark-llms-european-portuguese.md), [classifiers]({filename}/posts/98-fasttext-vs-bert-portuguese.md), and eventually [the largest pretraining dataset in European Portuguese]({filename}/posts/103-bagacov2-dataset.md).
 
-Now, that's all fine and dandy. But it raises the question: Can you train an LLM on that dataset? Is it any good?
+Now, that's all fine and dandy, but it raises the obvious question: Can we pretrain an LLM fully in European Portuguese? And is it any good?
 
 Welcome to project Ginjinha.
 
-## A hacker's harness: NanoChat
+But before we start training models, we need a harness.
+
+## A pre-training harness: NanoChat
 
 In 2025, Andrej Karpathy released [NanoChat](https://github.com/karpathy/nanochat): a small, hackable codebase for training GPT-2-style language models. It's easy to understand and modify. Exactly what I needed.
 
-The first step was to adapt it to Ginjinha.[ref][My NanoChat fork](https://github.com/duarteocarmo/nanochat)[/ref]. NanoChat includes the following stages:
+The first step was to adapt it to Ginjinha ([code](https://github.com/duarteocarmo/nanochat)). NanoChat includes the three key stages of training LLMs:
 
 - **Pretraining:** We train a text-completion model to predict the next token.
 - **Supervised fine-tuning (SFT):** We further train the model to follow instructions (i.e., chat).
-- **Reinforcement learning (RL):** We "align" the model through preference tuning or verifiable rewards (very hype nowadays).
+- **Reinforcement learning (RL):** We "align" the model through preference tuning or verifiable rewards (very hyped nowadays).
 
 We could do all of these, provided we had the data. But Bagaço v2 is a pretraining dataset, so we are only interested in the first stage here. If we use Bagaço to pretrain an LLM, how good a model can we get?
 
-To measure this, NanoChat focuses on something called the CORE metric.
+To measure how good a base model is, NanoChat uses something called the CORE metric.
 
 ## From CORE to PTCORE
 
-The CORE metric is a set of evaluations designed to measure the capability of a language model on downstream tasks. For CORE, there are 22 tasks. These tasks are things like [ARC](https://arxiv.org/abs/1803.05457), [HellaSwag](https://arxiv.org/abs/1905.07830), and [BIG-bench](https://arxiv.org/abs/2206.04615). Each one of these tasks is made of questions (usually multiple choice). We can take each answer and measure the loss that the model gives to it. If the correct answer gets the lowest loss, we consider that the model answered correctly.
+The CORE metric is an evaluation suite designed to measure the capability of a language model on downstream tasks. For CORE, there are 22 tasks. These tasks are things like [ARC](https://arxiv.org/abs/1803.05457), [HellaSwag](https://arxiv.org/abs/1905.07830), and [BIG-bench](https://arxiv.org/abs/2206.04615). Each one is made of questions (usually multiple choice). We take each answer and measure the loss that the model gives to it. If the correct answer gets the lowest loss, we consider the model answered correctly.
 
 A trivial example:
 
@@ -63,7 +65,7 @@ For our use case, since we're training on European Portuguese data, we're intere
 <figcaption>PTCORE across training budgets. Bubble size represents the model's total number of parameters.</figcaption>
 </center>
 
-[PTCORE](https://huggingface.co/datasets/duarteocarmo/ptcore-eval) is a collection of six tasks that measure the capabilities of base models across Portuguese language and culture. It's a version of CORE made especially for European Portuguese. It draws on recent work from the [AMÁLIA team]({filename}/posts/101-AMALIA-portuguese-llm.md) and a couple of other datasets I curated. Here's the full list:
+[PTCORE](https://huggingface.co/datasets/duarteocarmo/ptcore-eval) is a collection of six tasks that measure the capabilities of base models across Portuguese language and culture (e.g., think CORE for Portuguese). It draws on recent work from the [AMÁLIA team]({filename}/posts/101-AMALIA-portuguese-llm.md) and a couple of other datasets I curated. Here's the full list:
 
 
 | Task | What it measures | Examples |
@@ -153,9 +155,9 @@ Two interesting findings:
 1. Filtering the pretraining data for documents with higher educational scores improved the base model's performance, but only up to a certain threshold. Filtering by ≥2 performed better than filtering by ≥3.
 2. The base models trained without filtering (the first row) achieved the lowest validation BPB. This likely reflects how closely the unfiltered training data matches the validation distribution.
 
-The idea that higher-quality pretraining data creates better language models is not groundbreaking. Its shown in research such as [FineWeb and FineWeb-Edu](https://arxiv.org/abs/2406.17557), as well as models such as Microsoft's [Phi](https://arxiv.org/abs/2306.11644). Still, it's very interesting to see it in practice!
+The idea that higher-quality pretraining data creates better language models is not groundbreaking. It's shown in research such as [FineWeb and FineWeb-Edu](https://arxiv.org/abs/2406.17557), as well as models such as Microsoft's [Phi](https://arxiv.org/abs/2306.11644). Still, it's very interesting to see it in practice!
 
-The best base model will need to balance both PTCORE score and validation BPB (quality AND diversity).
+The best base model will need to balance both PTCORE score and validation BPB (quality AND ability to model language).
 
 ## Training larger and for longer
 
