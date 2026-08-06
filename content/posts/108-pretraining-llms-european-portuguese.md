@@ -34,7 +34,7 @@ To measure this, NanoChat focuses on something called the CORE metric.
 
 ## From CORE to PTCORE
 
-The CORE metric is a set of evaluations designed to measure the capability of a language model on downstream tasks. For CORE, there are 22 tasks. These tasks are things like [ARC](https://arxiv.org/abs/1803.05457), [HellaSwag](https://arxiv.org/abs/1905.07830), and [BIG-bench](https://arxiv.org/abs/2206.04615). Each one of these tasks is made of questions (usually multiple choice). We can take each answer and measure the loss that the model gives to the correct answer. If the correct answer gets the lowest loss, we consider that the model answered correctly.
+The CORE metric is a set of evaluations designed to measure the capability of a language model on downstream tasks. For CORE, there are 22 tasks. These tasks are things like [ARC](https://arxiv.org/abs/1803.05457), [HellaSwag](https://arxiv.org/abs/1905.07830), and [BIG-bench](https://arxiv.org/abs/2206.04615). Each one of these tasks is made of questions (usually multiple choice). We can take each answer and measure the loss that the model gives to it. If the correct answer gets the lowest loss, we consider that the model answered correctly.
 
 A trivial example:
 
@@ -161,7 +161,7 @@ The best base model will need to balance both PTCORE score and validation BPB (q
 
 During this work, I trained and tested a lot of small language models on the Bagaço dataset. More than I should have, to be very honest.
 
-The two best-performing models were:
+The two highest-scoring runs were:
 
 - [`ginjinha_d8_ratio80_ptcore5_education_score_gte2`](https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d8_ratio80_ptcore5_education_score_gte2) — PTCORE ≈ 0.163 (126M parameters @ 80 tokens per scaling param)
 - [`ginjinha_d11_ratio130_ptcore5_education_score_gte1`](https://huggingface.co/duarteocarmo/ginjinha/tree/main/ginjinha_d11_ratio130_ptcore5_education_score_gte1) — PTCORE ≈ 0.162 (279M parameters @ 130 tokens per scaling param)
@@ -238,6 +238,6 @@ This was a fun exercise. We already knew that better-quality data results in bet
 
 The Ginjinha project also showed me what an enormous advantage labs with access to compute have. If I had a single H100 for a year, I could conduct many more ablations and experiments—and do so *much* faster. Perhaps I should invest in one.
 
-And even though I haven't trained on the entire Bagaço v2 dataset, I did realize that it has a major shortcoming: data quality. Approximately [50% of the data in Bagaço v2 has an educational score of 0 (e.g., it has zero educational value)](https://huggingface.co/datasets/duarteocarmo/fineweb2-bagaco2#statistics--counts). Yes, you read that right. That's not going to get us where we need to be. It might add some diversity, but we need much more high-quality data.
+And even though I haven't trained on the entire Bagaço v2 dataset, I did realize that it has a major shortcoming: data quality. Approximately [50% of the documents in Bagaço v2 have an educational score of 0 (e.g., they have zero educational value)](https://huggingface.co/datasets/duarteocarmo/fineweb2-bagaco2#statistics--counts). Yes, you read that right. That's not going to get us where we need to be. It might add some diversity, but we need much more high-quality data.
 
 Yes. I'm working on it!
