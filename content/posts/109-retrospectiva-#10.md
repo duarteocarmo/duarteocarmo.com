@@ -12,7 +12,7 @@ thumbnail: images/109/banner.webp
 </a>
 </center>
 
-July was busy — like always — but we made sure to take some time and touch some grass. Or mountains in our case. With the high temperatures across Europe we went to the Trentino region and hike close to the Dolomites for 5 days. Cool temperatures and beautiful scenery. Vitto's idea  of course.
+July was busy — like always — but we made sure to take some time and touch some grass. Or mountains in our case. With the high temperatures across Europe we went to the Trentino region and hiked around the Dolomites for five days. Cool temperatures and beautiful scenery. Vitto's idea  of course.
 
 Work is busy - but very fun as always. Allegra is growing fast which is incredible to see (while trying to fight sleep debt as much as we can).
 
