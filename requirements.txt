@@ -24,7 +24,7 @@ feedparser-sgmllib==2.1.0
     # via feedparser
 html5lib==1.1
     # via pelican-simple-footnotes
-idna==3.11
+idna==3.18
     # via anyio
 jinja2==3.1.6
     # via pelican
@@ -77,7 +77,7 @@ six==1.17.0
     #   html5lib
     #   markdownify
     #   python-dateutil
-soupsieve==2.8.3
+soupsieve==2.9.2
     # via beautifulsoup4
 ty==0.0.69
 typing-extensions==4.15.0
@@ -90,7 +90,7 @@ tzdata==2025.3 ; sys_platform == 'win32'
     #   pelican
 unidecode==1.4.0
     # via pelican
-urllib3==2.6.3
+urllib3==2.7.0
     # via botocore
 watchfiles==1.2.0
     # via
