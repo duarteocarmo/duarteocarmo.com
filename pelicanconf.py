@@ -1,19 +1,20 @@
 import importlib.util
 from pathlib import Path
+from urllib.parse import urljoin
 
 
 def load_variable_from(*, filename: str, variable_name: str):
     module_path = Path(__file__).resolve().parent / filename
     spec = importlib.util.spec_from_file_location(name=module_path.stem, location=module_path)
-    module = importlib.util.module_from_spec(spec)
     assert spec and spec.loader
+    module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return getattr(module, variable_name)
 
 
 AUTHOR = "Duarte O.Carmo"
 SITENAME = "Duarte O.Carmo"
-SITEURL = ""
+SITEURL: str = ""
 SITE_DESCRIPTION = (
     "The personal website of Duarte O.Carmo. A technologist/consultant "
     "from Lisbon, now based in Copenhagen."
@@ -69,7 +70,6 @@ STATIC_PATHS = [
     "pdfs",
     "extra/robots.txt",
     "pdfs/cv.pdf",
-    "extra/CNAME",
     "html",
     "extra/favicons",
 ]
@@ -78,7 +78,6 @@ STATIC_PATHS = [
 EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt"},
     "pdfs/cv.pdf": {"path": "cv.pdf"},
-    "extra/CNAME": {"extra/CNAME": {"path": "CNAME"}},
     "html/StateOfVim.html": {"path": "StateOfVim.html"},
 }
 
@@ -94,6 +93,8 @@ FAVICONS_LIST = [
 
 for favicon in FAVICONS_LIST:
     EXTRA_PATH_METADATA[f"extra/favicons/{favicon}"] = {"path": f"favicons/{favicon}"}
+
+JINJA_FILTERS = {"urljoin": urljoin}
 
 # MARKDOWN
 MARKDOWN = {

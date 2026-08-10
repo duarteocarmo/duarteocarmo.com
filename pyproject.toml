@@ -2,29 +2,31 @@
 name = "duarteocarmo-com"
 version = "0.1.0"
 description = "Personal website of Duarte O.Carmo"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
-  "pelican==4.9.1",
+  "pelican==4.12.0",
   "pelican-feed-filter==1.1.0",
-  "pelican-simple-footnotes==1.0.2",
+  "pelican-simple-footnotes==1.0.3",
   "pelican-sitemap==1.1.0",
-  "markdown==3.5.1",
-  "pygments==2.17.2",
-  "boto3==1.34.9",
+  "markdown==3.10.3",
+  "pygments==2.19.2",
+  "boto3==1.43.67",
   "diskcache==5.6.3",
-  "feedparser==6.0.11",
-  "markdownify==1.1.0",
-  "pytz==2023.3.post1",
-  "watchfiles==0.21.0",
+  "feedparser==6.0.14",
+  "markdownify==1.2.3",
+  "pytz==2026.3.post1",
+  "watchfiles==1.2.0",
 ]
 
 [dependency-groups]
-dev = ["ruff>=0.9"]
+dev = [
+    "ruff>=0.9",
+    "ty>=0.0.69",
+]
 
 [tool.ruff]
 line-length = 100
 target-version = "py310"
-exclude = ["tasks.py"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP"]

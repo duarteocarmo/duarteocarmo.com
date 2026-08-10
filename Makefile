@@ -19,12 +19,16 @@ build: # Build website for production
 	rm -rf output
 	uv run pelican -s publishconf.py -t theme -o output
 
-.PHONY: lint
-lint: # Lint and format python files with ruff
-	uv run ruff check .
-	uv run ruff format --check .
-
 .PHONY: format
-format: # Format and fix python files with ruff
+format: # Format and fix Python files with Ruff
 	uv run ruff check --fix .
 	uv run ruff format .
+
+.PHONY: check
+check: # Check Python files with Ruff and ty
+	uv run ruff check .
+	uv run ruff format --check .
+	uv run ty check
+
+.PHONY: lint
+lint: check # Alias for check

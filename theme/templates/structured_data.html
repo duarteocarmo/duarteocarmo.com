@@ -6,7 +6,7 @@
     "name": "{{ article.title }}",
     "headline": "{{ article.title }}",
     "image": "{{ SITEURL }}/{{ SITELOGO }}",
-    "url": "{{ SITEURL }}/{{ article.url }}",
+    "url": "{{ (SITEURL ~ '/') | urljoin(article.url) }}",
     "description": "{{ article.summary|striptags|e }}",
     "author": {
       "@type": "Person",
