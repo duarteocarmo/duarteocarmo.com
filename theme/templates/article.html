@@ -8,6 +8,7 @@
                 <p>{{ article.date | strftime("%B %-d, %Y") }}</p>
                 {% if 'mp3_link' in article.metadata and (not 'audio' in article.metadata or article.audio != 'false') %}
                     <button class="listen-btn"
+                            aria-label="Listen to this article"
                             onclick="this.parentElement.nextElementSibling.classList.toggle('open')">
                         <svg xmlns="http://www.w3.org/2000/svg"
                              width="14"

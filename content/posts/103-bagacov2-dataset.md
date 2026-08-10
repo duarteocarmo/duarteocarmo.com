@@ -44,6 +44,6 @@ Top domains by educational score in Bagaco v2.
 
 The dataset is available [here](https://huggingface.co/datasets/duarteocarmo/fineweb2-bagaco2).
 
-I recently wrote about [AMÁLIA and the future of European Portuguese LLMs](/blog/AMALIA-portuguese-llm). This most recent effort used Arquivo.pt as a data source, and collected 5.8B tokens. Bagaço v2 almost doubles that amount — and is *completely* open-source. One of the main conclusions of the article is that to build a strong European Portuguese LLM, we need the right data. 
+I recently wrote about [AMÁLIA and the future of European Portuguese LLMs]({filename}/posts/101-AMALIA-portuguese-llm.md). This most recent effort used Arquivo.pt as a data source, and collected 5.8B tokens. Bagaço v2 almost doubles that amount — and is *completely* open-source. One of the main conclusions of the article is that to build a strong European Portuguese LLM, we need the right data. 
 
 My hope is that Bagaço v2 takes us one step closer.

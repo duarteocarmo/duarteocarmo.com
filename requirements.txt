@@ -6,9 +6,9 @@ beautifulsoup4==4.14.3
     # via markdownify
 blinker==1.9.0
     # via pelican
-boto3==1.34.9
+boto3==1.43.67
     # via duarteocarmo-com
-botocore==1.34.162
+botocore==1.43.67
     # via
     #   boto3
     #   s3transfer
@@ -16,12 +16,12 @@ diskcache==5.6.3
     # via duarteocarmo-com
 docutils==0.22.4
     # via pelican
-exceptiongroup==1.3.1 ; python_full_version < '3.11'
-    # via anyio
 feedgenerator==2.2.1
     # via pelican
-feedparser==6.0.11
+feedparser==6.0.14
     # via duarteocarmo-com
+feedparser-sgmllib==2.1.0
+    # via feedparser
 html5lib==1.1
     # via pelican-simple-footnotes
 idna==3.11
@@ -32,11 +32,11 @@ jmespath==1.1.0
     # via
     #   boto3
     #   botocore
-markdown==3.5.1
+markdown==3.10.3
     # via duarteocarmo-com
 markdown-it-py==4.0.0
     # via rich
-markdownify==1.1.0
+markdownify==1.2.3
     # via duarteocarmo-com
 markupsafe==3.0.3
     # via jinja2
@@ -44,7 +44,7 @@ mdurl==0.1.2
     # via markdown-it-py
 ordered-set==4.1.0
     # via pelican
-pelican==4.9.1
+pelican==4.12.0
     # via
     #   duarteocarmo-com
     #   pelican-feed-filter
@@ -52,11 +52,11 @@ pelican==4.9.1
     #   pelican-sitemap
 pelican-feed-filter==1.1.0
     # via duarteocarmo-com
-pelican-simple-footnotes==1.0.2
+pelican-simple-footnotes==1.0.3
     # via duarteocarmo-com
 pelican-sitemap==1.1.0
     # via duarteocarmo-com
-pygments==2.17.2
+pygments==2.19.2
     # via
     #   duarteocarmo-com
     #   pelican
@@ -65,15 +65,13 @@ python-dateutil==2.9.0.post0
     # via
     #   botocore
     #   pelican
-pytz==2023.3.post1
+pytz==2026.3.post1
     # via duarteocarmo-com
 rich==14.3.3
     # via pelican
 ruff==0.15.4
-s3transfer==0.10.4
+s3transfer==0.19.2
     # via boto3
-sgmllib3k==1.0.0
-    # via feedparser
 six==1.17.0
     # via
     #   html5lib
@@ -81,11 +79,11 @@ six==1.17.0
     #   python-dateutil
 soupsieve==2.8.3
     # via beautifulsoup4
+ty==0.0.69
 typing-extensions==4.15.0
     # via
     #   anyio
     #   beautifulsoup4
-    #   exceptiongroup
 tzdata==2025.3 ; sys_platform == 'win32'
     # via
     #   feedgenerator
@@ -94,7 +92,7 @@ unidecode==1.4.0
     # via pelican
 urllib3==2.6.3
     # via botocore
-watchfiles==0.21.0
+watchfiles==1.2.0
     # via
     #   duarteocarmo-com
     #   pelican

@@ -24,7 +24,7 @@ uv run --with jupyter --with jupyter_copilot --with jupyterlab-vim jupyter lab
 
 ```
 
-On a final note, I got completely rid of [Dropbox](www.dropbox.com). For years, it's been the tool of choice for my *important* documents. They've been asking me to upgrade to a paid plan for years now to go beyond my 3GB limit(!). I've replaced it with self hosted [NextCloud](https://nextcloud.com/) on my [Coolify](https://duarteocarmo.com/blog/how-i-self-host-in-2024) instance. Now I have unlimited space, a lighter mac client, and exactly the same features. Without spending a single cent more.
+On a final note, I got completely rid of [Dropbox](https://www.dropbox.com). For years, it's been the tool of choice for my *important* documents. They've been asking me to upgrade to a paid plan for years now to go beyond my 3GB limit(!). I've replaced it with self hosted [NextCloud](https://nextcloud.com/) on my [Coolify](https://duarteocarmo.com/blog/how-i-self-host-in-2024) instance. Now I have unlimited space, a lighter mac client, and exactly the same features. Without spending a single cent more.
 
 ## Reading
 

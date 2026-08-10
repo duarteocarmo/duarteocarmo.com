@@ -61,6 +61,7 @@ class LLMSGenerator:
         return f"> {content}"
 
     def _format_entry(self, item: contents.Content) -> str:
+        title = str(getattr(item, "title", ""))
         url = item.url.removesuffix("/")
         # Try description, then summary metadata
         description = getattr(item, "description", None) or getattr(item, "summary", None) or ""
@@ -70,9 +71,9 @@ class LLMSGenerator:
 
         # Handle external URLs (e.g., starting with http)
         if url.startswith("http"):
-            link = f"- [{item.title}]({url})"
+            link = f"- [{title}]({url})"
         else:
-            link = f"- [{item.title}]({self.siteurl}/{url})"
+            link = f"- [{title}]({self.siteurl}/{url})"
 
         if description:
             return f"{link}: {description}"
