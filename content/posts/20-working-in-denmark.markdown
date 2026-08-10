@@ -55,7 +55,7 @@ If you are lucky enough to find work as a student assistant in a company, this e
 <br>
 <br>
 
-Housing is pretty tough when you first arrive in Denmark. Cities are filled with people and pretty packed, which results in a pretty expensive and not particularly rewarding experience. My advice? Join Facebook groups targeted at looking for rooms in the city, and check websites like [BoligPortal](boligportal.dk/). Furthermore, you might be better off by partnering up with one or two other students and look for a full apartment to rent rather than a single room for yourself.
+Housing is pretty tough when you first arrive in Denmark. Cities are filled with people and pretty packed, which results in a pretty expensive and not particularly rewarding experience. My advice? Join Facebook groups targeted at looking for rooms in the city, and check websites like [BoligPortal](https://www.boligportal.dk/). Furthermore, you might be better off by partnering up with one or two other students and look for a full apartment to rent rather than a single room for yourself.
 
 Last and not least, learn Danish. I haven't, and regret it every day. But languages don't take up space in your brain, but immensely improve your immersion and living experience. Some employers will offer to pay for your classes, and [some schools even offer online classes at a reasonable price](https://www.studieskolen.dk/en/danish/online). I started this one late, but hey, its never late to learn, even if I'll eventually move back to my sunny Portugal.
 

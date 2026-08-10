@@ -8,6 +8,6 @@ from pelicanconf import *
 SITEURL = "https://duarteocarmo.com"
 RELATIVE_URLS = False
 FEED_ALL_ATOM = "feed.xml"
-UMAMI= True
+UMAMI = True
 DELETE_OUTPUT_DIRECTORY = True
 PLAUSIBLE = True

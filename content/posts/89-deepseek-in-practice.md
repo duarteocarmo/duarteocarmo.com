@@ -6,11 +6,11 @@ audio: true
 thumbnail: images/89/cover_image.jpeg
 
 <br>
-<a href="https://www.packtpub.com/en-us/product/deepseek-in-practice-9781806020850" target="_blank">
 <center>
+<a href="https://www.packtpub.com/en-us/product/deepseek-in-practice-9781806020850" target="_blank">
 <img src="{static}/images/89/cover_image.webp" alt="DeepSeek in Practice book Packt" class="shadow" style="max-width: 40%">
-</center>
 </a>
+</center>
 <br>
 Back in May this year, my longtime friend [Alex](https://mlops.systems/about.html) reached out and asked me if I wanted to collaborate with him on a book about DeepSeek. I would love to tell you the story of how I thought long and hard before getting back to him. I didn't. I just said yes.
 

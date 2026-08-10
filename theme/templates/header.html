@@ -27,11 +27,11 @@
 
 {% if article %}
 <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/code.css">
-<link rel="canonical" href="{{ SITEURL }}/{{ article.url }}">
+<link rel="canonical" href="{{ (SITEURL ~ '/') | urljoin(article.url) }}">
 
 <meta property="og:title" content="{{ article.title }}">
-<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}">
-<meta name="twitter:url" content="{{ SITEURL }}/{{ article.url }}">
+<meta property="og:url" content="{{ (SITEURL ~ '/') | urljoin(article.url) }}">
+<meta name="twitter:url" content="{{ (SITEURL ~ '/') | urljoin(article.url) }}">
 <meta name="twitter:title" content="{{ article.title }}">
 
 {% if article.description %}
