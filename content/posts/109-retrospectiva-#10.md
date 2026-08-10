@@ -1,6 +1,7 @@
 title: Retrospectiva #10
 date: 10th of August 2026
 status: published
+description: A monthly newsletter about life.
 audio: true
 thumbnail: images/109/banner.webp
 
