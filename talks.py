@@ -9,7 +9,7 @@ TALKS = [
             {
                 "text": "Slides",
                 "url": "/pdfs/the_great_cleanup_compressed.pdf",
-            }
+            },
         ],
     },
     {

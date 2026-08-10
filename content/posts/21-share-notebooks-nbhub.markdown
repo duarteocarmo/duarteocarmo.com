@@ -62,7 +62,7 @@ Let’s dive a bit deeper into these two:
 ### The Webserver
 The web server is a [FastAPI](https://fastapi.tiangolo.com/) app with 3 endpoints:
 
-* `get("/")`: the homepage, or what you see when you visit [nbhub.duarteocarmo.com](nbhub.duarteocarmo.com). 
+* `get("/")`: the homepage, or what you see when you visit [nbhub.duarteocarmo.com](https://nbhub.duarteocarmo.com). 
 * `post(“/upload”)`: the endpoint that receives a post request with a notebook in the data field, converts it to .html, and then stores it in the server. 
 * `get(“/notebook/id”)`: the endpoint that exposes a stored notebook, so that the user can see it. 
 
