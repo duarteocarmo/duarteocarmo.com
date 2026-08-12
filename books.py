@@ -1,5 +1,11 @@
 BOOKS = [
     {
+        "title": "Raising Raffi",
+        "author": "Keith Gessen",
+        "completed_date": "2026-08-12",
+        "rating": 2,
+    },
+    {
         "title": "Show Your Work!",
         "author": "Austin Kleon",
         "completed_date": "2026-08-03",
