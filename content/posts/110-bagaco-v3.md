@@ -1,15 +1,43 @@
-title: Bagaco v3: Now with pdfs and wikipedia!
-description:
+title: Bagaço v3: Now with PDFs and Wikipedia!
+description: Building the third version of Bagaço with European Portuguese documents from the web, PDFs, and Wikipedia.
 date: 25th August 2026
 status: draft
+thumbnail: images/110/source-comparison.webp
+toc: false
 
-Bagaco version 3 iterates on Bagaco v2 and now adds documents from both Wikipedia and PDFs from accross the web. 
+<center>
+<a href="{static}/images/110/source-comparison.webp" target="_blank">
+<img src="{static}/images/110/source-comparison.webp" alt="Bagaço v3 sources compared by document share, average document length, and average educational score" style="max-width:100%;border-radius: 2px">
+</a>
+<figcaption>Source composition and averages.</figcaption>
+</center>
 
-You might be thinking to yourself? Cool, but what was Bagaco version 2 missing? After my work on Ginjinha, one thing became pretty aparent, data quality plays a big part in training large language models from scratch. I believe Bagaco v3 fills in that void. 
+I'm proud to announce Bagaco v3, the third version of the largest European Portuguese pre-training dataset for large language models. 
 
-To create it, I used datatrove to build a pipeline that merged Bagaco v2 (originally from FineWeb2), FineWiki, and FinePDFs. It filters the last two by European Portuguese score, and deduplicates everything using MinHash duplication. 
+But why do we need a new version you might be asking? That's a good question. After my work on Ginjinha one thing became pretty apparent: Bagaco was large and diverse, but lacked high quality data. I believe Bagaco v3 fixes that. 
 
-But we don't want to dump everything into the same place just like that. Just like Bagaco v2, v3 - also adds two dimensions to this dataset: educational score (from 0 to 5) and a Category (Arts, Business, Games, etc). To get this done, I used Gemini 3.7 flash and OpenRouters's batch api - and annotated 36K documents with the following prompt: 
+
+This new version builds on top of Bagaço v2 and the great work from the Hugging Face team, and adds documents from Wikipedia (FineWiki) and from PDFs accross the web (FinePDFs). But that's not the full story. Let's get into the details.
+
+
+
+<center>
+<a href="{static}/images/110/sources-table.webp" target="_blank">
+<img src="{static}/images/110/sources-table.webp" alt="Bagaço v3 source statistics table" style="max-width:100%;border-radius: 2px">
+</a>
+<figcaption>Bagaço v3 sources.</figcaption>
+</center>
+
+To create Bagaco v3, I started by using datatrove to build a pipeline that merged Bagaço v2 (originally from FineWeb2), FineWiki, and FinePDFs. It filters the last two by European Portuguese score (using my own classifier), and deduplicates everything using MinHash deduplication.
+    
+<iframe
+  src="https://huggingface.co/datasets/duarteocarmo/bagaco3/embed/viewer/default/train"
+  frameborder="0"
+  width="100%"
+  height="560px"
+></iframe>
+
+But we don't want to dump everything into the same place just like that. Just like Bagaço v2, v3 - adds two dimensions to this dataset: **educational score** (from 0 to 5) and **category** (Arts, Business, Games, etc). To get this done, I used Gemini 3.7 flash and OpenRouter's batch API and started by annotating 36K documents with the following prompt:
 
 ```text
 Below is an extract from a web page. Evaluate whether the page has a high educational value
@@ -40,9 +68,15 @@ Examples of good responses:
 {"justification": "The extract is mainly a product listing and offers little explanation beyond basic promotional information.", "educational_score": 1, "category": "Lifestyle"}
 ```
 
-With that annotated dataset, I use the _classic_ embeddings + `LogisticRegression` to train a classifier and apply it to the whole dataset. To do so, I used 4xRTX 3090's ~ 60 mins. After some optimizations and a lot of autoresearch, I didn't find anything that really beat it. 
+With that annotated dataset, I used the _classic_ embeddings + `LogisticRegression` to train a classifier and apply it to the whole dataset. 4x RTX 4090s and 2 hours later, I had the entire dataset annotated. After some testing and a lot of autoresearch, I didn't find anything that really beat it.
 
-Bagaco v3 adds ~2 Million documents to the 32M documents from Bagaco. Why the effort you ask? For a x% increase? Well - if you look closely - even though we only add 2M documents, the character increase is more like 30% more characters. And that might very well translated into many more tokens. Bagaco v3  has an estimated 29 Billion (!) tokens. And, hopefully many more high quality ones. 
+<center>
+<a href="{static}/images/110/label-distributions.webp" target="_blank">
+<img src="{static}/images/110/label-distributions.webp" alt="Bagaço v3 documents and characters by predicted category and educational score" style="max-width:100%;border-radius: 2px">
+</a>
+<figcaption>Documents and characters by predicted label.</figcaption>
+</center>
 
+Bagaço v3 adds ~2 million documents to the 32M documents from Bagaço. Why the effort for a 7% increase? If you look closely - even though we only add 2M documents, the character increase is around 40%(!). And that might very well translate into many more tokens. Bagaço v3 has an estimated 29 billion (!) tokens. And, hopefully many more high quality ones.
 
-And there we go - a shiny new dataset. Now all we have to do is train on it (again). 
+And there we go - a [shiny new dataset](https://huggingface.co/datasets/duarteocarmo/bagaco3). Now all we have to do is train on it (again).
