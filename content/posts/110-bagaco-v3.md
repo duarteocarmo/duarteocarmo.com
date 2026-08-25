@@ -1,5 +1,5 @@
 title: Bagaço v3: Now with PDFs and Wikipedia!
-description: Building third version of Bagaço. An European Portuguese pretraining dataset of 29 Billion tokens
+description: Building the third version of Bagaço. An European Portuguese pretraining dataset of 29 Billion tokens
 date: 25th August 2026
 status: published
 thumbnail: images/110/source-comparison-square.webp
@@ -12,7 +12,7 @@ toc: false
 <figcaption>Source composition and averages.</figcaption>
 </center>
 
-I'm proud to announce Bagaço v3, the third version of the largest European Portuguese pretraining dataset for large language models.
+I'm proud to announce [Bagaço v3](https://huggingface.co/datasets/duarteocarmo/bagaco3), the third version of the largest European Portuguese pretraining dataset for large language models.
 
 Why a new version? After my work on [Ginjinha]({filename}/posts/108-pretraining-llms-european-portuguese.md), one thing became pretty apparent: [Bagaço]({filename}/posts/96-bagaco-dataset.md) was large and diverse, but lacked high-quality data. I believe Bagaço v3 fixes that.
 
