@@ -1,7 +1,7 @@
 title: Bagaço v3: Now with PDFs and Wikipedia!
-description: Building the third version of Bagaço with European Portuguese documents from the web, PDFs, and Wikipedia.
+description: Building third version of Bagaço. An European Portuguese pretraining dataset of 29 Billion tokens
 date: 25th August 2026
-status: draft
+status: published
 thumbnail: images/110/source-comparison-square.webp
 toc: false
 
@@ -14,7 +14,7 @@ toc: false
 
 I'm proud to announce Bagaço v3, the third version of the largest European Portuguese pretraining dataset for large language models.
 
-But why do we need a new version you might be asking? That's a good question. After my work on [Ginjinha]({filename}/posts/108-pretraining-llms-european-portuguese.md), one thing became pretty apparent: [Bagaço]({filename}/posts/96-bagaco-dataset.md) was large and diverse, but lacked high-quality data. I believe Bagaço v3 fixes that.
+Why a new version? After my work on [Ginjinha]({filename}/posts/108-pretraining-llms-european-portuguese.md), one thing became pretty apparent: [Bagaço]({filename}/posts/96-bagaco-dataset.md) was large and diverse, but lacked high-quality data. I believe Bagaço v3 fixes that.
 
 This new version builds on top of [Bagaço v2]({filename}/posts/103-bagacov2-dataset.md) and the great work from the Hugging Face team, and adds documents from Wikipedia ([FineWiki](https://huggingface.co/datasets/HuggingFaceFW/finewiki)) and from PDFs across the web ([FinePDFs](https://huggingface.co/datasets/HuggingFaceFW/finepdfs)). But that's not the full story. Let's get into the details.
 
@@ -65,7 +65,7 @@ Examples of good responses:
 {"justification": "The extract is mainly a product listing and offers little explanation beyond basic promotional information.", "educational_score": 1, "category": "Lifestyle"}
 ```
 
-With that annotated dataset, I used the _classic_ embeddings + `LogisticRegression` to [train a classifier and apply it to the whole dataset](https://huggingface.co/datasets/duarteocarmo/bagaco3/tree/main/classifier). 4× RTX 4090s and 2 hours later, I had the entire dataset annotated. After some testing and a lot of autoresearch, I didn't find anything that really beat it.
+With that annotated dataset, I used the _classic_ embeddings + `LogisticRegression` to [train a classifier and apply it to the whole dataset](https://huggingface.co/datasets/duarteocarmo/bagaco3/tree/main/classifier). 4× RTX 4090s and 2 hours later, I had the entire dataset annotated. After some testing and many experiments with [pi-autoresearch](https://github.com/davebcn87/pi-autoresearch), an extension inspired by Karpathy's autoresearch project, I didn't find anything that really beat it.
 
 <center>
 <a href="{static}/images/110/label-distributions.webp" target="_blank">
