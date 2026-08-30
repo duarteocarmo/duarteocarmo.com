@@ -3,17 +3,23 @@ description: My setup for the Pi coding agent, why I use it, and the tools I've 
 date: 30th August 2026
 status: published
 
-Today, I'd like to talk about [Pi](https://pi.dev/). Pi is a minimal coding agent originally built by [Mario Zechner](https://mariozechner.at/). It's one of the key tools I use to get things done. Brainstorming, writing code, testing, debugging, navigating, research, you name it. The idea of Pi is simple: ship the minimum amount of tools and let the agent evolve with its user.
+Today, I'd like to talk about [Pi](https://pi.dev/). Pi is a minimal coding agent originally built by [Mario Zechner](https://mariozechner.at/). It's one of the key tools I use to get things done. Brainstorming, writing code, testing, debugging, navigating, research, you name it. The idea of Pi is simple: ship the minimum amount of tools and let the agent evolve with its user (.i.e., me!).
 
-I've used most agent harnesses out there and regularly test what's out there. [Claude Code](https://www.anthropic.com/claude-code), [Codex](https://openai.com/codex/), [OpenCode](https://opencode.ai/), you name it. None really stuck for me. Some are closed source (even [though their code got leaked](https://www.infoq.com/news/2026/04/claude-code-source-leak/)); others tend to change under my feet. Pi is simple, predictable, and doesn't do anything I'm not expecting. For something I drive every day, reliability is important.
+## But why Pi? 
+
+I've used most agent harnesses out there. [Claude Code](https://www.anthropic.com/claude-code), [Codex](https://openai.com/codex/), [OpenCode](https://opencode.ai/), you name it. None of them really stuck like Pi did. Some are closed source (even [though their code got leaked](https://www.infoq.com/news/2026/04/claude-code-source-leak/)); others tend to change under my feet. Pi is simple, predictable, and doesn't do anything I'm not expecting. For something I drive every day, reliability is important. I think I'm also largely aligned with the philosophy of Pi.
 
 Importantly, Pi is also model agnostic. It's not tied to a Frontier lab or model provider. [Working for every model out there is increasingly challenging](https://earendil.com/posts/session-portability/), but Pi does a great job. I can use my Codex sub for some work, DeepSeek Flash V4 through the API for other work, and my local [llama.cpp](https://github.com/huggingface/pi-llama) models when I don't need *frontier intelligence*.
+
+## My workflow
 
 My everyday workflow revolves largely around the terminal. My Mac is my main machine, with a [Hetzner server]({filename}/posts/66-how-I-host-my-projects.md) for [Hermes]({filename}/posts/106-how-I-hermes.md) and agents I want to run in the Cloud. Everything is connected to the same [Tailscale](https://tailscale.com/) network. [Ghostty](https://ghostty.org/) makes everything pretty seamless, together with [Tmux](https://github.com/tmux/tmux/wiki), [Neovim](https://neovim.io/), and [LazyGit](https://github.com/jesseduffield/lazygit).
 
 Tmux maps well to my mental model of work. Every project gets its own session, every task gets its own window. Nowadays, most of the time, I'll be running 2-3 agents in parallel on smaller things while I put my focus on a single one.
 
 Some weeks ago I [mentioned I stopped using Tmux in favour of Herdr]({filename}/posts/109-retrospectiva-#10.md). But I switched back. In [Herdr](https://herdr.dev/), you get "pinged" when an agent is done. You are constantly looking at the status of all your agents. That makes me tired. I want to check on my agents, but at my own rhythm. I don't want to be pinged. I like Do Not Disturb mode too much. The cognitive load was a bit too much. I needed another solution.
+
+## Pi-tools, minimal tools for Pi
 
 I ended up building [pi-tools](https://github.com/duarteocarmo/pi-tools/).
 
@@ -31,5 +37,7 @@ All of these extensions tend to evolve with my taste. I believe they all stick t
 
 And that's the idea of Pi, no? Minimal, extensible, but still predictable.
 
-Note: If you're interested in the rest of my setup (skills, extensions, etc), everything is in [my dotfiles](https://github.com/duarteocarmo/dotfiles).
+---
+
+*Note: I don't use just pi-tools, I use a couple of other extensions and skills. Check [my dotfiles for more details](https://github.com/duarteocarmo/dotfiles).*
 
