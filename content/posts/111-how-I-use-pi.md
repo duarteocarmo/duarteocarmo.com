@@ -10,34 +10,34 @@ thumbnail: images/111/cover.webp
 </a>
 </center>
 
-Today, I'd like to talk about [Pi](https://pi.dev/). Pi is a minimal coding agent originally built by [Mario Zechner](https://mariozechner.at/). It's one of the key tools I use to get things done. Brainstorming, writing code, testing, debugging, navigating, research, you name it. The idea of Pi is simple: ship the minimum amount of tools and let the agent evolve with its user (.i.e., me!).
+Today, I'd like to talk about [Pi](https://pi.dev/). Pi is a minimal coding agent originally built by [Mario Zechner](https://mariozechner.at/). It's one of the key tools I use to get things done. Brainstorming, writing code, testing, debugging, navigating, research, you name it. The idea of Pi is simple: ship the minimum amount of tools and let the agent evolve with its user (i.e. me!).
 
 ## But why Pi? 
 
 I've used most agent harnesses out there. [Claude Code](https://www.anthropic.com/claude-code), [Codex](https://openai.com/codex/), [OpenCode](https://opencode.ai/), you name it. None of them really stuck like Pi did. Some are closed source (even [though their code got leaked](https://www.infoq.com/news/2026/04/claude-code-source-leak/)); others tend to change under my feet. Pi is simple, predictable, and doesn't do anything I'm not expecting. For something I drive every day, reliability is important. I think I'm also largely aligned with the philosophy of Pi.
 
-Importantly, Pi is also model agnostic. It's not tied to a Frontier lab or model provider. [Working for every model out there is increasingly challenging](https://earendil.com/posts/session-portability/), but Pi does a great job. I can use my Codex sub for some work, DeepSeek Flash V4 through the API for other work, and my local [llama.cpp](https://github.com/huggingface/pi-llama) models when I don't need *frontier intelligence*.
+Importantly, Pi is also model agnostic. It's not tied to a frontier lab or model provider. [Working for every model out there is increasingly challenging](https://earendil.com/posts/session-portability/), but Pi does a great job. I can use my Codex sub for some work, DeepSeek Flash V4 through the API for other work, and my local [llama.cpp](https://github.com/huggingface/pi-llama) models when I don't need *frontier intelligence*.
 
 <center>
 <a href="{static}/images/111/pi-helicopter.webp" target="_blank">
 <img src="{static}/images/111/pi-helicopter.webp" alt="pi-helicopter menu over a blue wallpaper" style="max-width:100%;border-radius: 2px">
 </a>
-<figcaption>pi-helicopter is one of the extensions that I've built for pi, more below</figcaption>
+<figcaption>pi-helicopter is one of the extensions that I've built for Pi, more below</figcaption>
 </center>
 
 ## My workflow
 
-My everyday workflow revolves largely around the terminal. My Mac is my main machine, with a [Hetzner server]({filename}/posts/66-how-I-host-my-projects.md) for [Hermes]({filename}/posts/106-how-I-hermes.md) and agents I want to run in the Cloud. Everything is connected to the same [Tailscale](https://tailscale.com/) network. [Ghostty](https://ghostty.org/) makes everything pretty seamless, together with [Tmux](https://github.com/tmux/tmux/wiki), [Neovim](https://neovim.io/), and [LazyGit](https://github.com/jesseduffield/lazygit).
+My everyday workflow revolves largely around the terminal. My Mac is my main machine, with a [Hetzner server]({filename}/posts/66-how-I-host-my-projects.md) for [Hermes]({filename}/posts/106-how-I-hermes.md) and agents I want to run in the cloud. Everything is connected to the same [Tailscale](https://tailscale.com/) network. [Ghostty](https://ghostty.org/) makes everything pretty seamless, together with [Tmux](https://github.com/tmux/tmux/wiki), [Neovim](https://neovim.io/), and [LazyGit](https://github.com/jesseduffield/lazygit).
 
 Tmux maps well to my mental model of work. Every project gets its own session, every task gets its own window. Nowadays, most of the time, I'll be running 2-3 agents in parallel on smaller things while I put my focus on a single one.
 
-Some weeks ago I [mentioned I stopped using Tmux in favour of Herdr]({filename}/posts/109-retrospectiva-%2310.md). But I switched back. In [Herdr](https://herdr.dev/), you get "pinged" when an agent is done. You are constantly looking at the status of all your agents. That makes me tired. I want to check on my agents, but at my own rhythm. I don't want to be pinged. I like Do Not Disturb mode too much. The cognitive load was a bit too much. I needed another solution.
+A few weeks ago I [mentioned I stopped using Tmux in favour of Herdr]({filename}/posts/109-retrospectiva-%2310.md). But I switched back. In [Herdr](https://herdr.dev/), you get "pinged" when an agent is done. You are constantly looking at the status of all your agents. That makes me tired. I want to check on my agents, but at my own rhythm. I don't want to be pinged. I like Do Not Disturb mode too much. The cognitive load was a bit too much. I needed another solution.
 
 <center>
 <video style="display:block;max-width:100%;border-radius: 2px" autoplay loop muted playsinline controls>
   <source src="{static}/images/111/pi-jumper-demo.mp4" type="video/mp4">
 </video>
-<figcaption style="margin-top:0">pi-jumper allows you to jump between Pi sessions, quickly</figcaption>
+<figcaption style="margin-top:0">pi-jumper allows you to jump between Pi sessions quickly</figcaption>
 </center>
 
 ## Pi-tools, minimal tools for Pi
@@ -50,7 +50,7 @@ pi-jumper is my own take on the whole "multiple agents running, Herdr, Commander
 
 But pi-tools has a couple of other goodies.
 
-[pi-helicopter](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-helicopter) is something I completely ripped off from [phun333's Pi-infobar app](https://github.com/phun333/pi-infobar). This one is Mac only. Pi-infobar was [consuming 1GB of RAM on my Mac](https://github.com/phun333/pi-infobar/pull/10). pi-helicopter is a bit more lightweight and performant, for now at least.
+[pi-helicopter](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-helicopter) is something I completely ripped off from [phun333's Pi-infobar app](https://github.com/phun333/pi-infobar). This one is Mac-only. Pi-infobar was [consuming 1 GB of RAM on my Mac](https://github.com/phun333/pi-infobar/pull/10). pi-helicopter is a bit more lightweight and performant, for now at least.
 
 The rest of the pi-tools extensions are small things I've built that make my life a bit more pleasant. [Pi-no-sleep](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-no-sleep) prevents my Mac from sleeping while Pi is running. [Pi-preview](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-preview) allows me to read longer clanker messages in a nice web page. [Pi-subagents](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-subagents) is a very minimal implementation of subagents for Pi I stole from [Armin](https://github.com/mitsuhiko/agent-stuff/blob/main/extensions/subagent.ts), and [Pi-modus themes](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-modus-themes) is a port of my favourite themes for Pi.
 
