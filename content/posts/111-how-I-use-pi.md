@@ -23,13 +23,13 @@ Some weeks ago I [mentioned I stopped using Tmux in favour of Herdr]({filename}/
 
 I ended up building [pi-tools](https://github.com/duarteocarmo/pi-tools/).
 
-pi-tools is a set of tools I use as part of my Pi workflow. The centerpiece (and probably the only *really* original tool) is [`Pi-jumper`](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-jumper).
+pi-tools is a set of tools I use as part of my Pi workflow. The centerpiece (and probably the only *really* original tool) is [`pi-jumper`](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-jumper).
 
-Pi-jumper is my own take on the whole "multiple agents running, Herdr, Commander, your agent pings you when done, parallel work bullshit". It has two widgets: a sticky one below your input field that shows you how many other Pi sessions you have running (which you can turn off). The second allows you to quickly jump to other Pi sessions running on Tmux.
+pi-jumper is my own take on the whole "multiple agents running, Herdr, Commander, your agent pings you when done, parallel work bullshit". It has two widgets: a sticky one below your input field that shows you how many other Pi sessions you have running (which you can turn off). The second allows you to quickly jump to other Pi sessions running on Tmux.
 
 But pi-tools has a couple of other goodies.
 
-[Pi-helicopter](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-helicopter) is something I completely ripped off from [phun333's Pi-infobar app](https://github.com/phun333/pi-infobar). This one is Mac only. Pi-infobar was [consuming 1GB of RAM on my Mac](https://github.com/phun333/pi-infobar/pull/10). Pi-helicopter is a bit more lightweight and performant, for now at least.
+[pi-helicopter](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-helicopter) is something I completely ripped off from [phun333's Pi-infobar app](https://github.com/phun333/pi-infobar). This one is Mac only. Pi-infobar was [consuming 1GB of RAM on my Mac](https://github.com/phun333/pi-infobar/pull/10). pi-helicopter is a bit more lightweight and performant, for now at least.
 
 The rest of the pi-tools extensions are small things I've built that make my life a bit more pleasant. [Pi-no-sleep](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-no-sleep) prevents my Mac from sleeping while Pi is running. [Pi-preview](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-preview) allows me to read longer clanker messages in a nice web page. [Pi-subagents](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-subagents) is a very minimal implementation of subagents for Pi I stole from [Armin](https://github.com/mitsuhiko/agent-stuff/blob/main/extensions/subagent.ts), and [Pi-modus themes](https://github.com/duarteocarmo/pi-tools/tree/master/packages/pi-modus-themes) is a port of my favourite themes for Pi.
 
