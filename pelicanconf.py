@@ -69,6 +69,8 @@ STATIC_PATHS = [
     "images",
     "pdfs",
     "extra/robots.txt",
+    "extra/openapi.json",
+    "extra/mcp-server-card.json",
     "pdfs/cv.pdf",
     "html",
     "extra/favicons",
@@ -77,6 +79,8 @@ STATIC_PATHS = [
 
 EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt"},
+    "extra/openapi.json": {"path": "openapi.json"},
+    "extra/mcp-server-card.json": {"path": ".well-known/mcp/server-card.json"},
     "pdfs/cv.pdf": {"path": "cv.pdf"},
     "html/StateOfVim.html": {"path": "StateOfVim.html"},
 }
@@ -112,6 +116,7 @@ PLUGINS = [
     "pelican.plugins.feed_filter",
     "plugins.podcast",
     "plugins.photos",
+    "plugins.api",
     "plugins.llms",
     "sitemap",
     "simple_footnotes",
