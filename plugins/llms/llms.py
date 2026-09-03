@@ -30,6 +30,15 @@ class LLMSGenerator:
         articles = self.context.get("articles", [])
 
         lines = [f"# {self.sitename} - {self.site_description}", ""]
+        lines.extend(
+            [
+                "## For agents",
+                f"- [API documentation]({self.siteurl}/developers)",
+                f"- [OpenAPI specification]({self.siteurl}/openapi.json)",
+                f"- [MCP server card]({self.siteurl}/.well-known/mcp/server-card.json)",
+                "",
+            ]
+        )
         lines.append(about_content)
         lines.append("")
 

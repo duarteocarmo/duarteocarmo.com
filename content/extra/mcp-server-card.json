@@ -1,0 +1,67 @@
+{
+  "name": "duarteocarmo-content",
+  "description": "Read public profile, page, and blog post data from duarteocarmo.com.",
+  "version": "1.0.0",
+  "url": "https://duarteocarmo.com/mcp",
+  "serverUrl": "https://duarteocarmo.com/mcp",
+  "transport": "streamable-http",
+  "capabilities": {
+    "tools": true,
+    "resources": false
+  },
+  "tools": [
+    {
+      "name": "search_posts",
+      "description": "Search Duarte O.Carmo's public blog posts by title, description, or tag.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Words to search for."
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20,
+            "default": 5
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "get_profile",
+      "description": "Get Duarte O.Carmo's public profile and areas of work.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "list_pages",
+      "description": "List the public pages on duarteocarmo.com.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    }
+  ]
+}
