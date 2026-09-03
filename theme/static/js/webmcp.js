@@ -7,14 +7,15 @@
       Promise.resolve(modelContext.registerTool(tool)).catch(() => {});
     } catch {}
   };
-  const readJson = (response) => {
+  const readResponse = (response, markdown = false) => {
     if (!response.ok) throw new Error(`API returned HTTP ${response.status}`);
-    return response.json();
+    return markdown ? response.text() : response.json();
   };
 
   register({
     name: "search_posts",
-    description: "Search Duarte O.Carmo's public blog posts by title, description, or tag.",
+    description:
+      "Search Duarte O.Carmo's public blog posts by title or description.",
     inputSchema: {
       type: "object",
       properties: {
@@ -32,30 +33,69 @@
       const limit = Math.min(Math.max(Number(input.limit) || 5, 1), 20);
       const url = `/api/posts?q=${encodeURIComponent(input.query)}&limit=${limit}`;
       return fetch(url, { signal: options && options.signal })
-        .then(readJson)
+        .then((response) => readResponse(response))
         .then((body) => JSON.stringify(body));
     },
   });
 
   register({
-    name: "get_profile",
-    description: "Get Duarte O.Carmo's public profile and areas of work.",
-    inputSchema: { type: "object", properties: {}, additionalProperties: false },
+    name: "get_page",
+    description: "Read Duarte O.Carmo's About or Consulting page as Markdown.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        page: {
+          type: "string",
+          enum: ["about", "consulting"],
+          description: "The page to read.",
+        },
+      },
+      required: ["page"],
+      additionalProperties: false,
+    },
     annotations: { readOnlyHint: true },
-    execute: (_input, options) =>
-      fetch("/api/profile", { signal: options && options.signal })
-        .then(readJson)
-        .then((body) => JSON.stringify(body)),
+    execute: (input = {}, options) => {
+      if (!["about", "consulting"].includes(input.page)) {
+        throw new TypeError("get_page requires page to be about or consulting");
+      }
+      return fetch(`/api/${input.page}`, {
+        signal: options && options.signal,
+      }).then((response) => readResponse(response, true));
+    },
   });
 
   register({
-    name: "list_pages",
-    description: "List the public pages on duarteocarmo.com.",
-    inputSchema: { type: "object", properties: {}, additionalProperties: false },
+    name: "get_contact_info",
+    description:
+      "Get Duarte O.Carmo's public contact details for a general or consulting inquiry.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        reason: {
+          type: "string",
+          enum: ["general", "consulting"],
+          description: "The reason for making contact.",
+        },
+      },
+      required: ["reason"],
+      additionalProperties: false,
+    },
     annotations: { readOnlyHint: true },
-    execute: (_input, options) =>
-      fetch("/api/pages", { signal: options && options.signal })
-        .then(readJson)
-        .then((body) => JSON.stringify(body)),
+    execute: (input = {}, options) => {
+      if (!["general", "consulting"].includes(input.reason)) {
+        throw new TypeError(
+          "get_contact_info requires reason to be general or consulting",
+        );
+      }
+      return fetch("/api/contact", { signal: options && options.signal })
+        .then((response) => readResponse(response))
+        .then((body) => {
+          const data =
+            input.reason === "consulting"
+              ? body.data
+              : { email: body.data.email };
+          return JSON.stringify({ data });
+        });
+    },
   });
 })();

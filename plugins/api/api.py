@@ -11,26 +11,21 @@ class ApiGenerator:
         self.context = context
         self.output_path = Path(output_path)
         self.site_url = settings.get("SITEURL", "")
-        self.site_name = settings.get("SITENAME", "")
-        self.site_description = settings.get("SITE_DESCRIPTION", "")
 
     def generate_output(self, writer):
         payload = {
             "version": "1",
-            "profile": {
-                "name": self.site_name,
-                "description": self.site_description,
-                "url": self.site_url,
+            "contact": {
                 "email": "me@duarteocarmo.com",
-                "location": "Copenhagen, Denmark",
-                "specialties": ["machine learning", "data", "software"],
+                "bookingUrl": "https://cal.com/duarteocarmo/meeting?duration=30",
+                "consultingUrl": f"{self.site_url}/consulting",
             },
             "posts": [
                 self._serialize_content(item=article)
                 for article in self.context["articles"]
                 if str(article.category) != "photos"
             ],
-            "pages": [self._serialize_content(item=page) for page in self.context["pages"]],
+            "pages": [self._serialize_page(item=page) for page in self.context["pages"]],
         }
         output_path = self.output_path / "api" / "data" / "content.json"
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -51,8 +46,12 @@ class ApiGenerator:
             serialized["updated"] = item.modified.isoformat()
         if hasattr(item, "category"):
             serialized["category"] = str(item.category)
-        if hasattr(item, "tags"):
-            serialized["tags"] = [str(tag) for tag in item.tags]
+        return serialized
+
+    def _serialize_page(self, *, item) -> dict:
+        serialized = self._serialize_content(item=item)
+        content = markdownify(str(item.content)).strip()
+        serialized["markdown"] = f"# {item.title}\n\n{content}"
         return serialized
 
 

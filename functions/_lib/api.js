@@ -6,31 +6,16 @@ const API_HEADERS = {
   "Content-Type": "application/json; charset=utf-8",
 };
 
-const SANDBOX_POSTS = [
-  {
-    title: "A sample post",
-    description: "A stable example record for testing API clients.",
-    url: "https://duarteocarmo.com/blog/sample-post.html",
-    slug: "sample-post",
-    published: "2026-01-15T09:00:00+01:00",
-    category: "blog",
-    tags: ["sample"],
-  },
-  {
-    title: "Another sample post",
-    description: "A second record for testing pagination and search.",
-    url: "https://duarteocarmo.com/blog/another-sample-post.html",
-    slug: "another-sample-post",
-    published: "2026-01-10T09:00:00+01:00",
-    category: "blog",
-    tags: ["sample", "api"],
-  },
-];
-
 function jsonResponse({ body, status = 200, headers = {} }) {
   return new Response(JSON.stringify(body), {
     status,
     headers: { ...API_HEADERS, ...headers },
+  });
+}
+
+function markdownResponse({ body }) {
+  return new Response(body, {
+    headers: { ...API_HEADERS, "Content-Type": "text/markdown; charset=utf-8" },
   });
 }
 
@@ -53,7 +38,8 @@ async function readContent({ context }) {
 function decodeCursor({ cursor }) {
   if (!cursor) return 0;
   const offset = Number.parseInt(atob(cursor), 10);
-  if (!Number.isInteger(offset) || offset < 0) throw new Error("Invalid cursor");
+  if (!Number.isInteger(offset) || offset < 0)
+    throw new Error("Invalid cursor");
   return offset;
 }
 
@@ -69,8 +55,15 @@ function serializePost({ post }) {
 
 function listPosts({ posts, url }) {
   const query = (url.searchParams.get("q") || "").trim().toLowerCase();
-  const requestedLimit = Number.parseInt(url.searchParams.get("limit") || "20", 10);
-  if (!Number.isInteger(requestedLimit) || requestedLimit < 1 || requestedLimit > 100) {
+  const requestedLimit = Number.parseInt(
+    url.searchParams.get("limit") || "20",
+    10,
+  );
+  if (
+    !Number.isInteger(requestedLimit) ||
+    requestedLimit < 1 ||
+    requestedLimit > 100
+  ) {
     return errorResponse({
       status: 400,
       code: "INVALID_LIMIT",
@@ -93,21 +86,19 @@ function listPosts({ posts, url }) {
 
   const matches = query
     ? posts.filter((post) =>
-        [post.title, post.description, ...(post.tags || [])]
-          .join(" ")
-          .toLowerCase()
-          .includes(query),
+        [post.title, post.description].join(" ").toLowerCase().includes(query),
       )
     : posts;
   const data = matches
     .slice(offset, offset + requestedLimit)
     .map((post) => serializePost({ post }));
   const nextOffset = offset + data.length;
-  const nextCursor = nextOffset < matches.length ? btoa(String(nextOffset)) : null;
+  const nextCursor =
+    nextOffset < matches.length ? btoa(String(nextOffset)) : null;
   return jsonResponse({ body: { data, pagination: { nextCursor } } });
 }
 
-export async function handleApiRequest({ context, resource, sandbox = false }) {
+export async function handleApiRequest({ context, resource }) {
   if (context.request.method === "OPTIONS") {
     return new Response(null, { status: 204, headers: API_HEADERS });
   }
@@ -135,28 +126,19 @@ export async function handleApiRequest({ context, resource, sandbox = false }) {
     }
 
     const content = await readContent({ context });
-    if (resource === "profile") {
-      return jsonResponse({
-        body: {
-          data: {
-            name: content.profile.name,
-            url: content.profile.url,
-            bio: content.profile.description,
-          },
-        },
-      });
+    if (["about", "consulting"].includes(resource)) {
+      const page = content.pages.find((item) => item.slug === resource);
+      if (!page) throw new Error(`Page not found: ${resource}`);
+      return markdownResponse({ body: page.markdown });
     }
-    if (resource === "pages") {
-      const data = content.pages.map((page) => ({
-        id: page.slug,
-        title: page.title,
-        url: page.url,
-      }));
-      return jsonResponse({ body: { data } });
+    if (resource === "contact") {
+      return jsonResponse({ body: { data: content.contact } });
     }
     if (resource === "posts") {
-      const posts = sandbox ? SANDBOX_POSTS : content.posts;
-      return listPosts({ posts, url: new URL(context.request.url) });
+      return listPosts({
+        posts: content.posts,
+        url: new URL(context.request.url),
+      });
     }
     return errorResponse({
       status: 404,

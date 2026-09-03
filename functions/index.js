@@ -11,7 +11,8 @@ export async function onRequest(context) {
   const vary = headers.get("Vary");
 
   headers.set("Vary", vary ? `${vary}, Accept` : "Accept");
-  if (acceptsMarkdown) headers.set("Content-Type", "text/markdown; charset=utf-8");
+  if (acceptsMarkdown)
+    headers.set("Content-Type", "text/markdown; charset=utf-8");
 
   return new Response(response.body, {
     status: response.status,

@@ -48,7 +48,11 @@ class LLMSGenerator:
                 ),
                 (
                     "Fetch an article URL from the results when you need its full text. "
-                    "Use the profile endpoint for biographical information."
+                    f"Read {self.siteurl}/api/about for biographical information."
+                ),
+                (
+                    f"Read {self.siteurl}/api/consulting for consulting services and "
+                    f"{self.siteurl}/api/contact for contact details."
                 ),
                 "",
             ]

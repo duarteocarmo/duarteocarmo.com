@@ -34,18 +34,62 @@
         }
       }
     },
-    "/api/profile": {
+    "/api/about": {
       "get": {
-        "operationId": "getProfile",
-        "summary": "Get profile",
-        "description": "Returns the public profile.",
+        "operationId": "getAbout",
+        "summary": "Get about page",
+        "description": "Returns the About page as Markdown. This endpoint is read-only.",
         "responses": {
           "200": {
-            "description": "Public profile",
+            "description": "About page in Markdown",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/api/consulting": {
+      "get": {
+        "operationId": "getConsulting",
+        "summary": "Get consulting page",
+        "description": "Returns the Consulting page as Markdown. This endpoint is read-only.",
+        "responses": {
+          "200": {
+            "description": "Consulting page in Markdown",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/api/contact": {
+      "get": {
+        "operationId": "getContact",
+        "summary": "Get contact details",
+        "description": "Returns public contact details. This endpoint is read-only.",
+        "responses": {
+          "200": {
+            "description": "Public contact details",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileResponse"
+                  "$ref": "#/components/schemas/ContactResponse"
                 }
               }
             }
@@ -75,64 +119,6 @@
         "responses": {
           "200": {
             "description": "A page of posts",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PostListResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequestError"
-          },
-          "500": {
-            "$ref": "#/components/responses/InternalServerError"
-          }
-        }
-      }
-    },
-    "/api/pages": {
-      "get": {
-        "operationId": "listPages",
-        "summary": "List pages",
-        "description": "Returns public pages. Results are read-only.",
-        "responses": {
-          "200": {
-            "description": "Public pages",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PageListResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "$ref": "#/components/responses/InternalServerError"
-          }
-        }
-      }
-    },
-    "/api/sandbox/posts": {
-      "get": {
-        "operationId": "listSandboxPosts",
-        "summary": "List sample posts",
-        "description": "Returns fixed sample post data with the same pagination shape as the posts endpoint.",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Query"
-          },
-          {
-            "$ref": "#/components/parameters/Limit"
-          },
-          {
-            "$ref": "#/components/parameters/Cursor"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A page of sample posts",
             "content": {
               "application/json": {
                 "schema": {
@@ -233,27 +219,6 @@
         },
         "additionalProperties": false
       },
-      "Profile": {
-        "type": "object",
-        "required": [
-          "name",
-          "url",
-          "bio"
-        ],
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "bio": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
       "Post": {
         "type": "object",
         "required": [
@@ -283,27 +248,6 @@
           },
           "summary": {
             "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Page": {
-        "type": "object",
-        "required": [
-          "id",
-          "title",
-          "url"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string",
-            "format": "uri"
           }
         },
         "additionalProperties": false
@@ -354,14 +298,34 @@
         },
         "additionalProperties": false
       },
-      "ProfileResponse": {
+      "ContactResponse": {
         "type": "object",
         "required": [
           "data"
         ],
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/Profile"
+            "type": "object",
+            "required": [
+              "email",
+              "bookingUrl",
+              "consultingUrl"
+            ],
+            "properties": {
+              "email": {
+                "type": "string",
+                "format": "email"
+              },
+              "bookingUrl": {
+                "type": "string",
+                "format": "uri"
+              },
+              "consultingUrl": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "additionalProperties": false
           }
         },
         "additionalProperties": false
@@ -381,21 +345,6 @@
           },
           "pagination": {
             "$ref": "#/components/schemas/Pagination"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PageListResponse": {
-        "type": "object",
-        "required": [
-          "data"
-        ],
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Page"
-            }
           }
         },
         "additionalProperties": false
