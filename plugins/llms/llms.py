@@ -37,6 +37,20 @@ class LLMSGenerator:
                 f"- [OpenAPI specification]({self.siteurl}/openapi.json)",
                 f"- [MCP server card]({self.siteurl}/.well-known/mcp/server-card.json)",
                 "",
+                "## When to use this site",
+                (
+                    "Use this site to find Duarte's writing about machine learning, data, "
+                    "software, and technology consulting."
+                ),
+                (
+                    f"Search posts with `GET {self.siteurl}/api/posts?q=<query>` or the MCP "
+                    "`search_posts` tool."
+                ),
+                (
+                    "Fetch an article URL from the results when you need its full text. "
+                    "Use the profile endpoint for biographical information."
+                ),
+                "",
             ]
         )
         lines.append(about_content)
