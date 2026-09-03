@@ -20,15 +20,18 @@ build: # Build website for production
 	uv run pelican -s publishconf.py -t theme -o output
 
 .PHONY: format
-format: # Format and fix Python files with Ruff
+format: # Format Python and JavaScript files
 	uv run ruff check --fix .
 	uv run ruff format .
+	npx --yes prettier@3.6.2 --write 'functions/**/*.js' 'theme/static/js/**/*.js'
 
 .PHONY: check
-check: # Check Python files with Ruff and ty
+check: # Check Python files and JavaScript formatting
 	uv run ruff check .
 	uv run ruff format --check .
 	uv run ty check
+	npx --yes prettier@3.6.2 --check 'functions/**/*.js' 'theme/static/js/**/*.js'
+	npx --yes wrangler@4.128.0 pages functions build --outdir /tmp/duarteocarmo-functions
 
 .PHONY: lint
 lint: check # Alias for check

@@ -11,11 +11,16 @@
     wrapper.append(table);
   }
 
-  for (const [index, wrapper] of [...(prose?.querySelectorAll(".table-scroll") ?? [])].entries()) {
+  for (const [index, wrapper] of [
+    ...(prose?.querySelectorAll(".table-scroll") ?? []),
+  ].entries()) {
     const firstHeader = wrapper.querySelector("th")?.textContent.trim();
     wrapper.tabIndex = 0;
     wrapper.setAttribute("role", "region");
-    wrapper.setAttribute("aria-label", firstHeader ? `${firstHeader} table` : `Data table ${index + 1}`);
+    wrapper.setAttribute(
+      "aria-label",
+      firstHeader ? `${firstHeader} table` : `Data table ${index + 1}`,
+    );
   }
 
   if (!toc || headings.length < 2) return;

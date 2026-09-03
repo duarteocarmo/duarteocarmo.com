@@ -1,6 +1,6 @@
 {
   "name": "duarteocarmo-content",
-  "description": "Read public profile, page, and blog post data from duarteocarmo.com.",
+  "description": "Read Duarte O.Carmo's posts, key pages, and public contact details.",
   "version": "1.0.0",
   "url": "https://duarteocarmo.com/mcp",
   "serverUrl": "https://duarteocarmo.com/mcp",
@@ -12,7 +12,7 @@
   "tools": [
     {
       "name": "search_posts",
-      "description": "Search Duarte O.Carmo's public blog posts by title, description, or tag.",
+      "description": "Search Duarte O.Carmo's public blog posts by title or description.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -38,11 +38,23 @@
       }
     },
     {
-      "name": "get_profile",
-      "description": "Get Duarte O.Carmo's public profile and areas of work.",
+      "name": "get_page",
+      "description": "Read Duarte O.Carmo's About or Consulting page as Markdown.",
       "inputSchema": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "page": {
+            "type": "string",
+            "enum": [
+              "about",
+              "consulting"
+            ],
+            "description": "The page to read."
+          }
+        },
+        "required": [
+          "page"
+        ],
         "additionalProperties": false
       },
       "annotations": {
@@ -51,11 +63,23 @@
       }
     },
     {
-      "name": "list_pages",
-      "description": "List the public pages on duarteocarmo.com.",
+      "name": "get_contact_info",
+      "description": "Get Duarte O.Carmo's public contact details for a general or consulting inquiry.",
       "inputSchema": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "reason": {
+            "type": "string",
+            "enum": [
+              "general",
+              "consulting"
+            ],
+            "description": "The reason for making contact."
+          }
+        },
+        "required": [
+          "reason"
+        ],
         "additionalProperties": false
       },
       "annotations": {

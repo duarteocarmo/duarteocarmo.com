@@ -1,5 +1,5 @@
 import { handleApiRequest } from "../_lib/api.js";
 
 export function onRequest(context) {
-  return handleApiRequest({ context, resource: "pages" });
+  return handleApiRequest({ context, resource: "consulting" });
 }

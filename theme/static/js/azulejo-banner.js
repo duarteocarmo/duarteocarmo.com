@@ -53,7 +53,9 @@
     const gl = canvas.getContext("webgl", { antialias: true });
     if (!gl) return;
     const ext = gl.getExtension("OES_standard_derivatives");
-    const header = ext ? "#extension GL_OES_standard_derivatives : enable\n" : "";
+    const header = ext
+      ? "#extension GL_OES_standard_derivatives : enable\n"
+      : "";
 
     function compile(type, src) {
       const s = gl.createShader(type);

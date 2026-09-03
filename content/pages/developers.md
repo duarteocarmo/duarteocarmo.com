@@ -2,7 +2,7 @@ title: API documentation
 slug: developers
 description: Public API and agent integration documentation for duarteocarmo.com.
 
-The API provides profile information and an index of the public writing on this website. It is read only and returns JSON.
+The API provides public information from this website. It is read only. Most endpoints return JSON; About and Consulting return Markdown.
 
 - Base URL: `https://duarteocarmo.com`
 - OpenAPI specification: [`/openapi.json`](/openapi.json)
@@ -22,6 +22,12 @@ Search for posts about MCP:
 curl "https://duarteocarmo.com/api/posts?q=mcp&limit=5"
 ```
 
+Fetch the About page as Markdown:
+
+```bash
+curl -H "Accept: text/markdown" "https://duarteocarmo.com/api/about"
+```
+
 A successful list response contains `data` and `pagination`. Pass the returned `nextCursor` as the `cursor` parameter to fetch the next page.
 
 ## Endpoints
@@ -29,11 +35,14 @@ A successful list response contains `data` and `pagination`. Pass the returned `
 | Method | Path | Description |
 | --- | --- | --- |
 | GET | `/api` | API version and access details |
-| GET | `/api/profile` | Public profile |
+| GET | `/api/about` | About page as Markdown |
+| GET | `/api/consulting` | Consulting page as Markdown |
+| GET | `/api/contact` | Public contact details |
 | GET | `/api/posts` | Posts with search and cursor pagination |
-| GET | `/api/pages` | Public website pages |
 
 The [OpenAPI specification](/openapi.json) defines every parameter and response schema.
+
+About and Consulting return a Markdown string with `Content-Type: text/markdown`. Contact returns JSON contact details. Contact is read-only and does not submit messages or create bookings.
 
 ## Authentication and API keys
 
@@ -54,7 +63,3 @@ API errors use one JSON shape:
   }
 }
 ```
-
-## Sandbox
-
-`GET /api/sandbox/posts` returns fixed sample records with the same response shape as the posts endpoint. Use it to test parsing and pagination without depending on live site content.
