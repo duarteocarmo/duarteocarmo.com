@@ -1,0 +1,48 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:duarteocarmo.com:mcp:content",
+      "displayName": "Duarte O.Carmo Content MCP Server",
+      "type": "application/mcp-server-card+json",
+      "url": "https://duarteocarmo.com/.well-known/mcp/server-card.json",
+      "description": "Search Duarte O.Carmo's posts, read key pages, and find public contact information.",
+      "version": "1.0.0",
+      "capabilities": [
+        "search_posts",
+        "get_page",
+        "get_contact_info"
+      ],
+      "representativeQueries": [
+        "Find Duarte's writing about machine learning",
+        "Read Duarte's consulting services",
+        "How can I contact Duarte about consulting?"
+      ],
+      "trustManifest": {
+        "identity": "https://duarteocarmo.com",
+        "identityType": "https"
+      }
+    },
+    {
+      "identifier": "urn:air:duarteocarmo.com:api:public",
+      "displayName": "Duarte O.Carmo Public API",
+      "type": "application/vnd.oai.openapi+json;version=3.1",
+      "url": "https://duarteocarmo.com/openapi.json",
+      "description": "Read-only API for Duarte O.Carmo's posts, key pages, and public contact information.",
+      "capabilities": [
+        "search_posts",
+        "read_about",
+        "read_consulting",
+        "read_contact_info"
+      ],
+      "representativeQueries": [
+        "Search Duarte's posts by topic",
+        "Get biographical information about Duarte",
+        "Find Duarte's consulting and contact information"
+      ],
+      "trustManifest": {
+        "identity": "https://duarteocarmo.com",
+        "identityType": "https"
+      }
+    }
+  ]
+}

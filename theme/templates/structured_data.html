@@ -33,6 +33,7 @@
     "@context": "https://schema.org/",
     "@type": "Person",
     "name": "{{ AUTHOR }}",
+    "description": "Technologist and consultant working across machine learning, data, software, and people.",
     "url": "{{ SITEURL }}",
     "image": "{{ SITEURL }}/{{ SITELOGO }}",
     "sameAs": [
@@ -47,4 +48,22 @@
     }
   }
 </script>
+
+{% if page and page.slug == "consulting" %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Service",
+    "name": "Technology consulting by {{ AUTHOR }}",
+    "description": "Machine learning, data, and software consulting focused on solving hard problems end-to-end.",
+    "url": "{{ SITEURL }}/{{ page.url }}",
+    "serviceType": "Machine learning, data, and software consulting",
+    "provider": {
+      "@type": "Person",
+      "name": "{{ AUTHOR }}",
+      "url": "{{ SITEURL }}"
+    }
+  }
+</script>
+{% endif %}
 {% endif %}

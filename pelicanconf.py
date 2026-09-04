@@ -69,6 +69,7 @@ STATIC_PATHS = [
     "images",
     "pdfs",
     "extra/robots.txt",
+    "extra/ard.json",
     "extra/openapi.json",
     "extra/mcp-server-card.json",
     "pdfs/cv.pdf",
@@ -79,6 +80,7 @@ STATIC_PATHS = [
 
 EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt"},
+    "extra/ard.json": {"path": ".well-known/ard.json"},
     "extra/openapi.json": {"path": "openapi.json"},
     "extra/mcp-server-card.json": {"path": ".well-known/mcp/server-card.json"},
     "pdfs/cv.pdf": {"path": "cv.pdf"},
