@@ -19,19 +19,27 @@ build: # Build website for production
 	rm -rf output
 	uv run pelican -s publishconf.py -t theme -o output
 
+.PHONY: serve
+serve: # Serve built website and API with Bun
+	bun run server.js
+
+.PHONY: test
+test: # Test the Bun server over HTTP
+	bun test
+
 .PHONY: format
 format: # Format Python and JavaScript files
 	uv run ruff check --fix .
 	uv run ruff format .
-	npx --yes prettier@3.6.2 --write 'functions/**/*.js' 'theme/static/js/**/*.js'
+	npx --yes prettier@3.6.2 --write 'functions/**/*.js' 'theme/static/js/**/*.js' 'server*.js'
 
 .PHONY: check
 check: # Check Python files and JavaScript formatting
 	uv run ruff check .
 	uv run ruff format --check .
 	uv run ty check
-	npx --yes prettier@3.6.2 --check 'functions/**/*.js' 'theme/static/js/**/*.js'
-	npx --yes wrangler@4.128.0 pages functions build --outdir /tmp/duarteocarmo-functions
+	npx --yes prettier@3.6.2 --check 'functions/**/*.js' 'theme/static/js/**/*.js' 'server*.js'
+	$(MAKE) test
 
 .PHONY: lint
 lint: check # Alias for check

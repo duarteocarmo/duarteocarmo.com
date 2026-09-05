@@ -26,13 +26,8 @@ function errorResponse({ status, code, message, hint }) {
   });
 }
 
-async function readContent({ context }) {
-  const assetUrl = new URL("/api/data/content.json", context.request.url);
-  const response = await context.env.ASSETS.fetch(assetUrl);
-  if (!response.ok) {
-    throw new Error(`Content data returned HTTP ${response.status}`);
-  }
-  return response.json();
+async function readContent({ contentPath }) {
+  return Bun.file(contentPath).json();
 }
 
 function decodeCursor({ cursor }) {
@@ -98,11 +93,11 @@ function listPosts({ posts, url }) {
   return jsonResponse({ body: { data, pagination: { nextCursor } } });
 }
 
-export async function handleApiRequest({ context, resource }) {
-  if (context.request.method === "OPTIONS") {
+export async function handleApiRequest({ request, resource, contentPath }) {
+  if (request.method === "OPTIONS") {
     return new Response(null, { status: 204, headers: API_HEADERS });
   }
-  if (context.request.method !== "GET") {
+  if (request.method !== "GET") {
     return errorResponse({
       status: 405,
       code: "METHOD_NOT_ALLOWED",
@@ -125,7 +120,15 @@ export async function handleApiRequest({ context, resource }) {
       });
     }
 
-    const content = await readContent({ context });
+    if (!["about", "consulting", "contact", "posts"].includes(resource)) {
+      return errorResponse({
+        status: 404,
+        code: "NOT_FOUND",
+        message: "The requested API resource does not exist.",
+        hint: "See /openapi.json for the available endpoints.",
+      });
+    }
+    const content = await readContent({ contentPath });
     if (["about", "consulting"].includes(resource)) {
       const page = content.pages.find((item) => item.slug === resource);
       if (!page) throw new Error(`Page not found: ${resource}`);
@@ -137,15 +140,9 @@ export async function handleApiRequest({ context, resource }) {
     if (resource === "posts") {
       return listPosts({
         posts: content.posts,
-        url: new URL(context.request.url),
+        url: new URL(request.url),
       });
     }
-    return errorResponse({
-      status: 404,
-      code: "NOT_FOUND",
-      message: "The requested API resource does not exist.",
-      hint: "See /openapi.json for the available endpoints.",
-    });
   } catch (error) {
     return errorResponse({
       status: 500,
