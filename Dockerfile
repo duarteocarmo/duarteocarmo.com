@@ -28,9 +28,19 @@ COPY . .
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv run --no-sync pelican -s publishconf.py -t theme -o output
 
-FROM nginxinc/nginx-unprivileged:1.27-alpine
+FROM oven/bun:1.3.14-alpine
 
-COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /app/output /usr/share/nginx/html
+WORKDIR /app
+ENV NODE_ENV=production \
+    PORT=1111 \
+    STATIC_DIR=/app/output
 
+COPY --from=builder --chown=bun:bun /app/output ./output
+COPY --chown=bun:bun server.js ./server.js
+COPY --chown=bun:bun functions ./functions
+
+USER bun
 EXPOSE 1111
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s \
+    CMD bun -e 'const response = await fetch("http://127.0.0.1:" + process.env.PORT + "/api"); process.exit(response.ok ? 0 : 1)'
+CMD ["bun", "run", "server.js"]

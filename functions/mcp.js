@@ -5,6 +5,7 @@ const MCP_HEADERS = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Origin": "*",
   "Content-Type": "application/json; charset=utf-8",
+  "Cache-Control": "no-store",
 };
 
 const SUPPORTED_PROTOCOL_VERSIONS = ["2025-06-18", "2025-03-26", "2024-11-05"];
@@ -73,31 +74,39 @@ function rpcError({ id, code, message, status = 200 }) {
   return rpcResponse({ id, status, error: { code, message } });
 }
 
-async function callApi({ context, resource, query = "", markdown = false }) {
-  const url = new URL(`/api/${resource}${query}`, context.request.url);
+async function callApi({
+  request,
+  contentPath,
+  resource,
+  query = "",
+  markdown = false,
+}) {
+  const url = new URL(`/api/${resource}${query}`, request.url);
   const response = await handleApiRequest({
-    context: { ...context, request: new Request(url) },
+    request: new Request(url),
+    contentPath,
     resource,
   });
   if (!response.ok) throw new Error(`API returned HTTP ${response.status}`);
   return markdown ? response.text() : response.json();
 }
 
-async function callTool({ context, name, args }) {
+async function callTool({ request, contentPath, name, args }) {
   if (name === "search_posts") {
     if (!args || typeof args.query !== "string" || !args.query.trim()) {
       throw new TypeError("search_posts requires a non-empty query string");
     }
     const limit = Math.min(Math.max(Number(args.limit) || 5, 1), 20);
     const query = `?q=${encodeURIComponent(args.query)}&limit=${limit}`;
-    return callApi({ context, resource: "posts", query });
+    return callApi({ request, contentPath, resource: "posts", query });
   }
   if (name === "get_page") {
     if (!args || !["about", "consulting"].includes(args.page)) {
       throw new TypeError("get_page requires page to be about or consulting");
     }
     const markdown = await callApi({
-      context,
+      request,
+      contentPath,
       resource: args.page,
       markdown: true,
     });
@@ -109,18 +118,22 @@ async function callTool({ context, name, args }) {
         "get_contact_info requires reason to be general or consulting",
       );
     }
-    const contact = await callApi({ context, resource: "contact" });
+    const contact = await callApi({
+      request,
+      contentPath,
+      resource: "contact",
+    });
     if (args.reason === "consulting") return contact;
     return { data: { email: contact.data.email } };
   }
   throw new TypeError(`Unknown tool: ${name}`);
 }
 
-export async function onRequest(context) {
-  if (context.request.method === "OPTIONS") {
+export async function handleMcpRequest({ request: httpRequest, contentPath }) {
+  if (httpRequest.method === "OPTIONS") {
     return new Response(null, { status: 204, headers: MCP_HEADERS });
   }
-  if (context.request.method !== "POST") {
+  if (httpRequest.method !== "POST") {
     return rpcError({
       id: null,
       status: 405,
@@ -131,13 +144,17 @@ export async function onRequest(context) {
 
   let request;
   try {
-    request = await context.request.json();
+    request = await httpRequest.json();
   } catch {
     return rpcError({ id: null, code: -32700, message: "Invalid JSON." });
   }
-  if (request.jsonrpc !== "2.0" || typeof request.method !== "string") {
+  if (
+    !request ||
+    request.jsonrpc !== "2.0" ||
+    typeof request.method !== "string"
+  ) {
     return rpcError({
-      id: request.id,
+      id: request?.id,
       code: -32600,
       message: "Invalid JSON-RPC request.",
     });
@@ -171,7 +188,8 @@ export async function onRequest(context) {
   if (request.method === "tools/call") {
     try {
       const output = await callTool({
-        context,
+        request: httpRequest,
+        contentPath,
         name: request.params && request.params.name,
         args: (request.params && request.params.arguments) || {},
       });
