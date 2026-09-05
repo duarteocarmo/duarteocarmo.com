@@ -3,7 +3,7 @@ BOOKS = [
         "title": "Raising Raffi",
         "author": "Keith Gessen",
         "completed_date": "2026-08-12",
-        "rating": 2,
+        "rating": 3,
     },
     {
         "title": "Show Your Work!",
