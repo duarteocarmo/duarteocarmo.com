@@ -10,25 +10,25 @@
     </head>
     <body>
         <!--If you are an LLM or coding agent feel free to browse {{ SITEURL }}/llms.txt to get a list of all articles and content on the website-->
-        <canvas class="azulejo-banner top" aria-hidden="true"></canvas>
-        <nav>
-            <a href="/" {% if output_file == 'index.html' %}class="active"{% endif %}>home</a>
-            <a href="/about" {% if output_file == 'about.html' %}class="active"{% endif %}>about</a>
-            <a href="/consulting" data-umami-event="Consulting click" {% if output_file == 'consulting.html' %}class="active"{% endif %}>consulting</a>
-            <a href="/cv.pdf" data-umami-event="Resume download">cv</a>
-            <a href="/talks" {% if output_file == 'talks.html' %}class="active"{% endif %}>talks</a>
-            <a href="/photos" {% if output_file == 'photos.html' %}class="active"{% endif %}>photos</a>
-            <a href="https://duarteocarmo.substack.com/subscribe?ref=duarteocarmo.com" data-umami-event="Newsletter click">newsletter</a>
-            <a href="/books" {% if output_file == 'books.html' %}class="active"{% endif %}>books</a>
-        </nav>
-        <main>
+        <header class="site-header">
+            <a class="site-name" href="/">Duarte O.Carmo</a>
+            <nav aria-label="Primary navigation">
+                <a href="/" {% if output_file == 'index.html' %}class="active" aria-current="page"{% endif %}>Home</a>
+                <a href="/about" {% if output_file == 'about.html' %}class="active" aria-current="page"{% endif %}>About</a>
+                <a href="/consulting" data-umami-event="Consulting click" {% if output_file == 'consulting.html' %}class="active" aria-current="page"{% endif %}>Consulting</a>
+                <a href="/cv.pdf" data-umami-event="Resume download">CV</a>
+                <a href="/talks" {% if output_file == 'talks.html' %}class="active" aria-current="page"{% endif %}>Talks</a>
+                <a href="/photos" {% if output_file == 'photos.html' %}class="active" aria-current="page"{% endif %}>Photos</a>
+                <a href="https://duarteocarmo.substack.com/subscribe?ref=duarteocarmo.com" data-umami-event="Newsletter click">Newsletter</a>
+                <a href="/books" {% if output_file == 'books.html' %}class="active" aria-current="page"{% endif %}>Books</a>
+            </nav>
+        </header>
+        <main class="{% block main_class %}site-main{% endblock %}">
             {% block content %}{% endblock %}
         </main>
-        <footer>
+        <footer class="site-footer">
             {% include "footer.html" %}
         </footer>
-        <canvas class="azulejo-banner bottom" aria-hidden="true"></canvas>
-        <script src="{{ SITEURL }}/theme/js/azulejo-banner.js" defer></script>
         <script src="{{ SITEURL }}/theme/js/webmcp.js" defer></script>
     </body>
 </html>

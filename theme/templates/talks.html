@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block title %}Talks - {{ SITENAME }}{% endblock %}
+{% block main_class %}site-main list-page{% endblock %}
 {% block content %}
-<h1 class="sr-only">Talks</h1>
+<h1 class="page-title">Talks</h1>
 
 <div class="posts talks">
   {% for talk in TALKS %}

@@ -2,12 +2,10 @@ title: About me
 slug: about
 description: A technologist from Lisbon, based in Copenhagen.
 
-<center>
 <div class="about-photo">
-<img class="about-photo-default" style="max-width:100%;border-radius: 2px;" src="{static}/images/about/profile.webp" alt="Duarte's picture">
-<img class="about-photo-hover" style="max-width:100%;border-radius: 2px;" src="{static}/images/about/profile_snarky.webp" alt="Duarte's snarky picture">
+<img class="about-photo-default" style="max-width:100%" src="{static}/images/about/profile.webp" alt="Duarte O.Carmo">
+<img class="about-photo-hover" style="max-width:100%" src="{static}/images/about/profile_snarky.webp" alt="Duarte O.Carmo" aria-hidden="true">
 </div>
-</center>
 
 Hi there. I'm Duarte (`du-art`).
 

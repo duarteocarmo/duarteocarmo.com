@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title }} - {{ SITENAME }}{% endblock %}
+{% block main_class %}site-main page-content{% endblock %}
 {% block content %}
 <article>
-  <h1 class="sr-only">{{ page.title }}</h1>
+  <h1 class="page-title">{{ page.title }}</h1>
   <div class="prose">
     {{ page.content }}
   </div>

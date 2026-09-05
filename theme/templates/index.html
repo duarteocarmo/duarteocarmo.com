@@ -1,16 +1,35 @@
 {% extends "base.html" %}
 {% block title %}{{ SITENAME }}{% endblock %}
+{% block main_class %}site-main home-page{% endblock %}
 {% block content %}
-    <h1>Duarte O.Carmo</h1>
-    {% for paragraph in INTRO_TEXT %}
-    <p class="intro">{{ paragraph }}</p>
-    {% endfor %}
-    <div class="posts">
-        {% for article in articles | selectattr('category', '==', 'blog') %}
-            <a class="post-link" href="{{ article.url }}">
-                <div class="post-content">
-                    <p class="post-date">{{ article.date | strftime("%d-%m-%Y") }}</p>
-                    <p class="post-title">
+    <section class="home-intro" aria-labelledby="home-title">
+        <div class="home-intro-copy">
+            <h1 id="home-title">Duarte O.Carmo</h1>
+            {% for paragraph in INTRO_TEXT %}
+            <p class="intro">{{ paragraph }}</p>
+            {% endfor %}
+        </div>
+        <picture class="home-portrait-frame">
+            <source media="(max-width: 48rem)"
+                    srcset="/images/about/profile-home-wide.webp">
+            <img class="home-portrait"
+                 src="/images/about/profile-home.webp"
+                 width="640"
+                 height="960"
+                 fetchpriority="high"
+                 decoding="async"
+                 alt="Duarte O.Carmo">
+        </picture>
+    </section>
+
+    {% set blog_articles = articles | selectattr('category', '==', 'blog') | list %}
+    <section class="writing" aria-labelledby="writing-title">
+        <h2 id="writing-title">Latest writing</h2>
+        <div class="posts">
+            {% for article in blog_articles[:12] %}
+                <a class="post-link" href="{{ article.url }}">
+                    <span class="post-date">{{ article.date | strftime("%d-%m-%Y") }}</span>
+                    <span class="post-title">
                         {{ article.title }}
                         {% if article.popular %}
                             <svg class="popular-icon"
@@ -18,16 +37,45 @@
                                  width="14"
                                  height="14"
                                  fill="currentColor"
-                                 viewBox="0 0 256 256">
-                                <path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z">
-                                </path>
+                                 viewBox="0 0 256 256"
+                                 aria-label="Popular article"
+                                 role="img">
+                                <path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path>
                             </svg>
                         {% endif %}
-                    </p>
-                </div>
-            </a>
-        {% else %}
-            <p>No posts yet!</p>
-        {% endfor %}
-    </div>
+                    </span>
+                </a>
+            {% else %}
+                <p>No posts yet.</p>
+            {% endfor %}
+        </div>
+
+        {% if blog_articles | length > 12 %}
+        <details class="archive">
+            <summary>Browse the archive</summary>
+            <div class="posts archive-posts">
+                {% for article in blog_articles[12:] %}
+                    <a class="post-link" href="{{ article.url }}">
+                        <span class="post-date">{{ article.date | strftime("%d-%m-%Y") }}</span>
+                        <span class="post-title">
+                            {{ article.title }}
+                            {% if article.popular %}
+                                <svg class="popular-icon"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     width="14"
+                                     height="14"
+                                     fill="currentColor"
+                                     viewBox="0 0 256 256"
+                                     aria-label="Popular article"
+                                     role="img">
+                                    <path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path>
+                                </svg>
+                            {% endif %}
+                        </span>
+                    </a>
+                {% endfor %}
+            </div>
+        </details>
+        {% endif %}
+    </section>
 {% endblock %}
