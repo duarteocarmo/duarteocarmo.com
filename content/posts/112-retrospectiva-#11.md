@@ -11,7 +11,7 @@ thumbnail: images/112/cover.webp
 </a>
 </center>
 
-We've gone from suffering from the heatwave in the south of Europe to complaining about rain in Copenhagen. I think I haven't seen the sun in at least 48 hours. And you know what? I don't miss it (yet).
+We've gone from suffering from the heatwave in the south of Europe to complaining about rain in Copenhagen. I don't think I've seen the sun in at least 48 hours. And you know what? I don't miss it (yet).
 
 We're back to routines. Children love routines (I do too). 'Legra started *vuggestue*. It's funny seeing her interact with other kids. The flatter terrain has helped my running, and we're back to respectable volumes (whatever that means). No races in the calendar yet - but I'm on the lookout.
 
@@ -31,14 +31,14 @@ It's cold and rainy - but it's [hygge](https://en.wikipedia.org/wiki/Hygge).
 
 **<a href="https://usgraphics.com/products/berkeley-mono" target="_blank">Berkeley Mono</a>**: I spent money on a font. I never thought I would. But spending so much time in the terminal deserves a better font. Berkeley Mono is great. And I'm nitpicky about my fonts.
 
-**<a href="https://meatproxy.me/" target="_blank">Don't be a Meat Proxy</a>** + **<a href="https://dontpastetheai.com/" target="_blank">Don't paste the AI, please.</a>**: We are all using AI at work. Some more than others. And that's fine. Some don't want to be in the loop - others want to be in the loop and drive the decisions. One thing we can agree on is that there is ZERO value in pasting AI generated text. ZERO!
+**<a href="https://meatproxy.me/" target="_blank">Don't be a Meat Proxy</a>** + **<a href="https://dontpastetheai.com/" target="_blank">Don't paste the AI, please.</a>**: We are all using AI at work. Some more than others. And that's fine. Some don't want to be in the loop - others want to be in the loop and drive the decisions. One thing we can agree on is that there is ZERO value in pasting AI-generated text. ZERO!
 
 
 ## Reading
 
 **<a href="https://www.manning.com/books/build-a-reasoning-model-from-scratch" target="_blank">Build a Reasoning Model (From Scratch)</a>**: I'm almost done with this one. [Sebastian](https://sebastianraschka.com/) has a great way of articulating complicated ideas in the simplest of ways. I've implemented GRPO from scratch but his walkthrough of the algorithm is unbeatable.
 
-**<a href="https://www.penguinrandomhouse.com/books/768148/no-bad-kids-by-janet-lansbury/" target="_blank">No Bad Kids - Janet Lansbury</a>**: Parenting is one of the most rewarding things I've ever done. When you become a parent, you stop judging your own parents so hard, and just wish you can do as good a job as they did. That involves studying the craft.
+**<a href="https://www.penguinrandomhouse.com/books/768148/no-bad-kids-by-janet-lansbury/" target="_blank">No Bad Kids - Janet Lansbury</a>**: Parenting is one of the most rewarding things I've ever done. When you become a parent, you stop judging your own parents so hard, and just wish you could do as good a job as they did. That involves studying the craft.
 
 **<a href="https://arxiv.org/pdf/2402.14873" target="_blank">Pangram paper</a>**: Classifying AI-generated text is a cool problem. It's a hard problem! Pangram appears to have cracked the nut. The paper does not give you every single detail - but the adversarial approach is a super interesting one! There are more recent papers in [their blog](https://www.pangram.com/blog) I need to go through.
 
@@ -50,7 +50,7 @@ It's cold and rainy - but it's [hygge](https://en.wikipedia.org/wiki/Hygge).
 <a href="{static}/images/112/lennys-newsletter-designs.webp" target="_blank">
 <img src="{static}/images/112/lennys-newsletter-designs.webp" alt="Four website designs generated from the same brief" style="max-width:100%;border-radius: 2px">
 </a>
-<figcaption>Every AI genreated landing page looks exactly the same!</figcaption>
+<figcaption>Every AI-generated landing page looks exactly the same!</figcaption>
 </center>
 
 **<a href="https://nicholascharriere.com/blog/being-ambitious-and-being-a-dad/" target="_blank">Being ambitious and being a dad</a> - Nicholas Charriere**: This post resonated with me. Once you become a parent, things change. For me, it has just made me sharper and clearer on what I want to do. Less time for bullshit. Less time dedicated to things I'm not interested in. I've always thought of myself as productive. But with kids, there is no choice - you need to cut things.
@@ -67,13 +67,13 @@ It's cold and rainy - but it's [hygge](https://en.wikipedia.org/wiki/Hygge).
 
 ## Watching
 
-We cancelled all streaming subscriptions before summer. We don't have a TV in the house. We still love our YouTube, Sports, and movies every now and then (I have a self-deployed Jellyfin server we can connect to a small portable projector).
+We cancelled all streaming subscriptions before summer. We don't have a TV in the house. We still love our YouTube, sports, and movies every now and then (I have a self-deployed Jellyfin server we can connect to a small portable projector).
 
 <br>
 <lite-youtube videoid="KT4n-z_4QJU"></lite-youtube>
 <br>
 
-**<a href="https://www.youtube.com/watch?v=KT4n-z_4QJU" target="_blank">OpenAI Astra and Recurrent Depth / Looped Transformers</a> - Sebastian Raschka**: The first recommendation is from (again) Sebastian Raschka, who has a great video explaining the recurrent transformer. A rumored architecture from the recently released [Astra model](https://openai.com/index/gpt-6-astra/) from OpenAI.
+**<a href="https://www.youtube.com/watch?v=KT4n-z_4QJU" target="_blank">OpenAI Astra and Recurrent Depth / Looped Transformers</a> - Sebastian Raschka**: The first recommendation is from (again) Sebastian Raschka, who has a great video explaining the recurrent transformer. It's a rumored architecture from the recently released [Astra model](https://openai.com/index/gpt-6-astra/) from OpenAI.
 
 <br>
 <lite-youtube videoid="nelkiuezJxg"></lite-youtube>
