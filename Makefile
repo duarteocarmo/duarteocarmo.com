@@ -12,7 +12,7 @@ install: # Install dependencies
 .PHONY: run
 run: # Run website locally
 	rm -rf output
-	uv run pelican -s pelicanconf.py -t theme -o output -l -r
+	uv run pelican -s pelicanconf.py -t theme -o output -l -r --port 9000
 
 .PHONY: build
 build: # Build website for production
