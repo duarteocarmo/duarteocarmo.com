@@ -2,9 +2,11 @@ title: API documentation
 slug: developers
 description: Public API and agent integration documentation for duarteocarmo.com.
 
-The API provides public information from this website. It is read only. Most endpoints return JSON; About and Consulting return Markdown.
+The API provides public information from this website. It is read only. Most endpoints return JSON; About and Consulting return Markdown. Every page and blog post also has a Markdown version advertised through an HTML `rel="alternate"` link.
 
 - Base URL: `https://duarteocarmo.com`
+- LLM-readable index: [`/llms.txt`](/llms.txt)
+- Full key pages: [`/llms-full.txt`](/llms-full.txt)
 - OpenAPI specification: [`/openapi.json`](/openapi.json)
 - MCP endpoint: `https://duarteocarmo.com/mcp`
 
@@ -25,7 +27,15 @@ curl "https://duarteocarmo.com/api/posts?q=mcp&limit=5"
 Fetch the About page as Markdown:
 
 ```bash
-curl -H "Accept: text/markdown" "https://duarteocarmo.com/api/about"
+curl "https://duarteocarmo.com/about.html.md"
+```
+
+`llms.txt` is a concise index of pages and posts. `llms-full.txt` contains the complete About, Consulting, and API documentation pages. Blog post bodies are available through their individual Markdown URLs but are not included in `llms-full.txt`.
+
+For any page or post, inspect its HTML for the exact Markdown URL:
+
+```html
+<link rel="alternate" type="text/markdown" href="https://duarteocarmo.com/about.html.md">
 ```
 
 A successful list response contains `data` and `pagination`. Pass the returned `nextCursor` as the `cursor` parameter to fetch the next page.

@@ -8,6 +8,11 @@
 
 <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
 <link type="application/atom+xml" rel="alternate" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" title="{{ SITENAME }}">
+<link rel="alternate" type="text/markdown" href="{{ SITEURL }}/llms.txt" title="LLM-readable site index">
+<link rel="alternate" type="text/markdown" href="{{ SITEURL }}/llms-full.txt" title="LLM-readable site content">
+{% if article or page %}
+<link rel="alternate" type="text/markdown" href="{{ SITEURL }}/{{ output_file }}.md" title="{{ article.title if article else page.title }} as Markdown">
+{% endif %}
 <link rel="help" href="{{ SITEURL }}/developers">
 <link rel="ard" type="application/json" href="{{ SITEURL }}/.well-known/ard.json">
 <link rel="service-desc" type="application/vnd.oai.openapi+json" href="{{ SITEURL }}/openapi.json">

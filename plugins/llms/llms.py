@@ -21,6 +21,7 @@ class LLMSGenerator:
         self.siteurl = settings.get("SITEURL", "")
         self.sitename = settings.get("SITENAME", "My Site")
         self.site_description = settings.get("SITE_DESCRIPTION", "")
+        self.full_page_slugs = settings.get("LLMS_FULL_PAGE_SLUGS", [])
         self.now = datetime.now()
 
     def generate_output(self, writer):
@@ -63,7 +64,7 @@ class LLMSGenerator:
         if pages:
             lines.append("## Pages")
             for page in pages:
-                lines.append(self._format_entry(page))
+                lines.append(self._format_entry(item=page))
             lines.append("")
 
         if articles:
@@ -71,8 +72,16 @@ class LLMSGenerator:
             for article in articles:
                 if article.category == "photos":
                     continue
-                lines.append(self._format_entry(article))
+                lines.append(self._format_entry(item=article))
             lines.append("")
+
+        readable_content = [
+            *pages,
+            *(article for article in articles if article.category != "photos"),
+        ]
+        for item in readable_content:
+            self._write_markdown_variant(item=item)
+        self._write_llms_full(pages=pages)
 
         llms_txt_path = self.output_path / "llms.txt"
         llms_txt_path.write_text("\n".join(lines), encoding="utf-8")
@@ -87,7 +96,31 @@ class LLMSGenerator:
 
         return f"> {content}"
 
-    def _format_entry(self, item: contents.Content) -> str:
+    def _write_markdown_variant(self, *, item: contents.Content) -> None:
+        output_path = self.output_path / f"{item.save_as}.md"
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(self._markdown_for(item=item), encoding="utf-8")
+
+    def _write_llms_full(self, *, pages: list[contents.Content]) -> None:
+        pages_by_slug = {page.slug: page for page in pages}
+        parts = [f"# {self.sitename}\n\n> {self.site_description}"]
+        for slug in self.full_page_slugs:
+            page = pages_by_slug.get(slug)
+            if page is None:
+                continue
+            source = f"{self.siteurl}/{page.url.removesuffix('/')}"
+            parts.append(f"Source: {source}\n\n{self._markdown_for(item=page)}")
+
+        output_path = self.output_path / "llms-full.txt"
+        output_path.write_text("\n\n---\n\n".join(parts), encoding="utf-8")
+        print(f"[llms_full_txt] Wrote {output_path}")
+
+    def _markdown_for(self, *, item: contents.Content) -> str:
+        title = str(getattr(item, "title", ""))
+        content = md(html=str(item.content)).strip()
+        return f"# {title}\n\n{content}\n"
+
+    def _format_entry(self, *, item: contents.Content) -> str:
         title = str(getattr(item, "title", ""))
         url = item.url.removesuffix("/")
         # Try description, then summary metadata
@@ -100,7 +133,7 @@ class LLMSGenerator:
         if url.startswith("http"):
             link = f"- [{title}]({url})"
         else:
-            link = f"- [{title}]({self.siteurl}/{url})"
+            link = f"- [{title}]({self.siteurl}/{item.save_as}.md)"
 
         if description:
             return f"{link}: {description}"
