@@ -1,6 +1,7 @@
 title: AMALIA vs. smaller reasoning models
 date: 2026-09-14
-status: draft
+status: published
+description: Testing AMALIA against much smaller reasoning models on european portuguese benchmarks.
 thumbnail: images/113/pt-exams-thumbnail.webp
 
 
