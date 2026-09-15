@@ -5,11 +5,11 @@ thumbnail:
 
 <!-- TODO: Add a thumbnail. -->
 
-A few weeks ago there was a bit of a scandal in Portugal. People were really, really mad that the government had took so long to correct all of the different high school exams for Portuguese high school students for this year. Once that happened, I saw a weird post on LinkedIn by someone saying that we have Amalia now, so we should just throw it at all the Portuguese exams and have it correct the exams itself, somehow arguing that this would be a good idea
+A few weeks ago there was a bit of a scandal in Portugal. People were really mad that the government had taken so long to correct this year's high school exams. Once that happened, I saw a weird post on LinkedIn saying that we have AMÁLIA now, so we should just throw all the Portuguese exams at it and let it correct them, somehow arguing that this would be a good idea.
 
-Let's be serious. Using an LLM to correct high school exams is a horrible idea, at least as where the technology stands nowadays. But that piqued my interest. Is actually Amalia the best model to actually correct Portuguese high school exams. What they might not know is that the Amalia team actually released not only the model Amalia, but also a lot of different benchmarks and evaluations to test how good models are in Portuguese. And one of the evaluations is called PT exams and it does exactly this. It tests how good a model is in correcting or in performing in Portuguese high school exams
+Let's be serious. Using an LLM to correct high school exams is a horrible idea, at least with where the technology stands today. But that piqued my interest. Is AMÁLIA actually the best model at Portuguese high school exams? What the author might not know is that the AMÁLIA team released not only the model, but also several benchmarks and evaluations that test how good models are in Portuguese. One of them is called PT Exams, and it tests exactly that: how well a model performs on questions from Portuguese high school exams.
 
-And so I decided to compare Amalia with a bunch of smaller models, just to see how good Amalia performed compared to others. And the results were a bit surprising. Amalia is actually not the best performer model when we compare it with much smaller models. There's even models that are as small as like 2B, 2 billion parameters, which are actually like almost four times smaller than Amali and perform quite much better. 
+So I decided to compare AMÁLIA with a bunch of smaller models. The results were a bit surprising. AMÁLIA isn't the best performer when compared with models that are much smaller. Some, like Qwen3.5 2B, have less than a quarter of AMÁLIA's 9 billion parameters and perform better.
 
 
 <figure style="width:100%;max-width:700px;margin:2rem auto">
@@ -23,7 +23,9 @@ And so I decided to compare Amalia with a bunch of smaller models, just to see h
   </object>
 </figure>
 
-If you know a thing or two about LLMs, you'll probably call my bullshit by now. Even though the models that I compared Amalia to are much smaller, they're actually reasoning models. They use something called inference test time scaling to improve their performance. This basically means that we let the LLM babble or produce more text for a longer time and eventually the scores improve. I also tested some non-reasoning variants But the proof of the matter is that the reasoning variants perform really, really well. Of course, it's a little bit unfair to compare Amali with any of these other models. These are things coming from Big Lag blobs from NVIDIA to Alibaba Quen. So we're comparing it with a smaller team, with a smaller budget, and albeit like a smaller goal, but it's still interesting to see how much smaller models can outperform Momalia in even Portuguese-focused tasks. 
+If you know a thing or two about LLMs, you'll probably call my bullshit by now. Even though the models I compared AMÁLIA with are much smaller, they're reasoning models. They use something called test-time scaling to improve their performance. This basically means that we let the LLM babble and produce more text for longer, and eventually the scores improve. I also tested some non-reasoning variants, but the reasoning variants perform really well.
+
+Of course, it's a little unfair to compare AMÁLIA with these models. They come from big labs, from NVIDIA to Alibaba's Qwen team. AMÁLIA has a smaller team, a smaller budget, and admittedly a narrower goal. Still, it's interesting to see much smaller models outperform it even on Portuguese-focused tasks.
 
 <figure style="width:100%;max-width:700px;margin:2rem auto">
   <object
@@ -36,7 +38,7 @@ If you know a thing or two about LLMs, you'll probably call my bullshit by now. 
   </object>
 </figure>
 
-The catch here is obvious. These models use many more tokens in order to achieve the performance that they achieve. They think for a long while, and so you as a user have effectively to wait a much longer time to get results. But in cases like the LFM model, it's actually pretty surprising how a small model can pack so much punch in just a small form factor. This is effectively more likely because of their very deep pre-training that they've done for their models. And also, of course, the inference time scaling, which is also pretty surprising. 
+The catch here is obvious. These models use many more tokens to achieve that performance. They think for a long while, so you have to wait much longer for the results. But in cases like the LFM model, it's pretty surprising how much punch a small model can pack. That likely comes down to extensive pretraining, together with test-time scaling.
 
 
 <figure style="width:100%;max-width:700px;margin:2rem auto">
@@ -50,6 +52,8 @@ The catch here is obvious. These models use many more tokens in order to achieve
   </object>
 </figure>
 
-Now, what's the takeaway? Not much. We always knew that Amalia was an okay model, but we never really wanted to compare it to big lab models. But I think it's still interesting to compare with much smaller models. And I think this finally has something to say about the power of reasoning. Test time scaling is actually effectively surprising in terms of how good of results it can achieve, although it's obviously not the most efficient and effective technique since you've been spending many more tokens. But still, I think this tells us something regarding what would be cool to achieve in the fureeat of Malia. Could he have a much smaller model that everyone could run on their own hardware but that also performed well in Portuguese? For the moment, that appears to be the Quen or LFM models. But it would be really nice to have an Amalia model that packs a punch, but it looks like in order for it to pack a punch, it needs to change some of the ways it's trained. 
+Now, what's the takeaway? Not much. We already knew that AMÁLIA was an okay model, and comparing it with models from big labs isn't really fair. But comparing it with much smaller models is still interesting. I think it says something about the power of reasoning. Test-time scaling can achieve surprisingly good results, although it's obviously not the most efficient technique when it spends so many more tokens.
+
+Still, I think this tells us what would be cool for the future of AMÁLIA. Could we have a much smaller model that everyone could run on their own hardware, but that still performs well in Portuguese? For now, Qwen and LFM appear to be the models closest to that. It would be really nice to have an AMÁLIA model that packs the same punch. To get there, though, it probably needs to change how it is trained.
 
 
