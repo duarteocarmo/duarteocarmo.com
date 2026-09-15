@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="520" viewBox="0 0 700 520" role="group" aria-label="intelligence benchmark chart" lang="en" data-kind="intelligence" data-benchmark="all" data-axis="size">
+<style>a{cursor:pointer}a:focus-visible{outline:2px solid #1261a0;outline-offset:3px}a:hover text,a:focus-visible text{fill:#0875df;text-decoration:underline}#model-link:hover rect{fill:#f4f7fa}#model-link:hover text{fill:#174c79}text{font-family:Arial,Helvetica,sans-serif}.control,.option,.mark{cursor:pointer;outline:none}.option:hover rect,.option:focus rect{fill:#e3eaf5}.control:hover rect{stroke:#888;stroke-width:1}.control:focus-visible rect{stroke:#1261a0;stroke-width:3}.mark:focus-visible{outline:2px solid #1261a0;outline-offset:4px}.mark:hover&gt;rect:first-of-type,.mark:focus-visible&gt;rect:first-of-type{filter:brightness(.9)}text{user-select:none}</style>
+<defs><symbol id="logo-alibaba" viewBox="0 0 96 96"><image width="96" height="96" href="data:image/webp;base64,UklGRmIDAABXRUJQVlA4IFYDAAAwFACdASpgAGAAPpFAmUglpCKhLxloaLASCWQA1T3AvT/qv5Ocm5wDir7qJAPVD+o6QHmAc6zzAfsB+qvvh+jv0AP1g62T0JfLG/cD4V/KwaIK1GWdpAmZ94Mcnj8LcZPt+/EIWkLtbXlQrN5sAbvSbteV83VDLWzjbsUu/TQw44r/X3IKcBcp+Cn6DjaSzxxRJQWHm8g7+32GGkpZKayzaLi5ttg9HTiOAAD++rk6SkaK8CqGsEW4VyTpCQwAKCOqsG73JBv/l9NAh3fhwUQHEf8+SBmx0JZraepLI3n43WhfLJWGjlW3GcZwTqFSE+7Gtx/7MteT9s5t6j+f7JBHjGvi2/GNcc9GFCNbkSV2OG85wBWPxIrU3O9xGLTeLMqByT27UrQB+OLyopaOspV8LA5hZ7fzt4eSo42BzJKhTVR7SNNzrhKnAXPXbKFQ/UfoMNBnRNJfqOjA4/+TVaqJyaDc9eoQZE78W22IYKbc85L2F4qUAbUn0aBWVp9uKQU0suZhGfSbwizVsZkaHygY1xvhYRjYt7Bt2wjDhHTF+9aYqt/IK6GaTCeeDybyajmQCKeFUdlxYaU66FRLyVAg3vnemnJbq4poyzWfUcs30hI2arAsgGeqY+qn/tSsQSx9Jdf67DYPWrMRD4YiMmqcdA5vWBFxmz5KKt/6dKTN1/zz7qPYzAAwWs4DwOIegUa2Tv66yKAWX76CzreYEqaG+HxbYVdeXRI9vi61B5kyClA1kqxSJxSRULLnuS9ozwdmFBkcUmYeN1kt2Omdzi22dXaH/LXSGgYpaixR31vMx0qwq0pzmhrIrr2TOKekVVI/bp5LYLzrRrkj9DOnMXqY4y/zZMMmFdPxZ9GqAju9DA136b22bF6Xns0cIBBRsU8+NoUntV1dWpBQIxW9TRU/fP283q71sz2bxtTol7EppmzkWcHjA2G+XNjTwgwL9PKvQUWj5JpgK7IEXZ28Qd/PBUx84zDodYsnMfZk5KFiZ/nEST613jRL4B4uenD/HW1XNqyPJXA7MJfNxM8UbdE161xHHXceFnCu0Z5fYGkkslBa1bxGg/mu48VMEPrWuHsF4MdXw7Il9RQ3tMPMCegZ/+jrACVnFXGsJQzqZOcFAvAAAAAAAA=="/></symbol><symbol id="logo-liquid-ai" viewBox="0 0 96 96"><image width="96" height="96" href="data:image/webp;base64,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"/></symbol><symbol id="logo-hugging-face" viewBox="0 0 96 96"><image width="96" height="96" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NSIgaGVpZ2h0PSI4OCIgZmlsbD0ibm9uZSI+Cgk8cGF0aCBmaWxsPSIjRkZEMjFFIiBkPSJNNDcuMjEgNzYuNWEzNC43NSAzNC43NSAwIDEgMCAwLTY5LjUgMzQuNzUgMzQuNzUgMCAwIDAgMCA2OS41WiIgLz4KCTxwYXRoCgkJZmlsbD0iI0ZGOUQwQiIKCQlkPSJNODEuOTYgNDEuNzVhMzQuNzUgMzQuNzUgMCAxIDAtNjkuNSAwIDM0Ljc1IDM0Ljc1IDAgMCAwIDY5LjUgMFptLTczLjUgMGEzOC43NSAzOC43NSAwIDEgMSA3Ny41IDAgMzguNzUgMzguNzUgMCAwIDEtNzcuNSAwWiIKCS8+Cgk8cGF0aAoJCWZpbGw9IiMzQTNCNDUiCgkJZD0iTTU4LjUgMzIuM2MxLjI4LjQ0IDEuNzggMy4wNiAzLjA3IDIuMzhhNSA1IDAgMSAwLTYuNzYtMi4wN2MuNjEgMS4xNSAyLjU1LS43MiAzLjctLjMyWk0zNC45NSAzMi4zYy0xLjI4LjQ0LTEuNzkgMy4wNi0zLjA3IDIuMzhhNSA1IDAgMSAxIDYuNzYtMi4wN2MtLjYxIDEuMTUtMi41Ni0uNzItMy43LS4zMloiCgkvPgoJPHBhdGgKCQlmaWxsPSIjRkYzMjNEIgoJCWQ9Ik00Ni45NiA1Ni4yOWM5LjgzIDAgMTMtOC43NiAxMy0xMy4yNiAwLTIuMzQtMS41Ny0xLjYtNC4wOS0uMzYtMi4zMyAxLjE1LTUuNDYgMi43NC04LjkgMi43NC03LjE5IDAtMTMtNi44OC0xMy0yLjM4czMuMTYgMTMuMjYgMTMgMTMuMjZaIgoJLz4KCTxwYXRoCgkJZmlsbD0iIzNBM0I0NSIKCQlmaWxsLXJ1bGU9ImV2ZW5vZGQiCgkJZD0iTTM5LjQzIDU0YTguNyA4LjcgMCAwIDEgNS4zLTQuNDljLjQtLjEyLjgxLjU3IDEuMjQgMS4yOC40LjY4LjgyIDEuMzcgMS4yNCAxLjM3LjQ1IDAgLjktLjY4IDEuMzMtMS4zNS40NS0uNy44OS0xLjM4IDEuMzItMS4yNWE4LjYxIDguNjEgMCAwIDEgNSA0LjE3YzMuNzMtMi45NCA1LjEtNy43NCA1LjEtMTAuNyAwLTIuMzQtMS41Ny0xLjYtNC4wOS0uMzZsLS4xNC4wN2MtMi4zMSAxLjE1LTUuMzkgMi42Ny04Ljc3IDIuNjdzLTYuNDUtMS41Mi04Ljc3LTIuNjdjLTIuNi0xLjI5LTQuMjMtMi4xLTQuMjMuMjkgMCAzLjA1IDEuNDYgOC4wNiA1LjQ3IDEwLjk3WiIKCQljbGlwLXJ1bGU9ImV2ZW5vZGQiCgkvPgoJPHBhdGgKCQlmaWxsPSIjRkY5RDBCIgoJCWQ9Ik03MC43MSAzN2EzLjI1IDMuMjUgMCAxIDAgMC02LjUgMy4yNSAzLjI1IDAgMCAwIDAgNi41Wk0yNC4yMSAzN2EzLjI1IDMuMjUgMCAxIDAgMC02LjUgMy4yNSAzLjI1IDAgMCAwIDAgNi41Wk0xNy41MiA0OGMtMS42MiAwLTMuMDYuNjYtNC4wNyAxLjg3YTUuOTcgNS45NyAwIDAgMC0xLjMzIDMuNzYgNy4xIDcuMSAwIDAgMC0xLjk0LS4zYy0xLjU1IDAtMi45NS41OS0zLjk0IDEuNjZhNS44IDUuOCAwIDAgMC0uOCA3IDUuMyA1LjMgMCAwIDAtMS43OSAyLjgyYy0uMjQuOS0uNDggMi44LjggNC43NGE1LjIyIDUuMjIgMCAwIDAtLjM3IDUuMDJjMS4wMiAyLjMyIDMuNTcgNC4xNCA4LjUyIDYuMSAzLjA3IDEuMjIgNS44OSAyIDUuOTEgMi4wMWE0NC4zMyA0NC4zMyAwIDAgMCAxMC45MyAxLjZjNS44NiAwIDEwLjA1LTEuOCAxMi40Ni01LjM0IDMuODgtNS42OSAzLjMzLTEwLjktMS43LTE1LjkyLTIuNzctMi43OC00LjYyLTYuODctNS03Ljc3LS43OC0yLjY2LTIuODQtNS42Mi02LjI1LTUuNjJhNS43IDUuNyAwIDAgMC00LjYgMi40NmMtMS0xLjI2LTEuOTgtMi4yNS0yLjg2LTIuODJBNy40IDcuNCAwIDAgMCAxNy41MiA0OFptMCA0Yy41MSAwIDEuMTQuMjIgMS44Mi42NSAyLjE0IDEuMzYgNi4yNSA4LjQzIDcuNzYgMTEuMTguNS45MiAxLjM3IDEuMzEgMi4xNCAxLjMxIDEuNTUgMCAyLjc1LTEuNTMuMTUtMy40OC0zLjkyLTIuOTMtMi41NS03LjcyLS42OC04LjAxLjA4LS4wMi4xNy0uMDIuMjQtLjAyIDEuNyAwIDIuNDUgMi45MyAyLjQ1IDIuOTNzMi4yIDUuNTIgNS45OCA5LjNjMy43NyAzLjc3IDMuOTcgNi44IDEuMjIgMTAuODMtMS44OCAyLjc1LTUuNDcgMy41OC05LjE2IDMuNTgtMy44MSAwLTcuNzMtLjktOS45Mi0xLjQ2LS4xMS0uMDMtMTMuNDUtMy44LTExLjc2LTcgLjI4LS41NC43NS0uNzYgMS4zNC0uNzYgMi4zOCAwIDYuNyAzLjU0IDguNTcgMy41NC40MSAwIC43LS4xNy44My0uNi43OS0yLjg1LTEyLjA2LTQuMDUtMTAuOTgtOC4xNy4yLS43My43MS0xLjAyIDEuNDQtMS4wMiAzLjE0IDAgMTAuMiA1LjUzIDExLjY4IDUuNTMuMTEgMCAuMi0uMDMuMjQtLjEuNzQtMS4yLjMzLTIuMDQtNC45LTUuMi01LjIxLTMuMTYtOC44OC01LjA2LTYuOC03LjMzLjI0LS4yNi41OC0uMzggMS0uMzggMy4xNyAwIDEwLjY2IDYuODIgMTAuNjYgNi44MnMyLjAyIDIuMSAzLjI1IDIuMWMuMjggMCAuNTItLjEuNjgtLjM4Ljg2LTEuNDYtOC4wNi04LjIyLTguNTYtMTEuMDEtLjM0LTEuOS4yNC0yLjg1IDEuMzEtMi44NVoiCgkvPgoJPHBhdGgKCQlmaWxsPSIjRkZEMjFFIgoJCWQ9Ik0zOC42IDc2LjY5YzIuNzUtNC4wNCAyLjU1LTcuMDctMS4yMi0xMC44NC0zLjc4LTMuNzctNS45OC05LjMtNS45OC05LjNzLS44Mi0zLjItMi42OS0yLjljLTEuODcuMy0zLjI0IDUuMDguNjggOC4wMSAzLjkxIDIuOTMtLjc4IDQuOTItMi4yOSAyLjE3LTEuNS0yLjc1LTUuNjItOS44Mi03Ljc2LTExLjE4LTIuMTMtMS4zNS0zLjYzLS42LTMuMTMgMi4yLjUgMi43OSA5LjQzIDkuNTUgOC41NiAxMS0uODcgMS40Ny0zLjkzLTEuNzEtMy45My0xLjcxcy05LjU3LTguNzEtMTEuNjYtNi40NGMtMi4wOCAyLjI3IDEuNTkgNC4xNyA2LjggNy4zMyA1LjIzIDMuMTYgNS42NCA0IDQuOSA1LjItLjc1IDEuMi0xMi4yOC04LjUzLTEzLjM2LTQuNC0xLjA4IDQuMTEgMTEuNzcgNS4zIDEwLjk4IDguMTUtLjggMi44NS05LjA2LTUuMzgtMTAuNzQtMi4xOC0xLjcgMy4yMSAxMS42NSA2Ljk4IDExLjc2IDcuMDEgNC4zIDEuMTIgMTUuMjUgMy40OSAxOS4wOC0yLjEyWiIKCS8+Cgk8cGF0aAoJCWZpbGw9IiNGRjlEMEIiCgkJZD0iTTc3LjQgNDhjMS42MiAwIDMuMDcuNjYgNC4wNyAxLjg3YTUuOTcgNS45NyAwIDAgMSAxLjMzIDMuNzYgNy4xIDcuMSAwIDAgMSAxLjk1LS4zYzEuNTUgMCAyLjk1LjU5IDMuOTQgMS42NmE1LjggNS44IDAgMCAxIC44IDcgNS4zIDUuMyAwIDAgMSAxLjc4IDIuODJjLjI0LjkuNDggMi44LS44IDQuNzRhNS4yMiA1LjIyIDAgMCAxIC4zNyA1LjAyYy0xLjAyIDIuMzItMy41NyA0LjE0LTguNTEgNi4xLTMuMDggMS4yMi01LjkgMi01LjkyIDIuMDFhNDQuMzMgNDQuMzMgMCAwIDEtMTAuOTMgMS42Yy01Ljg2IDAtMTAuMDUtMS44LTEyLjQ2LTUuMzQtMy44OC01LjY5LTMuMzMtMTAuOSAxLjctMTUuOTIgMi43OC0yLjc4IDQuNjMtNi44NyA1LjAxLTcuNzcuNzgtMi42NiAyLjgzLTUuNjIgNi4yNC01LjYyYTUuNyA1LjcgMCAwIDEgNC42IDIuNDZjMS0xLjI2IDEuOTgtMi4yNSAyLjg3LTIuODJBNy40IDcuNCAwIDAgMSA3Ny40IDQ4Wm0wIDRjLS41MSAwLTEuMTMuMjItMS44Mi42NS0yLjEzIDEuMzYtNi4yNSA4LjQzLTcuNzYgMTEuMThhMi40MyAyLjQzIDAgMCAxLTIuMTQgMS4zMWMtMS41NCAwLTIuNzUtMS41My0uMTQtMy40OCAzLjkxLTIuOTMgMi41NC03LjcyLjY3LTguMDFhMS41NCAxLjU0IDAgMCAwLS4yNC0uMDJjLTEuNyAwLTIuNDUgMi45My0yLjQ1IDIuOTNzLTIuMiA1LjUyLTUuOTcgOS4zYy0zLjc4IDMuNzctMy45OCA2LjgtMS4yMiAxMC44MyAxLjg3IDIuNzUgNS40NyAzLjU4IDkuMTUgMy41OCAzLjgyIDAgNy43My0uOSA5LjkzLTEuNDYuMS0uMDMgMTMuNDUtMy44IDExLjc2LTctLjI5LS41NC0uNzUtLjc2LTEuMzQtLjc2LTIuMzggMC02LjcxIDMuNTQtOC41NyAzLjU0LS40MiAwLS43MS0uMTctLjgzLS42LS44LTIuODUgMTIuMDUtNC4wNSAxMC45Ny04LjE3LS4xOS0uNzMtLjctMS4wMi0xLjQ0LTEuMDItMy4xNCAwLTEwLjIgNS41My0xMS42OCA1LjUzLS4xIDAtLjE5LS4wMy0uMjMtLjEtLjc0LTEuMi0uMzQtMi4wNCA0Ljg4LTUuMiA1LjIzLTMuMTYgOC45LTUuMDYgNi44LTcuMzMtLjIzLS4yNi0uNTctLjM4LS45OC0uMzgtMy4xOCAwLTEwLjY3IDYuODItMTAuNjcgNi44MnMtMi4wMiAyLjEtMy4yNCAyLjFhLjc0Ljc0IDAgMCAxLS42OC0uMzhjLS44Ny0xLjQ2IDguMDUtOC4yMiA4LjU1LTExLjAxLjM0LTEuOS0uMjQtMi44NS0xLjMxLTIuODVaIgoJLz4KCTxwYXRoCgkJZmlsbD0iI0ZGRDIxRSIKCQlkPSJNNTYuMzMgNzYuNjljLTIuNzUtNC4wNC0yLjU2LTcuMDcgMS4yMi0xMC44NCAzLjc3LTMuNzcgNS45Ny05LjMgNS45Ny05LjNzLjgyLTMuMiAyLjctMi45YzEuODYuMyAzLjIzIDUuMDgtLjY4IDguMDEtMy45MiAyLjkzLjc4IDQuOTIgMi4yOCAyLjE3IDEuNTEtMi43NSA1LjYzLTkuODIgNy43Ni0xMS4xOCAyLjEzLTEuMzUgMy42NC0uNiAzLjEzIDIuMi0uNSAyLjc5LTkuNDIgOS41NS04LjU1IDExIC44NiAxLjQ3IDMuOTItMS43MSAzLjkyLTEuNzFzOS41OC04LjcxIDExLjY2LTYuNDRjMi4wOCAyLjI3LTEuNTggNC4xNy02LjggNy4zMy01LjIzIDMuMTYtNS42MyA0LTQuOSA1LjIuNzUgMS4yIDEyLjI4LTguNTMgMTMuMzYtNC40IDEuMDggNC4xMS0xMS43NiA1LjMtMTAuOTcgOC4xNS44IDIuODUgOS4wNS01LjM4IDEwLjc0LTIuMTggMS42OSAzLjIxLTExLjY1IDYuOTgtMTEuNzYgNy4wMS00LjMxIDEuMTItMTUuMjYgMy40OS0xOS4wOC0yLjEyWiIKCS8+Cjwvc3ZnPgo="/></symbol><symbol id="logo-nvidia" viewBox="0 0 96 96"><image width="96" height="96" href="data:image/webp;base64,UklGRp4EAABXRUJQVlA4IJIEAAAQGACdASpgAGAAPpFCnUolo6KhpHmbGLASCUAa2vFovggVvX0gbdXzAfrXvgH936ij0APLG9kv9svSArE3LD58knMmfdM/M+XfeDtMfcbwYZl8Tl4i/gHnq9EX/e8x/1j/2PVp3wBj0MQfA/hsiNM9pzySvBbizvXSlCmbwotPKRqrOQa1ClF6Bjf2kIRw/phSj8tOZsaAJyIg+Uaf3Ybyb3ppGkvSsSwOLrBjcTSInbq0bVmTeQW5yFuy39QmPwVd4VH0Ex6GIEAA/vyoAA1VUPnAaWkBoS77R44k3PU9rt3NBHBpNIFxX5g4/mxgibsMqn4yPlIkWq3DNjvXwUEsod7H7C8a3d5GoaLLIVxbSn1d5lc0Y95FV8FjNl7Y8WjNv4hVnD6qm4eifGx2/3hjP/7qVpH0m94Vm74bsJeJO0w/8PgFcCXMbo+DkluTTLu1hCwycmaYF6piAwf/AJfkUkTh9xY4Hx/yS67vd7AQdOudEcNUENitYHc7iOcYTQ7mvT0RM81d/l4Zmd3ezpl+zVLwavoN8yCQB+fK+4rPlybNTr7eIpW4re8PX329hMERnOkNM+kHbgvWrKbpmeH041BFZWBo4EvUH8Gy1FyJDgpfpW5Bb+KCoJDZ/JtnUnyHU+JtUwEwEuHlZ1ZEJq+1W08hTYLxE2gtrXPbULVCTS5yUo4ML45l97Dv+cjliYRnQhFAp+iOQN2D6ZXF/4gdYT3d+42YEwOiXWaRTWpwZf64bK+sFPi9AruibR3nEI7pbzn5/g92z2pTOsc3VDY0dP+KcIgLVVQ46j0ZWqCZyR3dwycvepRO/0nx/84U/hr7Hqpf/US5D65SiNTjj3qfH69AP61Vc3zrfrz5/9lldxh05YWpsmpdXWhm1pyrzPI4iGkhz0uDzAlZKn+s9EgATTM+r3wBo/kbTni4eMWbqCygANGU7gARS4BuEMf5koR1CNztWZhzwAumZ3H+SYuK2U9BJJTBouA4d3Ls9SXwF2Bs/6uf/N6SX0z3KHykUAeGmVjGsoM/8g/3wiUXjK/kliH4zWy7bHdGxXJ+J6H1tTuFmzGy8B/fCV5YHoH1TC6k8T6Nxp/eHMZVxhf/f6mfmIwRyGAAO9/f8T/jXJce49hOBAH+/KAnyb6iHbh2C5uwaQIaLEWH6RaR3xpPLp7dIqbrVwI7JtQfabhcMdjikrSsxteTvrHzvf4pkcppcdV+88GJPRDfLX42as19aJKOn2CqFt0g/XU1NIe7iKfzMOP35+aY4Ylcen5Pnbbjfpzn4vVDohpOztM2nvi3pUC1TyywbrVKbrJsgdslR3lwxf8v2v+BXrbrml6jNg7ejW8J25FTW7v5LcQlEmBpsUQcGYJ1LCJv05kcUXFgTXH1/03/B8BMXh22M1T5ZCY9PgDRAVmqkGrM1hXh8XNTuQLNw7cJVludFL/Ott0L/2u2U94xZRRRX/K8K3l/zDx3lXINxP0WjsWZyoO3hyzen+cstMlgD9T+gZX+I8NY8MM/+NORDeyPHQTpQyG1MA6x8xit4OgKp3QF91JuxhM6ukAAAAA="/></symbol><symbol id="logo-amalia" viewBox="0 0 96 96"><image width="96" height="96" href="data:image/webp;base64,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"/></symbol></defs>
+<g id="canvas"><rect width="700" height="520" fill="white"/><title>Portuguese benchmark intelligence</title><desc>Select a benchmark in the top-right dropdown. Focus or tap a model for exact values. Models marked (think) use thinking. Unmarked models do not.</desc><text x="28" y="39" font-size="23" fill="#252525" text-anchor="start" style="font-family:Georgia,serif">Portuguese benchmark intelligence</text><text x="28" y="63" font-size="12" fill="#666" text-anchor="start" id="chart-subtitle">Average of 4 benchmark accuracies · 4,158 questions</text><text x="64" y="119" font-size="11" fill="#666" text-anchor="start" >Accuracy, %</text><line x1="64" y1="340" x2="672" y2="340" stroke="#d4d4d4" stroke-dasharray="2 5"/><text x="52" y="344" font-size="11" fill="#666" text-anchor="end" >0</text><line x1="64" y1="298.4" x2="672" y2="298.4" stroke="#d4d4d4" stroke-dasharray="2 5"/><text x="52" y="302.4" font-size="11" fill="#666" text-anchor="end" >20</text><line x1="64" y1="256.8" x2="672" y2="256.8" stroke="#d4d4d4" stroke-dasharray="2 5"/><text x="52" y="260.8" font-size="11" fill="#666" text-anchor="end" >40</text><line x1="64" y1="215.2" x2="672" y2="215.2" stroke="#d4d4d4" stroke-dasharray="2 5"/><text x="52" y="219.2" font-size="11" fill="#666" text-anchor="end" >60</text><line x1="64" y1="173.6" x2="672" y2="173.6" stroke="#d4d4d4" stroke-dasharray="2 5"/><text x="52" y="177.6" font-size="11" fill="#666" text-anchor="end" >80</text><line x1="64" y1="132" x2="672" y2="132" stroke="#d4d4d4" stroke-dasharray="2 5"/><text x="52" y="136" font-size="11" fill="#666" text-anchor="end" >100</text><g class="mark" tabindex="0" role="button" aria-label="Qwen3.5 4B (think). 79.00% mean accuracy · 4B parameters. 18,328,515 output tokens. 4,158 questions · 0 errors counted incorrect" data-model="qwen3.5-4b" data-detail="[&quot;Qwen3.5 4B (think)&quot;,&quot;79.00% mean accuracy · 4B parameters&quot;,&quot;18,328,515 output tokens&quot;,&quot;4,158 questions · 0 errors counted incorrect&quot;]"><rect class="bar" x="78.77777777777777" y="175.68905303953832" width="38" height="164.31094696046168" rx="2.5" fill="#0875df"/><rect x="69.77777777777777" y="175.68905303953832" width="56" height="164.31094696046168" fill="transparent"/><text x="97.77777777777777" y="261.84452651976915" font-size="10.5" fill="#fff" text-anchor="middle" class="bar-value" font-weight="600">79.0</text><use class="model-logo" href="#logo-alibaba" x="87.77777777777777" y="348" width="20" height="20" aria-hidden="true"/><text class="model-label" x="101.77777777777777" y="384" font-size="12" fill="#252525" text-anchor="end" transform="rotate(-45 101.77777777777777 384)"><tspan x="101.77777777777777" y="384">Qwen3.5 4B</tspan><tspan class="thinking-label" x="101.77777777777777" dy="14">(think)</tspan></text></g><g class="mark" tabindex="0" role="button" aria-label="Qwen3.5 4B. 68.12% mean accuracy · 4B parameters. 2,218,523 output tokens. 4,158 questions · 0 errors counted incorrect" data-model="qwen3.5-4b-no-think" data-detail="[&quot;Qwen3.5 4B&quot;,&quot;68.12% mean accuracy · 4B parameters&quot;,&quot;2,218,523 output tokens&quot;,&quot;4,158 questions · 0 errors counted incorrect&quot;]"><rect class="bar" x="146.33333333333334" y="198.30482949181814" width="38" height="141.69517050818186" rx="2.5" fill="#0875df"/><rect x="137.33333333333334" y="198.30482949181814" width="56" height="141.69517050818186" fill="transparent"/><text x="165.33333333333334" y="273.1524147459091" font-size="10.5" fill="#fff" text-anchor="middle" class="bar-value" font-weight="600">68.1</text><use class="model-logo" href="#logo-alibaba" x="155.33333333333334" y="348" width="20" height="20" aria-hidden="true"/><text class="model-label" x="169.33333333333334" y="384" font-size="12" fill="#252525" text-anchor="end" transform="rotate(-45 169.33333333333334 384)"><tspan x="169.33333333333334" y="384">Qwen3.5 4B</tspan></text></g><g class="mark" tabindex="0" role="button" aria-label="Qwen3.5 2B (think). 67.35% mean accuracy · 2B parameters. 28,916,728 output tokens. 4,158 questions · 0 errors counted incorrect" data-model="qwen3.5-2b" data-detail="[&quot;Qwen3.5 2B (think)&quot;,&quot;67.35% mean accuracy · 2B parameters&quot;,&quot;28,916,728 output tokens&quot;,&quot;4,158 questions · 0 errors counted incorrect&quot;]"><rect class="bar" x="213.88888888888889" y="199.90247327413613" width="38" height="140.09752672586387" rx="2.5" fill="#0875df"/><rect x="204.88888888888889" y="199.90247327413613" width="56" height="140.09752672586387" fill="transparent"/><text x="232.88888888888889" y="273.95123663706806" font-size="10.5" fill="#fff" text-anchor="middle" class="bar-value" font-weight="600">67.4</text><use class="model-logo" href="#logo-alibaba" x="222.88888888888889" y="348" width="20" height="20" aria-hidden="true"/><text class="model-label" x="236.88888888888889" y="384" font-size="12" fill="#252525" text-anchor="end" transform="rotate(-45 236.88888888888889 384)"><tspan x="236.88888888888889" y="384">Qwen3.5 2B</tspan><tspan class="thinking-label" x="236.88888888888889" dy="14">(think)</tspan></text></g><g class="mark" tabindex="0" role="button" aria-label="LFM2.5 2.6B (think). 66.36% mean accuracy · 2.6B parameters. 7,205,504 output tokens. 4,158 questions · 5 errors counted incorrect" data-model="lfm2.5-2.6b" data-detail="[&quot;LFM2.5 2.6B (think)&quot;,&quot;66.36% mean accuracy · 2.6B parameters&quot;,&quot;7,205,504 output tokens&quot;,&quot;4,158 questions · 5 errors counted incorrect&quot;]"><rect class="bar" x="281.44444444444446" y="201.97174211250066" width="38" height="138.02825788749934" rx="2.5" fill="#3348c7"/><rect x="272.44444444444446" y="201.97174211250066" width="56" height="138.02825788749934" fill="transparent"/><text x="300.44444444444446" y="274.98587105625035" font-size="10.5" fill="#fff" text-anchor="middle" class="bar-value" font-weight="600">66.4</text><use class="model-logo" href="#logo-liquid-ai" x="290.44444444444446" y="348" width="20" height="20" aria-hidden="true"/><text class="model-label" x="304.44444444444446" y="384" font-size="12" fill="#252525" text-anchor="end" transform="rotate(-45 304.44444444444446 384)"><tspan x="304.44444444444446" y="384">LFM2.5 2.6B</tspan><tspan class="thinking-label" x="304.44444444444446" dy="14">(think)</tspan></text></g><g class="mark" tabindex="0" role="button" aria-label="AMALIA DPO 9B. 63.72% mean accuracy · 9B parameters. 1,554,072 output tokens. 4,158 questions · 118 errors counted incorrect" data-model="amalia-9b-dpo" data-detail="[&quot;AMALIA DPO 9B&quot;,&quot;63.72% mean accuracy · 9B parameters&quot;,&quot;1,554,072 output tokens&quot;,&quot;4,158 questions · 118 errors counted incorrect&quot;]"><rect class="bar" x="349" y="207.45867044873785" width="38" height="132.54132955126215" rx="2.5" fill="#b96149"/><rect x="340" y="207.45867044873785" width="56" height="132.54132955126215" fill="transparent"/><text x="368" y="277.7293352243689" font-size="10.5" fill="#fff" text-anchor="middle" class="bar-value" font-weight="600">63.7</text><use class="model-logo" href="#logo-amalia" x="358" y="348" width="20" height="20" aria-hidden="true"/><text class="model-label" x="372" y="384" font-size="12" fill="#252525" text-anchor="end" transform="rotate(-45 372 384)"><tspan x="372" y="384">AMALIA DPO 9B</tspan></text></g><g class="mark" tabindex="0" role="button" aria-label="AMALIA SFT 9B. 63.01% mean accuracy · 9B parameters. 1,382,806 output tokens. 4,158 questions · 122 errors counted incorrect" data-model="amalia-9b-sft" data-detail="[&quot;AMALIA SFT 9B&quot;,&quot;63.01% mean accuracy · 9B parameters&quot;,&quot;1,382,806 output tokens&quot;,&quot;4,158 questions · 122 errors counted incorrect&quot;]"><rect class="bar" x="416.55555555555554" y="208.9400935773321" width="38" height="131.0599064226679" rx="2.5" fill="#b96149"/><rect x="407.55555555555554" y="208.9400935773321" width="56" height="131.0599064226679" fill="transparent"/><text x="435.55555555555554" y="278.4700467886661" font-size="10.5" fill="#fff" text-anchor="middle" class="bar-value" font-weight="600">63.0</text><use class="model-logo" href="#logo-amalia" x="425.55555555555554" y="348" width="20" height="20" aria-hidden="true"/><text class="model-label" x="439.55555555555554" y="384" font-size="12" fill="#252525" text-anchor="end" transform="rotate(-45 439.55555555555554 384)"><tspan x="439.55555555555554" y="384">AMALIA SFT 9B</tspan></text></g><g class="mark" tabindex="0" role="button" aria-label="Nemotron 3 Nano 4B (think). 62.14% mean accuracy · 4B parameters. 2,340,142 output tokens. 4,158 questions · 0 errors counted incorrect" data-model="nemotron-3-nano-4b" data-detail="[&quot;Nemotron 3 Nano 4B (think)&quot;,&quot;62.14% mean accuracy · 4B parameters&quot;,&quot;2,340,142 output tokens&quot;,&quot;4,158 questions · 0 errors counted incorrect&quot;]"><rect class="bar" x="484.11111111111114" y="210.74011740361362" width="38" height="129.25988259638638" rx="2.5" fill="#278443"/><rect x="475.11111111111114" y="210.74011740361362" width="56" height="129.25988259638638" fill="transparent"/><text x="503.11111111111114" y="279.3700587018068" font-size="10.5" fill="#fff" text-anchor="middle" class="bar-value" font-weight="600">62.1</text><use class="model-logo" href="#logo-nvidia" x="493.11111111111114" y="348" width="20" height="20" aria-hidden="true"/><text class="model-label" x="507.11111111111114" y="384" font-size="12" fill="#252525" text-anchor="end" transform="rotate(-45 507.11111111111114 384)"><tspan x="507.11111111111114" y="384">Nemotron 3 Nano 4B</tspan><tspan class="thinking-label" x="507.11111111111114" dy="14">(think)</tspan></text></g><g class="mark" tabindex="0" role="button" aria-label="SmolLM3 3B (think). 59.49% mean accuracy · 3B parameters. 4,430,319 output tokens. 4,158 questions · 59 errors counted incorrect" data-model="smollm3-3b" data-detail="[&quot;SmolLM3 3B (think)&quot;,&quot;59.49% mean accuracy · 3B parameters&quot;,&quot;4,430,319 output tokens&quot;,&quot;4,158 questions · 59 errors counted incorrect&quot;]"><rect class="bar" x="551.6666666666667" y="216.25042711659341" width="38" height="123.74957288340659" rx="2.5" fill="#292929"/><rect x="542.6666666666667" y="216.25042711659341" width="56" height="123.74957288340659" fill="transparent"/><text x="570.6666666666667" y="282.1252135582967" font-size="10.5" fill="#fff" text-anchor="middle" class="bar-value" font-weight="600">59.5</text><use class="model-logo" href="#logo-hugging-face" x="560.6666666666667" y="348" width="20" height="20" aria-hidden="true"/><text class="model-label" x="574.6666666666667" y="384" font-size="12" fill="#252525" text-anchor="end" transform="rotate(-45 574.6666666666667 384)"><tspan x="574.6666666666667" y="384">SmolLM3 3B</tspan><tspan class="thinking-label" x="574.6666666666667" dy="14">(think)</tspan></text></g><g class="mark" tabindex="0" role="button" aria-label="SmolLM3 3B. 44.75% mean accuracy · 3B parameters. 1,364,776 output tokens. 4,158 questions · 11 errors counted incorrect" data-model="smollm3-3b-no-think" data-detail="[&quot;SmolLM3 3B&quot;,&quot;44.75% mean accuracy · 3B parameters&quot;,&quot;1,364,776 output tokens&quot;,&quot;4,158 questions · 11 errors counted incorrect&quot;]"><rect class="bar" x="619.2222222222223" y="246.91889595735907" width="38" height="93.08110404264093" rx="2.5" fill="#292929"/><rect x="610.2222222222223" y="246.91889595735907" width="56" height="93.08110404264093" fill="transparent"/><text x="638.2222222222223" y="297.4594479786795" font-size="10.5" fill="#fff" text-anchor="middle" class="bar-value" font-weight="600">44.8</text><use class="model-logo" href="#logo-hugging-face" x="628.2222222222223" y="348" width="20" height="20" aria-hidden="true"/><text class="model-label" x="642.2222222222223" y="384" font-size="12" fill="#252525" text-anchor="end" transform="rotate(-45 642.2222222222223 384)"><tspan x="642.2222222222223" y="384">SmolLM3 3B</tspan></text></g><g id="tooltip" role="group" aria-label="Model details" visibility="hidden" pointer-events="auto" aria-live="polite"/><g class="control" role="combobox" tabindex="0" aria-label="Benchmark" aria-haspopup="listbox" aria-expanded="false" aria-controls="benchmark-options" data-dropdown="benchmark"><rect x="450" y="22" width="222" height="34" rx="4" fill="#f2f3f4" stroke="#dedfe1"/><text x="463" y="44" font-size="13" fill="#252525" text-anchor="start" >All benchmarks (N=4,158)</text><text x="657" y="43" font-size="16" fill="#252525" text-anchor="middle" >⌄</text></g><g id="benchmark-options" role="listbox" aria-label="Benchmark" data-popup="benchmark" visibility="hidden"><rect x="450" y="59" width="222" height="172" rx="4" fill="white" stroke="#bfc3c9"/><g class="option" role="option" tabindex="-1" aria-selected="true" data-field="benchmark" data-value="all"><rect x="451" y="60" width="220" height="34" fill="#edf2fa"/><text x="463" y="82" font-size="13" fill="#252525" text-anchor="start" >All benchmarks (N=4,158)</text></g><g class="option" role="option" tabindex="-1" aria-selected="false" data-field="benchmark" data-value="pt-exams"><rect x="451" y="94" width="220" height="34" fill="#fff"/><text x="463" y="116" font-size="13" fill="#252525" text-anchor="start" >PT Exams (N=1,819)</text></g><g class="option" role="option" tabindex="-1" aria-selected="false" data-field="benchmark" data-value="alba-mcq"><rect x="451" y="128" width="220" height="34" fill="#fff"/><text x="463" y="150" font-size="13" fill="#252525" text-anchor="start" >ALBA-MCQ (N=240)</text></g><g class="option" role="option" tabindex="-1" aria-selected="false" data-field="benchmark" data-value="cultura-viva"><rect x="451" y="162" width="220" height="34" fill="#fff"/><text x="463" y="184" font-size="13" fill="#252525" text-anchor="start" >Cultura Viva (N=1,000)</text></g><g class="option" role="option" tabindex="-1" aria-selected="false" data-field="benchmark" data-value="legalbench-pt"><rect x="451" y="196" width="220" height="34" fill="#fff"/><text x="463" y="218" font-size="13" fill="#252525" text-anchor="start" >LegalBench PT (N=1,099)</text></g></g></g>
+<script><![CDATA[
+const benchmarks = {
+  all: "All benchmarks",
+  "pt-exams": "PT Exams",
+  "alba-mcq": "ALBA-MCQ",
+  "cultura-viva": "Cultura Viva",
+  "legalbench-pt": "LegalBench PT",
+};
+const datasetRepositories = {
+  "pt-exams": "amalia-llm/pt_exams",
+  "alba-mcq": "amalia-llm/alba_mcq",
+  "cultura-viva": "amalia-llm/cultura-viva-pt-mcq",
+  "legalbench-pt": "BeatrizCanaverde/LegalBench.PT",
+};
+const modelRepositories = {
+  "qwen3.5-2b": "Qwen/Qwen3.5-2B",
+  "qwen3.5-4b": "Qwen/Qwen3.5-4B",
+  "qwen3.5-4b-no-think": "Qwen/Qwen3.5-4B",
+  "lfm2.5-2.6b": "LiquidAI/LFM2.5-2.6B",
+  "smollm3-3b": "HuggingFaceTB/SmolLM3-3B",
+  "smollm3-3b-no-think": "HuggingFaceTB/SmolLM3-3B",
+  "nemotron-3-nano-4b": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+  "amalia-9b-sft": "amalia-llm/AMALIA-9B-0626-SFT",
+  "amalia-9b-dpo": "amalia-llm/AMALIA-9B-0626-DPO",
+};
+const datasetDescriptions = {
+  "pt-exams": "Portuguese exam questions across school subjects.",
+  "alba-mcq": "Portuguese linguistics, from phonetics and grammar to wordplay.",
+  "cultura-viva": "Multiple-choice questions about Portuguese culture.",
+  "legalbench-pt": "Portuguese legal questions across 30 fields of law.",
+};
+const palette = {
+  Alibaba: "#0875df",
+  "Liquid AI": "#3348c7",
+  "Hugging Face": "#292929",
+  NVIDIA: "#278443",
+  AMALIA: "#b96149",
+};
+const models = {
+  "qwen3.5-2b": ["Qwen3.5", "2B (think)", palette.Alibaba, "Alibaba"],
+  "qwen3.5-4b": ["Qwen3.5", "4B (think)", palette.Alibaba, "Alibaba"],
+  "qwen3.5-4b-no-think": ["Qwen3.5", "4B", palette.Alibaba, "Alibaba"],
+  "lfm2.5-2.6b": ["LFM2.5", "2.6B (think)", palette["Liquid AI"], "Liquid AI"],
+  "smollm3-3b": [
+    "SmolLM3",
+    "3B (think)",
+    palette["Hugging Face"],
+    "Hugging Face",
+  ],
+  "smollm3-3b-no-think": [
+    "SmolLM3",
+    "3B",
+    palette["Hugging Face"],
+    "Hugging Face",
+  ],
+  "nemotron-3-nano-4b": [
+    "Nemotron 3 Nano",
+    "4B (think)",
+    palette.NVIDIA,
+    "NVIDIA",
+  ],
+  "amalia-9b-sft": ["AMALIA SFT", "9B", palette.AMALIA, "AMALIA"],
+  "amalia-9b-dpo": ["AMALIA DPO", "9B", palette.AMALIA, "AMALIA"],
+};
+function logoId({ family }) {
+  return `logo-${family.toLowerCase().replaceAll(" ", "-")}`;
+}
+function escapeXML({ value }) {
+  return String(value).replace(
+    /[<>&"']/g,
+    (character) =>
+      ({
+        "<": "&lt;",
+        ">": "&gt;",
+        "&": "&amp;",
+        '"': "&quot;",
+        "'": "&apos;",
+      })[character],
+  );
+}
+function summarize({ data, benchmark }) {
+  return Object.keys(models).map((model) => {
+    const rows = data.filter(
+      (row) =>
+        row.model === model && (benchmark === "all" || row.task === benchmark),
+    );
+    if (rows.length !== (benchmark === "all" ? 4 : 1))
+      throw new Error(`Incomplete results for ${model}`);
+    return {
+      model,
+      score:
+        rows.reduce((sum, row) => sum + row.accuracy * 100, 0) / rows.length,
+      tokens: rows.reduce((sum, row) => sum + row.output_tokens, 0),
+      errors: rows.reduce((sum, row) => sum + row.sample_errors, 0),
+      samples: rows.reduce((sum, row) => sum + row.samples, 0),
+      size: rows[0].parameters_b,
+    };
+  });
+}
+function frontier({ rows, axis }) {
+  return rows
+    .filter(
+      (row) =>
+        !rows.some(
+          (other) =>
+            other[axis] <= row[axis] &&
+            other.score >= row.score &&
+            (other[axis] < row[axis] || other.score > row.score),
+        ),
+    )
+    .sort((a, b) => a[axis] - b[axis]);
+}
+function compact({ value }) {
+  if (value >= 1e6)
+    return `${(value / 1e6).toFixed(2).replace(/0$/, "").replace(/\.0$/, "")}M`;
+  if (value >= 1e3) return `${(value / 1e3).toFixed(1).replace(/\.0$/, "")}k`;
+  return String(value);
+}
+function chartMarkup({ data, kind, state }) {
+  const { benchmark, axis, menu = null } = state;
+  const rows = summarize({ data, benchmark });
+  const scatter = kind === "frontier",
+    tokens = kind === "tokens";
+  const heading = scatter
+    ? `Intelligence vs. ${axis === "tokens" ? "output tokens" : "model size"}`
+    : tokens
+      ? "Output tokens"
+      : "Portuguese benchmark intelligence";
+  const text = ({
+    x,
+    y,
+    value,
+    size = 12,
+    fill = "#252525",
+    anchor = "start",
+    extra = "",
+  }) =>
+    `<text x="${x}" y="${y}" font-size="${size}" fill="${fill}" text-anchor="${anchor}" ${extra}>${escapeXML({ value })}</text>`;
+  const modelLabel = ({
+    row,
+    x,
+    y,
+    size = 11,
+    anchor = "start",
+    extra = "",
+  }) => {
+    const [name, variant] = models[row.model];
+    const thinking = variant.includes("(think)");
+    const title = `${name} ${variant.replace(" (think)", "")}`;
+    return `<text class="model-label" x="${x}" y="${y}" font-size="${size}" fill="#252525" text-anchor="${anchor}" ${extra}><tspan x="${x}" y="${y}">${escapeXML({ value: title })}</tspan>${thinking ? `<tspan class="thinking-label" x="${x}" dy="14">(think)</tspan>` : ""}</text>`;
+  };
+  const modelLogo = ({ row, x, y, size = 20 }) =>
+    `<use class="model-logo" href="#${logoId({ family: models[row.model][3] })}" x="${x}" y="${y}" width="${size}" height="${size}" aria-hidden="true"/>`;
+  const line = ({ x1, y1, x2, y2, extra = "" }) =>
+    `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#d4d4d4" ${extra}/>`;
+  const dropdown = ({ field, label, choices, y }) => {
+    const x = 450,
+      width = 222;
+    const open = menu === field;
+    const trigger = `<g class="control" role="combobox" tabindex="0" aria-label="${label}" aria-haspopup="listbox" aria-expanded="${open}" aria-controls="${field}-options" data-dropdown="${field}"><rect x="${x}" y="${y}" width="${width}" height="34" rx="4" fill="#f2f3f4" stroke="#dedfe1"/>${text({ x: x + 13, y: y + 22, value: choices[state[field]], size: 13 })}${text({ x: x + width - 15, y: y + 21, value: "⌄", anchor: "middle", size: 16 })}</g>`;
+    const options = Object.entries(choices)
+      .map(([value, title], index) => {
+        const optionY = y + 38 + index * 34;
+        return `<g class="option" role="option" tabindex="-1" aria-selected="${state[field] === value}" data-field="${field}" data-value="${value}"><rect x="${x + 1}" y="${optionY}" width="${width - 2}" height="34" fill="${state[field] === value ? "#edf2fa" : "#fff"}"/>${text({ x: x + 13, y: optionY + 22, value: title, size: 13 })}</g>`;
+      })
+      .join("");
+    const popup = `<g id="${field}-options" role="listbox" aria-label="${label}" data-popup="${field}" visibility="${open ? "visible" : "hidden"}"><rect x="${x}" y="${y + 37}" width="${width}" height="${Object.keys(choices).length * 34 + 2}" rx="4" fill="white" stroke="#bfc3c9"/>${options}</g>`;
+    return { trigger, popup };
+  };
+  const controls = [
+    dropdown({
+      field: "benchmark",
+      label: "Benchmark",
+      choices: Object.fromEntries(
+        Object.entries(benchmarks).map(([value, title]) => {
+          const samples = summarize({ data, benchmark: value })[0].samples;
+          return [value, `${title} (N=${samples.toLocaleString("en-US")})`];
+        }),
+      ),
+      y: 22,
+    }),
+  ];
+  if (scatter)
+    controls.push(
+      dropdown({
+        field: "axis",
+        label: "Horizontal axis",
+        choices: { size: "Parameters · B", tokens: "Output tokens" },
+        y: 66,
+      }),
+    );
+  let markup = `<rect width="700" height="520" fill="white"/><title>${escapeXML({ value: heading })}</title><desc>Select a benchmark in the top-right dropdown. Focus or tap a model for exact values. Models marked (think) use thinking. Unmarked models do not.</desc>`;
+  markup += text({
+    x: 28,
+    y: 39,
+    value: heading,
+    size: 23,
+    extra: 'style="font-family:Georgia,serif"',
+  });
+  markup += text({
+    x: 28,
+    y: 63,
+    value: tokens
+      ? "Recorded output tokens · Lower is better"
+      : benchmark === "all"
+        ? `Average of ${Object.keys(benchmarks).length - 1} benchmark accuracies · ${rows[0].samples.toLocaleString("en-US")} questions`
+        : `Accuracy on ${rows[0].samples.toLocaleString("en-US")} questions · Higher is better`,
+    fill: "#666",
+    size: 12,
+    extra: 'id="chart-subtitle"',
+  });
+  const left = 64,
+    right = 672,
+    top = 132,
+    bottom = scatter ? 410 : 340;
+  const plotWidth = right - left,
+    plotHeight = bottom - top;
+  if (scatter) {
+    // Midpoints in display space: geometric on the log x-axis, arithmetic on y.
+    markup += `<g id="quadrant-shading" pointer-events="none"><rect id="attractive-quadrant" x="${left}" y="${top}" width="${plotWidth / 2}" height="${plotHeight / 2}" fill="#e3fae3"/><rect x="${left + plotWidth / 2}" y="${top + plotHeight / 2}" width="${plotWidth / 2}" height="${plotHeight / 2}" fill="#fafafa"/></g>`;
+    markup += `<rect x="${left}" y="96" width="10" height="10" rx="1" fill="#e3fae3" stroke="#a6e9ad"/>`;
+    markup += text({
+      x: left + 17,
+      y: 105,
+      value: "Most attractive quadrant",
+      size: 11,
+    });
+    markup += line({
+      x1: left + 177,
+      x2: left + 200,
+      y1: 101,
+      y2: 101,
+      extra: 'style="stroke:#404040" stroke-width="1.6" stroke-dasharray="2 5"',
+    });
+    markup += text({
+      x: left + 209,
+      y: 105,
+      value: "Pareto frontier",
+      size: 11,
+    });
+  }
+  const sorted = [...rows].sort((a, b) =>
+    tokens ? a.tokens - b.tokens : b.score - a.score,
+  );
+  const biggest = Math.max(...rows.map((row) => row.tokens));
+  const magnitude = 10 ** Math.floor(Math.log10(biggest));
+  const maximum = tokens ? Math.ceil(biggest / magnitude) * magnitude : 100;
+  const minimum = scatter ? 30 : 0,
+    intervals = scatter ? 7 : 5;
+  const y = (value) =>
+    bottom - ((value - minimum) / (maximum - minimum)) * plotHeight;
+  markup += text({
+    x: left,
+    y: 119,
+    value: tokens ? "Output tokens" : "Accuracy, %",
+    fill: "#666",
+    size: 11,
+  });
+  if (scatter)
+    markup += text({
+      x: right,
+      y: 119,
+      value: "Ring = Pareto optimal",
+      anchor: "end",
+      fill: "#666",
+      size: 11,
+    });
+  for (let index = 0; index <= intervals; index++) {
+    const value = minimum + ((maximum - minimum) * index) / intervals;
+    markup += line({
+      x1: left,
+      x2: right,
+      y1: y(value),
+      y2: y(value),
+      extra: 'stroke-dasharray="2 5"',
+    });
+    markup += text({
+      x: left - 12,
+      y: y(value) + 4,
+      value: tokens ? compact({ value }) : value,
+      anchor: "end",
+      fill: "#666",
+      size: 11,
+    });
+  }
+  const detail = (row) => [
+    `${models[row.model][0]} ${models[row.model][1]}`,
+    `${row.score.toFixed(2)}% ${benchmark === "all" ? "mean accuracy" : "accuracy"} · ${row.size}B parameters`,
+    `${row.tokens.toLocaleString("en-US")} output tokens`,
+    `${row.samples.toLocaleString("en-US")} questions · ${row.errors} errors counted incorrect`,
+  ];
+  const mark = ({ row, content }) =>
+    `<g class="mark" tabindex="0" role="button" aria-label="${escapeXML({ value: detail(row).join(". ") })}" data-model="${row.model}" data-detail="${escapeXML({ value: JSON.stringify(detail(row)) })}">${content}</g>`;
+  if (!scatter) {
+    const step = plotWidth / rows.length,
+      barWidth = 38;
+    sorted.forEach((row, index) => {
+      const center = left + step * (index + 0.5);
+      const value = tokens ? row.tokens : row.score;
+      const barHeight = bottom - y(value);
+      const [name, variant, color] = models[row.model];
+      // Do not inflate tiny token bars just to fit text. Their values remain in details.
+      const valueLabel =
+        barHeight >= 18
+          ? text({
+              x: center,
+              y: y(value) + barHeight / 2 + 4,
+              value: tokens ? compact({ value }) : row.score.toFixed(1),
+              anchor: "middle",
+              size: 10.5,
+              fill: "#fff",
+              extra: 'class="bar-value" font-weight="600"',
+            })
+          : "";
+      const logo = modelLogo({ row, x: center - 10, y: bottom + 8 });
+      const labelY = bottom + 44;
+      const label = modelLabel({
+        row,
+        x: center + 4,
+        y: labelY,
+        anchor: "end",
+        size: 12,
+        extra: `transform="rotate(-45 ${center + 4} ${labelY})"`,
+      });
+      markup += mark({
+        row,
+        content: `<rect class="bar" x="${center - barWidth / 2}" y="${y(value)}" width="${barWidth}" height="${barHeight}" rx="2.5" fill="${color}"/><rect x="${center - 28}" y="${Math.min(y(value), bottom - 20)}" width="56" height="${Math.max(20, barHeight)}" fill="transparent"/>${valueLabel}${logo}${label}`,
+      });
+    });
+  } else {
+    const minimumX = Math.min(...rows.map((row) => row[axis])) / 1.4;
+    const maximumX = Math.max(...rows.map((row) => row[axis])) * 1.85;
+    const x = (value) =>
+      left +
+      (Math.log(value / minimumX) / Math.log(maximumX / minimumX)) * plotWidth;
+    const optimal = frontier({ rows, axis });
+    const ticks =
+      axis === "size"
+        ? [2, 2.6, 3, 4, 6, 9]
+        : [
+            1e3, 2e3, 5e3, 1e4, 2e4, 5e4, 1e5, 2e5, 5e5, 1e6, 2e6, 5e6, 1e7,
+            2e7, 5e7,
+          ];
+    ticks
+      .filter((value) => value >= minimumX && value <= maximumX)
+      .forEach((value) => {
+        markup += line({
+          x1: x(value),
+          x2: x(value),
+          y1: top,
+          y2: bottom,
+          extra: 'stroke-dasharray="2 5" opacity="0.65"',
+        });
+        markup += text({
+          x: x(value),
+          y: bottom + 23,
+          value: axis === "size" ? value : compact({ value }),
+          anchor: "middle",
+          fill: "#666",
+          size: 11,
+        });
+      });
+    // Steps represent observed models within a budget, not interpolated performance.
+    let path = `M ${x(optimal[0][axis])} ${y(optimal[0].score)}`;
+    optimal.slice(1).forEach((row) => {
+      path += ` H ${x(row[axis])} V ${y(row.score)}`;
+    });
+    markup += `<path d="${path} H ${right}" fill="none" stroke="#404040" stroke-width="1.6" stroke-dasharray="2 5"/>`;
+    const occupied = [];
+    const positions = rows.map((row) => ({
+      row,
+      px: x(row[axis]),
+      py: y(row.score),
+    }));
+    for (const { row, px, py } of positions.sort((a, b) => a.py - b.py)) {
+      const [name, variant, color] = models[row.model];
+      const label = `${name} ${variant.replace(" (think)", "")}`;
+      const width = label.length * 5.8 + 22,
+        height = variant.includes("(think)") ? 28 : 20;
+      const candidates = [-14, 26, -42, 54, -70, 82, -98, 110].flatMap((dy) => [
+        [13, dy],
+        [-width - 13, dy],
+      ]);
+      const boxes = candidates.map(([dx, dy]) => ({
+        x: Math.max(left + 3, Math.min(right - width, px + dx)),
+        y: Math.max(top + 14, Math.min(bottom - height, py + dy)),
+        width,
+        height,
+      }));
+      const collision = (box) =>
+        occupied.some(
+          (other) =>
+            box.x < other.x + other.width + 6 &&
+            box.x + width + 6 > other.x &&
+            box.y - 14 < other.y + other.height - 8 &&
+            box.y + height - 8 > other.y - 14,
+        ) ||
+        positions.some(
+          (point) =>
+            point.px > box.x - 8 &&
+            point.px < box.x + width + 8 &&
+            point.py > box.y - 17 &&
+            point.py < box.y + height - 4,
+        );
+      const box = boxes.find((box) => !collision(box)) || boxes[0];
+      occupied.push(box);
+      const leader = line({
+        x1: px,
+        y1: py,
+        x2: box.x > px ? box.x - 3 : box.x + width + 3,
+        y2: box.y - 4,
+        extra: 'stroke-width="0.8" style="stroke:#999"',
+      });
+      const logo = modelLogo({ row, x: box.x, y: box.y - 11, size: 17 });
+      const labelMarkup = modelLabel({
+        row,
+        x: box.x + 22,
+        y: box.y,
+        extra:
+          'paint-order="stroke" stroke="white" stroke-width="3" stroke-linejoin="round"',
+      });
+      markup += mark({
+        row,
+        content: `${leader}${logo}${labelMarkup}${optimal.includes(row) ? `<circle cx="${px}" cy="${py}" r="8.5" fill="white" stroke="#333" stroke-width="1.2"/>` : ""}<circle class="model-point" cx="${px}" cy="${py}" r="5.5" fill="${color}" stroke="white" stroke-width="1"/><circle cx="${px}" cy="${py}" r="12" fill="transparent"/>`,
+      });
+    }
+    markup += text({
+      x: (left + right) / 2,
+      y: bottom + 53,
+      value:
+        axis === "size"
+          ? "Nominal model size · billions of parameters · log scale"
+          : "Recorded output tokens · log scale",
+      anchor: "middle",
+      size: 12,
+    });
+  }
+  const datasetLink = ({ task, x }) =>
+    `<a class="dataset-link" href="https://huggingface.co/datasets/${datasetRepositories[task]}" target="_blank" rel="noopener noreferrer" aria-label="${benchmarks[task]} on Hugging Face">${text({ x, y: 500, value: benchmarks[task], size: 11, fill: "#555" })}</a>`;
+  if (benchmark !== "all") {
+    markup += datasetLink({ task: benchmark, x: 28 });
+    const descriptionX = 28 + benchmarks[benchmark].length * 6.2 + 26;
+    markup += text({
+      x: descriptionX - 13,
+      y: 500,
+      value: "·",
+      size: 11,
+      fill: "#999",
+    });
+    markup += text({
+      x: descriptionX,
+      y: 500,
+      value: datasetDescriptions[benchmark],
+      size: 11,
+      fill: "#777",
+      extra: 'id="dataset-description"',
+    });
+  }
+  markup +=
+    '<g id="tooltip" role="group" aria-label="Model details" visibility="hidden" pointer-events="auto" aria-live="polite"/>';
+  markup +=
+    controls.map((control) => control.trigger).join("") +
+    controls.map((control) => control.popup).join("");
+  return markup;
+}
+function bindChart({ data, kind, initialState }) {
+  const root = document.documentElement,
+    canvas = document.getElementById("canvas");
+  const state = { ...initialState, menu: null };
+  let tooltipOwner = null,
+    hideTimer = null,
+    pinned = false;
+  const hideTooltip = () => {
+    clearTimeout(hideTimer);
+    const tooltip = document.getElementById("tooltip");
+    if (tooltip.contains(document.activeElement) && tooltipOwner?.isConnected)
+      tooltipOwner.focus();
+    tooltip.setAttribute("visibility", "hidden");
+    pinned = false;
+  };
+  const render = ({ focus = null } = {}) => {
+    clearTimeout(hideTimer);
+    pinned = false;
+    tooltipOwner = null;
+    canvas.innerHTML = chartMarkup({ data, kind, state });
+    root.dataset.benchmark = state.benchmark;
+    root.dataset.axis = state.axis;
+    if (focus) canvas.querySelector(focus)?.focus();
+  };
+  const closeMenu = ({ focus = false } = {}) => {
+    if (!state.menu) return;
+    const field = state.menu;
+    state.menu = null;
+    canvas
+      .querySelector(`[data-popup="${field}"]`)
+      .setAttribute("visibility", "hidden");
+    const trigger = canvas.querySelector(`[data-dropdown="${field}"]`);
+    trigger.setAttribute("aria-expanded", "false");
+    if (focus) trigger.focus();
+  };
+  const showTooltip = ({ target }) => {
+    closeMenu();
+    clearTimeout(hideTimer);
+    const tooltip = document.getElementById("tooltip");
+    if (
+      tooltipOwner === target &&
+      tooltip.getAttribute("visibility") === "visible"
+    )
+      return;
+    tooltipOwner = target;
+    pinned = false;
+    const model = target.dataset.model;
+    const row = summarize({ data, benchmark: state.benchmark }).find(
+      (row) => row.model === model,
+    );
+    const [name, variant, , family] = models[model];
+    const title = `${name} ${variant.replace(" (think)", "")}`;
+    const url = `https://huggingface.co/${modelRepositories[model]}`;
+    tooltip.innerHTML = `<rect x="380" y="110" width="292" height="164" rx="6" fill="white" stroke="#dce0e5" style="filter:drop-shadow(0 3px 7px #00000018)"/>
+      <use href="#${logoId({ family })}" x="394" y="124" width="24" height="24" aria-hidden="true"/>
+      <text x="430" y="134" font-size="13" font-weight="600" fill="#252525">${escapeXML({ value: title })}</text>
+      ${variant.includes("(think)") ? '<text x="430" y="151" font-size="10" fill="#777">Thinking enabled</text>' : ""}
+      <line x1="394" y1="162" x2="658" y2="162" stroke="#ededed"/>
+      <text x="394" y="181" font-size="10" fill="#777">${state.benchmark === "all" ? "Mean accuracy" : "Accuracy"}</text>
+      <text x="526" y="181" font-size="10" fill="#777">Output tokens</text>
+      <text data-metric="score" x="394" y="204" font-size="20" font-weight="600" fill="#252525">${row.score.toFixed(2)}%</text>
+      <text data-metric="tokens" x="526" y="203" font-size="15" font-weight="600" fill="#252525">${row.tokens.toLocaleString("en-US")}</text>
+      <text x="394" y="224" font-size="10" fill="#777">${row.samples.toLocaleString("en-US")} questions · ${row.errors} errors</text>
+      <line x1="394" y1="237" x2="658" y2="237" stroke="#ededed"/>
+      <a id="model-link" tabindex="-1" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeXML({ value: title })} on Hugging Face"><rect x="388" y="240" width="276" height="29" rx="3" fill="white"/><text x="394" y="259" font-size="11" fill="#2468a0">View model on Hugging Face</text><text x="656" y="259" text-anchor="end" font-size="13" fill="#2468a0">↗</text></a>`;
+    tooltip.setAttribute("visibility", "visible");
+  };
+  const activate = ({ target }) => {
+    if (target.dataset.dropdown) {
+      const field = target.dataset.dropdown;
+      state.menu = state.menu === field ? null : field;
+      render({ focus: `[data-dropdown="${field}"]` });
+    } else if (target.dataset.field) {
+      const { field, value } = target.dataset;
+      state[field] = value;
+      state.menu = null;
+      render({ focus: `[data-dropdown="${field}"]` });
+    } else if (target.dataset.detail) {
+      showTooltip({ target });
+      pinned = true;
+    }
+  };
+  canvas.addEventListener("click", (event) => {
+    if (event.target.closest("a")) return;
+    const target = event.target.closest(".control, .option, .mark");
+    if (target) activate({ target });
+    else {
+      hideTooltip();
+      closeMenu();
+    }
+  });
+  canvas.addEventListener("keydown", (event) => {
+    const target = event.target.closest(".control, .option, .mark");
+    if (event.key === "Escape") {
+      hideTooltip();
+      closeMenu({ focus: true });
+      return;
+    }
+    if (
+      event.key === "Tab" &&
+      event.shiftKey &&
+      event.target.closest("#model-link")
+    ) {
+      event.preventDefault();
+      tooltipOwner?.focus();
+      return;
+    }
+    if (!target) return;
+    if (["Enter", " "].includes(event.key)) {
+      event.preventDefault();
+      activate({ target });
+      return;
+    }
+    if (event.key === "Tab") {
+      if (
+        !event.shiftKey &&
+        target.classList.contains("mark") &&
+        document.getElementById("tooltip").getAttribute("visibility") ===
+          "visible"
+      ) {
+        event.preventDefault();
+        document.getElementById("model-link").focus();
+        return;
+      }
+      closeMenu({ focus: true });
+      return;
+    }
+    const field = target.dataset.dropdown || target.dataset.field;
+    if (!field || !["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key))
+      return;
+    event.preventDefault();
+    const wasOpen = state.menu === field;
+    state.menu = field;
+    const choices =
+      field === "benchmark" ? Object.keys(benchmarks) : ["size", "tokens"];
+    let index = choices.indexOf(target.dataset.value || state[field]);
+    if (event.key === "Home") index = 0;
+    else if (event.key === "End") index = choices.length - 1;
+    else if (wasOpen)
+      index =
+        (index + (event.key === "ArrowDown" ? 1 : -1) + choices.length) %
+        choices.length;
+    render({
+      focus: `[data-field="${field}"][data-value="${choices[index]}"]`,
+    });
+  });
+  for (const type of ["pointerover", "focusin"])
+    canvas.addEventListener(type, (event) => {
+      if (event.target.closest("#tooltip")) clearTimeout(hideTimer);
+      const target = event.target.closest(".mark");
+      if (target) showTooltip({ target });
+    });
+  for (const type of ["pointerout", "focusout"])
+    canvas.addEventListener(type, (event) => {
+      if (!event.target.closest(".mark, #tooltip") || pinned) return;
+      const next = event.relatedTarget;
+      if (
+        next?.closest?.("#tooltip") ||
+        next?.closest?.(".mark") === tooltipOwner
+      )
+        return;
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => {
+        const tooltip = document.getElementById("tooltip");
+        if (
+          !tooltip.matches(":hover") &&
+          !tooltip.contains(document.activeElement)
+        )
+          hideTooltip();
+      }, 220);
+    });
+  root.dataset.ready = "true";
+}
+
+bindChart({data:[{"task":"pt-exams","model":"qwen3.5-2b","parameters_b":2,"reasoning_enabled":"True","accuracy":0.7844969763606378,"standard_error":0.009643293423603549,"samples":1819,"correct":1427,"sample_errors":0,"input_tokens":748372,"output_tokens":12316800,"total_tokens":13065172,"log":"logs/pt-exams/2026-09-08T13-58-39-00-00_pt-exams_KPfrzJZaC8afafcfbZDg7t.eval"},{"task":"pt-exams","model":"lfm2.5-2.6b","parameters_b":2.6,"reasoning_enabled":"True","accuracy":0.782847718526663,"standard_error":0.009669942773753557,"samples":1819,"correct":1424,"sample_errors":1,"input_tokens":794476,"output_tokens":3123763,"total_tokens":3918239,"log":"logs/pt-exams/2026-09-07T17-54-35-00-00_pt-exams_JpivGpeNXPwGCwfMecHMtn.eval"},{"task":"pt-exams","model":"smollm3-3b","parameters_b":3,"reasoning_enabled":"True","accuracy":0.6860912589334799,"standard_error":0.010884179821132217,"samples":1819,"correct":1248,"sample_errors":26,"input_tokens":1252024,"output_tokens":2243543,"total_tokens":3495567,"log":"logs/pt-exams/2026-09-07T15-09-40-00-00_pt-exams_TRNjcFZJpVMBBjpoVY9YJg.eval"},{"task":"pt-exams","model":"smollm3-3b-no-think","parameters_b":3,"reasoning_enabled":"False","accuracy":0.5360087960417812,"standard_error":0.011696175942903751,"samples":1819,"correct":975,"sample_errors":9,"input_tokens":938792,"output_tokens":863555,"total_tokens":1802347,"log":"logs/pt-exams/2026-09-07T17-54-33-00-00_pt-exams_PpKywM7Yd6iMNsT44SCuAC.eval"},{"task":"pt-exams","model":"nemotron-3-nano-4b","parameters_b":4,"reasoning_enabled":"True","accuracy":0.7553600879604178,"standard_error":0.01008193129048799,"samples":1819,"correct":1374,"sample_errors":0,"input_tokens":776603,"output_tokens":1116167,"total_tokens":1892770,"log":"logs/pt-exams/2026-09-07T17-56-07-00-00_pt-exams_ZaUY7Msyc75N7F4EKFJMQp.eval"},{"task":"pt-exams","model":"qwen3.5-4b","parameters_b":4,"reasoning_enabled":"True","accuracy":0.9120395821880154,"standard_error":0.006642836232965624,"samples":1819,"correct":1659,"sample_errors":0,"input_tokens":748372,"output_tokens":7451313,"total_tokens":8199685,"log":"logs/pt-exams/2026-09-08T14-52-57-00-00_pt-exams_UwXLDbfQvdqe6ECUi2XV9b.eval"},{"task":"pt-exams","model":"qwen3.5-4b-no-think","parameters_b":4,"reasoning_enabled":"False","accuracy":0.8526663001649258,"standard_error":0.008312729668878036,"samples":1819,"correct":1551,"sample_errors":0,"input_tokens":752010,"output_tokens":1549638,"total_tokens":2301648,"log":"logs/pt-exams/2026-09-08T19-33-55-00-00_pt-exams_g2zoVGKVyGJtroU4hNVG8H.eval"},{"task":"pt-exams","model":"amalia-9b-dpo","parameters_b":9,"reasoning_enabled":"False","accuracy":0.697086311159978,"standard_error":0.010777196159950451,"samples":1819,"correct":1268,"sample_errors":103,"input_tokens":833010,"output_tokens":1135256,"total_tokens":1968266,"log":"logs/pt-exams/2026-09-07T15-09-36-00-00_pt-exams_Rsg8T8nbQYn572EEjZCoTo.eval"},{"task":"pt-exams","model":"amalia-9b-sft","parameters_b":9,"reasoning_enabled":"False","accuracy":0.6663001649257834,"standard_error":0.011059004045896728,"samples":1819,"correct":1212,"sample_errors":107,"input_tokens":827549,"output_tokens":1000962,"total_tokens":1828511,"log":"logs/pt-exams/2026-09-08T17-13-07-00-00_pt-exams_PAZMoFuTxsoBMqEsuExev7.eval"},{"task":"alba-mcq","model":"qwen3.5-2b","parameters_b":2,"reasoning_enabled":"True","accuracy":0.7291666666666666,"standard_error":0.028745211636092005,"samples":240,"correct":175,"sample_errors":0,"input_tokens":64530,"output_tokens":1891768,"total_tokens":1956298,"log":"logs/alba-mcq/2026-09-08T13-52-42-00-00_alba-mcq_Z6XSvx2dHMkbR8WkhSdCU5.eval"},{"task":"alba-mcq","model":"lfm2.5-2.6b","parameters_b":2.6,"reasoning_enabled":"True","accuracy":0.6875,"standard_error":0.02998212507924984,"samples":240,"correct":165,"sample_errors":3,"input_tokens":67582,"output_tokens":421059,"total_tokens":488641,"log":"logs/alba-mcq/2026-09-07T18-06-49-00-00_alba-mcq_bVBhWbKbjuYbR6B548NLSX.eval"},{"task":"alba-mcq","model":"smollm3-3b","parameters_b":3,"reasoning_enabled":"True","accuracy":0.6083333333333333,"standard_error":0.031574040558534855,"samples":240,"correct":146,"sample_errors":7,"input_tokens":124885,"output_tokens":251688,"total_tokens":376573,"log":"logs/alba-mcq/2026-09-07T15-08-28-00-00_alba-mcq_MTJTh8rHaQdZYkZjw2pL3j.eval"},{"task":"alba-mcq","model":"smollm3-3b-no-think","parameters_b":3,"reasoning_enabled":"False","accuracy":0.4166666666666667,"standard_error":0.03188994907015195,"samples":240,"correct":100,"sample_errors":0,"input_tokens":85701,"output_tokens":5159,"total_tokens":90860,"log":"logs/alba-mcq/2026-09-07T17-54-15-00-00_alba-mcq_LkHd8m6DCdhUv8RMCgAqA4.eval"},{"task":"alba-mcq","model":"nemotron-3-nano-4b","parameters_b":4,"reasoning_enabled":"True","accuracy":0.5791666666666667,"standard_error":0.031934336322447396,"samples":240,"correct":139,"sample_errors":0,"input_tokens":67410,"output_tokens":130376,"total_tokens":197786,"log":"logs/alba-mcq/2026-09-07T18-11-34-00-00_alba-mcq_oPJ8sfsBEaLzHbGAJHmtcd.eval"},{"task":"alba-mcq","model":"qwen3.5-4b","parameters_b":4,"reasoning_enabled":"True","accuracy":0.8291666666666667,"standard_error":0.024344915663080287,"samples":240,"correct":199,"sample_errors":0,"input_tokens":64530,"output_tokens":992972,"total_tokens":1057502,"log":"logs/alba-mcq/2026-09-08T14-44-46-00-00_alba-mcq_cyYGFnXKAdzR6TLEaDUKnQ.eval"},{"task":"alba-mcq","model":"qwen3.5-4b-no-think","parameters_b":4,"reasoning_enabled":"False","accuracy":0.5666666666666667,"standard_error":0.03205353494925185,"samples":240,"correct":136,"sample_errors":0,"input_tokens":65010,"output_tokens":1440,"total_tokens":66450,"log":"logs/alba-mcq/2026-09-08T19-33-45-00-00_alba-mcq_F5fAshGabSxJBdBG9VPxrE.eval"},{"task":"alba-mcq","model":"amalia-9b-dpo","parameters_b":9,"reasoning_enabled":"False","accuracy":0.5541666666666667,"standard_error":0.0321519647572257,"samples":240,"correct":133,"sample_errors":0,"input_tokens":78803,"output_tokens":1680,"total_tokens":80483,"log":"logs/alba-mcq/2026-09-07T15-19-12-00-00_alba-mcq_2PYnMiec6exbZJszzcCiVm.eval"},{"task":"alba-mcq","model":"amalia-9b-sft","parameters_b":9,"reasoning_enabled":"False","accuracy":0.5708333333333333,"standard_error":0.03201612034394855,"samples":240,"correct":137,"sample_errors":0,"input_tokens":79043,"output_tokens":1680,"total_tokens":80723,"log":"logs/alba-mcq/2026-09-07T17-59-24-00-00_alba-mcq_7HUrZw2L43HJ5fFzQjD5af.eval"},{"task":"cultura-viva","model":"qwen3.5-2b","parameters_b":2,"reasoning_enabled":"True","accuracy":0.509,"standard_error":0.0158167369950053,"samples":1000,"correct":509,"sample_errors":0,"input_tokens":162213,"output_tokens":7145767,"total_tokens":7307980,"log":"logs/cultura-viva/2026-09-08T12-43-34-00-00_cultura-viva_jLLaFspEeAiKq9jAzxs5G6.eval"},{"task":"cultura-viva","model":"lfm2.5-2.6b","parameters_b":2.6,"reasoning_enabled":"True","accuracy":0.538,"standard_error":0.015773547629015002,"samples":1000,"correct":538,"sample_errors":0,"input_tokens":169391,"output_tokens":1719053,"total_tokens":1888444,"log":"logs/cultura-viva/2026-09-07T18-18-26-00-00_cultura-viva_ZcQR2Wt2cZbaQMYv4b3tUW.eval"},{"task":"cultura-viva","model":"smollm3-3b","parameters_b":3,"reasoning_enabled":"True","accuracy":0.473,"standard_error":0.01579621855130273,"samples":1000,"correct":473,"sample_errors":8,"input_tokens":414634,"output_tokens":999700,"total_tokens":1414334,"log":"logs/cultura-viva/2026-09-07T15-25-03-00-00_cultura-viva_bR3bVktNCAuzqfXMqPhqsj.eval"},{"task":"cultura-viva","model":"smollm3-3b-no-think","parameters_b":3,"reasoning_enabled":"False","accuracy":0.457,"standard_error":0.0157606915901365,"samples":1000,"correct":457,"sample_errors":1,"input_tokens":237352,"output_tokens":426386,"total_tokens":663738,"log":"logs/cultura-viva/2026-09-07T18-11-55-00-00_cultura-viva_m9BgYQab3jw7v4VfhnAPqS.eval"},{"task":"cultura-viva","model":"nemotron-3-nano-4b","parameters_b":4,"reasoning_enabled":"True","accuracy":0.487,"standard_error":0.01581395210189664,"samples":1000,"correct":487,"sample_errors":0,"input_tokens":172269,"output_tokens":691705,"total_tokens":863974,"log":"logs/cultura-viva/2026-09-07T18-18-39-00-00_cultura-viva_Tf7WLv9CggTmgjkuEZd7Ee.eval"},{"task":"cultura-viva","model":"qwen3.5-4b","parameters_b":4,"reasoning_enabled":"True","accuracy":0.637,"standard_error":0.015213890444671358,"samples":1000,"correct":637,"sample_errors":0,"input_tokens":162213,"output_tokens":4815643,"total_tokens":4977856,"log":"logs/cultura-viva/2026-09-08T15-40-50-00-00_cultura-viva_8SWa37Y72vnLo7M8rHe3AG.eval"},{"task":"cultura-viva","model":"qwen3.5-4b-no-think","parameters_b":4,"reasoning_enabled":"False","accuracy":0.574,"standard_error":0.015645087688113762,"samples":1000,"correct":574,"sample_errors":0,"input_tokens":164213,"output_tokens":660851,"total_tokens":825064,"log":"logs/cultura-viva/2026-09-08T19-43-22-00-00_cultura-viva_gDpGYKSESH2zQa2ekLa7A2.eval"},{"task":"cultura-viva","model":"amalia-9b-dpo","parameters_b":9,"reasoning_enabled":"False","accuracy":0.617,"standard_error":0.015380102325652699,"samples":1000,"correct":617,"sample_errors":15,"input_tokens":221263,"output_tokens":408327,"total_tokens":629590,"log":"logs/cultura-viva/2026-09-07T15-40-13-00-00_cultura-viva_XxjoX6mUtAKYE7rhSQn49z.eval"},{"task":"cultura-viva","model":"amalia-9b-sft","parameters_b":9,"reasoning_enabled":"False","accuracy":0.609,"standard_error":0.015438826294681773,"samples":1000,"correct":609,"sample_errors":15,"input_tokens":222280,"output_tokens":372471,"total_tokens":594751,"log":"logs/cultura-viva/2026-09-07T18-17-18-00-00_cultura-viva_MxDemqpJjv5pC7MzbLkJc4.eval"},{"task":"legalbench-pt","model":"qwen3.5-2b","parameters_b":2,"reasoning_enabled":"True","accuracy":0.6715195632393085,"standard_error":0.014173689658315294,"samples":1099,"correct":738,"sample_errors":0,"input_tokens":516267,"output_tokens":7562393,"total_tokens":8078660,"log":"logs/legalbench-pt/2026-09-08T13-05-10-00-00_legalbench-pt_MyvVxHnNXjMkpzJBZ5T7xd.eval"},{"task":"legalbench-pt","model":"lfm2.5-2.6b","parameters_b":2.6,"reasoning_enabled":"True","accuracy":0.6460418562329391,"standard_error":0.014431288621684682,"samples":1099,"correct":710,"sample_errors":1,"input_tokens":548806,"output_tokens":1941629,"total_tokens":2490435,"log":"logs/legalbench-pt/2026-09-07T18-30-40-00-00_legalbench-pt_6oT8rJRFoQxcvNd54J8M7a.eval"},{"task":"legalbench-pt","model":"smollm3-3b","parameters_b":3,"reasoning_enabled":"True","accuracy":0.6123748862602366,"standard_error":0.01470325431859818,"samples":1099,"correct":673,"sample_errors":18,"input_tokens":841210,"output_tokens":935388,"total_tokens":1776598,"log":"logs/legalbench-pt/2026-09-07T15-41-13-00-00_legalbench-pt_bsdiZYvxQqKzPtRp5z32TH.eval"},{"task":"legalbench-pt","model":"smollm3-3b-no-think","parameters_b":3,"reasoning_enabled":"False","accuracy":0.38034576888080074,"standard_error":0.01465085041935338,"samples":1099,"correct":418,"sample_errors":1,"input_tokens":657414,"output_tokens":69676,"total_tokens":727090,"log":"logs/legalbench-pt/2026-09-07T18-21-52-00-00_legalbench-pt_7puAeCvQpukJLuNk7J6V2D.eval"},{"task":"legalbench-pt","model":"nemotron-3-nano-4b","parameters_b":4,"reasoning_enabled":"True","accuracy":0.6642402183803457,"standard_error":0.014251997931916232,"samples":1099,"correct":730,"sample_errors":0,"input_tokens":545906,"output_tokens":401894,"total_tokens":947800,"log":"logs/legalbench-pt/2026-09-07T18-31-23-00-00_legalbench-pt_SZn4Jrt7McJ4MHMW96NADQ.eval"},{"task":"legalbench-pt","model":"qwen3.5-4b","parameters_b":4,"reasoning_enabled":"True","accuracy":0.7816196542311192,"standard_error":0.01246818794781156,"samples":1099,"correct":859,"sample_errors":0,"input_tokens":516267,"output_tokens":5068587,"total_tokens":5584854,"log":"logs/legalbench-pt/2026-09-08T16-12-00-00-00_legalbench-pt_2nMtsPA8PCcntXDGmqEyhw.eval"},{"task":"legalbench-pt","model":"qwen3.5-4b-no-think","parameters_b":4,"reasoning_enabled":"False","accuracy":0.7315741583257507,"standard_error":0.013373348737784584,"samples":1099,"correct":804,"sample_errors":0,"input_tokens":518465,"output_tokens":6594,"total_tokens":525059,"log":"logs/legalbench-pt/2026-09-08T19-50-13-00-00_legalbench-pt_iMRf8AW3grJktn9G6Dhetd.eval"},{"task":"legalbench-pt","model":"amalia-9b-dpo","parameters_b":9,"reasoning_enabled":"False","accuracy":0.6806187443130118,"standard_error":0.014070369245791818,"samples":1099,"correct":748,"sample_errors":0,"input_tokens":593099,"output_tokens":8809,"total_tokens":601908,"log":"logs/legalbench-pt/2026-09-07T15-45-15-00-00_legalbench-pt_B5o3EynwBMsxiAUbKEkxxz.eval"},{"task":"legalbench-pt","model":"amalia-9b-sft","parameters_b":9,"reasoning_enabled":"False","accuracy":0.6742493175614195,"standard_error":0.01414333260984595,"samples":1099,"correct":741,"sample_errors":0,"input_tokens":594198,"output_tokens":7693,"total_tokens":601891,"log":"logs/legalbench-pt/2026-09-07T18-28-28-00-00_legalbench-pt_7cQja5Nq5Wjao7Zhq939GC.eval"}],kind:"intelligence",initialState:{"benchmark":"all","axis":"size"}});
+]]></script>
+</svg>
