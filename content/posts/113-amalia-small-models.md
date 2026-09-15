@@ -1,7 +1,7 @@
 title: AMALIA vs. smaller reasoning models
 date: 2026-09-14
 status: draft
-thumbnail: 
+thumbnail: images/113/pt-exams-thumbnail.webp
 
 
 A few weeks ago there was a bit of a scandal back home. Everyone was mad that [the government had taken so long to grade this year's high school exams](https://www.publico.pt/2026/07/03/sociedade/noticia/ministerio-educacao-adia-tres-dias-afixacao-notas-exames-2180378). At the time, I saw a weird post on LinkedIn saying we should have [AMALIA](https://huggingface.co/amalia-llm) grade all those exams because that would be faster.
