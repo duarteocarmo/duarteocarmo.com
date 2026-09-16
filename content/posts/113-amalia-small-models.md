@@ -55,7 +55,7 @@ But reasoning is not free. Models produce many more tokens before reaching an an
 
 What's the takeaway? In practice, if you work at a law office and are interested in a small model that can help you respond to legal questions, you might be better off starting with [Qwen3.5 4B](https://huggingface.co/Qwen/Qwen3.5-4B) than AMALIA (select [LegalBench PT](https://huggingface.co/datasets/BeatrizCanaverde/LegalBench.PT) above). It's thanks to the AMALIA team and their great work that we now have something to judge these models against. 
 
-Still, I think this tells us something else that is interesting for the future of AMALIA. Could we have a much smaller model that everyone could run on their own hardware easily, but that still outperforms smaller models? Should the next AMALIA be a reasoning model? 
+Still, I think this tells us something else that is interesting for the future of AMALIA. Could we have a much smaller model that everyone could run on their own hardware easily, but that still outperforms bigger models? Should the next AMALIA be a reasoning model?
 
 ---
 
