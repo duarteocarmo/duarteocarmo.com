@@ -1,5 +1,11 @@
 BOOKS = [
     {
+        "title": "Build a Reasoning Model (From Scratch)",
+        "author": "Sebastian Raschka",
+        "completed_date": "2026-09-10",
+        "rating": 4,
+    },
+    {
         "title": "Raising Raffi",
         "author": "Keith Gessen",
         "completed_date": "2026-08-12",
