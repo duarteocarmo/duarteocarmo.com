@@ -1,5 +1,18 @@
 TALKS = [
     {
+        "text": "The Hitchhiker's Guide to European Portuguese LLMs",
+        "links": [
+            {
+                "text": "Lisbon AI",
+                "url": "https://lisbonai.org/",
+            },
+            {
+                "text": "Slides",
+                "url": "/pdfs/lisbon_ai_european_portuguese_llms.pdfs",
+            },
+        ],
+    },
+    {
         "text": "The Great Cleanup",
         "links": [
             {
