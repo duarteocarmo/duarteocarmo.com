@@ -8,7 +8,7 @@ TALKS = [
             },
             {
                 "text": "Slides",
-                "url": "/pdfs/lisbon_ai_european_portuguese_llms.pdfs",
+                "url": "/pdfs/lisbon_ai_european_portuguese_llms.pdf",
             },
         ],
     },
