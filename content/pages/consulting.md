@@ -18,7 +18,7 @@ Browse my <a href="/cv.pdf" data-umami-event="Resume download">resume</a> or [ta
 ## Clients
 
 <center>
-<img  src="{static}/images/pages/companies.webp" alt="companies" class="companies">
+<img  src="/images/clients.webp" alt="companies" class="companies">
 </center>
 
 ## Testimonials

@@ -16,6 +16,8 @@ dependencies = [
   "markdownify==1.2.3",
   "pytz==2026.3.post1",
   "watchfiles==1.2.0",
+  "pillow==12.3.0",
+  "numpy==2.4.6",
 ]
 
 [dependency-groups]

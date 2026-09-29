@@ -121,6 +121,7 @@ PLUGINS = [
     "plugins.photos",
     "plugins.api",
     "plugins.llms",
+    "plugins.clients",
     "sitemap",
     "simple_footnotes",
 ]
