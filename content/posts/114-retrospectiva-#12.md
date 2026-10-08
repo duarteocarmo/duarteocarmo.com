@@ -39,10 +39,20 @@ audio: true
 
 **<a href="https://www.youtube.com/watch?v=MdmRadVnVlw" target="_blank">alpine house therapy</a> by Chris Luno**: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
+<br>
+<lite-youtube videoid="MdmRadVnVlw"></lite-youtube>
+<br>
+
 **<a href="https://soundcloud.com/cosmicdustmagazine/cosmic-dust-radio-show-056" target="_blank">Cosmic Dust Radio Show #056</a>**: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?visual=false&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2Fsoundcloud%253Atracks%253A2395615311&show_artwork=true"></iframe>
 
 ## Watching
 
 **<a href="https://www.sofascore.com/football/team/portugal/4704" target="_blank">Portugal matches and drama</a>**: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 **<a href="https://x.com/poteto/status/2102050467505430555" target="_blank">How Lauren Tan shipped 2,500 PRs in a month</a>**: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+<div style="display: flex; justify-content: center;">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">here's how i shipped 2,500 PRs last month to production</p>&mdash; lauren (@poteto) <a href="https://twitter.com/poteto/status/2102050467505430555">September 21, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
