@@ -10,6 +10,10 @@ TALKS = [
                 "text": "Slides",
                 "url": "/pdfs/lisbon_ai_european_portuguese_llms.pdf",
             },
+            {
+                "text": "Video",
+                "url": "https://youtu.be/e7VYjMgMv2U?is=fAhmHX61LZeIFuDX",
+            },
         ],
     },
     {
