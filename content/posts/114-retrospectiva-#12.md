@@ -3,7 +3,7 @@ description: A monthly newsletter about life.
 date: 9th of October 2026
 status: published
 audio: true
-thumbnail: images/114/cover.webp
+thumbnail: images/114/lisbon-ai-cover.webp
 
 <center>
 <a href="{static}/images/114/banner.webp" target="_blank">
