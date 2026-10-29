@@ -1,5 +1,11 @@
 BOOKS = [
     {
+        "title": "The Machinery of Life",
+        "author": "David S.Goodsell",
+        "completed_date": "2026-10-28",
+        "rating": 3,
+    },
+    {
         "title": "Build a Reasoning Model (From Scratch)",
         "author": "Sebastian Raschka",
         "completed_date": "2026-09-10",
