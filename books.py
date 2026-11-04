@@ -1,5 +1,11 @@
 BOOKS = [
     {
+        "title": "On Confidence",
+        "author": "The School of Life (Alain de Botton, series editor)",
+        "completed_date": "2026-11-04",
+        "rating": 5,
+    },
+    {
         "title": "The Machinery of Life",
         "author": "David S.Goodsell",
         "completed_date": "2026-10-28",
