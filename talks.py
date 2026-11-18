@@ -1,5 +1,18 @@
 TALKS = [
     {
+        "text": "European Portuguese LLMs and Lessons on Evaluation",
+        "links": [
+            {
+                "text": "PyData Copenhagen",
+                "url": "https://www.meetup.com/pydata-copenhagen/",
+            },
+            {
+                "text": "Slides",
+                "url": "/pdfs/pydata_copenhagen_european_portuguese_llms.pdf",
+            },
+        ],
+    },
+    {
         "text": "The Hitchhiker's Guide to European Portuguese LLMs",
         "links": [
             {
