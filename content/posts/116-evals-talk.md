@@ -1,28 +1,23 @@
-title: Lessons from running model evaluations
+title: Running evaluations from AI systems: Lessons and tools
 date: 2026-11-23
 status: draft
 slug: lessons-from-running-model-evaluations
 description: TODO
 thumbnail: images/116/cover.webp
 
-Last week, Anders invited me to give a talk at the local Pieda Copenhagen meetup. He wanted me to talk about European Portuguese LMs, but I had already talked about that theme, had already talked about that topic at Lisbon AI at the Lisbon AI conference recently so I decided to expand the presentation with a bunch of things I've learned recently by running evaluations for AI systems new paragraph. For systems I mean anything that can be like something like a large language model, maybe it's a vision language model, maybe it's like a voice model that we're developing, basically anything surrounding that. 
+Last week, Anders invited me to give a talk at [PyData Copenhagen](https://www.meetup.com/pydata-copenhagen/) meetup. He asked me to talk about [European Portuguese LLMs]({filename}/posts/113-amalia-small-models.md) (even though I had already done so at [Lisbon AI](https://www.youtube.com/watch?v=e7VYjMgMv2U)). I decided to expand the talk with a series of lessons I've learned recently by running evaluations for AI systems (LLMs, VLMs, Audio models). 
 
-So I covered a couple of extra topics that I think might be relevant to my audience, mainly focus on evaluation. 
-
-
-
-
-
-
-TODO intro. [Full slides]({static}/pdfs/pydata_copenhagen_european_portuguese_llms.pdf). Related: [AMALIA vs. smaller reasoning models]({filename}/posts/113-amalia-small-models.md).
+Here we go. 
 
 <center>
 <a href="{static}/images/116/cover.webp" target="_blank">
-<img class="slide" src="{static}/images/116/cover.webp" alt="The Hitchhiker’s Guide to European Portuguese LLMs (and how to ensure your models and applications run well) Duarte O.Carmo AI/ML/Data Consultant &amp; Researcher @ DOC Tech. |" style="max-width:100%;border-radius: 2px">
+<img class="slide" src="{static}/images/116/cover.webp" alt="The Hitchhiker’s Guide to European Portuguese LLMs (and how to ensure your models and applications run well) Duarte O.Carmo AI/ML/Data Consultant &amp; Researcher @ DOC Tech." style="max-width:100%;border-radius: 2px">
 </a>
 </center>
 
-The first thing I talked about was the fact that I use Inspect for almost all of my evaluation work. Either it's an LLM, even if it's a coding agent or some trace, Inspect has become like the de facto tool I use to run evaluations for most of the AI systems I run across. It's great, it's open source, it's pretty stable, it supports a bunch of off-the-back evaluations, and it supports a very simple system to add more evaluations on it. And here we should probably link the Inspect framework website. We should also link like there's they have like a separate website with a bunch of the evaluations with like default configs and commands and stuff like that. And we should also link that website and there's also the inspect suite thing that tries to like where we can run evaluations for coding agents. So add that link as well and mention that there's this thing that I made a PR and they didn't really accept it. Something in fact, it's so stable that even the PRs that I added to it don't even get merged. So normally I think that's a good indicator
+## Inspect
+
+[Inspect](https://inspect.aisi.org.uk/) has become my hammer for almost any scenario. AI Product evals, coding traces, audio models, you name it - I use Inspect. It's open source, stable, and supports a bunch of [off-the-shelf evaluations](https://ukgovernmentbeis.github.io/inspect_evals/)(think MMLU, GPQA, HumanEval, etc).  (There's also [Inspect SWE](https://meridianlabs-ai.github.io/inspect_swe/) to run evaluations for coding agents. Stil waiting for [Pi support](https://github.com/meridianlabs-ai/inspect_swe/pull/152). Yes - I have my own fork for that). 
 
 <center>
 <a href="{static}/images/116/inspect.webp" target="_blank">
@@ -30,7 +25,7 @@ The first thing I talked about was the fact that I use Inspect for almost all of
 </a>
 </center>
 
-Inspect is a great framework, and now that LLMs write most of the code, I don't really care about the nitty-gritty of the code, but I actually care about the format of any evaluation project I start and I've gravitated towards this single format that I've described in the previous in the next slide where actually whenever I need the LM to do anything it's it's going to mostly add config by models or new config with a new task or new cluster support so it's a really really nice and easy way to just expand on your evaluation framework and just let the LLM add stuff on top and on top of it Without losing the control of what's actually going on
+Now that LLMs write most of the code, I care that a coding agent can easily expand and act on my eval suite. I have started to gravitate towards the layout below. Models, Tasks, VLLM arguments, GPU clusters, everything is config. It's very easy for an agent to add things without me loosing understanding of what is happening. 
 
 <center>
 <a href="{static}/images/116/evals-layout.webp" target="_blank">
@@ -38,26 +33,23 @@ Inspect is a great framework, and now that LLMs write most of the code, I don't 
 </a>
 </center>
 
-One of the nicest things about Inspect is that it allows you to look at what's going on really easily. And that's powered by this Inspect Viewer, which is pretty much a website that allows you to look at traces. One of the nicest things about the Inspect Viewer and the Inspect Traces is that you can add pretty much anything to your trace. You can add PNGs, you can add audio files if you're evaluating like a language model, you can add pretty much anything. And that's a really, really powerful paradigm so that you can actually do the most important thing of all, which is looking at your data. 
-
+One of the nicest things about Inspect is that it allows you to very easily LOOK AT WHAT IS GOING ON. Everything is powered by the [Inspect Viewer](https://inspect.aisi.org.uk/log-viewer.html). You can add anything to a trace to get more context: PNGs, Audio files, extra scorers, you name it! 
 <center>
 <a href="{static}/images/116/audio-sample.webp" target="_blank">
 <img class="slide" src="{static}/images/116/audio-sample.webp" alt="It works for anything you might be working on" style="max-width:100%;border-radius: 2px">
 </a>
 </center>
 
-Finally, my final favorite thing about Inspect is that you can actually add to the same trace the original trace and also the LLM as a judge trace. So you can actually see the initial scoring and also after an LLM is a judge scored that trace, what exactly happens? And so it allows you to have this full traceability that is really, really useful. 
-
+Inspect also has great support for LLM as a Judge. You can run an evaluation and "re-score" it - with an LLM as a Judge. That allows you to keep both things in the same place - so you can see when things go wrong. (more on that below). 
 <center>
 <a href="{static}/images/116/llm-judge.webp" target="_blank">
 <img class="slide" src="{static}/images/116/llm-judge.webp" alt="LLM as a judge: the judge is in the log too" style="max-width:100%;border-radius: 2px">
 </a>
 </center>
 
-Now, let's talk about lessons from running evaluations. We probably want a header here. 
+## Lessons
 
-The first lesson about evaluation is that not everything is what it appears to be. 
-One of the recent projects I've worked on was running large language model evaluations for a model that was currently and is still currently in the works. One of the main things I tried to do is to reproduce a bunch of evaluations from open source models out there. And that's quickly, and that's the first time I realized that this is a massive shit show. And that most of the times when you look at evaluation benchmark tables, you actually have absolutely no clue what you're looking at. 
+**Lesson 1: Not everything is what it appears to be.** In a recent project I was tasked with running evaluations for an LLM that is still in the works. My first goal: Reproduce scores from popular open weight models. My first reaction? Oh my god this is a shit show. Next time you look at an evaluation benchmark table - beware - you have no clue of what is going on. 
 
 <center>
 <a href="{static}/images/116/lesson-1.webp" target="_blank">
@@ -65,8 +57,7 @@ One of the recent projects I've worked on was running large language model evalu
 </a>
 </center>
 
-The second lesson is to look at your fucking traces. 
-It's really easy to take any task and just use an LLM as a judge to evaluate that task. But what's a little bit harder than that is to actually design an LLM as judge that is actually good. I encourage you to take a second and just read this slide below and you'll understand very quickly why. 
+**Lesson 2: Look at your fucking traces.** It's easy to take a task and use an LLM as a judge to 2x check its score. What's harder is making an LLM as a judge that is *actually* good. I invite curious readers to read the slide below. And you quickly realise why this lesson is named so aggressively. 
 
 <center>
 <a href="{static}/images/116/lesson-2.webp" target="_blank">
@@ -74,8 +65,9 @@ It's really easy to take any task and just use an LLM as a judge to evaluate tha
 </a>
 </center>
 
-The final lesson is to start small. 
-I've seen this thousands of times where a team starts adding groundness, fidelity, and all of these bullshit benchmark metrics made to evaluate LLM systems and rack systems and God knows what. The problem with that is that it's very quickly overwhelming by one side because you're adding these thousands of metrics and it's completely useless because you have absolutely no clue what you're measuring. And so my advice most of the times is very simple. Start with 10 cases. 10 cases where you think your AI system might fail and measure those and then look at your choices. You'll realize that you've learned much more than throwing off-the-shelf bullshit metrics at your problem. 
+**Lesson 3: Start small.** I've seen this hundreds of times: I ask about performance, I get answers with the words "groundedness" and "fidelity". You know - all those bullshit metrics made by open source frameworks just so you can feel good abour yourself of having a number to look at. Even if you have no idea what that number means. 
+
+My advice is very simple: start with 10 cases. Not 100, not 50. 10! 10 cases where you think your system might fail. Build those, measure how well your system does, and read some traces. You'll learn much more than by throwing off-the-shelf bullshit metrics at your problem.
 
 <center>
 <a href="{static}/images/116/lesson-3.webp" target="_blank">
@@ -83,5 +75,6 @@ I've seen this thousands of times where a team starts adding groundness, fidelit
 </a>
 </center>
 
+[Thanks Hamel for the meme](https://hamel.dev/notes/llm/evals/memes/#meme-images). 
 
-If you're interested in the full slide deck, I've linked it here. 
+If you're interested in the full slide deck, [here it is]({static}/pdfs/pydata_copenhagen_european_portuguese_llms.pdf).
