@@ -1,9 +1,9 @@
-title: Running evaluations from AI systems: Lessons and tools
+title: Running evaluations for AI systems: tools and lessons
 date: 2026-11-23
-status: draft
+status: published
 slug: lessons-from-running-model-evaluations
-description: TODO
-thumbnail: images/116/cover.webp
+description: Notes from my recent presentation at the PyData Copenhagen meetup
+thumbnail: images/116/lesson-2.webp
 
 Last week, Anders invited me to give a talk at [PyData Copenhagen](https://www.meetup.com/pydata-copenhagen/) meetup. He asked me to talk about [European Portuguese LLMs]({filename}/posts/113-amalia-small-models.md) (even though I had already done so at [Lisbon AI](https://www.youtube.com/watch?v=e7VYjMgMv2U)). I decided to expand the talk with a series of lessons I've learned recently by running evaluations for AI systems (LLMs, VLMs, Audio models). 
 
@@ -17,7 +17,7 @@ Here we go.
 
 ## Inspect
 
-[Inspect](https://inspect.aisi.org.uk/) has become my hammer for almost any scenario. AI Product evals, coding traces, audio models, you name it - I use Inspect. It's open source, stable, and supports a bunch of [off-the-shelf evaluations](https://ukgovernmentbeis.github.io/inspect_evals/)(think MMLU, GPQA, HumanEval, etc).  (There's also [Inspect SWE](https://meridianlabs-ai.github.io/inspect_swe/) to run evaluations for coding agents. Stil waiting for [Pi support](https://github.com/meridianlabs-ai/inspect_swe/pull/152). Yes - I have my own fork for that). 
+[Inspect](https://inspect.aisi.org.uk/) has become my hammer for almost any scenario. AI Product evals, coding traces, audio models, you name it - I use Inspect. It's open source, stable, and supports a bunch of [off-the-shelf evaluations](https://ukgovernmentbeis.github.io/inspect_evals/) (think MMLU, GPQA, HumanEval, etc). (There's also [Inspect SWE](https://meridianlabs-ai.github.io/inspect_swe/) to run evaluations for coding agents. Still waiting for [Pi support](https://github.com/meridianlabs-ai/inspect_swe/pull/152). Yes - I have my own fork for that). 
 
 <center>
 <a href="{static}/images/116/inspect.webp" target="_blank">
@@ -25,7 +25,7 @@ Here we go.
 </a>
 </center>
 
-Now that LLMs write most of the code, I care that a coding agent can easily expand and act on my eval suite. I have started to gravitate towards the layout below. Models, Tasks, VLLM arguments, GPU clusters, everything is config. It's very easy for an agent to add things without me loosing understanding of what is happening. 
+Now that LLMs write most of the code, I care that a coding agent can easily expand and act on my eval suite. I have started to gravitate towards the layout below. Models, Tasks, VLLM arguments, GPU clusters, everything is config. It's very easy for an agent to add things without me losing understanding of what is happening. 
 
 <center>
 <a href="{static}/images/116/evals-layout.webp" target="_blank">
@@ -34,6 +34,7 @@ Now that LLMs write most of the code, I care that a coding agent can easily expa
 </center>
 
 One of the nicest things about Inspect is that it allows you to very easily LOOK AT WHAT IS GOING ON. Everything is powered by the [Inspect Viewer](https://inspect.aisi.org.uk/log-viewer.html). You can add anything to a trace to get more context: PNGs, Audio files, extra scorers, you name it! 
+
 <center>
 <a href="{static}/images/116/audio-sample.webp" target="_blank">
 <img class="slide" src="{static}/images/116/audio-sample.webp" alt="It works for anything you might be working on" style="max-width:100%;border-radius: 2px">
@@ -41,6 +42,7 @@ One of the nicest things about Inspect is that it allows you to very easily LOOK
 </center>
 
 Inspect also has great support for LLM as a Judge. You can run an evaluation and "re-score" it - with an LLM as a Judge. That allows you to keep both things in the same place - so you can see when things go wrong. (more on that below). 
+
 <center>
 <a href="{static}/images/116/llm-judge.webp" target="_blank">
 <img class="slide" src="{static}/images/116/llm-judge.webp" alt="LLM as a judge: the judge is in the log too" style="max-width:100%;border-radius: 2px">
@@ -65,7 +67,7 @@ Inspect also has great support for LLM as a Judge. You can run an evaluation and
 </a>
 </center>
 
-**Lesson 3: Start small.** I've seen this hundreds of times: I ask about performance, I get answers with the words "groundedness" and "fidelity". You know - all those bullshit metrics made by open source frameworks just so you can feel good abour yourself of having a number to look at. Even if you have no idea what that number means. 
+**Lesson 3: Start small.** I've seen this hundreds of times: I ask about performance, I get answers with the words "groundedness" and "fidelity". You know - all those bullshit metrics made by open source frameworks just so you can feel good about yourself of having a number to look at. Even if you have no idea what that number means. 
 
 My advice is very simple: start with 10 cases. Not 100, not 50. 10! 10 cases where you think your system might fail. Build those, measure how well your system does, and read some traces. You'll learn much more than by throwing off-the-shelf bullshit metrics at your problem.
 
