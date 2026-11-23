@@ -324,6 +324,10 @@ h1 {
   margin: 1rem 0;
 }
 
+.prose img.slide {
+  border: 1px solid #e5e5e5;
+}
+
 
 
 .prose figcaption {
@@ -693,6 +697,10 @@ footer {
 
   .prose th {
     background: #171717;
+  }
+
+  .prose img.slide {
+    border: none;
   }
 
   .prose tbody tr:nth-child(even) {
